@@ -459,12 +459,27 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 700;
-  line-height: 56px;
+  line-height: 44px;
   color: #222222;
   font-family: "Poppins", sans-serif;
 }
+
+ul {
+  list-style-type: none; /* Removes the default bullet points */
+  padding-left: 0; /* Removes the left padding */
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+ul li i {
+  color: #106eea; /* Icon color */
+  margin-right: 10px;
+}
+
 
 #hero h1 span {
   color: #106eea;
@@ -489,6 +504,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   color: #fff;
   background: #106eea;
+  margin-right: 10px;
+}
+
+.btn-get-started i {
+  margin-left: 5px;
+}
+
+.btn-get-started:hover {
+  background: #247cf0;
 }
 
 #hero .btn-get-started:hover {
@@ -569,7 +593,7 @@ section {
 }
 
 .section-title h2 {
-  font-size: 13px;
+  font-size: 19px;
   letter-spacing: 1px;
   font-weight: 700;
   padding: 8px 20px;
@@ -602,58 +626,53 @@ section {
   }
 }
 
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 20px 0;
-  background-color: #f1f6fe;
-  min-height: 40px;
+/* Styling for the paragraphs */
+p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #555;
+  text-align: justify; /* Justify content */
 }
 
-.breadcrumbs h2 {
-  font-size: 24px;
-  font-weight: 300;
-  margin: 0;
+/* Styling for the lists */
+.service-list ol, .service-questions ol {
+  margin-left: 20px;
+  padding-left: 20px;
+  text-align: justify; /* Justify content */
+  font-size: 16px;
 }
 
-@media (max-width: 992px) {
-  .breadcrumbs h2 {
-    margin: 0 0 10px 0;
-  }
+.service-list li, .service-questions li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  text-align: justify; /* Justify content */
 }
 
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-}
 
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #6c757d;
-  content: "/";
+/* Custom styles for the content section */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
-  .breadcrumbs .d-flex {
-    display: block !important;
+  .content {
+    text-align: left;
   }
-  .breadcrumbs ol {
-    display: block;
+
+  .section-title h2 {
+    font-size: 18px;
   }
-  .breadcrumbs ol li {
-    display: inline-block;
+
+  .section-title h3 {
+    font-size: 28px;
   }
 }
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Featured Services
