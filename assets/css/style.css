@@ -575,6 +575,127 @@ ul li i {
   }
 }
 
+/* Additional CSS for the profile image */
+.hero-profile-image {
+  margin-top: 20px;
+}
+
+.profile-img {
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 5px solid #106eea;
+  box-shadow: 0 10px 30px rgba(16, 110, 234, 0.3);
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(16, 110, 234, 0.4);
+}
+
+/* Hero section background preservation */
+#hero::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .profile-img {
+    width: 250px !important;
+    height: 250px !important;
+    margin-top: 30px;
+  }
+  
+  #hero .col-lg-8 {
+    text-align: center;
+  }
+  
+  #hero .d-flex {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  #hero .btn-get-started {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+/* Primary Button - Hire Me Today */
+.btn-get-started-primary {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 4px;
+  transition: 0.3s;
+  color: #fff;
+  background: #106eea;
+  box-shadow: 0 4px 15px rgba(16, 110, 234, 0.4);
+}
+
+.btn-get-started-primary:hover {
+  background: #0e5bcc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 110, 234, 0.5);
+}
+
+.btn-get-started-primary i {
+  margin-left: 5px;
+}
+
+/* Secondary Button - Keep Reading */
+.btn-get-started-secondary {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 4px;
+  transition: 0.3s;
+  color: #106eea;
+  background: transparent;
+  border: 2px solid #106eea;
+  box-shadow: none;
+}
+
+.btn-get-started-secondary:hover {
+  background: #106eea;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-get-started-secondary i {
+  margin-left: 5px;
+}
+
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -669,9 +790,26 @@ p {
   }
 }
 
+/* About section */
 
+.service-list ol,
+.service-questions ol {
+    /* Removes the default left padding from the list */
+    padding-left: 0;
+    /* Centers the list horizontally on the page */
+    max-width: 800px;
+    margin: 0 auto;
+    /* Ensures list items are left-aligned */
+    text-align: left;
+    list-style-position: inside;
+}
 
-
+.service-list li,
+.service-questions li {
+    /* Sets the list item text alignment to the left */
+    text-align: left;
+    margin-bottom: 10px;
+}
 
 
 /*--------------------------------------------------------------
@@ -1223,6 +1361,7 @@ p {
   padding: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
@@ -1512,9 +1651,12 @@ p {
   margin-bottom: 0;
 }
 
+/* Form Styling */
 .contact .php-email-form {
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.4);
   padding: 30px;
+  background: #fff;
+  border-radius: 8px;
 }
 
 .contact .php-email-form .error-message {
@@ -1524,6 +1666,8 @@ p {
   text-align: left;
   padding: 15px;
   font-weight: 600;
+  border-radius: 4px;
+  margin: 10px 0;
 }
 
 .contact .php-email-form .error-message br + br {
@@ -1537,79 +1681,62 @@ p {
   text-align: center;
   padding: 15px;
   font-weight: 600;
+  border-radius: 4px;
 }
 
 .contact .php-email-form .loading {
   display: none;
-  background: #fff;
+  color: #106eea;
+  font-weight: 500;
   text-align: center;
-  padding: 15px;
+  padding: 10px 0;
 }
 
 .contact .php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
+  content: "🌀 ";
+  font-size: 18px;
 }
 
 .contact .php-email-form .form-group {
   margin-bottom: 20px;
 }
 
-.contact .php-email-form input, .contact .php-email-form textarea {
-  border-radius: 0;
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 4px;
   box-shadow: none;
   font-size: 14px;
+  border: 1px solid #ddd;
+  width: 100%;
+  padding: 12px 15px;
+  transition: border-color 0.3s ease;
 }
 
-.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  outline: none;
   border-color: #106eea;
 }
 
-.contact .php-email-form input {
-  padding: 10px 15px;
-}
-
 .contact .php-email-form textarea {
-  padding: 12px 15px;
+  resize: vertical;
+  min-height: 150px;
 }
 
 .contact .php-email-form button[type="submit"] {
   background: #106eea;
   border: 0;
-  padding: 10px 30px;
+  padding: 12px 30px;
   color: #fff;
-  transition: 0.4s;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
   border-radius: 4px;
+  transition: 0.4s;
 }
 
 .contact .php-email-form button[type="submit"]:hover {
   background: #3b8af2;
-}
-
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 /*--------------------------------------------------------------
