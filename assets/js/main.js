@@ -280,4 +280,61 @@
     })
   });
 
-})()
+  /**
+   * Formspree Contact Form AJAX Handler
+   */
+  const contactForm = select('.php-email-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      const loading = form.querySelector('.loading');
+      const errorMessage = form.querySelector('.error-message');
+      const sentMessage = form.querySelector('.sent-message');
+
+      // Show loading, hide messages
+      if (loading) loading.style.display = 'block';
+      if (errorMessage) errorMessage.style.display = 'none';
+      if (sentMessage) sentMessage.style.display = 'none';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (loading) loading.style.display = 'none'; // Always hide loading
+
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .then(data => {
+        if (data.ok) {
+          if (sentMessage) {
+            sentMessage.style.display = 'block';
+          }
+          form.reset(); // Clear form fields
+        } else {
+          throw new Error('Formspree returned error: ' + JSON.stringify(data));
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        if (errorMessage) {
+          errorMessage.textContent = 'Oops! Something went wrong. Please try again.';
+          errorMessage.style.display = 'block';
+        }
+      });
+    });
+  }
+
+})
+();
