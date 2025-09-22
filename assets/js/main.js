@@ -1,9 +1,9 @@
 /**
-* Template Name: BizLand - v3.3.0
-* Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+ * Template Name: BizLand - v3.3.0
+ * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
 (function() {
   "use strict";
 
@@ -281,7 +281,7 @@
   });
 
   /**
-   * Formspree Contact Form AJAX Handler
+   * Formspree Contact Form AJAX Handler (FIXED)
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
@@ -301,40 +301,38 @@
       if (sentMessage) sentMessage.style.display = 'none';
 
       fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => {
-        if (loading) loading.style.display = 'none'; // Always hide loading
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          // Always hide loading once a response is received
+          if (loading) loading.style.display = 'none';
 
-        if (response.ok) {
+          // Check if the response is not OK (e.g., a 4xx or 5xx status)
+          if (!response.ok) {
+            throw new Error('Form submission failed with status: ' + response.status);
+          }
           return response.json();
-        } else {
-          throw new Error('Form submission failed');
-        }
-      })
-      .then(data => {
-        if (data.ok) {
+        })
+        .then(data => {
+          // The request was successful and data.ok is true
           if (sentMessage) {
             sentMessage.style.display = 'block';
           }
           form.reset(); // Clear form fields
-        } else {
-          throw new Error('Formspree returned error: ' + JSON.stringify(data));
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        if (errorMessage) {
-          errorMessage.textContent = 'Oops! Something went wrong. Please try again.';
-          errorMessage.style.display = 'block';
-        }
-      });
+        })
+        .catch(error => {
+          // This block will catch the error from the above .then() block
+          console.error('Error:', error);
+          if (errorMessage) {
+            errorMessage.textContent = 'Oops! Something went wrong. Please try again.';
+            errorMessage.style.display = 'block';
+          }
+        });
     });
   }
 
-})
-();
+})();
