@@ -601,6 +601,175 @@ ul li i {
   box-shadow: 0 15px 40px rgba(16, 110, 234, 0.4);
 }
 
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 75vh;
+  background: url("../img/hero-bg.jpg") top left;
+  background-size: cover;
+  position: relative;
+}
+
+#hero:before {
+  content: "";
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  position: relative;
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+  color: #222222;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none; /* Removes the default bullet points */
+  padding-left: 0; /* Removes the left padding */
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+ul li i {
+  color: #106eea; /* Icon color */
+  margin-right: 10px;
+}
+
+
+#hero h1 span {
+  color: #106eea;
+}
+
+#hero h2 {
+  color: #555555;
+  margin: 5px 0 30px 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#hero .btn-get-started {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #106eea;
+  margin-right: 10px;
+}
+
+.btn-get-started i {
+  margin-left: 5px;
+}
+
+.btn-get-started:hover {
+  background: #247cf0;
+}
+
+#hero .btn-get-started:hover {
+  background: #247cf0;
+}
+
+#hero .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: #222222;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+#hero .btn-watch-video i {
+  color: #106eea;
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+#hero .btn-watch-video:hover {
+  color: #106eea;
+}
+
+#hero .btn-watch-video:hover i {
+  color: #3b8af2;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    /* Height on mobile should adapt to content */
+    height: auto;
+    /* Adding some padding for better spacing */
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  #hero .btn-get-started, #hero .btn-watch-video {
+    font-size: 13px;
+  }
+}
+
+@media (max-height: 500px) {
+  #hero {
+    height: 120vh;
+  }
+}
+
+/* Additional CSS for the profile image */
+.hero-profile-image {
+  margin-top: 20px;
+}
+
+.profile-img {
+  width: 300px !important;
+  height: 300px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 5px solid #106eea;
+  box-shadow: 0 10px 30px rgba(16, 110, 234, 0.3);
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(16, 110, 234, 0.4);
+}
+
 /* Hero section background preservation */
 #hero::before {
   content: "";
@@ -636,6 +805,11 @@ ul li i {
   
   #hero .btn-get-started {
     margin-bottom: 10px;
+  }
+  
+  /* NEW: Center the profile caption text on mobile */
+  .profile-caption p {
+    text-align: center;
   }
 }
 
@@ -793,6 +967,8 @@ p {
     font-size: 28px;
   }
 }
+
+
 /* About section */
 
 .service-list ol,
