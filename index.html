@@ -26,7 +26,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style - Copy.css" rel="stylesheet">
 
  
 </head>
@@ -38,8 +38,9 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:adediran.yemite@yahoo.com">adediran.yemite@yahoo.com    </a></i>
-        <i class="bi bi-whatsapp d-flex align-items-center ms-4"><a href="https://wa.me/+2349030987312"><span>+2348162735399</span></a></i>
-        
+        <!--
+        <i class="bi bi-whatsapp d-flex align-items-center ms-4"><a href="https://wa.me/+234"><span>+234</span></a></i>
+        -->
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -55,18 +56,17 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-     <a href="index.html" class="logo"><img src="logo.png" alt=""></a>
-      <h1 class="logo"><a href="index.html" style="font-size: 24px;">ADEYEMI'S<span> PORTFOLIO</span></a></h1>
+     <a href="index.html" style="font-size: 24px; font-family: 'Arial', sans-serif;"></a>
+      <!--<h1 class="logo"><a href="index.html" style="font-size: 24px;">ADEYEMI'S<span> PORTFOLIO</span></a></h1>-->
       <!-- Uncomment below if you prefer to use an image logo--> 
       
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#featured-services">Skills</a></li>
+          <li><a class="nav-link scrollto" href="#about">Why Me</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-         
+          <li><a class="nav-link scrollto" href="#featured-services">Skills</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -76,39 +76,53 @@
   </header><!-- End Header -->
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
+<section id="hero" class="d-flex align-items-center" style="background: url('assets/img/hero-bg.jpg') top left; background-size: cover; position: relative;">
+  <div style="content: ''; background: rgba(255, 255, 255, 0.6); position: absolute; bottom: 0; top: 0; left: 0; right: 0;"></div>
   <div class="container" data-aos="zoom-out" data-aos-delay="100">
-    <h1>Helping businesses know their customers <br> better than their<span> mothers</span></h1><br>
-    
-    <h2>Do you want to:</h2>
-    <ul>
-      <li><i class="fas fa-check-double"></i> Convert your business data to dollars</li>
-      <li><i class="fas fa-check-double"></i> Know why your customers cheat on you with your competitors and how to win them back</li>
-      <li><i class="fas fa-check-double"></i> Know where to find high-valued clients, what they want and do not</li>
-      <li><i class="fas fa-check-double"></i> Know factors driving sales and churn in your business</li>
-    </ul>
+    <div class="row align-items-center">
+      <!-- Left column for text content -->
+      <div class="col-lg-8 col-md-12">
+        <h1>Helping you know your customers <br> better than their<span> mothers</span></h1>
+        
+        <h5><p></p>Sound familiar?</p></h5>
+        <ul>
+          <li><i class="fas fa-check-double"></i> You're facing a mysterious revenue drop but can't pinpoint the cause, is it pricing, competition, or a shift in demand?</li>
+          <li><i class="fas fa-check-double"></i> You know your product return rate is high, but you can't predict who will return an item or if those serial returners are even worth retaining.</li>
+          <li><i class="fas fa-check-double"></i> Your conversion rate is failing because your ads are attracting window shoppers, and your cart abandonment rate is through the roof.</li>
+          <li><i class="fas fa-check-double"></i> You don't know where to find high-valued clients, what they want and do not</li>
+          <li><i class="fas fa-check-double"></i> You don't know factors driving sales and churn in your business</li>
+        </ul>
 
-    <h2 style="font-size: 1em; font-style: italic;">(You don't want to continue the cycle of guesswork right?)</h2>
+        <h2 style="font-size: 1em; font-style: italic;">(Let's turn your historical data into future revenue)</h2>
 
-    <div class="d-flex">
-      <!-- Hire me today button with forward arrow -->
-      <a href="#contact" class="btn-get-started scrollto" style="margin-right: 10px;">
-        <span>Hire me today <i class="fas fa-arrow-right"></i></span>
-      </a>
-      <!-- Keep reading button with downward arrow -->
-      <a href="#about" class="btn-get-started scrollto">
-        <span>Keep reading <i class="fas fa-arrow-down"></i></span>
-      </a>
+        <div class="d-flex">
+          <!-- Hire me today button with forward arrow -->
+          <a href="#contact" class="btn-get-started-primary scrollto" style="margin-right: 10px;">
+            <span>Hire me today <i class="fas fa-arrow-right"></i></span>
+          </a>
+          <!-- Keep reading button with downward arrow -->
+          <a href="#about" class="btn-get-started-secondary scrollto">
+            <span>Keep reading <i class="fas fa-arrow-down"></i></span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Right column for profile image -->
+      <div class="col-lg-4 col-md-12 text-center">
+        <div class="hero-profile-image">
+          <img src="assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adeyemi Profile" class="img-fluid profile-img">
+          <div class="profile-caption"><br>
+            <p style="font-size: 1em; font-style: italic;">Freelance Data Analyst & Scientist, Adediran Adeyemi.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section><!-- End Hero -->
 
-
-
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-<section id="about" class="about section-bg">
+    <section id="about" class="about section-bg">
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
@@ -116,8 +130,8 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-        
+      <div class="col-lg-12 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+         
         <p>Common scenarios where I deliver successful projects:</p>
         <div class="service-list">
           <ol>
@@ -133,232 +147,274 @@
         <div class="section-title">
           <h2>WHY YOU NEED ME?</h2>
         </div>
+        <p>After five years of working with e-commerce and retail businesses, one truth stands out: <strong>not all customers are equal in behavior or value</strong>. I specialize in helping businesses understand their customer base. This allows you to predict future profitability, adjust strategies accordingly, and ultimately stay ahead of the competition.</p>
 
-        <p>Running a business without understanding your customers is like preparing for a wedding with the wrong bride. You're investing time and resources but not in the right place. My goal is to help you avoid that.</p>
+        <p>Running a business without understanding your customers is like preparing for a wedding with the wrong partner. You're investing time and resources but not in the right place. My goal is to help you avoid that.</p>
 
-        <p>After five years of working with e-commerce and retail businesses, one truth is stands out: not all customers are equal in behaviour or value. I specialize in helping businesses understand their customer base. This allows you to predict future profitability, adjust strategies accordingly, and ultimately stay ahead of the competition. I'd love for you to try answering these questions about your customer base:</p>
         
+        <p><strong>Quick Check - Do You Know:</strong></p>
+
 
         <div class="service-questions">
           <ol>
-            <li>Do you know how healthy your customer base is in terms of engagement and profitability?</li>
-            <li>Are your highest-value customers demonstrating different behavior compared to others?</li>
-            <li>Have you tracked changes in customer loyalty and spending patterns over time?</li>
-            <li>Are your top-tier clients remaining loyal to your business, and if not, why?</li>
-            <li>What drives acquisition and retention of your top customers? Do you have insights into their preferences and behaviors?</li>
-          </ol>
+            <li>Which customers generate the most long-term value?</li>
+            <li>What behaviors predict customer churn?</li>
+            <li>How healthy your customer base really is?</li>
+            <li>What drives your best customers to buy and stay loyal?</li>
+           </ol>
         </div>
 
-        <p>If you’re unsure about the answers to these questions, I can help. With my experience, I’ll work with you to focus on what truly matters—retaining and maximizing high-value clients. Don’t wait until your competitors pull ahead—let’s start building your success <a href="#contact">NOW!</a>.</p>
+        <p>If any of these feel unclear, let's fix that. Your competitors are already figuring this out, don't let them get ahead. Hire me<a href="#contact"> NOW!</a></p>
 
       </div>
     </div>
     <br/><br/>
-    
+     
   </div>
-</section><!-- End About Section -->
+</section>
 
 
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+  <div class="container" data-aos="fade-up">
 
+    <div class="section-title">
+      <h2>Portfolio</h2>
+      <h3>Check out my <span>Portfolio</span></h3>
+      <p>Please note: Some apps (Live Dashboard/Demo) might initially take a while to load.</p>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-app">Dashboards/Deployed ML APP</li>
+          <li data-filter=".filter-card">Notebooks</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
+        <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/    ">
+          <img src="assets/img/portfolio/electronics.png" class="img-fluid" style="height: 40%; width: 100%; object-fit: cover; object-position: center;" alt="Retail Analysis Dashboard">
+        </a>
+        <br><br>
+        <h4>Retail Analysis</h4>
+        <p>
+          Investigated an 88.8% year-over-year revenue decline and an 85% drop in repeat customers.
+          <br><br>
+          <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/    "><b>Live Dashboard</b></a> | 
+          <a href="https://github.com/Adeyemi0/Retail-Analysis-Global-Electronics-    "><b>Documentation</b></a>
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 450px;">
+        <a href="https://github.com/Adeyemi0/Product-Returns    ">
+          <img src="assets/img/portfolio/returns.jpg" class="img-fluid" style="height: 40%; width: 100%; object-fit: cover; object-position: center;" alt="Product Returns Analysis">
+        </a>
+        <br><br>
+        <h4>Product Returns Analysis</h4>
+        <p>
+          Analyzed revenue loss from product returns, showing ~27% impact...
+          <br><br>
+          <a href="https://github.com/Adeyemi0/Product-Returns    "><b>Documentation</b></a>
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
+        <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/    ">
+          <img src="assets/img/portfolio/leads.jpeg" class="img-fluid" style="height: 40%; width: 100%; object-fit: cover; object-position: center;" alt="Lead Scoring Prediction Model">
+        </a>
+        <br><br>
+        <h4>Lead Scoring Prediction Model</h4>
+        <p>
+          Achieved 95%+ accuracy in predicting purchase intent by modeling user interactions.
+          <br><br>
+          <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/    "><b>Live Demo</b></a> | 
+          <a href="https://github.com/Adeyemi0/Lead-Scoring    "><b>Documentation</b></a>
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 450px;">
+        <a href="https://github.com/Adeyemi0/User-Journey-Analysis    ">
+          <img src="assets/img/portfolio/cj.jpg" class="img-fluid" style="height: 40%; width: 100%; object-fit: cover; object-position: center;" alt="User Journey Analysis">
+        </a>
+        <br><br>
+        <h4>User Journey Analysis</h4>
+        <p>
+          Used path and funnel analysis on 10k sessions to identify conversion drivers, cut drop-offs, and shape the product roadmap.
+        <br><br>
+          <a href="https://github.com/Adeyemi0/User-Journey-Analysis    "><b>Documentation</b></a>
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 450px;">
+        <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d    ">
+          <img src="assets/img/portfolio/chi.jpg" class="img-fluid" style="height: 40%; width: 100%; object-fit: cover; object-position: center;" alt="Chicken Republic Location Strategy">
+        </a>
+        <br><br>
+        <h4>Chicken Republic Lagos Expansion</h4>
+        <p>
+          Mapped and Analyzed 50+ Chicken Republic locations across Lagos to decode their market dominance strategy.
+          <br><br>
+          <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d    "><b>Medium Article</b></a> | 
+          <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/    "><b>Interactive Map</b></a>
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 450px;">
+        <a href="https://github.com/Adeyemi0/Fintech-Review-Prediction    ">
+          <img src="assets/img/portfolio/fldemo.gif" class="img-fluid" style="height: 40%; width: 100%; object-fit: cover; object-position: center;" alt="Multi-Labeled Review Categorization Model">
+        </a>
+        <br><br>
+        <h4>Multi-Labeled Review Categorization Model</h4>
+        <p>
+          Built a model on 29k+ customer reviews to uncover key pain points and improvement opportunities.
+          <br><br>
+          <a href="https://github.com/Adeyemi0/Fintech-Review-Prediction    "><b>Documentation</b></a>
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
+        <a href="https://github.com/Adeyemi0/Customer-Survey">
+          <img src="assets/img/portfolio/survey.png" class="img-fluid" style="height: 40%; width: 100%; object-fit: cover; object-position: center;" alt="Customer Survey Analysis Dashboard">
+        </a>
+        <br><br>
+        <h4>Customer Survey Analysis</h4>
+        <p>
+          Derived customer retention strategies by analyzing banking service surveys.
+          <br><br>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Live Dashboard</b></a> | 
+          <a href="https://github.com/Adeyemi0/Customer-Survey"><b>Documentation</b></a>
+        </p>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGM0NmQtZWMwOC00ODUzLWJjM2EtNWZlMzdjOTE5MWE1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9">
+          <img src="assets/img/portfolio/sales.jpg" class="img-fluid" style="height: 40%; width: 100%; object-fit: cover; object-position: center;" alt="Sales Analysis Dashboard">
+        </a>
+        <br><br>
+        <h4>Sales Analysis</h4>
+        <p>
+          Interactive Power BI dashboard revealing customer sentiment and feature patterns to guide product improvements.
+          <br><br>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGM0NmQtZWMwOC00ODUzLWJjM2EtNWZlMzdjOTE5MWE1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Live Dashboard</b></a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- End Portfolio Section -->
 
 <!-- ======= Featured Services Section ======= -->
 <section id="featured-services" class="featured-services">
 
   <div class="section-title">
-    <h2>Skills and Technologies</h2>
-    <h3>Some of my <span>skills</span> and technologies</h3>
+    <h2>Services</h2>
+    <h3>How I help businesses unlock value from data</h3>
   </div>
-  
+
   <div class="container" data-aos="fade-up">
     <div class="row">
 
-      <!-- Data Analysis, Visualization & Machine Learning -->
+      <!-- Predictive Modeling & Machine Learning -->
       <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="title">Data Analysis & Machine Learning</h4>
-          <p class="description"><strong>Skills:</strong> Data cleaning, wrangling, EDA, statistical analysis, predictive modeling, feature engineering, hyperparameter tuning.</p>
-          <p class="description"><strong>Technologies:</strong> Python (Pandas, NumPy, Scikit-learn, TensorFlow), SQL (MySQL, PostgreSQL), Power BI, Excel.</p>
+          <h4 class="title">Predictive Modeling</h4>
+          <ul class="description">
+            <li>Build ML models to forecast sales, churn, or demand</li>
+            <li>Feature engineering & hyperparameter tuning</li>
+            <li>Tools: Python (Scikit-learn, TensorFlow), SQL, Pandas</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Marketing, Customer Analytics & Business Intelligence -->
+      <!-- Dashboard Development & BI -->
       <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
         <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="title">Marketing, Customer Analytics & Business Intelligence</h4>
-          <p class="description"><strong>Skills:</strong> Customer segmentation, lifetime value analysis, ROI optimization, campaign performance analysis.</p>
-          <p class="description"><strong>Technologies:</strong> Google Analytics, Pytrends, Power BI, Excel (Dashboards, advanced reporting).</p>
+          <h4 class="title">Dashboard Development</h4>
+          <ul class="description">
+            <li>Interactive dashboards for KPIs & real-time metrics</li>
+            <li>Marketing campaign tracking & executive reporting</li>
+            <li>Tools: Power BI, Excel, Google Analytics</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Marketing & Customer Analytics -->
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+          <h4 class="title">Marketing Analytics</h4>
+          <ul class="description">
+            <li>Customer segmentation & lifetime value modeling</li>
+            <li>ROI analysis & campaign performance optimization</li>
+            <li>Tools: Pytrends, GA, SQL, Power BI</li>
+          </ul>
         </div>
       </div>
 
       <!-- Data Engineering & Automation -->
       <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="title">Data Engineering & Automation</h4>
-          <p class="description"><strong>Skills:</strong> Data pipeline design, database management, web scraping, process automation, ETL processes.</p>
-          <p class="description"><strong>Technologies:</strong> AWS (PostgreSQL, EC2), GCP, BigQuery, Docker, Selenium, BeautifulSoup.</p>
-        </div>
-      </div>
-
-      <!-- Version Control & Collaboration -->
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="title">Version Control & Collaboration</h4>
-          <p class="description"><strong>Skills:</strong> Version control, project collaboration, team communication.</p>
-          <p class="description"><strong>Technologies:</strong> Git, GitHub, Slack, Trello, Discord, Microsoft Teams.</p>
+        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+          <h4 class="title">Data Automation</h4>
+          <ul class="description">
+            <li>ETL pipelines & database design (PostgreSQL, BigQuery)</li>
+            <li>Web scraping & workflow automation</li>
+            <li>Tools: AWS, GCP, Docker, Selenium, BeautifulSoup</li>
+          </ul>
         </div>
       </div>
 
     </div>
   </div>
-</section><!-- End Featured Services Section -->
+</section>
+<!-- End Featured Services Section -->
 
-   
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <h3><span>Get In Touch</span></h3>
+      <p>Open to remote data roles, collaborations, or even a virtual coffee chat. Send me a message!</p>
+    </div>
 
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <h3>Check out my <span>Portfolio</span></h3>
-          <p>Please note: Some apps (Live Dashboard/Demo) might initially take a while to load.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Deployed (HOT)</li>
-              <li data-filter=".filter-card">Notebooks</li>
-            </ul>
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-8">
+        <form action="https://formspree.io/f/mrbyzadz" method="POST" class="php-email-form" novalidate>
+          <div class="form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
           </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          
-
- <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
-            <a href="https://app.powerbi.com/view?r=eyJrIjoiNzY0YzRiOTEtZmU0Yy00YWRjLWJhYjYtNTE1YjNjYTVjYmVkIiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><img src="assets/img/portfolio/electronics.png" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-          <br><br>
-              <h4>Retail Analysis</h4>
-             <p>Developed interactive dashboard to help management target key products and customer segments, with potential to improve revenue by 5% and optimize marketing ROI by 15% based on projected scenarios from dashboard insights.  
-              	<br><br><a href="https://app.powerbi.com/view?r=eyJrIjoiNzY0YzRiOTEtZmU0Yy00YWRjLWJhYjYtNTE1YjNjYTVjYmVkIiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"> <b>Live Dashboard</b> </a> | <a href="https://github.com/Adeyemi0/Retail-Analysis-Global-Electronics-"> <b>Documentation</b> </a></p>
-              	
-          </div> <br><br>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 450px;">
-            <a href="https://github.com/Adeyemi0/Product-Returns"><img src="assets/img/portfolio/returns.jpg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-           <br><br>
-             <h4>Product Returns Analysis</h4>
-              <p>Performed root cause analysis using statistical techniques to identify key factors influencing product returns, delivering actionable insights that is projected to reduce unnecessary returns by 12%  
-              		<br><br><a href="https://github.com/Adeyemi0/Product-Returns"> <b>Documentation</b> </a>
-          </div> <br><br>
-
-
-        
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
-            <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/"><img src="assets/img/portfolio/leads.jpeg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-          <br><br>
-             <h4>Lead Scoring Prediction</h4>
-              <p>Predicted purchase intent with over 95% accuracy by analyzing user interactions across 10 product features, such as images, reviews, and specifications.  
-              	<br><br><a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/"> <b>Live Demo</b> </a> | <a href="https://github.com/Adeyemi0/Lead-Scoring"> <b>Documentation</b> </a> </p>
-          
-          </div> <br><br>
-
-
-
-  <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 450px;">
-            <a href="https://github.com/Adeyemi0/User-Journey-Analysis"><img src="assets/img/portfolio/cj.jpg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-          <br><br>
-             <h4>User Journey Analysis</h4>
-              <p>Analyzed user journey data from a subscription-based platform to identify key factors that improve conversion rates by at least 10% and reduce churn by 15%. 
-  
-              	<br><br><a href="https://github.com/Adeyemi0/User-Journey-Analysis"><b>Documentation</b> </a> </p>
-          
-          </div> <br><br>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 450px;">
-            <a href="https://github.com/Adeyemi0/Uber-Quality-of-Service"><img src="assets/img/portfolio/uber.jpg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-          <br><br>
-              <h4></h4>
-              <p>Analyze 8,000+ customer tweets to evaluate UberEats' service quality by identifying at least 4 key strengths and weaknesses. 
-              	<br><br><a href="https://github.com/Adeyemi0/Uber-Quality-of-Service"> <b>Documentation</b> </a> </p>
-          
-          </div> <br><br>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 450px;">
-            <a href="https://github.com/Adeyemi0/Customer-Segmentation"><img src="assets/img/portfolio/se.jpg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-           <br><br>
-              <h4>Customer Segmentation</h4>
-              <p>Applied the K-Means Clustering Algorithm to analyze a dataset of over 10,000 customer demographics, resulting in the creation of precise buyer personas for targeted marketing strategies.
-              	<br><br><a href="https://github.com/Adeyemi0/Customer-Segmentation"> <b>Documentation</b> </a></p>
-          
-          </div> <br><br>
-
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
-            <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><img src="assets/img/portfolio/feedback.jpg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-         <br><br>
-             <h4>Customer Survey Analysis</h4>
-              <p>Analyzed banking customer service survey data beyond the basic demographic dashboard to uncover detailed insights and actionable recommendations for improving customer retention.
-              	<br><br><a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"> <b>Live Dashboard</b> </a> | <a href="https://github.com/Adeyemi0/Customer-Survey"> <b>Documentation</b> </a></p>
-          
-          </div> <br><br>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
-            <a href="https://attrition-tfytubby65ptcpaafx4pru.streamlit.app/"><img src="assets/img/portfolio/ra.jpg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-           <br><br>
-            <h4>Warranty Contract Attrition Analysis</h4>
-              <p>Analyzed warranty contract attrition, using the Apriori algorithm to discover association rules and uncover key factors driving contract cancellations.
-              	<br><br><a href="https://attrition-tfytubby65ptcpaafx4pru.streamlit.app/"> <b>Live Demo</b> </a> | <a href="https://github.com/Adeyemi0/Attrition"> <b>Documentation</b> </a> </p>
-              </p>
-          
-          </div> <br><br>
-
-
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
-            <a href="https://resume-filtering-qhhnqwt6jptqxfwpxujqfs.streamlit.app/"><img src="assets/img/portfolio/resume.png" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-         <br><br>
-              <h4>Resume Filtering App</h4>
-              <p>Developed a Resume and Job Description Matcher tool using generative ai that enables recruiters and hiring managers to efficiently evaluate candidate CVs by comparing them against job descriptions, providing match scores and detailed feedback based on customizable weighting for key factors
-              	<br><br><a href="https://resume-filtering-qhhnqwt6jptqxfwpxujqfs.streamlit.app/"> <b>Live Demo</b> </a> | <a href="https://github.com/Adeyemi0/Resume-filtering"> <b>Documentation</b> </a> </p>
-          
-          </div> <br><br>
-
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
-            <a href="https://nigeria-healthcare-facility-ullfyhbfvduwuq5akcqcrn.streamlit.app/"><img src="assets/img/portfolio/he.jpg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-          <br><br>
-            <h4>Healthcare Facility Analysis in Nigeria</h4>
-              <p>This app provides an interactive geospatial analysis of healthcare facilities across locations in Nigeria.
-              	<br><br><a href="https://nigeria-healthcare-facility-ullfyhbfvduwuq5akcqcrn.streamlit.app/"> <b>Live Demo</b> </a> | <a href="https://github.com/Adeyemi0/Nigeria-Healthcare-Facility"> <b>Documentation</b> </a> </p>
-          
-          </div> <br><br>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 450px;">
-            <a href="https://python-ocr-gwnuurgebfyqe4k7uf5dui.streamlit.app/"><img src="assets/img/portfolio/ocr.jpeg" class="img-fluid" style="height: 40%;  width: 100%;" alt=""></a>
-          <br><br>
-             <h4>OCR APP</h4>
-              <p>Developed a document scanning tool that allows users to upload images or PDFs, and perform OCR for text extraction.
-              	<br><br><a href="https://python-ocr-gwnuurgebfyqe4k7uf5dui.streamlit.app/"> <b>Live Demo</b> </a> | <a href="https://github.com/Adeyemi0/Python-OCR"> <b>Documentation</b> </a> </p>
-          
-          </div> <br><br>
-
-
-        </div>
-
+          <div class="form-group mt-3">
+            <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading...</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center mt-3">
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
       </div>
-    </section><!-- End Portfolio Section -->
+    </div>
 
-  
+  </div>
+</section><!-- End Contact Section -->
+
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq section-bg">
@@ -375,10 +431,10 @@
             <ul class="faq-list">
 
               <li>
-                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">How to Increase Revenue by Losing More Customers<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">The Customer Audit Every Business Needs to Scale Profitably<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
                 <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                  <a href="https://medium.com/@xmine4346/how-to-increase-revenue-by-losing-more-customers-3eca905754ea"> <p>
-                    What if I told you that losing customers could actually help you increase your revenue? It sounds crazy, but understanding churn can transform your business strategy and boost your profits.....
+                  <a href="https://medium.com/@xmine4346/the-customer-analytics-framework-every-business-leader-needs-dd679e8f0514"> <p>
+                    80% of your revenue comes from 20% of your customers. Yet most businesses can’t tell you which customers those are.....
                   </p> </a>
                 </div>
               </li>
@@ -386,10 +442,10 @@
 
 
               <li>
-                <div data-bs-toggle="collapse" class="collapsed question" href="#faq2">Best Practices for Handling Missing Data -Data Science.<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div data-bs-toggle="collapse" class="collapsed question" href="#faq2">Data-Driven Retention: The Proven Way to Predict Customer Retention Without Waiting for Churn<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
                 <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                  <a href="https://medium.com/@xmine4346/best-practices-for-handling-missing-data-data-science-770e836418dc"> <p>
-                    When working with data, one common issue you’ll encounter is missing values. This can happen for many reasons, like data entry errors, equipment failure, or people not providing certain information....
+                  <a href="https://medium.com/@xmine4346/the-proven-way-to-predict-customer-retention-without-waiting-for-churn-0318dc838f9d"> <p>
+                    Most companies define customer health by asking “Are they paying us?” But payment is a lagging indicator. By the time someone stops paying, they’ve been unhealthy for months. What does healthy look like for your specific business before the payment decision?...
                   </p> </a>
                 </div>
               </li>
@@ -398,22 +454,10 @@
 
 
               <li>
-                <div data-bs-toggle="collapse" class="collapsed question" href="#faq3">Do You Really Know Your Customers?<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
-                <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-                  <a href="https://medium.com/@xmine4346/do-you-really-know-your-customers-e09fe56a19bc"> <p>
-                    Not all customers are the same. They act and spend differently, and your business success depends on how well you can predict which customers will be most valuable in the future. If you can understand their needs and behaviors, you can grow your business. If not, you risk losing them to competitors who do....
-                  </p> </a>
-                </div>
-              </li>
-
-              
-
-
-              <li>
-                <div data-bs-toggle="collapse" class="collapsed question" href="#faq4">What I Did When My Lead Scoring Algorithm Isn’t Working.<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                <div data-bs-toggle="collapse" class="collapsed question" href="#faq4">How to Personalize Your Free Trial Experience (And Skyrocket Conversions)<i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
                 <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-                  <a href="https://medium.com/@xmine4346/what-i-did-when-my-lead-scoring-algorithm-isnt-working-b641b895c3c3"> <p>
-                    If you’ve ever felt frustrated because your lead scoring algorithm isn’t giving you the results you need, you’re not alone. Many marketers struggle with this problem....
+                  <a href="https://medium.com/@xmine4346/how-to-personalize-your-free-trial-experience-and-skyrocket-conversions-7999446cf33e"> <p>
+                    Marcus stared at his dashboard, watching another potential customer’s trial expire without converting. The 14-day countdown had ticked to zero, and despite his carefully crafted email sequence promising “amazing features” and “unbeatable value,” another qualified lead had slipped away....
                   </p> </a>
                 </div>
               </li>
@@ -429,51 +473,7 @@
       </div>
     </section><!-- End Frequently Asked Questions Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Contact</h2>
-          <h3><span>Get In Touch</span></h3>
-          <p>Open to remote data roles, collaborations, or even a virtual coffee chat.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-6">
-            <div class="info-box mb-4">
-              <i class="bx bx-map"></i>
-              <h3>My Address</h3>
-              <p>Remote.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-          	<a href="mailto:ajiscomorac@gmail.com">
-            <div class="info-box  mb-4">
-              <i class="bx bx-envelope"></i>
-              <h3>Email </h3>
-              <p>adediran.yemite@yahoo.com</p>
-            </div>
-        </a>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-          	<a href="https://wa.me/+2349030987312">
-            <div class="info-box  mb-4">
-              <i class="bx bx-phone-call"></i>
-              <h3>Call/ Whatsapp</h3>
-              <p>+2348162735399</p>
-            </div>
-        </a>
-          </div>
-
-        </div>
-
-        
-
-      </div>
-    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
