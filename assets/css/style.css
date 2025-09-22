@@ -553,7 +553,11 @@ ul li i {
 
 @media (max-width: 768px) {
   #hero {
-    height: 100vh;
+    /* Height on mobile should adapt to content */
+    height: auto;
+    /* Adding some padding for better spacing */
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
   #hero h1 {
     font-size: 28px;
@@ -789,7 +793,6 @@ p {
     font-size: 28px;
   }
 }
-
 /* About section */
 
 .service-list ol,
