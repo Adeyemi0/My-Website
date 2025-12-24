@@ -281,7 +281,7 @@
   });
 
   /**
-   * Contact Form Handler - Backend Integration (PHP or Node.js)
+   * Contact Form Handler - PHP Backend
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
@@ -300,10 +300,8 @@
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
 
-      // Choose your backend endpoint:
-      // For PHP: './send-email.php'
-      // For Node.js: 'http://localhost:3000/send-email' (adjust URL for production)
-      const endpoint = './send-email.php'; // Change this based on your backend choice
+      // PHP backend endpoint
+      const endpoint = './send-email.php';
 
       fetch(endpoint, {
           method: 'POST',
