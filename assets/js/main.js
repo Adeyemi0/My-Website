@@ -281,7 +281,7 @@
   });
 
   /**
-   * Formspree Contact Form AJAX Handler (FIXED)
+   * Contact Form Handler for Custom Email Server
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
@@ -302,33 +302,43 @@
 
       fetch(form.action, {
           method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          body: formData
         })
         .then(response => {
-          // Always hide loading once a response is received
+          // Hide loading
           if (loading) loading.style.display = 'none';
 
-          // Check if the response is not OK (e.g., a 4xx or 5xx status)
-          if (!response.ok) {
-            throw new Error('Form submission failed with status: ' + response.status);
+          // Check if response is JSON
+          const contentType = response.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            return response.json().then(data => ({
+              ok: response.ok,
+              data: data
+            }));
+          } else {
+            // If not JSON, treat as text
+            return response.text().then(text => ({
+              ok: response.ok,
+              data: { message: text }
+            }));
           }
-          return response.json();
         })
-        .then(data => {
-          // The request was successful and data.ok is true
-          if (sentMessage) {
-            sentMessage.style.display = 'block';
+        .then(result => {
+          // Check if submission was successful
+          if (result.ok && (result.data.success || result.data.ok || result.data.status === 'success')) {
+            if (sentMessage) {
+              sentMessage.style.display = 'block';
+            }
+            form.reset(); // Clear form fields
+          } else {
+            throw new Error(result.data.message || 'Form submission failed');
           }
-          form.reset(); // Clear form fields
         })
         .catch(error => {
-          // This block will catch the error from the above .then() block
           console.error('Error:', error);
+          if (loading) loading.style.display = 'none';
           if (errorMessage) {
-            errorMessage.textContent = 'Oops! Something went wrong. Please try again.';
+            errorMessage.textContent = error.message || 'Oops! Something went wrong. Please try again.';
             errorMessage.style.display = 'block';
           }
         });
