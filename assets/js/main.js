@@ -281,7 +281,7 @@
   });
 
   /**
-   * Contact Form Handler - Node.js Backend
+   * Contact Form Handler - Cloudflare Pages Function
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
@@ -307,10 +307,8 @@
         message: form.querySelector('[name="message"]').value
       };
 
-      // Node.js backend endpoint
-      // For local testing: 'http://localhost:3000/send-email'
-      // For production: Update with your deployed URL
-      const endpoint = 'http://localhost:3000/send-email';
+      // Cloudflare Pages Function endpoint (same domain - no CORS!)
+      const endpoint = '/send-email';
 
       fetch(endpoint, {
           method: 'POST',
