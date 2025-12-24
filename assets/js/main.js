@@ -289,8 +289,7 @@
       e.preventDefault();
 
       const form = e.target;
-      const formData = new FormData(form);
-
+      
       const loading = form.querySelector('.loading');
       const errorMessage = form.querySelector('.error-message');
       const sentMessage = form.querySelector('.sent-message');
@@ -300,12 +299,22 @@
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
 
+      // Get form data as URL-encoded string
+      const formData = new URLSearchParams();
+      formData.append('name', form.querySelector('[name="name"]').value);
+      formData.append('email', form.querySelector('[name="email"]').value);
+      formData.append('subject', form.querySelector('[name="subject"]').value);
+      formData.append('message', form.querySelector('[name="message"]').value);
+
       // PHP backend endpoint
       const endpoint = './send-email.php';
 
       fetch(endpoint, {
           method: 'POST',
-          body: formData
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: formData.toString()
         })
         .then(response => {
           // Hide loading
