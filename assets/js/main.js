@@ -281,7 +281,7 @@
   });
 
   /**
-   * Contact Form Handler for Custom Email Server
+   * Contact Form Handler with XMLHttpRequest (Better compatibility)
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
@@ -300,48 +300,62 @@
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
 
-      fetch(form.action, {
-          method: 'POST',
-          body: formData
-        })
-        .then(response => {
-          // Hide loading
-          if (loading) loading.style.display = 'none';
-
-          // Check if response is JSON
-          const contentType = response.headers.get('content-type');
-          if (contentType && contentType.includes('application/json')) {
-            return response.json().then(data => ({
-              ok: response.ok,
-              data: data
-            }));
-          } else {
-            // If not JSON, treat as text
-            return response.text().then(text => ({
-              ok: response.ok,
-              data: { message: text }
-            }));
-          }
-        })
-        .then(result => {
-          // Check if submission was successful
-          if (result.ok && (result.data.success || result.data.ok || result.data.status === 'success')) {
-            if (sentMessage) {
-              sentMessage.style.display = 'block';
+      // Use XMLHttpRequest for better compatibility
+      const xhr = new XMLHttpRequest();
+      
+      xhr.open('POST', form.action, true);
+      
+      xhr.onload = function() {
+        // Hide loading
+        if (loading) loading.style.display = 'none';
+        
+        if (xhr.status >= 200 && xhr.status < 300) {
+          // Success
+          try {
+            const response = JSON.parse(xhr.responseText);
+            if (response.success || response.ok || response.status === 'success') {
+              if (sentMessage) {
+                sentMessage.style.display = 'block';
+              }
+              form.reset();
+            } else {
+              throw new Error(response.message || 'Form submission failed');
             }
-            form.reset(); // Clear form fields
-          } else {
-            throw new Error(result.data.message || 'Form submission failed');
+          } catch (e) {
+            // If response is not JSON, check for success indicators in text
+            if (xhr.responseText.includes('success') || xhr.responseText.includes('sent')) {
+              if (sentMessage) {
+                sentMessage.style.display = 'block';
+              }
+              form.reset();
+            } else {
+              if (errorMessage) {
+                errorMessage.textContent = 'Error processing response. Please try again.';
+                errorMessage.style.display = 'block';
+              }
+            }
           }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          if (loading) loading.style.display = 'none';
+        } else {
+          // Server error
           if (errorMessage) {
-            errorMessage.textContent = error.message || 'Oops! Something went wrong. Please try again.';
+            errorMessage.textContent = 'Server error. Please try again later.';
             errorMessage.style.display = 'block';
           }
-        });
+        }
+      };
+      
+      xhr.onerror = function() {
+        // Hide loading
+        if (loading) loading.style.display = 'none';
+        
+        // Network error
+        if (errorMessage) {
+          errorMessage.textContent = 'Network error. Please check your connection and try again.';
+          errorMessage.style.display = 'block';
+        }
+      };
+      
+      xhr.send(formData);
     });
   }
 
