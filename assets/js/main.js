@@ -281,7 +281,7 @@
   });
 
   /**
-   * Formspree Contact Form AJAX Handler (FIXED)
+   * Contact Form Handler - Backend Integration (PHP or Node.js)
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
@@ -300,35 +300,49 @@
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
 
-      fetch(form.action, {
+      // Choose your backend endpoint:
+      // For PHP: './send-email.php'
+      // For Node.js: 'http://localhost:3000/send-email' (adjust URL for production)
+      const endpoint = './send-email.php'; // Change this based on your backend choice
+
+      fetch(endpoint, {
           method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          body: formData
         })
         .then(response => {
-          // Always hide loading once a response is received
+          // Hide loading
           if (loading) loading.style.display = 'none';
 
-          // Check if the response is not OK (e.g., a 4xx or 5xx status)
+          // Check if response is OK
           if (!response.ok) {
-            throw new Error('Form submission failed with status: ' + response.status);
+            throw new Error('Network response was not ok');
           }
           return response.json();
         })
         .then(data => {
-          // The request was successful and data.ok is true
-          if (sentMessage) {
-            sentMessage.style.display = 'block';
+          if (data.success) {
+            // Show success message
+            if (sentMessage) {
+              sentMessage.textContent = data.message || 'Thank you! I\'ll respond within 24 hours.';
+              sentMessage.style.display = 'block';
+            }
+            // Reset form
+            form.reset();
+          } else {
+            // Show error from server
+            if (errorMessage) {
+              errorMessage.textContent = data.message || 'Oops! Something went wrong. Please try again.';
+              errorMessage.style.display = 'block';
+            }
           }
-          form.reset(); // Clear form fields
         })
         .catch(error => {
-          // This block will catch the error from the above .then() block
+          // Hide loading
+          if (loading) loading.style.display = 'none';
+          
           console.error('Error:', error);
           if (errorMessage) {
-            errorMessage.textContent = 'Oops! Something went wrong. Please try again.';
+            errorMessage.textContent = 'Oops! Something went wrong. Please try again or contact me directly at adeyemi@adediranadeyemi.com';
             errorMessage.style.display = 'block';
           }
         });
