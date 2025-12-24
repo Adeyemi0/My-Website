@@ -281,66 +281,58 @@
   });
 
   /**
-   * EmailJS Contact Form (No PHP Required!)
-   * Initialize EmailJS with your Public Key
-   */
-  (function() {
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
-  })();
-
-  /**
-   * Contact Form Handler using EmailJS
+   * Formspree Contact Form AJAX Handler (FIXED)
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const loading = this.querySelector('.loading');
-      const errorMessage = this.querySelector('.error-message');
-      const sentMessage = this.querySelector('.sent-message');
+      const form = e.target;
+      const formData = new FormData(form);
+
+      const loading = form.querySelector('.loading');
+      const errorMessage = form.querySelector('.error-message');
+      const sentMessage = form.querySelector('.sent-message');
 
       // Show loading, hide messages
       if (loading) loading.style.display = 'block';
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
 
-      // Send email using EmailJS
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-        .then(function() {
-          // Success
+      fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          // Always hide loading once a response is received
           if (loading) loading.style.display = 'none';
-          if (sentMessage) sentMessage.style.display = 'block';
-          contactForm.reset();
-        }, function(error) {
-          // Error
-          if (loading) loading.style.display = 'none';
+
+          // Check if the response is not OK (e.g., a 4xx or 5xx status)
+          if (!response.ok) {
+            throw new Error('Form submission failed with status: ' + response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          // The request was successful and data.ok is true
+          if (sentMessage) {
+            sentMessage.style.display = 'block';
+          }
+          form.reset(); // Clear form fields
+        })
+        .catch(error => {
+          // This block will catch the error from the above .then() block
+          console.error('Error:', error);
           if (errorMessage) {
-            errorMessage.textContent = 'Failed to send message. Please try again.';
+            errorMessage.textContent = 'Oops! Something went wrong. Please try again.';
             errorMessage.style.display = 'block';
           }
-          console.log('EmailJS Error:', error);
         });
     });
   }
 
 })()
-```
-
-**Step 3: Setup EmailJS (5 minutes):**
-
-1. **Go to [EmailJS.com](https://www.emailjs.com/)** and create a free account
-
-2. **Add Email Service:**
-   - Click "Email Services" → "Add New Service"
-   - Choose your email provider (Gmail, Outlook, etc.)
-   - Connect your `adeyemi@adediranadeyemi.com` account
-
-3. **Create Email Template:**
-   - Click "Email Templates" → "Create New Template"
-   - Use these template variables:
-```
-   From: {{from_name}}
-   Email: {{from_email}}
-   Subject: {{subject}}
-   Message: {{message}}
