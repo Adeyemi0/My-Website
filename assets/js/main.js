@@ -281,82 +281,66 @@
   });
 
   /**
-   * Contact Form Handler with XMLHttpRequest (Better compatibility)
+   * EmailJS Contact Form (No PHP Required!)
+   * Initialize EmailJS with your Public Key
+   */
+  (function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+  })();
+
+  /**
+   * Contact Form Handler using EmailJS
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const form = e.target;
-      const formData = new FormData(form);
-
-      const loading = form.querySelector('.loading');
-      const errorMessage = form.querySelector('.error-message');
-      const sentMessage = form.querySelector('.sent-message');
+      const loading = this.querySelector('.loading');
+      const errorMessage = this.querySelector('.error-message');
+      const sentMessage = this.querySelector('.sent-message');
 
       // Show loading, hide messages
       if (loading) loading.style.display = 'block';
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
 
-      // Use XMLHttpRequest for better compatibility
-      const xhr = new XMLHttpRequest();
-      
-      xhr.open('POST', form.action, true);
-      
-      xhr.onload = function() {
-        // Hide loading
-        if (loading) loading.style.display = 'none';
-        
-        if (xhr.status >= 200 && xhr.status < 300) {
+      // Send email using EmailJS
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(function() {
           // Success
-          try {
-            const response = JSON.parse(xhr.responseText);
-            if (response.success || response.ok || response.status === 'success') {
-              if (sentMessage) {
-                sentMessage.style.display = 'block';
-              }
-              form.reset();
-            } else {
-              throw new Error(response.message || 'Form submission failed');
-            }
-          } catch (e) {
-            // If response is not JSON, check for success indicators in text
-            if (xhr.responseText.includes('success') || xhr.responseText.includes('sent')) {
-              if (sentMessage) {
-                sentMessage.style.display = 'block';
-              }
-              form.reset();
-            } else {
-              if (errorMessage) {
-                errorMessage.textContent = 'Error processing response. Please try again.';
-                errorMessage.style.display = 'block';
-              }
-            }
-          }
-        } else {
-          // Server error
+          if (loading) loading.style.display = 'none';
+          if (sentMessage) sentMessage.style.display = 'block';
+          contactForm.reset();
+        }, function(error) {
+          // Error
+          if (loading) loading.style.display = 'none';
           if (errorMessage) {
-            errorMessage.textContent = 'Server error. Please try again later.';
+            errorMessage.textContent = 'Failed to send message. Please try again.';
             errorMessage.style.display = 'block';
           }
-        }
-      };
-      
-      xhr.onerror = function() {
-        // Hide loading
-        if (loading) loading.style.display = 'none';
-        
-        // Network error
-        if (errorMessage) {
-          errorMessage.textContent = 'Network error. Please check your connection and try again.';
-          errorMessage.style.display = 'block';
-        }
-      };
-      
-      xhr.send(formData);
+          console.log('EmailJS Error:', error);
+        });
     });
   }
 
 })()
+```
+
+**Step 3: Setup EmailJS (5 minutes):**
+
+1. **Go to [EmailJS.com](https://www.emailjs.com/)** and create a free account
+
+2. **Add Email Service:**
+   - Click "Email Services" → "Add New Service"
+   - Choose your email provider (Gmail, Outlook, etc.)
+   - Connect your `adeyemi@adediranadeyemi.com` account
+
+3. **Create Email Template:**
+   - Click "Email Templates" → "Create New Template"
+   - Use these template variables:
+```
+   From: {{from_name}}
+   Email: {{from_email}}
+   Subject: {{subject}}
+   Message: {{message}}
