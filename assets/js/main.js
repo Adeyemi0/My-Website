@@ -281,7 +281,7 @@
   });
 
   /**
-   * Contact Form Handler - PHP Backend
+   * Contact Form Handler - Node.js Backend
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
@@ -299,22 +299,25 @@
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
 
-      // Get form data as URL-encoded string
-      const formData = new URLSearchParams();
-      formData.append('name', form.querySelector('[name="name"]').value);
-      formData.append('email', form.querySelector('[name="email"]').value);
-      formData.append('subject', form.querySelector('[name="subject"]').value);
-      formData.append('message', form.querySelector('[name="message"]').value);
+      // Get form data as JSON
+      const formData = {
+        name: form.querySelector('[name="name"]').value,
+        email: form.querySelector('[name="email"]').value,
+        subject: form.querySelector('[name="subject"]').value,
+        message: form.querySelector('[name="message"]').value
+      };
 
-      // PHP backend endpoint
-      const endpoint = './send-email.php';
+      // Node.js backend endpoint
+      // For local testing: 'http://localhost:3000/send-email'
+      // For production: Update with your deployed URL
+      const endpoint = 'http://localhost:3000/send-email';
 
       fetch(endpoint, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/json',
           },
-          body: formData.toString()
+          body: JSON.stringify(formData)
         })
         .then(response => {
           // Hide loading
