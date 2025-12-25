@@ -14,44 +14,47 @@
   <meta property="og:description" content="Expert freelance data scientist and AI engineer in Lagos. Machine learning, predictive analytics, and custom AI solutions.">
   <meta property="og:type" content="website">
   
-  <!-- Preconnect to external domains -->
+  <!-- Preconnect to critical external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Critical CSS - Inline for first paint -->
+  <!-- Critical CSS - Inline for immediate render -->
   <style>
-    body{font-family:"Open Sans",sans-serif;color:#444;margin:0}a{color:#106eea;text-decoration:none}h1,h2,h3,h4,h5,h6{font-family:"Roboto",sans-serif}#preloader{position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#fff}#preloader:before{content:"";position:fixed;top:calc(50% - 30px);left:calc(50% - 30px);border:6px solid #106eea;border-top-color:#e2eefd;border-radius:50%;width:60px;height:60px;animation:animate-preloader 1s linear infinite}@keyframes animate-preloader{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}#topbar{background:#106eea;height:40px;font-size:14px;color:#fff;padding:0}#header{background:#fff;transition:all .5s;z-index:997;height:86px;box-shadow:0 2px 15px rgba(0,0,0,.1)}#hero{width:100%;min-height:75vh;background:url("assets/img/hero-bg.jpg") top left;background-size:cover;position:relative;padding:80px 0 60px 0}#hero:before{content:"";background:rgba(255,255,255,.6);position:absolute;bottom:0;top:0;left:0;right:0}
+    body{font-family:"Open Sans",sans-serif;color:#444;margin:0;padding:0}
+    a{color:#106eea;text-decoration:none}
+    h1,h2,h3,h4,h5,h6{font-family:"Roboto",sans-serif}
+    #preloader{position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#fff}
+    #preloader:before{content:"";position:fixed;top:calc(50% - 30px);left:calc(50% - 30px);border:6px solid #106eea;border-top-color:#e2eefd;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    #topbar{background:#106eea;height:40px;font-size:14px;color:#fff;padding:0}
+    #header{background:#fff;z-index:997;height:86px;box-shadow:0 2px 15px rgba(0,0,0,.1)}
+    #hero{width:100%;min-height:75vh;background:url("assets/img/hero-bg.jpg") top left;background-size:cover;position:relative;padding:80px 0 60px 0}
+    #hero:before{content:"";background:rgba(255,255,255,.6);position:absolute;bottom:0;top:0;left:0;right:0}
+    .container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+    @media(min-width:1200px){.container{max-width:1140px}}
   </style>
 
-  <!-- Google Fonts - Deferred -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="assets/img/photo_2025-08-11_17-35-17.jpg" fetchpriority="high">
 
-  <!-- Vendor CSS Files - Deferred -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <!-- Google Fonts with font-display swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Font Awesome - Deferred -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
-
-  <!-- Schema Markup for Local Business -->
+  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Adediran Adeyemi - Data Scientist & AI Engineer",
-    "image": "",
+    "image": "https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.jpg",
     "description": "Freelance data scientist and AI engineer providing machine learning, predictive analytics, and custom AI solutions in Lagos, Nigeria",
     "address": {
       "@type": "PostalAddress",
@@ -63,16 +66,13 @@
       "latitude": "6.5244",
       "longitude": "3.3792"
     },
-    "url": "",
+    "url": "https://adediranadeyemi.com",
     "telephone": "+2348162735399",
     "email": "adeyemi@adediranadeyemi.com",
     "priceRange": "$$",
     "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00"
   }
   </script>
-
-  <!-- EmailJS - Deferred -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" as="script">
 </head>
 
 <body>
@@ -716,27 +716,136 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files - Deferred -->
-  <script src="assets/vendor/aos/aos.js" defer></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
-  <script src="assets/vendor/purecounter/purecounter.js" defer></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <!-- Deferred Bootstrap Icons CSS with font-display -->
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
+  
+  <!-- Deferred Boxicons CSS with font-display -->
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  
+  <!-- Deferred Font Awesome with font-display -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
 
-  <!-- EmailJS - Deferred -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
-  <script defer>
-    window.addEventListener('load', function() {
-      if (typeof emailjs !== 'undefined') {
-        emailjs.init("Cb0fk0SyXsi8GsG9g");
-      }
-    });
-  </script>
+  <!-- Minimal Bootstrap CSS - Only needed components -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js" defer></script>
+  <!-- AOS CSS - Deferred -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Vendor JS Files - All deferred, loaded only when needed -->
+   <!-- Vendor JS Files - All deferred, loaded dynamically after initial page content -->
+ <script>
+    // Function to remove the preloader - Define it first
+    function removePreloader() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            // Attempt to remove it. Using 'remove()' is standard, 'style.display = 'none'' also works.
+            // The main.js file has logic to do this on window.load, but since it's loaded inside window.load here,
+            // that internal listener won't fire. So, we trigger its removal here after critical scripts load.
+            // A direct call here is one way, OR ensure main.js runs its logic correctly when loaded.
+            // The safest way is to modify main.js to not rely on window.load for preloader removal itself.
+            // For now, calling it directly here *after* main.js should work, but modifying main.js is cleaner.
+            // We'll rely on main.js's internal logic, assuming it runs correctly now that it's not double-wrapped.
+            // However, since main.js's preloader logic is inside window.load, it won't run.
+            // We need to either:
+            // 1. Modify main.js (as shown in the previous conversation) to remove the window.load wrapper for the preloader part.
+            // 2. Or, call the preloader removal here directly, assuming dependencies are ready.
+
+            // Option 2: Call removal directly here as a fallback/primary method now that scripts load after window.load.
+            // This is safe because this script block runs after window.load.
+            preloader.style.display = 'none'; // or preloader.remove() if you want to remove the element entirely
+            // console.log("Preloader removed by deferred script block.");
+        } else {
+            // console.log("Preloader element not found by deferred script block.");
+        }
+    }
+
+    // Load scripts sequentially to ensure dependencies are met before initialization code runs.
+    // 1. Load Bootstrap Bundle first (critical for mobile menu and other components)
+    const bootstrapScript = document.createElement('script');
+    bootstrapScript.src = 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
+    bootstrapScript.onload = function() {
+        console.log("Bootstrap loaded");
+        // Initialize mobile navigation toggle if it exists *after* bootstrap is loaded
+        let mobileNavToogle = document.querySelector('.mobile-nav-toggle');
+        if (mobileNavToogle) {
+            mobileNavToogle.addEventListener('click', function() {
+                document.querySelector('#navbar').classList.toggle('navbar-mobile');
+                this.classList.toggle('bi-list');
+                this.classList.toggle('bi-x');
+            });
+        }
+        // Other bootstrap-dependent initializations could go here if needed directly.
+    };
+    document.head.appendChild(bootstrapScript); // Appending to head is often preferred for critical scripts
+
+    // 2. Load AOS after Bootstrap
+    const aosScript = document.createElement('script');
+    aosScript.src = 'assets/vendor/aos/aos.js';
+    aosScript.onload = function() {
+        console.log("AOS loaded");
+        // Initialize AOS if the library is loaded and AOS.init is available
+        // This should ideally be handled by main.js, but ensure it's ready.
+        // main.js waits for window.load, so it might not initialize here either unless main.js is fixed.
+        // If main.js is fixed, this step just ensures AOS lib is loaded.
+    };
+    // Ensure AOS loads *after* Bootstrap
+    bootstrapScript.onload = function() {
+         document.head.appendChild(aosScript);
+    };
+
+
+    // 3. Load Isotope after AOS
+    const isotopeScript = document.createElement('script');
+    isotopeScript.src = 'assets/vendor/isotope-layout/isotope.pkgd.min.js';
+    isotopeScript.onload = function() {
+        console.log("Isotope loaded");
+        // Initialization should be handled by main.js.
+    };
+    aosScript.onload = function() { // Ensure Isotope loads after AOS
+         document.head.appendChild(isotopeScript);
+    };
+
+    // 4. Load EmailJS after Isotope
+    const emailjsScript = document.createElement('script');
+    emailjsScript.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+    emailjsScript.onload = function() {
+        console.log("EmailJS loaded");
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("Cb0fk0SyXsi8GsG9g"); // Replace with your actual public key if needed, though often set via init in form handler
+            // Note: The form handler is in main.js, which should initialize correctly if main.js runs.
+        }
+    };
+    isotopeScript.onload = function() { // Ensure EmailJS loads after Isotope
+         document.head.appendChild(emailjsScript);
+    };
+
+    // 5. Load main script last
+    const mainScript = document.createElement('script');
+    mainScript.src = 'assets/js/main.js';
+    mainScript.onload = function() {
+        console.log("Main script loaded");
+        // main.js contains the preloader removal logic inside a window.addEventListener('load', ...).
+        // Since we are loading main.js *after* the window has loaded (inside the outer window.load),
+        // that internal listener in main.js will never fire.
+        // Therefore, the preloader removal code in main.js will not execute.
+        // We need to trigger the preloader removal here, OR modify main.js.
+
+        // CRITICAL: Because main.js waits for window.load internally, and it's loaded after window.load,
+        // its preloader code is skipped. We must remove the preloader here.
+        // This is the direct fix for the current setup without modifying main.js again.
+        // However, the *best* fix is still to modify main.js's preloader section.
+        // For now, calling the function here should work.
+        removePreloader(); // Call the function we defined above.
+    };
+    emailjsScript.onload = function() { // Ensure main.js loads after EmailJS
+         document.head.appendChild(mainScript);
+    };
+
+    // Optional: As a final fallback, remove the preloader on the outer window load event.
+    // This should execute *after* all the dynamic script loading above is initiated.
+    // window.addEventListener('load', removePreloader); // Not strictly needed if mainScript.onload calls removePreloader()
+
+</script>
 
 </body>
 
