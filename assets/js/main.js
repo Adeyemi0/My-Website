@@ -1,8 +1,5 @@
 /**
- * Template Name: BizLand - v3.3.0
- * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
+ * Optimized Main JS - Performance Enhanced
  */
 (function() {
   "use strict";
@@ -124,17 +121,7 @@
   })
 
   /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
@@ -152,7 +139,7 @@
   }, true)
 
   /**
-   * Scroll with ofset on page load with hash links in the url
+   * Scroll with offset on page load with hash links in the url
    */
   window.addEventListener('load', () => {
     if (window.location.hash) {
@@ -173,53 +160,22 @@
   }
 
   /**
-   * Initiate glightbox
+   * Initiate glightbox - Only if GLightbox is loaded
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
-
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+  window.addEventListener('load', () => {
+    if (typeof GLightbox !== 'undefined') {
+      const glightbox = GLightbox({
+        selector: '.glightbox'
+      });
     }
   });
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio isotope and filter - Only if Isotope is loaded
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
+    if (portfolioContainer && typeof Isotope !== 'undefined') {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item'
       });
@@ -236,52 +192,33 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
+        
+        // Refresh AOS if available
+        if (typeof AOS !== 'undefined') {
+          portfolioIsotope.on('arrangeComplete', function() {
+            AOS.refresh()
+          });
+        }
       }, true);
     }
-
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Animation on scroll - Only if AOS is loaded
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
+  window.addEventListener('load', () => {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      })
     }
   });
 
   /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
-  });
-
-  /**
-   * Contact Form Handler - Cloudflare Pages Function
+   * Contact Form Handler - EmailJS
    */
   const contactForm = select('.php-email-form');
   if (contactForm) {
@@ -289,7 +226,13 @@
       e.preventDefault();
 
       const form = e.target;
-      
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
+
       const loading = form.querySelector('.loading');
       const errorMessage = form.querySelector('.error-message');
       const sentMessage = form.querySelector('.sent-message');
@@ -299,56 +242,35 @@
       if (errorMessage) errorMessage.style.display = 'none';
       if (sentMessage) sentMessage.style.display = 'none';
 
-      // Get form data as JSON
-      const formData = {
-        name: form.querySelector('[name="name"]').value,
-        email: form.querySelector('[name="email"]').value,
-        subject: form.querySelector('[name="subject"]').value,
-        message: form.querySelector('[name="message"]').value
-      };
+      // Check if EmailJS is loaded
+      if (typeof emailjs === 'undefined') {
+        if (loading) loading.style.display = 'none';
+        if (errorMessage) {
+          errorMessage.textContent = 'Email service is loading. Please try again in a moment.';
+          errorMessage.style.display = 'block';
+        }
+        return;
+      }
 
-      // Cloudflare Pages Function endpoint (same domain - no CORS!)
-      const endpoint = '/send-email';
-
-      fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData)
-        })
-        .then(response => {
-          // Hide loading
-          if (loading) loading.style.display = 'none';
-
-          // Check if response is OK
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(data => {
-          if (data.success) {
-            // Show success message
-            if (sentMessage) {
-              sentMessage.textContent = data.message || 'Thank you! I\'ll respond within 24 hours.';
-              sentMessage.style.display = 'block';
-            }
-            // Reset form
-            form.reset();
-          } else {
-            // Show error from server
-            if (errorMessage) {
-              errorMessage.textContent = data.message || 'Oops! Something went wrong. Please try again.';
-              errorMessage.style.display = 'block';
-            }
-          }
-        })
-        .catch(error => {
+      // Send email using EmailJS
+      emailjs.send('service_cvcf64h', 'template_5kqf8hh', formData)
+        .then(function(response) {
           // Hide loading
           if (loading) loading.style.display = 'none';
           
-          console.error('Error:', error);
+          // Show success message
+          if (sentMessage) {
+            sentMessage.textContent = 'Thank you! I\'ll respond within 24 hours.';
+            sentMessage.style.display = 'block';
+          }
+          
+          // Reset form
+          form.reset();
+        }, function(error) {
+          // Hide loading
+          if (loading) loading.style.display = 'none';
+          
+          console.error('EmailJS Error:', error);
           if (errorMessage) {
             errorMessage.textContent = 'Oops! Something went wrong. Please try again or contact me directly at adeyemi@adediranadeyemi.com';
             errorMessage.style.display = 'block';
