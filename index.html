@@ -1,852 +1,990 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Hire Data Scientist Lagos | AI Engineer Nigeria | Adediran Adeyemi</title>
+    <meta name="description" content="Expert freelance data scientist and AI engineer in Lagos, Nigeria. Machine learning, predictive analytics, RAG systems, and custom AI solutions for Nigerian businesses. Hire a certified data scientist today.">
+    <meta name="keywords" content="data scientist Lagos, AI engineer Nigeria, machine learning consultant, hire data scientist Lagos, freelance AI engineer, predictive analytics Lagos, data analytics consultant Nigeria, AI consulting Lagos, business intelligence consultant">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hire Data Scientist Lagos | AI Engineer Nigeria">
+    <meta property="og:description" content="Expert freelance data scientist and AI engineer in Lagos. Machine learning, predictive analytics, and custom AI solutions.">
+    <meta property="og:type" content="website">
+    <!-- Preconnect to critical external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Critical CSS - Inline for immediate render -->
+    <style>
+        /*--------------------------------------------------------------
+        # Critical styles - loaded immediately
+        --------------------------------------------------------------*/
+        /* Moved @font-face from style.css */
+        @font-face {
+            font-family: 'bootstrap-icons';
+            src: url('assets/fonts/bootstrap-icons.woff2?856008c0e87f06f215a7aad03c93f6e3') format('woff2');
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'boxicons';
+            src: url('assets/fonts/boxicons.woff2') format('woff2');
+            font-display: swap;
+        }
 
-  <title>Hire Data Scientist Lagos | AI Engineer Nigeria | Adediran Adeyemi</title>
-  <meta name="description" content="Expert freelance data scientist and AI engineer in Lagos, Nigeria. Machine learning, predictive analytics, RAG systems, and custom AI solutions for Nigerian businesses. Hire a certified data scientist today.">
-  <meta name="keywords" content="data scientist Lagos, AI engineer Nigeria, machine learning consultant, hire data scientist Lagos, freelance AI engineer, predictive analytics Lagos, data analytics consultant Nigeria, AI consulting Lagos, business intelligence consultant">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Hire Data Scientist Lagos | AI Engineer Nigeria">
-  <meta property="og:description" content="Expert freelance data scientist and AI engineer in Lagos. Machine learning, predictive analytics, and custom AI solutions.">
-  <meta property="og:type" content="website">
-  
-  <!-- Preconnect to critical external domains -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        /*--------------------------------------------------------------
+        # General
+        --------------------------------------------------------------*/
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Open Sans", sans-serif;
+            color: #444444;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #106eea;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #3b8af2;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Roboto", sans-serif;
+        }
+        /*--------------------------------------------------------------
+        # Preloader
+        --------------------------------------------------------------*/
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            overflow: hidden;
+            background: #fff;
+        }
+        #preloader:before {
+            content: "";
+            position: fixed;
+            top: calc(50% - 30px);
+            left: calc(50% - 30px);
+            border: 6px solid #106eea;
+            border-top-color: #e2eefd;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: animate-preloader 1s linear infinite;
+        }
+        @keyframes animate-preloader {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /*--------------------------------------------------------------
+        # Top Bar
+        --------------------------------------------------------------*/
+        #topbar {
+            background: #106eea;
+            height: 40px;
+            font-size: 14px;
+            color: #fff;
+            padding: 0;
+        }
+        /*--------------------------------------------------------------
+        # Header
+        --------------------------------------------------------------*/
+        #header {
+            background: #fff;
+            transition: all 0.5s;
+            z-index: 997;
+            height: 86px;
+            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        #header.fixed-top {
+            height: 70px;
+        }
+        /*--------------------------------------------------------------
+        # Navigation Menu
+        --------------------------------------------------------------*/
+        .navbar {
+            padding: 0;
+        }
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        .navbar li {
+            position: relative;
+        }
+        .navbar > ul > li {
+            white-space: nowrap;
+            padding: 10px 0 10px 28px;
+        }
+        .navbar a {
+            display: flex;
+            align-items: center;
+            padding: 0 3px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #222222;
+            transition: 0.3s;
+            position: relative;
+        }
+        .mobile-nav-toggle {
+            color: #222222;
+            font-size: 28px;
+            cursor: pointer;
+            display: none;
+            line-height: 0;
+        }
+        @media (max-width: 991px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+            .navbar ul {
+                display: none;
+            }
+        }
+        /*--------------------------------------------------------------
+        # Hero Section
+        --------------------------------------------------------------*/
+        #hero {
+            width: 100%;
+            min-height: 75vh;
+            background: url("assets/img/hero-bg.jpg") top left;
+            background-size: cover;
+            position: relative;
+            padding: 80px 0 60px 0;
+        }
+        #hero:before {
+            content: "";
+            background: rgba(255, 255, 255, 0.6);
+            position: absolute;
+            bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        #hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        #hero h1 {
+            margin: 0 0 20px 0;
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: #222222;
+            font-family: "Poppins", sans-serif;
+        }
+        #hero h1 span {
+            color: #106eea;
+        }
+        #hero h2 {
+            color: #555555;
+            margin: 10px 0 30px 0;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        #hero .hero-subtitle {
+            color: #333;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+        }
+        #hero ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+        #hero ul li {
+            margin: 15px 0;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.6;
+        }
+        #hero ul li i {
+            color: #106eea;
+            margin-right: 12px;
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        .btn-get-started-primary {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            transition: 0.3s;
+            color: #fff;
+            background: #106eea;
+            box-shadow: 0 4px 15px rgba(16, 110, 234, 0.4);
+            border: none;
+            margin-right: 15px;
+        }
+        .btn-get-started-primary:hover {
+            background: #0e5bcc;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 110, 234, 0.5);
+            color: #fff;
+        }
+        .btn-get-started-primary i {
+            margin-left: 8px;
+        }
+        .btn-get-started-secondary {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            transition: 0.3s;
+            color: #106eea;
+            background: transparent;
+            border: 2px solid #106eea;
+        }
+        .btn-get-started-secondary:hover {
+            background: #106eea;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn-get-started-secondary i {
+            margin-left: 8px;
+        }
+        /* Add this CSS block to your style.css file */
+        /* Target the specific buttons */
+        .btn-get-started-primary,
+        .btn-get-started-secondary {
+            text-decoration: none; /* Removes underline */
+        }
+        /* Target the specific text/link within the FAQ section */
+        .faq-list a {
+            text-decoration: none; /* Removes underline from the article links */
+        }
+        /* Target the logo text in the header */
+        .logo a {
+            text-decoration: none; /* Removes underline from the logo link */
+        }
+        /* Ensure hover states don't add underline back */
+        .btn-get-started-primary:hover,
+        .btn-get-started-secondary:hover,
+        .faq-list a:hover,
+        .logo a:hover {
+            text-decoration: none;
+        }
+        .hero-profile-image {
+            margin-top: 20px;
+        }
+        .profile-img {
+            width: 320px !important;
+            height: 320px !important;
+            border-radius: 50% !important;
+            object-fit: cover !important;
+            border: 5px solid #106eea;
+            box-shadow: 0 10px 30px rgba(16, 110, 234, 0.3);
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(16, 110, 234, 0.4);
+        }
+        .profile-caption p {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        @media (min-width: 1024px) {
+            #hero {
+                background-attachment: fixed;
+            }
+        }
+        @media (max-width: 992px) {
+            #hero h1 {
+                font-size: 32px;
+            }
+            #hero h2 {
+                font-size: 20px;
+            }
+            .profile-img {
+                width: 280px !important;
+                height: 280px !important;
+            }
+        }
+        @media (max-width: 768px) {
+            #hero {
+                padding: 60px 0 40px 0;
+            }
+            #hero h1 {
+                font-size: 26px;
+            }
+            #hero h2 {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+            #hero ul li {
+                font-size: 15px;
+                margin: 12px 0;
+            }
+            .profile-img {
+                width: 240px !important;
+                height: 240px !important;
+                margin-top: 30px;
+            }
+            #hero .d-flex {
+                flex-direction: column !important;
+                gap: 12px;
+            }
+            .btn-get-started-primary,
+            .btn-get-started-secondary {
+                width: 100%;
+                text-align: center;
+                display: block;
+            }
+        }
 
-  <!-- Critical CSS - Inline for immediate render -->
-  <style>
-    body{font-family:"Open Sans",sans-serif;color:#444;margin:0;padding:0}
-    a{color:#106eea;text-decoration:none}
-    h1,h2,h3,h4,h5,h6{font-family:"Roboto",sans-serif}
-    #preloader{position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#fff}
-    #preloader:before{content:"";position:fixed;top:calc(50% - 30px);left:calc(50% - 30px);border:6px solid #106eea;border-top-color:#e2eefd;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite}
-    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
-    #topbar{background:#106eea;height:40px;font-size:14px;color:#fff;padding:0}
-    #header{background:#fff;z-index:997;height:86px;box-shadow:0 2px 15px rgba(0,0,0,.1)}
-    #hero{width:100%;min-height:75vh;background:url("assets/img/hero-bg.jpg") top left;background-size:cover;position:relative;padding:80px 0 60px 0}
-    #hero:before{content:"";background:rgba(255,255,255,.6);position:absolute;bottom:0;top:0;left:0;right:0}
-    .container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
-    @media(min-width:1200px){.container{max-width:1140px}}
-  </style>
-
-  <!-- Preload LCP image -->
-  <link rel="preload" as="image" href="assets/img/photo_2025-08-11_17-35-17.jpg" fetchpriority="high">
-
-  <!-- Google Fonts with font-display swap -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
+        /* Basic Container for Layout */
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+    </style>
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="assets/img/photo_2025-08-11_17-35-17.jpg" fetchpriority="high">
+    <!-- Google Fonts with font-display swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Defer Non-Critical CSS -->
+    <link href="assets/css/style.css" rel="stylesheet" media="print" onload="this.media='all'"> <!-- Main CSS File -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <!-- Optional: Add versioning for cache busting (update version number when changing assets) -->
+    <!-- <link href="assets/css/style.css?v=1.0.1" rel="stylesheet" media="print" onload="this.media='all'"> -->
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Adediran Adeyemi - Data Scientist & AI Engineer",
     "image": "https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.jpg",
     "description": "Freelance data scientist and AI engineer providing machine learning, predictive analytics, and custom AI solutions in Lagos, Nigeria",
     "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lagos",
-      "addressCountry": "NG"
+    "@type": "PostalAddress",
+    "addressLocality": "Lagos",
+    "addressCountry": "NG"
     },
     "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "6.5244",
-      "longitude": "3.3792"
+    "@type": "GeoCoordinates",
+    "latitude": "6.5244",
+    "longitude": "3.3792"
     },
     "url": "https://adediranadeyemi.com",
     "telephone": "+2348162735399",
     "email": "adeyemi@adediranadeyemi.com",
     "priceRange": "$$",
     "openingHours": "Mo,Tu,We,Th,Fr 09:00-18:00"
-  }
-  </script>
-</head>
-
-<body>
-
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
-        <i class="bi bi-geo-alt d-flex align-items-center ms-4"><span>Lagos, Nigeria</span></i>
-      </div>
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        <a href="https://web.facebook.com/adediran.adeyemiabiodun" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/adediran_adeyemi_abiodun/" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="index.html">ADEYEMI<span>DATA</span></a></h1>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#featured-services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#faq">Blog</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Hire Me</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-    </div>
-  </header>
-
-<!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
-  <div class="container" data-aos="zoom-out" data-aos-delay="100">
-    <div class="row align-items-center">
-      <div class="col-lg-8 col-md-12 order-lg-1">
-        <h1>Freelance Data Scientist & AI Engineer <span>in Lagos, Nigeria</span></h1>
-        
-        <h2>Transforming Business Data into Revenue-Driving AI Solutions</h2>
-        
-        <p class="hero-subtitle"><strong>Is your business struggling with these challenges?</strong></p>
-        <ul>
-          <li><i class="fas fa-chart-line"></i> Unexplained revenue drops despite stable operations</li>
-          <li><i class="fas fa-users-slash"></i> High customer churn but no clear pattern or prediction model</li>
-          <li><i class="fas fa-shopping-cart"></i> Low conversion rates and abandoned carts draining marketing ROI</li>
-          <li><i class="fas fa-bullseye"></i> Unable to identify and target high-value customer segments</li>
-          <li><i class="fas fa-brain"></i> Mountains of data but no actionable insights or predictive models</li>
-          <li><i class="fas fa-robot"></i> Competitors leveraging AI while you're still using spreadsheets</li>
-        </ul>
-
-        <h2 style="font-size: 1.1em; margin-top: 20px; font-weight: 600;">I build custom machine learning models, RAG systems, and predictive analytics solutions that turn your historical data into future revenue.</h2>
-
-        <div class="d-flex" style="margin-top: 30px;">
-          <a href="#contact" class="btn-get-started-primary scrollto">
-            <span>Hire Me Today <i class="fas fa-arrow-right"></i></span>
-          </a>
-          <a href="#about" class="btn-get-started-secondary scrollto">
-            <span>Learn More <i class="fas fa-arrow-down"></i></span>
-          </a>
-        </div>
-      </div>
-      
-      <div class="col-lg-4 col-md-12 text-center order-lg-2">
-        <div class="hero-profile-image">
-          <img src="assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi - Data Scientist and AI Engineer Lagos" class="img-fluid profile-img" width="320" height="320" fetchpriority="high">
-          <div class="profile-caption">
-            <p style="font-size: 1em; font-style: italic; margin-top: 15px;">Adediran Adeyemi<br>Data Scientist | AI/ML Engineer<br>4+ Years Experience</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <main id="main">
-
-<!-- ======= About Section ======= -->
-<section id="about" class="about section-bg">
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Why Hire Me as Your <span>Data Scientist & AI Engineer</span></h2>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-up" data-aos-delay="100">
-
-        <p style="font-size: 20px; line-height: 1.8; font-weight: 600;">
-          Most businesses don't have a data problem, they have a decision problem.
-        </p>
-
-        <p style="font-size: 18px; line-height: 1.8;">
-          I work with founders, marketing teams, and operators who sit on large amounts of data but struggle to turn it into clear, confident decisions. My role is to bridge that gap using data science and applied AI.
-        </p>
-
-        <p style="font-size: 18px; line-height: 1.8;">
-          Over the last 4+ years, I've helped teams understand <strong>why revenue dropped</strong>, identify <strong>which customers actually drive growth</strong>, and pinpoint <strong>where automation delivers the highest ROI</strong>, not by throwing models at the problem, but by starting with the right business question.
-        </p>
-
-        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 0;">
-          I design practical machine learning systems, analytics dashboards, and AI tools that fit into real workflows, ship to production, and deliver measurable outcomes.
-        </p>
-
-        <div style="margin-top: 35px; text-align: center;">
-          <a href="#contact" class="btn-get-started-primary">
-            <span>Let's Talk About Your Data Problem <i class="fas fa-arrow-right"></i></span>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======= Featured Services Section ======= -->
-<section id="featured-services" class="featured-services">
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Services</h2>
-      <h3>Data Science & AI Engineering <span>Services in Lagos</span></h3>
-      <p>End-to-end solutions from data engineering to deployed machine learning models</p>
-    </div>
-
-    <div class="row">
-
-      <!-- Machine Learning & Predictive Analytics -->
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon"><i class="fas fa-brain"></i></div>
-          <h4 class="title">Machine Learning & AI</h4>
-          <ul class="description" style="text-align: left; padding-left: 20px;">
-            <li>Custom ML model development (classification, regression, clustering)</li>
-            <li>Predictive analytics for sales, churn, and demand forecasting</li>
-            <li>Deep learning solutions (NLP, computer vision)</li>
-            <li>RAG systems with LangChain and vector databases</li>
-            <li>Model deployment and monitoring</li>
-          </ul>
-          <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Python, TensorFlow, PyTorch, Scikit-learn, LangChain</p>
-        </div>
-      </div>
-
-      <!-- Business Intelligence & Dashboards -->
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon"><i class="fas fa-chart-bar"></i></div>
-          <h4 class="title">Business Intelligence</h4>
-          <ul class="description" style="text-align: left; padding-left: 20px;">
-            <li>Interactive Power BI and Tableau dashboards</li>
-            <li>Real-time KPI tracking and monitoring</li>
-            <li>Executive reporting and data visualization</li>
-            <li>Self-service BI solutions</li>
-            <li>Marketing analytics dashboards</li>
-          </ul>
-          <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Power BI, Tableau, Excel, Google Analytics</p>
-        </div>
-      </div>
-
-      <!-- Customer Analytics & Marketing -->
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-          <div class="icon"><i class="fas fa-users"></i></div>
-          <h4 class="title">Customer Analytics</h4>
-          <ul class="description" style="text-align: left; padding-left: 20px;">
-            <li>RFM analysis and customer segmentation</li>
-            <li>Customer lifetime value (CLV) modeling</li>
-            <li>Churn prediction and retention strategies</li>
-            <li>Customer journey mapping and funnel analysis</li>
-            <li>Marketing ROI optimization</li>
-          </ul>
-          <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Python, SQL, Google Analytics, Adobe Analytics</p>
-        </div>
-      </div>
-
-      <!-- Data Engineering & Automation -->
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-          <div class="icon"><i class="fas fa-database"></i></div>
-          <h4 class="title">Data Engineering</h4>
-          <ul class="description" style="text-align: left; padding-left: 20px;">
-            <li>ETL pipeline development and automation</li>
-            <li>Database design and optimization (SQL, NoSQL)</li>
-            <li>Web scraping and data collection</li>
-            <li>Data warehousing solutions</li>
-            <li>API development and integration</li>
-          </ul>
-          <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: SQL, Python, Docker, AWS, GCP, FastAPI</p>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="margin-top: 50px; text-align: center; padding: 40px; background: linear-gradient(135deg, #106eea 0%, #3b8af2 100%); border-radius: 12px; color: white;">
-      <h3 style="color: white; margin-bottom: 15px;">Ready to Transform Your Data into Business Value?</h3>
-      <p style="font-size: 18px; margin-bottom: 25px; color: rgba(255,255,255,0.95);">Let's discuss your data science and AI engineering needs. Free consultation available.</p>
-      <a href="#contact" class="btn-get-started-primary" style="background: white; color: #106eea; border: none;">
-        <span>Get Started Today <i class="fas fa-arrow-right"></i></span>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="portfolio">
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Portfolio</h2>
-      <h3>Data Science Projects & <span>AI Solutions</span></h3>
-      <p>Real-world machine learning, predictive analytics, and AI engineering projects. Some apps may take a moment to load initially.</p>
-    </div>
-
-    <div class="row" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-12 d-flex justify-content-center">
-        <ul id="portfolio-flters">
-          <li data-filter="*" class="filter-active">All Projects</li>
-          <li data-filter=".filter-app">Live Demos & Apps</li>
-          <li data-filter=".filter-card">Case Studies</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-      <!-- RAG System -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
-        <a href="https://github.com/Adeyemi0/RAG-System">
-          <img src="assets/img/portfolio/rag.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="RAG System with LangChain and Vector Database" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>RAG System (AI Engineering)</h4>
-        <p>
-          Production-ready Retrieval Augmented Generation system processing 50M+ tokens across 402 companies. Built with LangChain, Zilliz vector database, and hybrid retrieval achieving <1s response time.
-          <br><br>
-          <strong>Tech:</strong> Docker, OpenAI, PyTorch, FastAPI, LangChain, HTML, CSS, Javascript, Zilliz
-          <br>
-          <a href="https://huggingface.co/spaces/adeyemi001/FinSight-RAG-Application"><b>Live Demo</b></a> | 
-          <a href="https://github.com/Adeyemi0/FinSight-RAG-Application-"><b>Documentation</b></a>
-        </p>
-      </div>
-
-      <!-- Yoruba Translation -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
-        <a href="https://github.com/Adeyemi0/Yoruba-Translation">
-          <img src="assets/img/portfolio/trans.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Yoruba English Translation Model" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Bidirectional Translation Model (NLP)</h4>
-        <p>
-          Built transformer-based NMT model for low-resource language translation. Flask REST API with text chunking, batching logic, and BLEU/METEOR evaluation metrics.
-          <br><br>
-          <strong>Tech:</strong> Transformers, Flask, REST APIs, NLP
-          <br>
-          <a href="https://huggingface.co/spaces/adeyemi001/yoruba-english-translation-model"><b>Live Demo</b></a> | 
-          <a href="https://github.com/Adeyemi0/Yoruba-English-Translation"><b>Documentation</b></a>
-        </p>
-      </div>
-
-      <!-- NYC Real Estate -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
-        <a href="https://github.com/Adeyemi0/NYC-Real-Estate">
-          <img src="assets/img/portfolio/real-estate.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NYC Real Estate Price Prediction" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Real Estate Price Prediction (ML)</h4>
-        <p>
-          End-to-end ML pipeline predicting NYC property prices with 80% R² accuracy. Benchmarked 3 gradient boosting models, deployed LightGBM with <100ms inference.
-          <br><br>
-          <strong>Tech:</strong> Docker, LightGBM, Flask, Beautiful Soup
-          <br>
-          <a href="https://huggingface.co/spaces/adeyemi001/NYC-House-Price-Predictor"><b>Live App</b></a> | 
-          <a href="https://github.com/Adeyemi0/NYC-Real-Estate-Price-Predictor"><b>Documentation</b></a>
-        </p>
-      </div>
-
-      <!-- Retail Analysis -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
-        <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/">
-          <img src="assets/img/portfolio/electronics.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Retail Sales Analysis Dashboard" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Retail Analytics (Business Intelligence)</h4>
-        <p>
-          Investigated 88.8% YoY revenue decline and 85% drop in repeat customers. Built interactive dashboard revealing product performance gaps and customer behavior patterns.
-          <br><br>
-          <strong>Tech:</strong> Python, SQL, Streamlit, Pandas
-          <br>
-          <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/"><b>Dashboard</b></a> | 
-          <a href="https://github.com/Adeyemi0/Retail-Analysis-Global-Electronics-"><b>GitHub</b></a>
-        </p>
-      </div>
-
-      <!-- Product Returns -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
-        <a href="https://github.com/Adeyemi0/Product-Returns">
-          <img src="assets/img/portfolio/returns.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Product Returns Analysis" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Product Returns Analysis (Data Science)</h4>
-        <p>
-          Analyzed revenue loss from product returns showing ~27% impact on profitability. Identified predictive patterns and customer segments driving return behavior.
-          <br><br>
-          <strong>Tech:</strong> Python, Pandas, Statistical Analysis
-          <br>
-          <a href="https://github.com/Adeyemi0/Product-Returns"><b>View Analysis</b></a>
-        </p>
-      </div>
-
-      <!-- Lead Scoring -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
-        <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/">
-          <img src="assets/img/portfolio/leads.jpeg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Lead Scoring ML Model" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Lead Scoring Model (Predictive Analytics)</h4>
-        <p>
-          Achieved 95%+ accuracy predicting purchase intent by modeling user interactions. Machine learning classification with feature engineering for digital marketing optimization.
-          <br><br>
-          <strong>Tech:</strong> Scikit-learn, Streamlit, Python
-          <br>
-          <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/"><b>Live Demo</b></a> | 
-          <a href="https://github.com/Adeyemi0/Lead-Scoring"><b>Code</b></a>
-        </p>
-      </div>
-
-      <!-- User Journey -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
-        <a href="https://github.com/Adeyemi0/User-Journey-Analysis">
-          <img src="assets/img/portfolio/cj.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Journey Analysis" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>User Journey Analysis (Customer Analytics)</h4>
-        <p>
-          Path and funnel analysis on 10k sessions identifying conversion drivers and drop-off points. Data-driven recommendations shaped product roadmap and UX optimization.
-          <br><br>
-          <strong>Tech:</strong> Python, Google Analytics, SQL
-          <br>
-          <a href="https://github.com/Adeyemi0/User-Journey-Analysis"><b>View Project</b></a>
-        </p>
-      </div>
-
-      <!-- Chicken Republic -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
-        <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d">
-          <img src="assets/img/portfolio/chi.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Geospatial Analysis Lagos" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Location Intelligence (Geospatial Analytics)</h4>
-        <p>
-          Mapped and analyzed 50+ locations across Lagos decoding market dominance strategy. Geospatial data analysis for business expansion insights.
-          <br><br>
-          <strong>Tech:</strong> Python, Geospatial Libraries, Streamlit
-          <br>
-          <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d"><b>Article</b></a> | 
-          <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/"><b>Map</b></a>
-        </p>
-      </div>
-
-      <!-- Review Categorization -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
-        <a href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model">
-          <img src="assets/img/portfolio/fldemo.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NLP Review Classification" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Multi-Label Review Classification (NLP)</h4>
-        <p>
-          Built NLP model on 29k+ customer reviews uncovering key pain points. Multi-label classification with Power BI dashboard for sentiment analysis and trend tracking.
-          <br><br>
-          <strong>Tech:</strong> Transformers, HuggingFace, Power BI
-          <br>
-          <a href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model"><b>Live Demo</b></a> | 
-          <a href="https://app.powerbi.com/view?r=eyJrIjoiYjk1YWM3YmYtYWU5ZS00YjIxLWIwMmQtMWI0YjI2ZjQ2MWM3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Dashboard</b></a> |
-          <a href="https://github.com/Adeyemi0/Fintech-Review-Prediction"><b>Documentation</b></a>
-        </p>
-      </div>
-
-      <!-- Used Car Prediction -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
-        <a href="https://huggingface.co/spaces/adeyemi001/Cars">
-          <img src="assets/img/portfolio/car.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Used Car Price Prediction" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Used Car Price Prediction (Regression)</h4>
-        <p>
-          Machine learning regression model predicting Nigerian used car prices. Feature engineering, model comparison, and deployed web application for instant price estimates.
-          <br><br>
-          <strong>Tech:</strong> LightGBM, Flask, Beautiful Soup, Scikit-learn, Python
-          <br>
-          <a href="https://huggingface.co/spaces/adeyemi001/Cars"><b>Live Demo</b></a> | 
-          <a href="https://github.com/Adeyemi0/Nigerian-Used-Car-Prediction"><b>Code</b></a>
-        </p>
-      </div>
-
-      <!-- Customer Survey -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
-        <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9">
-          <img src="assets/img/portfolio/survey.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Survey Analysis" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Customer Survey Analysis (BI)</h4>
-        <p>
-          Power BI dashboard analyzing banking service surveys. Derived retention strategies through sentiment analysis and satisfaction scoring. Interactive visualizations for stakeholder reporting.
-          <br><br>
-          <strong>Tech:</strong> Power BI, DAX, SQL
-          <br>
-          <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Dashboard</b></a> | 
-          <a href="https://github.com/Adeyemi0/Customer-Survey"><b>Details</b></a>
-        </p>
-      </div>
-
-      <!-- Sales Analysis -->
-      <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
-        <a href="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGM0NmQtZWMwOC00ODUzLWJjM2EtNWZlMzdjOTE5MWE1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9">
-          <img src="assets/img/portfolio/sales.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Sales Performance Dashboard" width="400" height="225">
-        </a>
-        <br><br>
-        <h4>Sales Performance Dashboard (BI)</h4>
-        <p>
-          Interactive Power BI dashboard revealing sales trends, customer sentiment, and performance patterns. Real-time KPI tracking guiding data-driven decisions for sales optimization.
-          <br><br>
-          <strong>Tech:</strong> Power BI, DAX, Data Modeling
-          <br>
-          <a href="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGM0NmQtZWMwOC00ODUzLWJjM2EtNWZlMzdjOTE5MWE1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>View Dashboard</b></a>
-        </p>
-      </div>
-
-    </div>
-
-    <div style="margin-top: 40px; text-align: center;">
-      <p style="font-size: 18px; margin-bottom: 20px;">Want similar results for your business? Let's build a custom solution together.</p>
-      <a href="#contact" class="btn-get-started-primary">
-        <span>Discuss Your Project <i class="fas fa-arrow-right"></i></span>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ======= Contact Section ======= -->
-<section id="contact" class="contact">
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Hire Me</h2>
-      <h3><span>Get In Touch</span> - Freelance Data Scientist Lagos</h3>
-      <p>Ready to leverage data science and AI for your business? Let's discuss your project. Free initial consultation available.</p>
-    </div>
-
-    <div class="row" style="margin-bottom: 40px;">
-      <div class="col-lg-4 col-md-6">
-        <div class="info-box">
-          <i class="fas fa-map-marker-alt"></i>
-          <h3>Location</h3>
-          <p>Lagos, Nigeria<br>Available for remote projects globally</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="info-box">
-          <i class="fas fa-envelope"></i>
-          <h3>Email</h3>
-          <p><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="info-box">
-          <i class="fab fa-whatsapp"></i>
-          <h3>WhatsApp</h3>
-          <p><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-8">
-        <form method="POST" class="php-email-form" novalidate>
-          <div class="form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group mt-3">
-            <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group mt-3">
-            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="6" placeholder="Tell me about your project or data challenge..." required></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">Sending...</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Thank you! I'll respond within 24 hours.</div>
-          </div>
-          <div class="text-center mt-3">
-            <button type="submit">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ======= Blog/FAQ Section ======= -->
-<section id="faq" class="faq section-bg">
-  <div class="container" data-aos="fade-up">
-
-    <div class="section-title">
-      <h2>Technical Writing</h2>
-      <h3>Data Science <span>Insights & Articles</span></h3>
-      <p>Practical guides on customer analytics, predictive modeling, and data-driven decision making</p>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-xl-10">
-        <ul class="faq-list">
-
-          <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
-              The Customer Audit Every Business Needs to Scale Profitably
-              <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-            </div>
-            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-              <a href="https://medium.com/@xmine4346/the-customer-analytics-framework-every-business-leader-needs-dd679e8f0514">
-                <p>80% of your revenue comes from 20% of your customers. Yet most businesses can't tell you which customers those are. Learn the analytics framework that reveals your most valuable customers...</p>
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq2">
-              Data-Driven Retention: Predict Customer Churn Before It Happens
-              <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-            </div>
-            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-              <a href="https://medium.com/@xmine4346/the-proven-way-to-predict-customer-retention-without-waiting-for-churn-0318dc838f9d">
-                <p>Most companies define customer health by asking "Are they paying us?" But payment is a lagging indicator. Discover how to predict churn months before it happens using behavioral data science...</p>
-              </a>
-            </div>
-          </li>
-
-          <li>
-            <div data-bs-toggle="collapse" class="collapsed question" href="#faq4">
-              How to Personalize Your Free Trial Experience (And Skyrocket Conversions)
-              <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-            </div>
-            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-              <a href="https://medium.com/@xmine4346/how-to-personalize-your-free-trial-experience-and-skyrocket-conversions-7999446cf33e">
-                <p>Generic email sequences promising "amazing features" don't convert. Learn how to use behavioral data and predictive analytics to personalize trial experiences and increase conversion rates...</p>
-              </a>
-            </div>
-          </li>
-
-        </ul>
-
-        <div style="margin-top: 30px; text-align: center;">
-          <a href="https://medium.com/@xmine4346" class="btn-get-started-primary" target="_blank" rel="noopener noreferrer">
-            <span>Read All Articles <i class="fas fa-external-link-alt"></i></span>
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  </main>
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 footer-contact">
-            <h3>Adeyemi<span>Data</span></h3>
-            <p>
-              Freelance Data Scientist & AI Engineer<br>
-              Lagos, Nigeria<br><br>
-              <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
-              <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a><br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Hire Me</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Machine Learning</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Business Intelligence</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Customer Analytics</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Data Engineering</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Connect With Me</h4>
-            <p>Follow for data science insights and project updates</p>
-            <div class="social-links mt-3">
-              <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" class="linkedin" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-              <a href="https://wa.me/+2348162735399" class="whatsapp" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
-              <a href="https://web.facebook.com/adediran.adeyemiabiodun" class="facebook" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="https://www.instagram.com/adediran.yemite/" class="instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container py-4">
-      <div class="copyright">
-        &copy; 2025 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved | Data Scientist & AI Engineer Lagos, Nigeria
-      </div>
-    </div>
-  </footer>
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Deferred Bootstrap Icons CSS with font-display -->
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
-  
-  <!-- Deferred Boxicons CSS with font-display -->
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  
-  <!-- Deferred Font Awesome with font-display -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
-
-  <!-- Minimal Bootstrap CSS - Only needed components -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-
-  <!-- AOS CSS - Deferred -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-
-  <!-- Vendor JS Files - All deferred, loaded only when needed -->
-   <!-- Vendor JS Files - All deferred, loaded dynamically after initial page content -->
- <script>
-    // Function to remove the preloader - Define it first
-    function removePreloader() {
-        const preloader = document.getElementById('preloader');
-        if (preloader) {
-            // Attempt to remove it. Using 'remove()' is standard, 'style.display = 'none'' also works.
-            // The main.js file has logic to do this on window.load, but since it's loaded inside window.load here,
-            // that internal listener won't fire. So, we trigger its removal here after critical scripts load.
-            // A direct call here is one way, OR ensure main.js runs its logic correctly when loaded.
-            // The safest way is to modify main.js to not rely on window.load for preloader removal itself.
-            // For now, calling it directly here *after* main.js should work, but modifying main.js is cleaner.
-            // We'll rely on main.js's internal logic, assuming it runs correctly now that it's not double-wrapped.
-            // However, since main.js's preloader logic is inside window.load, it won't run.
-            // We need to either:
-            // 1. Modify main.js (as shown in the previous conversation) to remove the window.load wrapper for the preloader part.
-            // 2. Or, call the preloader removal here directly, assuming dependencies are ready.
-
-            // Option 2: Call removal directly here as a fallback/primary method now that scripts load after window.load.
-            // This is safe because this script block runs after window.load.
-            preloader.style.display = 'none'; // or preloader.remove() if you want to remove the element entirely
-            // console.log("Preloader removed by deferred script block.");
-        } else {
-            // console.log("Preloader element not found by deferred script block.");
-        }
     }
+    </script>
+</head>
+<body>
+    <!-- ======= Top Bar ======= -->
+    <section id="topbar" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+                <i class="bi bi-geo-alt d-flex align-items-center ms-4"><span>Lagos, Nigeria</span></i>
+            </div>
+            <div class="social-links d-none d-md-flex align-items-center">
+                <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://web.facebook.com/adediran.adeyemiabiodun" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/adediran_adeyemi_abiodun/" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+            <h1 class="logo"><a href="index.html">ADEYEMI<span>DATA</span></a></h1>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#featured-services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link scrollto" href="#faq">Blog</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Hire Me</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+        </div>
+    </header>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container" data-aos="zoom-out" data-aos-delay="100">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-12 order-lg-1">
+                    <h1>Freelance Data Scientist & AI Engineer <span>in Lagos, Nigeria</span></h1>
+                    <h2>Transforming Business Data into Revenue-Driving AI Solutions</h2>
+                    <p class="hero-subtitle"><strong>Is your business struggling with these challenges?</strong></p>
+                    <ul>
+                        <li><i class="fas fa-chart-line"></i> Unexplained revenue drops despite stable operations</li>
+                        <li><i class="fas fa-users-slash"></i> High customer churn but no clear pattern or prediction model</li>
+                        <li><i class="fas fa-shopping-cart"></i> Low conversion rates and abandoned carts draining marketing ROI</li>
+                        <li><i class="fas fa-bullseye"></i> Unable to identify and target high-value customer segments</li>
+                        <li><i class="fas fa-brain"></i> Mountains of data but no actionable insights or predictive models</li>
+                        <li><i class="fas fa-robot"></i> Competitors leveraging AI while you're still using spreadsheets</li>
+                    </ul>
+                    <h2 style="font-size: 1.1em; margin-top: 20px; font-weight: 600;">I build custom machine learning models, RAG systems, and predictive analytics solutions that turn your historical data into future revenue.</h2>
+                    <div class="d-flex" style="margin-top: 30px;">
+                        <a href="#contact" class="btn-get-started-primary scrollto">
+                            <span>Hire Me Today <i class="fas fa-arrow-right"></i></span>
+                        </a>
+                        <a href="#about" class="btn-get-started-secondary scrollto">
+                            <span>Learn More <i class="fas fa-arrow-down"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 text-center order-lg-2">
+                    <div class="hero-profile-image">
+                        <img src="assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi - Data Scientist and AI Engineer Lagos" class="img-fluid profile-img" width="320" height="320" fetchpriority="high">
+                        <div class="profile-caption">
+                            <p style="font-size: 1em; font-style: italic; margin-top: 15px;">Adediran Adeyemi<br>Data Scientist | AI/ML Engineer<br>4+ Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main id="main">
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Why Hire Me as Your <span>Data Scientist & AI Engineer</span></h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-up" data-aos-delay="100">
+                        <p style="font-size: 20px; line-height: 1.8; font-weight: 600;">
+                            Most businesses don't have a data problem, they have a decision problem.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8;">
+                            I work with founders, marketing teams, and operators who sit on large amounts of data but struggle to turn it into clear, confident decisions. My role is to bridge that gap using data science and applied AI.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8;">
+                            Over the last 4+ years, I've helped teams understand <strong>why revenue dropped</strong>, identify <strong>which customers actually drive growth</strong>, and pinpoint <strong>where automation delivers the highest ROI</strong>, not by throwing models at the problem, but by starting with the right business question.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; margin-bottom: 0;">
+                            I design practical machine learning systems, analytics dashboards, and AI tools that fit into real workflows, ship to production, and deliver measurable outcomes.
+                        </p>
+                        <div style="margin-top: 35px; text-align: center;">
+                            <a href="#contact" class="btn-get-started-primary">
+                                <span>Let's Talk About Your Data Problem <i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Featured Services Section ======= -->
+        <section id="featured-services" class="featured-services">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <h3>Data Science & AI Engineering <span>Services in Lagos</span></h3>
+                    <p>End-to-end solutions from data engineering to deployed machine learning models</p>
+                </div>
+                <div class="row">
+                    <!-- Machine Learning & Predictive Analytics -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="fas fa-brain"></i></div>
+                            <h4 class="title">Machine Learning & AI</h4>
+                            <ul class="description" style="text-align: left; padding-left: 20px;">
+                                <li>Custom ML model development (classification, regression, clustering)</li>
+                                <li>Predictive analytics for sales, churn, and demand forecasting</li>
+                                <li>Deep learning solutions (NLP, computer vision)</li>
+                                <li>RAG systems with LangChain and vector databases</li>
+                                <li>Model deployment and monitoring</li>
+                            </ul>
+                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Python, TensorFlow, PyTorch, Scikit-learn, LangChain</p>
+                        </div>
+                    </div>
+                    <!-- Business Intelligence & Dashboards -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="fas fa-chart-bar"></i></div>
+                            <h4 class="title">Business Intelligence</h4>
+                            <ul class="description" style="text-align: left; padding-left: 20px;">
+                                <li>Interactive Power BI and Tableau dashboards</li>
+                                <li>Real-time KPI tracking and monitoring</li>
+                                <li>Executive reporting and data visualization</li>
+                                <li>Self-service BI solutions</li>
+                                <li>Marketing analytics dashboards</li>
+                            </ul>
+                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Power BI, Tableau, Excel, Google Analytics</p>
+                        </div>
+                    </div>
+                    <!-- Customer Analytics & Marketing -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon"><i class="fas fa-users"></i></div>
+                            <h4 class="title">Customer Analytics</h4>
+                            <ul class="description" style="text-align: left; padding-left: 20px;">
+                                <li>RFM analysis and customer segmentation</li>
+                                <li>Customer lifetime value (CLV) modeling</li>
+                                <li>Churn prediction and retention strategies</li>
+                                <li>Customer journey mapping and funnel analysis</li>
+                                <li>Marketing ROI optimization</li>
+                            </ul>
+                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Python, SQL, Google Analytics, Adobe Analytics</p>
+                        </div>
+                    </div>
+                    <!-- Data Engineering & Automation -->
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon"><i class="fas fa-database"></i></div>
+                            <h4 class="title">Data Engineering</h4>
+                            <ul class="description" style="text-align: left; padding-left: 20px;">
+                                <li>ETL pipeline development and automation</li>
+                                <li>Database design and optimization (SQL, NoSQL)</li>
+                                <li>Web scraping and data collection</li>
+                                <li>Data warehousing solutions</li>
+                                <li>API development and integration</li>
+                            </ul>
+                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: SQL, Python, Docker, AWS, GCP, FastAPI</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 50px; text-align: center; padding: 40px; background: linear-gradient(135deg, #106eea 0%, #3b8af2 100%); border-radius: 12px; color: white;">
+                    <h3 style="color: white; margin-bottom: 15px;">Ready to Transform Your Data into Business Value?</h3>
+                    <p style="font-size: 18px; margin-bottom: 25px; color: rgba(255,255,255,0.95);">Let's discuss your data science and AI engineering needs. Free consultation available.</p>
+                    <a href="#contact" class="btn-get-started-primary" style="background: white; color: #106eea; border: none;">
+                        <span>Get Started Today <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Portfolio</h2>
+                    <h3>Data Science Projects & <span>AI Solutions</span></h3>
+                    <p>Real-world machine learning, predictive analytics, and AI engineering projects. Some apps may take a moment to load initially.</p>
+                </div>
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <ul id="portfolio-flters">
+                            <li data-filter="*" class="filter-active">All Projects</li>
+                            <li data-filter=".filter-app">Live Demos & Apps</li>
+                            <li data-filter=".filter-card">Case Studies</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    <!-- RAG System -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
+                        <a href="https://github.com/Adeyemi0/RAG-System">
+                            <img src="assets/img/portfolio/rag.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="RAG System with LangChain and Vector Database" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>RAG System (AI Engineering)</h4>
+                        <p>
+                            Production-ready Retrieval Augmented Generation system processing 50M+ tokens across 402 companies. Built with LangChain, Zilliz vector database, and hybrid retrieval achieving <1s response time.
+                            <br><br>
+                            <strong>Tech:</strong> Docker, OpenAI, PyTorch, FastAPI, LangChain, HTML, CSS, Javascript, Zilliz
+                            <br>
+                            <a href="https://huggingface.co/spaces/adeyemi001/FinSight-RAG-Application"><b>Live Demo</b></a> |
+                            <a href="https://github.com/Adeyemi0/FinSight-RAG-Application-"><b>Documentation</b></a>
+                        </p>
+                    </div>
+                    <!-- Yoruba Translation -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
+                        <a href="https://github.com/Adeyemi0/Yoruba-Translation">
+                            <img src="assets/img/portfolio/trans.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Yoruba English Translation Model" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Bidirectional Translation Model (NLP)</h4>
+                        <p>
+                            Built transformer-based NMT model for low-resource language translation. Flask REST API with text chunking, batching logic, and BLEU/METEOR evaluation metrics.
+                            <br><br>
+                            <strong>Tech:</strong> Transformers, Flask, REST APIs, NLP
+                            <br>
+                            <a href="https://huggingface.co/spaces/adeyemi001/yoruba-english-translation-model"><b>Live Demo</b></a> |
+                            <a href="https://github.com/Adeyemi0/Yoruba-English-Translation"><b>Documentation</b></a>
+                        </p>
+                    </div>
+                    <!-- NYC Real Estate -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
+                        <a href="https://github.com/Adeyemi0/NYC-Real-Estate">
+                            <img src="assets/img/portfolio/real-estate.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NYC Real Estate Price Prediction" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Real Estate Price Prediction (ML)</h4>
+                        <p>
+                            End-to-end ML pipeline predicting NYC property prices with 80% R² accuracy. Benchmarked 3 gradient boosting models, deployed LightGBM with <100ms inference.
+                            <br><br>
+                            <strong>Tech:</strong> Docker, LightGBM, Flask, Beautiful Soup
+                            <br>
+                            <a href="https://huggingface.co/spaces/adeyemi001/NYC-House-Price-Predictor"><b>Live App</b></a> |
+                            <a href="https://github.com/Adeyemi0/NYC-Real-Estate-Price-Predictor"><b>Documentation</b></a>
+                        </p>
+                    </div>
+                    <!-- Retail Analysis -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
+                        <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/">
+                            <img src="assets/img/portfolio/electronics.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Retail Sales Analysis Dashboard" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Retail Analytics (Business Intelligence)</h4>
+                        <p>
+                            Investigated 88.8% YoY revenue decline and 85% drop in repeat customers. Built interactive dashboard revealing product performance gaps and customer behavior patterns.
+                            <br><br>
+                            <strong>Tech:</strong> Python, SQL, Streamlit, Pandas
+                            <br>
+                            <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/"><b>Dashboard</b></a> |
+                            <a href="https://github.com/Adeyemi0/Retail-Analysis-Global-Electronics-"><b>GitHub</b></a>
+                        </p>
+                    </div>
+                    <!-- Product Returns -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
+                        <a href="https://github.com/Adeyemi0/Product-Returns">
+                            <img src="assets/img/portfolio/returns.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Product Returns Analysis" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Product Returns Analysis (Data Science)</h4>
+                        <p>
+                            Analyzed revenue loss from product returns showing ~27% impact on profitability. Identified predictive patterns and customer segments driving return behavior.
+                            <br><br>
+                            <strong>Tech:</strong> Python, Pandas, Statistical Analysis
+                            <br>
+                            <a href="https://github.com/Adeyemi0/Product-Returns"><b>View Analysis</b></a>
+                        </p>
+                    </div>
+                    <!-- Lead Scoring -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
+                        <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/">
+                            <img src="assets/img/portfolio/leads.jpeg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Lead Scoring ML Model" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Lead Scoring Model (Predictive Analytics)</h4>
+                        <p>
+                            Achieved 95%+ accuracy predicting purchase intent by modeling user interactions. Machine learning classification with feature engineering for digital marketing optimization.
+                            <br><br>
+                            <strong>Tech:</strong> Scikit-learn, Streamlit, Python
+                            <br>
+                            <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/"><b>Live Demo</b></a> |
+                            <a href="https://github.com/Adeyemi0/Lead-Scoring"><b>Code</b></a>
+                        </p>
+                    </div>
+                    <!-- User Journey -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
+                        <a href="https://github.com/Adeyemi0/User-Journey-Analysis">
+                            <img src="assets/img/portfolio/cj.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Journey Analysis" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>User Journey Analysis (Customer Analytics)</h4>
+                        <p>
+                            Path and funnel analysis on 10k sessions identifying conversion drivers and drop-off points. Data-driven recommendations shaped product roadmap and UX optimization.
+                            <br><br>
+                            <strong>Tech:</strong> Python, Google Analytics, SQL
+                            <br>
+                            <a href="https://github.com/Adeyemi0/User-Journey-Analysis"><b>View Project</b></a>
+                        </p>
+                    </div>
+                    <!-- Chicken Republic -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
+                        <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d">
+                            <img src="assets/img/portfolio/chi.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Geospatial Analysis Lagos" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Location Intelligence (Geospatial Analytics)</h4>
+                        <p>
+                            Mapped and analyzed 50+ locations across Lagos decoding market dominance strategy. Geospatial data analysis for business expansion insights.
+                            <br><br>
+                            <strong>Tech:</strong> Python, Geospatial Libraries, Streamlit
+                            <br>
+                            <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d"><b>Article</b></a> |
+                            <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/"><b>Map</b></a>
+                        </p>
+                    </div>
+                    <!-- Review Categorization -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
+                        <a href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model">
+                            <img src="assets/img/portfolio/fldemo.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NLP Review Classification" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Multi-Label Review Classification (NLP)</h4>
+                        <p>
+                            Built NLP model on 29k+ customer reviews uncovering key pain points. Multi-label classification with Power BI dashboard for sentiment analysis and trend tracking.
+                            <br><br>
+                            <strong>Tech:</strong> Transformers, HuggingFace, Power BI
+                            <br>
+                            <a href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model"><b>Live Demo</b></a> |
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiYjk1YWM3YmYtYWU5ZS00YjIxLWIwMmQtMWI0YjI2ZjQ2MWM3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Dashboard</b></a> |
+                            <a href="https://github.com/Adeyemi0/Fintech-Review-Prediction"><b>Documentation</b></a>
+                        </p>
+                    </div>
+                    <!-- Used Car Prediction -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
+                        <a href="https://huggingface.co/spaces/adeyemi001/Cars">
+                            <img src="assets/img/portfolio/car.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Used Car Price Prediction" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Used Car Price Prediction (Regression)</h4>
+                        <p>
+                            Machine learning regression model predicting Nigerian used car prices. Feature engineering, model comparison, and deployed web application for instant price estimates.
+                            <br><br>
+                            <strong>Tech:</strong> LightGBM, Flask, Beautiful Soup, Scikit-learn, Python
+                            <br>
+                            <a href="https://huggingface.co/spaces/adeyemi001/Cars"><b>Live Demo</b></a> |
+                            <a href="https://github.com/Adeyemi0/Nigerian-Used-Car-Prediction"><b>Code</b></a>
+                        </p>
+                    </div>
+                    <!-- Customer Survey -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9">
+                            <img src="assets/img/portfolio/survey.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Survey Analysis" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Customer Survey Analysis (BI)</h4>
+                        <p>
+                            Power BI dashboard analyzing banking service surveys. Derived retention strategies through sentiment analysis and satisfaction scoring. Interactive visualizations for stakeholder reporting.
+                            <br><br>
+                            <strong>Tech:</strong> Power BI, DAX, SQL
+                            <br>
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Dashboard</b></a> |
+                            <a href="https://github.com/Adeyemi0/Customer-Survey"><b>Details</b></a>
+                        </p>
+                    </div>
+                    <!-- Sales Analysis -->
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGM0NmQtZWMwOC00ODUzLWJjM2EtNWZlMzdjOTE5MWE1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9">
+                            <img src="assets/img/portfolio/sales.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Sales Performance Dashboard" width="400" height="225">
+                        </a>
+                        <br><br>
+                        <h4>Sales Performance Dashboard (BI)</h4>
+                        <p>
+                            Interactive Power BI dashboard revealing sales trends, customer sentiment, and performance patterns. Real-time KPI tracking guiding data-driven decisions for sales optimization.
+                            <br><br>
+                            <strong>Tech:</strong> Power BI, DAX, Data Modeling
+                            <br>
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGM0NmQtZWMwOC00ODUzLWJjM2EtNWZlMzdjOTE5MWE1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>View Dashboard</b></a>
+                        </p>
+                    </div>
+                </div>
+                <div style="margin-top: 40px; text-align: center;">
+                    <p style="font-size: 18px; margin-bottom: 20px;">Want similar results for your business? Let's build a custom solution together.</p>
+                    <a href="#contact" class="btn-get-started-primary">
+                        <span>Discuss Your Project <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Hire Me</h2>
+                    <h3><span>Get In Touch</span> - Freelance Data Scientist Lagos</h3>
+                    <p>Ready to leverage data science and AI for your business? Let's discuss your project. Free initial consultation available.</p>
+                </div>
+                <div class="row" style="margin-bottom: 40px;">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="info-box">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Location</h3>
+                            <p>Lagos, Nigeria<br>Available for remote projects globally</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="info-box">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="info-box">
+                            <i class="fab fa-whatsapp"></i>
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-8">
+                        <form method="POST" class="php-email-form" novalidate>
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" name="message" rows="6" placeholder="Tell me about your project or data challenge..." required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Sending...</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Thank you! I'll respond within 24 hours.</div>
+                            </div>
+                            <div class="text-center mt-3">
+                                <button type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======= Blog/FAQ Section ======= -->
+        <section id="faq" class="faq section-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Technical Writing</h2>
+                    <h3>Data Science <span>Insights & Articles</span></h3>
+                    <p>Practical guides on customer analytics, predictive modeling, and data-driven decision making</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <ul class="faq-list">
+                            <li>
+                                <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
+                                    The Customer Audit Every Business Needs to Scale Profitably
+                                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                                </div>
+                                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                                    <a href="https://medium.com/@xmine4346/the-customer-analytics-framework-every-business-leader-needs-dd679e8f0514">
+                                        <p>80% of your revenue comes from 20% of your customers. Yet most businesses can't tell you which customers those are. Learn the analytics framework that reveals your most valuable customers...</p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div data-bs-toggle="collapse" class="collapsed question" href="#faq2">
+                                    Data-Driven Retention: Predict Customer Churn Before It Happens
+                                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                                </div>
+                                <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                                    <a href="https://medium.com/@xmine4346/the-proven-way-to-predict-customer-retention-without-waiting-for-churn-0318dc838f9d">
+                                        <p>Most companies define customer health by asking "Are they paying us?" But payment is a lagging indicator. Discover how to predict churn months before it happens using behavioral data science...</p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div data-bs-toggle="collapse" class="collapsed question" href="#faq4">
+                                    How to Personalize Your Free Trial Experience (And Skyrocket Conversions)
+                                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                                </div>
+                                <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                                    <a href="https://medium.com/@xmine4346/how-to-personalize-your-free-trial-experience-and-skyrocket-conversions-7999446cf33e">
+                                        <p>Generic email sequences promising "amazing features" don't convert. Learn how to use behavioral data and predictive analytics to personalize trial experiences and increase conversion rates...</p>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div style="margin-top: 30px; text-align: center;">
+                            <a href="https://medium.com/@xmine4346" class="btn-get-started-primary" target="_blank" rel="noopener noreferrer">
+                                <span>Read All Articles <i class="fas fa-external-link-alt"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        <h3>Adeyemi<span>Data</span></h3>
+                        <p>
+                            Freelance Data Scientist & AI Engineer<br>
+                            Lagos, Nigeria<br><br>
+                            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+                            <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a><br>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Hire Me</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Machine Learning</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Business Intelligence</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Customer Analytics</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Data Engineering</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Connect With Me</h4>
+                        <p>Follow for data science insights and project updates</p>
+                        <div class="social-links mt-3">
+                            <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" class="linkedin" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+                            <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+                            <a href="https://wa.me/+2348162735399" class="whatsapp" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+                            <a href="https://web.facebook.com/adediran.adeyemiabiodun" class="facebook" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.instagram.com/adediran.yemite/" class="instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container py-4">
+            <div class="copyright">
+                &copy; 2025 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved | Data Scientist & AI Engineer Lagos, Nigeria
+            </div>
+        </div>
+    </footer>
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    // Load scripts sequentially to ensure dependencies are met before initialization code runs.
-    // 1. Load Bootstrap Bundle first (critical for mobile menu and other components)
-    const bootstrapScript = document.createElement('script');
-    bootstrapScript.src = 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
-    bootstrapScript.onload = function() {
-        console.log("Bootstrap loaded");
-        // Initialize mobile navigation toggle if it exists *after* bootstrap is loaded
-        let mobileNavToogle = document.querySelector('.mobile-nav-toggle');
-        if (mobileNavToogle) {
-            mobileNavToogle.addEventListener('click', function() {
-                document.querySelector('#navbar').classList.toggle('navbar-mobile');
-                this.classList.toggle('bi-list');
-                this.classList.toggle('bi-x');
-            });
-        }
-        // Other bootstrap-dependent initializations could go here if needed directly.
-    };
-    document.head.appendChild(bootstrapScript); // Appending to head is often preferred for critical scripts
-
-    // 2. Load AOS after Bootstrap
-    const aosScript = document.createElement('script');
-    aosScript.src = 'assets/vendor/aos/aos.js';
-    aosScript.onload = function() {
-        console.log("AOS loaded");
-        // Initialize AOS if the library is loaded and AOS.init is available
-        // This should ideally be handled by main.js, but ensure it's ready.
-        // main.js waits for window.load, so it might not initialize here either unless main.js is fixed.
-        // If main.js is fixed, this step just ensures AOS lib is loaded.
-    };
-    // Ensure AOS loads *after* Bootstrap
-    bootstrapScript.onload = function() {
-         document.head.appendChild(aosScript);
-    };
-
-
-    // 3. Load Isotope after AOS
-    const isotopeScript = document.createElement('script');
-    isotopeScript.src = 'assets/vendor/isotope-layout/isotope.pkgd.min.js';
-    isotopeScript.onload = function() {
-        console.log("Isotope loaded");
-        // Initialization should be handled by main.js.
-    };
-    aosScript.onload = function() { // Ensure Isotope loads after AOS
-         document.head.appendChild(isotopeScript);
-    };
-
-    // 4. Load EmailJS after Isotope
-    const emailjsScript = document.createElement('script');
-    emailjsScript.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-    emailjsScript.onload = function() {
-        console.log("EmailJS loaded");
-        if (typeof emailjs !== 'undefined') {
-            emailjs.init("Cb0fk0SyXsi8GsG9g"); // Replace with your actual public key if needed, though often set via init in form handler
-            // Note: The form handler is in main.js, which should initialize correctly if main.js runs.
-        }
-    };
-    isotopeScript.onload = function() { // Ensure EmailJS loads after Isotope
-         document.head.appendChild(emailjsScript);
-    };
-
-    // 5. Load main script last
-    const mainScript = document.createElement('script');
-    mainScript.src = 'assets/js/main.js';
-    mainScript.onload = function() {
-        console.log("Main script loaded");
-        // main.js contains the preloader removal logic inside a window.addEventListener('load', ...).
-        // Since we are loading main.js *after* the window has loaded (inside the outer window.load),
-        // that internal listener in main.js will never fire.
-        // Therefore, the preloader removal code in main.js will not execute.
-        // We need to trigger the preloader removal here, OR modify main.js.
-
-        // CRITICAL: Because main.js waits for window.load internally, and it's loaded after window.load,
-        // its preloader code is skipped. We must remove the preloader here.
-        // This is the direct fix for the current setup without modifying main.js again.
-        // However, the *best* fix is still to modify main.js's preloader section.
-        // For now, calling the function here should work.
-        removePreloader(); // Call the function we defined above.
-    };
-    emailjsScript.onload = function() { // Ensure main.js loads after EmailJS
-         document.head.appendChild(mainScript);
-    };
-
-    // Optional: As a final fallback, remove the preloader on the outer window load event.
-    // This should execute *after* all the dynamic script loading above is initiated.
-    // window.addEventListener('load', removePreloader); // Not strictly needed if mainScript.onload calls removePreloader()
-
-</script>
-
+    <!-- Vendor JS Files - All deferred -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
-
 </html>
