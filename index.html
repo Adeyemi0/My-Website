@@ -14,24 +14,36 @@
   <meta property="og:description" content="Expert freelance data scientist and AI engineer in Lagos. Machine learning, predictive analytics, and custom AI solutions.">
   <meta property="og:type" content="website">
   
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
   <!-- Favicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+  <!-- Critical CSS - Inline for first paint -->
+  <style>
+    body{font-family:"Open Sans",sans-serif;color:#444;margin:0}a{color:#106eea;text-decoration:none}h1,h2,h3,h4,h5,h6{font-family:"Roboto",sans-serif}#preloader{position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;background:#fff}#preloader:before{content:"";position:fixed;top:calc(50% - 30px);left:calc(50% - 30px);border:6px solid #106eea;border-top-color:#e2eefd;border-radius:50%;width:60px;height:60px;animation:animate-preloader 1s linear infinite}@keyframes animate-preloader{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}#topbar{background:#106eea;height:40px;font-size:14px;color:#fff;padding:0}#header{background:#fff;transition:all .5s;z-index:997;height:86px;box-shadow:0 2px 15px rgba(0,0,0,.1)}#hero{width:100%;min-height:75vh;background:url("assets/img/hero-bg.jpg") top left;background-size:cover;position:relative;padding:80px 0 60px 0}#hero:before{content:"";background:rgba(255,255,255,.6);position:absolute;bottom:0;top:0;left:0;right:0}
+  </style>
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Google Fonts - Deferred -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-  <!-- Template Main CSS File -->
+  <!-- Vendor CSS Files - Deferred -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Font Awesome - Deferred -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
 
   <!-- Schema Markup for Local Business -->
   <script type="application/ld+json">
@@ -59,12 +71,8 @@
   }
   </script>
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("Cb0fk0SyXsi8GsG9g"); // Your Public Key
-   })();
-</script>
+  <!-- EmailJS - Deferred -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" as="script">
 </head>
 
 <body>
@@ -115,7 +123,7 @@
         
         <h2>Transforming Business Data into Revenue-Driving AI Solutions</h2>
         
-        <h5><p>Is your business struggling with these challenges?</p></h5>
+        <p class="hero-subtitle"><strong>Is your business struggling with these challenges?</strong></p>
         <ul>
           <li><i class="fas fa-chart-line"></i> Unexplained revenue drops despite stable operations</li>
           <li><i class="fas fa-users-slash"></i> High customer churn but no clear pattern or prediction model</li>
@@ -139,7 +147,7 @@
       
       <div class="col-lg-4 col-md-12 text-center order-lg-2">
         <div class="hero-profile-image">
-          <img src="assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi - Data Scientist and AI Engineer Lagos" class="img-fluid profile-img">
+          <img src="assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi - Data Scientist and AI Engineer Lagos" class="img-fluid profile-img" width="320" height="320" fetchpriority="high">
           <div class="profile-caption">
             <p style="font-size: 1em; font-style: italic; margin-top: 15px;">Adediran Adeyemi<br>Data Scientist | AI/ML Engineer<br>4+ Years Experience</p>
           </div>
@@ -188,6 +196,7 @@
     </div>
   </div>
 </section>
+
 <!-- ======= Featured Services Section ======= -->
 <section id="featured-services" class="featured-services">
   <div class="container" data-aos="fade-up">
@@ -302,7 +311,7 @@
       <!-- RAG System -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
         <a href="https://github.com/Adeyemi0/RAG-System">
-          <img src="assets/img/portfolio/rag.gif" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="RAG System with LangChain and Vector Database">
+          <img src="assets/img/portfolio/rag.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="RAG System with LangChain and Vector Database" width="400" height="225">
         </a>
         <br><br>
         <h4>RAG System (AI Engineering)</h4>
@@ -319,7 +328,7 @@
       <!-- Yoruba Translation -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
         <a href="https://github.com/Adeyemi0/Yoruba-Translation">
-          <img src="assets/img/portfolio/trans.gif" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Yoruba English Translation Model">
+          <img src="assets/img/portfolio/trans.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Yoruba English Translation Model" width="400" height="225">
         </a>
         <br><br>
         <h4>Bidirectional Translation Model (NLP)</h4>
@@ -336,7 +345,7 @@
       <!-- NYC Real Estate -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
         <a href="https://github.com/Adeyemi0/NYC-Real-Estate">
-          <img src="assets/img/portfolio/real-estate.gif" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="NYC Real Estate Price Prediction">
+          <img src="assets/img/portfolio/real-estate.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NYC Real Estate Price Prediction" width="400" height="225">
         </a>
         <br><br>
         <h4>Real Estate Price Prediction (ML)</h4>
@@ -353,7 +362,7 @@
       <!-- Retail Analysis -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
         <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/">
-          <img src="assets/img/portfolio/electronics.png" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Retail Sales Analysis Dashboard">
+          <img src="assets/img/portfolio/electronics.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Retail Sales Analysis Dashboard" width="400" height="225">
         </a>
         <br><br>
         <h4>Retail Analytics (Business Intelligence)</h4>
@@ -370,7 +379,7 @@
       <!-- Product Returns -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
         <a href="https://github.com/Adeyemi0/Product-Returns">
-          <img src="assets/img/portfolio/returns.jpg" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Product Returns Analysis">
+          <img src="assets/img/portfolio/returns.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Product Returns Analysis" width="400" height="225">
         </a>
         <br><br>
         <h4>Product Returns Analysis (Data Science)</h4>
@@ -386,7 +395,7 @@
       <!-- Lead Scoring -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
         <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/">
-          <img src="assets/img/portfolio/leads.jpeg" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Lead Scoring ML Model">
+          <img src="assets/img/portfolio/leads.jpeg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Lead Scoring ML Model" width="400" height="225">
         </a>
         <br><br>
         <h4>Lead Scoring Model (Predictive Analytics)</h4>
@@ -403,7 +412,7 @@
       <!-- User Journey -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
         <a href="https://github.com/Adeyemi0/User-Journey-Analysis">
-          <img src="assets/img/portfolio/cj.jpg" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Journey Analysis">
+          <img src="assets/img/portfolio/cj.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Journey Analysis" width="400" height="225">
         </a>
         <br><br>
         <h4>User Journey Analysis (Customer Analytics)</h4>
@@ -419,7 +428,7 @@
       <!-- Chicken Republic -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-card" style="height: 500px;">
         <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d">
-          <img src="assets/img/portfolio/chi.jpg" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Geospatial Analysis Lagos">
+          <img src="assets/img/portfolio/chi.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Geospatial Analysis Lagos" width="400" height="225">
         </a>
         <br><br>
         <h4>Location Intelligence (Geospatial Analytics)</h4>
@@ -436,7 +445,7 @@
       <!-- Review Categorization -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
         <a href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model">
-          <img src="assets/img/portfolio/fldemo.gif" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="NLP Review Classification">
+          <img src="assets/img/portfolio/fldemo.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NLP Review Classification" width="400" height="225">
         </a>
         <br><br>
         <h4>Multi-Label Review Classification (NLP)</h4>
@@ -454,7 +463,7 @@
       <!-- Used Car Prediction -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
         <a href="https://huggingface.co/spaces/adeyemi001/Cars">
-          <img src="assets/img/portfolio/car.gif" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Used Car Price Prediction">
+          <img src="assets/img/portfolio/car.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Used Car Price Prediction" width="400" height="225">
         </a>
         <br><br>
         <h4>Used Car Price Prediction (Regression)</h4>
@@ -471,7 +480,7 @@
       <!-- Customer Survey -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
         <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9">
-          <img src="assets/img/portfolio/survey.png" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Survey Analysis">
+          <img src="assets/img/portfolio/survey.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Survey Analysis" width="400" height="225">
         </a>
         <br><br>
         <h4>Customer Survey Analysis (BI)</h4>
@@ -488,7 +497,7 @@
       <!-- Sales Analysis -->
       <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
         <a href="https://app.powerbi.com/view?r=eyJrIjoiOWFjMGM0NmQtZWMwOC00ODUzLWJjM2EtNWZlMzdjOTE5MWE1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9">
-          <img src="assets/img/portfolio/sales.jpg" class="img-fluid" style="height: 45%; width: 100%; object-fit: cover;" alt="Sales Performance Dashboard">
+          <img src="assets/img/portfolio/sales.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Sales Performance Dashboard" width="400" height="225">
         </a>
         <br><br>
         <h4>Sales Performance Dashboard (BI)</h4>
@@ -630,7 +639,7 @@
         </ul>
 
         <div style="margin-top: 30px; text-align: center;">
-          <a href="https://medium.com/@xmine4346" class="btn-get-started-primary" target="_blank">
+          <a href="https://medium.com/@xmine4346" class="btn-get-started-primary" target="_blank" rel="noopener noreferrer">
             <span>Read All Articles <i class="fas fa-external-link-alt"></i></span>
           </a>
         </div>
@@ -707,18 +716,27 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <!-- Removed validate.js - using custom form handler in main.js -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <!-- Vendor JS Files - Deferred -->
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+
+  <!-- EmailJS - Deferred -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+  <script defer>
+    window.addEventListener('load', function() {
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init("Cb0fk0SyXsi8GsG9g");
+      }
+    });
+  </script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 
