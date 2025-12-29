@@ -1,5 +1,6 @@
 /**
  * Optimized Main JS - Performance Enhanced
+ * Handles FormSubmit via AJAX to prevent page redirection.
  */
 (function() {
   "use strict";
@@ -217,4 +218,59 @@
     }
   });
 
-})()
+  /**
+   * Contact Form Handler - FormSubmit AJAX
+   */
+  const contactForm = select('.php-email-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop the page from redirecting
+
+      const form = e.target;
+      const loading = form.querySelector('.loading');
+      const errorMessage = form.querySelector('.error-message');
+      const sentMessage = form.querySelector('.sent-message');
+
+      // 1. Show loading state
+      if (loading) loading.style.display = 'block';
+      if (errorMessage) errorMessage.style.display = 'none';
+      if (sentMessage) sentMessage.style.display = 'none';
+
+      const formData = new FormData(form);
+
+      // 2. Use fetch to send the form data to FormSubmit
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        // Hide loading indicator
+        if (loading) loading.style.display = 'none';
+        
+        if (response.ok) {
+          // 3. Handle Success
+          if (sentMessage) {
+            sentMessage.textContent = "Thank you! Your message has been sent.";
+            sentMessage.style.display = 'block';
+          }
+          form.reset(); // Clear the form fields
+        } else {
+          // 4. Handle Server Errors (e.g., 404, 500)
+          throw new Error('Something went wrong on the server.');
+        }
+      })
+      .catch(error => {
+        // 5. Handle Network Errors
+        if (loading) loading.style.display = 'none';
+        if (errorMessage) {
+          errorMessage.textContent = "Oops! Could not send message. Please check your internet or contact me via WhatsApp.";
+          errorMessage.style.display = 'block';
+        }
+      });
+    });
+  }
+
+})();
