@@ -809,14 +809,14 @@
                 </div>
             </div>
         </section>
-        <!-- ======= Contact Section ======= -->
-<section id="contact" class="contact">
+        <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <h2>Hire Me</h2>
             <h3><span>Get In Touch</span> - Freelance Data Scientist Lagos</h3>
             <p>Ready to leverage data science and AI for your business? Let's discuss your project. Free initial consultation available.</p>
         </div>
+
         <div class="row" style="margin-bottom: 40px;">
             <div class="col-lg-4 col-md-6">
                 <div class="info-box">
@@ -840,10 +840,10 @@
                 </div>
             </div>
         </div>
+
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-8">
                 <form action="https://formsubmit.co/adeyemi@adediranadeyemi.com" method="POST" class="php-email-form">
-                    <!-- FormSubmit Configuration -->
                     <input type="hidden" name="_subject" value="New Project Inquiry from Website">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
@@ -861,7 +861,14 @@
                     <div class="form-group mt-3">
                         <textarea class="form-control" name="message" rows="6" placeholder="Tell me about your project or data challenge..." required></textarea>
                     </div>
-                    <div class="text-center mt-3">
+
+                    <div class="my-3">
+                        <div class="loading" style="display: none; text-align: center;">Sending message...</div>
+                        <div class="error-message" style="display: none; color: #fff; background: #ed3c0d; text-align: center; padding: 15px; font-weight: 600;"></div>
+                        <div class="sent-message" style="display: none; color: #fff; background: #18d26e; text-align: center; padding: 15px; font-weight: 600;">Your message has been sent. Thank you!</div>
+                    </div>
+
+                    <div class="text-center">
                         <button type="submit">Send Message</button>
                     </div>
                 </form>
@@ -989,5 +996,6 @@
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
+
 
 
