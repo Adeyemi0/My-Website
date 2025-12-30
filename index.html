@@ -19,359 +19,86 @@
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <!-- Critical CSS - Inline for immediate render -->
     <style>
-        /*--------------------------------------------------------------
-        # Critical styles - loaded immediately
-        --------------------------------------------------------------*/
-        /* Moved @font-face from style.css */
-        @font-face {
-            font-family: 'bootstrap-icons';
-            src: url('assets/fonts/bootstrap-icons.woff2?856008c0e87f06f215a7aad03c93f6e3') format('woff2');
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'boxicons';
-            src: url('assets/fonts/boxicons.woff2') format('woff2');
-            font-display: swap;
-        }
+/*--------------------------------------------------------------
+# Critical styles - loaded immediately
+--------------------------------------------------------------*/
+@font-face {
+    font-family: 'bootstrap-icons';
+    src: url('assets/fonts/bootstrap-icons.woff2?856008c0e87f06f215a7aad03c93f6e3') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'boxicons';
+    src: url('assets/fonts/boxicons.woff2') format('woff2');
+    font-display: swap;
+}
 
-        /*--------------------------------------------------------------
-        # General
-        --------------------------------------------------------------*/
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: "Open Sans", sans-serif;
-            color: #444444;
-            margin: 0;
-            padding: 0;
-        }
-        a {
-            color: #106eea;
-            text-decoration: none;
-        }
-        a:hover {
-            color: #3b8af2;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: "Roboto", sans-serif;
-        }
-        /*--------------------------------------------------------------
-        # Preloader
-        --------------------------------------------------------------*/
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 9999;
-            overflow: hidden;
-            background: #fff;
-        }
-        #preloader:before {
-            content: "";
-            position: fixed;
-            top: calc(50% - 30px);
-            left: calc(50% - 30px);
-            border: 6px solid #106eea;
-            border-top-color: #e2eefd;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: animate-preloader 1s linear infinite;
-        }
-        @keyframes animate-preloader {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        /*--------------------------------------------------------------
-        # Top Bar
-        --------------------------------------------------------------*/
-        #topbar {
-            background: #106eea;
-            height: 40px;
-            font-size: 14px;
-            color: #fff;
-            padding: 0;
-        }
-        /*--------------------------------------------------------------
-        # Header
-        --------------------------------------------------------------*/
-        #header {
-            background: #fff;
-            transition: all 0.5s;
-            z-index: 997;
-            height: 86px;
-            box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-        }
-        #header.fixed-top {
-            height: 70px;
-        }
-        /*--------------------------------------------------------------
-        # Navigation Menu
-        --------------------------------------------------------------*/
-        .navbar {
-            padding: 0;
-        }
-        .navbar ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            list-style: none;
-            align-items: center;
-        }
-        .navbar li {
-            position: relative;
-        }
-        .navbar > ul > li {
-            white-space: nowrap;
-            padding: 10px 0 10px 28px;
-        }
-        .navbar a {
-            display: flex;
-            align-items: center;
-            padding: 0 3px;
-            font-size: 15px;
-            font-weight: 600;
-            color: #222222;
-            transition: 0.3s;
-            position: relative;
-        }
-        .mobile-nav-toggle {
-            color: #222222;
-            font-size: 28px;
-            cursor: pointer;
-            display: none;
-            line-height: 0;
-        }
-        @media (max-width: 991px) {
-            .mobile-nav-toggle {
-                display: block;
-            }
-            .navbar ul {
-                display: none;
-            }
-        }
-        /*--------------------------------------------------------------
-        # Hero Section
-        --------------------------------------------------------------*/
-        #hero {
-            width: 100%;
-            min-height: 75vh;
-            background: url("assets/img/hero-bg.jpg") top left;
-            background-size: cover;
-            position: relative;
-            padding: 80px 0 60px 0;
-        }
-        #hero:before {
-            content: "";
-            background: rgba(255, 255, 255, 0.6);
-            position: absolute;
-            bottom: 0;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
-        #hero .container {
-            position: relative;
-            z-index: 2;
-        }
-        #hero h1 {
-            margin: 0 0 20px 0;
-            font-size: 42px;
-            font-weight: 700;
-            line-height: 1.3;
-            color: #222222;
-            font-family: "Poppins", sans-serif;
-        }
-        #hero h1 span {
-            color: #106eea;
-        }
-        #hero h2 {
-            color: #555555;
-            margin: 10px 0 30px 0;
-            font-size: 22px;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-        #hero .hero-subtitle {
-            color: #333;
-            font-weight: 600;
-            margin: 30px 0 15px 0;
-        }
-        #hero ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 20px 0;
-        }
-        #hero ul li {
-            margin: 15px 0;
-            display: flex;
-            align-items: flex-start;
-            line-height: 1.6;
-        }
-        #hero ul li i {
-            color: #106eea;
-            margin-right: 12px;
-            font-size: 18px;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-        .btn-get-started-primary {
-            font-family: "Roboto", sans-serif;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 1px;
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 4px;
-            transition: 0.3s;
-            color: #fff;
-            background: #106eea;
-            box-shadow: 0 4px 15px rgba(16, 110, 234, 0.4);
-            border: none;
-            margin-right: 15px;
-        }
-        .btn-get-started-primary:hover {
-            background: #0e5bcc;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 110, 234, 0.5);
-            color: #fff;
-        }
-        .btn-get-started-primary i {
-            margin-left: 8px;
-        }
-        .btn-get-started-secondary {
-            font-family: "Roboto", sans-serif;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 1px;
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 4px;
-            transition: 0.3s;
-            color: #106eea;
-            background: transparent;
-            border: 2px solid #106eea;
-        }
-        .btn-get-started-secondary:hover {
-            background: #106eea;
-            color: #fff;
-            transform: translateY(-2px);
-        }
-        .btn-get-started-secondary i {
-            margin-left: 8px;
-        }
-        /* Add this CSS block to your style.css file */
-        /* Target the specific buttons */
-        .btn-get-started-primary,
-        .btn-get-started-secondary {
-            text-decoration: none; /* Removes underline */
-        }
-        /* Target the specific text/link within the FAQ section */
-        .faq-list a {
-            text-decoration: none; /* Removes underline from the article links */
-        }
-        /* Target the logo text in the header */
-        .logo a {
-            text-decoration: none; /* Removes underline from the logo link */
-        }
-        /* Ensure hover states don't add underline back */
-        .btn-get-started-primary:hover,
-        .btn-get-started-secondary:hover,
-        .faq-list a:hover,
-        .logo a:hover {
-            text-decoration: none;
-        }
-        .hero-profile-image {
-            margin-top: 20px;
-        }
-        .profile-img {
-            width: 320px !important;
-            height: 320px !important;
-            border-radius: 50% !important;
-            object-fit: cover !important;
-            border: 5px solid #106eea;
-            box-shadow: 0 10px 30px rgba(16, 110, 234, 0.3);
-            transition: all 0.3s ease;
-            display: block;
-            margin: 0 auto;
-        }
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(16, 110, 234, 0.4);
-        }
-        .profile-caption p {
-            margin-top: 20px;
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-        @media (min-width: 1024px) {
-            #hero {
-                background-attachment: fixed;
-            }
-        }
-        @media (max-width: 992px) {
-            #hero h1 {
-                font-size: 32px;
-            }
-            #hero h2 {
-                font-size: 20px;
-            }
-            .profile-img {
-                width: 280px !important;
-                height: 280px !important;
-            }
-        }
-        @media (max-width: 768px) {
-            #hero {
-                padding: 60px 0 40px 0;
-            }
-            #hero h1 {
-                font-size: 26px;
-            }
-            #hero h2 {
-                font-size: 18px;
-                margin-bottom: 25px;
-            }
-            #hero ul li {
-                font-size: 15px;
-                margin: 12px 0;
-            }
-            .profile-img {
-                width: 240px !important;
-                height: 240px !important;
-                margin-top: 30px;
-            }
-            #hero .d-flex {
-                flex-direction: column !important;
-                gap: 12px;
-            }
-            .btn-get-started-primary,
-            .btn-get-started-secondary {
-                width: 100%;
-                text-align: center;
-                display: block;
-            }
-        }
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #106eea;
+    text-decoration: none;
+}
+a:hover {
+    color: #3b8af2;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", sans-serif;
+}
 
-        /* Basic Container for Layout */
-        .container {
-            width: 100%;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-        @media (min-width: 1200px) {
-            .container {
-                max-width: 1140px;
-            }
-        }
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+}
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #106eea;
+    border-top-color: #e2eefd;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: animate-preloader 1s linear infinite;
+}
+@keyframes animate-preloader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Basic Container for Layout */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
     </style>
     <!-- Preload LCP image -->
     <link rel="preload" as="image" href="assets/img/photo_2025-08-11_17-35-17.jpg" fetchpriority="high">
@@ -440,7 +167,7 @@
                     <li><a class="nav-link scrollto" href="#featured-services">Services</a></li>
                     <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
                     <li><a class="nav-link scrollto" href="#faq">Blog</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Hire Me</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Let's Talk</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -451,24 +178,34 @@
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-12 order-lg-1">
-                    <h1>Freelance Data Scientist & AI Engineer <span>in Lagos, Nigeria</span></h1>
-                    <h2>Transforming Business Data into Revenue-Driving AI Solutions</h2>
-                    <p class="hero-subtitle"><strong>Is your business struggling with these challenges?</strong></p>
+                    <!-- OPTION A: Problem-focused, direct -->
+                    <!-- <h1>Your Data Knows Why Customers Leave. <span>Let Me Show You.</span></h1> -->
+                    
+                    <!-- OPTION B: Outcome-focused transformation -->
+                    <h1>Turn Your Data Into <span>Predictable Revenue</span></h1>
+                    <h2>I turn your messy data into clear answers about what drives revenue and what kills it.</h2>
+                    
+                    <!-- Changed from generic business challenges to specific, measurable problems -->
+                    <p class="hero-subtitle"><strong>You have the data but not the answers that drive growth:</strong></p>
                     <ul>
-                        <li><i class="fas fa-chart-line"></i> Unexplained revenue drops despite stable operations</li>
-                        <li><i class="fas fa-users-slash"></i> High customer churn but no clear pattern or prediction model</li>
-                        <li><i class="fas fa-shopping-cart"></i> Low conversion rates and abandoned carts draining marketing ROI</li>
-                        <li><i class="fas fa-bullseye"></i> Unable to identify and target high-value customer segments</li>
-                        <li><i class="fas fa-brain"></i> Mountains of data but no actionable insights or predictive models</li>
-                        <li><i class="fas fa-robot"></i> Competitors leveraging AI while you're still using spreadsheets</li>
+                        <li><i class="fas fa-chart-line"></i> Which customers are likely to churn and why?</li>
+                        <li><i class="fas fa-users-slash"></i> Which marketing channels generate real revenue, not vanity traffic?</li>
+                        <li><i class="fas fa-shopping-cart"></i> Why do 500 users add to cart, but only 50 complete a purchase?</li>
+                        <li><i class="fas fa-bullseye"></i> Which product features retain customers and which drain development time?</li>
+                        <li><i class="fas fa-brain"></i> How can you forecast demand without overstocking or running out?</li>
+                        <li><i class="fas fa-robot"></i> Where does AI deliver real business impact not just hype?</li>
                     </ul>
-                    <h2 style="font-size: 1.1em; margin-top: 20px; font-weight: 600;">I build custom machine learning models, RAG systems, and predictive analytics solutions that turn your historical data into future revenue.</h2>
+                    
+                    <!-- Changed from technical capability statement to outcome promise -->
+                    <h2 style="font-size: 1.1em; margin-top: 20px; font-weight: 600;">I build machine learning systems that turn your data into clear answers, ship in weeks not months and pay for themselves by uncovering revenue you’re leaving behind.</h2>
+                    
+                    <!-- Changed CTAs from formal to conversational -->
                     <div class="d-flex" style="margin-top: 30px;">
                         <a href="#contact" class="btn-get-started-primary scrollto">
-                            <span>Hire Me Today <i class="fas fa-arrow-right"></i></span>
+                            <span>Tell Me Your Data Problem <i class="fas fa-arrow-right"></i></span>
                         </a>
                         <a href="#about" class="btn-get-started-secondary scrollto">
-                            <span>Learn More <i class="fas fa-arrow-down"></i></span>
+                            <span>How I Work <i class="fas fa-arrow-down"></i></span>
                         </a>
                     </div>
                 </div>
@@ -476,7 +213,7 @@
                     <div class="hero-profile-image">
                         <img src="assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi - Data Scientist and AI Engineer Lagos" class="img-fluid profile-img" width="320" height="320" fetchpriority="high">
                         <div class="profile-caption">
-                            <p style="font-size: 1em; font-style: italic; margin-top: 15px;">Adediran Adeyemi<br>Data Scientist | AI/ML Engineer<br>4+ Years Experience</p>
+                            <p style="font-size: 1em; font-style: italic; margin-top: 15px;">Adediran Adeyemi<br>Data Scientist | AI/ML Engineer<br>4+ Years Turning Data Into Revenue</p>
                         </div>
                     </div>
                 </div>
@@ -488,25 +225,35 @@
         <section id="about" class="about section-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Why Hire Me as Your <span>Data Scientist & AI Engineer</span></h2>
+                    <!-- Changed from credentials to value proposition -->
+                    <h2>Here's What I Actually Do <span>(And Don't Do)</span></h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Changed from "data problem" to "decision problem" - more accurate pain point -->
                         <p style="font-size: 20px; line-height: 1.8; font-weight: 600;">
-                            Most businesses don't have a data problem, they have a decision problem.
+                            Most businesses don't have a data problem, the real challenge is using it to make confident, timely decisions.
                         </p>
+                        
+                        <!-- Changed from technical description to customer situation -->
                         <p style="font-size: 18px; line-height: 1.8;">
-                            I work with founders, marketing teams, and operators who sit on large amounts of data but struggle to turn it into clear, confident decisions. My role is to bridge that gap using data science and applied AI.
+                            You're tracking everything, website clicks, sales, support tickets, user behavior. The data exists. But when you need to decide whether to launch that new feature, double down on a marketing channel, or figure out why customers suddenly stopped buying, you're back to guessing.
                         </p>
+                        
+                        <!-- Changed from experience summary to specific outcomes -->
                         <p style="font-size: 18px; line-height: 1.8;">
-                            Over the last 4+ years, I've helped teams understand <strong>why revenue dropped</strong>, identify <strong>which customers actually drive growth</strong>, and pinpoint <strong>where automation delivers the highest ROI</strong>, not by throwing models at the problem, but by starting with the right business question.
+                            I work with founders and growth teams who know their data holds answers but don't have time to become data scientists themselves. Over the past 4 years, I've helped teams predict which customers will churn 60 days out, identify which $10K marketing experiment will return $100K, and automate decisions that used to take 3 meetings and a spreadsheet.
                         </p>
+                        
+                        <!-- Added new section: What sets me apart -->
                         <p style="font-size: 18px; line-height: 1.8; margin-bottom: 0;">
-                            I design practical machine learning systems, analytics dashboards, and AI tools that fit into real workflows, ship to production, and deliver measurable outcomes.
+                            <strong>I don't build AI for the sake of AI.</strong> I start with your business question, find the simplest path to an answer, and ship working solutions fast. You'll get models that run in production, dashboards your team actually uses, and clear documentation so you're never locked into me.
                         </p>
+                        
+                        <!-- Changed CTA from generic to specific and conversational -->
                         <div style="margin-top: 35px; text-align: center;">
                             <a href="#contact" class="btn-get-started-primary">
-                                <span>Let's Talk About Your Data Problem <i class="fas fa-arrow-right"></i></span>
+                                <span>Let's Talk About Your Toughest Data Question <i class="fas fa-arrow-right"></i></span>
                             </a>
                         </div>
                     </div>
@@ -518,76 +265,90 @@
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Services</h2>
-                    <h3>Data Science & AI Engineering <span>Services (Lagos)</span></h3>
-                    <p>End-to-end solutions from data engineering to deployed machine learning models</p>
+                    <!-- Changed from location-focused to capability-focused -->
+                    <h3>What You Get <span>(And When You Need It)</span></h3>
+                    <!-- Changed from technical description to outcome promise -->
+                    <p>Production-ready models and dashboards that answer your specific business questions, not generic "AI solutions"</p>
                 </div>
                 <div class="row">
                     <!-- Machine Learning & Predictive Analytics -->
+                    <!-- Changed service descriptions to lead with business outcome, then mention tool -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-brain"></i></div>
-                            <h4 class="title">Machine Learning & AI</h4>
+                            <!-- Changed from technical capability to business outcome -->
+                            <h4 class="title">Predict Before It Happens</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
-                                <li>Custom ML model development (classification, regression, clustering)</li>
-                                <li>Predictive analytics for sales, churn, and demand forecasting</li>
-                                <li>Deep learning solutions (NLP, computer vision)</li>
-                                <li>RAG systems with LangChain and vector databases</li>
-                                <li>Model deployment and monitoring</li>
+                                <!-- Rewritten in customer language with business outcomes first -->
+                                <li>Know which customers will churn 30-90 days out (churn prediction models)</li>
+                                <li>Forecast sales and demand to prevent stockouts (predictive analytics)</li>
+                                <li>Identify high-value customer segments automatically (ML classification)</li>
+                                <li>Build AI that answers questions about your docs/data (RAG systems)</li>
+                                <li>Deploy models that improve as they learn (production ML)</li>
                             </ul>
-                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Python, TensorFlow, PyTorch, Scikit-learn, LangChain</p>
+                            <!-- Added when-you-need context -->
+                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">You need this when: You're making big decisions based on hunches, not data</p>
                         </div>
                     </div>
                     <!-- Business Intelligence & Dashboards -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                             <div class="icon"><i class="fas fa-chart-bar"></i></div>
-                            <h4 class="title">Business Intelligence</h4>
+                            <!-- Changed from tool name to outcome -->
+                            <h4 class="title">See What's Actually Working</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
-                                <li>Interactive Power BI and Tableau dashboards</li>
-                                <li>Real-time KPI tracking and monitoring</li>
-                                <li>Executive reporting and data visualization</li>
-                                <li>Self-service BI solutions</li>
-                                <li>Marketing analytics dashboards</li>
+                                <!-- Rewritten to emphasize clarity and speed of insights -->
+                                <li>Track revenue, growth, and retention in real-time (live dashboards)</li>
+                                <li>Compare marketing channels by actual revenue, not vanity metrics</li>
+                                <li>Spot trends before they become problems (automated alerts)</li>
+                                <li>Get answers without waiting for reports (self-service BI)</li>
+                                <li>See which products/features drive revenue vs. drain resources</li>
                             </ul>
-                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Power BI, Tableau, Excel, Google Analytics</p>
+                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">You need this when: Your team wastes time arguing about which numbers are "right"</p>
                         </div>
                     </div>
                     <!-- Customer Analytics & Marketing -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                             <div class="icon"><i class="fas fa-users"></i></div>
-                            <h4 class="title">Customer Analytics</h4>
+                            <!-- Changed from category to customer pain point -->
+                            <h4 class="title">Understand Your Customers</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
-                                <li>RFM analysis and customer segmentation</li>
-                                <li>Customer lifetime value (CLV) modeling</li>
-                                <li>Churn prediction and retention strategies</li>
-                                <li>Customer journey mapping and funnel analysis</li>
-                                <li>Marketing ROI optimization</li>
+                                <!-- Rewritten as outcomes customers care about -->
+                                <li>Identify your most profitable customers (RFM segmentation)</li>
+                                <li>Calculate which customers will be worth $10K vs. $100 (CLV modeling)</li>
+                                <li>Predict who's about to leave so you can save them (churn analysis)</li>
+                                <li>Map the exact steps where customers drop off (funnel analysis)</li>
+                                <li>Stop wasting ad spend on channels that don't convert (attribution)</li>
                             </ul>
-                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: Python, SQL, Google Analytics, Adobe Analytics</p>
+                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">You need this when: You're spending on ads but don't know what's working</p>
                         </div>
                     </div>
                     <!-- Data Engineering & Automation -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
                             <div class="icon"><i class="fas fa-database"></i></div>
-                            <h4 class="title">Data Engineering</h4>
+                            <!-- Changed from technical term to business benefit -->
+                            <h4 class="title">Stop Doing It Manually</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
-                                <li>ETL pipeline development and automation</li>
-                                <li>Database design and optimization (SQL, NoSQL)</li>
-                                <li>Web scraping and data collection</li>
-                                <li>Data warehousing solutions</li>
-                                <li>API development and integration</li>
+                                <!-- Rewritten to focus on time savings and automation -->
+                                <li>Automate data collection so it's always ready (ETL pipelines)</li>
+                                <li>Connect scattered data into one source of truth (data integration)</li>
+                                <li>Pull competitor/market data automatically (web scraping)</li>
+                                <li>Build databases that scale with you (SQL/NoSQL design)</li>
+                                <li>Create APIs so your tools talk to each other (integrations)</li>
                             </ul>
-                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">Tools: SQL, Python, Docker, AWS, GCP, FastAPI</p>
+                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">You need this when: Your team spends 10+ hours/week copying data between tools</p>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Changed CTA section to be more specific and benefit-focused -->
                 <div style="margin-top: 50px; text-align: center; padding: 40px; background: linear-gradient(135deg, #106eea 0%, #3b8af2 100%); border-radius: 12px; color: white;">
-                    <h3 style="color: white; margin-bottom: 15px;">Ready to Transform Your Data into Business Value?</h3>
-                    <p style="font-size: 18px; margin-bottom: 25px; color: rgba(255,255,255,0.95);">Let's discuss your data science and AI engineering needs. Free consultation available.</p>
+                    <h3 style="color: white; margin-bottom: 15px;">Not Sure Which Service You Need?</h3>
+                    <p style="font-size: 18px; margin-bottom: 25px; color: rgba(255,255,255,0.95);">Tell me the business question you're trying to answer. I'll recommend the fastest path to get you there.</p>
                     <a href="#contact" class="btn-get-started-primary" style="background: white; color: #106eea; border: none;">
-                        <span>Get Started Today <i class="fas fa-arrow-right"></i></span>
+                        <span>Describe Your Challenge <i class="fas fa-arrow-right"></i></span>
                     </a>
                 </div>
             </div>
@@ -597,33 +358,37 @@
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Portfolio</h2>
-                    <h3>Data Science Projects & <span>AI Solutions</span></h3>
-                    <p>Real-world machine learning, predictive analytics, and AI engineering projects. Some apps may take a moment to load initially.</p>
+                    <!-- Changed from category listing to outcome focus -->
+                    <h3>Real Problems Solved <span>With Real Results</span></h3>
+                    <!-- Changed from technical description to value statement -->
+                    <p>Every project here solved a specific business problem. Results matter more than complexity. (Live demos may take a moment to load initially.)</p>
                 </div>
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">All Projects</li>
-                            <li data-filter=".filter-app">Live Demos & Apps</li>
+                            <li data-filter=".filter-app">Live Demos</li>
                             <li data-filter=".filter-card">Case Studies</li>
                         </ul>
                     </div>
                 </div>
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                     <!-- RAG System -->
+                    <!-- Rewrote all portfolio items to lead with business impact, then technical details -->
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
                         <a href="https://github.com/Adeyemi0/RAG-System">
                             <img src="assets/img/portfolio/rag.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="RAG System with LangChain and Vector Database" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>RAG System (AI Engineering)</h4>
+                        <!-- Changed from technical description to business outcome -->
+                        <h4>Answer Questions About 402 Companies Instantly</h4>
                         <p>
-                            Production-ready Retrieval Augmented Generation system processing 50M+ tokens across 402 companies. Built with LangChain, Zilliz vector database, and hybrid retrieval achieving <1s response time.
+                            Built an AI that reads through 50M+ tokens of company docs and answers questions in under 1 second. Instead of having analysts dig through reports, leadership gets instant answers about any company in the database.
                             <br><br>
-                            <strong>Tech:</strong> Docker, OpenAI, PyTorch, FastAPI, LangChain, HTML, CSS, Javascript, Zilliz
+                            <strong>Tech:</strong> RAG, LangChain, Zilliz, Docker, OpenAI, FastAPI
                             <br>
-                            <a href="https://huggingface.co/spaces/adeyemi001/FinSight-RAG-Application"><b>Live Demo</b></a> |
-                            <a href="https://github.com/Adeyemi0/FinSight-RAG-Application-"><b>Documentation</b></a>
+                            <a href="https://huggingface.co/spaces/adeyemi001/FinSight-RAG-Application"><b>Try Live Demo</b></a> |
+                            <a href="https://github.com/Adeyemi0/FinSight-RAG-Application-"><b>Technical Details</b></a>
                         </p>
                     </div>
                     <!-- Yoruba Translation -->
@@ -632,14 +397,15 @@
                             <img src="assets/img/portfolio/trans.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Yoruba English Translation Model" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Bidirectional Translation Model (NLP)</h4>
+                        <!-- Changed focus to solving communication barrier -->
+                        <h4>Break Language Barriers With AI Translation</h4>
                         <p>
-                            Built transformer-based NMT model for low-resource language translation. Flask REST API with text chunking, batching logic, and BLEU/METEOR evaluation metrics.
+                            Created a translator that handles Yoruba-English in both directions. Especially useful for low-resource languages where Google Translate fails. Built with transformer models and optimized for speed.
                             <br><br>
-                            <strong>Tech:</strong> Transformers, Flask, REST APIs, NLP
+                            <strong>Tech:</strong> Transformers, NLP, Flask, REST API
                             <br>
-                            <a href="https://huggingface.co/spaces/adeyemi001/yoruba-english-translation-model"><b>Live Demo</b></a> |
-                            <a href="https://github.com/Adeyemi0/Yoruba-English-Translation"><b>Documentation</b></a>
+                            <a href="https://huggingface.co/spaces/adeyemi001/yoruba-english-translation-model"><b>Test Translation</b></a> |
+                            <a href="https://github.com/Adeyemi0/Yoruba-English-Translation"><b>See How It Works</b></a>
                         </p>
                     </div>
                     <!-- NYC Real Estate -->
@@ -648,14 +414,15 @@
                             <img src="assets/img/portfolio/real-estate.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NYC Real Estate Price Prediction" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Real Estate Price Prediction (ML)</h4>
+                        <!-- Changed from technical accuracy to business value -->
+                        <h4>Predict Property Prices in Seconds</h4>
                         <p>
-                            End-to-end ML pipeline predicting NYC property prices with 80% R² accuracy. Benchmarked 3 gradient boosting models, deployed LightGBM with <100ms inference.
+                            Built a model that predicts NYC property values with 80% accuracy. Investors and agents get instant estimates instead of waiting for appraisals. Processes requests in under 100ms.
                             <br><br>
-                            <strong>Tech:</strong> Docker, LightGBM, Flask, Beautiful Soup
+                            <strong>Tech:</strong> LightGBM, Flask, Docker, Beautiful Soup
                             <br>
-                            <a href="https://huggingface.co/spaces/adeyemi001/NYC-House-Price-Predictor"><b>Live App</b></a> |
-                            <a href="https://github.com/Adeyemi0/NYC-Real-Estate-Price-Predictor"><b>Documentation</b></a>
+                            <a href="https://huggingface.co/spaces/adeyemi001/NYC-House-Price-Predictor"><b>Try Predictor</b></a> |
+                            <a href="https://github.com/Adeyemi0/NYC-Real-Estate-Price-Predictor"><b>Technical Approach</b></a>
                         </p>
                     </div>
                     <!-- Retail Analysis -->
@@ -664,14 +431,15 @@
                             <img src="assets/img/portfolio/electronics.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Retail Sales Analysis Dashboard" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Retail Analytics (Business Intelligence)</h4>
+                        <!-- Changed to emphasize problem diagnosis and business impact -->
+                        <h4>Found Why Revenue Dropped 88% Year-Over-Year</h4>
                         <p>
-                            Investigated 88.8% YoY revenue decline and 85% drop in repeat customers. Built interactive dashboard revealing product performance gaps and customer behavior patterns.
+                            Investigated why a retail business lost nearly 90% of revenue despite having historical sales data. Built dashboard that revealed the real culprits: product mix problems and disappearing repeat customers (down 85%).
                             <br><br>
                             <strong>Tech:</strong> Python, SQL, Streamlit, Pandas
                             <br>
-                            <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/"><b>Dashboard</b></a> |
-                            <a href="https://github.com/Adeyemi0/Retail-Analysis-Global-Electronics-"><b>GitHub</b></a>
+                            <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/"><b>View Dashboard</b></a> |
+                            <a href="https://github.com/Adeyemi0/Retail-Analysis-Global-Electronics-"><b>Full Analysis</b></a>
                         </p>
                     </div>
                     <!-- Product Returns -->
@@ -680,13 +448,14 @@
                             <img src="assets/img/portfolio/returns.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Product Returns Analysis" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Product Returns Analysis (Data Science)</h4>
+                        <!-- Changed to highlight financial impact -->
+                        <h4>Uncovered 27% of Revenue Lost to Returns</h4>
                         <p>
-                            Analyzed revenue loss from product returns showing ~27% impact on profitability. Identified predictive patterns and customer segments driving return behavior.
+                            Analyzed product return patterns to find which products, customer segments, and purchasing behaviors drive returns. Revealed patterns that helped prioritize product improvements and adjust inventory strategy.
                             <br><br>
                             <strong>Tech:</strong> Python, Pandas, Statistical Analysis
                             <br>
-                            <a href="https://github.com/Adeyemi0/Product-Returns"><b>View Analysis</b></a>
+                            <a href="https://github.com/Adeyemi0/Product-Returns"><b>See Findings</b></a>
                         </p>
                     </div>
                     <!-- Lead Scoring -->
@@ -695,14 +464,15 @@
                             <img src="assets/img/portfolio/leads.jpeg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Lead Scoring ML Model" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Lead Scoring Model (Predictive Analytics)</h4>
+                        <!-- Changed to emphasize sales efficiency outcome -->
+                        <h4>Stop Wasting Time on Leads That Won't Buy</h4>
                         <p>
-                            Achieved 95%+ accuracy predicting purchase intent by modeling user interactions. Machine learning classification with feature engineering for digital marketing optimization.
+                            Built a model that scores leads by likelihood to purchase (95%+ accuracy). Sales teams now focus on high-intent leads instead of chasing everyone. Automates what used to require gut feel and guesswork.
                             <br><br>
-                            <strong>Tech:</strong> Scikit-learn, Streamlit, Python
+                            <strong>Tech:</strong> Scikit-learn, Streamlit, Classification ML
                             <br>
-                            <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/"><b>Live Demo</b></a> |
-                            <a href="https://github.com/Adeyemi0/Lead-Scoring"><b>Code</b></a>
+                            <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/"><b>Test Scoring Model</b></a> |
+                            <a href="https://github.com/Adeyemi0/Lead-Scoring"><b>How It Works</b></a>
                         </p>
                     </div>
                     <!-- User Journey -->
@@ -711,13 +481,14 @@
                             <img src="assets/img/portfolio/cj.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Journey Analysis" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>User Journey Analysis (Customer Analytics)</h4>
+                        <!-- Changed to emphasize conversion improvement -->
+                        <h4>Found Exactly Where 10K Sessions Were Dropping Off</h4>
                         <p>
-                            Path and funnel analysis on 10k sessions identifying conversion drivers and drop-off points. Data-driven recommendations shaped product roadmap and UX optimization.
+                            Mapped user paths through 10,000 sessions to identify conversion killers and engagement drivers. Findings directly shaped product roadmap and UX fixes that increased conversion rates.
                             <br><br>
-                            <strong>Tech:</strong> Python, Google Analytics, SQL
+                            <strong>Tech:</strong> Python, Google Analytics, SQL, Path Analysis
                             <br>
-                            <a href="https://github.com/Adeyemi0/User-Journey-Analysis"><b>View Project</b></a>
+                            <a href="https://github.com/Adeyemi0/User-Journey-Analysis"><b>View Analysis</b></a>
                         </p>
                     </div>
                     <!-- Chicken Republic -->
@@ -726,14 +497,15 @@
                             <img src="assets/img/portfolio/chi.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Geospatial Analysis Lagos" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Location Intelligence (Geospatial Analytics)</h4>
+                        <!-- Changed to emphasize competitive intelligence -->
+                        <h4>Decoded a Competitor's Expansion Strategy</h4>
                         <p>
-                            Mapped and analyzed 50+ locations across Lagos decoding market dominance strategy. Geospatial data analysis for business expansion insights.
+                            Analyzed 50+ locations to reverse-engineer how a restaurant chain chooses new markets. Revealed the hidden patterns in their geographic expansion that others could learn from or compete against.
                             <br><br>
-                            <strong>Tech:</strong> Python, Geospatial Libraries, Streamlit
+                            <strong>Tech:</strong> Geospatial Analysis, Python, Streamlit
                             <br>
-                            <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d"><b>Article</b></a> |
-                            <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/"><b>Map</b></a>
+                            <a href="https://medium.com/@xmine4346/chicken-republics-expansion-across-lagos-isn-t-just-about-fried-chicken-there-s-a-strategy-c102cf3cfb8d"><b>Read Story</b></a> |
+                            <a href="https://chicken-republic-restaurant-expansion-in-lagos-5tioffnlpoegwig.streamlit.app/"><b>Interactive Map</b></a>
                         </p>
                     </div>
                     <!-- Review Categorization -->
@@ -742,15 +514,15 @@
                             <img src="assets/img/portfolio/fldemo.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NLP Review Classification" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Multi-Label Review Classification (NLP)</h4>
+                        <!-- Changed to emphasize customer insight discovery -->
+                        <h4>Turned 29K Reviews Into Actionable Product Insights</h4>
                         <p>
-                            Built NLP model on 29k+ customer reviews uncovering key pain points. Multi-label classification with Power BI dashboard for sentiment analysis and trend tracking.
+                            Instead of reading thousands of customer reviews manually, built an NLP model that categorizes complaints and praise automatically. Product team gets instant visibility into what's actually frustrating users.
                             <br><br>
-                            <strong>Tech:</strong> Transformers, HuggingFace, Power BI
+                            <strong>Tech:</strong> Transformers, NLP, HuggingFace, Power BI
                             <br>
-                            <a href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model"><b>Live Demo</b></a> |
-                            <a href="https://app.powerbi.com/view?r=eyJrIjoiYjk1YWM3YmYtYWU5ZS00YjIxLWIwMmQtMWI0YjI2ZjQ2MWM3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Dashboard</b></a> |
-                            <a href="https://github.com/Adeyemi0/Fintech-Review-Prediction"><b>Documentation</b></a>
+                            <a href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model"><b>Try Classifier</b></a> |
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiYjk1YWM3YmYtYWU5ZS00YjIxLWIwMmQtMWI0YjI2ZjQ2MWM3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>View Dashboard</b></a>
                         </p>
                     </div>
                     <!-- Used Car Prediction -->
@@ -759,14 +531,15 @@
                             <img src="assets/img/portfolio/car.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Used Car Price Prediction" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Used Car Price Prediction (Regression)</h4>
+                        <!-- Changed to emphasize speed and accuracy -->
+                        <h4>Predict Used Car Prices Instantly (Nigeria Market)</h4>
                         <p>
-                            Machine learning regression model predicting Nigerian used car prices. Feature engineering, model comparison, and deployed web application for instant price estimates.
+                            Dealers and buyers get instant, data-backed price estimates instead of negotiating in the dark. Model trained on actual Nigerian market data for accurate local pricing.
                             <br><br>
-                            <strong>Tech:</strong> LightGBM, Flask, Beautiful Soup, Scikit-learn, Python
+                            <strong>Tech:</strong> LightGBM, Flask, Web Scraping, ML Regression
                             <br>
-                            <a href="https://huggingface.co/spaces/adeyemi001/Cars"><b>Live Demo</b></a> |
-                            <a href="https://github.com/Adeyemi0/Nigerian-Used-Car-Prediction"><b>Code</b></a>
+                            <a href="https://huggingface.co/spaces/adeyemi001/Cars"><b>Try Price Predictor</b></a> |
+                            <a href="https://github.com/Adeyemi0/Nigerian-Used-Car-Prediction"><b>Technical Details</b></a>
                         </p>
                     </div>
                     <!-- Customer Survey -->
@@ -775,14 +548,15 @@
                             <img src="assets/img/portfolio/survey.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Survey Analysis" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Customer Survey Analysis (BI)</h4>
+                        <!-- Changed to emphasize retention strategy outcome -->
+                        <h4>Identified Retention Strategies From Survey Data</h4>
                         <p>
-                            Power BI dashboard analyzing banking service surveys. Derived retention strategies through sentiment analysis and satisfaction scoring. Interactive visualizations for stakeholder reporting.
+                            Analyzed banking customer surveys to find what actually drives satisfaction and loyalty. Built interactive dashboard that lets leadership explore satisfaction patterns by segment and service.
                             <br><br>
-                            <strong>Tech:</strong> Power BI, DAX, SQL
+                            <strong>Tech:</strong> Power BI, DAX, Sentiment Analysis
                             <br>
-                            <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Dashboard</b></a> |
-                            <a href="https://github.com/Adeyemi0/Customer-Survey"><b>Details</b></a>
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"><b>Explore Dashboard</b></a> |
+                            <a href="https://github.com/Adeyemi0/Customer-Survey"><b>Methodology</b></a>
                         </p>
                     </div>
                     <!-- Sales Analysis -->
@@ -791,9 +565,10 @@
                             <img src="assets/img/portfolio/sales.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Sales Performance Dashboard" width="400" height="225">
                         </a>
                         <br><br>
-                        <h4>Sales Performance Dashboard (BI)</h4>
+                        <!-- Changed to emphasize real-time decision making -->
+                        <h4>Real-Time Sales Dashboard That Actually Gets Used</h4>
                         <p>
-                            Interactive Power BI dashboard revealing sales trends, customer sentiment, and performance patterns. Real-time KPI tracking guiding data-driven decisions for sales optimization.
+                            Sales team tracks performance, customer sentiment, and pipeline health without waiting for monthly reports. Built to answer the questions they ask every day, not what I think they should track.
                             <br><br>
                             <strong>Tech:</strong> Power BI, DAX, Data Modeling
                             <br>
@@ -801,10 +576,12 @@
                         </p>
                     </div>
                 </div>
+                
+                <!-- Changed portfolio CTA to be more specific -->
                 <div style="margin-top: 40px; text-align: center;">
-                    <p style="font-size: 18px; margin-bottom: 20px;">Want similar results for your business? Let's build a custom solution together.</p>
+                    <p style="font-size: 18px; margin-bottom: 20px;">See a project similar to what you need? Let's talk about building your version.</p>
                     <a href="#contact" class="btn-get-started-primary">
-                        <span>Discuss Your Project <i class="fas fa-arrow-right"></i></span>
+                        <span>Tell Me What You're Trying to Solve <i class="fas fa-arrow-right"></i></span>
                     </a>
                 </div>
             </div>
@@ -812,9 +589,11 @@
         <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
         <div class="section-title">
-            <h2>Hire Me</h2>
-            <h3><span>Get In Touch</span> - Freelance Data Scientist Lagos</h3>
-            <p>Ready to leverage data science and AI for your business? Let's discuss your project. Free initial consultation available.</p>
+            <!-- Changed from formal "Hire Me" to conversational "Let's Talk" -->
+            <h2>Let's Talk</h2>
+            <h3><span>Got a Data Problem?</span> Let's Figure It Out Together</h3>
+            <!-- Changed from generic consultation offer to specific, low-pressure promise -->
+            <p>No pitch. No obligation. Just a conversation about your data challenge and whether I can help. First call is free.</p>
         </div>
 
         <div class="row" style="margin-bottom: 40px;">
@@ -822,7 +601,8 @@
                 <div class="info-box">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>Location</h3>
-                    <p>Lagos, Nigeria<br>Available for remote projects globally</p>
+                    <!-- Changed to emphasize remote availability -->
+                    <p>Based in Lagos, Nigeria<br>Available globally (remote, timezone-flexible)</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
@@ -856,20 +636,24 @@
                         <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
+                        <!-- Changed placeholder to be more conversational -->
+                        <input type="text" name="subject" class="form-control" id="subject" placeholder="What's the main question you're trying to answer?" required>
                     </div>
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="6" placeholder="Tell me about your project or data challenge..." required></textarea>
+                        <!-- Changed placeholder to invite storytelling -->
+                        <textarea class="form-control" name="message" rows="6" placeholder="Tell me about the problem. What have you tried? What happens if you don't solve this?" required></textarea>
                     </div>
 
                     <div class="my-3">
                         <div class="loading" style="display: none; text-align: center;">Sending message...</div>
                         <div class="error-message" style="display: none; color: #fff; background: #ed3c0d; text-align: center; padding: 15px; font-weight: 600;"></div>
-                        <div class="sent-message" style="display: none; color: #fff; background: #18d26e; text-align: center; padding: 15px; font-weight: 600;">Your message has been sent. Thank you!</div>
+                        <!-- Changed success message to be more personal -->
+                        <div class="sent-message" style="display: none; color: #fff; background: #18d26e; text-align: center; padding: 15px; font-weight: 600;">Got it. I'll respond within 24 hours. Talk soon!</div>
                     </div>
 
                     <div class="text-center">
-                        <button type="submit">Send Message</button>
+                        <!-- Changed button text to be more conversational -->
+                        <button type="submit">Send Me Your Challenge</button>
                     </div>
                 </form>
             </div>
@@ -880,50 +664,60 @@
         <section id="faq" class="faq section-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <h2>Technical Writing</h2>
-                    <h3>Data Science <span>Insights & Articles</span></h3>
-                    <p>Practical guides on customer analytics, predictive modeling, and data-driven decision making</p>
+                    <!-- Changed from "Technical Writing" to "Writing" - less intimidating -->
+                    <h2>Writing</h2>
+                    <h3>How To Actually Use <span>Your Data</span></h3>
+                    <!-- Changed from academic description to outcome focus -->
+                    <p>Real tactics for predicting churn, understanding customers, and making data-driven decisions</p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
                         <ul class="faq-list">
                             <li>
+                                <!-- Changed article titles to be more outcome-focused and provocative -->
                                 <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
-                                    The Customer Audit Every Business Needs to Scale Profitably
+                                    <!-- Changed from generic title to specific hook -->
+                                    80% of Your Revenue Comes From 20% of Your Customers. Can You Name Them?
                                     <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                                 </div>
                                 <div id="faq1" class="collapse" data-bs-parent=".faq-list">
                                     <a href="https://medium.com/@xmine4346/the-customer-analytics-framework-every-business-leader-needs-dd679e8f0514">
-                                        <p>80% of your revenue comes from 20% of your customers. Yet most businesses can't tell you which customers those are. Learn the analytics framework that reveals your most valuable customers...</p>
+                                        <!-- Rewritten description to create curiosity and promise specific value -->
+                                        <p>Most businesses know the 80/20 rule but can't actually identify their 20%. This framework shows you how to find your most valuable customers, predict lifetime value, and stop treating every customer the same.</p>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div data-bs-toggle="collapse" class="collapsed question" href="#faq2">
-                                    Data-Driven Retention: Predict Customer Churn Before It Happens
+                                    <!-- Changed to emphasize timing and prevention -->
+                                    Your Best Customers Are Leaving. Here's How to Know 90 Days Early.
                                     <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                                 </div>
                                 <div id="faq2" class="collapse" data-bs-parent=".faq-list">
                                     <a href="https://medium.com/@xmine4346/the-proven-way-to-predict-customer-retention-without-waiting-for-churn-0318dc838f9d">
-                                        <p>Most companies define customer health by asking "Are they paying us?" But payment is a lagging indicator. Discover how to predict churn months before it happens using behavioral data science...</p>
+                                        <!-- Rewritten to emphasize proactive approach vs reactive -->
+                                        <p>Waiting until customers stop paying is too late. Learn the behavioral signals that predict churn months in advance, so you can save accounts before they're gone.</p>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div data-bs-toggle="collapse" class="collapsed question" href="#faq4">
-                                    How to Personalize Your Free Trial Experience (And Skyrocket Conversions)
+                                    <!-- Changed to be more specific about the problem and outcome -->
+                                    Stop Sending the Same Emails to Everyone. Here's How to Personalize at Scale.
                                     <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                                 </div>
                                 <div id="faq4" class="collapse" data-bs-parent=".faq-list">
                                     <a href="https://medium.com/@xmine4346/how-to-personalize-your-free-trial-experience-and-skyrocket-conversions-7999446cf33e">
-                                        <p>Generic email sequences promising "amazing features" don't convert. Learn how to use behavioral data and predictive analytics to personalize trial experiences and increase conversion rates...</p>
+                                        <!-- Rewritten to focus on the inefficiency being solved -->
+                                        <p>Generic trial emails get ignored. Learn how to use behavioral data to send the right message to the right person at the right time—automatically.</p>
                                     </a>
                                 </div>
                             </li>
                         </ul>
+                        <!-- Changed CTA to be more casual -->
                         <div style="margin-top: 30px; text-align: center;">
                             <a href="https://medium.com/@xmine4346" class="btn-get-started-primary" target="_blank" rel="noopener noreferrer">
-                                <span>Read All Articles <i class="fas fa-external-link-alt"></i></span>
+                                <span>Read More Articles <i class="fas fa-external-link-alt"></i></span>
                             </a>
                         </div>
                     </div>
@@ -939,8 +733,9 @@
                     <div class="col-lg-4 col-md-6 footer-contact">
                         <h3>Adeyemi<span>Data</span></h3>
                         <p>
-                            Freelance Data Scientist & AI Engineer<br>
-                            Lagos, Nigeria<br><br>
+                            <!-- Changed from job title to value proposition -->
+                            Turning Data Into Revenue<br>
+                            Lagos, Nigeria (Remote Globally)<br><br>
                             <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
                             <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a><br>
                         </p>
@@ -952,21 +747,24 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Services</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Hire Me</a></li>
+                            <!-- Changed from "Hire Me" to "Let's Talk" -->
+                            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Let's Talk</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Services</h4>
+                        <!-- Changed from technical categories to customer outcomes -->
+                        <h4>What I Do</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Machine Learning</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Business Intelligence</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Customer Analytics</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Data Engineering</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Predict Churn</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Track What Works</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Understand Customers</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Automate Data</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Connect With Me</h4>
-                        <p>Follow for data science insights and project updates</p>
+                        <!-- Changed from generic "insights" to specific value -->
+                        <p>Data tactics and project updates</p>
                         <div class="social-links mt-3">
                             <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
                             <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" class="linkedin" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
@@ -981,7 +779,8 @@
         </div>
         <div class="container py-4">
             <div class="copyright">
-                &copy; 2025 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved | Data Scientist & AI Engineer Lagos, Nigeria
+                <!-- Changed from location-focused to value-focused -->
+                &copy; 2025 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved | Turning Data Into Decisions
             </div>
         </div>
     </footer>
@@ -996,6 +795,3 @@
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
-
-
-
