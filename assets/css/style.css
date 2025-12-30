@@ -144,9 +144,6 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo a span {
     color: #106eea;
 }
-.scrolled-offset {
-    margin-top: 70px;
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -213,6 +210,7 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
 }
+/* Mobile nav styles - used by JavaScript */
 .navbar-mobile {
     position: fixed;
     overflow: hidden;
@@ -330,12 +328,14 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 15px rgba(16, 110, 234, 0.4);
     border: none;
     margin-right: 15px;
+    text-decoration: none;
 }
 .btn-get-started-primary:hover {
     background: #0e5bcc;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(16, 110, 234, 0.5);
     color: #fff;
+    text-decoration: none;
 }
 .btn-get-started-primary i {
     margin-left: 8px;
@@ -353,35 +353,16 @@ h1, h2, h3, h4, h5, h6 {
     color: #106eea;
     background: transparent;
     border: 2px solid #106eea;
+    text-decoration: none;
 }
 .btn-get-started-secondary:hover {
     background: #106eea;
     color: #fff;
     transform: translateY(-2px);
+    text-decoration: none;
 }
 .btn-get-started-secondary i {
     margin-left: 8px;
-}
-/* Add this CSS block to your style.css file */
-/* Target the specific buttons */
-.btn-get-started-primary,
-.btn-get-started-secondary {
-    text-decoration: none; /* Removes underline */
-}
-/* Target the specific text/link within the FAQ section */
-.faq-list a {
-    text-decoration: none; /* Removes underline from the article links */
-}
-/* Target the logo text in the header */
-.logo a {
-    text-decoration: none; /* Removes underline from the logo link */
-}
-/* Ensure hover states don't add underline back */
-.btn-get-started-primary:hover,
-.btn-get-started-secondary:hover,
-.faq-list a:hover,
-.logo a:hover {
-    text-decoration: none;
 }
 .hero-profile-image {
     margin-top: 20px;
@@ -783,6 +764,12 @@ section {
     font-size: 15px;
     line-height: 1.7;
 }
+.faq .faq-list a {
+    text-decoration: none;
+}
+.faq .faq-list a:hover {
+    text-decoration: none;
+}
 .faq .faq-list .icon-show {
     display: none;
 }
@@ -884,4 +871,10 @@ section {
 #footer .copyright {
     text-align: center;
     padding-top: 30px;
+}
+.logo a {
+    text-decoration: none;
+}
+.logo a:hover {
+    text-decoration: none;
 }
