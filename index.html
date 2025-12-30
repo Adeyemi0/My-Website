@@ -40,20 +40,29 @@
     box-sizing: border-box;
 }
 body {
-    font-family: "Open Sans", sans-serif;
-    color: #444444;
+    font-family: 'Inter', sans-serif;
+    color: #0F172A;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 a {
-    color: #106eea;
+    color: #0052FF;
     text-decoration: none;
 }
 a:hover {
     color: #3b8af2;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Roboto", sans-serif;
+h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+}
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
 }
 
 /*--------------------------------------------------------------
@@ -67,14 +76,14 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     z-index: 9999;
     overflow: hidden;
-    background: #fff;
+    background: #F8FAFC;
 }
 #preloader:before {
     content: "";
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
-    border: 6px solid #106eea;
+    border: 6px solid #0052FF;
     border-top-color: #e2eefd;
     border-radius: 50%;
     width: 60px;
@@ -102,8 +111,8 @@ h1, h2, h3, h4, h5, h6 {
     </style>
     <!-- Preload LCP image -->
     <link rel="preload" as="image" href="assets/img/photo_2025-08-11_17-35-17.jpg" fetchpriority="high">
-    <!-- Google Fonts with font-display swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Roboto:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Premium Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- Defer Non-Critical CSS -->
     <link href="assets/css/style.css" rel="stylesheet" media="print" onload="this.media='all'"> <!-- Main CSS File -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -111,8 +120,6 @@ h1, h2, h3, h4, h5, h6 {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <!-- Optional: Add versioning for cache busting (update version number when changing assets) -->
-    <!-- <link href="assets/css/style.css?v=1.0.1" rel="stylesheet" media="print" onload="this.media='all'"> -->
     <!-- Schema Markup -->
     <script type="application/ld+json">
     {
@@ -178,14 +185,10 @@ h1, h2, h3, h4, h5, h6 {
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
             <div class="row align-items-center">
                 <div class="col-lg-8 col-md-12 order-lg-1">
-                    <!-- OPTION A: Problem-focused, direct -->
-                    <!-- <h1>Your Data Knows Why Customers Leave. <span>Let Me Show You.</span></h1> -->
-                    
-                    <!-- OPTION B: Outcome-focused transformation -->
+                    <p class="hero-subtitle">DATA SCIENTIST & AI ENGINEER</p>
                     <h1>Turn Your Data Into <span>Predictable Revenue</span></h1>
                     <h2>I turn your messy data into clear answers about what drives revenue and what kills it.</h2>
                     
-                    <!-- Changed from generic business challenges to specific, measurable problems -->
                     <p class="hero-subtitle"><strong>You have the data but not the answers that drive growth:</strong></p>
                     <ul>
                         <li><i class="fas fa-chart-line"></i> Which customers are likely to churn and why?</li>
@@ -196,10 +199,8 @@ h1, h2, h3, h4, h5, h6 {
                         <li><i class="fas fa-robot"></i> Where does AI deliver real business impact not just hype?</li>
                     </ul>
                     
-                    <!-- Changed from technical capability statement to outcome promise -->
-                    <h2 style="font-size: 1.1em; margin-top: 20px; font-weight: 600;">I build machine learning systems that turn your data into clear answers, ship in weeks not months and pay for themselves by uncovering revenue you’re leaving behind.</h2>
+                    <h2 style="font-size: 1.1em; margin-top: 20px; font-weight: 600;">I build machine learning systems that turn your data into clear answers, ship in weeks not months and pay for themselves by uncovering revenue you're leaving behind.</h2>
                     
-                    <!-- Changed CTAs from formal to conversational -->
                     <div class="d-flex" style="margin-top: 30px;">
                         <a href="#contact" class="btn-get-started-primary scrollto">
                             <span>Tell Me Your Data Problem <i class="fas fa-arrow-right"></i></span>
@@ -225,32 +226,26 @@ h1, h2, h3, h4, h5, h6 {
         <section id="about" class="about section-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <!-- Changed from credentials to value proposition -->
                     <h2>Here's What I Actually Do <span>(And Don't Do)</span></h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 pt-4 pt-lg-0 content" data-aos="fade-up" data-aos-delay="100">
-                        <!-- Changed from "data problem" to "decision problem" - more accurate pain point -->
                         <p style="font-size: 20px; line-height: 1.8; font-weight: 600;">
                             Most businesses don't have a data problem, the real challenge is using it to make confident, timely decisions.
                         </p>
                         
-                        <!-- Changed from technical description to customer situation -->
                         <p style="font-size: 18px; line-height: 1.8;">
                             You're tracking everything, website clicks, sales, support tickets, user behavior. The data exists. But when you need to decide whether to launch that new feature, double down on a marketing channel, or figure out why customers suddenly stopped buying, you're back to guessing.
                         </p>
                         
-                        <!-- Changed from experience summary to specific outcomes -->
                         <p style="font-size: 18px; line-height: 1.8;">
                             I work with founders and growth teams who know their data holds answers but don't have time to become data scientists themselves. Over the past 4 years, I've helped teams predict which customers will churn 60 days out, identify which $10K marketing experiment will return $100K, and automate decisions that used to take 3 meetings and a spreadsheet.
                         </p>
                         
-                        <!-- Added new section: What sets me apart -->
                         <p style="font-size: 18px; line-height: 1.8; margin-bottom: 0;">
                             <strong>I don't build AI for the sake of AI.</strong> I start with your business question, find the simplest path to an answer, and ship working solutions fast. You'll get models that run in production, dashboards your team actually uses, and clear documentation so you're never locked into me.
                         </p>
                         
-                        <!-- Changed CTA from generic to specific and conversational -->
                         <div style="margin-top: 35px; text-align: center;">
                             <a href="#contact" class="btn-get-started-primary">
                                 <span>Let's Talk About Your Toughest Data Question <i class="fas fa-arrow-right"></i></span>
@@ -265,89 +260,72 @@ h1, h2, h3, h4, h5, h6 {
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Services</h2>
-                    <!-- Changed from location-focused to capability-focused -->
                     <h3>What You Get <span>(And When You Need It)</span></h3>
-                    <!-- Changed from technical description to outcome promise -->
                     <p>Production-ready models and dashboards that answer your specific business questions, not generic "AI solutions"</p>
                 </div>
                 <div class="row">
-                    <!-- Machine Learning & Predictive Analytics -->
-                    <!-- Changed service descriptions to lead with business outcome, then mention tool -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="fas fa-brain"></i></div>
-                            <!-- Changed from technical capability to business outcome -->
                             <h4 class="title">Predict Before It Happens</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
-                                <!-- Rewritten in customer language with business outcomes first -->
                                 <li>Know which customers will churn 30-90 days out (churn prediction models)</li>
                                 <li>Forecast sales and demand to prevent stockouts (predictive analytics)</li>
                                 <li>Identify high-value customer segments automatically (ML classification)</li>
                                 <li>Build AI that answers questions about your docs/data (RAG systems)</li>
                                 <li>Deploy models that improve as they learn (production ML)</li>
                             </ul>
-                            <!-- Added when-you-need context -->
-                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">You need this when: You're ready to stop losing money to problems you could have seen coming.</p>
+                            <p style="margin-top: 15px; font-weight: 600; color: #0052FF;">You need this when: You're ready to stop losing money to problems you could have seen coming.</p>
                         </div>
                     </div>
-                    <!-- Business Intelligence & Dashboards -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                             <div class="icon"><i class="fas fa-chart-bar"></i></div>
-                            <!-- Changed from tool name to outcome -->
                             <h4 class="title">See What's Actually Working</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
-                                <!-- Rewritten to emphasize clarity and speed of insights -->
                                 <li>Track revenue, growth, and retention in real-time (live dashboards)</li>
                                 <li>Compare marketing channels by actual revenue, not vanity metrics</li>
                                 <li>Spot trends before they become problems (automated alerts)</li>
                                 <li>Get answers without waiting for reports (self-service BI)</li>
                                 <li>See which products/features drive revenue vs. drain resources</li>
                             </ul>
-                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">You need this when: You have plenty of reports but zero clarity on your next move.</p>
+                            <p style="margin-top: 15px; font-weight: 600; color: #0052FF;">You need this when: You have plenty of reports but zero clarity on your next move.</p>
                         </div>
                     </div>
-                    <!-- Customer Analytics & Marketing -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                             <div class="icon"><i class="fas fa-users"></i></div>
-                            <!-- Changed from category to customer pain point -->
                             <h4 class="title">Understand Your Customers</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
-                                <!-- Rewritten as outcomes customers care about -->
                                 <li>Identify your most profitable customers (RFM segmentation)</li>
                                 <li>Calculate which customers will be worth $10K vs. $100 (CLV modeling)</li>
                                 <li>Predict who's about to leave so you can save them (churn analysis)</li>
                                 <li>Map the exact steps where customers drop off (funnel analysis)</li>
                                 <li>Stop wasting ad spend on channels that don't convert (attribution)</li>
                             </ul>
-                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">You need this when: Your customer acquisition feels like a guessing game with a leaky bucket.</p>
+                            <p style="margin-top: 15px; font-weight: 600; color: #0052FF;">You need this when: Your customer acquisition feels like a guessing game with a leaky bucket.</p>
                         </div>
                     </div>
-                    <!-- Data Engineering & Automation -->
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
                             <div class="icon"><i class="fas fa-database"></i></div>
-                            <!-- Changed from technical term to business benefit -->
                             <h4 class="title">Stop Doing It Manually</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
-                                <!-- Rewritten to focus on time savings and automation -->
                                 <li>Automate data collection so it's always ready (ETL pipelines)</li>
                                 <li>Connect scattered data into one source of truth (data integration)</li>
                                 <li>Pull competitor/market data automatically (web scraping)</li>
                                 <li>Build databases that scale with you (SQL/NoSQL design)</li>
                                 <li>Create APIs so your tools talk to each other (integrations)</li>
                             </ul>
-                            <p style="margin-top: 15px; font-weight: 600; color: #106eea;">You need this when reports break, data lives in silos, and every answer takes days.</p>
+                            <p style="margin-top: 15px; font-weight: 600; color: #0052FF;">You need this when reports break, data lives in silos, and every answer takes days.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Changed CTA section to be more specific and benefit-focused -->
-                <div style="margin-top: 50px; text-align: center; padding: 40px; background: linear-gradient(135deg, #106eea 0%, #3b8af2 100%); border-radius: 12px; color: white;">
+                <div style="margin-top: 50px; text-align: center; padding: 40px; background: linear-gradient(135deg, #0052FF 0%, #3b8af2 100%); border-radius: 12px; color: white;">
                     <h3 style="color: white; margin-bottom: 15px;">Not Sure Which Service You Need?</h3>
                     <p style="font-size: 18px; margin-bottom: 25px; color: rgba(255,255,255,0.95);">Tell me the business question you're trying to answer. I'll recommend the fastest path to get you there.</p>
-                    <a href="#contact" class="btn-get-started-primary" style="background: white; color: #106eea; border: none;">
+                    <a href="#contact" class="btn-get-started-primary" style="background: white; color: #0052FF; border: none;">
                         <span>Describe Your Challenge <i class="fas fa-arrow-right"></i></span>
                     </a>
                 </div>
@@ -358,9 +336,7 @@ h1, h2, h3, h4, h5, h6 {
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
                     <h2>Portfolio</h2>
-                    <!-- Changed from category listing to outcome focus -->
                     <h3>Real Problems Solved <span>With Real Results</span></h3>
-                    <!-- Changed from technical description to value statement -->
                     <p>Every project here solved a specific business problem. Results matter more than complexity. (Live demos may take a moment to load initially.)</p>
                 </div>
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -374,13 +350,11 @@ h1, h2, h3, h4, h5, h6 {
                 </div>
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                     <!-- RAG System -->
-                    <!-- Rewrote all portfolio items to lead with business impact, then technical details -->
                     <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="height: 500px;">
                         <a href="https://github.com/Adeyemi0/RAG-System">
                             <img src="assets/img/portfolio/rag.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="RAG System with LangChain and Vector Database" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed from technical description to business outcome -->
                         <h4>RAG-Based Financial Research Across 402 Companies</h4>
                         <p>
                             Built a retrieval-augmented generation (RAG) system over 50M+ tokens of company filings and 8 years of financial statements, enabling instant, explainable Q&A across hundreds of public companies.
@@ -397,7 +371,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/trans.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Yoruba English Translation Model" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed focus to solving communication barrier -->
                         <h4>Break Language Barriers With AI Translation</h4>
                         <p>
                             Created a translator that handles Yoruba-English in both directions. Especially useful for low-resource languages where Google Translate fails.
@@ -414,7 +387,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/real-estate.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NYC Real Estate Price Prediction" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed from technical accuracy to business value -->
                         <h4>Predict Property Prices</h4>
                         <p>
                             Built a model that predicts NYC property values with 80% accuracy. Investors and agents get instant estimates instead of waiting for appraisals. 
@@ -431,7 +403,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/electronics.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Retail Sales Analysis Dashboard" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to emphasize problem diagnosis and business impact -->
                         <h4>Found Why Revenue Dropped 88% Year-Over-Year</h4>
                         <p>
                       Analyzed a retail business experiencing a 90% revenue drop. Using historical sales data, I built a dashboard that identified the primary driver: repeat customer retention had fallen by 85%.
@@ -448,7 +419,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/returns.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Product Returns Analysis" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to highlight financial impact -->
                         <h4>Uncovered 27% of Revenue Lost to Returns</h4>
                         <p>
                             Analyzed product return patterns to find which products, customer segments, and purchasing behaviors drive returns. Revealed patterns that helped prioritize product improvements and adjust inventory strategy.
@@ -464,7 +434,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/leads.jpeg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Lead Scoring ML Model" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to emphasize sales efficiency outcome -->
                         <h4>Stop Wasting Time on Leads That Won't Buy</h4>
                         <p>
                             Built a model that scores leads by likelihood to purchase (95%+ accuracy). Sales teams now focus on high-intent leads instead of chasing everyone. Automates what used to require gut feel and guesswork.
@@ -481,7 +450,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/cj.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Journey Analysis" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to emphasize conversion improvement -->
                         <h4>Found Exactly Where 10K Sessions Were Dropping Off</h4>
                         <p>
                             Mapped user paths through 10,000 sessions to identify conversion killers and engagement drivers. Findings directly shaped product roadmap and UX fixes that increased conversion rates.
@@ -497,7 +465,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/chi.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Geospatial Analysis Lagos" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to emphasize competitive intelligence -->
                         <h4>Decoded a Competitor's Expansion Strategy</h4>
                         <p>
                             Analyzed 50+ locations to reverse-engineer how a restaurant chain chooses new markets. Revealed the hidden patterns in their geographic expansion that others could learn from or compete against.
@@ -514,7 +481,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/fldemo.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="NLP Review Classification" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to emphasize customer insight discovery -->
                         <h4>Turned 29K Reviews Into Actionable Product Insights</h4>
                         <p>
                             Instead of reading thousands of customer reviews manually, built an NLP model that categorizes complaints and praise automatically. Product team gets instant visibility into what's actually frustrating users.
@@ -531,7 +497,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/car.gif" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Used Car Price Prediction" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to emphasize speed and accuracy -->
                         <h4>Predict Used Car Prices Instantly (Nigeria Market)</h4>
                         <p>
                             Dealers and buyers get instant, data-backed price estimates instead of negotiating in the dark. Model trained on actual Nigerian market data for accurate local pricing.
@@ -548,7 +513,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/survey.png" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Customer Survey Analysis" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to emphasize retention strategy outcome -->
                         <h4>Identified Retention Strategies From Survey Data</h4>
                         <p>
                             Analyzed banking customer surveys to find what actually drives satisfaction and loyalty. Built interactive dashboard that lets leadership explore satisfaction patterns by segment and service.
@@ -565,7 +529,6 @@ h1, h2, h3, h4, h5, h6 {
                             <img src="assets/img/portfolio/sales.jpg" class="img-fluid" loading="lazy" style="height: 45%; width: 100%; object-fit: cover;" alt="Sales Performance Dashboard" width="400" height="225">
                         </a>
                         <br><br>
-                        <!-- Changed to emphasize real-time decision making -->
                         <h4>Real-Time Sales Dashboard That Actually Gets Used</h4>
                         <p>
                             Sales team tracks performance, customer sentiment, and pipeline health without waiting for monthly reports. Built to answer the questions they ask every day, not what I think they should track.
@@ -577,7 +540,6 @@ h1, h2, h3, h4, h5, h6 {
                     </div>
                 </div>
                 
-                <!-- Changed portfolio CTA to be more specific -->
                 <div style="margin-top: 40px; text-align: center;">
                     <p style="font-size: 18px; margin-bottom: 20px;">See a project similar to what you need? Let's talk about building your version.</p>
                     <a href="#contact" class="btn-get-started-primary">
@@ -589,10 +551,8 @@ h1, h2, h3, h4, h5, h6 {
         <section id="contact" class="contact">
     <div class="container" data-aos="fade-up">
         <div class="section-title">
-            <!-- Changed from formal "Hire Me" to conversational "Let's Talk" -->
             <h2>Let's Talk</h2>
             <h3><span>Got a Data Problem?</span> Let's Figure It Out Together</h3>
-            <!-- Changed from generic consultation offer to specific, low-pressure promise -->
             <p>No pitch. No obligation. Just a conversation about your data challenge and whether I can help. First call is free.</p>
         </div>
 
@@ -601,7 +561,6 @@ h1, h2, h3, h4, h5, h6 {
                 <div class="info-box">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>Location</h3>
-                    <!-- Changed to emphasize remote availability -->
                     <p>Based in Lagos, Nigeria<br>Available globally (remote, timezone-flexible)</p>
                 </div>
             </div>
@@ -636,23 +595,19 @@ h1, h2, h3, h4, h5, h6 {
                         <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group mt-3">
-                        <!-- Changed placeholder to be more conversational -->
                         <input type="text" name="subject" class="form-control" id="subject" placeholder="What's the main question you're trying to answer?" required>
                     </div>
                     <div class="form-group mt-3">
-                        <!-- Changed placeholder to invite storytelling -->
                         <textarea class="form-control" name="message" rows="6" placeholder="Tell me about the problem. What have you tried? What happens if you don't solve this?" required></textarea>
                     </div>
 
                     <div class="my-3">
                         <div class="loading" style="display: none; text-align: center;">Sending message...</div>
                         <div class="error-message" style="display: none; color: #fff; background: #ed3c0d; text-align: center; padding: 15px; font-weight: 600;"></div>
-                        <!-- Changed success message to be more personal -->
                         <div class="sent-message" style="display: none; color: #fff; background: #18d26e; text-align: center; padding: 15px; font-weight: 600;">Got it. I'll respond within 24 hours. Talk soon!</div>
                     </div>
 
                     <div class="text-center">
-                        <!-- Changed button text to be more conversational -->
                         <button type="submit">Send Me Your Challenge</button>
                     </div>
                 </form>
@@ -664,57 +619,47 @@ h1, h2, h3, h4, h5, h6 {
         <section id="faq" class="faq section-bg">
             <div class="container" data-aos="fade-up">
                 <div class="section-title">
-                    <!-- Changed from "Technical Writing" to "Writing" - less intimidating -->
                     <h2>Writing</h2>
                     <h3>How To Actually Use <span>Your Data</span></h3>
-                    <!-- Changed from academic description to outcome focus -->
                     <p>Real tactics for predicting churn, understanding customers, and making data-driven decisions</p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-xl-10">
                         <ul class="faq-list">
                             <li>
-                                <!-- Changed article titles to be more outcome-focused and provocative -->
                                 <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
-                                    <!-- Changed from generic title to specific hook -->
                                     80% of Your Revenue Comes From 20% of Your Customers. Can You Name Them?
                                     <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                                 </div>
                                 <div id="faq1" class="collapse" data-bs-parent=".faq-list">
                                     <a href="https://medium.com/@xmine4346/the-customer-analytics-framework-every-business-leader-needs-dd679e8f0514">
-                                        <!-- Rewritten description to create curiosity and promise specific value -->
                                         <p>Most businesses know the 80/20 rule but can't actually identify their 20%. This framework shows you how to find your most valuable customers, predict lifetime value, and stop treating every customer the same.</p>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div data-bs-toggle="collapse" class="collapsed question" href="#faq2">
-                                    <!-- Changed to emphasize timing and prevention -->
                                     Your Best Customers Are Leaving. Here's How to Know 90 Days Early.
                                     <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                                 </div>
                                 <div id="faq2" class="collapse" data-bs-parent=".faq-list">
                                     <a href="https://medium.com/@xmine4346/the-proven-way-to-predict-customer-retention-without-waiting-for-churn-0318dc838f9d">
-                                        <!-- Rewritten to emphasize proactive approach vs reactive -->
                                         <p>Waiting until customers stop paying is too late. Learn the behavioral signals that predict churn months in advance, so you can save accounts before they're gone.</p>
                                     </a>
                                 </div>
                             </li>
                             <li>
                                 <div data-bs-toggle="collapse" class="collapsed question" href="#faq4">
-                                    <!-- Changed to be more specific about the problem and outcome -->
                                     Stop Sending the Same Emails to Everyone. Here's How to Personalize at Scale.
                                     <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                                 </div>
                                 <div id="faq4" class="collapse" data-bs-parent=".faq-list">
                                     <a href="https://medium.com/@xmine4346/how-to-personalize-your-free-trial-experience-and-skyrocket-conversions-7999446cf33e">
-                                        <!-- Rewritten to focus on the inefficiency being solved -->
                                         <p>Generic trial emails get ignored. Learn how to use behavioral data to send the right message to the right person at the right time—automatically.</p>
                                     </a>
                                 </div>
                             </li>
                         </ul>
-                        <!-- Changed CTA to be more casual -->
                         <div style="margin-top: 30px; text-align: center;">
                             <a href="https://medium.com/@xmine4346" class="btn-get-started-primary" target="_blank" rel="noopener noreferrer">
                                 <span>Read More Articles <i class="fas fa-external-link-alt"></i></span>
@@ -733,7 +678,6 @@ h1, h2, h3, h4, h5, h6 {
                     <div class="col-lg-4 col-md-6 footer-contact">
                         <h3>Adeyemi<span>Data</span></h3>
                         <p>
-                            <!-- Changed from job title to value proposition -->
                             Turning Data Into Revenue<br>
                             Lagos, Nigeria (Remote Globally)<br><br>
                             <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
@@ -747,12 +691,10 @@ h1, h2, h3, h4, h5, h6 {
                             <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Services</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
-                            <!-- Changed from "Hire Me" to "Let's Talk" -->
                             <li><i class="bx bx-chevron-right"></i> <a href="#contact">Let's Talk</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-6 footer-links">
-                        <!-- Changed from technical categories to customer outcomes -->
                         <h4>What I Do</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Predict Churn</a></li>
@@ -763,7 +705,6 @@ h1, h2, h3, h4, h5, h6 {
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Connect With Me</h4>
-                        <!-- Changed from generic "insights" to specific value -->
                         <p>Data tactics and project updates</p>
                         <div class="social-links mt-3">
                             <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
@@ -779,7 +720,6 @@ h1, h2, h3, h4, h5, h6 {
         </div>
         <div class="container py-4">
             <div class="copyright">
-                <!-- Changed from location-focused to value-focused -->
                 &copy; 2025 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved | Turning Data Into Decisions
             </div>
         </div>
