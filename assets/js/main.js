@@ -280,4 +280,40 @@
     }
   });
 
+  /**
+   * Simple collapse functionality (replaces Bootstrap JS)
+   */
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleElements = document.querySelectorAll('[data-bs-toggle="collapse"]');
+    
+    toggleElements.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = toggle.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+          const isShown = target.classList.contains('show');
+          
+          // Close all other collapses in the same parent
+          const parent = toggle.closest('.faq-list');
+          if (parent) {
+            parent.querySelectorAll('.collapse.show').forEach(openCollapse => {
+              if (openCollapse !== target) {
+                openCollapse.classList.remove('show');
+              }
+            });
+          }
+          
+          // Toggle current collapse
+          if (isShown) {
+            target.classList.remove('show');
+          } else {
+            target.classList.add('show');
+          }
+        }
+      });
+    });
+  });
+
 })()
