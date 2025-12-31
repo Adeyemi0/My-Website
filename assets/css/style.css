@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #0F172A;
     margin: 0;
     padding: 0;
@@ -136,6 +136,9 @@ h1 {
     line-height: 0;
     transition: 0.3s;
     margin-left: 20px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
 }
 
 #topbar .social-links a:hover {
@@ -370,6 +373,8 @@ h1 {
     font-size: 18px;
     flex-shrink: 0;
     margin-top: 3px;
+    width: 18px;
+    height: 18px;
 }
 
 .btn-get-started-primary {
@@ -431,11 +436,13 @@ h1 {
 
 .hero-profile-image {
     margin-top: 20px;
+    min-height: 320px;
 }
 
 .profile-img {
     width: 320px !important;
     height: 320px !important;
+    aspect-ratio: 1;
     border-radius: 50% !important;
     object-fit: cover !important;
     border: 5px solid #0052FF;
@@ -474,6 +481,9 @@ h1 {
         width: 280px !important;
         height: 280px !important;
     }
+    .hero-profile-image {
+        min-height: 280px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -495,6 +505,9 @@ h1 {
         width: 240px !important;
         height: 240px !important;
         margin-top: 30px;
+    }
+    .hero-profile-image {
+        min-height: 240px;
     }
     #hero .d-flex {
         flex-direction: column !important;
@@ -746,6 +759,11 @@ section {
     border-radius: 50%;
     padding: 8px;
     border: 2px dotted #b3d1fa;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact .info-box h3 {
