@@ -11,25 +11,27 @@
     <meta property="og:description" content="Expert freelance data scientist and AI engineer. Machine learning, predictive analytics, and custom AI solutions.">
     <meta property="og:type" content="website">
     <!-- Preconnect to critical external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Preload Inter Variable Font -->
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-variable.woff2" crossorigin>
     <!-- Critical CSS - Inline for immediate render -->
     <style>
 /*--------------------------------------------------------------
 # Critical styles - loaded immediately
 --------------------------------------------------------------*/
 @font-face {
-    font-family: 'bootstrap-icons';
-    src: url('assets/fonts/bootstrap-icons.woff2?856008c0e87f06f215a7aad03c93f6e3') format('woff2');
+    font-family: 'Inter';
+    src: url('assets/fonts/inter-variable.woff2') format('woff2');
+    font-weight: 100 900;
     font-display: swap;
+    font-style: normal;
 }
 @font-face {
-    font-family: 'boxicons';
-    src: url('assets/fonts/boxicons.woff2') format('woff2');
+    font-family: 'bootstrap-icons';
+    src: url('assets/fonts/bootstrap-icons.woff2?856008c0e87f06f215a7aad03c93f6e3') format('woff2');
     font-display: swap;
 }
 
@@ -40,7 +42,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #0F172A;
     margin: 0;
     padding: 0;
@@ -108,18 +110,57 @@ h1 {
         max-width: 1140px;
     }
 }
+
+/* Topbar - Reserve space for icons to prevent CLS */
+#topbar {
+    background: #0052FF;
+    height: 40px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0;
+}
+#topbar .social-links a {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-left: 20px;
+}
+
+/* Header - Reserve space to prevent CLS */
+#header {
+    background: #ffffff;
+    height: 86px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+#header .logo {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 800;
+}
+
+/* Hero section - Reserve space for profile image */
+.hero-profile-image {
+    min-height: 320px;
+}
+.profile-img {
+    width: 320px;
+    height: 320px;
+    aspect-ratio: 1;
+}
     </style>
     <!-- Preload LCP image -->
     <link rel="preload" as="image" href="assets/img/photo_2025-08-11_17-35-17.jpg" fetchpriority="high">
-    <!-- Premium Inter Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- Defer Non-Critical CSS -->
-    <link href="assets/css/style.css" rel="stylesheet" media="print" onload="this.media='all'"> <!-- Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="assets/css/style.css" rel="stylesheet"></noscript>
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></noscript>
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
     <!-- Schema Markup -->
     <script type="application/ld+json">
     {
@@ -191,28 +232,28 @@ h1 {
                     
                     <p class="hero-subtitle"><strong>You have the data but not the answers that drive growth:</strong></p>
                     <ul>
-                        <li><i class="fas fa-chart-line"></i> Which customers are likely to churn and why?</li>
-                        <li><i class="fas fa-users-slash"></i> Which marketing channels generate real revenue, not vanity traffic?</li>
-                        <li><i class="fas fa-shopping-cart"></i> Why do 500 users add to cart, but only 50 complete a purchase?</li>
-                        <li><i class="fas fa-bullseye"></i> Which product features retain customers and which drain development time?</li>
-                        <li><i class="fas fa-brain"></i> How can you forecast demand without overstocking or running out?</li>
-                        <li><i class="fas fa-robot"></i> Where does AI deliver real business impact not just hype?</li>
+                        <li><i class="bi bi-graph-up"></i> Which customers are likely to churn and why?</li>
+                        <li><i class="bi bi-people"></i> Which marketing channels generate real revenue, not vanity traffic?</li>
+                        <li><i class="bi bi-cart"></i> Why do 500 users add to cart, but only 50 complete a purchase?</li>
+                        <li><i class="bi bi-bullseye"></i> Which product features retain customers and which drain development time?</li>
+                        <li><i class="bi bi-graph-down"></i> How can you forecast demand without overstocking or running out?</li>
+                        <li><i class="bi bi-cpu"></i> Where does AI deliver real business impact not just hype?</li>
                     </ul>
                     
                     <h2 style="font-size: 1.1em; margin-top: 20px; font-weight: 600;">I build machine learning systems that turn your data into clear answers, ship in weeks not months and pay for themselves by uncovering revenue you're leaving behind.</h2>
                     
                     <div class="d-flex" style="margin-top: 30px;">
                         <a href="#contact" class="btn-get-started-primary scrollto">
-                            <span>Tell Me Your Data Problem <i class="fas fa-arrow-right"></i></span>
+                            <span>Tell Me Your Data Problem <i class="bi bi-arrow-right"></i></span>
                         </a>
                         <a href="#about" class="btn-get-started-secondary scrollto">
-                            <span>How I Work <i class="fas fa-arrow-down"></i></span>
+                            <span>How I Work <i class="bi bi-arrow-down"></i></span>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 text-center order-lg-2">
                     <div class="hero-profile-image">
-                        <img src="assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi - Data Scientist and AI Engineer Lagos" class="img-fluid profile-img" width="320" height="320" fetchpriority="high">
+                        <img src="assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi - Data Scientist and AI Engineer Lagos" class="img-fluid profile-img" width="320" height="320" fetchpriority="high" decoding="async">
                         <div class="profile-caption">
                             <p style="font-size: 1em; font-style: italic; margin-top: 15px;">Adediran Adeyemi<br>Data Scientist | AI/ML Engineer<br>4+ Years Turning Data Into Revenue</p>
                         </div>
@@ -248,7 +289,7 @@ h1 {
                         
                         <div style="margin-top: 35px; text-align: center;">
                             <a href="#contact" class="btn-get-started-primary">
-                                <span>Let's Talk About Your Toughest Data Question <i class="fas fa-arrow-right"></i></span>
+                                <span>Let's Talk About Your Toughest Data Question <i class="bi bi-arrow-right"></i></span>
                             </a>
                         </div>
                     </div>
@@ -266,7 +307,7 @@ h1 {
                 <div class="row">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="fas fa-brain"></i></div>
+                            <div class="icon"><i class="bi bi-lightbulb"></i></div>
                             <h4 class="title">Predict Before It Happens</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
                                 <li>Know which customers will churn 30-90 days out (churn prediction models)</li>
@@ -280,7 +321,7 @@ h1 {
                     </div>
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                            <div class="icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="icon"><i class="bi bi-bar-chart"></i></div>
                             <h4 class="title">See What's Actually Working</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
                                 <li>Track revenue, growth, and retention in real-time (live dashboards)</li>
@@ -294,7 +335,7 @@ h1 {
                     </div>
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                            <div class="icon"><i class="fas fa-users"></i></div>
+                            <div class="icon"><i class="bi bi-people"></i></div>
                             <h4 class="title">Understand Your Customers</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
                                 <li>Identify your most profitable customers (RFM segmentation)</li>
@@ -308,7 +349,7 @@ h1 {
                     </div>
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                            <div class="icon"><i class="fas fa-database"></i></div>
+                            <div class="icon"><i class="bi bi-database"></i></div>
                             <h4 class="title">Stop Doing It Manually</h4>
                             <ul class="description" style="text-align: left; padding-left: 20px;">
                                 <li>Automate data collection so it's always ready (ETL pipelines)</li>
@@ -326,7 +367,7 @@ h1 {
                     <h3 style="color: white; margin-bottom: 15px;">Not Sure Which Service You Need?</h3>
                     <p style="font-size: 18px; margin-bottom: 25px; color: rgba(255,255,255,0.95);">Tell me the business question you're trying to answer. I'll recommend the fastest path to get you there.</p>
                     <a href="#contact" class="btn-get-started-primary" style="background: white; color: #0052FF; border: none;">
-                        <span>Describe Your Challenge <i class="fas fa-arrow-right"></i></span>
+                        <span>Describe Your Challenge <i class="bi bi-arrow-right"></i></span>
                     </a>
                 </div>
             </div>
@@ -543,7 +584,7 @@ h1 {
                 <div style="margin-top: 40px; text-align: center;">
                     <p style="font-size: 18px; margin-bottom: 20px;">See a project similar to what you need? Let's talk about building your version.</p>
                     <a href="#contact" class="btn-get-started-primary">
-                        <span>Tell Me What You're Trying to Solve <i class="fas fa-arrow-right"></i></span>
+                        <span>Tell Me What You're Trying to Solve <i class="bi bi-arrow-right"></i></span>
                     </a>
                 </div>
             </div>
@@ -559,21 +600,21 @@ h1 {
         <div class="row" style="margin-bottom: 40px;">
             <div class="col-lg-4 col-md-6">
                 <div class="info-box">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="bi bi-geo-alt"></i>
                     <h3>Location</h3>
                     <p>Based in Lagos, Nigeria<br>Available globally (remote, timezone-flexible)</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="info-box">
-                    <i class="fas fa-envelope"></i>
+                    <i class="bi bi-envelope"></i>
                     <h3>Email</h3>
                     <p><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="info-box">
-                    <i class="fab fa-whatsapp"></i>
+                    <i class="bi bi-whatsapp"></i>
                     <h3>WhatsApp</h3>
                     <p><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></p>
                 </div>
@@ -662,7 +703,7 @@ h1 {
                         </ul>
                         <div style="margin-top: 30px; text-align: center;">
                             <a href="https://medium.com/@xmine4346" class="btn-get-started-primary" target="_blank" rel="noopener noreferrer">
-                                <span>Read More Articles <i class="fas fa-external-link-alt"></i></span>
+                                <span>Read More Articles <i class="bi bi-box-arrow-up-right"></i></span>
                             </a>
                         </div>
                     </div>
@@ -687,32 +728,32 @@ h1 {
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Let's Talk</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#about">About</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#featured-services">Services</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Portfolio</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#contact">Let's Talk</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>What I Do</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Predict Churn</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Track What Works</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Understand Customers</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#featured-services">Automate Data</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#featured-services">Predict Churn</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#featured-services">Track What Works</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#featured-services">Understand Customers</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#featured-services">Automate Data</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Connect With Me</h4>
                         <p>Data tactics and project updates</p>
                         <div class="social-links mt-3">
-                            <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" class="linkedin" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-                            <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-                            <a href="https://wa.me/+2348162735399" class="whatsapp" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
-                            <a href="https://web.facebook.com/adediran.adeyemiabiodun" class="facebook" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="https://www.instagram.com/adeyemi_the_data_analyst/" class="instagram" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="https://mobile.twitter.com/AdediranAd60922" class="twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                            <a href="https://wa.me/+2348162735399" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                            <a href="https://web.facebook.com/adediran.adeyemiabiodun" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.instagram.com/adediran.yemite/" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -731,8 +772,6 @@ h1 {
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
     <script src="assets/vendor/aos/aos.js" defer></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
-
