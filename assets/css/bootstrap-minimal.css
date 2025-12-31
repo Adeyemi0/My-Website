@@ -1,0 +1,242 @@
+/*!
+ * Minimal Bootstrap CSS - Only Used Classes
+ * Extracted from Bootstrap 5.x for optimal performance
+ */
+
+/* Container */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+/* Columns */
+.col-md-6,
+.col-md-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-8,
+.col-lg-12,
+.col-xl-10 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .col-md-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+    .col-lg-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+    .col-lg-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+    .col-lg-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-xl-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+    }
+}
+
+/* Display Utilities */
+.d-none {
+    display: none !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+@media (min-width: 768px) {
+    .d-md-flex {
+        display: flex !important;
+    }
+}
+
+/* Flexbox Utilities */
+.align-items-center {
+    align-items: center !important;
+}
+
+.align-items-stretch {
+    align-items: stretch !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+@media (min-width: 768px) {
+    .justify-content-md-between {
+        justify-content: space-between !important;
+    }
+}
+
+/* Spacing Utilities */
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+@media (min-width: 992px) {
+    .mb-lg-0 {
+        margin-bottom: 0 !important;
+    }
+}
+
+.ms-4 {
+    margin-left: 1.5rem !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.pt-4 {
+    padding-top: 1.5rem !important;
+}
+
+@media (min-width: 992px) {
+    .pt-lg-0 {
+        padding-top: 0 !important;
+    }
+}
+
+.py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+/* Text Utilities */
+.text-center {
+    text-align: center !important;
+}
+
+/* Forms */
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Order Utilities for Flexbox */
+@media (min-width: 992px) {
+    .order-lg-1 {
+        order: 1 !important;
+    }
+    .order-lg-2 {
+        order: 2 !important;
+    }
+}
+
+/* Additional utilities used in FAQ section */
+[data-bs-toggle="collapse"] {
+    cursor: pointer;
+}
+
+.collapse:not(.show) {
+    display: none;
+}
+
+.collapse.show {
+    display: block;
+}
+
+/* Img fluid */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
