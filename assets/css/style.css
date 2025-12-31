@@ -664,8 +664,36 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Portfolio
+# Portfolio - FIXED IMAGE HEIGHTS
 --------------------------------------------------------------*/
+/* Ensure the portfolio container uses flexbox to handle variable-height items */
+.portfolio .portfolio-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+.portfolio .portfolio-item {
+    margin-bottom: 30px;
+    transition: all 0.3s ease-in-out;
+    min-width: 300px; 
+    flex: 1 1 calc(33.333% - 20px);
+}
+
+/* For medium screens, adjust to 2 columns */
+@media (max-width: 991px) {
+    .portfolio .portfolio-item {
+        flex: 1 1 calc(50% - 20px); /* Two items per row */
+    }
+}
+
+/* For small screens, adjust to 1 column */
+@media (max-width: 767px) {
+    .portfolio .portfolio-item {
+        flex: 1 1 100%; /* One item per row */
+    }
+}
+
 .portfolio #portfolio-flters {
     padding: 2px 15px;
     margin: 0 auto 25px auto;
@@ -692,18 +720,18 @@ section {
     background: #0052FF;
 }
 
-.portfolio .portfolio-item {
-    margin-bottom: 30px;
-    transition: all 0.3s ease-in-out;
-}
-
 .portfolio .portfolio-item:hover {
     transform: translateY(-5px);
 }
 
+/* CRITICAL FIX: Set consistent image dimensions */
 .portfolio .portfolio-item img {
     border-radius: 8px 8px 0 0;
     transition: all 0.3s ease-in-out;
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    display: block;
 }
 
 .portfolio .portfolio-item:hover img {
@@ -714,6 +742,7 @@ section {
     font-size: 20px;
     font-weight: 800;
     margin-bottom: 10px;
+    margin-top: 20px;
     color: #0F172A;
     letter-spacing: -0.02em;
 }
