@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <!-- Homepage -->
   <url>
     <loc>https://adediranadeyemi.com/</loc>
@@ -8,7 +7,15 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
+  
+  <!-- Blog Listing Page -->
+  <url>
+    <loc>https://adediranadeyemi.com/blog.html</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
   <!-- Blog Posts -->
   <url>
     <loc>https://adediranadeyemi.com/blog/cart-abandonment.html</loc>
@@ -16,34 +23,28 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://adediranadeyemi.com/blog/organic-traffic.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://adediranadeyemi.com/blog/pricing-strategy-blog.html</loc>
+    <loc>https://adediranadeyemi.com/blog/pricing-strategy.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://adediranadeyemi.com/blog/stock-out-recovery.html</loc>
     <lastmod>2026-01-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>weekly</changefrefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://adediranadeyemi.com/blog/trending-products.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
 </urlset>
-
