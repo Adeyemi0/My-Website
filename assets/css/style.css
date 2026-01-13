@@ -1,12 +1,22 @@
 /*--------------------------------------------------------------
 # General & Premium Typography
 --------------------------------------------------------------*/
+/*
+FONT STRATEGY - Modern Editorial Design:
+- Headings: Playfair Display (elegant serif for impact)
+- Body Text: Libre Baskerville (readable serif for editorial feel)
+- UI Elements: Inter (clean sans-serif for buttons, filters, navigation)
+
+Note: Canela and Recoleta are premium commercial fonts requiring licenses.
+Playfair Display and Libre Baskerville provide similar editorial elegance
+while being freely available via Google Fonts.
+*/
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Libre Baskerville', 'Georgia', serif;
     color: #0F172A;
     margin: 0;
     padding: 0;
@@ -25,7 +35,7 @@ a:hover {
 
 /* Premium Heading Styling */
 h1, h2, h3, h4 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
     font-weight: 800;
     letter-spacing: -0.03em;
     color: #0f172a;
@@ -167,7 +177,7 @@ h1 {
     line-height: 1;
     font-weight: 800;
     letter-spacing: -0.02em;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
 }
 
 #header .logo a {
@@ -328,7 +338,7 @@ h1 {
     font-weight: 800;
     line-height: 1.2;
     color: #0F172A;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
     letter-spacing: -0.03em;
 }
 
@@ -378,7 +388,7 @@ h1 {
 }
 
 .btn-get-started-primary {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -408,7 +418,7 @@ h1 {
 }
 
 .btn-get-started-secondary {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -692,7 +702,7 @@ section {
     background: #ffffff;
     border: 2px solid #E2E8F0;
     border-radius: 50px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 15px;
     font-weight: 600;
     color: #475569;
@@ -1188,7 +1198,7 @@ section {
 .faq .faq-list .question {
     display: block;
     position: relative;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', 'Georgia', serif;
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
@@ -1261,6 +1271,7 @@ section {
     line-height: 1;
     font-weight: 800;
     letter-spacing: -0.02em;
+    font-family: 'Playfair Display', 'Georgia', serif;
 }
 
 #footer .footer-top .footer-contact h3 span {
