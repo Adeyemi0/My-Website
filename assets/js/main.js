@@ -1,6 +1,6 @@
 /**
- * Optimized Main JS - Performance Enhanced with Embedded Portfolio
- * Improvements: Batched DOM operations, RAF for scroll, reduced reflows, embedded demos
+ * Optimized Main JS - Performance Enhanced with Embedded Portfolio & Auto Counting
+ * Improvements: Batched DOM operations, RAF for scroll, reduced reflows, embedded demos, automatic counts
  */
 (function() {
   "use strict";
@@ -210,10 +210,50 @@
   }
 
   /**
-   * Portfolio Filter System - ENHANCED FOR EMBEDDED DEMOS
+   * AUTOMATIC PORTFOLIO COUNT CALCULATION - NEW
+   * Counts projects by category and updates filter buttons automatically
+   */
+  const updatePortfolioCounts = () => {
+    const portfolioProjects = select('.portfolio-project', true);
+    const filterButtons = select('.filter-btn', true);
+    
+    if (!portfolioProjects.length || !filterButtons.length) return;
+    
+    // Count projects by category
+    const counts = {
+      all: portfolioProjects.length,
+      dashboards: 0,
+      notebooks: 0,
+      'deployed-model': 0
+    };
+    
+    // Count each project's category
+    portfolioProjects.forEach(project => {
+      const category = project.getAttribute('data-category');
+      if (category && counts.hasOwnProperty(category)) {
+        counts[category]++;
+      }
+    });
+    
+    // Update filter button counts
+    filterButtons.forEach(button => {
+      const filter = button.getAttribute('data-filter');
+      const countElement = button.querySelector('.filter-count');
+      
+      if (countElement && counts.hasOwnProperty(filter)) {
+        countElement.textContent = counts[filter];
+      }
+    });
+  };
+
+  /**
+   * Portfolio Filter System - ENHANCED FOR EMBEDDED DEMOS WITH AUTO COUNTING
    * Filters portfolio projects by category: All, Live Demos, Case Studies
    */
   document.addEventListener('DOMContentLoaded', function() {
+    // Update counts first
+    updatePortfolioCounts();
+    
     // Get all filter buttons and portfolio projects
     const filterButtons = select('.filter-btn', true);
     const portfolioProjects = select('.portfolio-project', true);
@@ -222,7 +262,7 @@
     
     /**
      * Filter portfolio projects based on category
-     * @param {string} category - The category to filter by ('all', 'demo', 'case-study')
+     * @param {string} category - The category to filter by ('all', 'dashboards', 'notebooks', 'deployed-model')
      */
     const filterProjects = (category) => {
       // Use requestAnimationFrame for smooth animation
@@ -300,7 +340,7 @@
   });
 
   /**
-   * FULLSCREEN DEMO FUNCTIONALITY - NEW
+   * FULLSCREEN DEMO FUNCTIONALITY
    * Allows users to expand embedded demos to fullscreen
    */
   window.expandDemo = function(button) {
@@ -368,7 +408,7 @@
   }
 
   /**
-   * LAZY LOADING FOR EMBEDDED IFRAMES - NEW
+   * LAZY LOADING FOR EMBEDDED IFRAMES
    * Performance optimization: Load iframes only when they come into view
    */
   document.addEventListener('DOMContentLoaded', function() {
@@ -416,7 +456,7 @@
   });
 
   /**
-   * IFRAME LOADING INDICATORS - NEW
+   * IFRAME LOADING INDICATORS
    * Show loading state while iframes are loading
    */
   document.addEventListener('DOMContentLoaded', function() {
@@ -507,7 +547,7 @@
         once: true,
         mirror: false,
         offset: 100,
-        disable: false // Changed to false to work on mobile too
+        disable: false
       })
     }
   });
@@ -613,6 +653,7 @@
       if ('performance' in window) {
         const perfData = performance.getEntriesByType('navigation')[0];
         console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart, 'ms');
+        console.log('Portfolio counts updated automatically');
       }
     });
   }
