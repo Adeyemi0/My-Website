@@ -2,26 +2,27 @@
 # General & Premium Typography
 --------------------------------------------------------------*/
 /*
-FONT STRATEGY - Modern Editorial Design:
-- Headings: Playfair Display (elegant serif for impact)
-- Body Text: Libre Baskerville (readable serif for editorial feel)
-- UI Elements: Inter (clean sans-serif for buttons, filters, navigation)
+FONT STRATEGY - Modern Clean Design:
+- Logo: Allura (elegant script/signature font)
+- Headings: Poppins (modern, clean sans-serif with geometric feel)
+- Body Text: Poppins (readable, professional sans-serif)
+- UI Elements: Poppins/Inter (consistent modern look)
 
-Note: Canela and Recoleta are premium commercial fonts requiring licenses.
-Playfair Display and Libre Baskerville provide similar editorial elegance
-while being freely available via Google Fonts.
+This creates a professional, contemporary aesthetic similar to
+modern digital marketing and business websites.
 */
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Libre Baskerville', 'Georgia', serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #0F172A;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    font-weight: 400;
 }
 
 a {
@@ -35,9 +36,9 @@ a:hover {
 
 /* Premium Heading Styling */
 h1, h2, h3, h4 {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-weight: 800;
-    letter-spacing: -0.03em;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: #0f172a;
 }
 
@@ -171,13 +172,13 @@ h1 {
 }
 
 #header .logo {
-    font-size: 30px;
+    font-size: 32px;
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    font-family: 'Allura', cursive;
 }
 
 #header .logo a {
@@ -335,11 +336,11 @@ h1 {
 #hero h1 {
     margin: 0 0 20px 0;
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     color: #0F172A;
-    font-family: 'Playfair Display', 'Georgia', serif;
-    letter-spacing: -0.03em;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: -0.02em;
 }
 
 #hero h1 span {
@@ -388,7 +389,7 @@ h1 {
 }
 
 .btn-get-started-primary {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -418,7 +419,7 @@ h1 {
 }
 
 .btn-get-started-secondary {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -702,7 +703,7 @@ section {
     background: #ffffff;
     border: 2px solid #E2E8F0;
     border-radius: 50px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 15px;
     font-weight: 600;
     color: #475569;
@@ -1198,10 +1199,10 @@ section {
 .faq .faq-list .question {
     display: block;
     position: relative;
-    font-family: 'Playfair Display', 'Georgia', serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 18px;
     line-height: 24px;
-    font-weight: 700;
+    font-weight: 600;
     padding-left: 25px;
     cursor: pointer;
     color: #0052FF;
@@ -1266,12 +1267,12 @@ section {
 }
 
 #footer .footer-top .footer-contact h3 {
-    font-size: 24px;
+    font-size: 28px;
     margin: 0 0 15px 0;
     line-height: 1;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    font-family: 'Allura', cursive;
 }
 
 #footer .footer-top .footer-contact h3 span {
