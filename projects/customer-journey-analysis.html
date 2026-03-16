@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- =========================================
+  ESSENTIAL META
+========================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#0052FF">
+
+<!-- =========================================
+  PRIMARY SEO META
+========================================== -->
+<title>E-Commerce Customer Journey Analysis – Conversion Paths & Drop-Off Points | Adediran Adeyemi</title>
+
+<meta name="description" content="User behavior analysis of a subscription-based learning platform across 9,935 sessions. Identifies top conversion paths, drop-off points, and feature importance for conversion — with actionable recommendations to reduce churn. By freelance data scientist Adediran Adeyemi.">
+
+<meta name="keywords" content="customer journey analysis, user behavior analysis, conversion path analysis, drop-off points e-commerce, subscription platform analytics, user journey data science, Python path analysis, Adediran Adeyemi, e-commerce analytics portfolio">
+
+<meta name="author" content="Adediran Adeyemi">
+
+<link rel="canonical" href="https://adediranadeyemi.com/projects/customer-journey-analysis.html">
+
+<!-- =========================================
+  OPEN GRAPH
+========================================== -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Adediran Adeyemi | Freelance Data Scientist">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="E-Commerce Customer Journey Analysis – Conversion Paths & Drop-Off Points">
+<meta property="og:description" content="Analyzing 9,935 user sessions on a subscription learning platform to map conversion paths, identify drop-off points, and uncover what drives paid subscriptions.">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/customer-journey-analysis.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/cj.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Customer journey analysis dashboard showing conversion paths and drop-off points by Adediran Adeyemi">
+<meta property="article:published_time" content="2024-09-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-01-01T00:00:00+00:00">
+<meta property="article:author" content="https://adediranadeyemi.com">
+<meta property="article:tag" content="Customer Journey Analysis">
+<meta property="article:tag" content="User Behavior">
+<meta property="article:tag" content="Conversion Optimization">
+<meta property="article:tag" content="Path Analysis">
+<meta property="article:tag" content="Python">
+
+<!-- =========================================
+  TWITTER CARD
+========================================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Customer Journey Analysis – Conversion Paths & Drop-Off Points | Adediran Adeyemi">
+<meta name="twitter:description" content="9,935 sessions analyzed to map where users convert, where they drop off, and what drives subscription purchases.">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/portfolio/cj.jpg">
+<meta name="twitter:image:alt" content="Customer journey analysis by Adediran Adeyemi">
+
+<!-- =========================================
+  FONTS
+========================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Bootstrap 5 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+<!-- Main site stylesheet -->
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- =========================================
+  PAGE-SPECIFIC STYLES
+========================================== -->
+<style>
+
+  /* ── BREADCRUMB ── */
+  .project-breadcrumb { background: #F8FAFC; border-bottom: 1px solid #E2E8F0; padding: 12px 0; font-size: 13px; }
+  .project-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .project-breadcrumb li { display: flex; align-items: center; gap: 6px; color: #475569; }
+  .project-breadcrumb li a { color: #475569; text-decoration: none; transition: color .2s; }
+  .project-breadcrumb li a:hover { color: #0052FF; }
+  .project-breadcrumb li.active { color: #0F172A; font-weight: 600; }
+  .project-breadcrumb .sep { color: #CBD5E1; font-size: 11px; }
+
+  /* ── HERO ── */
+  .project-hero { background: #F8FAFC; padding: 60px 0 0; border-bottom: 1px solid #E2E8F0; }
+  .project-hero .hero-label { display: inline-flex; align-items: center; gap: 8px; background: #E7F1FD; color: #0052FF; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+  .project-hero h1 { font-size: 2.75rem; font-weight: 800; color: #0F172A; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
+  .project-hero h1 span { color: #0052FF; }
+  .project-hero .hero-lead { font-size: 17px; color: #475569; line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 32px; }
+  .hero-meta-item .meta-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 4px; }
+  .hero-meta-item .meta-value { font-size: 14px; font-weight: 600; color: #0F172A; }
+
+  .hero-stats { display: flex; border-top: 1px solid #E2E8F0; margin-top: 40px; }
+  .hero-stat { flex: 1; padding: 28px 20px; text-align: center; border-right: 1px solid #E2E8F0; }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat .stat-num { font-size: 2.25rem; font-weight: 900; color: #0052FF; letter-spacing: -0.04em; line-height: 1; display: block; }
+  .hero-stat .stat-label { font-size: 12px; color: #64748B; margin-top: 6px; line-height: 1.4; }
+
+  /* ── LAYOUT ── */
+  .project-body { padding: 80px 0; }
+  .toc-sidebar { position: sticky; top: 90px; }
+  .toc-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+  .toc-card .toc-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 16px; }
+  .toc-list { list-style: none; padding: 0 0 0 16px; margin: 0; border-left: 2px solid #E2E8F0; }
+  .toc-list li { margin-bottom: 10px; }
+  .toc-list a { font-size: 13px; font-weight: 500; color: #64748B; text-decoration: none; transition: color .2s; line-height: 1.4; display: block; }
+  .toc-list a:hover, .toc-list a.active { color: #0052FF; }
+  .toc-list a.active { font-weight: 600; }
+  .toc-cta { background: #E7F1FD; border-radius: 8px; padding: 18px; margin-top: 20px; text-align: center; }
+  .toc-cta p { font-size: 13px; color: #0F172A; line-height: 1.5; margin-bottom: 12px; font-weight: 500; }
+  .toc-cta a { display: inline-block; background: #0052FF; color: #fff; font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px; text-decoration: none; transition: background .2s; }
+  .toc-cta a:hover { background: #0041cc; color: #fff; }
+
+  /* ── ARTICLE SECTIONS ── */
+  .doc-section { margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid #E2E8F0; scroll-margin-top: 90px; }
+  .doc-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .doc-section h2 { font-size: 22px; font-weight: 800; color: #0F172A; letter-spacing: -0.025em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #E7F1FD; border-radius: 8px; color: #0052FF; font-size: 16px; flex-shrink: 0; }
+  .doc-section h3 { font-size: 16px; font-weight: 700; color: #0F172A; margin-top: 24px; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .doc-section p { font-size: 15px; color: #334155; line-height: 1.8; margin-bottom: 14px; }
+  .doc-section ul, .doc-section ol { padding-left: 20px; margin-bottom: 14px; }
+  .doc-section li { font-size: 15px; color: #334155; line-height: 1.75; margin-bottom: 6px; }
+
+  /* Callouts */
+  .callout { background: #E7F1FD; border-left: 4px solid #0052FF; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+  .callout p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
+  .callout strong { color: #0052FF; }
+  .callout-warn { background: #FFF7ED; border-left: 4px solid #F97316; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+  .callout-warn p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
+  .callout-warn strong { color: #C2410C; }
+
+  /* Data table */
+  .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; }
+  .data-table thead { background: #0052FF; color: #fff; }
+  .data-table thead th { padding: 11px 16px; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; text-align: left; }
+  .data-table tbody tr { border-bottom: 1px solid #E2E8F0; transition: background .15s; }
+  .data-table tbody tr:last-child { border-bottom: none; }
+  .data-table tbody tr:hover { background: #F8FAFC; }
+  .data-table tbody td { padding: 10px 16px; color: #334155; }
+  .data-table tbody td.num { text-align: right; font-weight: 600; color: #0052FF; font-family: 'Courier New', monospace; }
+  .data-table tbody td.pct { text-align: right; font-size: 12px; color: #64748B; }
+  .data-table .highlight-row { background: #E7F1FD !important; font-weight: 600; }
+
+  /* Journey flow visual */
+  .journey-flow { display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin: 20px 0; }
+  .journey-step { background: #fff; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 16px; font-size: 13px; font-weight: 600; color: #0F172A; white-space: nowrap; transition: border-color .2s; }
+  .journey-step:hover { border-color: #0052FF; }
+  .journey-step.active { background: #0052FF; color: #fff; border-color: #0052FF; }
+  .journey-step.end { background: #F0FDF4; border-color: #22C55E; color: #166534; }
+  .journey-arrow { color: #CBD5E1; font-size: 18px; margin: 0 6px; flex-shrink: 0; }
+
+  /* Feature importance bars */
+  .feature-bars { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+  .feature-row { display: grid; grid-template-columns: 160px 1fr 70px; align-items: center; gap: 14px; }
+  .feature-label { font-size: 13px; font-weight: 600; color: #334155; }
+  .feature-bar-wrap { background: #F1F5F9; border-radius: 4px; height: 12px; overflow: hidden; }
+  .feature-bar { height: 100%; border-radius: 4px; background: #0052FF; }
+  .feature-bar.secondary { background: #60A5FA; }
+  .feature-bar.tertiary { background: #BFDBFE; }
+  .feature-val { font-size: 12px; font-weight: 700; color: #0052FF; text-align: right; font-family: 'Courier New', monospace; }
+
+  /* Subscription type cards */
+  .sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  .sub-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 20px; text-align: center; transition: box-shadow .2s, transform .2s; }
+  .sub-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,82,255,.1); }
+  .sub-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin: 0 auto 12px; }
+  .sub-icon.annual { background: #E7F1FD; color: #0052FF; }
+  .sub-icon.monthly { background: #F0FDF4; color: #16A34A; }
+  .sub-icon.quarterly { background: #FFF7ED; color: #C2410C; }
+  .sub-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
+  .sub-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+
+  /* Insight cards */
+  .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .insight-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 20px; transition: box-shadow .2s, transform .2s; }
+  .insight-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,82,255,.1); }
+  .insight-icon { width: 40px; height: 40px; background: #E7F1FD; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0052FF; font-size: 18px; margin-bottom: 12px; }
+  .insight-card h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
+  .insight-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+
+  /* Drop-off visual */
+  .dropoff-funnel { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+  .funnel-row { display: grid; grid-template-columns: 140px 1fr 80px; align-items: center; gap: 12px; }
+  .funnel-label { font-size: 13px; font-weight: 600; color: #334155; }
+  .funnel-bar-wrap { background: #F1F5F9; border-radius: 4px; height: 28px; overflow: hidden; position: relative; }
+  .funnel-bar { height: 100%; border-radius: 4px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 700; color: white; }
+  .funnel-bar.login { background: #0052FF; width: 100%; }
+  .funnel-bar.homepage { background: #3B82F6; width: 63%; }
+  .funnel-bar.checkout { background: #60A5FA; width: 53%; }
+  .funnel-bar.signup { background: #93C5FD; width: 32%; }
+  .funnel-bar.coupon { background: #BFDBFE; width: 27%; color: #1E40AF; }
+  .funnel-count { font-size: 13px; font-weight: 700; color: #0052FF; text-align: right; font-family: 'Courier New', monospace; }
+
+  /* Conversion path cards */
+  .path-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+  .path-item { background: #fff; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: border-color .2s; }
+  .path-item:hover { border-color: #0052FF; }
+  .path-item.top { border-left: 3px solid #0052FF; }
+  .path-steps { font-size: 13px; font-weight: 600; color: #0F172A; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .path-steps .ps { background: #F1F5F9; padding: 3px 10px; border-radius: 4px; font-size: 12px; }
+  .path-steps .arrow { color: #CBD5E1; font-size: 14px; }
+  .path-count { font-size: 15px; font-weight: 800; color: #0052FF; white-space: nowrap; font-family: 'Courier New', monospace; flex-shrink: 0; }
+
+  /* Comparison cards: converted vs non */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .compare-card { border-radius: 10px; padding: 22px; border: 1px solid #E2E8F0; }
+  .compare-card.converted { background: #F0FDF4; border-color: #86EFAC; }
+  .compare-card.non-converted { background: #FFF7ED; border-color: #FED7AA; }
+  .compare-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 12px; border-radius: 50px; margin-bottom: 12px; }
+  .compare-badge.green { background: #DCFCE7; color: #166534; }
+  .compare-badge.orange { background: #FFEDD5; color: #9A3412; }
+  .compare-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 10px; }
+  .compare-card ul { padding-left: 16px; margin: 0; }
+  .compare-card li { font-size: 13px; color: #334155; line-height: 1.7; margin-bottom: 5px; }
+
+  /* Dict table */
+  .dict-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; }
+  .dict-table thead { background: #F8FAFC; }
+  .dict-table thead th { padding: 10px 16px; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; color: #0052FF; text-align: left; border-bottom: 2px solid #E2E8F0; }
+  .dict-table tbody tr { border-bottom: 1px solid #F1F5F9; }
+  .dict-table tbody tr:last-child { border-bottom: none; }
+  .dict-table tbody tr:hover { background: #F8FAFC; }
+  .dict-table tbody td { padding: 9px 16px; color: #334155; }
+  .dict-table tbody td:first-child { font-family: 'Courier New', monospace; font-weight: 700; color: #0052FF; font-size: 12px; white-space: nowrap; }
+
+  /* Steps / recommendations */
+  .rec-list { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+  .rec-item { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; background: #fff; border: 1px solid #E2E8F0; border-radius: 8px; padding: 18px; }
+  .rec-num { width: 40px; height: 40px; background: #0052FF; color: #fff; border-radius: 8px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .rec-body h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
+  .rec-body p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+
+  /* Tags */
+  .tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+
+  /* Related */
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .related-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; text-decoration: none; transition: all .3s ease; display: block; }
+  .related-card:hover { border-color: #0052FF; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,82,255,.12); text-decoration: none; }
+  .related-card .card-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0052FF; margin-bottom: 8px; }
+  .related-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 8px; line-height: 1.4; }
+  .related-card p { font-size: 13px; color: #64748B; line-height: 1.55; margin: 0; }
+  .related-card .card-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600; color: #0052FF; }
+
+  /* CTA */
+  .project-cta { background: #0052FF; padding: 80px 0; text-align: center; color: #fff; }
+  .project-cta .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 16px; }
+  .project-cta h2 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .project-cta p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 420px; margin: 0 auto 32px; line-height: 1.6; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-cta-white { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: #fff; color: #0052FF; text-decoration: none; transition: all .3s; }
+  .btn-cta-white:hover { background: #f0f0f0; color: #0052FF; transform: translateY(-2px); text-decoration: none; }
+  .btn-cta-ghost { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); text-decoration: none; transition: all .3s; }
+  .btn-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 991px) {
+    .toc-sidebar { display: none; }
+    .project-hero h1 { font-size: 2rem; }
+    .insights-grid, .compare-grid, .related-grid, .sub-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: column; }
+    .hero-stat { border-right: none; border-bottom: 1px solid #E2E8F0; }
+    .hero-stat:last-child { border-bottom: none; }
+    .feature-row { grid-template-columns: 120px 1fr 60px; }
+    .funnel-row { grid-template-columns: 100px 1fr 60px; }
+  }
+  @media (max-width: 768px) {
+    .project-hero { padding: 40px 0 0; }
+    .project-hero h1 { font-size: 1.75rem; }
+    .project-body { padding: 50px 0; }
+    .doc-section { margin-bottom: 40px; padding-bottom: 40px; }
+    .rec-item { grid-template-columns: 1fr; }
+    .path-item { flex-direction: column; align-items: flex-start; }
+    .journey-flow { gap: 4px; }
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<div id="preloader"></div>
+
+<!-- =========================================
+  TOP BAR
+========================================== -->
+<div id="topbar" class="d-flex align-items-center fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="contact-info d-flex align-items-center">
+      <i class="bi bi-envelope-fill"></i>
+      <i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+      <i class="bi bi-phone-fill ms-3"></i>
+      <i><span>+234 816 273 5399</span></i>
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+  HEADER
+========================================== -->
+<header id="header" class="fixed-top" style="top:40px;">
+  <div class="container d-flex align-items-center justify-content-between">
+    <h1 class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></h1>
+    <nav class="navbar" aria-label="Site navigation">
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#featured-services">Services</a></li>
+        <li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="../index.html#faq">Blog</a></li>
+        <li><a href="../index.html#contact">Let's Talk</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+    </nav>
+  </div>
+</header>
+
+
+<!-- =========================================
+  BREADCRUMB
+========================================== -->
+<nav class="project-breadcrumb" style="margin-top:126px;" aria-label="Breadcrumb">
+  <div class="container">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <span class="sep">›</span>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a>
+        <meta itemprop="position" content="2">
+      </li>
+      <span class="sep">›</span>
+      <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">E-Commerce Customer Journey Analysis</span>
+        <meta itemprop="position" content="3">
+      </li>
+    </ol>
+  </div>
+</nav>
+
+
+<!-- =========================================
+  HERO
+========================================== -->
+<section class="project-hero">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-7">
+        <div class="hero-label">
+          <i class="bi bi-signpost-split"></i>
+          User Behavior · Path Analysis
+        </div>
+
+        <h1>Mapping Where Users <span>Convert — and Where They Don't</span></h1>
+
+        <p class="hero-lead">
+          A deep-dive path analysis of 9,935 sessions on a subscription learning platform — identifying the exact conversion sequences that lead to paid subscriptions and the drop-off points that silently kill revenue.
+        </p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="meta-label">Tools</div>
+            <div class="meta-value">Python · Pandas · Google Analytics · SQL</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">EdTech · SaaS · Subscription</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Type</div>
+            <div class="meta-value">Journey Analysis · Funnel Analytics · Feature Importance</div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3 pb-4">
+          <a href="#analysis" class="btn-get-started-primary">
+            Explore Analysis <i class="bi bi-arrow-down-circle"></i>
+          </a>
+          <a href="https://github.com/Adeyemi0/User-Journey-Analysis" target="_blank" class="btn-get-started-secondary">
+            View on GitHub <i class="bi bi-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-5 d-none d-lg-block">
+        <img
+          src="../assets/img/portfolio/cj.jpg"
+          alt="Customer journey analysis showing user conversion paths and drop-off points on a subscription platform"
+          class="img-fluid"
+          style="border-radius:12px; border:1px solid #E2E8F0; box-shadow:0 20px 60px rgba(0,82,255,0.12);"
+          width="560" height="360"
+          loading="eager" fetchpriority="high"
+        >
+      </div>
+
+    </div>
+
+    <!-- Stats strip -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num">9,935</span>
+        <span class="stat-label">User sessions analyzed</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">3,798</span>
+        <span class="stat-label">Login interactions — most frequent touchpoint</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">1,773</span>
+        <span class="stat-label">Direct-to-checkout conversions</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">27.9%</span>
+        <span class="stat-label">Feature importance of login page for conversion</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================
+  MAIN CONTENT
+========================================== -->
+<section class="project-body">
+  <div class="container">
+    <div class="row">
+
+      <!-- TOC -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <aside class="toc-sidebar" aria-label="Table of contents">
+          <div class="toc-card">
+            <p class="toc-heading">On This Page</p>
+            <ul class="toc-list">
+              <li><a href="#overview">Project Overview</a></li>
+              <li><a href="#objectives">Objectives</a></li>
+              <li><a href="#dictionary">Data Dictionary</a></li>
+              <li><a href="#analysis">Analysis</a></li>
+              <li><a href="#journey-insights">User Journey Insights</a></li>
+              <li><a href="#start-end">Start &amp; End Points</a></li>
+              <li><a href="#conversion-paths">Conversion Paths</a></li>
+              <li><a href="#subscription-types">Subscription Types</a></li>
+              <li><a href="#feature-importance">Feature Importance</a></li>
+              <li><a href="#dropoffs">Drop-Off Points</a></li>
+              <li><a href="#converted-vs-not">Converted vs. Not</a></li>
+              <li><a href="#recommendations">Recommendations</a></li>
+              <li><a href="#limitations">Limitations</a></li>
+              <li><a href="#related">Related Projects</a></li>
+            </ul>
+            <div class="toc-cta">
+              <p>Losing users before they convert?</p>
+              <a href="../index.html#contact">Let's Talk →</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Article -->
+      <div class="col-lg-9">
+        <article itemscope itemtype="https://schema.org/TechArticle">
+          <meta itemprop="author" content="Adediran Adeyemi">
+          <meta itemprop="datePublished" content="2024-09-01">
+          <meta itemprop="headline" content="E-Commerce Customer Journey Analysis – Mapping Conversion Paths and Drop-Off Points">
+
+
+          <!-- OVERVIEW -->
+          <div class="doc-section" id="overview">
+            <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
+            <p>
+              Analyzing user behavior is essential for understanding how users engage with a platform and identifying opportunities for improvement. This project examines user journeys on 365's subscription-based learning platform across 9,935 sessions — mapping the paths from first touchpoint to conversion (or abandonment), and identifying what differentiates users who subscribe from those who don't.
+            </p>
+            <p>
+              The analysis spans user journey sequences, start and end point distributions, conversion path rankings, subscription-type behavioral differences, machine-learning-derived feature importance, and a structured comparison of converting vs. non-converting user behavior.
+            </p>
+            <div class="callout">
+              <p><strong>Central finding:</strong> The most frequent interaction on the platform is logging in — and sessions that start and end at login, without progressing to pricing or checkout, represent the platform's single largest missed conversion opportunity. Coupons and checkout page interactions are the strongest conversion drivers.</p>
+            </div>
+          </div>
+
+
+          <!-- OBJECTIVES -->
+          <div class="doc-section" id="objectives">
+            <h2><span class="section-icon"><i class="bi bi-bullseye"></i></span> Objectives</h2>
+            <p>The primary objectives of this analysis are:</p>
+            <ul>
+              <li>Map the most common user journey sequences across the platform and identify which paths lead to conversion</li>
+              <li>Identify start and end points that indicate high-intent vs. disengaged behavior</li>
+              <li>Rank conversion paths by frequency to prioritize UX optimization efforts</li>
+              <li>Segment behavior by subscription type (Annual, Monthly, Quarterly)</li>
+              <li>Quantify the feature importance of each page interaction in predicting conversion</li>
+              <li>Identify drop-off points where users disengage without converting</li>
+              <li>Deliver actionable recommendations to increase conversion rates and reduce churn</li>
+            </ul>
+          </div>
+
+
+          <!-- DICTIONARY -->
+          <div class="doc-section" id="dictionary">
+            <h2><span class="section-icon"><i class="bi bi-table"></i></span> Data Dictionary</h2>
+            <p>The dataset contains 9,935 rows and 4 columns, capturing session-level user journey sequences:</p>
+
+            <table class="dict-table">
+              <thead><tr><th>Column</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>user_id</td><td>Unique identifier for each user on the platform</td></tr>
+                <tr><td>session_id</td><td>Unique identifier for each user session</td></tr>
+                <tr><td>subscription_type</td><td>The type of subscription the user holds: Annual, Monthly, or Quarterly</td></tr>
+                <tr><td>user_journey</td><td>A sequence of pages visited by the user during their session — the primary analytical variable</td></tr>
+              </tbody>
+            </table>
+
+            <div class="callout-warn">
+              <p><strong>Dataset note:</strong> The dataset captures page-visit sequences but not session duration, time-on-page, or demographic attributes. These limitations are addressed in the Limitations section and inform the Further Research recommendations.</p>
+            </div>
+          </div>
+
+
+          <!-- ANALYSIS -->
+          <div class="doc-section" id="analysis">
+            <h2><span class="section-icon"><i class="bi bi-graph-up"></i></span> Analysis</h2>
+            <p>
+              The analysis was structured across seven interconnected layers — from broad interaction counts down to the behavioral differences between users who converted and those who didn't. Each layer builds on the previous to progressively narrow the focus toward actionable insight.
+            </p>
+          </div>
+
+
+          <!-- JOURNEY INSIGHTS -->
+          <div class="doc-section" id="journey-insights">
+            <h2><span class="section-icon"><i class="bi bi-map"></i></span> User Journey Insights</h2>
+
+            <h3>Top Interactions Across the Platform</h3>
+            <p>Across all 9,935 sessions, five interactions dominate total engagement volume:</p>
+
+            <div class="dropoff-funnel">
+              <div class="funnel-row">
+                <span class="funnel-label">Log in</span>
+                <div class="funnel-bar-wrap"><div class="funnel-bar login">3,798 sessions</div></div>
+                <span class="funnel-count">3,798</span>
+              </div>
+              <div class="funnel-row">
+                <span class="funnel-label">Homepage</span>
+                <div class="funnel-bar-wrap"><div class="funnel-bar homepage">2,396 sessions</div></div>
+                <span class="funnel-count">2,396</span>
+              </div>
+              <div class="funnel-row">
+                <span class="funnel-label">Checkout</span>
+                <div class="funnel-bar-wrap"><div class="funnel-bar checkout">2,021 sessions</div></div>
+                <span class="funnel-count">2,021</span>
+              </div>
+              <div class="funnel-row">
+                <span class="funnel-label">Sign up</span>
+                <div class="funnel-bar-wrap"><div class="funnel-bar signup">1,210 sessions</div></div>
+                <span class="funnel-count">1,210</span>
+              </div>
+              <div class="funnel-row">
+                <span class="funnel-label">Coupon</span>
+                <div class="funnel-bar-wrap"><div class="funnel-bar coupon">1,041 sessions</div></div>
+                <span class="funnel-count">1,041</span>
+              </div>
+            </div>
+
+            <div class="callout-warn">
+              <p><strong>Login dominance alert:</strong> Login appearing as both the most common <em>start point</em> and <em>end point</em> of sessions indicates a large segment of users who return to the platform repeatedly but never progress beyond basic re-authentication. These are users with genuine interest but no clear path forward — the highest-leverage retention opportunity.</p>
+            </div>
+          </div>
+
+
+          <!-- START & END POINTS -->
+          <div class="doc-section" id="start-end">
+            <h2><span class="section-icon"><i class="bi bi-arrows-expand"></i></span> Start Points &amp; End Points</h2>
+
+            <div class="row g-4">
+              <div class="col-md-6">
+                <h3>Session Start Points</h3>
+                <p>Where users enter the platform most often:</p>
+                <table class="data-table">
+                  <thead><tr><th>Start Point</th><th>Sessions</th></tr></thead>
+                  <tbody>
+                    <tr class="highlight-row"><td>Log in</td><td class="num">2,379</td></tr>
+                    <tr><td>Homepage</td><td class="num">2,329</td></tr>
+                    <tr><td>Checkout</td><td class="num">1,776</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-md-6">
+                <h3>Session End Points</h3>
+                <p>Where sessions most often terminate:</p>
+                <table class="data-table">
+                  <thead><tr><th>End Point</th><th>Sessions</th></tr></thead>
+                  <tbody>
+                    <tr class="highlight-row"><td>Log in</td><td class="num">3,601</td></tr>
+                    <tr><td>Checkout</td><td class="num">1,964</td></tr>
+                    <tr><td>Coupon</td><td class="num">1,029</td></tr>
+                    <tr><td>Sign up</td><td class="num">883</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <p style="margin-top: 20px;">
+              The gap between login as a start point (2,379) and login as an end point (3,601) reveals that many sessions begin elsewhere but terminate at login — users hit a friction point and fall back to the login page rather than progressing forward. This is a strong signal of navigation confusion or a lack of compelling next-step prompts after authentication.
+            </p>
+          </div>
+
+
+          <!-- CONVERSION PATHS -->
+          <div class="doc-section" id="conversion-paths">
+            <h2><span class="section-icon"><i class="bi bi-arrow-right-circle"></i></span> Conversion Paths</h2>
+            <p>The top conversion paths reveal a striking pattern: the overwhelming majority of conversions happen through a single direct step — landing straight on checkout. Multi-step paths involving Pricing are a distant second.</p>
+
+            <div class="path-list">
+              <div class="path-item top">
+                <div class="path-steps">
+                  <span class="ps">Checkout</span>
+                </div>
+                <span class="path-count">1,773</span>
+              </div>
+              <div class="path-item">
+                <div class="path-steps">
+                  <span class="ps">Pricing</span>
+                  <span class="arrow">→</span>
+                  <span class="ps">Checkout</span>
+                </div>
+                <span class="path-count">72</span>
+              </div>
+              <div class="path-item">
+                <div class="path-steps">
+                  <span class="ps">Homepage</span>
+                  <span class="arrow">→</span>
+                  <span class="ps">Pricing</span>
+                  <span class="arrow">→</span>
+                  <span class="ps">Checkout</span>
+                </div>
+                <span class="path-count">68</span>
+              </div>
+              <div class="path-item">
+                <div class="path-steps">
+                  <span class="ps">Courses</span>
+                  <span class="arrow">→</span>
+                  <span class="ps">Pricing</span>
+                  <span class="arrow">→</span>
+                  <span class="ps">Checkout</span>
+                </div>
+                <span class="path-count">7</span>
+              </div>
+              <div class="path-item">
+                <div class="path-steps">
+                  <span class="ps">Other</span>
+                  <span class="arrow">→</span>
+                  <span class="ps">Pricing</span>
+                  <span class="arrow">→</span>
+                  <span class="ps">Checkout</span>
+                </div>
+                <span class="path-count">3</span>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p><strong>Key implication:</strong> 96% of conversions that go through a multi-step path flow through the Pricing page. This makes the Pricing page the single most critical conversion lever on the platform — any friction, confusion, or weak value proposition there directly suppresses conversion rates.</p>
+            </div>
+
+            <h3>Coupon Influence on Conversions</h3>
+            <p>
+              Coupon interactions appear in 1,041 sessions and end-points in 1,029 sessions — indicating that coupons are not just used mid-journey but are often the final action before a user exits or converts. Users who encounter a coupon are significantly more likely to proceed to checkout, making promotional campaigns a direct conversion driver.
+            </p>
+          </div>
+
+
+          <!-- SUBSCRIPTION TYPES -->
+          <div class="doc-section" id="subscription-types">
+            <h2><span class="section-icon"><i class="bi bi-people"></i></span> Subscription Type Analysis</h2>
+            <p>Behavior varies meaningfully across the three subscription tiers — each showing a distinct engagement pattern:</p>
+
+            <div class="sub-grid">
+              <div class="sub-card">
+                <div class="sub-icon annual"><i class="bi bi-calendar-check-fill"></i></div>
+                <h4>Annual Subscribers</h4>
+                <p>Engage most frequently with Login and Coupon steps — indicating loyal, returning users who are motivated by discounts. Longer journeys with deeper platform engagement.</p>
+              </div>
+              <div class="sub-card">
+                <div class="sub-icon monthly"><i class="bi bi-calendar-month"></i></div>
+                <h4>Monthly Subscribers</h4>
+                <p>Exhibit shorter, direct engagement patterns — navigating directly to checkout with fewer intermediate steps. Higher purchase intent on entry, lower exploration behavior.</p>
+              </div>
+              <div class="sub-card">
+                <div class="sub-icon quarterly"><i class="bi bi-calendar3"></i></div>
+                <h4>Quarterly Subscribers</h4>
+                <p>Similar to monthly in directness, but slightly more likely to visit the pricing page before committing. Mid-tier consideration behavior — comparing value before converting.</p>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p><strong>Strategic implication:</strong> Annual subscribers are the loyalty cohort — they respond to discounts and re-engage frequently. Monthly and quarterly subscribers are intent-driven — they arrive ready to buy and need friction removed, not persuasion added.</p>
+            </div>
+          </div>
+
+
+          <!-- FEATURE IMPORTANCE -->
+          <div class="doc-section" id="feature-importance">
+            <h2><span class="section-icon"><i class="bi bi-bar-chart-steps"></i></span> Feature Importance for Conversion</h2>
+            <p>
+              A machine learning model was trained to predict conversion from page interaction signals. The feature importance scores reveal which page visits carry the most predictive weight:
+            </p>
+
+            <div class="feature-bars">
+              <div class="feature-row">
+                <span class="feature-label">visited_Log in</span>
+                <div class="feature-bar-wrap"><div class="feature-bar" style="width:100%"></div></div>
+                <span class="feature-val">0.2793</span>
+              </div>
+              <div class="feature-row">
+                <span class="feature-label">visited_Other</span>
+                <div class="feature-bar-wrap"><div class="feature-bar secondary" style="width:72%"></div></div>
+                <span class="feature-val">0.2013</span>
+              </div>
+              <div class="feature-row">
+                <span class="feature-label">visited_Coupon</span>
+                <div class="feature-bar-wrap"><div class="feature-bar tertiary" style="width:68%"></div></div>
+                <span class="feature-val">0.1910</span>
+              </div>
+            </div>
+
+            <h3>Interpretation</h3>
+            <ul>
+              <li><strong>Login (27.9% importance):</strong> The login page visit is the strongest single predictor of conversion — but in a nuanced way. It indicates a returning user with prior intent. The challenge is that many login sessions end without progressing forward.</li>
+              <li><strong>Other pages (20.1% importance):</strong> The "Other" category aggregates less-common page visits — their collective importance suggests that exploratory behavior (browsing beyond the core funnel) is a meaningful conversion signal.</li>
+              <li><strong>Coupon (19.1% importance):</strong> Coupon interaction is the third strongest conversion predictor — confirming that promotional offers are a critical conversion lever, not a nice-to-have feature.</li>
+            </ul>
+
+            <div class="callout">
+              <p><strong>Actionable insight:</strong> The top three conversion predictors — login, coupon, and exploratory browsing — all suggest that the highest-converting users are <em>returning, discount-responsive, and curious</em>. Retention campaigns, personalized coupon offers, and content discovery features would directly target this behavioral profile.</p>
+            </div>
+          </div>
+
+
+          <!-- DROP-OFFS -->
+          <div class="doc-section" id="dropoffs">
+            <h2><span class="section-icon"><i class="bi bi-sign-stop"></i></span> Drop-Off Points</h2>
+            <p>
+              Understanding where users exit without converting is as important as understanding where they do convert. The analysis identified several high-volume drop-off patterns:
+            </p>
+
+            <div class="insights-grid">
+              <div class="insight-card">
+                <div class="insight-icon"><i class="bi bi-box-arrow-right"></i></div>
+                <h4>Login as Exit Point</h4>
+                <p>3,601 sessions terminate at the login page — the highest drop-off volume of any page. Users re-authenticate but receive no compelling next step to guide them forward.</p>
+              </div>
+              <div class="insight-card">
+                <div class="insight-icon"><i class="bi bi-journal-text"></i></div>
+                <h4>Blog Page Drop-Off</h4>
+                <p>Sessions terminating at the Blog reflect disengagement after consuming informational content. Users read content but find no path to action — no CTA, no personalized recommendation, no next step.</p>
+              </div>
+              <div class="insight-card">
+                <div class="insight-icon"><i class="bi bi-folder2-open"></i></div>
+                <h4>Resources Center Drop-Off</h4>
+                <p>Similar to Blog — informational pages attract users but fail to channel them toward higher-value actions. These pages convert passive browsers into passive exits.</p>
+              </div>
+              <div class="insight-card">
+                <div class="insight-icon"><i class="bi bi-house"></i></div>
+                <h4>Homepage Bounce</h4>
+                <p>A large number of non-converting users terminate at the Homepage without progressing to Pricing or Checkout — suggesting weak value proposition communication or unclear navigation hierarchy.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- CONVERTED VS NOT -->
+          <div class="doc-section" id="converted-vs-not">
+            <h2><span class="section-icon"><i class="bi bi-arrow-left-right"></i></span> Converted vs. Non-Converted Users</h2>
+            <p>The behavioral contrast between users who subscribed and those who didn't is stark — and directly actionable:</p>
+
+            <div class="compare-grid">
+              <div class="compare-card converted">
+                <span class="compare-badge green">✓ Converted Users</span>
+                <h4>Behavioral Profile</h4>
+                <ul>
+                  <li>Shorter journeys with focused, high-value page interactions</li>
+                  <li>Disproportionately high checkout and pricing page visits</li>
+                  <li>Frequent coupon interactions — discount-responsive</li>
+                  <li>Return users (login as start point) with clear intent</li>
+                  <li>Less time on exploratory or informational content</li>
+                </ul>
+              </div>
+              <div class="compare-card non-converted">
+                <span class="compare-badge orange">✗ Non-Converted Users</span>
+                <h4>Behavioral Profile</h4>
+                <ul>
+                  <li>Longer or more fragmented journeys without reaching checkout</li>
+                  <li>Frequent sessions starting and ending at login without progression</li>
+                  <li>Engagement concentrated on Blog, Resources Center, and Homepage</li>
+                  <li>Less coupon interaction — missing the discount trigger</li>
+                  <li>High bounce rate from informational pages without conversion CTA</li>
+                </ul>
+              </div>
+            </div>
+
+            <p style="margin-top: 20px;">
+              The fundamental difference is <strong>intent clarity</strong>. Converted users arrive knowing what they want — a subscription — and navigate directly toward it. Non-converted users explore the platform's content but never receive a sufficiently compelling reason, at the right moment, to commit.
+            </p>
+          </div>
+
+
+          <!-- RECOMMENDATIONS -->
+          <div class="doc-section" id="recommendations">
+            <h2><span class="section-icon"><i class="bi bi-rocket-takeoff"></i></span> Recommendations</h2>
+
+            <div class="rec-list">
+              <div class="rec-item">
+                <div class="rec-num">1</div>
+                <div class="rec-body">
+                  <h4>Optimize the Post-Login Experience</h4>
+                  <p>Since login is both the most common start and end point, the post-login landing experience is the single highest-leverage intervention point. Implement personalized dashboards, progress reminders, or course recommendations that guide users toward pricing or checkout within seconds of logging in. Remove dead-ends.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">2</div>
+                <div class="rec-body">
+                  <h4>Enhance the Pricing Page</h4>
+                  <p>96% of multi-step conversions flow through the Pricing page. Audit the page for clarity, load speed, and value proposition strength. Test social proof elements (number of subscribers, course completion stats), comparison tables, and prominent CTAs. Even small improvements here have outsized conversion impact.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">3</div>
+                <div class="rec-body">
+                  <h4>Leverage Coupons as a Conversion Trigger</h4>
+                  <p>Coupon interactions are the third strongest conversion predictor (19.1% feature importance). Expand targeted promotional campaigns — offer personalized discounts triggered by specific behavioral signals: 3+ login sessions without checkout, blog consumption without progression, or return visits to the pricing page.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">4</div>
+                <div class="rec-body">
+                  <h4>Add CTAs to Blog and Resources Pages</h4>
+                  <p>Sessions terminating at Blog and Resources Center represent users with genuine interest who lack a bridge to conversion. Embed contextually relevant CTAs — "Start learning this topic now" → Pricing — or inline course recommendations within blog posts. Convert passive reading into active exploration.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">5</div>
+                <div class="rec-body">
+                  <h4>Tailor Strategies by Subscription Type</h4>
+                  <p>Annual subscribers respond to loyalty incentives and discounts — target them with renewal reminders and exclusive coupon offers. Monthly and quarterly subscribers have high purchase intent on entry — remove friction from their direct path to checkout rather than adding persuasive content that slows them down.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">6</div>
+                <div class="rec-body">
+                  <h4>Intervene Earlier in Non-Converting Journeys</h4>
+                  <p>Non-converting users tend to disengage after browsing low-value pages. Implement exit-intent triggers on Blog and Resources pages, personalized email follow-ups after multiple sessions without conversion, and behavioral retargeting campaigns targeting users who visited Pricing but did not reach Checkout.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tags-row">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pandas</span>
+              <span class="tech-tag">Path Analysis</span>
+              <span class="tech-tag">Google Analytics</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Conversion Optimization</span>
+              <span class="tech-tag">User Journey</span>
+              <span class="tech-tag">Funnel Analytics</span>
+              <span class="tech-tag">SaaS Analytics</span>
+              <span class="tech-tag">Feature Importance</span>
+            </div>
+          </div>
+
+
+          <!-- LIMITATIONS -->
+          <div class="doc-section" id="limitations">
+            <h2><span class="section-icon"><i class="bi bi-exclamation-triangle"></i></span> Limitations &amp; Further Research</h2>
+
+            <h3>Current Limitations</h3>
+            <ul>
+              <li><strong>No session duration data:</strong> The dataset captures page sequences but not time spent — making it impossible to distinguish between deep engagement and rapid skimming within the same page sequence.</li>
+              <li><strong>No demographic information:</strong> Age, location, gender, and device type are absent — all of which are known moderators of digital subscription behavior.</li>
+              <li><strong>No new vs. returning user differentiation:</strong> New visitors and returning users are analyzed together, despite having fundamentally different intent signals and optimal conversion strategies.</li>
+            </ul>
+
+            <h3>Recommended Further Research</h3>
+            <ul>
+              <li><strong>Session duration analysis:</strong> Add time-on-page and session length data to understand the correlation between engagement depth and conversion likelihood.</li>
+              <li><strong>Demographic segmentation:</strong> Incorporate user demographics to identify whether specific age groups, geographies, or device types have meaningfully different conversion patterns.</li>
+              <li><strong>Behavioral cohort analysis:</strong> Segment users by behavioral patterns — frequent returners vs. one-time visitors — to design precision retention strategies for each group.</li>
+              <li><strong>A/B testing framework:</strong> Instrument the recommendations above (post-login CTAs, Pricing page improvements, Blog CTAs) with A/B tests to measure lift and prioritize future development investment.</li>
+            </ul>
+          </div>
+
+
+          <!-- RELATED -->
+          <div class="doc-section" id="related">
+            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+            <p>If this case study is relevant to your business challenge, these projects may also interest you:</p>
+
+            <div class="related-grid">
+              <a href="lead-scoring-conversion-prediction.html" class="related-card">
+                <p class="card-label">Conversion ML · Python</p>
+                <h4>Lead Scoring &amp; Conversion Prediction</h4>
+                <p>99% accuracy ML model predicting purchase likelihood from browsing behavior — reviews and images are the dominant conversion signals.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="ecommerce-product-returns.html" class="related-card">
+                <p class="card-label">Returns Analysis · Python</p>
+                <h4>E-Commerce Product Returns Analysis</h4>
+                <p>Identifying how a 15% return rate was eroding 28% of revenue — with logistic regression and SHAP analysis pinpointing the drivers.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="retail-analysis-global-electronics.html" class="related-card">
+                <p class="card-label">Retail BI · Power BI</p>
+                <h4>Retail Business Intelligence Dashboard</h4>
+                <p>Diagnosing a 90% revenue decline by identifying an 85% customer retention failure as the root cause.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="retail-location-strategy.html" class="related-card">
+                <p class="card-label">Geospatial · Python</p>
+                <h4>Retail Location Strategy Analysis</h4>
+                <p>Reverse-engineering how a restaurant chain selects expansion markets by analyzing 50+ locations with geospatial analysis.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================
+  CTA
+========================================== -->
+<section class="project-cta">
+  <div class="container">
+    <p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+    <h2>Do you know where your users drop off — and why?</h2>
+    <p>I map customer journeys, identify conversion killers, and turn session data into decisions your product team can act on. First call is free.</p>
+    <div class="cta-buttons">
+      <a href="../index.html#contact" class="btn-cta-white">Tell Me Your Data Problem</a>
+      <a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================
+  FOOTER
+========================================== -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h3>Adeyemi<span>Data</span></h3>
+          <p>
+            Remote Worldwide<br>Available globally (timezone-flexible)<br><br>
+            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+            <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>What I Do</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Churn Prediction</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Cart Recovery</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">CLV Modeling</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Inventory Forecasting</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Connect</h4>
+          <div class="social-links mt-3">
+            <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright">© 2026 <strong>Adediran Adeyemi</strong> · Turning Data Into Decisions</div>
+  </div>
+</footer>
+
+
+<!-- =========================================
+  SCHEMA MARKUP
+========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://adediranadeyemi.com/projects/customer-journey-analysis.html#article",
+      "headline": "E-Commerce Customer Journey Analysis – Mapping Conversion Paths and Drop-Off Points",
+      "description": "User behavior analysis of 9,935 sessions on a subscription learning platform — mapping conversion paths, identifying drop-off points, and quantifying feature importance for subscription conversion.",
+      "url": "https://adediranadeyemi.com/projects/customer-journey-analysis.html",
+      "datePublished": "2024-09-01",
+      "dateModified": "2026-01-01",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Adediran Adeyemi",
+        "url": "https://adediranadeyemi.com",
+        "jobTitle": "Freelance Data Scientist",
+        "email": "adeyemi@adediranadeyemi.com"
+      },
+      "publisher": { "@type": "Person", "name": "Adediran Adeyemi", "url": "https://adediranadeyemi.com" },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://adediranadeyemi.com/assets/img/portfolio/cj.jpg",
+        "width": 1200, "height": 630
+      },
+      "keywords": ["customer journey analysis","user behavior","conversion path","drop-off points","path analysis","subscription analytics","SaaS conversion","Python pandas","funnel analytics","feature importance"],
+      "proficiencyLevel": "Expert",
+      "dependencies": "Python, Pandas, SQL, Google Analytics, Path Analysis"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://adediranadeyemi.com/projects/customer-journey-analysis.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://adediranadeyemi.com/#portfolio" },
+        { "@type": "ListItem", "position": 3, "name": "E-Commerce Customer Journey Analysis", "item": "https://adediranadeyemi.com/projects/customer-journey-analysis.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+
+<!-- =========================================
+  SCRIPTS
+========================================== -->
+<script>
+  window.addEventListener('load', () => {
+    const pre = document.getElementById('preloader');
+    if (pre) { pre.style.transition = 'opacity 0.4s'; pre.style.opacity = '0'; setTimeout(() => pre.remove(), 400); }
+  });
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#header .navbar');
+  if (toggle && navbar) {
+    toggle.addEventListener('click', () => {
+      navbar.classList.toggle('navbar-mobile');
+      toggle.classList.toggle('bi-list');
+      toggle.classList.toggle('bi-x');
+    });
+  }
+  window.addEventListener('scroll', () => {
+    const btt = document.querySelector('.back-to-top');
+    if (btt) btt.classList.toggle('active', window.scrollY > 100);
+  });
+  (function () {
+    const links = document.querySelectorAll('.toc-list a');
+    const sections = document.querySelectorAll('.doc-section[id]');
+    if (!links.length || !sections.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px' });
+    sections.forEach(s => obs.observe(s));
+  })();
+</script>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
