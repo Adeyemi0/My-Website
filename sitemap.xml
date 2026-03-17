@@ -131,4 +131,13 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- NEWLY ADDED -->
+
+  <url>
+    <loc>https://adediranadeyemi.com/projects/nigeria-used-car-price-prediction.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>
