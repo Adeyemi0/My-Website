@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<!-- =========================================
+  ESSENTIAL META
+========================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#0052FF">
+
+<!-- =========================================
+  PRIMARY SEO META
+========================================== -->
+<title>Banking Customer Satisfaction Survey Analysis – Power BI Dashboard | Adediran Adeyemi</title>
+
+<meta name="description" content="Power BI analysis of a banking customer satisfaction survey for CS Associates. Identifies key churn drivers — security concerns, poor service, transaction delays, and process inefficiencies — with interactive dashboard and demographic segmentation. By Adediran Adeyemi.">
+
+<meta name="keywords" content="banking customer satisfaction survey, Power BI survey analysis, customer retention banking, churn drivers analysis, DAX Power Query survey, financial services analytics portfolio, Adediran Adeyemi, data science Nigeria">
+
+<meta name="author" content="Adediran Adeyemi">
+
+<link rel="canonical" href="https://adediranadeyemi.com/projects/customer-satisfaction-survey.html">
+
+<!-- =========================================
+  OPEN GRAPH
+========================================== -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Adediran Adeyemi | Freelance Data Scientist">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Banking Customer Satisfaction Survey Analysis – Power BI Dashboard">
+<meta property="og:description" content="Power BI case study transforming a banking customer survey into an interactive dashboard. Reveals the top reasons customers would leave their bank — with demographic segmentation and actionable recommendations.">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/customer-satisfaction-survey.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/survey-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Banking customer satisfaction survey Power BI dashboard by Adediran Adeyemi">
+<meta property="article:published_time" content="2024-06-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-01-01T00:00:00+00:00">
+<meta property="article:author" content="https://adediranadeyemi.com">
+<meta property="article:tag" content="Power BI">
+<meta property="article:tag" content="Customer Survey">
+<meta property="article:tag" content="Banking Analytics">
+<meta property="article:tag" content="DAX">
+
+<!-- =========================================
+  TWITTER CARD
+========================================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Banking Customer Satisfaction Survey Analysis – Power BI Dashboard">
+<meta name="twitter:description" content="Power BI dashboard revealing why banking customers would leave — security, poor service, delays, and process issues ranked by likelihood.">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/portfolio/survey-cover.jpg">
+<meta name="twitter:image:alt" content="Banking survey Power BI dashboard by Adediran Adeyemi">
+
+<!-- =========================================
+  FONTS
+========================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Bootstrap 5 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+<!-- Main site stylesheet -->
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- =========================================
+  PAGE-SPECIFIC STYLES
+========================================== -->
+<style>
+
+  /* ── BREADCRUMB ── */
+  .project-breadcrumb { background: #F8FAFC; border-bottom: 1px solid #E2E8F0; padding: 12px 0; font-size: 13px; }
+  .project-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+  .project-breadcrumb li { display: flex; align-items: center; gap: 6px; color: #475569; }
+  .project-breadcrumb li a { color: #475569; text-decoration: none; transition: color .2s; }
+  .project-breadcrumb li a:hover { color: #0052FF; }
+  .project-breadcrumb li.active { color: #0F172A; font-weight: 600; }
+  .project-breadcrumb .sep { color: #CBD5E1; font-size: 11px; }
+
+  /* ── HERO ── */
+  .project-hero { background: #F8FAFC; padding: 60px 0 0; border-bottom: 1px solid #E2E8F0; }
+  .project-hero .hero-label { display: inline-flex; align-items: center; gap: 8px; background: #E7F1FD; color: #0052FF; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+  .project-hero h1 { font-size: 2.75rem; font-weight: 800; color: #0F172A; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
+  .project-hero h1 span { color: #0052FF; }
+  .project-hero .hero-lead { font-size: 17px; color: #475569; line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 32px; }
+  .hero-meta-item .meta-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 4px; }
+  .hero-meta-item .meta-value { font-size: 14px; font-weight: 600; color: #0F172A; }
+
+  .hero-stats { display: flex; border-top: 1px solid #E2E8F0; margin-top: 40px; }
+  .hero-stat { flex: 1; padding: 28px 20px; text-align: center; border-right: 1px solid #E2E8F0; }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat .stat-num { font-size: 2.25rem; font-weight: 900; color: #0052FF; letter-spacing: -0.04em; line-height: 1; display: block; }
+  .hero-stat .stat-num.red { color: #EF4444; }
+  .hero-stat .stat-label { font-size: 12px; color: #64748B; margin-top: 6px; line-height: 1.4; }
+
+  /* ── LAYOUT ── */
+  .project-body { padding: 80px 0; }
+  .toc-sidebar { position: sticky; top: 90px; }
+  .toc-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+  .toc-card .toc-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 16px; }
+  .toc-list { list-style: none; padding: 0 0 0 16px; margin: 0; border-left: 2px solid #E2E8F0; }
+  .toc-list li { margin-bottom: 10px; }
+  .toc-list a { font-size: 13px; font-weight: 500; color: #64748B; text-decoration: none; transition: color .2s; line-height: 1.4; display: block; }
+  .toc-list a:hover, .toc-list a.active { color: #0052FF; }
+  .toc-list a.active { font-weight: 600; }
+  .toc-cta { background: #E7F1FD; border-radius: 8px; padding: 18px; margin-top: 20px; text-align: center; }
+  .toc-cta p { font-size: 13px; color: #0F172A; line-height: 1.5; margin-bottom: 12px; font-weight: 500; }
+  .toc-cta a { display: inline-block; background: #0052FF; color: #fff; font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px; text-decoration: none; transition: background .2s; }
+  .toc-cta a:hover { background: #0041cc; color: #fff; }
+
+  /* ── SECTIONS ── */
+  .doc-section { margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid #E2E8F0; scroll-margin-top: 90px; }
+  .doc-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .doc-section h2 { font-size: 22px; font-weight: 800; color: #0F172A; letter-spacing: -0.025em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .section-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #E7F1FD; border-radius: 8px; color: #0052FF; font-size: 16px; flex-shrink: 0; }
+  .doc-section h3 { font-size: 16px; font-weight: 700; color: #0F172A; margin-top: 28px; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .doc-section p { font-size: 15px; color: #334155; line-height: 1.8; margin-bottom: 14px; }
+  .doc-section ul { padding-left: 20px; margin-bottom: 14px; }
+  .doc-section li { font-size: 15px; color: #334155; line-height: 1.75; margin-bottom: 6px; }
+
+  /* Callouts */
+  .callout { background: #E7F1FD; border-left: 4px solid #0052FF; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+  .callout p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
+  .callout strong { color: #0052FF; }
+  .callout-warn { background: #FFF7ED; border-left: 4px solid #F97316; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+  .callout-warn p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
+  .callout-warn strong { color: #C2410C; }
+
+  /* Challenge cards */
+  .challenge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .challenge-card { background: #FFF7ED; border: 1px solid #FED7AA; border-radius: 10px; padding: 20px; }
+  .challenge-card .c-num { font-size: 2rem; font-weight: 900; color: #F97316; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
+  .challenge-card h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
+  .challenge-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+
+  /* Process steps */
+  .steps { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+  .step { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; background: #fff; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; }
+  .step-num { width: 36px; height: 36px; background: #0052FF; color: #fff; border-radius: 6px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step p { font-size: 14px; color: #334155; line-height: 1.65; margin: 0; padding-top: 7px; }
+  .step strong { color: #0F172A; }
+
+  /* Insight cards — likelihood bars */
+  .insight-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; margin-bottom: 16px; }
+  .insight-card .insight-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .insight-icon { width: 40px; height: 40px; background: #E7F1FD; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0052FF; font-size: 18px; flex-shrink: 0; }
+  .insight-card h4 { font-size: 16px; font-weight: 700; color: #0F172A; margin: 0; }
+  .insight-card p { font-size: 14px; color: #334155; line-height: 1.7; margin-bottom: 14px; }
+
+  /* Likelihood scale bars */
+  .likelihood-scale { display: flex; flex-direction: column; gap: 8px; }
+  .lh-row { display: grid; grid-template-columns: 110px 1fr 50px; align-items: center; gap: 10px; }
+  .lh-label { font-size: 12px; font-weight: 600; color: #64748B; }
+  .lh-bar-wrap { height: 10px; background: #F1F5F9; border-radius: 5px; overflow: hidden; }
+  .lh-bar { height: 100%; border-radius: 5px; }
+  .lh-bar.most   { background: #EF4444; }
+  .lh-bar.highly { background: #F97316; }
+  .lh-bar.likely { background: #EAB308; }
+  .lh-bar.fairly { background: #60A5FA; }
+  .lh-bar.least  { background: #E2E8F0; }
+  .lh-pct { font-size: 12px; font-weight: 700; color: #0F172A; font-family: 'Courier New', monospace; text-align: right; }
+
+  /* Demographic cards */
+  .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
+  .demo-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 18px; text-align: center; transition: border-color .2s; }
+  .demo-card:hover { border-color: #0052FF; }
+  .demo-card .demo-val { font-size: 2rem; font-weight: 900; color: #0052FF; letter-spacing: -0.04em; line-height: 1; display: block; margin-bottom: 6px; }
+  .demo-card .demo-label { font-size: 12px; font-weight: 600; color: #64748B; line-height: 1.4; }
+
+  /* Communication channel table */
+  .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; }
+  .data-table thead { background: #0052FF; color: #fff; }
+  .data-table thead th { padding: 11px 16px; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; text-align: left; }
+  .data-table tbody tr { border-bottom: 1px solid #E2E8F0; transition: background .15s; }
+  .data-table tbody tr:last-child { border-bottom: none; }
+  .data-table tbody tr:hover { background: #F8FAFC; }
+  .data-table tbody td { padding: 10px 16px; color: #334155; font-size: 13px; }
+  .data-table .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+  .dot-high { background: #22C55E; }
+  .dot-med  { background: #EAB308; }
+  .dot-low  { background: #E2E8F0; }
+
+  /* Recommendation list */
+  .rec-list { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+  .rec-item { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; background: #fff; border: 1px solid #E2E8F0; border-radius: 8px; padding: 18px; }
+  .rec-num { width: 40px; height: 40px; background: #0052FF; color: #fff; border-radius: 8px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .rec-body h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
+  .rec-body p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+
+  /* Dashboard embed */
+  .demo-wrap { border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.06); margin: 20px 0; background: #0F172A; }
+  .demo-wrap iframe { display: block; width: 100%; height: 520px; border: none; }
+  .demo-caption { background: #fff; padding: 12px 16px; font-size: 13px; color: #64748B; border-top: 1px solid #E2E8F0; display: flex; align-items: center; gap: 8px; }
+  .demo-caption i { color: #0052FF; }
+
+  /* Tags / related */
+  .tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .related-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; text-decoration: none; transition: all .3s ease; display: block; }
+  .related-card:hover { border-color: #0052FF; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,82,255,.12); text-decoration: none; }
+  .related-card .card-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0052FF; margin-bottom: 8px; }
+  .related-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 8px; line-height: 1.4; }
+  .related-card p { font-size: 13px; color: #64748B; line-height: 1.55; margin: 0; }
+  .related-card .card-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600; color: #0052FF; }
+
+  /* CTA */
+  .project-cta { background: #0052FF; padding: 80px 0; text-align: center; color: #fff; }
+  .project-cta .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 16px; }
+  .project-cta h2 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .project-cta p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 420px; margin: 0 auto 32px; line-height: 1.6; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-cta-white { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: #fff; color: #0052FF; text-decoration: none; transition: all .3s; }
+  .btn-cta-white:hover { background: #f0f0f0; color: #0052FF; transform: translateY(-2px); text-decoration: none; }
+  .btn-cta-ghost { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); text-decoration: none; transition: all .3s; }
+  .btn-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 991px) {
+    .toc-sidebar { display: none; }
+    .project-hero h1 { font-size: 2rem; }
+    .challenge-grid, .related-grid { grid-template-columns: 1fr; }
+    .demo-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { flex-direction: column; }
+    .hero-stat { border-right: none; border-bottom: 1px solid #E2E8F0; }
+    .hero-stat:last-child { border-bottom: none; }
+  }
+  @media (max-width: 768px) {
+    .project-hero { padding: 40px 0 0; }
+    .project-hero h1 { font-size: 1.75rem; }
+    .project-body { padding: 50px 0; }
+    .doc-section { margin-bottom: 40px; padding-bottom: 40px; }
+    .demo-grid { grid-template-columns: 1fr; }
+    .demo-wrap iframe { height: 400px; }
+    .rec-item, .step { grid-template-columns: 1fr; }
+    .lh-row { grid-template-columns: 90px 1fr 44px; }
+  }
+
+</style>
+
+</head>
+
+<body>
+
+<div id="preloader"></div>
+
+<!-- =========================================
+  TOP BAR
+========================================== -->
+<div id="topbar" class="d-flex align-items-center fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="contact-info d-flex align-items-center">
+      <i class="bi bi-envelope-fill"></i>
+      <i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+      <i class="bi bi-phone-fill ms-3"></i>
+      <i><span>+234 816 273 5399</span></i>
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+  HEADER
+========================================== -->
+<header id="header" class="fixed-top" style="top:40px;">
+  <div class="container d-flex align-items-center justify-content-between">
+    <h1 class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></h1>
+    <nav class="navbar" aria-label="Site navigation">
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#featured-services">Services</a></li>
+        <li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="../index.html#faq">Blog</a></li>
+        <li><a href="../index.html#contact">Let's Talk</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+    </nav>
+  </div>
+</header>
+
+
+<!-- =========================================
+  BREADCRUMB
+========================================== -->
+<nav class="project-breadcrumb" style="margin-top:126px;" aria-label="Breadcrumb">
+  <div class="container">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <span class="sep">›</span>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a>
+        <meta itemprop="position" content="2">
+      </li>
+      <span class="sep">›</span>
+      <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">Customer Satisfaction Survey Analysis</span>
+        <meta itemprop="position" content="3">
+      </li>
+    </ol>
+  </div>
+</nav>
+
+
+<!-- =========================================
+  HERO
+========================================== -->
+<section class="project-hero">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-7">
+        <div class="hero-label">
+          <i class="bi bi-clipboard2-check-fill"></i>
+          Customer Analytics · Power BI · DAX
+        </div>
+
+        <h1>What Makes Banking Customers <span>Stay — or Leave?</span></h1>
+
+        <p class="hero-lead">
+          A Power BI case study for CS Associates transforming a static banking customer survey into an interactive retention intelligence dashboard — revealing the ranked drivers of customer churn across demographics, security, service quality, and digital adoption.
+        </p>
+
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="meta-label">Tools</div>
+            <div class="meta-value">Power BI · DAX · Power Query · Data Modeling</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Client</div>
+            <div class="meta-value">CS Associates (Customer Services Consulting)</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">Banking · Financial Services</div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3 pb-4">
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9" target="_blank" class="btn-get-started-primary">
+            View Live Dashboard <i class="bi bi-bar-chart-fill"></i>
+          </a>
+          <a href="https://github.com/Adeyemi0/Customer-Survey" target="_blank" class="btn-get-started-secondary">
+            View on GitHub <i class="bi bi-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-5 d-none d-lg-block">
+        <img
+          src="../assets/img/portfolio/returns.jpg"
+          alt="Banking customer satisfaction survey Power BI dashboard showing churn drivers and demographic analysis"
+          class="img-fluid"
+          style="border-radius:12px; border:1px solid #E2E8F0; box-shadow:0 20px 60px rgba(0,82,255,0.12);"
+          width="560" height="360"
+          loading="eager" fetchpriority="high"
+        >
+      </div>
+
+    </div>
+
+    <!-- Stats strip -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num red">56%</span>
+        <span class="stat-label">Likely to leave over security concerns</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num red">36%</span>
+        <span class="stat-label">Cite poor customer service as highly likely reason to leave</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">73%</span>
+        <span class="stat-label">Of respondents unemployed — untapped product opportunity</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">72%</span>
+        <span class="stat-label">Least likely to use ATMs — digital shift confirmed</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================
+  MAIN CONTENT
+========================================== -->
+<section class="project-body">
+  <div class="container">
+    <div class="row">
+
+      <!-- TOC -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <aside class="toc-sidebar" aria-label="Table of contents">
+          <div class="toc-card">
+            <p class="toc-heading">On This Page</p>
+            <ul class="toc-list">
+              <li><a href="#overview">Project Overview</a></li>
+              <li><a href="#challenges">Challenges</a></li>
+              <li><a href="#methodology">Methodology</a></li>
+              <li><a href="#data-model">Data Model</a></li>
+              <li><a href="#dashboard">Live Dashboard</a></li>
+              <li><a href="#demographics">Demographics</a></li>
+              <li><a href="#security">Security Concerns</a></li>
+              <li><a href="#service">Poor Customer Service</a></li>
+              <li><a href="#atm">ATM &amp; Digital Shift</a></li>
+              <li><a href="#delays">Transaction Delays</a></li>
+              <li><a href="#processes">Bad Processes</a></li>
+              <li><a href="#channels">Communication Channels</a></li>
+              <li><a href="#recommendations">Recommendations</a></li>
+              <li><a href="#related">Related Projects</a></li>
+            </ul>
+            <div class="toc-cta">
+              <p>Need insights from your customer survey data?</p>
+              <a href="../index.html#contact">Let's Talk →</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Article -->
+      <div class="col-lg-9">
+        <article itemscope itemtype="https://schema.org/TechArticle">
+          <meta itemprop="author" content="Adediran Adeyemi">
+          <meta itemprop="datePublished" content="2024-06-01">
+          <meta itemprop="headline" content="Banking Customer Satisfaction Survey Analysis – Power BI Dashboard">
+
+
+          <!-- OVERVIEW -->
+          <div class="doc-section" id="overview">
+            <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
+            <p>
+              CS Associates is a consulting firm in the customer services industry. They conducted a banking customer satisfaction survey to understand the key reasons customers might stop using their banks — and needed a comprehensive, interactive report that their existing survey tool simply couldn't produce.
+            </p>
+            <p>
+              The deliverable was a fully interactive Power BI dashboard that transformed raw survey responses into ranked churn driver analysis, demographic segmentation, and communication channel preferences — giving stakeholders the ability to slice and explore the data themselves rather than receiving a static snapshot.
+            </p>
+            <div class="callout">
+              <p><strong>Central finding:</strong> Security concerns are the dominant churn driver — <strong>56% of respondents</strong> range from "Likely" to "Most Likely" to leave over security issues. Poor customer service and process inefficiencies follow closely, while a surprising 73% unemployed respondent base signals a significant untapped product opportunity.</p>
+            </div>
+          </div>
+
+
+          <!-- CHALLENGES -->
+          <div class="doc-section" id="challenges">
+            <h2><span class="section-icon"><i class="bi bi-exclamation-triangle"></i></span> Client Challenges</h2>
+            <p>CS Associates faced two specific limitations with their existing survey tool that prevented them from extracting meaningful intelligence:</p>
+
+            <div class="challenge-grid">
+              <div class="challenge-card">
+                <div class="c-num">01</div>
+                <h4>Non-Interactive Demographics Dashboard</h4>
+                <p>The built-in demographic dashboard was static — CS Associates couldn't filter, drill down, or cross-reference demographic segments against specific survey responses. Insights were locked behind a non-interactive interface.</p>
+              </div>
+              <div class="challenge-card">
+                <div class="c-num">02</div>
+                <h4>No Ranking Analysis on Core Survey Question</h4>
+                <p>The tool provided no meaningful report on the primary survey question: "Rank the possible reasons you may stop using your bank." This ranked, multi-response question required custom data modeling that the tool couldn't handle.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- METHODOLOGY -->
+          <div class="doc-section" id="methodology">
+            <h2><span class="section-icon"><i class="bi bi-diagram-3"></i></span> Methodology</h2>
+            <p>
+              The solution required two Power BI capabilities working together: <strong>Power Query</strong> for transforming the raw survey data into an analyzable structure, and <strong>Data Modeling (One-to-Many)</strong> to connect the transformed tables for cross-filtering in the dashboard.
+            </p>
+
+            <h3>Power Query Transformation Steps</h3>
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <p><strong>Headers:</strong> Promoted first row to column headers to create a properly structured table.</p>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <p><strong>ResponseID:</strong> Added an index column renamed to ResponseID — the unique key linking respondent demographics to their survey answers.</p>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <p><strong>Responses query:</strong> Created a new query called "Responses" isolating ResponseID and the ranking column — separating answer data from demographic data for clean modeling.</p>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <p><strong>Split by delimiter:</strong> The multi-value ranking column was split by comma delimiter, transforming it from a single column of concatenated values into multiple discrete columns.</p>
+              </div>
+              <div class="step">
+                <div class="step-num">5</div>
+                <p><strong>Unpivot:</strong> The resulting split columns were unpivoted — converting from wide format to long format with "Trigger" and "Ranking" columns. This is the critical step that enables ranked analysis across all responses.</p>
+              </div>
+              <div class="step">
+                <div class="step-num">6</div>
+                <p><strong>Scale column:</strong> A conditional column "Scale" was added mapping numeric rankings (1–5) to human-readable labels: <em>Most Likely, Highly Likely, Likely, Fairly Likely, Least Likely</em>.</p>
+              </div>
+              <div class="step">
+                <div class="step-num">7</div>
+                <p><strong>Data modeling:</strong> A one-to-many relationship was established between the Demographics table (one ResponseID) and the Responses table (many ranked answers per respondent), enabling cross-filtering between demographics and churn drivers.</p>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p><strong>Key technical decision:</strong> Unpivoting the ranking columns was the pivotal transformation. Without it, the five ranking options would remain separate columns with no way to aggregate or compare across triggers. The unpivot creates a normalized structure that Power BI's visuals can slice by any dimension.</p>
+            </div>
+          </div>
+
+
+          <!-- DATA MODEL -->
+          <div class="doc-section" id="data-model">
+            <h2><span class="section-icon"><i class="bi bi-diagram-2"></i></span> Data Model</h2>
+            <p>
+              The final data model uses a <strong>one-to-many relationship</strong> between two tables — a clean, performant structure that enables every demographic filter to instantly update all churn driver visuals:
+            </p>
+            <ul>
+              <li><strong>Demographics table (one side):</strong> One row per respondent — ResponseID, age, gender, employment status, communication channel preferences</li>
+              <li><strong>Responses table (many side):</strong> Multiple rows per respondent — one row for each ranked churn trigger, with Trigger, Ranking (1–5), and Scale (Most Likely → Least Likely) columns</li>
+              <li><strong>Relationship key:</strong> ResponseID links both tables, enabling any demographic filter to cascade into the ranking analysis</li>
+            </ul>
+
+            <div class="callout-warn">
+              <p><strong>Why this matters for the client:</strong> Before this model, CS Associates could only see demographics separately from opinions. With the one-to-many model, they can now ask questions like "Among unemployed male respondents aged 25–40, what is the top churn trigger?" — and get an answer instantly.</p>
+            </div>
+          </div>
+
+
+          <!-- DASHBOARD -->
+          <div class="doc-section" id="dashboard">
+            <h2><span class="section-icon"><i class="bi bi-display"></i></span> Live Dashboard</h2>
+            <p>The interactive Power BI dashboard below lets you explore all survey findings. Use the filters to segment by age group, gender, employment status, or communication channel:</p>
+
+            <div class="demo-wrap">
+              <iframe
+                title="Banking Customer Satisfaction Survey Dashboard – Adediran Adeyemi"
+                src="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"
+                allowfullscreen loading="lazy">
+              </iframe>
+              <div class="demo-caption">
+                <i class="bi bi-info-circle"></i>
+                Interactive Power BI dashboard — use filters to explore churn drivers, demographics, and communication channel preferences by segment.
+              </div>
+            </div>
+          </div>
+
+
+          <!-- DEMOGRAPHICS -->
+          <div class="doc-section" id="demographics">
+            <h2><span class="section-icon"><i class="bi bi-people"></i></span> Insight 1: Demographics</h2>
+            <p>The survey's demographic profile reveals both the bank's core customer base and a significant underserved segment:</p>
+
+            <div class="demo-grid">
+              <div class="demo-card">
+                <span class="demo-val">73%</span>
+                <span class="demo-label">Respondents are unemployed or non-traditional income earners</span>
+              </div>
+              <div class="demo-card">
+                <span class="demo-val">25–40</span>
+                <span class="demo-label">Prime age group — highest representation in the survey</span>
+              </div>
+              <div class="demo-card">
+                <span class="demo-val">Male</span>
+                <span class="demo-label">Dominant gender — female engagement is an opportunity gap</span>
+              </div>
+            </div>
+
+            <p style="margin-top:20px;">
+              The 73% unemployed figure is the most striking demographic finding. While this age group (25–40) represents the prime working years, the survey population skews heavily toward non-traditional income earners. This signals either a product-market fit issue for employed customers — or a genuine opportunity to build financial products specifically for freelancers, entrepreneurs, and informal workers who are currently underserved by standard banking products.
+            </p>
+
+            <div class="callout">
+              <p><strong>Product opportunity:</strong> No-fee accounts, micro-loan products, and financial literacy programs specifically designed for non-traditional income earners could convert this underserved 73% into engaged, loyal customers.</p>
+            </div>
+          </div>
+
+
+          <!-- SECURITY -->
+          <div class="doc-section" id="security">
+            <h2><span class="section-icon"><i class="bi bi-shield-exclamation"></i></span> Insight 2: Security Concerns</h2>
+            <p>Security is the most pervasive churn driver — the broadest distribution of "Likely or above" responses of any trigger in the survey:</p>
+
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-icon"><i class="bi bi-shield-lock"></i></div>
+                <h4>Security Concerns — Likelihood to Leave</h4>
+              </div>
+              <div class="likelihood-scale">
+                <div class="lh-row">
+                  <span class="lh-label">Most Likely</span>
+                  <div class="lh-bar-wrap"><div class="lh-bar most" style="width:22%"></div></div>
+                  <span class="lh-pct">~22%</span>
+                </div>
+                <div class="lh-row">
+                  <span class="lh-label">Highly Likely</span>
+                  <div class="lh-bar-wrap"><div class="lh-bar highly" style="width:20%"></div></div>
+                  <span class="lh-pct">~20%</span>
+                </div>
+                <div class="lh-row">
+                  <span class="lh-label">Likely</span>
+                  <div class="lh-bar-wrap"><div class="lh-bar likely" style="width:14%"></div></div>
+                  <span class="lh-pct">~14%</span>
+                </div>
+                <div class="lh-row">
+                  <span class="lh-label">Fairly Likely</span>
+                  <div class="lh-bar-wrap"><div class="lh-bar fairly" style="width:34%"></div></div>
+                  <span class="lh-pct">34.35%</span>
+                </div>
+                <div class="lh-row">
+                  <span class="lh-label">Least Likely</span>
+                  <div class="lh-bar-wrap"><div class="lh-bar least" style="width:10%"></div></div>
+                  <span class="lh-pct">~10%</span>
+                </div>
+              </div>
+              <p style="margin-top:14px; margin-bottom:0;">
+                With <strong>56.11% of respondents ranging from "Likely" to "Most Likely"</strong> to leave over security concerns, this is not a communication problem — it's a trust problem. Customers are not confident the bank is protecting their money and data. Addressing this requires both genuine security improvements and transparent, proactive communication about what those improvements are.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- SERVICE -->
+          <div class="doc-section" id="service">
+            <h2><span class="section-icon"><i class="bi bi-headset"></i></span> Insight 3: Poor Customer Service</h2>
+            <p>Customer service quality is the second-most cited churn trigger — and uniquely concentrated at the "Highly Likely" level:</p>
+
+            <div class="insight-card">
+              <div class="insight-header">
+                <div class="insight-icon"><i class="bi bi-person-x"></i></div>
+                <h4>Poor Customer Service — Likelihood to Leave</h4>
+              </div>
+              <div class="likelihood-scale">
+                <div class="lh-row">
+                  <span class="lh-label">Highly Likely</span>
+                  <div class="lh-bar-wrap"><div class="lh-bar highly" style="width:100%"></div></div>
+                  <span class="lh-pct">35.88%</span>
+                </div>
+              </div>
+              <p style="margin-top:14px; margin-bottom:0;">
+                <strong>35.88% cite poor customer service as "Highly Likely"</strong> to make them leave — the highest concentration of any single likelihood category across all churn triggers. This signals that service quality failures are felt as urgent, not just inconvenient. AI-driven support, faster response times, and better-trained front-line staff are the most direct interventions.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- ATM -->
+          <div class="doc-section" id="atm">
+            <h2><span class="section-icon"><i class="bi bi-phone"></i></span> Insight 4: ATM Cash-Outs &amp; the Digital Shift</h2>
+            <p>
+              A striking <strong>72.14% of respondents</strong> say they are "Least Likely" to leave over ATM cash-out issues — meaning ATM availability is barely a concern. This is strong evidence that this customer base has already transitioned toward cashless and digital banking methods.
+            </p>
+            <p>
+              Rather than investing in ATM infrastructure, the data points toward expanding digital wallet services and incentivizing mobile banking usage. The customers have already made the behavioral shift — the bank's product roadmap needs to catch up.
+            </p>
+
+            <div class="callout">
+              <p><strong>Strategic implication:</strong> Resources allocated to ATM maintenance and expansion should be evaluated against the evidence that 72% of surveyed customers don't consider ATM access a significant factor in their banking relationship. Digital infrastructure investment has a stronger ROI signal.</p>
+            </div>
+          </div>
+
+
+          <!-- DELAYS -->
+          <div class="doc-section" id="delays">
+            <h2><span class="section-icon"><i class="bi bi-hourglass-split"></i></span> Insight 5: Transaction Delays in Branches</h2>
+            <p>
+              <strong>26.72% of respondents</strong> cite in-branch transaction delays as "Most Likely" to drive them to leave — a significant operational pain point that is both measurable and fixable.
+            </p>
+            <p>
+              Long wait times in branches represent a solvable operational problem. Appointment scheduling systems, digital queue management, and streamlined teller processes are proven interventions. For a population that has already demonstrated digital readiness (see ATM finding), promoting self-service digital alternatives for common in-branch transactions could simultaneously reduce branch congestion and improve customer satisfaction.
+            </p>
+
+            <div class="callout-warn">
+              <p><strong>Quick win:</strong> Introducing appointment booking for branch visits — even via WhatsApp or a simple web form — could immediately address the "Most Likely" churn risk from 26.72% of respondents with minimal development investment.</p>
+            </div>
+          </div>
+
+
+          <!-- PROCESSES -->
+          <div class="doc-section" id="processes">
+            <h2><span class="section-icon"><i class="bi bi-gear-wide-connected"></i></span> Insight 6: Concerns Over Bad Processes</h2>
+            <p>
+              <strong>30.15% of respondents</strong> are concerned about inefficient banking processes — the most common moderate frustration in the survey. Unlike dramatic failures (app crashing, transaction failing), process inefficiency is the slow erosion of trust: unnecessarily complex forms, unclear procedures, redundant verification steps, or unclear escalation paths.
+            </p>
+            <p>
+              Process reengineering — auditing the end-to-end customer journey for unnecessary friction and streamlining the most frequently used workflows — addresses this at the root. The goal is to make banking feel intuitive and frictionless, not bureaucratic and opaque.
+            </p>
+          </div>
+
+
+          <!-- CHANNELS -->
+          <div class="doc-section" id="channels">
+            <h2><span class="section-icon"><i class="bi bi-broadcast"></i></span> Insight 7: Communication Channel Preferences</h2>
+            <p>Channel usage varies significantly by age group — revealing a digital divide that requires different engagement strategies for different customer segments:</p>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Age Group</th>
+                  <th>Branch</th>
+                  <th>Email</th>
+                  <th>Internet Banking</th>
+                  <th>Mobile App</th>
+                  <th>Chatbot</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>25–40</strong></td>
+                  <td><span class="dot dot-high"></span>High</td>
+                  <td><span class="dot dot-high"></span>High</td>
+                  <td><span class="dot dot-high"></span>High</td>
+                  <td><span class="dot dot-high"></span>High</td>
+                  <td><span class="dot dot-med"></span>Medium</td>
+                </tr>
+                <tr>
+                  <td><strong>41–56</strong></td>
+                  <td><span class="dot dot-high"></span>High</td>
+                  <td><span class="dot dot-med"></span>Medium</td>
+                  <td><span class="dot dot-med"></span>Medium</td>
+                  <td><span class="dot dot-med"></span>Medium</td>
+                  <td><span class="dot dot-low"></span>Low</td>
+                </tr>
+                <tr>
+                  <td><strong>57+</strong></td>
+                  <td><span class="dot dot-med"></span>Medium</td>
+                  <td><span class="dot dot-low"></span>Low</td>
+                  <td><span class="dot dot-low"></span>Low</td>
+                  <td><span class="dot dot-low"></span>Low</td>
+                  <td><span class="dot dot-low"></span>Minimal</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>
+              The 25–40 group is channel-agnostic and digitally comfortable — they use everything. The 57+ group shows minimal digital channel engagement across all categories, indicating either access barriers, digital literacy gaps, or preference for human interaction. The 41–56 middle tier is the targeted intervention opportunity: they use branches heavily but have modest digital adoption — suggesting they're reachable through a combination of in-branch digital demonstrations and targeted mobile app onboarding campaigns.
+            </p>
+          </div>
+
+
+          <!-- RECOMMENDATIONS -->
+          <div class="doc-section" id="recommendations">
+            <h2><span class="section-icon"><i class="bi bi-rocket-takeoff"></i></span> Recommendations</h2>
+
+            <div class="rec-list">
+              <div class="rec-item">
+                <div class="rec-num">1</div>
+                <div class="rec-body">
+                  <h4>Product Development — Serve the Unemployed 73%</h4>
+                  <p>Develop financial products explicitly designed for non-traditional income earners: no-fee accounts, micro-loan products with flexible repayment, savings plans with low minimums, and financial literacy programs. This demographic represents 73% of the survey base and is currently underserved by standard banking products.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">2</div>
+                <div class="rec-body">
+                  <h4>Customer Support — Address the 36% Highly Likely to Leave</h4>
+                  <p>Implement AI-driven customer support (chatbots for common queries, ML-based ticket routing) to reduce response times and improve first-contact resolution. 35.88% of respondents rate poor service as "Highly Likely" to trigger churn — faster, more consistent support is the most direct intervention.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">3</div>
+                <div class="rec-body">
+                  <h4>Digital Adoption — Meet Customers Where They Already Are</h4>
+                  <p>72% of respondents have already moved away from ATM dependency. Promote cashless and mobile banking solutions actively, particularly for the 57+ group through in-branch demonstrations and guided onboarding. Redirect ATM investment to mobile and internet banking infrastructure improvements.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">4</div>
+                <div class="rec-body">
+                  <h4>Operational Efficiency — Reduce the 27% "Most Likely" Branch Delay Churn</h4>
+                  <p>Introduce branch appointment booking, digital queue management, and self-service kiosks for routine transactions. For a digitally ready population, promoting app-based alternatives to common in-branch tasks (document submission, account queries) reduces congestion while serving customers on their preferred channel.</p>
+                </div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-num">5</div>
+                <div class="rec-body">
+                  <h4>Security Messaging — Convert 56% "Likely to Leave" into Trust</h4>
+                  <p>Security concerns affect over half the respondent base. Beyond genuine security improvements, implement proactive communication campaigns: regular security update emails, in-app security tips, transparency reports on fraud prevention performance, and two-factor authentication promotion. Trust is built through visibility, not just through actual security quality.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tags-row">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">DAX</span>
+              <span class="tech-tag">Power Query</span>
+              <span class="tech-tag">Data Modeling</span>
+              <span class="tech-tag">Customer Satisfaction</span>
+              <span class="tech-tag">Survey Analysis</span>
+              <span class="tech-tag">Banking Analytics</span>
+              <span class="tech-tag">Churn Analysis</span>
+              <span class="tech-tag">One-to-Many Relationships</span>
+            </div>
+          </div>
+
+
+          <!-- RELATED -->
+          <div class="doc-section" id="related">
+            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+            <p>If this case study is relevant to your business challenge, these projects may also interest you:</p>
+
+            <div class="related-grid">
+              <a href="customer-reviews-classification.html" class="related-card">
+                <p class="card-label">NLP · Transformers · HuggingFace</p>
+                <h4>Customer Reviews NLP Classification</h4>
+                <p>RoBERTa multi-label classifier analyzing 29,000+ fintech app reviews into 16 actionable categories with 93.7% F1 accuracy.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="retail-analysis-global-electronics.html" class="related-card">
+                <p class="card-label">Retail BI · Power BI</p>
+                <h4>Retail Business Intelligence Dashboard</h4>
+                <p>Diagnosing a 90% revenue decline by identifying an 85% customer retention failure as root cause.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="customer-journey-analysis.html" class="related-card">
+                <p class="card-label">Funnel Analytics · Python</p>
+                <h4>Customer Journey Analysis</h4>
+                <p>Mapping 9,935 sessions on a subscription platform to identify conversion paths and drop-off points.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="ecommerce-product-returns.html" class="related-card">
+                <p class="card-label">Returns Analysis · Python</p>
+                <h4>E-Commerce Product Returns Analysis</h4>
+                <p>How a 15% return rate was eroding 28% of revenue — with demographic and product-level breakdowns.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================
+  CTA
+========================================== -->
+<section class="project-cta">
+  <div class="container">
+    <p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+    <h2>Got survey data sitting in a spreadsheet going nowhere?</h2>
+    <p>I turn static survey responses into interactive dashboards your stakeholders can actually explore and act on. First call is free.</p>
+    <div class="cta-buttons">
+      <a href="../index.html#contact" class="btn-cta-white">Tell Me Your Data Problem</a>
+      <a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================
+  FOOTER
+========================================== -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h3>Adeyemi<span>Data</span></h3>
+          <p>
+            Remote Worldwide<br>Available globally (timezone-flexible)<br><br>
+            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+            <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>What I Do</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Churn Prediction</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Cart Recovery</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">CLV Modeling</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Inventory Forecasting</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Connect</h4>
+          <div class="social-links mt-3">
+            <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright">© 2026 <strong>Adediran Adeyemi</strong> · Turning Data Into Decisions</div>
+  </div>
+</footer>
+
+
+<!-- =========================================
+  SCHEMA MARKUP
+========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://adediranadeyemi.com/projects/customer-satisfaction-survey.html#article",
+      "headline": "Banking Customer Satisfaction Survey Analysis – Power BI Dashboard",
+      "description": "Power BI analysis transforming a banking customer satisfaction survey into an interactive dashboard, revealing ranked churn drivers — security concerns, poor service, transaction delays, and process inefficiencies — with demographic segmentation.",
+      "url": "https://adediranadeyemi.com/projects/customer-satisfaction-survey.html",
+      "datePublished": "2024-06-01",
+      "dateModified": "2026-01-01",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Adediran Adeyemi",
+        "url": "https://adediranadeyemi.com",
+        "jobTitle": "Freelance Data Scientist",
+        "email": "adeyemi@adediranadeyemi.com"
+      },
+      "publisher": { "@type": "Person", "name": "Adediran Adeyemi", "url": "https://adediranadeyemi.com" },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://adediranadeyemi.com/assets/img/portfolio/survey-cover.jpg",
+        "width": 1200, "height": 630
+      },
+      "keywords": ["banking customer survey","Power BI survey analysis","customer retention banking","churn drivers","DAX Power Query","survey dashboard","financial services analytics","customer satisfaction"],
+      "proficiencyLevel": "Expert",
+      "dependencies": "Power BI, DAX, Power Query, Data Modeling"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://adediranadeyemi.com/projects/customer-satisfaction-survey.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://adediranadeyemi.com/#portfolio" },
+        { "@type": "ListItem", "position": 3, "name": "Customer Satisfaction Survey Analysis", "item": "https://adediranadeyemi.com/projects/customer-satisfaction-survey.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+
+<!-- =========================================
+  SCRIPTS
+========================================== -->
+<script>
+  window.addEventListener('load', () => {
+    const pre = document.getElementById('preloader');
+    if (pre) { pre.style.transition = 'opacity 0.4s'; pre.style.opacity = '0'; setTimeout(() => pre.remove(), 400); }
+  });
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#header .navbar');
+  if (toggle && navbar) {
+    toggle.addEventListener('click', () => {
+      navbar.classList.toggle('navbar-mobile');
+      toggle.classList.toggle('bi-list');
+      toggle.classList.toggle('bi-x');
+    });
+  }
+  window.addEventListener('scroll', () => {
+    const btt = document.querySelector('.back-to-top');
+    if (btt) btt.classList.toggle('active', window.scrollY > 100);
+  });
+  (function () {
+    const links = document.querySelectorAll('.toc-list a');
+    const sections = document.querySelectorAll('.doc-section[id]');
+    if (!links.length || !sections.length) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -65% 0px' });
+    sections.forEach(s => obs.observe(s));
+  })();
+</script>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
