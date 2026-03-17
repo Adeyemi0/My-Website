@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Homepage -->
+
   <url>
     <loc>https://adediranadeyemi.com/</loc>
     <lastmod>2025-12-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
   <!-- Blog Listing Page -->
+
   <url>
     <loc>https://adediranadeyemi.com/blog.html</loc>
     <lastmod>2026-01-08</lastmod>
@@ -18,6 +21,7 @@
   </url>
 
   <!-- Blog Posts -->
+
   <url>
     <loc>https://adediranadeyemi.com/blog/cart-abandonment.html</loc>
     <lastmod>2026-01-01</lastmod>
@@ -54,6 +58,7 @@
   </url>
 
   <!-- Project Pages -->
+
   <url>
     <loc>https://adediranadeyemi.com/projects/retail-analysis-global-electronics.html</loc>
     <lastmod>2026-03-16</lastmod>
@@ -77,6 +82,50 @@
 
   <url>
     <loc>https://adediranadeyemi.com/projects/customer-journey-analysis.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- NEW PROJECTS -->
+
+  <url>
+    <loc>https://adediranadeyemi.com/projects/retail-location-strategy.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/projects/customer-reviews-classification.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/projects/customer-satisfaction-survey.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/projects/rag-financial-research-sp500.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/projects/yoruba-english-translation-model.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/projects/nyc-property-price-prediction.html</loc>
     <lastmod>2026-03-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.85</priority>
