@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#0052FF">
+<title>Yoruba-English Bidirectional Translation Model – AfriTeVa Fine-Tune | Adediran Adeyemi</title>
+<meta name="description" content="Production neural machine translation system for Yoruba-English bidirectional translation. Fine-tuned AfriTeVa V2 on 101,906 pairs with 46.26 METEOR score. Handles diacritical marks, auto language detection, and 4 translation variants. By Adediran Adeyemi.">
+<meta name="keywords" content="Yoruba English translation model, African language NLP, low resource machine translation, AfriTeVa fine-tune, Nigerian language AI, Hugging Face Yoruba, neural machine translation Nigeria, Adediran Adeyemi, NLP portfolio">
+<meta name="author" content="Adediran Adeyemi">
+<link rel="canonical" href="https://adediranadeyemi.com/projects/yoruba-english-translation.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Adediran Adeyemi | Freelance Data Scientist">
+<meta property="og:title" content="Yoruba-English Bidirectional Translation Model – Neural MT for Low-Resource African Languages">
+<meta property="og:description" content="Production NMT system for Yoruba-English translation. Fine-tuned AfriTeVa V2 on 101,906 pairs — 46.26 METEOR, 58.83 ROUGE-1, deployed on Hugging Face with Flask API.">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/yoruba-english-translation.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/yoruba-translation-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2024-12-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-01-01T00:00:00+00:00">
+<meta property="article:author" content="https://adediranadeyemi.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yoruba-English Bidirectional Translation Model – Low-Resource NMT">
+<meta name="twitter:description" content="Fine-tuned AfriTeVa V2 on 101,906 Yoruba-English pairs. 46.26 METEOR, deployed on Hugging Face.">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/portfolio/yoruba-translation-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.project-breadcrumb{background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:13px}
+.project-breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.project-breadcrumb li{display:flex;align-items:center;gap:6px;color:#475569}
+.project-breadcrumb li a{color:#475569;text-decoration:none;transition:color .2s}
+.project-breadcrumb li a:hover{color:#0052FF}
+.project-breadcrumb li.active{color:#0F172A;font-weight:600}
+.project-breadcrumb .sep{color:#CBD5E1;font-size:11px}
+.project-hero{background:#F8FAFC;padding:60px 0 0;border-bottom:1px solid #E2E8F0}
+.project-hero .hero-label{display:inline-flex;align-items:center;gap:8px;background:#E7F1FD;color:#0052FF;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px}
+.project-hero h1{font-size:2.75rem;font-weight:800;color:#0F172A;letter-spacing:-.03em;line-height:1.15;margin-bottom:20px}
+.project-hero h1 span{color:#0052FF}
+.project-hero .hero-lead{font-size:17px;color:#475569;line-height:1.75;margin-bottom:32px;max-width:560px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-bottom:32px}
+.hero-meta-item .meta-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;margin-bottom:4px}
+.hero-meta-item .meta-value{font-size:14px;font-weight:600;color:#0F172A}
+.hero-stats{display:flex;border-top:1px solid #E2E8F0;margin-top:40px}
+.hero-stat{flex:1;padding:28px 20px;text-align:center;border-right:1px solid #E2E8F0}
+.hero-stat:last-child{border-right:none}
+.hero-stat .stat-num{font-size:2.25rem;font-weight:900;color:#0052FF;letter-spacing:-.04em;line-height:1;display:block}
+.hero-stat .stat-label{font-size:12px;color:#64748B;margin-top:6px;line-height:1.4}
+.project-body{padding:80px 0}
+.toc-sidebar{position:sticky;top:90px}
+.toc-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.toc-card .toc-heading{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;margin-bottom:16px}
+.toc-list{list-style:none;padding:0 0 0 16px;margin:0;border-left:2px solid #E2E8F0}
+.toc-list li{margin-bottom:10px}
+.toc-list a{font-size:13px;font-weight:500;color:#64748B;text-decoration:none;transition:color .2s;line-height:1.4;display:block}
+.toc-list a:hover,.toc-list a.active{color:#0052FF}
+.toc-list a.active{font-weight:600}
+.toc-cta{background:#E7F1FD;border-radius:8px;padding:18px;margin-top:20px;text-align:center}
+.toc-cta p{font-size:13px;color:#0F172A;line-height:1.5;margin-bottom:12px;font-weight:500}
+.toc-cta a{display:inline-block;background:#0052FF;color:#fff;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;text-decoration:none}
+.toc-cta a:hover{background:#0041cc;color:#fff}
+.doc-section{margin-bottom:60px;padding-bottom:60px;border-bottom:1px solid #E2E8F0;scroll-margin-top:90px}
+.doc-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.doc-section h2{font-size:22px;font-weight:800;color:#0F172A;letter-spacing:-.025em;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#E7F1FD;border-radius:8px;color:#0052FF;font-size:16px;flex-shrink:0}
+.doc-section h3{font-size:16px;font-weight:700;color:#0F172A;margin-top:28px;margin-bottom:10px}
+.doc-section p{font-size:15px;color:#334155;line-height:1.8;margin-bottom:14px}
+.doc-section ul,.doc-section ol{padding-left:20px;margin-bottom:14px}
+.doc-section li{font-size:15px;color:#334155;line-height:1.75;margin-bottom:6px}
+.callout{background:#E7F1FD;border-left:4px solid #0052FF;border-radius:0 8px 8px 0;padding:18px 20px;margin:20px 0}
+.callout p{margin:0;font-size:14px;color:#0F172A;line-height:1.65}
+.callout strong{color:#0052FF}
+.callout-green{background:#F0FDF4;border-left:4px solid #22C55E;border-radius:0 8px 8px 0;padding:18px 20px;margin:20px 0}
+.callout-green p{margin:0;font-size:14px;color:#0F172A;line-height:1.65}
+.callout-green strong{color:#16A34A}
+/* Metrics table */
+.perf-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden}
+.perf-table thead{background:#0052FF;color:#fff}
+.perf-table thead th{padding:12px 16px;font-weight:700;font-size:12px;letter-spacing:.5px;text-transform:uppercase;text-align:left}
+.perf-table tbody tr{border-bottom:1px solid #E2E8F0;transition:background .15s}
+.perf-table tbody tr:last-child{border-bottom:none}
+.perf-table tbody tr:hover{background:#F8FAFC}
+.perf-table tbody tr.highlight{background:#F0FDF4!important}
+.perf-table tbody td{padding:11px 16px;color:#334155}
+.perf-table .score{font-weight:700;color:#0052FF;font-family:'Courier New',monospace}
+.perf-table .score.green{color:#16A34A}
+/* Translation pair cards */
+.pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.pair-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px;transition:border-color .2s}
+.pair-card:hover{border-color:#0052FF}
+.pair-lang{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#94A3B8;margin-bottom:8px}
+.pair-text{font-size:14px;font-weight:600;color:#0F172A;line-height:1.5}
+.pair-text.yoruba{font-size:15px;color:#0052FF}
+/* Decoding strategy cards */
+.decode-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.decode-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:20px;transition:box-shadow .2s}
+.decode-card:hover{box-shadow:0 4px 16px rgba(0,82,255,.08)}
+.decode-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 12px;border-radius:50px;margin-bottom:10px}
+.decode-badge.b1{background:#E7F1FD;color:#0052FF}
+.decode-badge.b2{background:#F0FDF4;color:#16A34A}
+.decode-badge.b3{background:#FFF7ED;color:#C2410C}
+.decode-badge.b4{background:#FAF5FF;color:#7C3AED}
+.decode-card h4{font-size:14px;font-weight:700;color:#0F172A;margin-bottom:6px}
+.decode-card .best-for{font-size:12px;color:#64748B;margin-bottom:8px;font-style:italic}
+.decode-card p{font-size:13px;color:#64748B;line-height:1.55;margin:0}
+/* Dataset split visual */
+.split-bars{display:flex;height:24px;border-radius:8px;overflow:hidden;margin:16px 0}
+.split-bar{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff}
+.split-bar.train{background:#0052FF;width:80%}
+.split-bar.val{background:#60A5FA;width:10%}
+.split-bar.test{background:#BFDBFE;width:10%;color:#1E40AF}
+.split-legend{display:flex;gap:16px;margin-top:8px}
+.split-legend-item{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#334155}
+.split-dot{width:10px;height:10px;border-radius:50%}
+/* Feature list */
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.feature-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:20px;transition:box-shadow .2s,transform .2s}
+.feature-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,82,255,.1)}
+.feat-icon{width:40px;height:40px;background:#E7F1FD;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#0052FF;font-size:18px;margin-bottom:12px}
+.feature-card h4{font-size:14px;font-weight:700;color:#0F172A;margin-bottom:6px}
+.feature-card p{font-size:13px;color:#64748B;line-height:1.6;margin:0}
+/* Tech stack */
+.tech-stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:20px}
+.tech-item{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px 12px;text-align:center;transition:border-color .2s}
+.tech-item:hover{border-color:#0052FF}
+.tech-item i{font-size:24px;color:#0052FF;display:block;margin-bottom:8px}
+.tech-item .tech-name{font-size:13px;font-weight:700;color:#0F172A;display:block}
+.tech-item .tech-role{font-size:11px;color:#94A3B8;display:block;margin-top:2px}
+/* Code block */
+.code-block{background:#0F172A;border-radius:10px;padding:20px 24px;margin:16px 0;overflow-x:auto}
+.code-block .code-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#64748B;margin-bottom:12px}
+.code-block pre{margin:0;color:#E2E8F0;font-family:'Courier New',monospace;font-size:12.5px;line-height:1.7;white-space:pre}
+/* Demo embed */
+.demo-wrap{border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);margin:20px 0;background:#0F172A}
+.demo-wrap iframe{display:block;width:100%;height:520px;border:none}
+.demo-caption{background:#fff;padding:12px 16px;font-size:13px;color:#64748B;border-top:1px solid #E2E8F0;display:flex;align-items:center;gap:8px}
+.demo-caption i{color:#0052FF}
+/* Limitations */
+.limit-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.limit-item{display:flex;align-items:flex-start;gap:12px;background:#FFF7ED;border:1px solid #FED7AA;border-radius:8px;padding:14px 16px}
+.limit-item i{color:#F97316;font-size:16px;flex-shrink:0;margin-top:2px}
+.limit-item p{font-size:14px;color:#334155;line-height:1.6;margin:0}
+/* Tags & related */
+.tags-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.related-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:22px;text-decoration:none;transition:all .3s ease;display:block}
+.related-card:hover{border-color:#0052FF;transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,82,255,.12);text-decoration:none}
+.related-card .card-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0052FF;margin-bottom:8px}
+.related-card h4{font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px;line-height:1.4}
+.related-card p{font-size:13px;color:#64748B;line-height:1.55;margin:0}
+.related-card .card-arrow{display:inline-flex;align-items:center;gap:4px;margin-top:12px;font-size:13px;font-weight:600;color:#0052FF}
+.project-cta{background:#0052FF;padding:80px 0;text-align:center;color:#fff}
+.project-cta .cta-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:16px}
+.project-cta h2{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.03em;margin-bottom:14px;max-width:520px;margin-left:auto;margin-right:auto}
+.project-cta p{font-size:16px;color:rgba(255,255,255,.7);max-width:420px;margin:0 auto 32px;line-height:1.6}
+.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-cta-white{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;padding:14px 32px;border-radius:4px;background:#fff;color:#0052FF;text-decoration:none;transition:all .3s}
+.btn-cta-white:hover{background:#f0f0f0;color:#0052FF;transform:translateY(-2px);text-decoration:none}
+.btn-cta-ghost{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;padding:14px 32px;border-radius:4px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);text-decoration:none;transition:all .3s}
+.btn-cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1);color:#fff;text-decoration:none}
+@media(max-width:991px){.toc-sidebar{display:none}.project-hero h1{font-size:2rem}.features-grid,.decode-grid,.related-grid,.pair-grid{grid-template-columns:1fr}.hero-stats{flex-direction:column}.hero-stat{border-right:none;border-bottom:1px solid #E2E8F0}.hero-stat:last-child{border-bottom:none}}
+@media(max-width:768px){.project-hero{padding:40px 0 0}.project-hero h1{font-size:1.75rem}.project-body{padding:50px 0}.doc-section{margin-bottom:40px;padding-bottom:40px}.demo-wrap iframe{height:400px}}
+</style>
+</head>
+<body>
+<div id="preloader"></div>
+<div id="topbar" class="d-flex align-items-center fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="contact-info d-flex align-items-center">
+      <i class="bi bi-envelope-fill"></i><i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+      <i class="bi bi-phone-fill ms-3"></i><i><span>+234 816 273 5399</span></i>
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+    </div>
+  </div>
+</div>
+<header id="header" class="fixed-top" style="top:40px;">
+  <div class="container d-flex align-items-center justify-content-between">
+    <h1 class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></h1>
+    <nav class="navbar" aria-label="Site navigation">
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#featured-services">Services</a></li>
+        <li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="../index.html#faq">Blog</a></li>
+        <li><a href="../index.html#contact">Let's Talk</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+    </nav>
+  </div>
+</header>
+
+<nav class="project-breadcrumb" style="margin-top:126px;" aria-label="Breadcrumb">
+  <div class="container">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li>
+      <span class="sep">›</span>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a><meta itemprop="position" content="2"></li>
+      <span class="sep">›</span>
+      <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">Yoruba-English Translation Model</span><meta itemprop="position" content="3"></li>
+    </ol>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-label"><i class="bi bi-translate"></i> NLP · Low-Resource MT · Transformers</div>
+        <h1>Bidirectional <span>Yoruba-English</span> Neural Translation</h1>
+        <p class="hero-lead">A production-ready neural machine translation model for Yoruba ⇄ English — fine-tuned on 101,906 pairs with automatic language detection, cultural context handling, and 4 translation variants with quality scoring. Deployed live on Hugging Face.</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><div class="meta-label">Stack</div><div class="meta-value">AfriTeVa V2 · PyTorch · Transformers · Flask</div></div>
+          <div class="hero-meta-item"><div class="meta-label">Language Pair</div><div class="meta-value">Yoruba ⇄ English (bidirectional)</div></div>
+          <div class="hero-meta-item"><div class="meta-label">Type</div><div class="meta-value">Neural MT · Low-Resource NLP · African Languages</div></div>
+        </div>
+        <div class="d-flex flex-wrap gap-3 pb-4">
+          <a href="https://huggingface.co/spaces/adeyemi001/yoruba-english-translation-model" target="_blank" class="btn-get-started-primary">Try Live Demo <i class="bi bi-play-circle"></i></a>
+          <a href="https://github.com/Adeyemi0/Yoruba-English-Translation" target="_blank" class="btn-get-started-secondary">View on GitHub <i class="bi bi-github"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block">
+        <img src="../assets/img/portfolio/cj.jpg" alt="Yoruba-English bidirectional neural translation model interface by Adediran Adeyemi" class="img-fluid" style="border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 20px 60px rgba(0,82,255,0.12);" width="560" height="360" loading="eager" fetchpriority="high">
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="stat-num">101K+</span><span class="stat-label">Yoruba-English translation pairs in training data</span></div>
+      <div class="hero-stat"><span class="stat-num">46.26</span><span class="stat-label">METEOR score — strong semantic preservation</span></div>
+      <div class="hero-stat"><span class="stat-num">58.83</span><span class="stat-label">ROUGE-1 — high unigram recall</span></div>
+      <div class="hero-stat"><span class="stat-num">4</span><span class="stat-label">Translation variants per query with quality scoring</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="project-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 d-none d-lg-block">
+        <aside class="toc-sidebar">
+          <div class="toc-card">
+            <p class="toc-heading">On This Page</p>
+            <ul class="toc-list">
+              <li><a href="#overview">Project Overview</a></li>
+              <li><a href="#features">Key Features</a></li>
+              <li><a href="#performance">Model Performance</a></li>
+              <li><a href="#architecture">Architecture</a></li>
+              <li><a href="#dataset">Training Dataset</a></li>
+              <li><a href="#training">Training Details</a></li>
+              <li><a href="#decoding">Decoding Strategies</a></li>
+              <li><a href="#demo">Live Demo</a></li>
+              <li><a href="#api">API Reference</a></li>
+              <li><a href="#tech">Tech Stack</a></li>
+              <li><a href="#limitations">Limitations</a></li>
+              <li><a href="#related">Related Projects</a></li>
+            </ul>
+            <div class="toc-cta"><p>Building NLP for African languages?</p><a href="../index.html#contact">Let's Talk →</a></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="col-lg-9">
+        <article itemscope itemtype="https://schema.org/TechArticle">
+          <meta itemprop="author" content="Adediran Adeyemi">
+          <meta itemprop="datePublished" content="2024-12-01">
+          <meta itemprop="headline" content="Yoruba-English Bidirectional Translation Model – Neural MT for Low-Resource African Languages">
+
+          <div class="doc-section" id="overview">
+            <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
+            <p>Yoruba is spoken by over 45 million people across Nigeria, Benin, and the diaspora — yet it remains severely underserved by mainstream translation tools like Google Translate, which struggle with Yoruba's tonal diacritical marks and idiomatic expressions. This project builds a purpose-built, production-ready solution.</p>
+            <p>The model fine-tunes <strong>AfriTeVa V2</strong> — a T5-architecture transformer pre-trained on African language corpora — on 101,906 curated Yoruba-English parallel pairs. The result is a bidirectional translation system that handles diacritical marks natively, detects language automatically, and generates four translation variants with quality scoring so users can choose the best rendering.</p>
+            <div class="callout-green"><p><strong>Why this matters:</strong> Mainstream translation tools are trained primarily on high-resource language pairs. Yoruba's tonal markers (ẹ, ọ, ṣ, á, à, é, è) are frequently mangled by general-purpose models. This project contributes a specialized model to the growing ecosystem of African language NLP — freely available on Hugging Face for research and commercial use.</p></div>
+          </div>
+
+          <div class="doc-section" id="features">
+            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Key Features</h2>
+            <div class="features-grid">
+              <div class="feature-card"><div class="feat-icon"><i class="bi bi-arrow-left-right"></i></div><h4>Bidirectional Translation</h4><p>Seamless English → Yoruba and Yoruba → English. A single model handles both directions using task prefixes.</p></div>
+              <div class="feature-card"><div class="feat-icon"><i class="bi bi-search"></i></div><h4>Auto Language Detection</h4><p>Detects input language using diacritical mark recognition and Yoruba lexical patterns — no manual direction setting required.</p></div>
+              <div class="feature-card"><div class="feat-icon"><i class="bi bi-list-check"></i></div><h4>4 Translation Variants</h4><p>Generates 4 candidates using different decoding strategies (beam search, sampling) with automatic quality scoring to rank them.</p></div>
+              <div class="feature-card"><div class="feat-icon"><i class="bi bi-shield-check"></i></div><h4>Hallucination Detection</h4><p>Flags potentially unreliable translations based on length anomalies and vocabulary repetition before surfacing results.</p></div>
+              <div class="feature-card"><div class="feat-icon"><i class="bi bi-scissors"></i></div><h4>Smart Text Chunking</h4><p>Handles long texts via sentence-boundary-aware segmentation — preserves context within sentences when inputs exceed 128 tokens.</p></div>
+              <div class="feature-card"><div class="feat-icon"><i class="bi bi-globe"></i></div><h4>Diacritical Mark Support</h4><p>Full support for Yoruba-specific characters (ẹ, ọ, ṣ, á, à, é, è) with educational tooltips in the web UI.</p></div>
+            </div>
+          </div>
+
+          <div class="doc-section" id="performance">
+            <h2><span class="section-icon"><i class="bi bi-bar-chart-steps"></i></span> Model Performance</h2>
+            <p>Evaluated on a held-out test set of 10,190 samples — 10% of the full corpus not seen during training:</p>
+            <table class="perf-table">
+              <thead><tr><th>Metric</th><th>Score</th><th>What It Measures</th></tr></thead>
+              <tbody>
+                <tr><td><strong>BLEU</strong></td><td class="score">16.30</td><td>N-gram overlap with reference translation (0–100)</td></tr>
+                <tr><td>BLEU-1</td><td class="score">48.57</td><td>Unigram precision — word-level match</td></tr>
+                <tr><td>BLEU-4</td><td class="score">6.64</td><td>4-gram precision — phrase-level match</td></tr>
+                <tr class="highlight"><td><strong>METEOR</strong></td><td class="score green">46.26</td><td>Considers synonyms and paraphrasing — stronger semantic measure</td></tr>
+                <tr class="highlight"><td><strong>ROUGE-1</strong></td><td class="score green">58.83</td><td>Unigram recall — content word coverage</td></tr>
+                <tr><td>ROUGE-2</td><td class="score">34.34</td><td>Bigram recall — phrase coverage</td></tr>
+                <tr class="highlight"><td><strong>ROUGE-L</strong></td><td class="score green">51.73</td><td>Longest common subsequence — structural similarity</td></tr>
+                <tr><td>chrF</td><td class="score">39.28</td><td>Character n-gram F-score — handles morphology well</td></tr>
+                <tr><td>TER</td><td class="score">68.52</td><td>Translation edit rate (lower is better)</td></tr>
+              </tbody>
+            </table>
+            <div class="callout"><p><strong>Context on BLEU scores:</strong> Low BLEU scores are expected and normal for morphologically rich low-resource languages like Yoruba — even state-of-the-art systems for similar language pairs score in the 10–20 range. The <strong>METEOR (46.26) and ROUGE-1 (58.83)</strong> scores are the more meaningful indicators here, showing strong semantic preservation and content coverage despite exact phrase-matching challenges.</p></div>
+
+            <h3>Sample Translations</h3>
+            <div class="pair-grid">
+              <div class="pair-card"><div class="pair-lang">English</div><div class="pair-text">Good morning</div></div>
+              <div class="pair-card"><div class="pair-lang">Yoruba</div><div class="pair-text yoruba">Ẹ káàrọ̀</div></div>
+              <div class="pair-card"><div class="pair-lang">English</div><div class="pair-text">How are you?</div></div>
+              <div class="pair-card"><div class="pair-lang">Yoruba</div><div class="pair-text yoruba">Báwo ni o ṣe wà?</div></div>
+              <div class="pair-card"><div class="pair-lang">English</div><div class="pair-text">Thank you very much</div></div>
+              <div class="pair-card"><div class="pair-lang">Yoruba</div><div class="pair-text yoruba">O ṣeun púpọ̀</div></div>
+              <div class="pair-card"><div class="pair-lang">English</div><div class="pair-text">I love learning new languages</div></div>
+              <div class="pair-card"><div class="pair-lang">Yoruba</div><div class="pair-text yoruba">Mo nífẹ̀ẹ́ kíkọ́ èdè tuntun</div></div>
+            </div>
+          </div>
+
+          <div class="doc-section" id="architecture">
+            <h2><span class="section-icon"><i class="bi bi-cpu"></i></span> Architecture</h2>
+            <h3>Base Model: AfriTeVa V2</h3>
+            <p>AfriTeVa V2 (by Masakhane NLP) is a sequence-to-sequence transformer built on the T5 architecture and pre-trained on a multilingual African language corpus. Choosing AfriTeVa over standard mT5 or mBART significantly improves out-of-the-box performance on African languages because the pretraining data distribution is already aligned with the target domain — rather than being dominated by high-resource European languages.</p>
+            <ul>
+              <li><strong>Architecture:</strong> T5-style encoder-decoder transformer (~300M parameters, large variant)</li>
+              <li><strong>Tokenizer:</strong> SentencePiece with 250K vocabulary — handles Yoruba diacritics natively</li>
+              <li><strong>Task prefix:</strong> "translate English to Yoruba: {text}" or "translate Yoruba to English: {text}"</li>
+              <li><strong>Max sequence length:</strong> 128 tokens (longer texts handled by smart chunking)</li>
+            </ul>
+          </div>
+
+          <div class="doc-section" id="dataset">
+            <h2><span class="section-icon"><i class="bi bi-database"></i></span> Training Dataset</h2>
+            <p>101,906 Yoruba-English parallel pairs curated from four high-quality sources and split temporally to prevent leakage:</p>
+            <div class="split-bars">
+              <div class="split-bar train">Train 80%</div>
+              <div class="split-bar val">Val 10%</div>
+              <div class="split-bar test">Test 10%</div>
+            </div>
+            <div class="split-legend">
+              <div class="split-legend-item"><div class="split-dot" style="background:#0052FF"></div>Train: 81,526 pairs</div>
+              <div class="split-legend-item"><div class="split-dot" style="background:#60A5FA"></div>Validation: 10,190 pairs</div>
+              <div class="split-legend-item"><div class="split-dot" style="background:#BFDBFE"></div>Test: 10,190 pairs</div>
+            </div>
+            <h3>Data Sources</h3>
+            <ul>
+              <li><strong>JW300</strong> — Jehovah's Witnesses religious translations (large, clean, formal register)</li>
+              <li><strong>FFR</strong> — Foundation for Endangered Languages corpus</li>
+              <li><strong>Menyo-20k</strong> — Community-contributed general-domain pairs</li>
+              <li><strong>Custom corpus</strong> — Manually curated sentence pairs for colloquial coverage</li>
+            </ul>
+            <h3>Data Quality Measures</h3>
+            <ul>
+              <li>Removed duplicates and near-duplicates</li>
+              <li>Filtered sentences with extreme length ratios (&gt;3:1 source/target)</li>
+              <li>Validated Yoruba diacritical mark encoding and normalization</li>
+              <li>Removed machine-translated contamination from training set</li>
+              <li>Checked proper Unicode encoding throughout</li>
+            </ul>
+            <div class="callout-warn" style="background:#FFF7ED;border-left:4px solid #F97316;border-radius:0 8px 8px 0;padding:18px 20px;margin:20px 0;"><p style="margin:0;font-size:14px;color:#0F172A;line-height:1.65;"><strong style="color:#C2410C;">Data bias note:</strong> The training corpus skews toward formal and religious text (JW300 is the largest source). The model performs best on formal/standard Yoruba and may underperform on colloquial speech, modern slang, or code-switching sentences mixing Yoruba and English.</p></div>
+          </div>
+
+          <div class="doc-section" id="training">
+            <h2><span class="section-icon"><i class="bi bi-graph-up-arrow"></i></span> Training Details</h2>
+            <p>Fine-tuning ran for 18 epochs with early stopping (patience=3). Total training time: <strong>5.36 hours</strong> on an NVIDIA GPU with CUDA.</p>
+            <div class="code-block">
+              <div class="code-label">Fine-Tuning Configuration</div>
+              <pre>
+{
+  "max_sequence_length":        128,
+  "batch_size":                  32,
+  "gradient_accumulation_steps":  2,
+  "effective_batch_size":        64,
+  "learning_rate":             3e-5,
+  "warmup_steps":               300,
+  "num_epochs":                  18,
+  "early_stopping_patience":      3,
+  "optimizer":              "AdamW",
+  "scheduler":   "Linear with warmup",
+  "checkpoint_interval":       6000   // steps
+}</pre>
+            </div>
+            <ul>
+              <li><strong>Gradient accumulation:</strong> 2 steps with batch_size=32 yields an effective batch of 64 — improving training stability without requiring more GPU memory</li>
+              <li><strong>Warmup:</strong> 300 steps prevent early large gradient updates on a pre-trained model</li>
+              <li><strong>Early stopping:</strong> Triggered after 3 epochs without validation BLEU improvement — best checkpoint saved at the optimal epoch</li>
+              <li><strong>Hyperparameter search:</strong> Final config selected after testing LRs [1e-5, 3e-5, 5e-5], batch sizes [16, 32, 64], and max lengths [64, 128, 256]</li>
+            </ul>
+          </div>
+
+          <div class="doc-section" id="decoding">
+            <h2><span class="section-icon"><i class="bi bi-sliders"></i></span> 4 Decoding Strategies</h2>
+            <p>Each query generates four translation candidates using different decoding configurations — then quality scoring selects the best. Users can also view all variants:</p>
+            <div class="decode-grid">
+              <div class="decode-card">
+                <span class="decode-badge b1">Conservative</span>
+                <h4>Beam Search (5 beams)</h4>
+                <div class="best-for">Best for: Formal text, technical content</div>
+                <p>Temperature 0.6, no_repeat_ngram_size=3. Safe, predictable, grammatically conservative output.</p>
+              </div>
+              <div class="decode-card">
+                <span class="decode-badge b2">Balanced</span>
+                <h4>Wide Beam (8 beams)</h4>
+                <div class="best-for">Best for: General purpose translation</div>
+                <p>Temperature 0.7, length_penalty=1.2. Natural phrasing with balanced creativity — the default best selection.</p>
+              </div>
+              <div class="decode-card">
+                <span class="decode-badge b3">Precise</span>
+                <h4>Low Temperature (6 beams)</h4>
+                <div class="best-for">Best for: Short sentences, idioms</div>
+                <p>Temperature 0.5, repetition_penalty=1.1. Literal and focused — prioritizes accuracy over fluency.</p>
+              </div>
+              <div class="decode-card">
+                <span class="decode-badge b4">Creative</span>
+                <h4>Sampling (top-k=50)</h4>
+                <div class="best-for">Best for: Casual conversation, creative text</div>
+                <p>Temperature 0.8, top_p=0.92. Diverse and natural — captures conversational register better than beam search.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-section" id="demo">
+            <h2><span class="section-icon"><i class="bi bi-play-circle"></i></span> Live Demo</h2>
+            <p>The model is deployed as an interactive Hugging Face Space. Enter any English or Yoruba text to translate — or use auto-detect mode:</p>
+            <div class="demo-wrap">
+              <iframe title="Yoruba-English Translation Model – Adediran Adeyemi" src="https://adeyemi001-yoruba-english-translation-model.hf.space" allowfullscreen loading="lazy"></iframe>
+              <div class="demo-caption"><i class="bi bi-info-circle"></i> Live translation demo — supports English → Yoruba, Yoruba → English, and auto language detection with diacritical marks.</div>
+            </div>
+          </div>
+
+          <div class="doc-section" id="api">
+            <h2><span class="section-icon"><i class="bi bi-code-slash"></i></span> API Reference</h2>
+            <p>The Flask API supports language detection, translation with variants, and cache management:</p>
+            <div class="code-block">
+              <div class="code-label">POST /translate — Python Example</div>
+              <pre>
+import requests
+
+# English to Yoruba
+response = requests.post("http://localhost:7860/translate", json={
+    "text":        "I love learning new languages",
+    "direction":   "en2yo",  # or "yo2en" or "auto"
+    "num_outputs": 4
+})
+
+result = response.json()
+print(result["output"])          # "Mo nífẹ̀ẹ́ kíkọ́ èdè tuntun"
+print(result["all_translations"]) # All 4 variants with quality scores
+
+# Auto-detect Yoruba input
+response = requests.post("http://localhost:7860/translate", json={
+    "text":      "Ẹ káàsán",
+    "direction": "auto"
+})
+print(response.json()["output"])  # "Good afternoon"</pre>
+            </div>
+            <p>Additional endpoints: <code>GET /health</code> (model status), <code>POST /detect-language</code> (language identification only), <code>POST /clear-cache</code> (cache management).</p>
+          </div>
+
+          <div class="doc-section" id="tech">
+            <h2><span class="section-icon"><i class="bi bi-tools"></i></span> Tech Stack</h2>
+            <div class="tech-stack">
+              <div class="tech-item"><i class="bi bi-cpu"></i><span class="tech-name">AfriTeVa V2</span><span class="tech-role">Base Model</span></div>
+              <div class="tech-item"><i class="bi bi-lightning"></i><span class="tech-name">PyTorch</span><span class="tech-role">Training</span></div>
+              <div class="tech-item"><i class="bi bi-robot"></i><span class="tech-name">Transformers</span><span class="tech-role">HF Library</span></div>
+              <div class="tech-item"><i class="bi bi-server"></i><span class="tech-name">Flask</span><span class="tech-role">REST API</span></div>
+              <div class="tech-item"><i class="bi bi-box"></i><span class="tech-name">Docker</span><span class="tech-role">Deployment</span></div>
+              <div class="tech-item"><i class="bi bi-globe"></i><span class="tech-name">HuggingFace</span><span class="tech-role">Hosting</span></div>
+            </div>
+            <div class="tags-row">
+              <span class="tech-tag">Python</span><span class="tech-tag">AfriTeVa V2</span><span class="tech-tag">PyTorch</span><span class="tech-tag">Transformers</span><span class="tech-tag">SentencePiece</span><span class="tech-tag">Flask</span><span class="tech-tag">Docker</span><span class="tech-tag">HuggingFace Spaces</span><span class="tech-tag">BLEU / METEOR</span><span class="tech-tag">Low-Resource NLP</span><span class="tech-tag">African Languages</span>
+            </div>
+          </div>
+
+          <div class="doc-section" id="limitations">
+            <h2><span class="section-icon"><i class="bi bi-exclamation-triangle"></i></span> Known Limitations</h2>
+            <div class="limit-list">
+              <div class="limit-item"><i class="bi bi-exclamation-triangle-fill"></i><p><strong>Idiomatic expressions:</strong> May translate literally rather than capturing cultural nuance — Yoruba has rich proverbial expressions that don't map cleanly to English equivalents.</p></div>
+              <div class="limit-item"><i class="bi bi-exclamation-triangle-fill"></i><p><strong>Code-switching:</strong> Limited support for mixed Yoruba-English sentences — a common pattern in real-world Nigerian communication that the training data underrepresents.</p></div>
+              <div class="limit-item"><i class="bi bi-exclamation-triangle-fill"></i><p><strong>Training data bias:</strong> The corpus skews toward formal and religious text. Colloquial speech, modern slang, and informal registers may produce lower-quality outputs.</p></div>
+              <div class="limit-item"><i class="bi bi-exclamation-triangle-fill"></i><p><strong>Diacritical input dependency:</strong> For best Yoruba → English results, input text should include proper Yoruba diacritical marks. Plain text without tone marks will produce lower accuracy.</p></div>
+            </div>
+            <p style="margin-top:16px;">Future work includes expanding to other Nigerian languages (Igbo, Hausa), adding speech-to-text and text-to-speech integration, and fine-tuning on domain-specific corpora (medical, legal, technical).</p>
+          </div>
+
+          <div class="doc-section" id="related">
+            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+            <div class="related-grid">
+              <a href="rag-financial-research-sp500.html" class="related-card"><p class="card-label">RAG · LangChain · GPT-4o</p><h4>FinSight RAG Financial Research</h4><p>Production RAG answering financial questions across 402 companies and 50M+ tokens with conversation memory.</p><span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span></a>
+              <a href="customer-reviews-classification.html" class="related-card"><p class="card-label">NLP · RoBERTa · HuggingFace</p><h4>Customer Reviews NLP Classification</h4><p>Multi-label RoBERTa classifier analyzing 29,000+ fintech app reviews with 93.7% F1-micro accuracy.</p><span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span></a>
+              <a href="lead-scoring-conversion-prediction.html" class="related-card"><p class="card-label">ML · SMOTE · Streamlit</p><h4>Lead Scoring &amp; Conversion Prediction</h4><p>99% accuracy model predicting purchase likelihood from browsing behavior — deployed on Streamlit.</p><span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span></a>
+              <a href="nyc-property-price-prediction.html" class="related-card"><p class="card-label">ML · LightGBM · Flask</p><h4>NYC Property Price Prediction</h4><p>80% accuracy ML model delivering instant property valuations for New York real estate investors.</p><span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project-cta">
+  <div class="container">
+    <p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+    <h2>Building NLP for underrepresented languages?</h2>
+    <p>I build production NLP systems that work in the real world — including low-resource and African language contexts. First call is free.</p>
+    <div class="cta-buttons">
+      <a href="../index.html#contact" class="btn-cta-white">Tell Me Your Data Problem</a>
+      <a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-contact"><h3>Adeyemi<span>Data</span></h3><p>Remote Worldwide<br>Available globally (timezone-flexible)<br><br><strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br><strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></p></div>
+        <div class="col-lg-2 col-md-6 footer-links"><h4>Quick Links</h4><ul><li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li><li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li><li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li><li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li><li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li></ul></div>
+        <div class="col-lg-3 col-md-6 footer-links"><h4>What I Do</h4><ul><li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Churn Prediction</a></li><li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Cart Recovery</a></li><li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">CLV Modeling</a></li><li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Inventory Forecasting</a></li></ul></div>
+        <div class="col-lg-3 col-md-6 footer-links"><h4>Connect</h4><div class="social-links mt-3"><a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container"><div class="copyright">© 2026 <strong>Adediran Adeyemi</strong> · Turning Data Into Decisions</div></div>
+</footer>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://adediranadeyemi.com/projects/yoruba-english-translation.html#article","headline":"Yoruba-English Bidirectional Translation Model – Neural MT for Low-Resource African Languages","description":"Production neural machine translation for Yoruba-English. Fine-tuned AfriTeVa V2 on 101,906 pairs with 46.26 METEOR and 58.83 ROUGE-1. Deployed on Hugging Face with Flask API and 4-variant quality scoring.","url":"https://adediranadeyemi.com/projects/yoruba-english-translation.html","datePublished":"2024-12-01","dateModified":"2026-01-01","inLanguage":"en","author":{"@type":"Person","name":"Adediran Adeyemi","url":"https://adediranadeyemi.com","jobTitle":"Freelance Data Scientist","email":"adeyemi@adediranadeyemi.com"},"publisher":{"@type":"Person","name":"Adediran Adeyemi","url":"https://adediranadeyemi.com"},"keywords":["Yoruba English translation","African language NLP","low resource machine translation","AfriTeVa","neural MT","HuggingFace","Masakhane","Nigerian language AI"],"proficiencyLevel":"Expert","dependencies":"Python, AfriTeVa V2, PyTorch, Transformers, Flask, Docker, HuggingFace"},{"@type":"BreadcrumbList","@id":"https://adediranadeyemi.com/projects/yoruba-english-translation.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://adediranadeyemi.com"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://adediranadeyemi.com/#portfolio"},{"@type":"ListItem","position":3,"name":"Yoruba-English Translation Model","item":"https://adediranadeyemi.com/projects/yoruba-english-translation.html"}]}]}</script>
+
+<script>
+window.addEventListener('load',()=>{const p=document.getElementById('preloader');if(p){p.style.transition='opacity 0.4s';p.style.opacity='0';setTimeout(()=>p.remove(),400)}});
+const t=document.querySelector('.mobile-nav-toggle'),n=document.querySelector('#header .navbar');if(t&&n)t.addEventListener('click',()=>{n.classList.toggle('navbar-mobile');t.classList.toggle('bi-list');t.classList.toggle('bi-x')});
+window.addEventListener('scroll',()=>{const b=document.querySelector('.back-to-top');if(b)b.classList.toggle('active',window.scrollY>100)});
+(function(){const links=document.querySelectorAll('.toc-list a'),sections=document.querySelectorAll('.doc-section[id]');if(!links.length||!sections.length)return;const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=document.querySelector(`.toc-list a[href="#${e.target.id}"]`);if(a)a.classList.add('active')}})},{rootMargin:'-20% 0px -65% 0px'});sections.forEach(s=>obs.observe(s))})();
+</script>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
