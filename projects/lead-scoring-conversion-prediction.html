@@ -1,40 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <!-- =========================================
-  ESSENTIAL META
+ESSENTIAL META
 ========================================== -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="theme-color" content="#0052FF">
-
 <!-- =========================================
-  PRIMARY SEO META
+PRIMARY SEO META
 ========================================== -->
-<title>Lead Scoring & Conversion Prediction Model – 99% Accuracy | Adediran Adeyemi</title>
-
-<meta name="description" content="Machine learning case study building a lead scoring model with 99% accuracy using SMOTE and Random Over-Sampling. Identifies which browsing behaviors — reviews, images, specs — drive purchase likelihood. By freelance data scientist Adediran Adeyemi.">
-
-<meta name="keywords" content="lead scoring model, conversion prediction machine learning, purchase likelihood prediction, SMOTE class imbalance, browsing behavior analysis, e-commerce ML model, Python scikit-learn, data science portfolio, Adediran Adeyemi">
-
+<title>Lead Scoring & Conversion Prediction | Adediran Adeyemi</title>
+<meta name="description" content="ML lead scoring model with 99% accuracy predicting purchase likelihood from browsing behavior. SMOTE, Random Over-Sampling, and interaction analysis by Adediran Adeyemi.">
+<meta name="keywords" content="lead scoring model, conversion prediction ML, purchase likelihood, SMOTE class imbalance, browsing behavior analysis, e-commerce ML, Python scikit-learn, Adediran Adeyemi">
 <meta name="author" content="Adediran Adeyemi">
-
 <link rel="canonical" href="https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html">
-
 <!-- =========================================
-  OPEN GRAPH
+OPEN GRAPH
 ========================================== -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Adediran Adeyemi | Freelance Data Scientist">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Lead Scoring & Conversion Prediction – 99% Accuracy ML Model">
-<meta property="og:description" content="ML case study: building a lead scoring model that predicts purchase likelihood from browsing behavior with 99% accuracy using SMOTE and Random Over-Sampling.">
+<meta property="og:title" content="Lead Scoring & Conversion Prediction | Adediran Adeyemi">
+<meta property="og:description" content="ML case study: 99% accurate lead scoring model predicting purchase likelihood from browsing behavior using SMOTE and Random Over-Sampling.">
 <meta property="og:url" content="https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html">
-<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/leads.jpeg">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/lead-scoring.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Lead scoring machine learning model predicting purchase likelihood from browsing behavior">
@@ -46,1108 +38,978 @@
 <meta property="article:tag" content="Conversion Optimization">
 <meta property="article:tag" content="SMOTE">
 <meta property="article:tag" content="Scikit-learn">
-
 <!-- =========================================
-  TWITTER CARD
+TWITTER CARD
 ========================================== -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lead Scoring & Conversion Prediction – 99% Accuracy ML Model | Adediran Adeyemi">
+<meta name="twitter:title" content="Lead Scoring & Conversion Prediction | Adediran Adeyemi">
 <meta name="twitter:description" content="ML model predicting purchase likelihood from browsing behavior with 99% accuracy. Reviews + images = 58% conversion rate.">
-<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/portfolio/leads.jpeg">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/portfolio/lead-scoring.jpg">
 <meta name="twitter:image:alt" content="Lead scoring ML model by Adediran Adeyemi">
-
 <!-- =========================================
-  FONTS — exact match to main site
+FONTS
 ========================================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
 <!-- Bootstrap 5 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
 <!-- Main site stylesheet -->
 <link rel="stylesheet" href="../assets/css/style.css">
-
 <!-- =========================================
-  PAGE-SPECIFIC STYLES
+PAGE-SPECIFIC STYLES
 ========================================== -->
 <style>
-
-  /* ── BREADCRUMB ── */
-  .project-breadcrumb {
-    background: #F8FAFC; border-bottom: 1px solid #E2E8F0;
-    padding: 12px 0; font-size: 13px;
-  }
-  .project-breadcrumb ol {
-    list-style: none; margin: 0; padding: 0;
-    display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
-  }
-  .project-breadcrumb li { display: flex; align-items: center; gap: 6px; color: #475569; }
-  .project-breadcrumb li a { color: #475569; text-decoration: none; transition: color .2s; }
-  .project-breadcrumb li a:hover { color: #0052FF; }
-  .project-breadcrumb li.active { color: #0F172A; font-weight: 600; }
-  .project-breadcrumb .sep { color: #CBD5E1; font-size: 11px; }
-
-  /* ── HERO ── */
-  .project-hero { background: #F8FAFC; padding: 60px 0 0; border-bottom: 1px solid #E2E8F0; }
-  .project-hero .hero-label {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: #E7F1FD; color: #0052FF; font-size: 12px; font-weight: 700;
-    letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px;
-  }
-  .project-hero h1 {
-    font-size: 2.75rem; font-weight: 800; color: #0F172A;
-    letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px;
-  }
-  .project-hero h1 span { color: #0052FF; }
-  .project-hero .hero-lead { font-size: 17px; color: #475569; line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
-  .hero-meta { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 32px; }
-  .hero-meta-item .meta-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 4px; }
-  .hero-meta-item .meta-value { font-size: 14px; font-weight: 600; color: #0F172A; }
-
-  .hero-stats { display: flex; border-top: 1px solid #E2E8F0; margin-top: 40px; }
-  .hero-stat { flex: 1; padding: 28px 20px; text-align: center; border-right: 1px solid #E2E8F0; }
-  .hero-stat:last-child { border-right: none; }
-  .hero-stat .stat-num { font-size: 2.25rem; font-weight: 900; color: #0052FF; letter-spacing: -0.04em; line-height: 1; display: block; }
-  .hero-stat .stat-label { font-size: 12px; color: #64748B; margin-top: 6px; line-height: 1.4; }
-
-  /* ── LAYOUT ── */
-  .project-body { padding: 80px 0; }
-  .toc-sidebar { position: sticky; top: 90px; }
-  .toc-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
-  .toc-card .toc-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 16px; }
-  .toc-list { list-style: none; padding: 0 0 0 16px; margin: 0; border-left: 2px solid #E2E8F0; }
-  .toc-list li { margin-bottom: 10px; }
-  .toc-list a { font-size: 13px; font-weight: 500; color: #64748B; text-decoration: none; transition: color .2s; line-height: 1.4; display: block; }
-  .toc-list a:hover, .toc-list a.active { color: #0052FF; }
-  .toc-list a.active { font-weight: 600; }
-  .toc-cta { background: #E7F1FD; border-radius: 8px; padding: 18px; margin-top: 20px; text-align: center; }
-  .toc-cta p { font-size: 13px; color: #0F172A; line-height: 1.5; margin-bottom: 12px; font-weight: 500; }
-  .toc-cta a { display: inline-block; background: #0052FF; color: #fff; font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px; text-decoration: none; transition: background .2s; }
-  .toc-cta a:hover { background: #0041cc; color: #fff; }
-
-  /* ── ARTICLE SECTIONS ── */
-  .doc-section { margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid #E2E8F0; scroll-margin-top: 90px; }
-  .doc-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .doc-section h2 { font-size: 22px; font-weight: 800; color: #0F172A; letter-spacing: -0.025em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
-  .section-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #E7F1FD; border-radius: 8px; color: #0052FF; font-size: 16px; flex-shrink: 0; }
-  .doc-section h3 { font-size: 16px; font-weight: 700; color: #0F172A; margin-top: 24px; margin-bottom: 10px; letter-spacing: -0.01em; }
-  .doc-section h4 { font-size: 14px; font-weight: 700; color: #0052FF; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .5px; }
-  .doc-section p { font-size: 15px; color: #334155; line-height: 1.8; margin-bottom: 14px; }
-  .doc-section ul, .doc-section ol { padding-left: 20px; margin-bottom: 14px; }
-  .doc-section li { font-size: 15px; color: #334155; line-height: 1.75; margin-bottom: 6px; }
-
-  /* Callouts */
-  .callout { background: #E7F1FD; border-left: 4px solid #0052FF; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
-  .callout p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
-  .callout strong { color: #0052FF; }
-  .callout-green { background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
-  .callout-green p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
-  .callout-green strong { color: #16A34A; }
-
-  /* Data dictionary */
-  .dict-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; }
-  .dict-table thead { background: #F8FAFC; }
-  .dict-table thead th { padding: 10px 16px; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; color: #0052FF; text-align: left; border-bottom: 2px solid #E2E8F0; }
-  .dict-table tbody tr { border-bottom: 1px solid #F1F5F9; }
-  .dict-table tbody tr:last-child { border-bottom: none; }
-  .dict-table tbody tr:hover { background: #F8FAFC; }
-  .dict-table tbody td { padding: 9px 16px; color: #334155; vertical-align: top; }
-  .dict-table tbody td:first-child { font-family: 'Courier New', monospace; font-weight: 700; color: #0052FF; font-size: 12px; white-space: nowrap; }
-
-  /* Key findings cards */
-  .findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
-  .finding-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 20px; transition: box-shadow .2s, transform .2s; }
-  .finding-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,82,255,.1); }
-  .finding-icon { width: 40px; height: 40px; background: #E7F1FD; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0052FF; font-size: 18px; margin-bottom: 12px; }
-  .finding-card h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; text-transform: none; letter-spacing: 0; color: #0F172A; }
-  .finding-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
-
-  /* Interaction heatmap-style cards */
-  .interaction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-  .interaction-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; }
-  .interaction-card .combo { font-size: 12px; font-weight: 700; color: #0052FF; font-family: 'Courier New', monospace; margin-bottom: 10px; }
-  .interaction-card .rate-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-  .interaction-card .rate-label { font-size: 12px; color: #64748B; }
-  .interaction-card .rate-bar-wrap { flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; margin: 0 10px; overflow: hidden; }
-  .interaction-card .rate-bar { height: 100%; border-radius: 4px; }
-  .rate-bar.buy { background: #0052FF; }
-  .rate-bar.no-buy { background: #E2E8F0; }
-  .interaction-card .rate-pct { font-size: 12px; font-weight: 700; color: #0F172A; width: 40px; text-align: right; }
-  .interaction-card .rate-pct.highlight { color: #0052FF; }
-  .interaction-section-title { font-size: 13px; font-weight: 700; color: #0F172A; margin: 24px 0 10px; display: flex; align-items: center; gap: 8px; }
-  .interaction-section-title .vs-badge { background: #E7F1FD; color: #0052FF; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 50px; }
-
-  /* Model performance table */
-  .perf-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; }
-  .perf-table thead { background: #0052FF; color: #fff; }
-  .perf-table thead th { padding: 12px 16px; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; text-align: center; }
-  .perf-table thead th:first-child { text-align: left; }
-  .perf-table tbody tr { border-bottom: 1px solid #E2E8F0; transition: background .15s; }
-  .perf-table tbody tr:last-child { border-bottom: none; }
-  .perf-table tbody tr:hover { background: #F8FAFC; }
-  .perf-table tbody td { padding: 10px 16px; color: #334155; text-align: center; }
-  .perf-table tbody td:first-child { text-align: left; font-weight: 600; color: #0F172A; }
-  .perf-table .best { color: #16A34A; font-weight: 700; }
-  .perf-table .winner-row { background: #F0FDF4 !important; }
-
-  /* Model method cards */
-  .methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
-  .method-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 20px; }
-  .method-card.winner { border-color: #22C55E; background: #F0FDF4; }
-  .method-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 10px; border-radius: 50px; margin-bottom: 10px; }
-  .method-badge.over { background: #E7F1FD; color: #0052FF; }
-  .method-badge.under { background: #FEF3C7; color: #92400E; }
-  .method-badge.smote { background: #F0FDF4; color: #16A34A; }
-  .method-badge.nearmiss { background: #FFF7ED; color: #C2410C; }
-  .method-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 8px; text-transform: none; letter-spacing: 0; }
-  .method-card p { font-size: 13px; color: #64748B; margin-bottom: 10px; line-height: 1.55; }
-  .method-accuracy { font-size: 1.5rem; font-weight: 900; color: #0052FF; letter-spacing: -0.04em; line-height: 1; }
-  .method-accuracy span { font-size: 13px; font-weight: 500; color: #64748B; }
-  .method-card.winner .method-accuracy { color: #16A34A; }
-
-  /* Code block */
-  .code-block { background: #0F172A; border-radius: 10px; padding: 20px 24px; margin: 16px 0; overflow-x: auto; }
-  .code-block .code-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #64748B; margin-bottom: 12px; }
-  .code-block pre { margin: 0; color: #E2E8F0; font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.7; white-space: pre; }
-
-  /* Takeaway list */
-  .takeaway-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
-  .takeaway-item { display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: start; padding: 16px; background: #fff; border: 1px solid #E2E8F0; border-radius: 8px; }
-  .takeaway-num { width: 28px; height: 28px; background: #0052FF; color: #fff; border-radius: 6px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .takeaway-body p { font-size: 14px; color: #334155; line-height: 1.65; margin: 0; }
-  .takeaway-body strong { color: #0F172A; }
-
-  /* Tech stack */
-  .tech-stack { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; margin-top: 20px; }
-  .tech-item { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 16px 12px; text-align: center; transition: border-color .2s; }
-  .tech-item:hover { border-color: #0052FF; }
-  .tech-item i { font-size: 24px; color: #0052FF; display: block; margin-bottom: 8px; }
-  .tech-item .tech-name { font-size: 13px; font-weight: 700; color: #0F172A; display: block; }
-  .tech-item .tech-role { font-size: 11px; color: #94A3B8; display: block; margin-top: 2px; }
-  .tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-
-  /* Live demo embed */
-  .demo-wrap { border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.06); margin: 20px 0; background: #0F172A; }
-  .demo-wrap iframe { display: block; width: 100%; height: 520px; border: none; }
-  .demo-caption { background: #fff; padding: 12px 16px; font-size: 13px; color: #64748B; border-top: 1px solid #E2E8F0; display: flex; align-items: center; gap: 8px; }
-  .demo-caption i { color: #0052FF; }
-
-  /* Related */
-  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
-  .related-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; text-decoration: none; transition: all .3s ease; display: block; }
-  .related-card:hover { border-color: #0052FF; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,82,255,.12); text-decoration: none; }
-  .related-card .card-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0052FF; margin-bottom: 8px; }
-  .related-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 8px; line-height: 1.4; }
-  .related-card p { font-size: 13px; color: #64748B; line-height: 1.55; margin: 0; }
-  .related-card .card-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600; color: #0052FF; }
-
-  /* CTA */
-  .project-cta { background: #0052FF; padding: 80px 0; text-align: center; color: #fff; }
-  .project-cta .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 16px; }
-  .project-cta h2 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
-  .project-cta p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 420px; margin: 0 auto 32px; line-height: 1.6; }
-  .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .btn-cta-white { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: #fff; color: #0052FF; text-decoration: none; transition: all .3s; }
-  .btn-cta-white:hover { background: #f0f0f0; color: #0052FF; transform: translateY(-2px); text-decoration: none; }
-  .btn-cta-ghost { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); text-decoration: none; transition: all .3s; }
-  .btn-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; text-decoration: none; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 991px) {
-    .toc-sidebar { display: none; }
-    .project-hero h1 { font-size: 2rem; }
-    .findings-grid, .methods-grid, .related-grid, .interaction-grid { grid-template-columns: 1fr; }
-    .hero-stats { flex-direction: column; }
-    .hero-stat { border-right: none; border-bottom: 1px solid #E2E8F0; }
-    .hero-stat:last-child { border-bottom: none; }
-  }
-  @media (max-width: 768px) {
-    .project-hero { padding: 40px 0 0; }
-    .project-hero h1 { font-size: 1.75rem; }
-    .project-body { padding: 50px 0; }
-    .doc-section { margin-bottom: 40px; padding-bottom: 40px; }
-    .demo-wrap iframe { height: 380px; }
-    .takeaway-item { grid-template-columns: 1fr; }
-  }
-
+/* ── BREADCRUMB ── */
+.project-breadcrumb { background: #F8FAFC; border-bottom: 1px solid #E2E8F0; padding: 12px 0; font-size: 13px; }
+.project-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.project-breadcrumb li { display: flex; align-items: center; gap: 6px; color: #475569; }
+.project-breadcrumb li a { color: #475569; text-decoration: none; transition: color .2s; }
+.project-breadcrumb li a:hover { color: #0052FF; }
+.project-breadcrumb li.active { color: #0F172A; font-weight: 600; }
+.project-breadcrumb .sep { color: #CBD5E1; font-size: 11px; }
+/* ── HERO ── */
+.project-hero { background: #F8FAFC; padding: 60px 0 0; border-bottom: 1px solid #E2E8F0; }
+.project-hero .hero-label { display: inline-flex; align-items: center; gap: 8px; background: #E7F1FD; color: #0052FF; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+.project-hero h1 { font-size: 2.75rem; font-weight: 800; color: #0F172A; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
+.project-hero h1 span { color: #0052FF; }
+.project-hero .hero-lead { font-size: 17px; color: #475569; line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 32px; }
+.hero-meta-item .meta-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 4px; }
+.hero-meta-item .meta-value { font-size: 14px; font-weight: 600; color: #0F172A; }
+.hero-stats { display: flex; border-top: 1px solid #E2E8F0; margin-top: 40px; }
+.hero-stat { flex: 1; padding: 28px 20px; text-align: center; border-right: 1px solid #E2E8F0; }
+.hero-stat:last-child { border-right: none; }
+.hero-stat .stat-num { font-size: 2.25rem; font-weight: 900; color: #0052FF; letter-spacing: -0.04em; line-height: 1; display: block; }
+.hero-stat .stat-label { font-size: 12px; color: #64748B; margin-top: 6px; line-height: 1.4; }
+/* ── LAYOUT ── */
+.project-body { padding: 80px 0; }
+.toc-sidebar { position: sticky; top: 90px; }
+.toc-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+.toc-card .toc-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 16px; }
+.toc-list { list-style: none; padding: 0 0 0 16px; margin: 0; border-left: 2px solid #E2E8F0; }
+.toc-list li { margin-bottom: 10px; }
+.toc-list a { font-size: 13px; font-weight: 500; color: #64748B; text-decoration: none; transition: color .2s; line-height: 1.4; display: block; }
+.toc-list a:hover, .toc-list a.active { color: #0052FF; }
+.toc-list a.active { font-weight: 600; }
+.toc-cta { background: #E7F1FD; border-radius: 8px; padding: 18px; margin-top: 20px; text-align: center; }
+.toc-cta p { font-size: 13px; color: #0F172A; line-height: 1.5; margin-bottom: 12px; font-weight: 500; }
+.toc-cta a { display: inline-block; background: #0052FF; color: #fff; font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px; text-decoration: none; transition: background .2s; }
+.toc-cta a:hover { background: #0041cc; color: #fff; }
+/* ── ARTICLE SECTIONS ── */
+.doc-section { margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid #E2E8F0; scroll-margin-top: 90px; }
+.doc-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.doc-section h2 { font-size: 22px; font-weight: 800; color: #0F172A; letter-spacing: -0.025em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.section-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #E7F1FD; border-radius: 8px; color: #0052FF; font-size: 16px; flex-shrink: 0; }
+.doc-section h3 { font-size: 16px; font-weight: 700; color: #0F172A; margin-top: 24px; margin-bottom: 10px; letter-spacing: -0.01em; }
+.doc-section h4 { font-size: 14px; font-weight: 700; color: #0052FF; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .5px; }
+.doc-section p { font-size: 15px; color: #334155; line-height: 1.8; margin-bottom: 14px; }
+.doc-section ul, .doc-section ol { padding-left: 20px; margin-bottom: 14px; }
+.doc-section li { font-size: 15px; color: #334155; line-height: 1.75; margin-bottom: 6px; }
+/* Callouts */
+.callout { background: #E7F1FD; border-left: 4px solid #0052FF; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+.callout p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
+.callout strong { color: #0052FF; }
+.callout-green { background: #F0FDF4; border-left: 4px solid #22C55E; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+.callout-green p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
+.callout-green strong { color: #16A34A; }
+/* Data dictionary */
+.dict-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; }
+.dict-table thead { background: #F8FAFC; }
+.dict-table thead th { padding: 10px 16px; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; color: #0052FF; text-align: left; border-bottom: 2px solid #E2E8F0; }
+.dict-table tbody tr { border-bottom: 1px solid #F1F5F9; }
+.dict-table tbody tr:last-child { border-bottom: none; }
+.dict-table tbody tr:hover { background: #F8FAFC; }
+.dict-table tbody td { padding: 9px 16px; color: #334155; vertical-align: top; }
+.dict-table tbody td:first-child { font-family: 'Courier New', monospace; font-weight: 700; color: #0052FF; font-size: 12px; white-space: nowrap; }
+/* Key findings cards */
+.findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.finding-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 20px; transition: box-shadow .2s, transform .2s; }
+.finding-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,82,255,.1); }
+.finding-icon { width: 40px; height: 40px; background: #E7F1FD; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0052FF; font-size: 18px; margin-bottom: 12px; }
+.finding-card h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; text-transform: none; letter-spacing: 0; color: #0F172A; }
+.finding-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+/* Interaction heatmap-style cards */
+.interaction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.interaction-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; }
+.interaction-card .combo { font-size: 12px; font-weight: 700; color: #0052FF; font-family: 'Courier New', monospace; margin-bottom: 10px; }
+.interaction-card .rate-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.interaction-card .rate-label { font-size: 12px; color: #64748B; }
+.interaction-card .rate-bar-wrap { flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; margin: 0 10px; overflow: hidden; }
+.interaction-card .rate-bar { height: 100%; border-radius: 4px; }
+.rate-bar.buy { background: #0052FF; }
+.rate-bar.no-buy { background: #E2E8F0; }
+.interaction-card .rate-pct { font-size: 12px; font-weight: 700; color: #0F172A; width: 40px; text-align: right; }
+.interaction-card .rate-pct.highlight { color: #0052FF; }
+.interaction-section-title { font-size: 13px; font-weight: 700; color: #0F172A; margin: 24px 0 10px; display: flex; align-items: center; gap: 8px; }
+.interaction-section-title .vs-badge { background: #E7F1FD; color: #0052FF; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 50px; }
+/* Model performance table */
+.perf-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; }
+.perf-table thead { background: #0052FF; color: #fff; }
+.perf-table thead th { padding: 12px 16px; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; text-align: center; }
+.perf-table thead th:first-child { text-align: left; }
+.perf-table tbody tr { border-bottom: 1px solid #E2E8F0; transition: background .15s; }
+.perf-table tbody tr:last-child { border-bottom: none; }
+.perf-table tbody tr:hover { background: #F8FAFC; }
+.perf-table tbody td { padding: 10px 16px; color: #334155; text-align: center; }
+.perf-table tbody td:first-child { text-align: left; font-weight: 600; color: #0F172A; }
+.perf-table .best { color: #16A34A; font-weight: 700; }
+.perf-table .winner-row { background: #F0FDF4 !important; }
+/* Model method cards */
+.methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.method-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 20px; }
+.method-card.winner { border-color: #22C55E; background: #F0FDF4; }
+.method-badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 3px 10px; border-radius: 50px; margin-bottom: 10px; }
+.method-badge.over { background: #E7F1FD; color: #0052FF; }
+.method-badge.under { background: #FEF3C7; color: #92400E; }
+.method-badge.smote { background: #F0FDF4; color: #16A34A; }
+.method-badge.nearmiss { background: #FFF7ED; color: #C2410C; }
+.method-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 8px; text-transform: none; letter-spacing: 0; }
+.method-card p { font-size: 13px; color: #64748B; margin-bottom: 10px; line-height: 1.55; }
+.method-accuracy { font-size: 1.5rem; font-weight: 900; color: #0052FF; letter-spacing: -0.04em; line-height: 1; }
+.method-accuracy span { font-size: 13px; font-weight: 500; color: #64748B; }
+.method-card.winner .method-accuracy { color: #16A34A; }
+/* Code block */
+.code-block { background: #0F172A; border-radius: 10px; padding: 20px 24px; margin: 16px 0; overflow-x: auto; }
+.code-block .code-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #64748B; margin-bottom: 12px; }
+.code-block pre { margin: 0; color: #E2E8F0; font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.7; white-space: pre; }
+/* Takeaway list */
+.takeaway-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.takeaway-item { display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: start; padding: 16px; background: #fff; border: 1px solid #E2E8F0; border-radius: 8px; }
+.takeaway-num { width: 28px; height: 28px; background: #0052FF; color: #fff; border-radius: 6px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.takeaway-body p { font-size: 14px; color: #334155; line-height: 1.65; margin: 0; }
+.takeaway-body strong { color: #0F172A; }
+/* Tech stack */
+.tech-stack { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; margin-top: 20px; }
+.tech-item { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 16px 12px; text-align: center; transition: border-color .2s; }
+.tech-item:hover { border-color: #0052FF; }
+.tech-item i { font-size: 24px; color: #0052FF; display: block; margin-bottom: 8px; }
+.tech-item .tech-name { font-size: 13px; font-weight: 700; color: #0F172A; display: block; }
+.tech-item .tech-role { font-size: 11px; color: #94A3B8; display: block; margin-top: 2px; }
+.tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+/* Live demo embed */
+.demo-wrap { border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.06); margin: 20px 0; background: #0F172A; }
+.demo-wrap iframe { display: block; width: 100%; height: 520px; border: none; }
+.demo-caption { background: #fff; padding: 12px 16px; font-size: 13px; color: #64748B; border-top: 1px solid #E2E8F0; display: flex; align-items: center; gap: 8px; }
+.demo-caption i { color: #0052FF; }
+/* Related */
+.related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.related-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; text-decoration: none; transition: all .3s ease; display: block; }
+.related-card:hover { border-color: #0052FF; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,82,255,.12); text-decoration: none; }
+.related-card .card-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0052FF; margin-bottom: 8px; }
+.related-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 8px; line-height: 1.4; }
+.related-card p { font-size: 13px; color: #64748B; line-height: 1.55; margin: 0; }
+.related-card .card-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600; color: #0052FF; }
+/* CTA */
+.project-cta { background: #0052FF; padding: 80px 0; text-align: center; color: #fff; }
+.project-cta .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 16px; }
+.project-cta h2 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.project-cta p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 420px; margin: 0 auto 32px; line-height: 1.6; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-cta-white { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: #fff; color: #0052FF; text-decoration: none; transition: all .3s; }
+.btn-cta-white:hover { background: #f0f0f0; color: #0052FF; transform: translateY(-2px); text-decoration: none; }
+.btn-cta-ghost { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); text-decoration: none; transition: all .3s; }
+.btn-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; text-decoration: none; }
+/* ── RESPONSIVE ── */
+@media (max-width: 991px) {
+.toc-sidebar { display: none; }
+.project-hero h1 { font-size: 2rem; }
+.findings-grid, .methods-grid, .related-grid, .interaction-grid { grid-template-columns: 1fr; }
+.hero-stats { flex-direction: column; }
+.hero-stat { border-right: none; border-bottom: 1px solid #E2E8F0; }
+.hero-stat:last-child { border-bottom: none; }
+}
+@media (max-width: 768px) {
+.project-hero { padding: 40px 0 0; }
+.project-hero h1 { font-size: 1.75rem; }
+.project-body { padding: 50px 0; }
+.doc-section { margin-bottom: 40px; padding-bottom: 40px; }
+.demo-wrap iframe { height: 380px; }
+.takeaway-item { grid-template-columns: 1fr; }
+}
 </style>
-
 </head>
-
 <body>
-
 <div id="preloader"></div>
-
 <!-- =========================================
-  TOP BAR
+TOP BAR
 ========================================== -->
 <div id="topbar" class="d-flex align-items-center fixed-top">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope-fill"></i>
-      <i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
-      <i class="bi bi-phone-fill ms-3"></i>
-      <i><span>+234 816 273 5399</span></i>
-    </div>
-    <div class="social-links d-none d-md-flex align-items-center">
-      <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
-    </div>
-  </div>
+<div class="container d-flex justify-content-between align-items-center">
+<div class="contact-info d-flex align-items-center">
+<i class="bi bi-envelope-fill"></i>
+<i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+<i class="bi bi-phone-fill ms-3"></i>
+<i><span>+234 816 273 5399</span></i>
 </div>
-
+<div class="social-links d-none d-md-flex align-items-center">
+<a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+<a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+</div>
+</div>
+</div>
 <!-- =========================================
-  HEADER
+HEADER
 ========================================== -->
 <header id="header" class="fixed-top" style="top:40px;">
-  <div class="container d-flex align-items-center justify-content-between">
-    <h1 class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></h1>
-    <nav class="navbar" aria-label="Site navigation">
-      <ul>
-        <li><a href="../index.html#hero">Home</a></li>
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#featured-services">Services</a></li>
-        <li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
-        <li><a href="../index.html#faq">Blog</a></li>
-        <li><a href="../index.html#contact">Let's Talk</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
-    </nav>
-  </div>
+<div class="container d-flex align-items-center justify-content-between">
+<h1 class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></h1>
+<nav class="navbar" aria-label="Site navigation">
+<ul>
+<li><a href="../index.html#hero">Home</a></li>
+<li><a href="../index.html#about">About</a></li>
+<li><a href="../index.html#featured-services">Services</a></li>
+<li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
+<li><a href="../index.html#faq">Blog</a></li>
+<li><a href="../index.html#contact">Let's Talk</a></li>
+</ul>
+<i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+</nav>
+</div>
 </header>
-
-
 <!-- =========================================
-  BREADCRUMB
+BREADCRUMB
 ========================================== -->
 <nav class="project-breadcrumb" style="margin-top:126px;" aria-label="Breadcrumb">
-  <div class="container">
-    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-      <span class="sep">›</span>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a>
-        <meta itemprop="position" content="2">
-      </li>
-      <span class="sep">›</span>
-      <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">Lead Scoring &amp; Conversion Prediction</span>
-        <meta itemprop="position" content="3">
-      </li>
-    </ol>
-  </div>
+<div class="container">
+<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a>
+<meta itemprop="position" content="1">
+</li>
+<span class="sep">›</span>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a>
+<meta itemprop="position" content="2">
+</li>
+<span class="sep">›</span>
+<li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<span itemprop="name">Lead Scoring &amp; Conversion Prediction</span>
+<meta itemprop="position" content="3">
+</li>
+</ol>
+</div>
 </nav>
-
-
 <!-- =========================================
-  HERO
+HERO
 ========================================== -->
 <section class="project-hero">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <div class="col-lg-7">
-        <div class="hero-label">
-          <i class="bi bi-bullseye"></i>
-          Machine Learning · Conversion Optimization
-        </div>
-
-        <h1>Predicting <span>Purchase Likelihood</span> from Browsing Behavior</h1>
-
-        <p class="hero-lead">
-          A machine learning case study that identifies which website interactions — reviews, images, specs, warranties — drive purchase decisions, and builds a 99% accurate lead scoring model to help sales teams focus on high-intent prospects.
-        </p>
-
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <div class="meta-label">Tools</div>
-            <div class="meta-value">Python · Scikit-learn · SMOTE · Streamlit</div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="meta-label">Industry</div>
-            <div class="meta-value">E-Commerce · Digital Marketing</div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="meta-label">Type</div>
-            <div class="meta-value">Classification ML · EDA · Lead Scoring</div>
-          </div>
-        </div>
-
-        <div class="d-flex flex-wrap gap-3 pb-4">
-          <a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/" target="_blank" class="btn-get-started-primary">
-            Try Live Demo <i class="bi bi-play-circle"></i>
-          </a>
-          <a href="https://github.com/Adeyemi0/Lead-Scoring" target="_blank" class="btn-get-started-secondary">
-            View on GitHub <i class="bi bi-github"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-5 d-none d-lg-block">
-        <img
-          src="../assets/img/portfolio/lead-scoring.jpg"
-          alt="Lead scoring machine learning model predicting purchase likelihood from browsing behavior"
-          class="img-fluid"
-          style="border-radius:12px; border:1px solid #E2E8F0; box-shadow:0 20px 60px rgba(0,82,255,0.12);"
-          width="560" height="360"
-          loading="eager" fetchpriority="high"
-        >
-      </div>
-
-    </div>
-
-    <!-- Stats strip -->
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="stat-num">99%</span>
-        <span class="stat-label">Model accuracy (SMOTE &amp; Over-Sampling)</span>
-      </div>
-      <div class="hero-stat">
-        <span class="stat-num">58%</span>
-        <span class="stat-label">Purchase rate when images + reviews combined</span>
-      </div>
-      <div class="hero-stat">
-        <span class="stat-num">500</span>
-        <span class="stat-label">User sessions analyzed</span>
-      </div>
-      <div class="hero-stat">
-        <span class="stat-num">4</span>
-        <span class="stat-label">Sampling techniques compared</span>
-      </div>
-    </div>
-
-  </div>
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<div class="hero-label">
+<i class="bi bi-bullseye"></i>
+Machine Learning · Conversion Optimization
+</div>
+<h1>Predicting <span>Purchase Likelihood</span> from Browsing Behavior</h1>
+<p class="hero-lead">
+A machine learning case study that identifies which website interactions — reviews, images, specs, warranties — drive purchase decisions, and builds a 99% accurate lead scoring model to help sales teams focus on high-intent prospects.
+</p>
+<div class="hero-meta">
+<div class="hero-meta-item">
+<div class="meta-label">Tools</div>
+<div class="meta-value">Python · Scikit-learn · SMOTE · Streamlit</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Industry</div>
+<div class="meta-value">E-Commerce · Digital Marketing</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Type</div>
+<div class="meta-value">Classification ML · EDA · Lead Scoring</div>
+</div>
+</div>
+<div class="d-flex flex-wrap gap-3 pb-4">
+<a href="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/" target="_blank" class="btn-get-started-primary">
+Try Live Demo <i class="bi bi-play-circle"></i>
+</a>
+<a href="https://github.com/Adeyemi0/Lead-Scoring" target="_blank" class="btn-get-started-secondary">
+View on GitHub <i class="bi bi-github"></i>
+</a>
+</div>
+</div>
+<div class="col-lg-5 d-none d-lg-block">
+<img
+src="../assets/img/portfolio/lead-scoring.jpg"
+alt="Lead scoring machine learning model predicting purchase likelihood from browsing behavior"
+class="img-fluid"
+style="border-radius:12px; border:1px solid #E2E8F0; box-shadow:0 20px 60px rgba(0,82,255,0.12);"
+width="560" height="360"
+loading="eager" fetchpriority="high"
+>
+</div>
+</div>
+<!-- Stats strip -->
+<div class="hero-stats">
+<div class="hero-stat">
+<span class="stat-num">99%</span>
+<span class="stat-label">Model accuracy (SMOTE &amp; Over-Sampling)</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">58%</span>
+<span class="stat-label">Purchase rate when images + reviews combined</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">500</span>
+<span class="stat-label">User sessions analyzed</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">4</span>
+<span class="stat-label">Sampling techniques compared</span>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- =========================================
-  MAIN CONTENT
+MAIN CONTENT
 ========================================== -->
 <section class="project-body">
-  <div class="container">
-    <div class="row">
-
-      <!-- TOC -->
-      <div class="col-lg-3 d-none d-lg-block">
-        <aside class="toc-sidebar" aria-label="Table of contents">
-          <div class="toc-card">
-            <p class="toc-heading">On This Page</p>
-            <ul class="toc-list">
-              <li><a href="#overview">Project Overview</a></li>
-              <li><a href="#dictionary">Data Dictionary</a></li>
-              <li><a href="#executive-summary">Executive Summary</a></li>
-              <li><a href="#eda">Exploratory Analysis</a></li>
-              <li><a href="#interactions">Interaction Analysis</a></li>
-              <li><a href="#takeaways">Key Takeaways</a></li>
-              <li><a href="#models">ML Models</a></li>
-              <li><a href="#performance">Model Performance</a></li>
-              <li><a href="#live-demo">Live Demo</a></li>
-              <li><a href="#recommendations">Recommendations</a></li>
-              <li><a href="#limitations">Limitations</a></li>
-              <li><a href="#related">Related Projects</a></li>
-            </ul>
-            <div class="toc-cta">
-              <p>Want a lead scoring model for your business?</p>
-              <a href="../index.html#contact">Let's Talk →</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-
-      <!-- Article -->
-      <div class="col-lg-9">
-        <article itemscope itemtype="https://schema.org/TechArticle">
-          <meta itemprop="author" content="Adediran Adeyemi">
-          <meta itemprop="datePublished" content="2024-11-01">
-          <meta itemprop="headline" content="Lead Scoring & Conversion Prediction Model – 99% Accuracy">
-
-
-          <!-- OVERVIEW -->
-          <div class="doc-section" id="overview">
-            <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
-            <p>
-              In an increasingly competitive digital marketplace, understanding what drives users to make purchases is critical for optimizing websites and increasing conversion rates. This project investigates the browsing behavior of users and how various on-page actions — viewing images, reading reviews, checking product specifications, comparing similar items — influence their purchasing decisions.
-            </p>
-            <p>
-              The primary output is a deployed lead scoring model that classifies sessions by purchase likelihood, allowing sales and marketing teams to focus intervention efforts on the highest-intent prospects rather than treating every visitor identically.
-            </p>
-            <div class="callout-green">
-              <p><strong>Bottom line:</strong> Reviews are the single strongest driver of purchase behavior. Users who viewed reviews were significantly more likely to buy — even without images. Combining reviews with images produced the highest conversion rate of any interaction pair at <strong>58.33%</strong>.</p>
-            </div>
-          </div>
-
-
-          <!-- DICTIONARY -->
-          <div class="doc-section" id="dictionary">
-            <h2><span class="section-icon"><i class="bi bi-table"></i></span> Data Dictionary</h2>
-            <p>The dataset captures binary interaction signals from 500 user sessions on an e-commerce product page. Each variable records whether a user engaged with a specific page element:</p>
-
-            <div style="overflow-x:auto;">
-              <table class="dict-table">
-                <thead><tr><th>Variable</th><th>Description</th></tr></thead>
-                <tbody>
-                  <tr><td>SESSION_ID</td><td>Unique identifier for each user session</td></tr>
-                  <tr><td>IMAGES</td><td>Whether the user viewed product images (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>REVIEWS</td><td>Whether the user read product reviews (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>FAQ</td><td>Whether the user viewed the FAQ section (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>SPECS</td><td>Whether the user viewed product specifications (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>SHIPPING</td><td>Whether the user viewed shipping information (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>BRO_TOGETHER</td><td>Whether the user browsed similar items together (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>COMPARE_SIMILAR</td><td>Whether the user compared similar items (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>VIEW_SIMILAR</td><td>Whether the user viewed similar items (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>WARRANTY</td><td>Whether the user checked product warranty (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>SPONSORED_LINKS</td><td>Whether the user clicked on sponsored links (1 = Yes, 0 = No)</td></tr>
-                  <tr><td>BUY</td><td>Whether the user made a purchase during the session (1 = Yes, 0 = No) — <strong>target variable</strong></td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-
-          <!-- EXECUTIVE SUMMARY -->
-          <div class="doc-section" id="executive-summary">
-            <h2><span class="section-icon"><i class="bi bi-clipboard-data"></i></span> Executive Summary</h2>
-            <p>
-              Out of 500 user sessions, 185 resulted in a purchase (37%) and 315 did not (63%). This class imbalance was a key challenge addressed in the modeling phase. The analysis identifies which browsing behaviors are most predictive of purchase intent — and which combinations create the strongest synergy.
-            </p>
-
-            <div class="findings-grid">
-              <div class="finding-card">
-                <div class="finding-icon"><i class="bi bi-star-fill"></i></div>
-                <h4>Reviews Drive Purchases</h4>
-                <p>Users who viewed reviews were significantly more likely to buy — even without viewing images. Reviews alone produced a 53.57% purchase rate.</p>
-              </div>
-              <div class="finding-card">
-                <div class="finding-icon"><i class="bi bi-images"></i></div>
-                <h4>Images + Reviews = Highest Conversion</h4>
-                <p>The combination of images and reviews produced the highest purchase rate of any interaction pair: <strong>58.33%</strong> — the strongest signal in the dataset.</p>
-              </div>
-              <div class="finding-card">
-                <div class="finding-icon"><i class="bi bi-file-earmark-text"></i></div>
-                <h4>Specs Support, Not Lead</h4>
-                <p>Product specifications alone achieve only 25% purchase rate. But paired with reviews, this jumps to 46.43% — specs amplify other signals rather than driving purchases on their own.</p>
-              </div>
-              <div class="finding-card">
-                <div class="finding-icon"><i class="bi bi-shield-check"></i></div>
-                <h4>Warranty + Specs Passes 50%</h4>
-                <p>Combining warranty information with product specifications crosses the 50% purchase likelihood threshold at 51.85% — the strongest non-reviews combination.</p>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- EDA -->
-          <div class="doc-section" id="eda">
-            <h2><span class="section-icon"><i class="bi bi-search"></i></span> Exploratory Data Analysis</h2>
-
-            <h3>Class Distribution</h3>
-            <p>The target variable showed a meaningful class imbalance — a critical finding that shaped the modeling approach:</p>
-
-            <div class="code-block">
-              <div class="code-label">BUY Variable Distribution</div>
-              <pre>
+<div class="container">
+<div class="row">
+<!-- TOC -->
+<div class="col-lg-3 d-none d-lg-block">
+<aside class="toc-sidebar" aria-label="Table of contents">
+<div class="toc-card">
+<p class="toc-heading">On This Page</p>
+<ul class="toc-list">
+<li><a href="#overview">Project Overview</a></li>
+<li><a href="#dictionary">Data Dictionary</a></li>
+<li><a href="#executive-summary">Executive Summary</a></li>
+<li><a href="#eda">Exploratory Analysis</a></li>
+<li><a href="#interactions">Interaction Analysis</a></li>
+<li><a href="#takeaways">Key Takeaways</a></li>
+<li><a href="#models">ML Models</a></li>
+<li><a href="#performance">Model Performance</a></li>
+<li><a href="#live-demo">Live Demo</a></li>
+<li><a href="#recommendations">Recommendations</a></li>
+<li><a href="#limitations">Limitations</a></li>
+<li><a href="#related">Related Projects</a></li>
+</ul>
+<div class="toc-cta">
+<p>Want a lead scoring model for your business?</p>
+<a href="../index.html#contact">Let's Talk →</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- Article -->
+<div class="col-lg-9">
+<article itemscope itemtype="https://schema.org/TechArticle">
+<meta itemprop="author" content="Adediran Adeyemi">
+<meta itemprop="datePublished" content="2024-11-01">
+<meta itemprop="headline" content="Lead Scoring & Conversion Prediction Model – 99% Accuracy">
+<!-- OVERVIEW -->
+<div class="doc-section" id="overview">
+<h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
+<p>
+In an increasingly competitive digital marketplace, understanding what drives users to make purchases is critical for optimizing websites and increasing conversion rates. This project investigates the browsing behavior of users and how various on-page actions — viewing images, reading reviews, checking product specifications, comparing similar items — influence their purchasing decisions.
+</p>
+<p>
+The primary output is a deployed lead scoring model that classifies sessions by purchase likelihood, allowing sales and marketing teams to focus intervention efforts on the highest-intent prospects rather than treating every visitor identically.
+</p>
+<div class="callout-green">
+<p><strong>Bottom line:</strong> Reviews are the single strongest driver of purchase behavior. Users who viewed reviews were significantly more likely to buy — even without images. Combining reviews with images produced the highest conversion rate of any interaction pair at <strong>58.33%</strong>.</p>
+</div>
+</div>
+<!-- DICTIONARY -->
+<div class="doc-section" id="dictionary">
+<h2><span class="section-icon"><i class="bi bi-table"></i></span> Data Dictionary</h2>
+<p>The dataset captures binary interaction signals from 500 user sessions on an e-commerce product page. Each variable records whether a user engaged with a specific page element:</p>
+<div style="overflow-x:auto;">
+<table class="dict-table">
+<thead><tr><th>Variable</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>SESSION_ID</td><td>Unique identifier for each user session</td></tr>
+<tr><td>IMAGES</td><td>Whether the user viewed product images (1 = Yes, 0 = No)</td></tr>
+<tr><td>REVIEWS</td><td>Whether the user read product reviews (1 = Yes, 0 = No)</td></tr>
+<tr><td>FAQ</td><td>Whether the user viewed the FAQ section (1 = Yes, 0 = No)</td></tr>
+<tr><td>SPECS</td><td>Whether the user viewed product specifications (1 = Yes, 0 = No)</td></tr>
+<tr><td>SHIPPING</td><td>Whether the user viewed shipping information (1 = Yes, 0 = No)</td></tr>
+<tr><td>BRO_TOGETHER</td><td>Whether the user browsed similar items together (1 = Yes, 0 = No)</td></tr>
+<tr><td>COMPARE_SIMILAR</td><td>Whether the user compared similar items (1 = Yes, 0 = No)</td></tr>
+<tr><td>VIEW_SIMILAR</td><td>Whether the user viewed similar items (1 = Yes, 0 = No)</td></tr>
+<tr><td>WARRANTY</td><td>Whether the user checked product warranty (1 = Yes, 0 = No)</td></tr>
+<tr><td>SPONSORED_LINKS</td><td>Whether the user clicked on sponsored links (1 = Yes, 0 = No)</td></tr>
+<tr><td>BUY</td><td>Whether the user made a purchase during the session (1 = Yes, 0 = No) — <strong>target variable</strong></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- EXECUTIVE SUMMARY -->
+<div class="doc-section" id="executive-summary">
+<h2><span class="section-icon"><i class="bi bi-clipboard-data"></i></span> Executive Summary</h2>
+<p>
+Out of 500 user sessions, 185 resulted in a purchase (37%) and 315 did not (63%). This class imbalance was a key challenge addressed in the modeling phase. The analysis identifies which browsing behaviors are most predictive of purchase intent — and which combinations create the strongest synergy.
+</p>
+<div class="findings-grid">
+<div class="finding-card">
+<div class="finding-icon"><i class="bi bi-star-fill"></i></div>
+<h4>Reviews Drive Purchases</h4>
+<p>Users who viewed reviews were significantly more likely to buy — even without viewing images. Reviews alone produced a 53.57% purchase rate.</p>
+</div>
+<div class="finding-card">
+<div class="finding-icon"><i class="bi bi-images"></i></div>
+<h4>Images + Reviews = Highest Conversion</h4>
+<p>The combination of images and reviews produced the highest purchase rate of any interaction pair: <strong>58.33%</strong> — the strongest signal in the dataset.</p>
+</div>
+<div class="finding-card">
+<div class="finding-icon"><i class="bi bi-file-earmark-text"></i></div>
+<h4>Specs Support, Not Lead</h4>
+<p>Product specifications alone achieve only 25% purchase rate. But paired with reviews, this jumps to 46.43% — specs amplify other signals rather than driving purchases on their own.</p>
+</div>
+<div class="finding-card">
+<div class="finding-icon"><i class="bi bi-shield-check"></i></div>
+<h4>Warranty + Specs Passes 50%</h4>
+<p>Combining warranty information with product specifications crosses the 50% purchase likelihood threshold at 51.85% — the strongest non-reviews combination.</p>
+</div>
+</div>
+</div>
+<!-- EDA -->
+<div class="doc-section" id="eda">
+<h2><span class="section-icon"><i class="bi bi-search"></i></span> Exploratory Data Analysis</h2>
+<h3>Class Distribution</h3>
+<p>The target variable showed a meaningful class imbalance — a critical finding that shaped the modeling approach:</p>
+<div class="code-block">
+<div class="code-label">BUY Variable Distribution</div>
+<pre>
 BUY
 0    315    (63.0%) — did not purchase
 1    185    (37.0%) — made a purchase
 Total: 500 sessions</pre>
-            </div>
-
-            <p>
-              With a 63/37 split, naive models trained on raw data would be biased toward predicting non-purchases. Four resampling techniques were evaluated to address this: Random Under-Sampling, Random Over-Sampling, SMOTE, and NearMiss.
-            </p>
-
-            <h3>Analytical Techniques Applied</h3>
-            <ul>
-              <li><strong>Summary Statistics</strong> — mean, median, variance, and standard deviation for all binary interaction variables</li>
-              <li><strong>Contingency Tables</strong> — crosstab analysis between each behavioral variable and the BUY outcome to measure individual impact</li>
-              <li><strong>Correlation Heatmap</strong> — visualizing which features had the strongest linear relationship with purchase behavior</li>
-              <li><strong>Interaction Heatmaps</strong> — pairwise analysis of feature combinations to identify synergistic effects on conversion</li>
-            </ul>
-          </div>
-
-
-          <!-- INTERACTIONS -->
-          <div class="doc-section" id="interactions">
-            <h2><span class="section-icon"><i class="bi bi-grid-3x3-gap"></i></span> Interaction Analysis</h2>
-            <p>
-              The most valuable EDA finding was how <em>combinations</em> of page elements affect purchase likelihood — not just individual elements. Each interaction pair was analyzed as a 2×2 contingency table.
-            </p>
-
-            <!-- IMAGES vs REVIEWS -->
-            <div class="interaction-section-title">
-              <span class="vs-badge">Images vs Reviews</span>
-              The most impactful feature pair
-            </div>
-            <div class="interaction-grid">
-              <div class="interaction-card">
-                <div class="combo">IMAGES=0, REVIEWS=0</div>
-                <div class="rate-row">
-                  <span class="rate-label">Did not buy</span>
-                  <div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:90.48%"></div></div>
-                  <span class="rate-pct">90.5%</span>
-                </div>
-                <div class="rate-row">
-                  <span class="rate-label">Purchased</span>
-                  <div class="rate-bar-wrap"><div class="rate-bar buy" style="width:9.52%"></div></div>
-                  <span class="rate-pct highlight">9.5%</span>
-                </div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">IMAGES=0, REVIEWS=1</div>
-                <div class="rate-row">
-                  <span class="rate-label">Did not buy</span>
-                  <div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:46.43%"></div></div>
-                  <span class="rate-pct">46.4%</span>
-                </div>
-                <div class="rate-row">
-                  <span class="rate-label">Purchased</span>
-                  <div class="rate-bar-wrap"><div class="rate-bar buy" style="width:53.57%"></div></div>
-                  <span class="rate-pct highlight">53.6%</span>
-                </div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">IMAGES=1, REVIEWS=0</div>
-                <div class="rate-row">
-                  <span class="rate-label">Did not buy</span>
-                  <div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:77.78%"></div></div>
-                  <span class="rate-pct">77.8%</span>
-                </div>
-                <div class="rate-row">
-                  <span class="rate-label">Purchased</span>
-                  <div class="rate-bar-wrap"><div class="rate-bar buy" style="width:22.22%"></div></div>
-                  <span class="rate-pct highlight">22.2%</span>
-                </div>
-              </div>
-              <div class="interaction-card" style="border-color:#0052FF;">
-                <div class="combo" style="color:#16A34A;">IMAGES=1, REVIEWS=1 ★ Highest</div>
-                <div class="rate-row">
-                  <span class="rate-label">Did not buy</span>
-                  <div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:41.67%"></div></div>
-                  <span class="rate-pct">41.7%</span>
-                </div>
-                <div class="rate-row">
-                  <span class="rate-label">Purchased</span>
-                  <div class="rate-bar-wrap"><div class="rate-bar buy" style="width:58.33%"></div></div>
-                  <span class="rate-pct highlight">58.3%</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- SPECS vs REVIEWS -->
-            <div class="interaction-section-title">
-              <span class="vs-badge">Specs vs Reviews</span>
-              Reviews dominate even without specs
-            </div>
-            <div class="interaction-grid">
-              <div class="interaction-card">
-                <div class="combo">SPECS=0, REVIEWS=0</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:89.29%"></div></div><span class="rate-pct">89.3%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:10.71%"></div></div><span class="rate-pct highlight">10.7%</span></div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">SPECS=0, REVIEWS=1</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:33.33%"></div></div><span class="rate-pct">33.3%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:66.67%"></div></div><span class="rate-pct highlight">66.7%</span></div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">SPECS=1, REVIEWS=0</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:75%"></div></div><span class="rate-pct">75.0%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:25%"></div></div><span class="rate-pct highlight">25.0%</span></div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">SPECS=1, REVIEWS=1</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:53.57%"></div></div><span class="rate-pct">53.6%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:46.43%"></div></div><span class="rate-pct highlight">46.4%</span></div>
-              </div>
-            </div>
-
-            <!-- WARRANTY vs SPECS -->
-            <div class="interaction-section-title">
-              <span class="vs-badge">Warranty vs Specs</span>
-              The strongest non-reviews combination
-            </div>
-            <div class="interaction-grid">
-              <div class="interaction-card">
-                <div class="combo">WARRANTY=0, SPECS=0</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:65.12%"></div></div><span class="rate-pct">65.1%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:34.88%"></div></div><span class="rate-pct highlight">34.9%</span></div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">WARRANTY=0, SPECS=1</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:80.95%"></div></div><span class="rate-pct">81.0%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:19.05%"></div></div><span class="rate-pct highlight">19.1%</span></div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">WARRANTY=1, SPECS=0</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:61.83%"></div></div><span class="rate-pct">61.8%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:38.17%"></div></div><span class="rate-pct highlight">38.2%</span></div>
-              </div>
-              <div class="interaction-card" style="border-color:#22C55E;">
-                <div class="combo" style="color:#16A34A;">WARRANTY=1, SPECS=1 ★ Best combo</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:48.15%"></div></div><span class="rate-pct">48.2%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:51.85%"></div></div><span class="rate-pct highlight">51.9%</span></div>
-              </div>
-            </div>
-
-            <!-- COMPARE vs SPONSORED -->
-            <div class="interaction-section-title">
-              <span class="vs-badge">Compare Similar vs Sponsored Links</span>
-              Comparison beats paid clicks
-            </div>
-            <div class="interaction-grid">
-              <div class="interaction-card">
-                <div class="combo">COMPARE=0, SPONSORED=0</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:71.43%"></div></div><span class="rate-pct">71.4%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:28.57%"></div></div><span class="rate-pct highlight">28.6%</span></div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">COMPARE=0, SPONSORED=1</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:76.19%"></div></div><span class="rate-pct">76.2%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:23.81%"></div></div><span class="rate-pct highlight">23.8%</span></div>
-              </div>
-              <div class="interaction-card">
-                <div class="combo">COMPARE=1, SPONSORED=0</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:66.67%"></div></div><span class="rate-pct">66.7%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:33.33%"></div></div><span class="rate-pct highlight">33.3%</span></div>
-              </div>
-              <div class="interaction-card" style="border-color:#0052FF;">
-                <div class="combo" style="color:#16A34A;">COMPARE=1, SPONSORED=1 ★ Best combo</div>
-                <div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:47.06%"></div></div><span class="rate-pct">47.1%</span></div>
-                <div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:52.94%"></div></div><span class="rate-pct highlight">52.9%</span></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- TAKEAWAYS -->
-          <div class="doc-section" id="takeaways">
-            <h2><span class="section-icon"><i class="bi bi-lightbulb"></i></span> Key Takeaways from Interaction Analysis</h2>
-
-            <div class="takeaway-list">
-              <div class="takeaway-item">
-                <div class="takeaway-num">1</div>
-                <div class="takeaway-body"><p><strong>Reviews are the #1 conversion driver.</strong> Reviews alone achieve a 53.57% purchase rate — higher than images alone (22.22%) or specs alone (25%). No other single feature comes close.</p></div>
-              </div>
-              <div class="takeaway-item">
-                <div class="takeaway-num">2</div>
-                <div class="takeaway-body"><p><strong>Images alone have a weaker influence than expected.</strong> Images without reviews convert at only 22.22% — less than half the rate of reviews without images. Visuals support the decision but don't drive it.</p></div>
-              </div>
-              <div class="takeaway-item">
-                <div class="takeaway-num">3</div>
-                <div class="takeaway-body"><p><strong>Specs need reviews to be effective.</strong> Specs without reviews convert at just 25%. Combined with reviews, this doubles to 46.43%. Specifications answer objections — but reviews create the initial intent.</p></div>
-              </div>
-              <div class="takeaway-item">
-                <div class="takeaway-num">4</div>
-                <div class="takeaway-body"><p><strong>FAQ alone does not significantly drive purchases.</strong> FAQ without images converts at only 21.74%. Users who view FAQs tend to have objections — those objections aren't resolved unless visuals are also present.</p></div>
-              </div>
-              <div class="takeaway-item">
-                <div class="takeaway-num">5</div>
-                <div class="takeaway-body"><p><strong>Warranty information enhances but doesn't replace other signals.</strong> Warranty + specs crosses the 50% threshold (51.85%) — making it the strongest purely informational combination outside of reviews.</p></div>
-              </div>
-              <div class="takeaway-item">
-                <div class="takeaway-num">6</div>
-                <div class="takeaway-body"><p><strong>Comparing similar items outperforms sponsored links.</strong> Users who compare items convert at 33.33% — higher than those who only click sponsored links (23.81%). Active research behavior signals stronger purchase intent than ad clicks.</p></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- MODELS -->
-          <div class="doc-section" id="models">
-            <h2><span class="section-icon"><i class="bi bi-cpu"></i></span> Machine Learning Models</h2>
-            <p>
-              Four resampling techniques were evaluated to address the 63/37 class imbalance before training a classification model. Each approach handles imbalance differently — the comparison reveals which produces the most reliable predictions:
-            </p>
-
-            <div class="methods-grid">
-              <div class="method-card">
-                <span class="method-badge under">Under-Sampling</span>
-                <h4>Random Under-Sampling</h4>
-                <p>Reduces the majority class (non-buyers) by randomly removing examples until classes are balanced. Creates a smaller but balanced training set.</p>
-                <div class="method-accuracy">97% <span>accuracy</span></div>
-              </div>
-              <div class="method-card winner">
-                <span class="method-badge over">Over-Sampling</span>
-                <h4>Random Over-Sampling</h4>
-                <p>Duplicates minority class (buyer) samples to match the majority class size. Preserves all original data while balancing the training distribution.</p>
-                <div class="method-accuracy">99% <span>accuracy</span></div>
-              </div>
-              <div class="method-card winner">
-                <span class="method-badge smote">SMOTE</span>
-                <h4>SMOTE</h4>
-                <p>Generates <em>synthetic</em> minority class samples by interpolating between existing buyer examples — more robust than simple duplication.</p>
-                <div class="method-accuracy">99% <span>accuracy</span></div>
-              </div>
-              <div class="method-card">
-                <span class="method-badge nearmiss">NearMiss</span>
-                <h4>NearMiss</h4>
-                <p>Selects majority class examples based on proximity to minority class examples — a more intelligent form of under-sampling.</p>
-                <div class="method-accuracy">97% <span>accuracy</span></div>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- PERFORMANCE -->
-          <div class="doc-section" id="performance">
-            <h2><span class="section-icon"><i class="bi bi-bar-chart-steps"></i></span> Model Performance Comparison</h2>
-            <p>
-              All four models were evaluated on precision, recall, F1-score, and accuracy. Random Over-Sampling and SMOTE both achieved 99% accuracy with near-perfect precision and recall across both classes:
-            </p>
-
-            <div style="overflow-x:auto;">
-              <table class="perf-table">
-                <thead>
-                  <tr>
-                    <th>Metric</th>
-                    <th>Under-Sampling</th>
-                    <th>Over-Sampling</th>
-                    <th>SMOTE</th>
-                    <th>NearMiss</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>Precision (Class 0)</td><td>1.00</td><td class="best">1.00</td><td class="best">1.00</td><td>1.00</td></tr>
-                  <tr><td>Precision (Class 1)</td><td>0.95</td><td class="best">0.98</td><td class="best">0.98</td><td>0.95</td></tr>
-                  <tr><td>Recall (Class 0)</td><td>0.95</td><td class="best">0.98</td><td class="best">0.98</td><td>0.95</td></tr>
-                  <tr><td>Recall (Class 1)</td><td>1.00</td><td class="best">1.00</td><td class="best">1.00</td><td>1.00</td></tr>
-                  <tr><td>F1-Score (Class 0)</td><td>0.97</td><td class="best">0.99</td><td class="best">0.99</td><td>0.97</td></tr>
-                  <tr><td>F1-Score (Class 1)</td><td>0.97</td><td class="best">0.99</td><td class="best">0.99</td><td>0.97</td></tr>
-                  <tr class="winner-row"><td><strong>Overall Accuracy</strong></td><td>0.97</td><td class="best"><strong>0.99</strong></td><td class="best"><strong>0.99</strong></td><td>0.97</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h3>Detailed Results: Best Models</h3>
-
-            <div class="code-block">
-              <div class="code-label">Random Over-Sampling — Classification Report</div>
-              <pre>
-              precision    recall  f1-score   support
-
-           0       1.00      0.98      0.99       100
-           1       0.98      1.00      0.99        89
-
-    accuracy                           0.99       189
-   macro avg       0.99      0.99      0.99       189
+</div>
+<p>
+With a 63/37 split, naive models trained on raw data would be biased toward predicting non-purchases. Four resampling techniques were evaluated to address this: Random Under-Sampling, Random Over-Sampling, SMOTE, and NearMiss.
+</p>
+<h3>Analytical Techniques Applied</h3>
+<ul>
+<li><strong>Summary Statistics</strong> — mean, median, variance, and standard deviation for all binary interaction variables</li>
+<li><strong>Contingency Tables</strong> — crosstab analysis between each behavioral variable and the BUY outcome to measure individual impact</li>
+<li><strong>Correlation Heatmap</strong> — visualizing which features had the strongest linear relationship with purchase behavior</li>
+<li><strong>Interaction Heatmaps</strong> — pairwise analysis of feature combinations to identify synergistic effects on conversion</li>
+</ul>
+</div>
+<!-- INTERACTIONS -->
+<div class="doc-section" id="interactions">
+<h2><span class="section-icon"><i class="bi bi-grid-3x3-gap"></i></span> Interaction Analysis</h2>
+<p>
+The most valuable EDA finding was how <em>combinations</em> of page elements affect purchase likelihood — not just individual elements. Each interaction pair was analyzed as a 2×2 contingency table.
+</p>
+<!-- IMAGES vs REVIEWS -->
+<div class="interaction-section-title">
+<span class="vs-badge">Images vs Reviews</span>
+The most impactful feature pair
+</div>
+<div class="interaction-grid">
+<div class="interaction-card">
+<div class="combo">IMAGES=0, REVIEWS=0</div>
+<div class="rate-row">
+<span class="rate-label">Did not buy</span>
+<div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:90.48%"></div></div>
+<span class="rate-pct">90.5%</span>
+</div>
+<div class="rate-row">
+<span class="rate-label">Purchased</span>
+<div class="rate-bar-wrap"><div class="rate-bar buy" style="width:9.52%"></div></div>
+<span class="rate-pct highlight">9.5%</span>
+</div>
+</div>
+<div class="interaction-card">
+<div class="combo">IMAGES=0, REVIEWS=1</div>
+<div class="rate-row">
+<span class="rate-label">Did not buy</span>
+<div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:46.43%"></div></div>
+<span class="rate-pct">46.4%</span>
+</div>
+<div class="rate-row">
+<span class="rate-label">Purchased</span>
+<div class="rate-bar-wrap"><div class="rate-bar buy" style="width:53.57%"></div></div>
+<span class="rate-pct highlight">53.6%</span>
+</div>
+</div>
+<div class="interaction-card">
+<div class="combo">IMAGES=1, REVIEWS=0</div>
+<div class="rate-row">
+<span class="rate-label">Did not buy</span>
+<div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:77.78%"></div></div>
+<span class="rate-pct">77.8%</span>
+</div>
+<div class="rate-row">
+<span class="rate-label">Purchased</span>
+<div class="rate-bar-wrap"><div class="rate-bar buy" style="width:22.22%"></div></div>
+<span class="rate-pct highlight">22.2%</span>
+</div>
+</div>
+<div class="interaction-card" style="border-color:#0052FF;">
+<div class="combo" style="color:#16A34A;">IMAGES=1, REVIEWS=1 ★ Highest</div>
+<div class="rate-row">
+<span class="rate-label">Did not buy</span>
+<div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:41.67%"></div></div>
+<span class="rate-pct">41.7%</span>
+</div>
+<div class="rate-row">
+<span class="rate-label">Purchased</span>
+<div class="rate-bar-wrap"><div class="rate-bar buy" style="width:58.33%"></div></div>
+<span class="rate-pct highlight">58.3%</span>
+</div>
+</div>
+</div>
+<!-- SPECS vs REVIEWS -->
+<div class="interaction-section-title">
+<span class="vs-badge">Specs vs Reviews</span>
+Reviews dominate even without specs
+</div>
+<div class="interaction-grid">
+<div class="interaction-card">
+<div class="combo">SPECS=0, REVIEWS=0</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:89.29%"></div></div><span class="rate-pct">89.3%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:10.71%"></div></div><span class="rate-pct highlight">10.7%</span></div>
+</div>
+<div class="interaction-card">
+<div class="combo">SPECS=0, REVIEWS=1</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:33.33%"></div></div><span class="rate-pct">33.3%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:66.67%"></div></div><span class="rate-pct highlight">66.7%</span></div>
+</div>
+<div class="interaction-card">
+<div class="combo">SPECS=1, REVIEWS=0</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:75%"></div></div><span class="rate-pct">75.0%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:25%"></div></div><span class="rate-pct highlight">25.0%</span></div>
+</div>
+<div class="interaction-card">
+<div class="combo">SPECS=1, REVIEWS=1</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:53.57%"></div></div><span class="rate-pct">53.6%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:46.43%"></div></div><span class="rate-pct highlight">46.4%</span></div>
+</div>
+</div>
+<!-- WARRANTY vs SPECS -->
+<div class="interaction-section-title">
+<span class="vs-badge">Warranty vs Specs</span>
+The strongest non-reviews combination
+</div>
+<div class="interaction-grid">
+<div class="interaction-card">
+<div class="combo">WARRANTY=0, SPECS=0</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:65.12%"></div></div><span class="rate-pct">65.1%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:34.88%"></div></div><span class="rate-pct highlight">34.9%</span></div>
+</div>
+<div class="interaction-card">
+<div class="combo">WARRANTY=0, SPECS=1</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:80.95%"></div></div><span class="rate-pct">81.0%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:19.05%"></div></div><span class="rate-pct highlight">19.1%</span></div>
+</div>
+<div class="interaction-card">
+<div class="combo">WARRANTY=1, SPECS=0</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:61.83%"></div></div><span class="rate-pct">61.8%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:38.17%"></div></div><span class="rate-pct highlight">38.2%</span></div>
+</div>
+<div class="interaction-card" style="border-color:#22C55E;">
+<div class="combo" style="color:#16A34A;">WARRANTY=1, SPECS=1 ★ Best combo</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:48.15%"></div></div><span class="rate-pct">48.2%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:51.85%"></div></div><span class="rate-pct highlight">51.9%</span></div>
+</div>
+</div>
+<!-- COMPARE vs SPONSORED -->
+<div class="interaction-section-title">
+<span class="vs-badge">Compare Similar vs Sponsored Links</span>
+Comparison beats paid clicks
+</div>
+<div class="interaction-grid">
+<div class="interaction-card">
+<div class="combo">COMPARE=0, SPONSORED=0</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:71.43%"></div></div><span class="rate-pct">71.4%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:28.57%"></div></div><span class="rate-pct highlight">28.6%</span></div>
+</div>
+<div class="interaction-card">
+<div class="combo">COMPARE=0, SPONSORED=1</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:76.19%"></div></div><span class="rate-pct">76.2%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:23.81%"></div></div><span class="rate-pct highlight">23.8%</span></div>
+</div>
+<div class="interaction-card">
+<div class="combo">COMPARE=1, SPONSORED=0</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:66.67%"></div></div><span class="rate-pct">66.7%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:33.33%"></div></div><span class="rate-pct highlight">33.3%</span></div>
+</div>
+<div class="interaction-card" style="border-color:#0052FF;">
+<div class="combo" style="color:#16A34A;">COMPARE=1, SPONSORED=1 ★ Best combo</div>
+<div class="rate-row"><span class="rate-label">Did not buy</span><div class="rate-bar-wrap"><div class="rate-bar no-buy" style="width:47.06%"></div></div><span class="rate-pct">47.1%</span></div>
+<div class="rate-row"><span class="rate-label">Purchased</span><div class="rate-bar-wrap"><div class="rate-bar buy" style="width:52.94%"></div></div><span class="rate-pct highlight">52.9%</span></div>
+</div>
+</div>
+</div>
+<!-- TAKEAWAYS -->
+<div class="doc-section" id="takeaways">
+<h2><span class="section-icon"><i class="bi bi-lightbulb"></i></span> Key Takeaways from Interaction Analysis</h2>
+<div class="takeaway-list">
+<div class="takeaway-item">
+<div class="takeaway-num">1</div>
+<div class="takeaway-body"><p><strong>Reviews are the #1 conversion driver.</strong> Reviews alone achieve a 53.57% purchase rate — higher than images alone (22.22%) or specs alone (25%). No other single feature comes close.</p></div>
+</div>
+<div class="takeaway-item">
+<div class="takeaway-num">2</div>
+<div class="takeaway-body"><p><strong>Images alone have a weaker influence than expected.</strong> Images without reviews convert at only 22.22% — less than half the rate of reviews without images. Visuals support the decision but don't drive it.</p></div>
+</div>
+<div class="takeaway-item">
+<div class="takeaway-num">3</div>
+<div class="takeaway-body"><p><strong>Specs need reviews to be effective.</strong> Specs without reviews convert at just 25%. Combined with reviews, this doubles to 46.43%. Specifications answer objections — but reviews create the initial intent.</p></div>
+</div>
+<div class="takeaway-item">
+<div class="takeaway-num">4</div>
+<div class="takeaway-body"><p><strong>FAQ alone does not significantly drive purchases.</strong> FAQ without images converts at only 21.74%. Users who view FAQs tend to have objections — those objections aren't resolved unless visuals are also present.</p></div>
+</div>
+<div class="takeaway-item">
+<div class="takeaway-num">5</div>
+<div class="takeaway-body"><p><strong>Warranty information enhances but doesn't replace other signals.</strong> Warranty + specs crosses the 50% threshold (51.85%) — making it the strongest purely informational combination outside of reviews.</p></div>
+</div>
+<div class="takeaway-item">
+<div class="takeaway-num">6</div>
+<div class="takeaway-body"><p><strong>Comparing similar items outperforms sponsored links.</strong> Users who compare items convert at 33.33% — higher than those who only click sponsored links (23.81%). Active research behavior signals stronger purchase intent than ad clicks.</p></div>
+</div>
+</div>
+</div>
+<!-- MODELS -->
+<div class="doc-section" id="models">
+<h2><span class="section-icon"><i class="bi bi-cpu"></i></span> Machine Learning Models</h2>
+<p>
+Four resampling techniques were evaluated to address the 63/37 class imbalance before training a classification model. Each approach handles imbalance differently — the comparison reveals which produces the most reliable predictions:
+</p>
+<div class="methods-grid">
+<div class="method-card">
+<span class="method-badge under">Under-Sampling</span>
+<h4>Random Under-Sampling</h4>
+<p>Reduces the majority class (non-buyers) by randomly removing examples until classes are balanced. Creates a smaller but balanced training set.</p>
+<div class="method-accuracy">97% <span>accuracy</span></div>
+</div>
+<div class="method-card winner">
+<span class="method-badge over">Over-Sampling</span>
+<h4>Random Over-Sampling</h4>
+<p>Duplicates minority class (buyer) samples to match the majority class size. Preserves all original data while balancing the training distribution.</p>
+<div class="method-accuracy">99% <span>accuracy</span></div>
+</div>
+<div class="method-card winner">
+<span class="method-badge smote">SMOTE</span>
+<h4>SMOTE</h4>
+<p>Generates <em>synthetic</em> minority class samples by interpolating between existing buyer examples — more robust than simple duplication.</p>
+<div class="method-accuracy">99% <span>accuracy</span></div>
+</div>
+<div class="method-card">
+<span class="method-badge nearmiss">NearMiss</span>
+<h4>NearMiss</h4>
+<p>Selects majority class examples based on proximity to minority class examples — a more intelligent form of under-sampling.</p>
+<div class="method-accuracy">97% <span>accuracy</span></div>
+</div>
+</div>
+</div>
+<!-- PERFORMANCE -->
+<div class="doc-section" id="performance">
+<h2><span class="section-icon"><i class="bi bi-bar-chart-steps"></i></span> Model Performance Comparison</h2>
+<p>
+All four models were evaluated on precision, recall, F1-score, and accuracy. Random Over-Sampling and SMOTE both achieved 99% accuracy with near-perfect precision and recall across both classes:
+</p>
+<div style="overflow-x:auto;">
+<table class="perf-table">
+<thead>
+<tr>
+<th>Metric</th>
+<th>Under-Sampling</th>
+<th>Over-Sampling</th>
+<th>SMOTE</th>
+<th>NearMiss</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Precision (Class 0)</td><td>1.00</td><td class="best">1.00</td><td class="best">1.00</td><td>1.00</td></tr>
+<tr><td>Precision (Class 1)</td><td>0.95</td><td class="best">0.98</td><td class="best">0.98</td><td>0.95</td></tr>
+<tr><td>Recall (Class 0)</td><td>0.95</td><td class="best">0.98</td><td class="best">0.98</td><td>0.95</td></tr>
+<tr><td>Recall (Class 1)</td><td>1.00</td><td class="best">1.00</td><td class="best">1.00</td><td>1.00</td></tr>
+<tr><td>F1-Score (Class 0)</td><td>0.97</td><td class="best">0.99</td><td class="best">0.99</td><td>0.97</td></tr>
+<tr><td>F1-Score (Class 1)</td><td>0.97</td><td class="best">0.99</td><td class="best">0.99</td><td>0.97</td></tr>
+<tr class="winner-row"><td><strong>Overall Accuracy</strong></td><td>0.97</td><td class="best"><strong>0.99</strong></td><td class="best"><strong>0.99</strong></td><td>0.97</td></tr>
+</tbody>
+</table>
+</div>
+<h3>Detailed Results: Best Models</h3>
+<div class="code-block">
+<div class="code-label">Random Over-Sampling — Classification Report</div>
+<pre>
+precision    recall  f1-score   support
+0       1.00      0.98      0.99       100
+1       0.98      1.00      0.99        89
+accuracy                           0.99       189
+macro avg       0.99      0.99      0.99       189
 weighted avg       0.99      0.99      0.99       189</pre>
-            </div>
-
-            <div class="code-block">
-              <div class="code-label">SMOTE — Classification Report</div>
-              <pre>
-              precision    recall  f1-score   support
-
-           0       1.00      0.98      0.99       100
-           1       0.98      1.00      0.99        89
-
-    accuracy                           0.99       189
-   macro avg       0.99      0.99      0.99       189
+</div>
+<div class="code-block">
+<div class="code-label">SMOTE — Classification Report</div>
+<pre>
+precision    recall  f1-score   support
+0       1.00      0.98      0.99       100
+1       0.98      1.00      0.99        89
+accuracy                           0.99       189
+macro avg       0.99      0.99      0.99       189
 weighted avg       0.99      0.99      0.99       189</pre>
-            </div>
-
-            <div class="callout-green">
-              <p><strong>Conclusion:</strong> Both Random Over-Sampling and SMOTE achieve 99% accuracy with 0.99 F1-scores across both classes — making either approach suitable for production deployment. SMOTE is preferred for production use as it generates synthetic samples rather than simply duplicating existing ones, making the model more generalizable to new session patterns.</p>
-            </div>
-
-            <div class="tags-row">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Scikit-learn</span>
-              <span class="tech-tag">SMOTE</span>
-              <span class="tech-tag">imbalanced-learn</span>
-              <span class="tech-tag">Random Forest</span>
-              <span class="tech-tag">Classification</span>
-              <span class="tech-tag">Class Imbalance</span>
-              <span class="tech-tag">Lead Scoring</span>
-              <span class="tech-tag">Conversion Prediction</span>
-              <span class="tech-tag">Streamlit</span>
-            </div>
-          </div>
-
-
-          <!-- LIVE DEMO -->
-          <div class="doc-section" id="live-demo">
-            <h2><span class="section-icon"><i class="bi bi-play-circle"></i></span> Live Demo</h2>
-            <p>
-              The lead scoring model is deployed as an interactive Streamlit application. Input a set of browsing behaviors and get an instant purchase likelihood score:
-            </p>
-
-            <div class="demo-wrap">
-              <iframe
-                title="Lead Scoring Model – Adediran Adeyemi"
-                src="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/?embedded=true"
-                allowfullscreen loading="lazy">
-              </iframe>
-              <div class="demo-caption">
-                <i class="bi bi-info-circle"></i>
-                Interactive lead scoring demo — toggle browsing behaviors to see predicted purchase likelihood in real time.
-              </div>
-            </div>
-          </div>
-
-
-          <!-- RECOMMENDATIONS -->
-          <div class="doc-section" id="recommendations">
-            <h2><span class="section-icon"><i class="bi bi-rocket-takeoff"></i></span> Recommendations</h2>
-
-            <h3>Highlight Product Reviews and Images Together</h3>
-            <ul>
-              <li>Ensure reviews are prominently displayed <em>alongside</em> product images — not buried in a separate tab. The 58.33% conversion rate from this combination is the single most actionable finding in this study.</li>
-              <li>Use verified purchase reviews rather than unverified ratings — the signal is stronger when users trust the source of the review.</li>
-              <li>Display the review count prominently: social proof scales with volume. More reviews shown = higher perceived credibility.</li>
-            </ul>
-
-            <h3>Engage Users with Content That Reduces Uncertainty</h3>
-            <ul>
-              <li>Pair product specifications with prominent warranty information — this combination crosses the 50% purchase threshold (51.85%) and removes two categories of buyer objection simultaneously.</li>
-              <li>Consider adding customer testimonial videos or comparison charts — active engagement with product information is strongly predictive of purchase intent.</li>
-              <li>Ensure FAQ content is paired with visuals — FAQ alone converts at only 21.74%, but with images this rises to 42.86%.</li>
-            </ul>
-
-            <h3>Optimize for Comparison Behavior</h3>
-            <ul>
-              <li>Users who compare similar items convert at 33.33% — higher than sponsored link clickers (23.81%). Design the comparison UI to be smooth and fast, as this behavior signals strong purchase intent.</li>
-              <li>Consider triggering a targeted offer or chat prompt when a user initiates a product comparison — this is a high-intent behavioral signal.</li>
-            </ul>
-
-            <h3>Deploy the Lead Scoring Model</h3>
-            <ul>
-              <li>Use the trained model to score live sessions in real time, enabling sales teams to prioritize outreach to high-intent visitors.</li>
-              <li>Build a trigger system: sessions with predicted purchase probability above a threshold (e.g., 70%) receive a personalized intervention — live chat offer, limited-time discount, or follow-up email.</li>
-            </ul>
-          </div>
-
-
-          <!-- LIMITATIONS -->
-          <div class="doc-section" id="limitations">
-            <h2><span class="section-icon"><i class="bi bi-exclamation-triangle"></i></span> Limitations &amp; Further Research</h2>
-
-            <h3>Data Limitations</h3>
-            <ul>
-              <li>The dataset captures only 500 sessions with a limited set of on-page interactions — broader behavioral signals (scroll depth, time-on-page, mouse movement) could significantly improve predictive power.</li>
-              <li>No pricing, promotional, or competitor context is captured. Purchase behavior is heavily influenced by price sensitivity and competitive availability, which are absent from this model.</li>
-              <li>No demographic or device information — mobile vs. desktop behavior, age, and location are known moderators of purchase intent that are unaccounted for.</li>
-            </ul>
-
-            <h3>Further Research</h3>
-            <ul>
-              <li><strong>Temporal analysis</strong> — explore how conversion patterns change during sales events, holiday seasons, or promotional periods.</li>
-              <li><strong>User segmentation</strong> — segment users by demographics or acquisition channel and build segment-specific models; a first-time visitor from paid ads may require different signals than a return visitor from organic search.</li>
-              <li><strong>Sequential behavioral modeling</strong> — the order in which users engage with page elements (e.g., images first vs. reviews first) may contain predictive signal not captured in the current binary features.</li>
-            </ul>
-          </div>
-
-
-          <!-- RELATED -->
-          <div class="doc-section" id="related">
-            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
-            <p>If this case study is relevant to your business challenge, these projects may also interest you:</p>
-
-            <div class="related-grid">
-              <a href="ecommerce-product-returns.html" class="related-card">
-                <p class="card-label">Returns Analysis · Python</p>
-                <h4>E-Commerce Product Returns Analysis</h4>
-                <p>Identifying how a 15% return rate was eroding 28% of revenue — with demographic and product-level breakdowns.</p>
-                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
-              </a>
-              <a href="customer-journey-analysis.html" class="related-card">
-                <p class="card-label">Funnel Analytics · Python</p>
-                <h4>E-Commerce Customer Journey Analysis</h4>
-                <p>Mapping 10,000 user sessions to identify the friction points where customers consistently abandon the funnel.</p>
-                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
-              </a>
-              <a href="retail-analysis-global-electronics.html" class="related-card">
-                <p class="card-label">Retail BI · Power BI</p>
-                <h4>Retail Business Intelligence Dashboard</h4>
-                <p>Diagnosing a 90% revenue decline by identifying an 85% customer retention failure as root cause.</p>
-                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
-              </a>
-              <a href="customer-churn-prediction.html" class="related-card">
-                <p class="card-label">Churn Prediction · ML</p>
-                <h4>Predicting Customer Churn 60 Days Early</h4>
-                <p>ML model identifying at-risk customers before they leave using behavioral signals and Scikit-learn.</p>
-                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-
-        </article>
-      </div>
-
-    </div>
-  </div>
+</div>
+<div class="callout-green">
+<p><strong>Conclusion:</strong> Both Random Over-Sampling and SMOTE achieve 99% accuracy with 0.99 F1-scores across both classes — making either approach suitable for production deployment. SMOTE is preferred for production use as it generates synthetic samples rather than simply duplicating existing ones, making the model more generalizable to new session patterns.</p>
+</div>
+<div class="tags-row">
+<span class="tech-tag">Python</span>
+<span class="tech-tag">Scikit-learn</span>
+<span class="tech-tag">SMOTE</span>
+<span class="tech-tag">imbalanced-learn</span>
+<span class="tech-tag">Random Forest</span>
+<span class="tech-tag">Classification</span>
+<span class="tech-tag">Class Imbalance</span>
+<span class="tech-tag">Lead Scoring</span>
+<span class="tech-tag">Conversion Prediction</span>
+<span class="tech-tag">Streamlit</span>
+</div>
+</div>
+<!-- LIVE DEMO -->
+<div class="doc-section" id="live-demo">
+<h2><span class="section-icon"><i class="bi bi-play-circle"></i></span> Live Demo</h2>
+<p>
+The lead scoring model is deployed as an interactive Streamlit application. Input a set of browsing behaviors and get an instant purchase likelihood score:
+</p>
+<div class="demo-wrap">
+<iframe
+title="Lead Scoring Model – Adediran Adeyemi"
+src="https://lead-scoring-k37h8zwuntdbmdsyubppct.streamlit.app/?embedded=true"
+allowfullscreen loading="lazy">
+</iframe>
+<div class="demo-caption">
+<i class="bi bi-info-circle"></i>
+Interactive lead scoring demo — toggle browsing behaviors to see predicted purchase likelihood in real time.
+</div>
+</div>
+</div>
+<!-- RECOMMENDATIONS -->
+<div class="doc-section" id="recommendations">
+<h2><span class="section-icon"><i class="bi bi-rocket-takeoff"></i></span> Recommendations</h2>
+<h3>Highlight Product Reviews and Images Together</h3>
+<ul>
+<li>Ensure reviews are prominently displayed <em>alongside</em> product images — not buried in a separate tab. The 58.33% conversion rate from this combination is the single most actionable finding in this study.</li>
+<li>Use verified purchase reviews rather than unverified ratings — the signal is stronger when users trust the source of the review.</li>
+<li>Display the review count prominently: social proof scales with volume. More reviews shown = higher perceived credibility.</li>
+</ul>
+<h3>Engage Users with Content That Reduces Uncertainty</h3>
+<ul>
+<li>Pair product specifications with prominent warranty information — this combination crosses the 50% purchase threshold (51.85%) and removes two categories of buyer objection simultaneously.</li>
+<li>Consider adding customer testimonial videos or comparison charts — active engagement with product information is strongly predictive of purchase intent.</li>
+<li>Ensure FAQ content is paired with visuals — FAQ alone converts at only 21.74%, but with images this rises to 42.86%.</li>
+</ul>
+<h3>Optimize for Comparison Behavior</h3>
+<ul>
+<li>Users who compare similar items convert at 33.33% — higher than sponsored link clickers (23.81%). Design the comparison UI to be smooth and fast, as this behavior signals strong purchase intent.</li>
+<li>Consider triggering a targeted offer or chat prompt when a user initiates a product comparison — this is a high-intent behavioral signal.</li>
+</ul>
+<h3>Deploy the Lead Scoring Model</h3>
+<ul>
+<li>Use the trained model to score live sessions in real time, enabling sales teams to prioritize outreach to high-intent visitors.</li>
+<li>Build a trigger system: sessions with predicted purchase probability above a threshold (e.g., 70%) receive a personalized intervention — live chat offer, limited-time discount, or follow-up email.</li>
+</ul>
+</div>
+<!-- LIMITATIONS -->
+<div class="doc-section" id="limitations">
+<h2><span class="section-icon"><i class="bi bi-exclamation-triangle"></i></span> Limitations &amp; Further Research</h2>
+<h3>Data Limitations</h3>
+<ul>
+<li>The dataset captures only 500 sessions with a limited set of on-page interactions — broader behavioral signals (scroll depth, time-on-page, mouse movement) could significantly improve predictive power.</li>
+<li>No pricing, promotional, or competitor context is captured. Purchase behavior is heavily influenced by price sensitivity and competitive availability, which are absent from this model.</li>
+<li>No demographic or device information — mobile vs. desktop behavior, age, and location are known moderators of purchase intent that are unaccounted for.</li>
+</ul>
+<h3>Further Research</h3>
+<ul>
+<li><strong>Temporal analysis</strong> — explore how conversion patterns change during sales events, holiday seasons, or promotional periods.</li>
+<li><strong>User segmentation</strong> — segment users by demographics or acquisition channel and build segment-specific models; a first-time visitor from paid ads may require different signals than a return visitor from organic search.</li>
+<li><strong>Sequential behavioral modeling</strong> — the order in which users engage with page elements (e.g., images first vs. reviews first) may contain predictive signal not captured in the current binary features.</li>
+</ul>
+</div>
+<!-- RELATED -->
+<div class="doc-section" id="related">
+<h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+<p>If this case study is relevant to your business challenge, these projects may also interest you:</p>
+<div class="related-grid">
+<a href="ecommerce-product-returns.html" class="related-card">
+<p class="card-label">Returns Analysis · Python</p>
+<h4>E-Commerce Product Returns Analysis</h4>
+<p>Identifying how a 15% return rate was eroding 28% of revenue — with demographic and product-level breakdowns.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="customer-journey-analysis.html" class="related-card">
+<p class="card-label">Funnel Analytics · Python</p>
+<h4>E-Commerce Customer Journey Analysis</h4>
+<p>Mapping 10,000 user sessions to identify the friction points where customers consistently abandon the funnel.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="retail-analysis-global-electronics.html" class="related-card">
+<p class="card-label">Retail BI · Power BI</p>
+<h4>Retail Business Intelligence Dashboard</h4>
+<p>Diagnosing a 90% revenue decline by identifying an 85% customer retention failure as root cause.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="customer-satisfaction-survey.html" class="related-card">
+<p class="card-label">Customer Analytics · Power BI</p>
+<h4>Customer Satisfaction Survey Analysis</h4>
+<p>Power BI dashboard revealing banking churn drivers: security, service, delays — with demographic segmentation.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- =========================================
-  CTA
+CTA
 ========================================== -->
 <section class="project-cta">
-  <div class="container">
-    <p class="cta-eyebrow">Work with Adediran Adeyemi</p>
-    <h2>Want to know which of your visitors are about to buy?</h2>
-    <p>I build lead scoring models that help e-commerce businesses focus on high-intent prospects and stop treating every visitor the same. First call is free.</p>
-    <div class="cta-buttons">
-      <a href="../index.html#contact" class="btn-cta-white">Tell Me Your Data Problem</a>
-      <a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
-    </div>
-  </div>
+<div class="container">
+<p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+<h2>Want to know which of your visitors are about to buy?</h2>
+<p>I build lead scoring models that help e-commerce businesses focus on high-intent prospects and stop treating every visitor the same. First call is free.</p>
+<div class="cta-buttons">
+<a href="../index.html#contact" class="btn-cta-white">Tell Me Your Data Problem</a>
+<a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
+</div>
+</div>
 </section>
-
-
 <!-- =========================================
-  FOOTER
+FOOTER
 ========================================== -->
 <footer id="footer">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 footer-contact">
-          <h3>Adeyemi<span>Data</span></h3>
-          <p>
-            Remote Worldwide<br>Available globally (timezone-flexible)<br><br>
-            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
-            <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
-          </p>
-        </div>
-        <div class="col-lg-2 col-md-6 footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>What I Do</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Churn Prediction</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Cart Recovery</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">CLV Modeling</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Inventory Forecasting</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Connect</h4>
-          <div class="social-links mt-3">
-            <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="copyright">© 2026 <strong>Adediran Adeyemi</strong> · Turning Data Into Decisions</div>
-  </div>
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<h3>Adeyemi<span>Data</span></h3>
+<p>
+Remote Worldwide<br>Available globally (timezone-flexible)<br><br>
+<strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+<strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
+</p>
+</div>
+<div class="col-lg-2 col-md-6 footer-links">
+<h4>Quick Links</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>What I Do</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Churn Prediction</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Cart Recovery</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">CLV Modeling</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Inventory Forecasting</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>Connect</h4>
+<div class="social-links mt-3">
+<a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+<a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="copyright">© 2026 <strong>Adediran Adeyemi</strong> · Turning Data Into Decisions</div>
+</div>
 </footer>
-
-
 <!-- =========================================
-  SCHEMA MARKUP
+SCHEMA MARKUP
 ========================================== -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "TechArticle",
-      "@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html#article",
-      "headline": "Lead Scoring & Conversion Prediction Model – 99% Accuracy from Browsing Behavior",
-      "description": "Machine learning case study building a 99% accurate lead scoring model that predicts purchase likelihood from e-commerce browsing signals, using SMOTE and Random Over-Sampling to handle class imbalance.",
-      "url": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html",
-      "datePublished": "2024-11-01",
-      "dateModified": "2026-01-01",
-      "inLanguage": "en",
-      "author": {
-        "@type": "Person",
-        "name": "Adediran Adeyemi",
-        "url": "https://adediranadeyemi.com",
-        "jobTitle": "Freelance Data Scientist",
-        "email": "adeyemi@adediranadeyemi.com"
-      },
-      "publisher": { "@type": "Person", "name": "Adediran Adeyemi", "url": "https://adediranadeyemi.com" },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://adediranadeyemi.com/assets/img/portfolio/lead-scoring-cover.jpg",
-        "width": 1200, "height": 630
-      },
-      "keywords": ["lead scoring","conversion prediction","machine learning","SMOTE","class imbalance","browsing behavior","purchase likelihood","scikit-learn","e-commerce analytics"],
-      "proficiencyLevel": "Expert",
-      "dependencies": "Python, Scikit-learn, imbalanced-learn, SMOTE, Streamlit, Pandas"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
-        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://adediranadeyemi.com/#portfolio" },
-        { "@type": "ListItem", "position": 3, "name": "Lead Scoring & Conversion Prediction", "item": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html" }
-      ]
-    }
-  ]
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "TechArticle",
+"@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html#article",
+"headline": "Lead Scoring & Conversion Prediction Model – 99% Accuracy from Browsing Behavior",
+"description": "Machine learning case study building a 99% accurate lead scoring model that predicts purchase likelihood from e-commerce browsing signals, using SMOTE and Random Over-Sampling to handle class imbalance.",
+"url": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html",
+"datePublished": "2024-11-01",
+"dateModified": "2026-01-01",
+"inLanguage": "en",
+"author": {
+"@type": "Person",
+"name": "Adediran Adeyemi",
+"url": "https://adediranadeyemi.com",
+"jobTitle": "Freelance Data Scientist",
+"email": "adeyemi@adediranadeyemi.com"
+},
+"publisher": { "@type": "Person", "name": "Adediran Adeyemi", "url": "https://adediranadeyemi.com" },
+"image": {
+"@type": "ImageObject",
+"url": "https://adediranadeyemi.com/assets/img/portfolio/lead-scoring.jpg",
+"width": 1200, "height": 630
+},
+"keywords": ["lead scoring","conversion prediction","machine learning","SMOTE","class imbalance","browsing behavior","purchase likelihood","scikit-learn","e-commerce analytics"],
+"proficiencyLevel": "Expert",
+"dependencies": "Python, Scikit-learn, imbalanced-learn, SMOTE, Streamlit, Pandas"
+},
+{
+"@type": "BreadcrumbList",
+"@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html#breadcrumb",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+{ "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://adediranadeyemi.com/#portfolio" },
+{ "@type": "ListItem", "position": 3, "name": "Lead Scoring & Conversion Prediction", "item": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html" }
+]
+}
+]
 }
 </script>
-
-
 <!-- =========================================
-  SCRIPTS
+SCRIPTS
 ========================================== -->
 <script>
-  window.addEventListener('load', () => {
-    const pre = document.getElementById('preloader');
-    if (pre) { pre.style.transition = 'opacity 0.4s'; pre.style.opacity = '0'; setTimeout(() => pre.remove(), 400); }
-  });
-
-  const toggle = document.querySelector('.mobile-nav-toggle');
-  const navbar = document.querySelector('#header .navbar');
-  if (toggle && navbar) {
-    toggle.addEventListener('click', () => {
-      navbar.classList.toggle('navbar-mobile');
-      toggle.classList.toggle('bi-list');
-      toggle.classList.toggle('bi-x');
-    });
-  }
-
-  window.addEventListener('scroll', () => {
-    const btt = document.querySelector('.back-to-top');
-    if (btt) btt.classList.toggle('active', window.scrollY > 100);
-  });
-
-  (function () {
-    const links = document.querySelectorAll('.toc-list a');
-    const sections = document.querySelectorAll('.doc-section[id]');
-    if (!links.length || !sections.length) return;
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          links.forEach(l => l.classList.remove('active'));
-          const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
-          if (a) a.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -65% 0px' });
-    sections.forEach(s => obs.observe(s));
-  })();
+window.addEventListener('load', () => {
+const pre = document.getElementById('preloader');
+if (pre) { pre.style.transition = 'opacity 0.4s'; pre.style.opacity = '0'; setTimeout(() => pre.remove(), 400); }
+});
+const toggle = document.querySelector('.mobile-nav-toggle');
+const navbar = document.querySelector('#header .navbar');
+if (toggle && navbar) {
+toggle.addEventListener('click', () => {
+navbar.classList.toggle('navbar-mobile');
+toggle.classList.toggle('bi-list');
+toggle.classList.toggle('bi-x');
+});
+}
+window.addEventListener('scroll', () => {
+const btt = document.querySelector('.back-to-top');
+if (btt) btt.classList.toggle('active', window.scrollY > 100);
+});
+(function () {
+const links = document.querySelectorAll('.toc-list a');
+const sections = document.querySelectorAll('.doc-section[id]');
+if (!links.length || !sections.length) return;
+const obs = new IntersectionObserver(entries => {
+entries.forEach(e => {
+if (e.isIntersecting) {
+links.forEach(l => l.classList.remove('active'));
+const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+if (a) a.classList.add('active');
+}
+});
+}, { rootMargin: '-20% 0px -65% 0px' });
+sections.forEach(s => obs.observe(s));
+})();
 </script>
-
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
-  <i class="bi bi-arrow-up-short"></i>
+<i class="bi bi-arrow-up-short"></i>
 </a>
-
 <script src="../assets/js/main.js" defer></script>
-
 </body>
 </html>
