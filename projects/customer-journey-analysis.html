@@ -15,7 +15,7 @@
 <!-- =========================================
   PRIMARY SEO META
 ========================================== -->
-<title>E-Commerce Customer Journey Analysis – Conversion Paths & Drop-Off Points | Adediran Adeyemi</title>
+<title>Customer Journey Analysis – Conversion & Drop-Off | Adeyemi</title>
 
 <meta name="description" content="User behavior analysis of a subscription-based learning platform across 9,935 sessions. Identifies top conversion paths, drop-off points, and feature importance for conversion — with actionable recommendations to reduce churn. By freelance data scientist Adediran Adeyemi.">
 
@@ -51,6 +51,9 @@
   TWITTER CARD
 ========================================== -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AdediranAd60922">
+<meta name="twitter:creator" content="@AdediranAd60922">
+<meta name="twitter:url" content="https://adediranadeyemi.com/projects/customer-journey-analysis.html">
 <meta name="twitter:title" content="Customer Journey Analysis – Conversion Paths & Drop-Off Points | Adediran Adeyemi">
 <meta name="twitter:description" content="9,935 sessions analyzed to map where users convert, where they drop off, and what drives subscription purchases.">
 <meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/portfolio/cj.jpg">
@@ -312,7 +315,7 @@
 ========================================== -->
 <header id="header" class="fixed-top" style="top:40px;">
   <div class="container d-flex align-items-center justify-content-between">
-    <h1 class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></h1>
+    <div class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></div>
     <nav class="navbar" aria-label="Site navigation">
       <ul>
         <li><a href="../index.html#hero">Home</a></li>
@@ -1025,19 +1028,14 @@
       "datePublished": "2024-09-01",
       "dateModified": "2026-01-01",
       "inLanguage": "en",
-      "author": {
-        "@type": "Person",
-        "name": "Adediran Adeyemi",
-        "url": "https://adediranadeyemi.com",
-        "jobTitle": "Freelance Data Scientist",
-        "email": "adeyemi@adediranadeyemi.com"
-      },
-      "publisher": { "@type": "Person", "name": "Adediran Adeyemi", "url": "https://adediranadeyemi.com" },
+      "author": {"@id": "https://adediranadeyemi.com/#person"},
+      "publisher": {"@id": "https://adediranadeyemi.com/#person"},
       "image": {
         "@type": "ImageObject",
         "url": "https://adediranadeyemi.com/assets/img/portfolio/cj.jpg",
         "width": 1200, "height": 630
       },
+      "isPartOf": {"@id": "https://adediranadeyemi.com/#website"},
       "keywords": ["customer journey analysis","user behavior","conversion path","drop-off points","path analysis","subscription analytics","SaaS conversion","Python pandas","funnel analytics","feature importance"],
       "proficiencyLevel": "Expert",
       "dependencies": "Python, Pandas, SQL, Google Analytics, Path Analysis"
@@ -1046,7 +1044,7 @@
       "@type": "BreadcrumbList",
       "@id": "https://adediranadeyemi.com/projects/customer-journey-analysis.html#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com/" },
         { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://adediranadeyemi.com/#portfolio" },
         { "@type": "ListItem", "position": 3, "name": "E-Commerce Customer Journey Analysis", "item": "https://adediranadeyemi.com/projects/customer-journey-analysis.html" }
       ]
@@ -1085,20 +1083,4 @@
       entries.forEach(e => {
         if (e.isIntersecting) {
           links.forEach(l => l.classList.remove('active'));
-          const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
-          if (a) a.classList.add('active');
-        }
-      });
-    }, { rootMargin: '-20% 0px -65% 0px' });
-    sections.forEach(s => obs.observe(s));
-  })();
-</script>
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
-  <i class="bi bi-arrow-up-short"></i>
-</a>
-
-<script src="../assets/js/main.js" defer></script>
-
-</body>
-</html>
+          const a = document.querySelector(`.toc-list a[href="#
