@@ -498,5 +498,34 @@
 </script>
 
 <script>
-window.addEventListener('load',()=>{const p=document.getElementById('preloader');if(p){p.style.transition='opacity 0.4s';p.style.opacity='0';setTimeout(()=>p.remove(),400)}});
-const t=document.querySelector('.mobile-nav-toggle'),n=document.querySelector('#header .navbar');if(t&&n)t.addEventListener('click',()=>{n.classList.toggle('navbar-mobile');t.classList
+// Preloader
+window.addEventListener('load', () => {
+  const p = document.getElementById('preloader');
+  if (p) { p.style.transition = 'opacity 0.4s'; p.style.opacity = '0'; setTimeout(() => p.remove(), 400); }
+});
+
+// Mobile nav toggle
+const toggle = document.querySelector('.mobile-nav-toggle');
+const navbar = document.querySelector('#header .navbar');
+if (toggle && navbar) {
+  toggle.addEventListener('click', () => {
+    navbar.classList.toggle('navbar-mobile');
+    toggle.classList.toggle('bi-list');
+    toggle.classList.toggle('bi-x');
+  });
+}
+
+// Back to top
+window.addEventListener('scroll', () => {
+  const btt = document.querySelector('.back-to-top');
+  if (btt) btt.classList.toggle('active', window.scrollY > 100);
+});
+</script>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
