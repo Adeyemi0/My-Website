@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- =========================================
+ESSENTIAL META
+========================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#0052FF">
+<!-- =========================================
+PRIMARY SEO META
+========================================== -->
+<title>SaaS Trial Conversion Analysis – Why Only 1 in 5 Companies Convert | Adediran Adeyemi</title>
+<meta name="description" content="A full-scope Python data science case study analysing trial-to-paid conversion across 966 B2B SaaS organisations. Survival analysis, ML models, cohort analysis, and SQL data models reveal why in-app behaviour alone cannot predict who converts.">
+<meta name="keywords" content="SaaS trial conversion analysis, trial to paid conversion Python, B2B trial conversion rate, product analytics case study, workforce scheduling analytics, cohort analysis Python, survival analysis SaaS, user behaviour analysis, product-led growth analysis, data science portfolio, Adediran Adeyemi">
+<meta name="author" content="Adediran Adeyemi">
+<link rel="canonical" href="https://adediranadeyemi.com/projects/saas-trial-conversion-analysis.html">
+<!-- =========================================
+OPEN GRAPH
+========================================== -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Adediran Adeyemi | Freelance Data Scientist">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="SaaS Trial Conversion Analysis – Why Only 1 in 5 Companies Convert | Adediran Adeyemi">
+<meta property="og:description" content="Python case study: 966 B2B SaaS trial organisations, 102,895 events, 30-day window. Survival analysis, ML models, and SQL marts reveal the real reason trial conversion is unpredictable from product behaviour alone.">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/saas-trial-conversion-analysis.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/saas-trial-conversion-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SaaS trial conversion analysis dashboard and charts by Adediran Adeyemi — Python data science case study">
+<meta property="article:published_time" content="2026-03-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-03-22T00:00:00+00:00">
+<meta property="article:author" content="https://adediranadeyemi.com">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="SaaS Analytics">
+<meta property="article:tag" content="Trial Conversion">
+<meta property="article:tag" content="Cohort Analysis">
+<meta property="article:tag" content="Survival Analysis">
+<meta property="article:tag" content="Product Analytics">
+<!-- =========================================
+TWITTER CARD
+========================================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SaaS Trial Conversion Analysis – Why Only 1 in 5 Companies Convert | Adediran Adeyemi">
+<meta name="twitter:description" content="Python case study: survival analysis, ML models, and SQL marts applied to 966 B2B SaaS trial organisations reveal why product behaviour alone cannot predict conversion.">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/portfolio/saas-trial-conversion-cover.jpg">
+<meta name="twitter:image:alt" content="SaaS trial conversion analysis by Adediran Adeyemi">
+<!-- =========================================
+FONTS
+========================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<!-- =========================================
+PAGE-SPECIFIC STYLES
+========================================== -->
+<style>
+/* ── BREADCRUMB ── */
+.project-breadcrumb{background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:13px;}
+.project-breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex-wrap:wrap;gap:6px;}
+.project-breadcrumb li{display:flex;align-items:center;gap:6px;color:#475569;}
+.project-breadcrumb li a{color:#475569;text-decoration:none;transition:color .2s;}
+.project-breadcrumb li a:hover{color:#0052FF;}
+.project-breadcrumb li.active{color:#0F172A;font-weight:600;}
+.project-breadcrumb .sep{color:#CBD5E1;font-size:11px;}
+
+/* ── HERO ── */
+.project-hero{background:#F8FAFC;padding:60px 0 0;border-bottom:1px solid #E2E8F0;}
+.project-hero .hero-label{display:inline-flex;align-items:center;gap:8px;background:#E7F1FD;color:#0052FF;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px;}
+.project-hero h1{font-size:2.75rem;font-weight:800;color:#0F172A;letter-spacing:-0.03em;line-height:1.15;margin-bottom:20px;}
+.project-hero h1 span{color:#0052FF;}
+.project-hero .hero-lead{font-size:17px;color:#475569;line-height:1.75;margin-bottom:32px;max-width:560px;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-bottom:32px;}
+.hero-meta-item .meta-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;margin-bottom:4px;}
+.hero-meta-item .meta-value{font-size:14px;font-weight:600;color:#0F172A;}
+.hero-stats{display:flex;border-top:1px solid #E2E8F0;margin-top:40px;}
+.hero-stat{flex:1;padding:28px 20px;text-align:center;border-right:1px solid #E2E8F0;}
+.hero-stat:last-child{border-right:none;}
+.hero-stat .stat-num{font-size:2.25rem;font-weight:900;color:#0052FF;letter-spacing:-0.04em;line-height:1;display:block;}
+.hero-stat .stat-label{font-size:12px;color:#64748B;margin-top:6px;line-height:1.4;}
+
+/* ── LAYOUT ── */
+.project-body{padding:80px 0;}
+.toc-sidebar{position:sticky;top:90px;}
+.toc-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,.04);}
+.toc-card .toc-heading{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;margin-bottom:16px;}
+.toc-list{list-style:none;padding:0 0 0 16px;margin:0;border-left:2px solid #E2E8F0;}
+.toc-list li{margin-bottom:10px;}
+.toc-list a{font-size:13px;font-weight:500;color:#64748B;text-decoration:none;transition:color .2s;line-height:1.4;display:block;}
+.toc-list a:hover,.toc-list a.active{color:#0052FF;}
+.toc-list a.active{font-weight:600;}
+.toc-cta{background:#E7F1FD;border-radius:8px;padding:18px;margin-top:20px;text-align:center;}
+.toc-cta p{font-size:13px;color:#0F172A;line-height:1.5;margin-bottom:12px;font-weight:500;}
+.toc-cta a{display:inline-block;background:#0052FF;color:#fff;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;text-decoration:none;transition:background .2s;}
+.toc-cta a:hover{background:#0041cc;color:#fff;}
+
+/* ── ARTICLE SECTIONS ── */
+.doc-section{margin-bottom:60px;padding-bottom:60px;border-bottom:1px solid #E2E8F0;scroll-margin-top:90px;}
+.doc-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.doc-section h2{font-size:22px;font-weight:800;color:#0F172A;letter-spacing:-0.025em;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.section-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#E7F1FD;border-radius:8px;color:#0052FF;font-size:16px;flex-shrink:0;}
+.doc-section h3{font-size:16px;font-weight:700;color:#0F172A;margin-top:24px;margin-bottom:10px;}
+.doc-section p{font-size:15px;color:#334155;line-height:1.8;margin-bottom:14px;}
+.doc-section ul{padding-left:20px;margin-bottom:14px;}
+.doc-section li{font-size:15px;color:#334155;line-height:1.75;margin-bottom:6px;}
+
+/* Callout */
+.callout{background:#E7F1FD;border-left:4px solid #0052FF;border-radius:0 8px 8px 0;padding:18px 20px;margin:20px 0;}
+.callout p{margin:0;font-size:14px;color:#0F172A;line-height:1.65;}
+.callout strong{color:#0052FF;}
+.callout-red{background:#FFF0F0;border-left:4px solid #C8102E;}
+.callout-red p{color:#1A0010;}
+.callout-red strong{color:#C8102E;}
+
+/* Steps */
+.steps{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
+.step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:20px;}
+.step-num{width:44px;height:44px;background:#0052FF;color:#fff;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-body h3{margin-top:10px;margin-bottom:6px;}
+.step-body p{margin-bottom:0;}
+
+/* Findings grid */
+.findings-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.finding-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:20px;transition:box-shadow .2s,transform .2s;}
+.finding-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,82,255,.1);}
+.finding-icon{width:40px;height:40px;background:#E7F1FD;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#0052FF;font-size:18px;margin-bottom:12px;}
+.finding-card h4{font-size:14px;font-weight:700;color:#0F172A;margin-bottom:6px;}
+.finding-card p{font-size:13px;color:#64748B;line-height:1.6;margin:0;}
+.finding-card .finding-stat{font-size:22px;font-weight:900;color:#0052FF;letter-spacing:-0.03em;line-height:1;margin-bottom:8px;}
+
+/* Charts */
+.chart-figure{margin:28px 0;}
+.chart-figure img{width:100%;border-radius:10px;border:1px solid #E2E8F0;box-shadow:0 4px 16px rgba(0,0,0,.06);}
+.chart-figure figcaption{font-size:12px;color:#94A3B8;margin-top:10px;text-align:center;line-height:1.5;}
+
+/* Tech stack */
+.tech-stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:20px;}
+.tech-item{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px 12px;text-align:center;transition:border-color .2s;}
+.tech-item:hover{border-color:#0052FF;}
+.tech-item i{font-size:24px;color:#0052FF;display:block;margin-bottom:8px;}
+.tech-item .tech-name{font-size:13px;font-weight:700;color:#0F172A;display:block;}
+.tech-item .tech-role{font-size:11px;color:#94A3B8;display:block;margin-top:2px;}
+.tags-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.tech-tag{background:#F1F5F9;color:#475569;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;}
+
+/* SQL lineage */
+.sql-lineage{background:#0F172A;border-radius:10px;padding:20px 24px;margin:20px 0;font-family:'Courier New',monospace;font-size:13px;color:#94A3B8;line-height:1.8;overflow-x:auto;}
+.sql-lineage .hl{color:#5BC8F5;}
+.sql-lineage .hl2{color:#90EE90;}
+.sql-lineage .hl3{color:#FFD700;}
+
+/* Metric table */
+.metric-table{width:100%;border-collapse:collapse;margin:16px 0;}
+.metric-table th{background:#F8FAFC;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#64748B;padding:10px 14px;text-align:left;border-bottom:2px solid #E2E8F0;}
+.metric-table td{font-size:14px;color:#334155;padding:10px 14px;border-bottom:1px solid #E2E8F0;line-height:1.5;}
+.metric-table td:first-child{font-weight:600;color:#0F172A;}
+.metric-table tr:last-child td{border-bottom:none;}
+.metric-table .val{font-family:'Courier New',monospace;font-size:13px;color:#0052FF;font-weight:700;}
+.metric-table .null-sig{color:#C8102E;font-weight:700;}
+
+/* Related cards */
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.related-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:22px;text-decoration:none;transition:all .3s ease;display:block;}
+.related-card:hover{border-color:#0052FF;transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,82,255,.12);text-decoration:none;}
+.related-card .card-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0052FF;margin-bottom:8px;}
+.related-card h4{font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px;line-height:1.4;}
+.related-card p{font-size:13px;color:#64748B;line-height:1.55;margin:0;}
+.related-card .card-arrow{display:inline-flex;align-items:center;gap:4px;margin-top:12px;font-size:13px;font-weight:600;color:#0052FF;}
+
+/* GitHub CTA strip */
+.github-strip{background:#0F172A;border-radius:10px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin:20px 0;flex-wrap:wrap;}
+.github-strip p{color:rgba(255,255,255,.75);font-size:14px;line-height:1.5;margin:0;}
+.github-strip p strong{color:#fff;}
+.btn-github{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0F172A;font-size:13px;font-weight:700;padding:10px 22px;border-radius:6px;text-decoration:none;transition:background .2s;white-space:nowrap;}
+.btn-github:hover{background:#E7F1FD;color:#0052FF;text-decoration:none;}
+
+/* CTA */
+.project-cta{background:#0052FF;padding:80px 0;text-align:center;color:#fff;}
+.project-cta .cta-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:16px;}
+.project-cta h2{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:14px;max-width:520px;margin-left:auto;margin-right:auto;}
+.project-cta p{font-size:16px;color:rgba(255,255,255,.7);max-width:420px;margin:0 auto 32px;line-height:1.6;}
+.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-cta-white{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;padding:14px 32px;border-radius:4px;background:#fff;color:#0052FF;text-decoration:none;transition:all .3s;}
+.btn-cta-white:hover{background:#f0f0f0;color:#0052FF;transform:translateY(-2px);text-decoration:none;}
+.btn-cta-ghost{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;padding:14px 32px;border-radius:4px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);text-decoration:none;transition:all .3s;}
+.btn-cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1);color:#fff;text-decoration:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:991px){
+  .toc-sidebar{display:none;}
+  .project-hero h1{font-size:2rem;}
+  .findings-grid,.related-grid{grid-template-columns:1fr;}
+  .hero-stats{flex-direction:column;}
+  .hero-stat{border-right:none;border-bottom:1px solid #E2E8F0;}
+  .hero-stat:last-child{border-bottom:none;}
+}
+@media(max-width:768px){
+  .project-hero{padding:40px 0 0;}
+  .project-hero h1{font-size:1.75rem;}
+  .project-body{padding:50px 0;}
+  .doc-section{margin-bottom:40px;padding-bottom:40px;}
+  .step{grid-template-columns:1fr;}
+  .github-strip{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+<div id="preloader"></div>
+
+<!-- =========================================
+TOP BAR
+========================================== -->
+<div id="topbar" class="d-flex align-items-center fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="contact-info d-flex align-items-center">
+      <i class="bi bi-envelope-fill"></i>
+      <i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+      <i class="bi bi-phone-fill ms-3"></i>
+      <i><span>+234 816 273 5399</span></i>
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+HEADER
+========================================== -->
+<header id="header" class="fixed-top" style="top:40px;">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></div>
+    <nav class="navbar" aria-label="Site navigation">
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#featured-services">Services</a></li>
+        <li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="../index.html#faq">Blog</a></li>
+        <li><a href="../index.html#contact">Let's Talk</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================
+BREADCRUMB
+========================================== -->
+<nav class="project-breadcrumb" style="margin-top:126px;" aria-label="Breadcrumb">
+  <div class="container">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <span class="sep">›</span>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a>
+        <meta itemprop="position" content="2">
+      </li>
+      <span class="sep">›</span>
+      <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">SaaS Trial Conversion Analysis</span>
+        <meta itemprop="position" content="3">
+      </li>
+    </ol>
+  </div>
+</nav>
+
+<!-- =========================================
+HERO
+========================================== -->
+<section class="project-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-label">
+          <i class="bi bi-graph-up-arrow"></i>
+          Product Analytics · Python · SQL
+        </div>
+        <h1>Why Do Only <span>1 in 5</span> Trial Companies Convert?</h1>
+        <p class="hero-lead">
+          A full-scope Python data science case study analysing trial-to-paid conversion across 966 B2B SaaS organisations. Survival analysis, machine learning, cohort analysis, and production-ready SQL data models expose a counterintuitive truth: product behaviour alone cannot predict who pays.
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="meta-label">Tools</div>
+            <div class="meta-value">Python · scikit-learn · lifelines · SQL</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">B2B SaaS · Workforce Scheduling</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Type</div>
+            <div class="meta-value">Product Analytics · Conversion Research</div>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap gap-3 pb-4">
+          <a href="https://github.com/Adeyemi0/trial-conversion-analysis" target="_blank" class="btn-get-started-primary">
+            View on GitHub <i class="bi bi-github"></i>
+          </a>
+          <a href="../index.html#contact" class="btn-get-started-secondary">
+            Work With Me <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block">
+        <img
+          src="../assets/img/portfolio/charts/01_worker_adoption_headline.png"
+          alt="SaaS trial conversion analysis chart showing admin vs worker adoption rates by Adediran Adeyemi"
+          class="img-fluid"
+          style="border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 20px 60px rgba(0,82,255,0.12);"
+          width="560" height="360"
+          loading="eager" fetchpriority="high"
+        >
+      </div>
+    </div>
+    <!-- Stats strip -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num">966</span>
+        <span class="stat-label">B2B SaaS trial organisations analysed</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">21.3%</span>
+        <span class="stat-label">Overall trial-to-paid conversion rate</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">51%</span>
+        <span class="stat-label">of trials never got a single worker onto the platform</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">0.48</span>
+        <span class="stat-label">AUC — ML model accuracy (near random chance)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+MAIN CONTENT
+========================================== -->
+<section class="project-body">
+  <div class="container">
+    <div class="row">
+
+      <!-- TOC -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <aside class="toc-sidebar" aria-label="Table of contents">
+          <div class="toc-card">
+            <p class="toc-heading">On This Page</p>
+            <ul class="toc-list">
+              <li><a href="#overview">Project Overview</a></li>
+              <li><a href="#problem">The Business Problem</a></li>
+              <li><a href="#dataset">Data and Cleaning</a></li>
+              <li><a href="#methodology">Methodology</a></li>
+              <li><a href="#framework">Admin vs Worker Framework</a></li>
+              <li><a href="#findings">Key Findings</a></li>
+              <li><a href="#charts">Analysis Charts</a></li>
+              <li><a href="#modelling">Statistical Modelling</a></li>
+              <li><a href="#sql">SQL Data Models</a></li>
+              <li><a href="#recommendations">Recommendations</a></li>
+              <li><a href="#tools">Tools and Stack</a></li>
+              <li><a href="#related">Related Projects</a></li>
+            </ul>
+            <div class="toc-cta">
+              <p>Need conversion analysis for your SaaS product?</p>
+              <a href="../index.html#contact">Let's Talk →</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Article -->
+      <div class="col-lg-9">
+        <article itemscope itemtype="https://schema.org/TechArticle">
+          <meta itemprop="author" content="Adediran Adeyemi">
+          <meta itemprop="datePublished" content="2026-03-01">
+          <meta itemprop="headline" content="SaaS Trial Conversion Analysis – Why Only 1 in 5 Trial Companies Convert">
+
+          <!-- OVERVIEW -->
+          <div class="doc-section" id="overview">
+            <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
+            <p>A B2B SaaS company offering workforce scheduling software had a <strong>21.3% trial-to-paid conversion rate</strong> across a 30-day free trial window. On the surface this sits within the typical opt-in B2B benchmark range of 15 to 25%. But beneath that number, 760 out of 966 trialling organisations were walking away without paying, and nobody could explain why.</p>
+            <p>The raw data existed: 102,895 product events across 966 organisations, covering 28 distinct activity types from creating shifts to punching in and out. This project analyses that data in full, applying funnel analysis, statistical hypothesis testing, survival analysis, machine learning, and clustering to answer one question: what does a company do during its trial that predicts whether it will pay?</p>
+            <div class="callout">
+              <p><strong>Central finding:</strong> Converters and non-converters are statistically indistinguishable in their product behaviour. Three separate machine learning models scored an AUC of approximately 0.48, below random chance. The conversion decision is being made outside the product entirely — in pricing conversations, sales touchpoints, and budget cycles that the event log cannot see.</p>
+            </div>
+            <p>The analysis also uncovered a structural product health problem: <strong>51% of trialling organisations never got a single employee onto the platform</strong> after the admin set it up. The product was configured for a workforce that never arrived. This does not directly drive conversion, but it is a structural risk to post-conversion retention.</p>
+
+            <div class="github-strip">
+              <p><strong>Full code, charts, SQL models, and README available on GitHub.</strong><br>Python analysis · 12 charts · 4 SQL models · dbt-compatible architecture</p>
+              <a href="https://github.com/Adeyemi0/trial-conversion-analysis" target="_blank" class="btn-github">
+                <i class="bi bi-github"></i> View Repository
+              </a>
+            </div>
+          </div>
+
+          <!-- PROBLEM -->
+          <div class="doc-section" id="problem">
+            <h2><span class="section-icon"><i class="bi bi-exclamation-circle"></i></span> The Business Problem</h2>
+            <p>The product team had a standard product-led growth hypothesis: companies that engage more deeply with the product, use more features, stay active for more days, and get more employees onto the platform should be more likely to convert. This is the assumption that underlies most SaaS trial optimisation strategies.</p>
+            <p>The data held answers to questions the team could not answer from gut feel alone:</p>
+            <ul>
+              <li>Was the 21.3% conversion rate driven by identifiable behavioural signals, or was it essentially random from a product perspective?</li>
+              <li>Did the two distinct user types in this product (admins and workers) show different conversion patterns?</li>
+              <li>Was there a minimum engagement threshold that reliably predicted conversion?</li>
+              <li>Did the timing of conversion (early vs late in the trial) reveal anything about what drove the decision?</li>
+              <li>Could a machine learning model trained on product behaviour predict, at Day 3 or Day 7, which organisations would convert?</li>
+            </ul>
+            <p>Answering these questions rigorously — and being honest when the answers are null — is the work this project sets out to do.</p>
+          </div>
+
+          <!-- DATASET -->
+          <div class="doc-section" id="dataset">
+            <h2><span class="section-icon"><i class="bi bi-database"></i></span> Data Overview and Cleaning</h2>
+            <p>The dataset covered a 30-day free trial window for a B2B workforce scheduling SaaS platform. Each row represented one product event by one organisation.</p>
+
+            <table class="metric-table">
+              <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>organization_id</td><td class="val">string</td><td>Unique identifier per trialling organisation</td></tr>
+                <tr><td>activity_name</td><td class="val">string</td><td>Name of the product activity performed</td></tr>
+                <tr><td>timestamp</td><td class="val">datetime</td><td>When the activity occurred</td></tr>
+                <tr><td>converted</td><td class="val">boolean</td><td>Whether the organisation converted to paid</td></tr>
+                <tr><td>converted_at</td><td class="val">datetime</td><td>Timestamp of conversion (null if not converted)</td></tr>
+                <tr><td>trial_start</td><td class="val">datetime</td><td>When the trial started</td></tr>
+                <tr><td>trial_end</td><td class="val">datetime</td><td>Trial expiry (trial_start + 30 days)</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Cleaning Steps</h3>
+            <p>The raw dataset of 170,526 rows required significant cleaning before analysis. The following steps were applied and documented in the staging SQL model:</p>
+            <ul>
+              <li><strong>Deduplication:</strong> Exact matching across all 7 columns removed 67,631 duplicate rows (40% of raw data), leaving 102,895 clean events.</li>
+              <li><strong>Datetime parsing:</strong> All datetime columns were parsed with <code>errors='coerce'</code> so malformed values became null rather than causing failures downstream.</li>
+              <li><strong>Null handling:</strong> The <code>converted_at</code> field is legitimately null for non-converting organisations and was treated as such, not as a data quality issue.</li>
+              <li><strong>Window validation:</strong> Events were validated against the trial window. Zero events fell before <code>trial_start</code> or after <code>trial_end</code>.</li>
+              <li><strong>Clipping:</strong> Derived time fields (hours to first activity) were clipped at zero to prevent negative values from sub-second timestamp precision.</li>
+            </ul>
+
+            <table class="metric-table">
+              <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+              <tbody>
+                <tr><td>Raw rows</td><td class="val">170,526</td></tr>
+                <tr><td>After deduplication</td><td class="val">102,895</td></tr>
+                <tr><td>Duplicate rows removed</td><td class="val">67,631 (40%)</td></tr>
+                <tr><td>Unique organisations</td><td class="val">966</td></tr>
+                <tr><td>Unique activity types</td><td class="val">28</td></tr>
+                <tr><td>Overall conversion rate</td><td class="val">21.3%</td></tr>
+                <tr><td>Converted organisations</td><td class="val">206</td></tr>
+                <tr><td>Non-converted</td><td class="val">760</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- METHODOLOGY -->
+          <div class="doc-section" id="methodology">
+            <h2><span class="section-icon"><i class="bi bi-diagram-3"></i></span> Methodology</h2>
+            <p>The analysis was structured in four progressive layers, each building on the last:</p>
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <h3>Data Cleaning and Feature Engineering</h3>
+                  <p>After cleaning (described above), each of the 966 organisations was characterised on an org-level feature matrix: total event count, admin event count, worker event count, unique activity types used, active days (admin-side and worker-side separately), and binary flags for six specific worker activities. A worker engagement depth score (0 to 5) was constructed by summing the binary worker activity flags.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <h3>Admin vs Worker Activity Segmentation</h3>
+                  <p>All 28 activity types were manually classified as either admin actions or worker actions based on product logic. Admin actions are configuration tasks (creating shifts, approving timesheets). Worker actions are operational daily tasks (clocking in, viewing the mobile schedule, setting availability). Each organisation was classified into one of three archetypes based on which sides of the product were used.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <h3>Statistical Hypothesis Testing</h3>
+                  <p>Mann-Whitney U tests compared all continuous engagement metrics between converters and non-converters (non-parametric, appropriate for right-skewed distributions). Chi-square tests assessed the relationship between each binary worker activity flag and conversion. Point-biserial correlations were calculated for all continuous-to-binary pairs.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <h3>Predictive Modelling and Survival Analysis</h3>
+                  <p>Three Random Forest models were trained and evaluated using 5-fold cross-validated ROC-AUC: admin features only, worker features only, and combined. Kaplan-Meier survival curves modelled time-to-conversion for worker-active versus admin-only organisations. K-Means clustering (k=4, elbow method) segmented organisations by behavioural profile.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FRAMEWORK -->
+          <div class="doc-section" id="framework">
+            <h2><span class="section-icon"><i class="bi bi-people"></i></span> The Admin vs Worker Framework</h2>
+            <p>The most important analytical decision in this project was to separate admin and worker activity rather than treating all 102,895 events as equivalent. The rationale is grounded in how this product category actually works.</p>
+            <p>This is a workforce scheduling platform. It serves two fundamentally different users within the same account. <strong>Admins</strong> are managers who set up the schedule, create shifts, approve timesheets, and make the purchasing decision. <strong>Workers</strong> are the employees who view their schedule on mobile, clock in and out, set their availability, and request shift swaps. They do not make the purchasing decision, but they are the ones whose daily working lives depend on the product.</p>
+            <p>Only worker adoption creates genuine switching costs. If the admin is the only user, the product can be cancelled with a single decision. If workers are clocking in through it every day, cancellation means disrupting live operations for the entire workforce. That is a fundamentally different retention dynamic.</p>
+            <div class="callout-red callout">
+              <p><strong>The hypothesis was wrong — but in a revealing way.</strong> Worker adoption proved not to predict trial conversion (p = 0.85, chi-square). But the framework is still correct. The implication has shifted from conversion to retention. Worker adoption is likely the key variable for predicting which paying customers stay versus which ones cancel. That question cannot be answered without post-conversion data, but the groundwork is laid here.</p>
+            </div>
+          </div>
+
+          <!-- FINDINGS -->
+          <div class="doc-section" id="findings">
+            <h2><span class="section-icon"><i class="bi bi-lightbulb"></i></span> Key Findings</h2>
+            <p>Eight findings emerged from the full analysis. The most important are summarised below:</p>
+
+            <div class="findings-grid">
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-equals"></i></div>
+                <div class="finding-stat">p = 0.85</div>
+                <h4>Converters and Non-Converters Are Statistically Identical</h4>
+                <p>Mann-Whitney U tests on total events, active days, unique activities, and time-to-first-activity all return non-significant p-values. The two groups are behaviourally indistinguishable.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-person-x"></i></div>
+                <div class="finding-stat">51%</div>
+                <h4>Half of Trials Never Got a Worker onto the Platform</h4>
+                <p>489 out of 966 organisations had the admin set up the product but no employee ever used it. Conversion rates for this group (21.7%) are virtually identical to those where workers did engage (21.0%).</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-calendar-x"></i></div>
+                <div class="finding-stat">52%</div>
+                <h4>Conversion Is a Deadline Decision</h4>
+                <p>52% of all conversions happen in the final 9 days of the 30-day trial, with the largest single spike on Day 30 itself. This is deadline urgency, not a product value moment. Both converters and non-converters spike in activity in the final week.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-funnel"></i></div>
+                <div class="finding-stat">46%</div>
+                <h4>The Handoff Failure Is the Biggest Funnel Drop</h4>
+                <p>Of organisations that created at least one shift, 46% never opened the mobile schedule view. The admin built the schedule and nobody on the team ever opened it. This is the largest single friction point in the product.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CHARTS -->
+          <div class="doc-section" id="charts">
+            <h2><span class="section-icon"><i class="bi bi-bar-chart"></i></span> Analysis Charts</h2>
+            <p>All 12 charts below were generated programmatically from the Python analysis script. Each is embedded directly from the project's charts folder.</p>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/01_conversion_overview.png" alt="Overall SaaS trial conversion rate overview showing 21.3% conversion across 966 organisations with event volume and active days distributions" loading="lazy">
+              <figcaption>Fig 1. Overall conversion rate (21.3%), event volume distribution, and active days distribution. Step histograms with median lines confirm that converters and non-converters look identical at first glance.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/02_feature_distributions.png" alt="Boxplot comparison of key SaaS trial metrics between converted and non-converted organisations — total events, admin events, worker events, active days" loading="lazy">
+              <figcaption>Fig 2. Boxplots of total events, admin events, worker events, and active days. Near-perfect overlap across all four metrics. Mann-Whitney U tests confirm no statistically significant difference.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/01_worker_adoption_headline.png" alt="Core finding: worker adoption versus conversion rate in SaaS trial analysis — admin only 21.7% vs workers active 21.0%" loading="lazy">
+              <figcaption>Fig 3. The central finding. Worker adoption (left) shows virtually identical conversion rates between groups. The middle panel shows 51% of organisations had zero worker activity. The right panel shows 85% of all worker events are a single passive action.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/02_worker_activity_uplift.png" alt="Conversion uplift analysis for each worker activity type in B2B SaaS trial — punch clock, availability, shift swap, absence request, mobile schedule view" loading="lazy">
+              <figcaption>Fig 4. Conversion uplift per worker activity type. Punch clock usage shows the strongest association (+1.8pp) but does not reach statistical significance. No activity achieves p &lt; 0.05.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/03_three_archetypes.png" alt="Three SaaS trial company archetypes: Committed Operator both admin and workers active, Incomplete Setup admin only, Ghost Trial minimal engagement" loading="lazy">
+              <figcaption>Fig 5. The three company archetypes by conversion rate, distribution, and event volume. The Incomplete Setup group (51%) converts at 22% but carries significant post-conversion churn risk.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/04_worker_adoption_funnel.png" alt="Worker adoption funnel for B2B SaaS trial — from trial started to admin shift creation to mobile schedule viewed to worker activity to punch clock to conversion" loading="lazy">
+              <figcaption>Fig 6. The worker adoption funnel. The 46% drop between shift creation and mobile schedule view is the largest single friction point in the product journey.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/05_worker_depth_conversion.png" alt="Worker engagement depth score 0 to 5 versus SaaS trial conversion rate — shows weak positive trend at depth 3 with 25% conversion" loading="lazy">
+              <figcaption>Fig 7. Worker depth score (0 to 5 distinct worker activity types) versus conversion rate. A weak upward trend from depth 2 onward, but sample sizes above depth 2 are too small for firm conclusions.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/06_worker_adoption_speed.png" alt="Speed of worker adoption in SaaS trial — median time from admin setup to first worker action is less than one hour, cumulative adoption curves for converters vs non-converters" loading="lazy">
+              <figcaption>Fig 8. When workers do join, they join quickly. Median time from admin setup to first worker action is under one hour. 82% of handoffs happen on the same day. The problem is not timing — it is that 51% of companies never attempt the handoff.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/07_admin_vs_worker_split.png" alt="Admin versus worker event volume scatter plot for SaaS trial conversion — showing complete overlap between converted and non-converted organisations" loading="lazy">
+              <figcaption>Fig 9. Admin vs worker event volumes for converters and non-converters. Complete overlap in all three views: average volumes, worker event share distribution, and scatter plot. No behavioural region is exclusive to converters.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/08_model_comparison_worker_vs_admin.png" alt="Random Forest model ROC-AUC comparison for SaaS trial conversion prediction — admin features only 0.515, worker features only 0.514, combined 0.520" loading="lazy">
+              <figcaption>Fig 10. Predictive model comparison. All three Random Forest models score near random chance (0.50). Adding worker data to admin data improves AUC by 0.005 — not meaningful.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/09_survival_worker_vs_admin.png" alt="Kaplan-Meier survival analysis curves for SaaS trial conversion — worker active organisations versus admin only organisations follow nearly identical trajectories" loading="lazy">
+              <figcaption>Fig 11. Kaplan-Meier survival curves for worker-active versus admin-only organisations. Both groups follow nearly identical conversion trajectories and both spike sharply in the final days of the trial.</figcaption>
+            </figure>
+
+            <figure class="chart-figure">
+              <img src="../assets/img/portfolio/charts/10_handoff_gap.png" alt="Admin to worker handoff gap analysis — distribution of time between first admin action and first worker action in SaaS trial, conversion rate by handoff speed" loading="lazy">
+              <figcaption>Fig 12. The handoff gap. Both converters and non-converters show nearly identical distributions. The speed of the handoff, once it happens, does not predict conversion.</figcaption>
+            </figure>
+          </div>
+
+          <!-- MODELLING -->
+          <div class="doc-section" id="modelling">
+            <h2><span class="section-icon"><i class="bi bi-cpu"></i></span> Statistical Modelling Results</h2>
+            <p>Statistical tests and machine learning models were applied across all feature combinations. The results are consistent throughout:</p>
+
+            <h3>Hypothesis Tests</h3>
+            <table class="metric-table">
+              <thead><tr><th>Metric</th><th>Test</th><th>p-value</th><th>Significant?</th></tr></thead>
+              <tbody>
+                <tr><td>Total events</td><td>Mann-Whitney U</td><td class="val">0.851</td><td class="null-sig">No</td></tr>
+                <tr><td>Active days</td><td>Mann-Whitney U</td><td class="val">0.820</td><td class="null-sig">No</td></tr>
+                <tr><td>Unique activities</td><td>Mann-Whitney U</td><td class="val">0.650</td><td class="null-sig">No</td></tr>
+                <tr><td>Time to first activity</td><td>Mann-Whitney U</td><td class="val">0.153</td><td class="null-sig">No</td></tr>
+                <tr><td>Worker adoption (binary)</td><td>Chi-square</td><td class="val">0.850</td><td class="null-sig">No</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Predictive Model Performance</h3>
+            <table class="metric-table">
+              <thead><tr><th>Model</th><th>Features</th><th>CV ROC-AUC</th></tr></thead>
+              <tbody>
+                <tr><td>Random Forest</td><td>Admin features only</td><td class="val">0.515</td></tr>
+                <tr><td>Random Forest</td><td>Worker features only</td><td class="val">0.514</td></tr>
+                <tr><td>Random Forest</td><td>Admin + Worker combined</td><td class="val">0.520</td></tr>
+              </tbody>
+            </table>
+
+            <div class="callout">
+              <p><strong>Interpretation:</strong> The absence of a predictive signal is itself the signal. It points directly to a data gap — the variables that actually drive conversion (company size, acquisition channel, pricing, sales touchpoints) are not in the product event log. Collecting them is more valuable than further modelling of existing behavioural data.</p>
+            </div>
+          </div>
+
+          <!-- SQL -->
+          <div class="doc-section" id="sql">
+            <h2><span class="section-icon"><i class="bi bi-code-square"></i></span> SQL Data Models</h2>
+            <p>The SQL layer translates the analytical findings into production-ready operational models designed to live in a data warehouse. The architecture follows dbt conventions with a staging layer feeding into three mart tables.</p>
+
+            <div class="sql-lineage">
+<span class="hl">raw.da_task</span> (source)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="hl2">stg_trial_events</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(staging: deduplicated, validated, enriched)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── <span class="hl3">mart_trial_goals</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(per-org goal completion tracking)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="hl3">mart_trial_activation</span>&nbsp;(activation status and tiers)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── <span class="hl3">mart_worker_adoption</span>&nbsp;&nbsp;(admin vs worker segmentation)
+            </div>
+
+            <h3>stg_trial_events</h3>
+            <p>The single source of truth for cleaned event data. Separates data quality logic from analytical logic. Deduplicates, parses datetimes, removes out-of-window events, and adds <code>trial_day_number</code>, <code>hours_since_trial_start</code>, and <code>days_to_conversion</code> for use by all downstream models. <strong>Grain:</strong> one row per organisation per event, deduplicated.</p>
+
+            <h3>mart_trial_goals</h3>
+            <p>Tracks five data-driven trial goals per organisation. Goals were defined on product-value logic rather than statistical lift, since no individual behaviour achieved significance as a conversion predictor. Goal 1 (created a shift) captures the core admin action. Goal 2 (viewed mobile schedule) captures the handoff. Goal 3 (set availability) signals genuine workforce adoption. Goal 4 (active on 3+ days) captures sustained engagement. Goal 5 (used 3+ activity types) captures feature breadth. <strong>Grain:</strong> one row per organisation.</p>
+
+            <h3>mart_trial_activation</h3>
+            <p>Defines Trial Activation as completion of all five goals and assigns each organisation to an activation tier (Fully Activated, Partially Activated, Early Engagement, No Engagement). Built for direct CS and product team use without requiring analysts to re-run the analysis. Includes intervention flags: <code>is_near_activated_not_converted</code>, <code>is_zero_engagement</code>, and <code>is_activated_churned</code>. <strong>Grain:</strong> one row per organisation.</p>
+
+            <h3>mart_worker_adoption</h3>
+            <p>Operationalises the admin vs worker segmentation as a live operational metric. Classifies every event as admin-side or worker-side and produces the three-archetype classification. Includes <code>flag_admin_only_not_converted</code> (the primary target for the 48-hour onboarding nudge), <code>flag_no_punchclock_not_converted</code>, and <code>flag_deep_worker_not_converted</code>. <strong>Grain:</strong> one row per organisation.</p>
+          </div>
+
+          <!-- RECOMMENDATIONS -->
+          <div class="doc-section" id="recommendations">
+            <h2><span class="section-icon"><i class="bi bi-rocket-takeoff"></i></span> Recommendations</h2>
+            <p>Three recommendations emerged directly from the data, ranked by expected impact:</p>
+
+            <h3>1. Capture the Missing Data (Priority: Immediate)</h3>
+            <p>The current event log captures what users do inside the product. It captures nothing about why they decided to trial it, how large their company is, what price they were shown, or whether a salesperson spoke to them. These are almost certainly the variables that explain conversion.</p>
+            <ul>
+              <li>Add company size and industry to the signup flow</li>
+              <li>Instrument UTM parameter capture at the signup URL to record acquisition source</li>
+              <li>Integrate CRM data to log whether a sales or CS touchpoint occurred during the trial</li>
+              <li>Record the pricing tier shown to each trialling organisation</li>
+            </ul>
+
+            <h3>2. Fix the Worker Onboarding Handoff (Priority: This Month)</h3>
+            <p>51% of trialling organisations never got a worker onto the platform. When workers do join, they join within hours of admin setup. The problem is not slow adoption — it is that the connection is never made. This can be closed with a single automated email triggered when an admin creates shifts but no worker activity is recorded within 48 hours.</p>
+
+            <h3>3. Deploy CS Outreach at Days 14 to 21 (Priority: This Quarter)</h3>
+            <p>The survival analysis confirms conversion spikes sharply at trial expiry. The optimal intervention window is Days 14 to 21, before deadline urgency sets in. Flag all active trials at Day 14 that have not yet converted and prioritise the Partially Activated segment (3 to 4 goals complete).</p>
+
+            <div class="callout">
+              <p><strong>Why this matters:</strong> None of these require a product rebuild. All three are executable within one quarter with existing infrastructure and zero additional headcount.</p>
+            </div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="doc-section" id="tools">
+            <h2><span class="section-icon"><i class="bi bi-tools"></i></span> Tools and Technologies</h2>
+            <p>This project was built entirely in Python with a dbt-compatible SQL layer, chosen for reproducibility and portability across data warehouse environments.</p>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <i class="bi bi-filetype-py"></i>
+                <span class="tech-name">Python</span>
+                <span class="tech-role">Core analysis</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-table"></i>
+                <span class="tech-name">pandas</span>
+                <span class="tech-role">Data wrangling</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-diagram-2"></i>
+                <span class="tech-name">scikit-learn</span>
+                <span class="tech-role">ML models</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-graph-up"></i>
+                <span class="tech-name">lifelines</span>
+                <span class="tech-role">Survival analysis</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-bar-chart"></i>
+                <span class="tech-name">matplotlib</span>
+                <span class="tech-role">Visualisation</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-code-slash"></i>
+                <span class="tech-name">SQL / dbt</span>
+                <span class="tech-role">Data models</span>
+              </div>
+            </div>
+            <div class="tags-row">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">pandas</span>
+              <span class="tech-tag">scikit-learn</span>
+              <span class="tech-tag">lifelines</span>
+              <span class="tech-tag">K-Means Clustering</span>
+              <span class="tech-tag">Kaplan-Meier</span>
+              <span class="tech-tag">Cox PH Model</span>
+              <span class="tech-tag">Random Forest</span>
+              <span class="tech-tag">Logistic Regression</span>
+              <span class="tech-tag">Mann-Whitney U</span>
+              <span class="tech-tag">Chi-Square</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">dbt</span>
+              <span class="tech-tag">SaaS Analytics</span>
+              <span class="tech-tag">Product Analytics</span>
+              <span class="tech-tag">Cohort Analysis</span>
+            </div>
+          </div>
+
+          <!-- RELATED -->
+          <div class="doc-section" id="related">
+            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+            <p>If this case study is relevant to your analytical challenge, these projects may also be useful:</p>
+            <div class="related-grid">
+              <a href="retail-analysis-global-electronics.html" class="related-card">
+                <p class="card-label">Business Intelligence · Power BI</p>
+                <h4>Retail BI Dashboard — 90% Revenue Decline</h4>
+                <p>Diagnosing a 90% revenue collapse and identifying an 85% customer retention failure as the root cause using Power BI and cohort analysis.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="ecommerce-product-returns.html" class="related-card">
+                <p class="card-label">E-Commerce Analytics · Python</p>
+                <h4>E-Commerce Product Returns Analysis</h4>
+                <p>Identifying that 28% of revenue was being eroded by returns and isolating which products and customer segments were responsible.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="customer-journey-analysis.html" class="related-card">
+                <p class="card-label">Funnel Analytics · Python</p>
+                <h4>Customer Journey Analysis</h4>
+                <p>Mapping 10,000 user sessions to identify the friction points where customers consistently abandon the funnel before converting.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="lead-scoring-conversion-prediction.html" class="related-card">
+                <p class="card-label">Conversion Prediction · ML</p>
+                <h4>Lead Scoring and Conversion Prediction</h4>
+                <p>A 99% accuracy machine learning model predicting purchase likelihood from browsing behaviour signals, deployed on Streamlit.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+CTA
+========================================== -->
+<section class="project-cta">
+  <div class="container">
+    <p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+    <h2>Does your SaaS trial data have answers you have not found yet?</h2>
+    <p>I help SaaS and tech companies run rigorous product analytics — from trial conversion to churn prediction to retention modelling. First call is free.</p>
+    <div class="cta-buttons">
+      <a href="../index.html#contact" class="btn-cta-white">Tell Me Your Data Problem</a>
+      <a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+FOOTER
+========================================== -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h3>Adeyemi<span>Data</span></h3>
+          <p>
+            Remote Worldwide<br>
+            Available globally (timezone-flexible)<br><br>
+            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+            <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>What I Do</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Churn Prediction</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Trial Conversion Analysis</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">CLV Modeling</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Product Analytics</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Connect</h4>
+          <div class="social-links mt-3">
+            <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright">
+      &copy; 2026 <strong>Adediran Adeyemi</strong> &middot; Turning Data Into Decisions
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================
+SCHEMA MARKUP
+========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://adediranadeyemi.com/projects/saas-trial-conversion-analysis.html#article",
+      "headline": "SaaS Trial Conversion Analysis – Why Only 1 in 5 Trial Companies Convert",
+      "description": "A full-scope Python data science case study analysing trial-to-paid conversion across 966 B2B SaaS organisations using survival analysis, machine learning, cohort analysis, and SQL data models.",
+      "url": "https://adediranadeyemi.com/projects/saas-trial-conversion-analysis.html",
+      "datePublished": "2026-03-01",
+      "dateModified": "2026-03-22",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Adediran Adeyemi",
+        "url": "https://adediranadeyemi.com",
+        "jobTitle": "Freelance Data Scientist",
+        "email": "adeyemi@adediranadeyemi.com"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Adediran Adeyemi",
+        "url": "https://adediranadeyemi.com"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://adediranadeyemi.com/assets/img/portfolio/saas-trial-conversion-cover.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "keywords": [
+        "SaaS trial conversion analysis",
+        "trial to paid conversion",
+        "B2B trial conversion rate",
+        "product analytics Python",
+        "cohort analysis",
+        "survival analysis",
+        "Kaplan-Meier",
+        "random forest classification",
+        "workforce scheduling analytics",
+        "product-led growth",
+        "user behaviour analysis",
+        "data science portfolio"
+      ],
+      "proficiencyLevel": "Expert",
+      "dependencies": "Python, pandas, scikit-learn, lifelines, matplotlib, SQL"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://adediranadeyemi.com/projects/saas-trial-conversion-analysis.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://adediranadeyemi.com/#portfolio" },
+        { "@type": "ListItem", "position": 3, "name": "SaaS Trial Conversion Analysis", "item": "https://adediranadeyemi.com/projects/saas-trial-conversion-analysis.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- =========================================
+SCRIPTS
+========================================== -->
+<script>
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader');
+  if (pre) { pre.style.transition = 'opacity 0.4s'; pre.style.opacity = '0'; setTimeout(() => pre.remove(), 400); }
+});
+const toggle = document.querySelector('.mobile-nav-toggle');
+const navbar  = document.querySelector('#header .navbar');
+if (toggle && navbar) {
+  toggle.addEventListener('click', () => {
+    navbar.classList.toggle('navbar-mobile');
+    toggle.classList.toggle('bi-list');
+    toggle.classList.toggle('bi-x');
+  });
+}
+window.addEventListener('scroll', () => {
+  const btt = document.querySelector('.back-to-top');
+  if (btt) btt.classList.toggle('active', window.scrollY > 100);
+});
+(function () {
+  const links    = document.querySelectorAll('.toc-list a');
+  const sections = document.querySelectorAll('.doc-section[id]');
+  if (!links.length || !sections.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -65% 0px' });
+  sections.forEach(s => obs.observe(s));
+})();
+</script>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
