@@ -61,6 +61,35 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- New Blog Posts -->
+  <url>
+    <loc>https://adediranadeyemi.com/blog/tesla-financial-analysis-tariff-crisis.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/customer-profitability-audit.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/predict-customer-retention.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/personalize-free-trial-saas-conversions.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Project Pages -->
   <url>
     <loc>https://adediranadeyemi.com/projects/retail-analysis-global-electronics.html</loc>
