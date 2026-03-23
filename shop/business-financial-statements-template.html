@@ -28,444 +28,429 @@
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap');
-
 :root {
-  --navy: #0A1628;
-  --blue: #0052FF;
-  --blue-light: #E7F1FD;
-  --green: #047857;
-  --green-light: #F0FDF4;
-  --slate: #334155;
-  --muted: #64748B;
-  --border: #E2E8F0;
-  --bg: #F8FAFC;
-  --white: #ffffff;
+--navy: #0A1628;
+--blue: #0052FF;
+--blue-light: #E7F1FD;
+--green: #047857;
+--green-light: #F0FDF4;
+--slate: #334155;
+--muted: #64748B;
+--border: #E2E8F0;
+--bg: #F8FAFC;
+--white: #ffffff;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
-  font-family: 'DM Sans', -apple-system, sans-serif;
-  color: var(--navy);
-  background: var(--white);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+font-family: 'DM Sans', -apple-system, sans-serif;
+color: var(--navy);
+background: var(--white);
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
 }
-
 a { text-decoration: none; color: inherit; }
-
 /* ── TOPBAR ── */
 #topbar {
-  background: var(--navy);
-  padding: 10px 0;
-  font-size: 13px;
-  color: rgba(255,255,255,.7);
+background: var(--navy);
+padding: 10px 0;
+font-size: 13px;
+color: rgba(255,255,255,.7);
 }
 #topbar .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 8px;
 }
 #topbar a { color: rgba(255,255,255,.8); }
 #topbar a:hover { color: #fff; }
 .topbar-social { display: flex; gap: 14px; }
 .topbar-social a { font-size: 15px; }
-
 /* ── HEADER ── */
 #header {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  padding: 18px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+background: var(--white);
+border-bottom: 1px solid var(--border);
+padding: 18px 0;
+position: sticky;
+top: 0;
+z-index: 100;
+box-shadow: 0 1px 3px rgba(0,0,0,.05);
 }
 #header .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
 }
 .logo { font-family: 'DM Sans', sans-serif; font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; color: var(--navy); }
 .logo span { color: var(--blue); }
 nav ul { list-style: none; display: flex; gap: 30px; }
 nav a { font-size: .9rem; font-weight: 500; color: var(--slate); transition: color .2s; }
 nav a:hover, nav a.active { color: var(--blue); }
-
 /* ── BREADCRUMB ── */
 .breadcrumb-bar {
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-  padding: 12px 0;
+background: var(--bg);
+border-bottom: 1px solid var(--border);
+padding: 12px 0;
 }
 .breadcrumb-bar .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
 }
 .breadcrumb-bar ol {
-  list-style: none;
-  display: flex;
-  gap: 6px;
-  font-size: .8rem;
-  color: var(--muted);
+list-style: none;
+display: flex;
+gap: 6px;
+font-size: .8rem;
+color: var(--muted);
 }
 .breadcrumb-bar a { color: var(--blue); }
 .breadcrumb-bar li:not(:last-child)::after { content: '/'; margin-left: 6px; color: #CBD5E1; }
-
 /* ── HERO ── */
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #0d2045 100%);
-  padding: 80px 0 70px;
-  position: relative;
-  overflow: hidden;
+background: linear-gradient(135deg, var(--navy) 0%, #0d2045 100%);
+padding: 80px 0 70px;
+position: relative;
+overflow: hidden;
 }
 .hero::before {
-  content: '';
-  position: absolute;
-  top: -100px; right: -100px;
-  width: 500px; height: 500px;
-  border-radius: 50%;
-  background: rgba(0,82,255,.12);
-  pointer-events: none;
+content: '';
+position: absolute;
+top: -100px; right: -100px;
+width: 500px; height: 500px;
+border-radius: 50%;
+background: rgba(0,82,255,.12);
+pointer-events: none;
 }
 .hero::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; left: -60px;
-  width: 350px; height: 350px;
-  border-radius: 50%;
-  background: rgba(4,120,87,.1);
-  pointer-events: none;
+content: '';
+position: absolute;
+bottom: -80px; left: -60px;
+width: 350px; height: 350px;
+border-radius: 50%;
+background: rgba(4,120,87,.1);
+pointer-events: none;
 }
 .hero .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 60px;
-  align-items: center;
-  position: relative;
-  z-index: 1;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+display: grid;
+grid-template-columns: 1fr 380px;
+gap: 60px;
+align-items: center;
+position: relative;
+z-index: 1;
 }
 .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(4,120,87,.25);
-  color: #6ee7b7;
-  font-size: .8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  margin-bottom: 22px;
-  border: 1px solid rgba(110,231,183,.2);
+display: inline-flex;
+align-items: center;
+gap: 8px;
+background: rgba(4,120,87,.25);
+color: #6ee7b7;
+font-size: .8rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .8px;
+padding: 6px 14px;
+border-radius: 20px;
+margin-bottom: 22px;
+border: 1px solid rgba(110,231,183,.2);
 }
 .hero-badge::before { content: '●'; font-size: .5rem; animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 .hero h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 3rem;
-  font-weight: 400;
-  color: #fff;
-  line-height: 1.15;
-  letter-spacing: -.02em;
-  margin-bottom: 20px;
+font-family: 'DM Serif Display', Georgia, serif;
+font-size: 3rem;
+font-weight: 400;
+color: #fff;
+line-height: 1.15;
+letter-spacing: -.02em;
+margin-bottom: 20px;
 }
 .hero h1 em { font-style: italic; color: #93c5fd; }
 .hero-subtitle {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,.75);
-  line-height: 1.7;
-  margin-bottom: 32px;
-  max-width: 560px;
+font-size: 1.15rem;
+color: rgba(255,255,255,.75);
+line-height: 1.7;
+margin-bottom: 32px;
+max-width: 560px;
 }
 .hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 36px;
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 36px;
 }
 .hero-tag {
-  background: rgba(255,255,255,.1);
-  color: rgba(255,255,255,.85);
-  font-size: .8rem;
-  font-weight: 600;
-  padding: 6px 14px;
-  border-radius: 4px;
-  border: 1px solid rgba(255,255,255,.15);
+background: rgba(255,255,255,.1);
+color: rgba(255,255,255,.85);
+font-size: .8rem;
+font-weight: 600;
+padding: 6px 14px;
+border-radius: 4px;
+border: 1px solid rgba(255,255,255,.15);
 }
 .hero-cta-group { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--blue);
-  color: #fff;
-  padding: 16px 32px;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: .3px;
-  transition: background .2s, transform .15s;
-  border: none;
-  cursor: pointer;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: var(--blue);
+color: #fff;
+padding: 16px 32px;
+border-radius: 4px;
+font-size: 1rem;
+font-weight: 700;
+letter-spacing: .3px;
+transition: background .2s, transform .15s;
+border: none;
+cursor: pointer;
 }
 .btn-primary:hover { background: #0041cc; transform: translateY(-1px); color: #fff; }
 .btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,.8);
-  font-size: .9rem;
-  font-weight: 500;
-  padding: 10px 0;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+color: rgba(255,255,255,.8);
+font-size: .9rem;
+font-weight: 500;
+padding: 10px 0;
 }
 .btn-secondary:hover { color: #fff; }
-
 /* ── PURCHASE CARD ── */
 .purchase-card {
-  background: var(--white);
-  border-radius: 12px;
-  padding: 36px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.3);
-  position: sticky;
-  top: 90px;
+background: var(--white);
+border-radius: 12px;
+padding: 36px;
+box-shadow: 0 20px 60px rgba(0,0,0,.3);
+position: sticky;
+top: 90px;
 }
 .purchase-card .product-label {
-  font-size: .75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  color: var(--blue);
-  margin-bottom: 8px;
+font-size: .75rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .8px;
+color: var(--blue);
+margin-bottom: 8px;
 }
 .purchase-card h3 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--navy);
-  margin-bottom: 20px;
-  line-height: 1.3;
+font-size: 1.25rem;
+font-weight: 800;
+color: var(--navy);
+margin-bottom: 20px;
+line-height: 1.3;
 }
 .price-block { margin-bottom: 24px; }
 .price-main {
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: var(--navy);
-  letter-spacing: -.04em;
-  line-height: 1;
+font-size: 2.8rem;
+font-weight: 900;
+color: var(--navy);
+letter-spacing: -.04em;
+line-height: 1;
 }
 .price-note { font-size: .85rem; color: var(--muted); margin-top: 4px; }
 .includes-list { margin-bottom: 24px; }
 .includes-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: .9rem;
-  color: var(--slate);
-  padding: 7px 0;
-  border-bottom: 1px solid var(--border);
-  line-height: 1.4;
+display: flex;
+align-items: flex-start;
+gap: 10px;
+font-size: .9rem;
+color: var(--slate);
+padding: 7px 0;
+border-bottom: 1px solid var(--border);
+line-height: 1.4;
 }
 .includes-list li:last-child { border-bottom: none; }
 .includes-list .check {
-  width: 18px;
-  height: 18px;
-  background: var(--green-light);
-  color: var(--green);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .65rem;
-  font-weight: 900;
-  flex-shrink: 0;
-  margin-top: 2px;
+width: 18px;
+height: 18px;
+background: var(--green-light);
+color: var(--green);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: .65rem;
+font-weight: 900;
+flex-shrink: 0;
+margin-top: 2px;
 }
 .btn-buy {
-  display: block;
-  width: 100%;
-  background: var(--blue);
-  color: #fff;
-  text-align: center;
-  padding: 17px;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: .3px;
-  transition: background .2s;
-  margin-bottom: 12px;
+display: block;
+width: 100%;
+background: var(--blue);
+color: #fff;
+text-align: center;
+padding: 17px;
+border-radius: 4px;
+font-size: 1rem;
+font-weight: 700;
+letter-spacing: .3px;
+transition: background .2s;
+margin-bottom: 12px;
 }
 .btn-buy:hover { background: #0041cc; color: #fff; }
 .card-trust {
-  text-align: center;
-  font-size: .78rem;
-  color: var(--muted);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
+text-align: center;
+font-size: .78rem;
+color: var(--muted);
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 6px;
 }
-
 /* ── MAIN LAYOUT ── */
 .page-main {
-  background: var(--bg);
-  padding: 70px 0;
+background: var(--bg);
+padding: 70px 0;
 }
 .page-main .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 60px;
-  align-items: start;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
+display: grid;
+grid-template-columns: 1fr 380px;
+gap: 60px;
+align-items: start;
 }
 .content-col { min-width: 0; }
 .sidebar-col { position: sticky; top: 90px; }
-
 /* ── SECTION STYLES ── */
 section { margin-bottom: 60px; }
 .section-label {
-  font-size: .75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .8px;
-  color: var(--blue);
-  margin-bottom: 12px;
+font-size: .75rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .8px;
+color: var(--blue);
+margin-bottom: 12px;
 }
 .section-title {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 2rem;
-  font-weight: 400;
-  color: var(--navy);
-  margin-bottom: 18px;
-  line-height: 1.25;
-  letter-spacing: -.02em;
+font-family: 'DM Serif Display', Georgia, serif;
+font-size: 2rem;
+font-weight: 400;
+color: var(--navy);
+margin-bottom: 18px;
+line-height: 1.25;
+letter-spacing: -.02em;
 }
 .section-body p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--slate);
-  margin-bottom: 18px;
+font-size: 1.05rem;
+line-height: 1.8;
+color: var(--slate);
+margin-bottom: 18px;
 }
 .section-body p:last-child { margin-bottom: 0; }
-
 /* ── PROBLEM BLOCK ── */
 .problem-block {
-  background: #fff;
-  border-radius: 8px;
-  padding: 36px;
-  border-left: 4px solid #EF4444;
-  margin-bottom: 30px;
+background: #fff;
+border-radius: 8px;
+padding: 36px;
+border-left: 4px solid #EF4444;
+margin-bottom: 30px;
 }
 .problem-block h3 {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #991B1B;
-  margin-bottom: 14px;
+font-size: 1.2rem;
+font-weight: 800;
+color: #991B1B;
+margin-bottom: 14px;
 }
 .problem-block p {
-  font-size: 1rem;
-  color: var(--slate);
-  line-height: 1.8;
-  margin-bottom: 12px;
+font-size: 1rem;
+color: var(--slate);
+line-height: 1.8;
+margin-bottom: 12px;
 }
 .problem-block p:last-child { margin-bottom: 0; }
-
 /* ── SHEETS GRID ── */
 .sheets-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-  margin-top: 24px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 18px;
+margin-top: 24px;
 }
 .sheet-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 24px;
-  border: 1px solid var(--border);
-  transition: border-color .2s, box-shadow .2s;
+background: #fff;
+border-radius: 8px;
+padding: 24px;
+border: 1px solid var(--border);
+transition: border-color .2s, box-shadow .2s;
 }
 .sheet-card:hover { border-color: var(--blue); box-shadow: 0 4px 16px rgba(0,82,255,.08); }
 .sheet-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  margin-bottom: 14px;
+width: 42px;
+height: 42px;
+border-radius: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.2rem;
+margin-bottom: 14px;
 }
 .sheet-icon.green { background: var(--green-light); }
 .sheet-icon.blue { background: var(--blue-light); }
 .sheet-icon.amber { background: #FEF9E7; }
 .sheet-icon.red { background: #FEF2F2; }
 .sheet-card h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
+font-size: 1rem;
+font-weight: 700;
+color: var(--navy);
+margin-bottom: 8px;
 }
 .sheet-card p {
-  font-size: .875rem;
-  color: var(--muted);
-  line-height: 1.65;
+font-size: .875rem;
+color: var(--muted);
+line-height: 1.65;
 }
-
 /* ── FOR WHO ── */
 .for-list { margin-top: 20px; display: flex; flex-direction: column; gap: 14px; }
 .for-item {
-  display: flex;
-  gap: 16px;
-  background: #fff;
-  padding: 20px 24px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  align-items: flex-start;
+display: flex;
+gap: 16px;
+background: #fff;
+padding: 20px 24px;
+border-radius: 8px;
+border: 1px solid var(--border);
+align-items: flex-start;
 }
 .for-emoji { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
 .for-item h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
 .for-item p { font-size: .875rem; color: var(--muted); line-height: 1.6; margin: 0; }
-
 /* ── STATEMENTS DEEP DIVE ── */
 .statement-cards { margin-top: 24px; display: flex; flex-direction: column; gap: 20px; }
 .statement-card {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--border);
+background: #fff;
+border-radius: 8px;
+overflow: hidden;
+border: 1px solid var(--border);
 }
 .statement-card-header {
-  padding: 20px 28px;
-  border-left: 4px solid;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+padding: 20px 28px;
+border-left: 4px solid;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 .statement-card.income .statement-card-header { background: var(--green-light); border-left-color: var(--green); }
 .statement-card.balance .statement-card-header { background: var(--blue-light); border-left-color: var(--blue); }
 .statement-card.cashflow .statement-card-header { background: #FEF9E7; border-left-color: #F59E0B; }
 .statement-card-header h3 { font-size: 1.1rem; font-weight: 800; color: var(--navy); margin: 0; }
 .statement-card-header .sheet-tag {
-  font-size: .75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-  padding: 4px 10px;
-  border-radius: 4px;
+font-size: .75rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .5px;
+padding: 4px 10px;
+border-radius: 4px;
 }
 .statement-card.income .sheet-tag { background: rgba(4,120,87,.12); color: var(--green); }
 .statement-card.balance .sheet-tag { background: rgba(0,82,255,.1); color: var(--blue); }
@@ -474,99 +459,94 @@ section { margin-bottom: 60px; }
 .statement-card-body p { font-size: .95rem; color: var(--slate); line-height: 1.75; margin-bottom: 12px; }
 .statement-card-body ul { padding-left: 20px; }
 .statement-card-body li { font-size: .9rem; color: var(--slate); line-height: 1.7; margin-bottom: 6px; }
-
 /* ── KEY INSIGHT BOX ── */
 .key-insight {
-  background: var(--blue-light);
-  border-left: 4px solid var(--blue);
-  padding: 20px 24px;
-  border-radius: 0 8px 8px 0;
-  margin: 24px 0;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.6;
+background: var(--blue-light);
+border-left: 4px solid var(--blue);
+padding: 20px 24px;
+border-radius: 0 8px 8px 0;
+margin: 24px 0;
+font-size: 1.05rem;
+font-weight: 600;
+color: var(--navy);
+line-height: 1.6;
 }
-
 /* ── FAQ ── */
 .faq-list { margin-top: 20px; }
 .faq-item { padding: 22px 0; border-bottom: 1px solid var(--border); }
 .faq-item:last-child { border-bottom: none; }
 .faq-item h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.4; }
 .faq-item p { font-size: .95rem; color: var(--slate); line-height: 1.75; margin: 0; }
-
 /* ── FINAL CTA ── */
 .final-cta {
-  background: var(--navy);
-  padding: 70px 0;
-  text-align: center;
+background: var(--navy);
+padding: 70px 0;
+text-align: center;
 }
 .final-cta .container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 24px;
+max-width: 700px;
+margin: 0 auto;
+padding: 0 24px;
 }
 .final-cta h2 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: 2.5rem;
-  font-weight: 400;
-  color: #fff;
-  margin-bottom: 18px;
-  line-height: 1.2;
+font-family: 'DM Serif Display', Georgia, serif;
+font-size: 2.5rem;
+font-weight: 400;
+color: #fff;
+margin-bottom: 18px;
+line-height: 1.2;
 }
 .final-cta p {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,.75);
-  line-height: 1.7;
-  margin-bottom: 32px;
+font-size: 1.1rem;
+color: rgba(255,255,255,.75);
+line-height: 1.7;
+margin-bottom: 32px;
 }
 .final-cta .btn-primary { font-size: 1.05rem; padding: 18px 40px; }
-
 /* ── SIDEBAR CARD ── */
 .sidebar-info-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 28px;
-  border: 1px solid var(--border);
-  margin-bottom: 20px;
+background: #fff;
+border-radius: 8px;
+padding: 28px;
+border: 1px solid var(--border);
+margin-bottom: 20px;
 }
 .sidebar-info-card h4 {
-  font-size: .85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .6px;
-  color: var(--muted);
-  margin-bottom: 16px;
+font-size: .85rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: .6px;
+color: var(--muted);
+margin-bottom: 16px;
 }
 .spec-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 9px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: .9rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 9px 0;
+border-bottom: 1px solid var(--border);
+font-size: .9rem;
 }
 .spec-row:last-child { border-bottom: none; }
 .spec-label { color: var(--muted); }
 .spec-value { font-weight: 600; color: var(--navy); }
 .spec-value.green { color: var(--green); }
-
 /* ── FOOTER ── */
 #footer {
-  background: var(--navy);
-  color: rgba(255,255,255,.7);
-  padding: 50px 0 24px;
+background: var(--navy);
+color: rgba(255,255,255,.7);
+padding: 50px 0 24px;
 }
 #footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 24px;
 }
 .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
+display: grid;
+grid-template-columns: 2fr 1fr 1fr;
+gap: 40px;
+margin-bottom: 40px;
 }
 #footer h3 { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
 #footer h3 span { color: var(--blue); }
@@ -578,42 +558,40 @@ section { margin-bottom: 60px; }
 .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: rgba(255,255,255,.08); border-radius: 6px; font-size: .9rem; color: rgba(255,255,255,.7) !important; margin: 0; }
 .footer-social a:hover { background: rgba(255,255,255,.16); color: #fff !important; }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: 22px;
-  font-size: .8rem;
-  color: rgba(255,255,255,.4);
-  text-align: center;
+border-top: 1px solid rgba(255,255,255,.1);
+padding-top: 22px;
+font-size: .8rem;
+color: rgba(255,255,255,.4);
+text-align: center;
 }
-
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .hero .container,
-  .page-main .container { grid-template-columns: 1fr; }
-  .purchase-card, .sidebar-col { position: static; }
-  .hero-col-right { order: -1; }
-  .purchase-card { max-width: 460px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+.hero .container,
+.page-main .container { grid-template-columns: 1fr; }
+.purchase-card, .sidebar-col { position: static; }
+.hero-col-right { order: -1; }
+.purchase-card { max-width: 460px; }
+.footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
-  .hero { padding: 50px 0; }
-  .hero h1 { font-size: 2.2rem; }
-  .section-title { font-size: 1.6rem; }
-  .sheets-grid { grid-template-columns: 1fr 1fr; }
-  nav ul { display: none; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .final-cta h2 { font-size: 1.9rem; }
+.hero { padding: 50px 0; }
+.hero h1 { font-size: 2.2rem; }
+.section-title { font-size: 1.6rem; }
+.sheets-grid { grid-template-columns: 1fr 1fr; }
+nav ul { display: none; }
+.footer-grid { grid-template-columns: 1fr; }
+.final-cta h2 { font-size: 1.9rem; }
 }
 @media (max-width: 480px) {
-  .sheets-grid { grid-template-columns: 1fr; }
-  .hero-tags { gap: 6px; }
-  .hero-cta-group { flex-direction: column; align-items: flex-start; }
+.sheets-grid { grid-template-columns: 1fr; }
+.hero-tags { gap: 6px; }
+.hero-cta-group { flex-direction: column; align-items: flex-start; }
 }
 </style>
 <link href="../assets/css/style.css" rel="stylesheet">
 <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-
 <!-- TOPBAR -->
 <section id="topbar">
 <div class="container">
@@ -629,7 +607,6 @@ section { margin-bottom: 60px; }
 </div>
 </div>
 </section>
-
 <!-- HEADER -->
 <header id="header">
 <div class="container">
@@ -646,7 +623,6 @@ section { margin-bottom: 60px; }
 </nav>
 </div>
 </header>
-
 <!-- BREADCRUMB -->
 <div class="breadcrumb-bar">
 <div class="container">
@@ -657,7 +633,6 @@ section { margin-bottom: 60px; }
 </ol>
 </div>
 </div>
-
 <!-- HERO -->
 <section class="hero">
 <div class="container">
@@ -699,334 +674,338 @@ section { margin-bottom: 60px; }
 <li><span class="check">✓</span> Step-by-step How-To-Use guide</li>
 </ul>
 <a href="https://selar.com/24vm51jp47" class="btn-buy" id="buy-btn" target="_blank" rel="noopener">
-  Get Instant Access <i class="bi bi-arrow-right"></i>
+Get Instant Access <i class="bi bi-arrow-right"></i>
 </a>
 <div class="card-trust"><i class="bi bi-shield-check" style="color:#047857;"></i> Secure checkout via Selar</div>
 </div>
 </div>
 </div>
 </section>
-
 <!-- MAIN CONTENT -->
 <main class="page-main">
 <div class="container">
-
-  <!-- LEFT: CONTENT -->
-  <div class="content-col">
-
-    <!-- WHO IS THIS FOR -->
-    <section>
-      <div class="section-label">Is This For You?</div>
-      <h2 class="section-title">Built for Small Business Owners Who Are Done Guessing</h2>
-      <div class="section-body">
-        <p>If you run a business and your finances live in a mix of WhatsApp notes, bank SMS alerts, and spreadsheets that no longer make sense — this template was built for you.</p>
-      </div>
-      <div class="for-list">
-        <div class="for-item">
-          <div class="for-emoji">🛒</div>
-          <div>
-            <h4>Retail &amp; Product-Based Businesses</h4>
-            <p>Track product sales revenue, COGS, and inventory value. See your gross margin clearly without hiring a bookkeeper.</p>
-          </div>
-        </div>
-        <div class="for-item">
-          <div class="for-emoji">💼</div>
-          <div>
-            <h4>Freelancers &amp; Consultants</h4>
-            <p>Log consulting fees, track expenses by category, and produce a professional P&amp;L whenever a client or bank asks for it.</p>
-          </div>
-        </div>
-        <div class="for-item">
-          <div class="for-emoji">🍽️</div>
-          <div>
-            <h4>Food &amp; Service Businesses</h4>
-            <p>Track daily revenue including tips, manage supplier debt, and monitor cash flow so you never run out of working capital.</p>
-          </div>
-        </div>
-        <div class="for-item">
-          <div class="for-emoji">📦</div>
-          <div>
-            <h4>Import / Export &amp; Trading Businesses</h4>
-            <p>Multi-currency transaction support handles USD, GBP, EUR, and NGN simultaneously — with automatic conversion to your base currency.</p>
-          </div>
-        </div>
-        <div class="for-item">
-          <div class="for-emoji">🏗️</div>
-          <div>
-            <h4>Any Business Applying for a Loan or Investment</h4>
-            <p>Banks and investors require financial statements. This system generates all three — Income Statement, Balance Sheet, Cash Flow — in a format they will recognize and accept.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE PROBLEM -->
-    <section>
-      <div class="section-label">The Problem</div>
-      <h2 class="section-title">Most Small Business Owners Don't Know If They're Actually Profitable</h2>
-      <div class="problem-block">
-        <h3>Sound familiar?</h3>
-        <p>Revenue is coming in. Payments are going out. But at the end of the month, you're not sure where the money went. You can't tell your gross profit from your net profit. You don't know your actual cash position after all your debts and expenses. You have no idea what your business is worth on paper.</p>
-        <p>When a bank asks for financial statements, you panic. When a potential partner asks to see your books, you deflect. When tax season arrives, you're scrambling to piece together a year of transactions from memory and bank statements.</p>
-      </div>
-      <div class="key-insight">This isn't a discipline problem. It's a systems problem. When you have the right system, the financial statements write themselves.</div>
-      <div class="section-body">
-        <p>This template is that system. Enter your transactions once. Every statement — Income, Balance Sheet, Cash Flow — updates automatically. Open the Dashboard and your entire business financial picture is in front of you in seconds.</p>
-      </div>
-    </section>
-
-    <!-- WHAT'S INSIDE -->
-    <section id="whats-inside">
-      <div class="section-label">What's Inside</div>
-      <h2 class="section-title">12 Sheets. One Complete Financial System.</h2>
-      <div class="section-body">
-        <p>Every sheet is connected. Enter your data once in the Transaction Log — and every report, every statement, every dashboard metric updates automatically across all 12 sheets.</p>
-      </div>
-      <div class="sheets-grid">
-        <div class="sheet-card">
-          <div class="sheet-icon green">📋</div>
-          <h4>Transaction Entry Log</h4>
-          <p>The central input. Enter date, type, category, currency, amount. Everything else updates automatically. Supports tips and multi-currency with exchange rate conversion.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon green">📈</div>
-          <h4>Income Statement</h4>
-          <p>Auto-generated Profit &amp; Loss. Tracks revenue by category, all expense types, gross profit, operating income, and net income. View YTD or by period.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon blue">⚖️</div>
-          <h4>Balance Sheet</h4>
-          <p>Auto-generated snapshot of assets, liabilities, and equity. Updates in real-time as transactions, debt, and equipment records change.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon amber">💧</div>
-          <h4>Cash Flow Statement</h4>
-          <p>Auto-generated operating, investing, and financing activities. Shows true cash position including depreciation and working capital changes.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon blue">📊</div>
-          <h4>Executive Dashboard</h4>
-          <p>KPIs at a glance — revenue, net income, gross margin, cash balance. Includes live alerts for low cash, losses, and balance sheet imbalances.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon amber">🎯</div>
-          <h4>Budget vs Actual</h4>
-          <p>Set your revenue and expense targets. The sheet automatically compares actuals against budget and shows variance in amount and percentage.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon red">🏦</div>
-          <h4>Debt &amp; Loan Register</h4>
-          <p>Track all business loans. Automatic payment schedule calculation, outstanding balance tracking, and overdue alerts. Feeds directly into Balance Sheet.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon amber">🔧</div>
-          <h4>Equipment Register</h4>
-          <p>Track every business asset. Automatic straight-line depreciation, net book value, and maintenance schedule. Feeds into Balance Sheet and Cash Flow.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon green">🏦</div>
-          <h4>Business Savings Goals</h4>
-          <p>Set financial targets for equipment, expansion, or emergency funds. Tracks progress automatically and alerts you when goals are achieved or overdue.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon blue">⚙️</div>
-          <h4>Company Settings</h4>
-          <p>Enter your company name, base currency, fiscal year start, and KPI targets once. Every sheet personalizes automatically to your business.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon amber">💱</div>
-          <h4>Currency Helper</h4>
-          <p>Supports USD, EUR, GBP, NGN, CAD, AUD, JPY, and CNY. Set your base currency once — all multi-currency transactions convert automatically.</p>
-        </div>
-        <div class="sheet-card">
-          <div class="sheet-icon green">📖</div>
-          <h4>How-To-Use Guide</h4>
-          <p>A full step-by-step guide built into the file. No separate manual needed. Explains every sheet, every field, and every formula in plain language.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- THE THREE STATEMENTS -->
-    <section>
-      <div class="section-label">The Core Outputs</div>
-      <h2 class="section-title">The Three Financial Statements Every Business Needs</h2>
-      <div class="section-body">
-        <p>These are not just nice-to-have reports. They are the language of business finance. Banks require them for loans. Investors require them before funding. Tax authorities require them for compliance. Here is what each one does and why it matters.</p>
-      </div>
-      <div class="statement-cards">
-        <div class="statement-card income">
-          <div class="statement-card-header">
-            <h3>Income Statement (Profit &amp; Loss)</h3>
-            <span class="sheet-tag">Sheet: Income_Statement</span>
-          </div>
-          <div class="statement-card-body">
-            <p>Shows everything your business earned and everything it spent over a period of time — and whether you made a profit or a loss. This is the statement most business owners look at first when they want to understand performance.</p>
-            <ul>
-              <li>Total revenue broken down by category (Product Sales, Services, Consulting, Tips)</li>
-              <li>Cost of Goods Sold and Gross Profit calculation</li>
-              <li>All operating expenses categorized and totalled</li>
-              <li>Operating Income, interest, tax, and final Net Income</li>
-              <li>View year-to-date or any custom period</li>
-            </ul>
-          </div>
-        </div>
-        <div class="statement-card balance">
-          <div class="statement-card-header">
-            <h3>Balance Sheet</h3>
-            <span class="sheet-tag">Sheet: Balance_Sheet</span>
-          </div>
-          <div class="statement-card-body">
-            <p>A snapshot of what your business owns, what it owes, and what's left over for the owner. Updated automatically to reflect your current assets, liabilities from the Debt Register, and equipment values from the Asset Register.</p>
-            <ul>
-              <li>Current assets: cash, receivables, inventory, prepaid expenses</li>
-              <li>Fixed assets: equipment net book value after depreciation</li>
-              <li>Current and long-term liabilities from Debt Register</li>
-              <li>Equity section with retained earnings</li>
-              <li>Auto-validates that Assets = Liabilities + Equity</li>
-            </ul>
-          </div>
-        </div>
-        <div class="statement-card cashflow">
-          <div class="statement-card-header">
-            <h3>Cash Flow Statement</h3>
-            <span class="sheet-tag">Sheet: Cash_Flow</span>
-          </div>
-          <div class="statement-card-body">
-            <p>Shows the actual movement of cash in and out of the business — separate from profit. A business can be profitable on paper and still run out of cash. The Cash Flow Statement is what tells you whether you actually have the money to operate.</p>
-            <ul>
-              <li>Cash from Operating Activities — net income adjusted for non-cash items</li>
-              <li>Cash from Investing Activities — equipment purchases and disposals</li>
-              <li>Cash from Financing Activities — loan proceeds and repayments</li>
-              <li>Beginning and ending cash balance reconciliation</li>
-              <li>Cash runway analysis on the Dashboard</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section>
-      <div class="section-label">Questions</div>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <h3>Do I need accounting knowledge to use this template?</h3>
-          <p>No. You only enter your transactions — date, type, category, and amount. The system generates all three financial statements automatically. A full How-To-Use guide is built into the file and walks you through every step.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Does it work for Nigerian businesses?</h3>
-          <p>Yes. The template is configured for NGN (₦) by default and supports 8 currencies: USD, EUR, GBP, NGN, CAD, AUD, JPY, and CNY. Multi-currency transactions are automatically converted to your base currency using exchange rates you set, making it ideal for import/export and businesses that receive foreign payments.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What version of Excel do I need?</h3>
-          <p>Microsoft Excel 2016 or later, including Excel 365. The template uses standard Excel formulas (SUMIFS, VLOOKUP, IF). It is not designed for Google Sheets due to some formula dependencies that behave differently outside Excel.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can I use it to apply for a bank loan?</h3>
-          <p>Yes. The template generates the three statements banks and lenders require: Income Statement, Balance Sheet, and Cash Flow Statement. The output is professionally formatted and clearly labelled with your company name. Most Nigerian commercial banks and microfinance institutions accept these standard statement formats.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can I track loans and equipment depreciation?</h3>
-          <p>Yes. The Debt Register tracks all loans with automatic monthly payment calculations, outstanding balances, and overdue alerts. The Equipment Register tracks all assets with straight-line depreciation calculated automatically by useful life. Both feed directly into the Balance Sheet.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What if I get stuck using it?</h3>
-          <p>The How-To-Use guide inside the file covers every sheet and every field. If you still need help, you can reach me directly at <a href="/cdn-cgi/l/email-protection#68090c0d110d050128090c0d0c011a0906090c0d110d0501460b0705" style="color:var(--blue);font-weight:600;"><span class="__cf_email__" data-cfemail="09686d6c706c646049686d6c6d607b6867686d6c706c6460276a6664">[email&#160;protected]</span></a>.</p>
-        </div>
-      </div>
-    </section>
-
-  </div><!-- /content-col -->
-
-  <!-- RIGHT: SIDEBAR -->
-  <aside class="sidebar-col">
-    <!-- Repeat purchase card for sidebar scroll -->
-    <div class="purchase-card">
-      <div class="product-label">Digital Template · Excel (.xlsx)</div>
-      <h3>Business Financial Statements System</h3>
-      <div class="price-block">
-        <div class="price-main">—</div>
-        <div class="price-note">One-time payment. Instant download. Yours to keep.</div>
-      </div>
-      <ul class="includes-list">
-        <li><span class="check">✓</span> Income Statement (auto-generated)</li>
-        <li><span class="check">✓</span> Balance Sheet (auto-generated)</li>
-        <li><span class="check">✓</span> Cash Flow Statement (auto-generated)</li>
-        <li><span class="check">✓</span> Executive Dashboard + KPIs</li>
-        <li><span class="check">✓</span> Budget vs Actual analysis</li>
-        <li><span class="check">✓</span> Debt &amp; Loan Register</li>
-        <li><span class="check">✓</span> Equipment &amp; Depreciation Register</li>
-        <li><span class="check">✓</span> Savings Goals Tracker</li>
-        <li><span class="check">✓</span> Multi-currency (8 currencies)</li>
-        <li><span class="check">✓</span> How-To-Use guide included</li>
-      </ul>
-      <a href="https://selar.com/24vm51jp47" class="btn-buy" target="_blank" rel="noopener">
-        Get Instant Access <i class="bi bi-arrow-right"></i>
-      </a>
-      <div class="card-trust"><i class="bi bi-shield-check" style="color:#047857;margin-right:5px;"></i> Secure checkout via Selar</div>
-    </div>
-
-    <!-- Specs -->
-    <div class="sidebar-info-card">
-      <h4>Product Details</h4>
-      <div class="spec-row"><span class="spec-label">Format</span><span class="spec-value">Excel (.xlsx)</span></div>
-      <div class="spec-row"><span class="spec-label">Sheets</span><span class="spec-value">12 connected sheets</span></div>
-      <div class="spec-row"><span class="spec-label">Currencies</span><span class="spec-value">8 (NGN default)</span></div>
-      <div class="spec-row"><span class="spec-label">Statements</span><span class="spec-value">Income, Balance, Cash Flow</span></div>
-      <div class="spec-row"><span class="spec-label">Delivery</span><span class="spec-value green">Instant download</span></div>
-      <div class="spec-row"><span class="spec-label">Excel Version</span><span class="spec-value">2016 / 365+</span></div>
-      <div class="spec-row"><span class="spec-label">Guide Included</span><span class="spec-value green">Yes — inside the file</span></div>
-    </div>
-
-    <!-- Contact -->
-    <div class="sidebar-info-card">
-      <h4>Questions Before Buying?</h4>
-      <p style="font-size:.875rem;color:var(--slate);line-height:1.7;margin-bottom:14px;">Send me a message and I'll respond within 24 hours.</p>
-      <a href="/cdn-cgi/l/email-protection#3c5d5859455951557c5d585958554e5d525d585945595155125f5351" style="display:flex;align-items:center;gap:8px;font-size:.875rem;font-weight:600;color:var(--blue);">
-        <i class="bi bi-envelope"></i> <span class="__cf_email__" data-cfemail="ec8d888995898185ac8d888988859e8d828d888995898185c28f8381">[email&#160;protected]</span>
-      </a>
-      <a href="https://wa.me/+2348162735399" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;font-size:.875rem;font-weight:600;color:#047857;margin-top:10px;">
-        <i class="bi bi-whatsapp"></i> WhatsApp: +234 816 273 5399
-      </a>
-    </div>
-  </aside>
-
+<!-- LEFT: CONTENT -->
+<div class="content-col">
+<!-- WHO IS THIS FOR -->
+<section>
+<div class="section-label">Is This For You?</div>
+<h2 class="section-title">Built for Small Business Owners Who Are Done Guessing</h2>
+<div class="section-body">
+<p>If you run a business and your finances live in a mix of WhatsApp notes, bank SMS alerts, and spreadsheets that no longer make sense — this template was built for you.</p>
+</div>
+<div class="for-list">
+<div class="for-item">
+<div class="for-emoji">🛒</div>
+<div>
+<h4>Retail &amp; Product-Based Businesses</h4>
+<p>Track product sales revenue, COGS, and inventory value. See your gross margin clearly without hiring a bookkeeper.</p>
+</div>
+</div>
+<div class="for-item">
+<div class="for-emoji">💼</div>
+<div>
+<h4>Freelancers &amp; Consultants</h4>
+<p>Log consulting fees, track expenses by category, and produce a professional P&amp;L whenever a client or bank asks for it.</p>
+</div>
+</div>
+<div class="for-item">
+<div class="for-emoji">🍽️</div>
+<div>
+<h4>Food &amp; Service Businesses</h4>
+<p>Track daily revenue including tips, manage supplier debt, and monitor cash flow so you never run out of working capital.</p>
+</div>
+</div>
+<div class="for-item">
+<div class="for-emoji">📦</div>
+<div>
+<h4>Import / Export &amp; Trading Businesses</h4>
+<p>Multi-currency transaction support handles USD, GBP, EUR, and NGN simultaneously — with automatic conversion to your base currency.</p>
+</div>
+</div>
+<div class="for-item">
+<div class="for-emoji">🏗️</div>
+<div>
+<h4>Any Business Applying for a Loan or Investment</h4>
+<p>Banks and investors require financial statements. This system generates all three — Income Statement, Balance Sheet, Cash Flow — in a format they will recognize and accept.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- THE PROBLEM -->
+<section>
+<div class="section-label">The Problem</div>
+<h2 class="section-title">Most Small Business Owners Don't Know If They're Actually Profitable</h2>
+<div class="problem-block">
+<h3>Sound familiar?</h3>
+<p>Revenue is coming in. Payments are going out. But at the end of the month, you're not sure where the money went. You can't tell your gross profit from your net profit. You don't know your actual cash position after all your debts and expenses. You have no idea what your business is worth on paper.</p>
+<p>When a bank asks for financial statements, you panic. When a potential partner asks to see your books, you deflect. When tax season arrives, you're scrambling to piece together a year of transactions from memory and bank statements.</p>
+</div>
+<div class="key-insight">This isn't a discipline problem. It's a systems problem. When you have the right system, the financial statements write themselves.</div>
+<div class="section-body">
+<p>This template is that system. Enter your transactions once. Every statement — Income, Balance Sheet, Cash Flow — updates automatically. Open the Dashboard and your entire business financial picture is in front of you in seconds.</p>
+</div>
+</section>
+<!-- WHAT'S INSIDE -->
+<section id="whats-inside">
+<div class="section-label">What's Inside</div>
+<h2 class="section-title">12 Sheets. One Complete Financial System.</h2>
+<div class="section-body">
+<p>Every sheet is connected. Enter your data once in the Transaction Log — and every report, every statement, every dashboard metric updates automatically across all 12 sheets.</p>
+</div>
+<div class="sheets-grid">
+<div class="sheet-card">
+<div class="sheet-icon green">📋</div>
+<h4>Transaction Entry Log</h4>
+<p>The central input. Enter date, type, category, currency, amount. Everything else updates automatically. Supports tips and multi-currency with exchange rate conversion.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon green">📈</div>
+<h4>Income Statement</h4>
+<p>Auto-generated Profit &amp; Loss. Tracks revenue by category, all expense types, gross profit, operating income, and net income. View YTD or by period.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon blue">⚖️</div>
+<h4>Balance Sheet</h4>
+<p>Auto-generated snapshot of assets, liabilities, and equity. Updates in real-time as transactions, debt, and equipment records change.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon amber">💧</div>
+<h4>Cash Flow Statement</h4>
+<p>Auto-generated operating, investing, and financing activities. Shows true cash position including depreciation and working capital changes.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon blue">📊</div>
+<h4>Executive Dashboard</h4>
+<p>KPIs at a glance — revenue, net income, gross margin, cash balance. Includes live alerts for low cash, losses, and balance sheet imbalances.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon amber">🎯</div>
+<h4>Budget vs Actual</h4>
+<p>Set your revenue and expense targets. The sheet automatically compares actuals against budget and shows variance in amount and percentage.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon red">🏦</div>
+<h4>Debt &amp; Loan Register</h4>
+<p>Track all business loans. Automatic payment schedule calculation, outstanding balance tracking, and overdue alerts. Feeds directly into Balance Sheet.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon amber">🔧</div>
+<h4>Equipment Register</h4>
+<p>Track every business asset. Automatic straight-line depreciation, net book value, and maintenance schedule. Feeds into Balance Sheet and Cash Flow.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon green">🏦</div>
+<h4>Business Savings Goals</h4>
+<p>Set financial targets for equipment, expansion, or emergency funds. Tracks progress automatically and alerts you when goals are achieved or overdue.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon blue">⚙️</div>
+<h4>Company Settings</h4>
+<p>Enter your company name, base currency, fiscal year start, and KPI targets once. Every sheet personalizes automatically to your business.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon amber">💱</div>
+<h4>Currency Helper</h4>
+<p>Supports USD, EUR, GBP, NGN, CAD, AUD, JPY, and CNY. Set your base currency once — all multi-currency transactions convert automatically.</p>
+</div>
+<div class="sheet-card">
+<div class="sheet-icon green">📖</div>
+<h4>How-To-Use Guide</h4>
+<p>A full step-by-step guide built into the file. No separate manual needed. Explains every sheet, every field, and every formula in plain language.</p>
+</div>
+</div>
+</section>
+<!-- THE THREE STATEMENTS -->
+<section>
+<div class="section-label">The Core Outputs</div>
+<h2 class="section-title">The Three Financial Statements Every Business Needs</h2>
+<div class="section-body">
+<p>These are not just nice-to-have reports. They are the language of business finance. Banks require them for loans. Investors require them before funding. Tax authorities require them for compliance. Here is what each one does and why it matters.</p>
+</div>
+<div class="statement-cards">
+<div class="statement-card income">
+<div class="statement-card-header">
+<h3>Income Statement (Profit &amp; Loss)</h3>
+<span class="sheet-tag">Sheet: Income_Statement</span>
+</div>
+<div class="statement-card-body">
+<p>Shows everything your business earned and everything it spent over a period of time — and whether you made a profit or a loss. This is the statement most business owners look at first when they want to understand performance.</p>
+<ul>
+<li>Total revenue broken down by category (Product Sales, Services, Consulting, Tips)</li>
+<li>Cost of Goods Sold and Gross Profit calculation</li>
+<li>All operating expenses categorized and totalled</li>
+<li>Operating Income, interest, tax, and final Net Income</li>
+<li>View year-to-date or any custom period</li>
+</ul>
+</div>
+</div>
+<div class="statement-card balance">
+<div class="statement-card-header">
+<h3>Balance Sheet</h3>
+<span class="sheet-tag">Sheet: Balance_Sheet</span>
+</div>
+<div class="statement-card-body">
+<p>A snapshot of what your business owns, what it owes, and what's left over for the owner. Updated automatically to reflect your current assets, liabilities from the Debt Register, and equipment values from the Asset Register.</p>
+<ul>
+<li>Current assets: cash, receivables, inventory, prepaid expenses</li>
+<li>Fixed assets: equipment net book value after depreciation</li>
+<li>Current and long-term liabilities from Debt Register</li>
+<li>Equity section with retained earnings</li>
+<li>Auto-validates that Assets = Liabilities + Equity</li>
+</ul>
+</div>
+</div>
+<div class="statement-card cashflow">
+<div class="statement-card-header">
+<h3>Cash Flow Statement</h3>
+<span class="sheet-tag">Sheet: Cash_Flow</span>
+</div>
+<div class="statement-card-body">
+<p>Shows the actual movement of cash in and out of the business — separate from profit. A business can be profitable on paper and still run out of cash. The Cash Flow Statement is what tells you whether you actually have the money to operate.</p>
+<ul>
+<li>Cash from Operating Activities — net income adjusted for non-cash items</li>
+<li>Cash from Investing Activities — equipment purchases and disposals</li>
+<li>Cash from Financing Activities — loan proceeds and repayments</li>
+<li>Beginning and ending cash balance reconciliation</li>
+<li>Cash runway analysis on the Dashboard</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section>
+<div class="section-label">Questions</div>
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item">
+<h3>Do I need accounting knowledge to use this template?</h3>
+<p>No. You only enter your transactions — date, type, category, and amount. The system generates all three financial statements automatically. A full How-To-Use guide is built into the file and walks you through every step.</p>
+</div>
+<div class="faq-item">
+<h3>Does it work for Nigerian businesses?</h3>
+<p>Yes. The template is configured for NGN (₦) by default and supports 8 currencies: USD, EUR, GBP, NGN, CAD, AUD, JPY, and CNY. Multi-currency transactions are automatically converted to your base currency using exchange rates you set, making it ideal for import/export and businesses that receive foreign payments.</p>
+</div>
+<div class="faq-item">
+<h3>What version of Excel do I need?</h3>
+<p>Microsoft Excel 2016 or later, including Excel 365. The template uses standard Excel formulas (SUMIFS, VLOOKUP, IF). It is not designed for Google Sheets due to some formula dependencies that behave differently outside Excel.</p>
+</div>
+<div class="faq-item">
+<h3>Can I use it to apply for a bank loan?</h3>
+<p>Yes. The template generates the three statements banks and lenders require: Income Statement, Balance Sheet, and Cash Flow Statement. The output is professionally formatted and clearly labelled with your company name. Most Nigerian commercial banks and microfinance institutions accept these standard statement formats.</p>
+</div>
+<div class="faq-item">
+<h3>Can I track loans and equipment depreciation?</h3>
+<p>Yes. The Debt Register tracks all loans with automatic monthly payment calculations, outstanding balances, and overdue alerts. The Equipment Register tracks all assets with straight-line depreciation calculated automatically by useful life. Both feed directly into the Balance Sheet.</p>
+</div>
+<div class="faq-item">
+<h3>What if I get stuck using it?</h3>
+<p>The How-To-Use guide inside the file covers every sheet and every field. If you still need help, you can reach me directly at <a href="/cdn-cgi/l/email-protection#68090c0d110d050128090c0d0c011a0906090c0d110d0501460b0705" style="color:var(--blue);font-weight:600;"><span class="__cf_email__" data-cfemail="09686d6c706c646049686d6c6d607b6867686d6c706c6460276a6664">[email&#160;protected]</span></a>.</p>
+</div>
+</div>
+</section>
+</div><!-- /content-col -->
+<!-- RIGHT: SIDEBAR -->
+<aside class="sidebar-col">
+<!-- Repeat purchase card for sidebar scroll -->
+<div class="purchase-card">
+<div class="product-label">Digital Template · Excel (.xlsx)</div>
+<h3>Business Financial Statements System</h3>
+<div class="price-block">
+<div class="price-main">—</div>
+<div class="price-note">One-time payment. Instant download. Yours to keep.</div>
+</div>
+<ul class="includes-list">
+<li><span class="check">✓</span> Income Statement (auto-generated)</li>
+<li><span class="check">✓</span> Balance Sheet (auto-generated)</li>
+<li><span class="check">✓</span> Cash Flow Statement (auto-generated)</li>
+<li><span class="check">✓</span> Executive Dashboard + KPIs</li>
+<li><span class="check">✓</span> Budget vs Actual analysis</li>
+<li><span class="check">✓</span> Debt &amp; Loan Register</li>
+<li><span class="check">✓</span> Equipment &amp; Depreciation Register</li>
+<li><span class="check">✓</span> Savings Goals Tracker</li>
+<li><span class="check">✓</span> Multi-currency (8 currencies)</li>
+<li><span class="check">✓</span> How-To-Use guide included</li>
+</ul>
+<a href="https://selar.com/24vm51jp47" class="btn-buy" target="_blank" rel="noopener">
+Get Instant Access <i class="bi bi-arrow-right"></i>
+</a>
+<div class="card-trust"><i class="bi bi-shield-check" style="color:#047857;margin-right:5px;"></i> Secure checkout via Selar</div>
+</div>
+<!-- Specs -->
+<div class="sidebar-info-card">
+<h4>Product Details</h4>
+<div class="spec-row"><span class="spec-label">Format</span><span class="spec-value">Excel (.xlsx)</span></div>
+<div class="spec-row"><span class="spec-label">Sheets</span><span class="spec-value">12 connected sheets</span></div>
+<div class="spec-row"><span class="spec-label">Currencies</span><span class="spec-value">8 (NGN default)</span></div>
+<div class="spec-row"><span class="spec-label">Statements</span><span class="spec-value">Income, Balance, Cash Flow</span></div>
+<div class="spec-row"><span class="spec-label">Delivery</span><span class="spec-value green">Instant download</span></div>
+<div class="spec-row"><span class="spec-label">Excel Version</span><span class="spec-value">2016 / 365+</span></div>
+<div class="spec-row"><span class="spec-label">Guide Included</span><span class="spec-value green">Yes — inside the file</span></div>
+</div>
+<!-- Contact -->
+<div class="sidebar-info-card">
+<h4>Questions Before Buying?</h4>
+<p style="font-size:.875rem;color:var(--slate);line-height:1.7;margin-bottom:14px;">Send me a message and I'll respond within 24 hours.</p>
+<a href="/cdn-cgi/l/email-protection#3c5d5859455951557c5d585958554e5d525d585945595155125f5351" style="display:flex;align-items:center;gap:8px;font-size:.875rem;font-weight:600;color:var(--blue);">
+<i class="bi bi-envelope"></i> <span class="__cf_email__" data-cfemail="ec8d888995898185ac8d888988859e8d828d888995898185c28f8381">[email&#160;protected]</span>
+</a>
+<a href="https://wa.me/+2348162735399" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;font-size:.875rem;font-weight:600;color:#047857;margin-top:10px;">
+<i class="bi bi-whatsapp"></i> WhatsApp: +234 816 273 5399
+</a>
+</div>
+</aside>
 </div>
 </main>
-
 <!-- FINAL CTA -->
 <section class="final-cta">
 <div class="container">
-  <h2>Stop Running Your Business on Guesswork</h2>
-  <p>For the price of one accountant consultation, get a financial system that generates professional statements automatically — every time you enter a transaction. Once set up, it takes less than five minutes a week to maintain.</p>
-  <a href="https://selar.com/24vm51jp47" class="btn-primary" target="_blank" rel="noopener">
-    Get the Template Now <i class="bi bi-arrow-right"></i>
-  </a>
+<h2>Stop Running Your Business on Guesswork</h2>
+<p>For the price of one accountant consultation, get a financial system that generates professional statements automatically — every time you enter a transaction. Once set up, it takes less than five minutes a week to maintain.</p>
+<a href="https://selar.com/24vm51jp47" class="btn-primary" target="_blank" rel="noopener">
+Get the Template Now <i class="bi bi-arrow-right"></i>
+</a>
 </div>
 </section>
-
 <!-- FOOTER -->
 <footer id="footer">
 <div class="container">
 <div class="footer-grid">
-  <div>
-    <h3>Adeyemi<span>Data</span></h3>
-    <p>Turning Data Into Revenue<br>Lagos, Nigeria (Remote Globally)</p>
-    <p style="margin-top:10px;"><strong style="color:rgba(255,255,255,.6);">Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
-    <strong style="color:rgba(255,255,255,.6);">Email:</strong> <a href="/cdn-cgi/l/email-protection#81e0e5e4f8e4ece8c1e0e5e4e5e8f3e0efe0e5e4f8e4ece8afe2eeec"><span class="__cf_email__" data-cfemail="bcddd8d9c5d9d1d5fcddd8d9d8d5ceddd2ddd8d9c5d9d1d592dfd3d1">[email&#160;protected]</span></a></p>
-    <div class="footer-social">
-      <a href="https://x.com/AdediranAd60922" aria-label="X" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.linkedin.com/in/adediran-adeyemi" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
-      <a href="https://github.com/Adeyemi0" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
-      <a href="https://www.instagram.com/Adeyemi_the_data_analyst" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
-      <a href="https://wa.me/+2348162735399" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
-    </div>
-  </div>
-  <div>
-    <h4>Quick Links</h4>
-    <a href="../index.html#hero">Home</a>
-    <a href="../about.html">About</a>
-    <a href="../index.html#featured-services">Services</a>
-    <a href="../index.html#portfolio">Portfolio</a>
-    <a href="../blog.h
+<div>
+<h3>Adeyemi<span>Data</span></h3>
+<p>Turning Data Into Revenue<br>Lagos, Nigeria (Remote Globally)</p>
+<p style="margin-top:10px;"><strong style="color:rgba(255,255,255,.6);">Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+<strong style="color:rgba(255,255,255,.6);">Email:</strong> <a href="/cdn-cgi/l/email-protection#81e0e5e4f8e4ece8c1e0e5e4e5e8f3e0efe0e5e4f8e4ece8afe2eeec"><span class="__cf_email__" data-cfemail="bcddd8d9c5d9d1d5fcddd8d9d8d5ceddd2ddd8d9c5d9d1d592dfd3d1">[email&#160;protected]</span></a></p>
+<div class="footer-social">
+<a href="https://x.com/AdediranAd60922" aria-label="X" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+<a href="https://github.com/Adeyemi0" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+<a href="https://www.instagram.com/Adeyemi_the_data_analyst" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+<a href="https://wa.me/+2348162735399" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+</div>
+</div>
+<div>
+<h4>Quick Links</h4>
+<a href="../index.html#hero">Home</a>
+<a href="../about.html">About</a>
+<a href="../index.html#featured-services">Services</a>
+<a href="../index.html#portfolio">Portfolio</a>
+<a href="../blog.html">Blog</a>
+<a href="../index.html#contact">Contact</a>
+</div>
+<div>
+<h4>Resources</h4>
+<a href="../shop/business-financial-statements-template.html">Financial Statements Template</a>
+<a href="../shop/data-analysis-services.html">Data Analysis Services</a>
+<a href="../shop/business-intelligence-dashboard.html">BI Dashboard</a>
+<a href="../privacy-policy.html">Privacy Policy</a>
+<a href="../terms-of-service.html">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 AdeyemiData. All rights reserved. | Built with precision for African businesses.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
