@@ -34,6 +34,20 @@
   </url>
 
   <url>
+    <loc>https://adediranadeyemi.com/blog/customer-profitability-audit.html</loc>
+    <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/ecommerce-churn-rate-machine-learning.html</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
     <loc>https://adediranadeyemi.com/blog/organic-traffic.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -43,6 +57,13 @@
   <url>
     <loc>https://adediranadeyemi.com/blog/pricing-strategy.html</loc>
     <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/pricing-strategy-blog.html</loc>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -64,13 +85,6 @@
   <!-- New Blog Posts -->
   <url>
     <loc>https://adediranadeyemi.com/blog/tesla-financial-analysis-tariff-crisis.html</loc>
-    <lastmod>2026-03-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://adediranadeyemi.com/blog/customer-profitability-audit.html</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -168,7 +182,6 @@
     <priority>0.85</priority>
   </url>
 
-  <!-- Newly Added Project Pages -->
   <url>
     <loc>https://adediranadeyemi.com/projects/customer-reviews-classification.html</loc>
     <lastmod>2026-03-24</lastmod>
