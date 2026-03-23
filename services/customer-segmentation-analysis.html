@@ -107,6 +107,23 @@
 .svc-cta .cta-note{font-size:13px;color:rgba(255,255,255,.4);margin-top:16px}
 @media(max-width:991px){.svc-hero{padding:70px 0 60px}.method-cards{grid-template-columns:1fr}.insight-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.svc-hero h1{font-size:1.85rem}.insight-grid{grid-template-columns:1fr}.hero-trust{flex-direction:column;gap:12px}.hero-cta-group{flex-direction:column}}
+/* Preloader styles */
+#preloader{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .3s,visibility .3s}
+#preloader:after{content:"";width:40px;height:40px;border:3px solid #0052FF;border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#preloader.loaded{opacity:0;visibility:hidden;pointer-events:none}
+/* Mobile nav */
+.mobile-nav-active{display:block!important}
+.navbar ul{display:flex;list-style:none;margin:0;padding:0}
+.navbar ul li{margin-left:20px}
+.navbar ul li a{color:#0F172A;text-decoration:none;font-weight:500;font-size:14px;transition:color .2s}
+.navbar ul li a:hover,.navbar ul li a.active{color:#0052FF}
+.mobile-nav-toggle{display:none;font-size:24px;cursor:pointer;color:#0F172A}
+@media(max-width:991px){
+  .navbar ul{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:20px;box-shadow:0 4px 20px rgba(0,0,0,.1);z-index:1000}
+  .navbar ul li{margin:10px 0}
+  .mobile-nav-toggle{display:block}
+}
 </style>
 </head>
 <body>
@@ -303,4 +320,53 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://adediranadeyemi.com/services/customer-segmentation-analysis.html#service","name":"Freelance Customer Segmentation Analysis","description":"RFM analysis, CLV segmentation, cohort analysis, and behavioral clustering for e-commerce and retail businesses.","provider":{"@id":"https://adediranadeyemi.com/#person"},"serviceType":"Customer Segmentation Analysis","areaServed":"Worldwide","url":"https://adediranadeyemi.com/services/customer-segmentation-analysis.html","isPartOf":{"@id":"https://adediranadeyemi.com/#website"}},{"@type":"BreadcrumbList","@id":"https://adediranadeyemi.com/services/customer-segmentation-analysis.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://adediranadeyemi.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://adediranadeyemi.com/#featured-services"},{"@type":"ListItem","position":3,"name":"Customer Segmentation Analysis","item":"https://adediranadeyemi.com/services/customer-segmentation-analysis.html"}]}]}</script>
 
 <script>
-window.addEventListener('load',()=>{const p=document.getElementById
+window.addEventListener('load', function() {
+  // Hide preloader
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('loaded');
+    setTimeout(() => { preloader.style.display = 'none'; }, 300);
+  }
+  
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('.navbar ul');
+  
+  if (navToggle && navbar) {
+    navToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      navbar.classList.toggle('mobile-nav-active');
+      navToggle.classList.toggle('bi-list');
+      navToggle.classList.toggle('bi-x');
+    });
+  }
+  
+  // Close mobile nav when clicking a link
+  document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', function() {
+      if (navbar.classList.contains('mobile-nav-active')) {
+        navbar.classList.remove('mobile-nav-active');
+        if (navToggle) {
+          navToggle.classList.add('bi-list');
+          navToggle.classList.remove('bi-x');
+        }
+      }
+    });
+  });
+  
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.navbar') && !e.target.closest('.mobile-nav-toggle')) {
+      if (navbar.classList.contains('mobile-nav-active')) {
+        navbar.classList.remove('mobile-nav-active');
+        if (navToggle) {
+          navToggle.classList.add('bi-list');
+          navToggle.classList.remove('bi-x');
+        }
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
