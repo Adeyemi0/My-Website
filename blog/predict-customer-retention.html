@@ -15,6 +15,9 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://adediranadeyemi.com/blog/predict-customer-retention.html">
 <meta property="og:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Customer retention prediction framework by Adediran Adeyemi">
 <meta property="og:site_name" content="AdeyemiData">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-03-22">
@@ -29,9 +32,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@AdediranAd60922">
 <meta name="twitter:creator" content="@AdediranAd60922">
+<meta name="twitter:url" content="https://adediranadeyemi.com/blog/predict-customer-retention.html">
 <meta name="twitter:title" content="How to Predict Customer Retention Before Churn Happens | Adediran Adeyemi">
 <meta name="twitter:description" content="Payment is a lagging indicator. A three-pillar customer health framework for predicting retention months before anyone cancels.">
 <meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.jpg">
+<meta name="twitter:image:alt" content="Customer retention prediction framework by Adediran Adeyemi">
 <!-- Preconnect -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,975 +49,486 @@
 <!-- Article Schema -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "How to Predict Customer Retention Before Churn Happens: A Data-Driven Framework",
-  "description": "Most companies define customer health by asking 'Are they paying us?' Payment is a lagging indicator. This three-pillar framework — utilization, success metrics, and unit economics — shows how to predict retention months before anyone cancels.",
-  "image": "https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.jpg",
-  "author": {
-    "@type": "Person",
-    "name": "Adediran Adeyemi",
-    "url": "https://adediranadeyemi.com",
-    "sameAs": [
-      "https://www.linkedin.com/in/adediran-adeyemi",
-      "https://github.com/Adeyemi0",
-      "https://x.com/AdediranAd60922"
-    ]
-  },
-  "publisher": {
-    "@type": "Person",
-    "name": "Adediran Adeyemi",
-    "url": "https://adediranadeyemi.com",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://adediranadeyemi.com/assets/img/favicon.png"
-    }
-  },
-  "datePublished": "2026-03-22",
-  "dateModified": "2026-03-22",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://adediranadeyemi.com/blog/predict-customer-retention.html"
-  },
-  "keywords": ["predict customer retention", "customer health score", "data driven retention", "leading indicators churn", "utilization metrics SaaS", "customer health framework", "feature adoption retention", "unit economics SaaS"],
-  "articleSection": "Customer Analytics",
-  "timeRequired": "PT10M",
-  "wordCount": "1800"
+"@context": "https://schema.org",
+"@type": "BlogPosting",
+"headline": "How to Predict Customer Retention Before Churn Happens: A Data-Driven Framework",
+"description": "Most companies define customer health by asking 'Are they paying us?' Payment is a lagging indicator. This three-pillar framework — utilization, success metrics, and unit economics — shows how to predict retention months before anyone cancels.",
+"image": "https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.jpg",
+"author": {
+"@type": "Person",
+"name": "Adediran Adeyemi",
+"url": "https://adediranadeyemi.com",
+"sameAs": [
+"https://www.linkedin.com/in/adediran-adeyemi",
+"https://github.com/Adeyemi0",
+"https://x.com/AdediranAd60922"
+]
+},
+"publisher": {
+"@type": "Person",
+"name": "Adediran Adeyemi",
+"url": "https://adediranadeyemi.com",
+"logo": {
+"@type": "ImageObject",
+"url": "https://adediranadeyemi.com/assets/img/favicon.png"
+}
+},
+"datePublished": "2026-03-22",
+"dateModified": "2026-03-22",
+"mainEntityOfPage": {
+"@type": "WebPage",
+"@id": "https://adediranadeyemi.com/blog/predict-customer-retention.html"
+},
+"keywords": ["predict customer retention", "customer health score", "data driven retention", "leading indicators churn", "utilization metrics SaaS", "customer health framework", "feature adoption retention", "unit economics SaaS"],
+"articleSection": "Customer Analytics",
+"timeRequired": "PT10M",
+"wordCount": "1800"
 }
 </script>
 <!-- Breadcrumb Schema -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adediranadeyemi.com/blog.html" },
-    { "@type": "ListItem", "position": 3, "name": "Predict Customer Retention", "item": "https://adediranadeyemi.com/blog/predict-customer-retention.html" }
-  ]
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+{ "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adediranadeyemi.com/blog.html" },
+{ "@type": "ListItem", "position": 3, "name": "Predict Customer Retention", "item": "https://adediranadeyemi.com/blog/predict-customer-retention.html" }
+]
 }
 </script>
 <!-- FAQ Schema -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why is payment a lagging indicator for customer retention?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By the time a customer stops paying, they have typically been disengaging for weeks or months. Payment reflects a decision already made. Leading indicators — declining feature adoption, missed success milestones, poor ROI clarity — surface that risk while there is still time to act."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is a customer health score?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A customer health score is a composite metric that combines leading indicators of retention risk — typically feature utilization depth, progress toward key success outcomes, and ROI clarity — into a single signal. It allows CS teams to prioritise at-risk accounts before those accounts know they are at risk."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the difference between feature usage and feature adoption in retention?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Feature usage measures how often a customer interacts with a product. Feature adoption measures whether customers are using the specific features that correlate with renewal. High usage of low-value features can mask adoption gaps in the features that actually drive retention. Depth of adoption predicts longevity better than frequency alone."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do you predict customer churn before it happens?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Track three pillars: (1) Utilization — which features are customers adopting, and do those features correlate with renewal? (2) Success metrics — are customers achieving the outcomes they bought the product to achieve? (3) Unit economics — can customers clearly articulate the ROI of their spend? Customers failing on all three pillars are high churn risks months before they cancel."
-      }
-    }
-  ]
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Why is payment a lagging indicator for customer retention?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "By the time a customer stops paying, they have typically been disengaging for weeks or months. Payment reflects a decision already made. Leading indicators — declining feature adoption, missed success milestones, poor ROI clarity — surface that risk while there is still time to act."
+}
+},
+{
+"@type": "Question",
+"name": "What is a customer health score?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "A customer health score is a composite metric that combines leading indicators of retention risk — typically feature utilization depth, progress toward key success outcomes, and ROI clarity — into a single signal. It allows CS teams to prioritise at-risk accounts before those accounts know they are at risk."
+}
+},
+{
+"@type": "Question",
+"name": "What is the difference between feature usage and feature adoption in retention?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Feature usage measures how often a customer interacts with a product. Feature adoption measures whether customers are using the specific features that correlate with renewal. High usage of low-value features can mask adoption gaps in the features that actually drive retention. Depth of adoption predicts longevity better than frequency alone."
+}
+},
+{
+"@type": "Question",
+"name": "How do you predict customer churn before it happens?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Track three pillars: (1) Utilization — which features are customers adopting, and do those features correlate with renewal? (2) Success metrics — are customers achieving the outcomes they bought the product to achieve? (3) Unit economics — can customers clearly articulate the ROI of their spend? Customers failing on all three pillars are high churn risks months before they cancel."
+}
+}
+]
 }
 </script>
 <!-- Critical CSS -->
 <style>
 @font-face {
-  font-family: 'Inter';
-  src: url('../assets/fonts/inter-variable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
+font-family: 'Inter';
+src: url('../assets/fonts/inter-variable.woff2') format('woff2');
+font-weight: 100 900;
+font-display: swap;
+font-style: normal;
 }
-
 /* ============================================
-   BASE
+BASE
 ============================================ */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #0F172A;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+color: #0F172A;
+margin: 0;
+padding: 0;
+line-height: 1.6;
+-webkit-font-smoothing: antialiased;
 }
-
 /* ============================================
-   BLOG LAYOUT
+BLOG LAYOUT
 ============================================ */
 .blog-main {
-  background: #F8FAFC;
-  padding: 60px 0;
-  min-height: 100vh;
+background: #F8FAFC;
+padding: 60px 0;
+min-height: 100vh;
 }
-
 .blog-article {
-  max-width: 800px;
-  margin: 0 auto;
+max-width: 800px;
+margin: 0 auto;
 }
-
 /* ============================================
-   BREADCRUMB
+BREADCRUMB
 ============================================ */
 .blog-breadcrumb {
-  padding: 20px 0;
-  font-size: 14px;
-  color: #64748B;
-  margin-bottom: 30px;
+padding: 20px 0;
+font-size: 14px;
+color: #64748B;
+margin-bottom: 30px;
 }
 .blog-breadcrumb a {
-  color: #0052FF;
-  text-decoration: none;
-  transition: color 0.3s ease;
+color: #0052FF;
+text-decoration: none;
+transition: color 0.3s ease;
 }
 .blog-breadcrumb a:hover { color: #0041cc; }
-
 /* ============================================
-   ARTICLE HEADER
+ARTICLE HEADER
 ============================================ */
 .article-header {
-  background: #ffffff;
-  padding: 50px;
-  border-radius: 8px;
-  margin-bottom: 40px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+background: #ffffff;
+padding: 50px;
+border-radius: 8px;
+margin-bottom: 40px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
-
 .article-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 25px;
-  font-size: 14px;
-  color: #64748B;
-  font-weight: 500;
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+margin-bottom: 25px;
+font-size: 14px;
+color: #64748B;
+font-weight: 500;
 }
 .article-meta time,
 .article-meta .reading-time {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+display: flex;
+align-items: center;
+gap: 5px;
 }
 .article-meta .category {
-  background: #E7F1FD;
-  color: #0052FF;
-  padding: 4px 14px;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+background: #E7F1FD;
+color: #0052FF;
+padding: 4px 14px;
+border-radius: 4px;
+font-weight: 600;
+font-size: 12px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
 }
-
 .article-title {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 1.15;
-  color: #0F172A;
-  margin: 0 0 15px 0;
-  letter-spacing: -0.03em;
+font-size: 3rem;
+font-weight: 900;
+line-height: 1.15;
+color: #0F172A;
+margin: 0 0 15px 0;
+letter-spacing: -0.03em;
 }
 .article-subtitle {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #475569;
-  margin: 0 0 30px 0;
-  line-height: 1.6;
+font-size: 1.25rem;
+font-weight: 500;
+color: #475569;
+margin: 0 0 30px 0;
+line-height: 1.6;
 }
-
 .article-author {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding-top: 25px;
-  border-top: 1px solid #E2E8F0;
+display: flex;
+align-items: center;
+gap: 15px;
+padding-top: 25px;
+border-top: 1px solid #E2E8F0;
 }
 .author-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover;
 }
 .author-info { display: flex; flex-direction: column; }
 .author-name { font-size: 16px; font-weight: 700; color: #0F172A; }
 .author-title { font-size: 14px; color: #64748B; }
-
-/* Disclaimer (Tesla article) */
-.article-disclaimer {
-  margin-top: 20px;
-  padding: 12px 16px;
-  background: #FEF9EC;
-  border-left: 3px solid #F59E0B;
-  border-radius: 0 4px 4px 0;
-  font-size: 13px;
-  color: #78350F;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  line-height: 1.5;
-}
-
 /* ============================================
-   ARTICLE CONTENT
+ARTICLE CONTENT
 ============================================ */
 .article-content {
-  background: #ffffff;
-  padding: 60px 50px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  margin-bottom: 40px;
+background: #ffffff;
+padding: 60px 50px;
+border-radius: 8px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+margin-bottom: 40px;
 }
 .article-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #334155;
-  margin-bottom: 20px;
+font-size: 1.1rem;
+line-height: 1.8;
+color: #334155;
+margin-bottom: 20px;
 }
 .article-content h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #0F172A;
-  margin: 50px 0 25px 0;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #E2E8F0;
+font-size: 2rem;
+font-weight: 800;
+color: #0F172A;
+margin: 50px 0 25px 0;
+line-height: 1.3;
+letter-spacing: -0.02em;
+padding-bottom: 12px;
+border-bottom: 1px solid #E2E8F0;
 }
 .article-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1E293B;
-  margin: 35px 0 18px 0;
-  line-height: 1.4;
+font-size: 1.5rem;
+font-weight: 700;
+color: #1E293B;
+margin: 35px 0 18px 0;
+line-height: 1.4;
 }
 .article-content h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #334155;
-  margin: 20px 0 12px 0;
+font-size: 1.2rem;
+font-weight: 700;
+color: #334155;
+margin: 20px 0 12px 0;
 }
 .article-content ul,
 .article-content ol {
-  margin: 20px 0;
-  padding-left: 28px;
+margin: 20px 0;
+padding-left: 28px;
 }
 .article-content li {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #334155;
-  margin-bottom: 10px;
+font-size: 1.1rem;
+line-height: 1.8;
+color: #334155;
+margin-bottom: 10px;
 }
 .article-content strong { font-weight: 700; color: #0F172A; }
-
 /* ============================================
-   SHARED CALLOUT
+SHARED CALLOUT
 ============================================ */
 .key-callout {
-  background: #E7F1FD;
-  border-left: 4px solid #0052FF;
-  border-radius: 0 8px 8px 0;
-  padding: 20px 24px;
-  margin: 28px 0;
+background: #E7F1FD;
+border-left: 4px solid #0052FF;
+border-radius: 0 8px 8px 0;
+padding: 20px 24px;
+margin: 28px 0;
 }
 .key-callout p {
-  margin: 0;
-  font-size: 1rem;
-  color: #0F172A;
-  line-height: 1.7;
+margin: 0;
+font-size: 1rem;
+color: #0F172A;
+line-height: 1.7;
 }
 .key-callout strong { color: #0052FF; }
-
 /* ============================================
-   QUESTION BLOCKS  (retention + audit)
-============================================ */
-.question-block {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 28px;
-  padding: 26px;
-  background: #F8FAFC;
-  border-radius: 8px;
-  border-left: 3px solid #0052FF;
-  align-items: flex-start;
-}
-.q-number {
-  width: 44px;
-  height: 44px;
-  background: #0052FF;
-  color: #fff;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.q-content { flex: 1; }
-.q-content h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #0F172A;
-}
-.q-content p { font-size: 1rem; margin-bottom: 10px; }
-.q-content p:last-child { margin-bottom: 0; }
-.q-content ul { margin: 10px 0; padding-left: 22px; }
-.q-content li { font-size: 1rem; margin-bottom: 8px; }
-
-/* ============================================
-   PILLAR HIGHLIGHTS  (retention article)
+PILLAR HIGHLIGHTS
 ============================================ */
 .pillar-highlight {
-  display: flex;
-  gap: 18px;
-  background: #F8FAFC;
-  border-radius: 8px;
-  padding: 22px;
-  margin: 20px 0;
-  border: 1px solid #E2E8F0;
-  align-items: flex-start;
+display: flex;
+gap: 18px;
+background: #F8FAFC;
+border-radius: 8px;
+padding: 22px;
+margin: 20px 0;
+border: 1px solid #E2E8F0;
+align-items: flex-start;
 }
 .ph-icon {
-  width: 42px;
-  height: 42px;
-  background: #E7F1FD;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0052FF;
-  font-size: 18px;
-  flex-shrink: 0;
+width: 42px;
+height: 42px;
+background: #E7F1FD;
+border-radius: 8px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #0052FF;
+font-size: 18px;
+flex-shrink: 0;
 }
 .ph-content h4 {
-  margin: 0 0 10px 0;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0052FF;
+margin: 0 0 10px 0;
+font-size: 1rem;
+font-weight: 700;
+color: #0052FF;
 }
 .ph-content ul { margin: 0; padding-left: 20px; }
 .ph-content li { font-size: 0.95rem; margin-bottom: 7px; color: #334155; }
-
 /* ============================================
-   PRIORITY GRID  (audit article)
-============================================ */
-.priority-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin: 24px 0;
-}
-.priority-card {
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  padding: 22px;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.priority-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,82,255,0.1);
-}
-.p-icon {
-  width: 40px;
-  height: 40px;
-  background: #E7F1FD;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0052FF;
-  font-size: 18px;
-  margin-bottom: 12px;
-}
-.priority-card h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
-.priority-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
-
-/* ============================================
-   METRICS STRIP  (audit article)
-============================================ */
-.metrics-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  margin: 24px 0;
-}
-.metric-item {
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  padding: 18px 16px;
-  text-align: center;
-}
-.mi-icon {
-  font-size: 22px;
-  color: #0052FF;
-  margin-bottom: 10px;
-  display: block;
-}
-.mi-label {
-  font-size: 13px;
-  font-weight: 700;
-  color: #0F172A;
-  margin-bottom: 4px;
-}
-.mi-desc { font-size: 12px; color: #94A3B8; }
-
-/* ============================================
-   CONCENTRATION TABLE  (audit article)
-============================================ */
-.concentration-table {
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 16px 0;
-}
-.ct-row {
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-  gap: 0;
-}
-.ct-header {
-  background: #F8FAFC;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #64748B;
-}
-.ct-row span {
-  padding: 10px 14px;
-  font-size: 13px;
-  color: #334155;
-  border-bottom: 1px solid #E2E8F0;
-  border-right: 1px solid #E2E8F0;
-}
-.ct-row span:last-child { border-right: none; }
-.ct-row:last-child span { border-bottom: none; }
-.risk-low  { color: #047857; font-weight: 700; }
-.risk-med  { color: #B45309; font-weight: 700; }
-.risk-high { color: #DC2626; font-weight: 700; }
-.risk-crit { color: #7F1D1D; font-weight: 700; background: #FEF2F2; }
-
-/* ============================================
-   TESLA — METRICS GRID
-============================================ */
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  margin: 24px 0;
-}
-.metric-card {
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  padding: 20px 16px;
-  text-align: center;
-  transition: box-shadow 0.2s;
-}
-.metric-card:hover { box-shadow: 0 4px 16px rgba(0,82,255,0.1); }
-.mc-value {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: #0052FF;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.mc-label { font-size: 12px; color: #64748B; line-height: 1.4; }
-
-/* ============================================
-   TESLA — DATA TABLES
-============================================ */
-.data-table {
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  overflow: hidden;
-  margin: 20px 0;
-}
-.dt-header {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  background: #F8FAFC;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #64748B;
-}
-.dt-header span, .dt-row span {
-  padding: 11px 14px;
-  border-bottom: 1px solid #E2E8F0;
-  border-right: 1px solid #E2E8F0;
-  font-size: 13.5px;
-  color: #334155;
-}
-.dt-header span:last-child, .dt-row span:last-child { border-right: none; }
-.dt-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; }
-.dt-row:last-child span { border-bottom: none; }
-.dt-row span:first-child { font-weight: 600; color: #0F172A; }
-.pos { color: #047857; font-weight: 700; }
-.neg { color: #DC2626; font-weight: 700; }
-
-/* ============================================
-   TESLA — SCENARIO BLOCKS
-============================================ */
-.scenario-block {
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-.scenario-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
-  color: #fff;
-}
-.s1 { background: #0052FF; }
-.s2 { background: #B45309; }
-.s3 { background: #DC2626; }
-.sh-num {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.75;
-}
-.sh-title { font-size: 15px; font-weight: 700; flex: 1; }
-.sh-tag {
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.2);
-  letter-spacing: 0.05em;
-}
-.scenario-body {
-  padding: 22px 20px;
-  background: #fff;
-}
-.scenario-body p { font-size: 14px; color: #334155; margin-bottom: 12px; }
-.scenario-body ul { padding-left: 22px; margin: 12px 0; }
-.scenario-body li { font-size: 14px; color: #334155; margin-bottom: 7px; }
-.scenario-verdict {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 14px 16px;
-  border-radius: 6px;
-  font-size: 13.5px;
-  font-weight: 500;
-  margin-top: 14px;
-  line-height: 1.5;
-}
-.manageable { background: #F0FDF4; color: #047857; }
-.serious    { background: #FEF9EC; color: #92400E; }
-.critical   { background: #FEF2F2; color: #B91C1C; }
-
-/* ============================================
-   TESLA — STRENGTHS / VULNERABILITIES
-============================================ */
-.sv-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 20px 0;
-}
-.sv-col {
-  padding: 22px;
-  border-radius: 8px;
-  border: 1px solid #E2E8F0;
-}
-.strengths { background: #F0FDF4; border-color: #A7F3D0; }
-.vulnerabilities { background: #FEF2F2; border-color: #FECACA; }
-.sv-col h3 {
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 0 14px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.strengths h3 { color: #047857; }
-.vulnerabilities h3 { color: #DC2626; }
-.sv-col ul { margin: 0; padding-left: 18px; }
-.sv-col li { font-size: 13px; color: #334155; margin-bottom: 8px; line-height: 1.5; }
-
-/* ============================================
-   TESLA — EXPOSURE GRID
-============================================ */
-.exposure-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin: 20px 0;
-}
-.exposure-card {
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid;
-}
-.exposure-card.high { background: #FEF2F2; border-left-color: #DC2626; }
-.exposure-card.med  { background: #FEF9EC; border-left-color: #F59E0B; }
-.ec-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.exposure-card.high .ec-label { color: #DC2626; }
-.exposure-card.med  .ec-label { color: #B45309; }
-.exposure-card h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
-.exposure-card p  { font-size: 13px; color: #475569; margin: 0; line-height: 1.6; }
-
-/* ============================================
-   TESLA — WATCHLIST
-============================================ */
-.watchlist { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
-.wl-item {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  padding: 18px 20px;
-  border: 1px solid #E2E8F0;
-  border-bottom: none;
-  background: #fff;
-}
-.wl-item:first-child { border-radius: 8px 8px 0 0; }
-.wl-item:last-child  { border-bottom: 1px solid #E2E8F0; border-radius: 0 0 8px 8px; }
-.wl-item:nth-child(even) { background: #F8FAFC; }
-.wl-num {
-  width: 32px;
-  height: 32px;
-  background: #0052FF;
-  color: #fff;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.wl-content h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 5px; }
-.wl-content p  { font-size: 13px; color: #64748B; margin: 0; line-height: 1.55; }
-
-/* ============================================
-   TRIAL — AHA EXAMPLES
-============================================ */
-.aha-examples {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
-  margin: 20px 0;
-}
-.aha-card {
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  padding: 18px 16px;
-  transition: box-shadow 0.2s;
-}
-.aha-card:hover { box-shadow: 0 4px 14px rgba(0,82,255,0.1); }
-.aha-tool {
-  font-size: 12px;
-  font-weight: 700;
-  color: #0052FF;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 10px;
-  letter-spacing: 0.02em;
-}
-.aha-moment { font-size: 13px; color: #334155; line-height: 1.55; }
-
-/* ============================================
-   TRIAL — EMAIL EXAMPLES
-============================================ */
-.email-examples { display: flex; flex-direction: column; gap: 16px; margin: 20px 0; }
-.email-card {
-  background: #fff;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.ec-tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 8px 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.ec-tag.non-user  { background: #E7F1FD; color: #0052FF; }
-.ec-tag.explorer  { background: #ECFDF5; color: #047857; }
-.ec-tag.hesitant  { background: #FEF9EC; color: #B45309; }
-.ec-body {
-  padding: 16px 20px;
-  background: #F8FAFC;
-  border-top: 1px solid #E2E8F0;
-  border-bottom: 1px solid #E2E8F0;
-}
-.ec-body p {
-  margin: 0;
-  font-size: 14px;
-  color: #334155;
-  font-style: italic;
-  line-height: 1.7;
-}
-.ec-insight {
-  padding: 12px 20px;
-  font-size: 12.5px;
-  color: #64748B;
-  line-height: 1.55;
-}
-
-/* ============================================
-   TRIAL — ACTION LIST
-============================================ */
-.action-list { display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
-.action-item {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  background: #F8FAFC;
-  border: 1px solid #E2E8F0;
-  border-radius: 8px;
-  padding: 20px;
-}
-.ai-num {
-  width: 36px;
-  height: 36px;
-  background: #0052FF;
-  color: #fff;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.ai-body h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
-.ai-body p  { font-size: 13.5px; color: #475569; margin: 0; line-height: 1.6; }
-
-/* ============================================
-   FAQ SECTION
+FAQ SECTION
 ============================================ */
 .faq-section { margin: 20px 0; }
 .faq-item {
-  padding: 22px 0;
-  border-bottom: 1px solid #E2E8F0;
+padding: 22px 0;
+border-bottom: 1px solid #E2E8F0;
 }
 .faq-item:last-child { border-bottom: none; }
 .faq-item h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0F172A;
-  margin: 0 0 12px 0;
-  line-height: 1.4;
+font-size: 1.1rem;
+font-weight: 700;
+color: #0F172A;
+margin: 0 0 12px 0;
+line-height: 1.4;
 }
 .faq-item p { font-size: 1rem; color: #475569; margin: 0; line-height: 1.75; }
-
 /* ============================================
-   ARTICLE CTA
+ARTICLE CTA
 ============================================ */
 .article-cta {
-  background: #0052FF;
-  padding: 50px;
-  border-radius: 8px;
-  text-align: center;
-  margin-bottom: 40px;
+background: #0052FF;
+padding: 50px;
+border-radius: 8px;
+text-align: center;
+margin-bottom: 40px;
 }
 .cta-content h3 {
-  color: #fff;
-  font-size: 1.9rem;
-  font-weight: 800;
-  margin: 0 0 18px 0;
+color: #fff;
+font-size: 1.9rem;
+font-weight: 800;
+margin: 0 0 18px 0;
 }
 .cta-content p {
-  color: rgba(255,255,255,0.92);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin: 0 0 28px 0;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+color: rgba(255,255,255,0.92);
+font-size: 1.05rem;
+line-height: 1.7;
+margin: 0 0 28px 0;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
 }
 .btn-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #fff;
-  color: #0052FF;
-  padding: 15px 34px;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  transition: all 0.2s ease;
+display: inline-flex;
+align-items: center;
+gap: 10px;
+background: #fff;
+color: #0052FF;
+padding: 15px 34px;
+border-radius: 4px;
+font-size: 1rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+text-decoration: none;
+transition: all 0.2s ease;
 }
 .btn-cta:hover { background: #F0F4FF; color: #0041cc; text-decoration: none; }
-
 /* ============================================
-   SHARE BUTTONS
+SHARE BUTTONS
 ============================================ */
 .article-share {
-  text-align: center;
-  padding: 40px;
-  background: #F8FAFC;
-  border-radius: 8px;
-  margin-bottom: 40px;
+text-align: center;
+padding: 40px;
+background: #F8FAFC;
+border-radius: 8px;
+margin-bottom: 40px;
 }
 .article-share h4 { margin: 0 0 22px 0; font-size: 1.2rem; color: #0F172A; }
 .share-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 .share-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-  color: #fff;
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 11px 22px;
+border-radius: 4px;
+font-size: 0.9rem;
+font-weight: 600;
+text-decoration: none;
+transition: opacity 0.2s ease;
+color: #fff;
 }
 .share-btn.twitter  { background: #1DA1F2; }
 .share-btn.linkedin { background: #0A66C2; }
 .share-btn:hover { opacity: 0.88; color: #fff; }
-
 /* ============================================
-   RELATED ARTICLES
+RELATED ARTICLES
 ============================================ */
 .related-articles {
-  padding: 50px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+padding: 50px;
+background: #fff;
+border-radius: 8px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 .related-articles h3 {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #0F172A;
-  margin: 0 0 36px 0;
+text-align: center;
+font-size: 1.8rem;
+font-weight: 800;
+color: #0F172A;
+margin: 0 0 36px 0;
 }
 .related-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 22px;
 }
 .related-card {
-  background: #F8FAFC;
-  padding: 22px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  border: 1px solid #E2E8F0;
-  display: flex;
-  flex-direction: column;
+background: #F8FAFC;
+padding: 22px;
+border-radius: 8px;
+text-decoration: none;
+transition: all 0.2s ease;
+border: 1px solid #E2E8F0;
+display: flex;
+flex-direction: column;
 }
 .related-card:hover { background: #fff; border-color: #0052FF; text-decoration: none; }
 .related-tag {
-  display: inline-block;
-  background: #E7F1FD;
-  color: #0052FF;
-  padding: 5px 12px;
-  border-radius: 4px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 12px;
-  width: fit-content;
+display: inline-block;
+background: #E7F1FD;
+color: #0052FF;
+padding: 5px 12px;
+border-radius: 4px;
+font-size: 0.72rem;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+margin-bottom: 12px;
+width: fit-content;
 }
 .related-card h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #0F172A;
-  margin: 0 0 10px 0;
-  line-height: 1.4;
+font-size: 1.05rem;
+font-weight: 700;
+color: #0F172A;
+margin: 0 0 10px 0;
+line-height: 1.4;
 }
 .related-card p {
-  font-size: 0.9rem;
-  color: #64748B;
-  line-height: 1.6;
-  margin: 0 0 12px 0;
-  flex: 1;
+font-size: 0.9rem;
+color: #64748B;
+line-height: 1.6;
+margin: 0 0 12px 0;
+flex: 1;
 }
 .read-more {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #0052FF;
-  font-weight: 600;
-  font-size: 0.88rem;
+display: flex;
+align-items: center;
+gap: 6px;
+color: #0052FF;
+font-weight: 600;
+font-size: 0.88rem;
 }
-
 /* ============================================
-   RESPONSIVE
+RESPONSIVE
 ============================================ */
 @media (max-width: 992px) {
-  .article-header, .article-content { padding: 40px 32px; }
-  .article-title { font-size: 2.4rem; }
-  .sv-grid, .exposure-grid { grid-template-columns: 1fr; }
-  .dt-header, .dt-row { grid-template-columns: 2fr 1fr 1fr; }
-  .dt-header span:nth-child(4), .dt-row span:nth-child(4) { display: none; }
+.article-header, .article-content { padding: 40px 32px; }
+.article-title { font-size: 2.4rem; }
 }
 @media (max-width: 768px) {
-  .blog-main { padding: 40px 0; }
-  .article-header, .article-content { padding: 28px 22px; }
-  .article-title { font-size: 1.9rem; }
-  .article-subtitle { font-size: 1.1rem; }
-  .article-content p, .article-content li { font-size: 1rem; }
-  .article-content h2 { font-size: 1.6rem; margin: 36px 0 18px; }
-  .article-content h3 { font-size: 1.3rem; }
-  .question-block { flex-direction: column; gap: 14px; }
-  .pillar-highlight { flex-direction: column; }
-  .priority-grid, .metrics-strip, .aha-examples { grid-template-columns: 1fr 1fr; }
-  .metrics-grid { grid-template-columns: 1fr 1fr; }
-  .related-grid { grid-template-columns: 1fr; }
-  .article-cta, .related-articles { padding: 30px 22px; }
-  .share-buttons { flex-direction: column; }
-  .share-btn { justify-content: center; }
-  .sv-grid, .exposure-grid, .ct-row { grid-template-columns: 1fr; }
-  .wl-item { flex-direction: column; }
-  .action-item { flex-direction: column; }
+.blog-main { padding: 40px 0; }
+.article-header, .article-content { padding: 28px 22px; }
+.article-title { font-size: 1.9rem; }
+.article-subtitle { font-size: 1.1rem; }
+.article-content p, .article-content li { font-size: 1rem; }
+.article-content h2 { font-size: 1.6rem; margin: 36px 0 18px; }
+.article-content h3 { font-size: 1.3rem; }
+.pillar-highlight { flex-direction: column; }
+.related-grid { grid-template-columns: 1fr; }
+.article-cta, .related-articles { padding: 30px 22px; }
+.share-buttons { flex-direction: column; }
+.share-btn { justify-content: center; }
 }
 @media (max-width: 480px) {
-  .article-meta { flex-direction: column; gap: 10px; }
-  .article-title { font-size: 1.6rem; }
-  .priority-grid, .metrics-strip, .aha-examples, .metrics-grid { grid-template-columns: 1fr; }
+.article-meta { flex-direction: column; gap: 10px; }
+.article-title { font-size: 1.6rem; }
 }
-
 </style>
 <!-- Defer Non-Critical CSS -->
 <link href="../assets/css/bootstrap-minimal.css" rel="stylesheet" media="print" onload="this.media='all'">
@@ -1025,291 +541,273 @@ body {
 <noscript><link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
 </head>
 <body>
-
 <!-- ======= Top Bar ======= -->
 <section id="topbar" class="d-flex align-items-center">
-  <div class="container d-flex justify-content-center justify-content-md-between">
-    <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope d-flex align-items-center"><a href="/cdn-cgi/l/email-protection#0a6b6e6f736f67634a6b6e6f6e63786b646b6e6f736f676324696567"><span class="__cf_email__" data-cfemail="ed8c898894888084ad8c898889849f8c838c898894888084c38e8280">[email&#160;protected]</span></a></i>
-      <i class="bi bi-geo-alt d-flex align-items-center ms-4"><span>Lagos, Nigeria</span></i>
-    </div>
-    <div class="social-links d-none d-md-flex align-items-center">
-      <a href="https://x.com/AdediranAd60922" class="twitter" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.linkedin.com/in/adediran-adeyemi" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://www.instagram.com/Adeyemi_the_data_analyst" class="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
-    </div>
-  </div>
+<div class="container d-flex justify-content-center justify-content-md-between">
+<div class="contact-info d-flex align-items-center">
+<i class="bi bi-envelope d-flex align-items-center"><a href="/cdn-cgi/l/email-protection#0a6b6e6f736f67634a6b6e6f6e63786b646b6e6f736f676324696567"><span class="__cf_email__" data-cfemail="ed8c898894888084ad8c898889849f8c838c898894888084c38e8280">[email&#160;protected]</span></a></i>
+<i class="bi bi-geo-alt d-flex align-items-center ms-4"><span>Lagos, Nigeria</span></i>
+</div>
+<div class="social-links d-none d-md-flex align-items-center">
+<a href="https://x.com/AdediranAd60922" class="twitter" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank"><i class="bi bi-twitter-x"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a href="https://www.instagram.com/Adeyemi_the_data_analyst" class="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+</div>
+</div>
 </section>
-
 <!-- ======= Header ======= -->
 <header id="header" class="d-flex align-items-center">
-  <div class="container d-flex align-items-center justify-content-between">
-    <div class="logo"><a href="../index.html">ADEYEMI<span>DATA</span></a></div>
-    <nav id="navbar" class="navbar" aria-label="Main navigation">
-      <ul>
-        <li><a class="nav-link" href="../index.html#hero">Home</a></li>
-        <li><a class="nav-link" href="../index.html#about">About</a></li>
-        <li><a class="nav-link" href="../index.html#featured-services">Services</a></li>
-        <li><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
-        <li><a class="nav-link active" href="../blog.html">Blog</a></li>
-        <li><a class="nav-link" href="../index.html#contact">Let's Talk</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav>
-  </div>
+<div class="container d-flex align-items-center justify-content-between">
+<div class="logo"><a href="../index.html">ADEYEMI<span>DATA</span></a></div>
+<nav id="navbar" class="navbar" aria-label="Main navigation">
+<ul>
+<li><a class="nav-link" href="../index.html#hero">Home</a></li>
+<li><a class="nav-link" href="../index.html#about">About</a></li>
+<li><a class="nav-link" href="../index.html#featured-services">Services</a></li>
+<li><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
+<li><a class="nav-link active" href="../blog.html">Blog</a></li>
+<li><a class="nav-link" href="../index.html#contact">Let's Talk</a></li>
+</ul>
+<i class="bi bi-list mobile-nav-toggle"></i>
+</nav>
+</div>
 </header>
-
 <!-- ======= Blog Article ======= -->
 <main id="main" class="blog-main">
-  <article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting">
-    <div class="container">
-
-      <!-- Breadcrumb -->
-      <nav aria-label="Breadcrumb" class="blog-breadcrumb">
-        <ol style="list-style:none;margin:0;padding:0;display:flex;gap:6px;font-size:0.875rem;color:#64748b;">
-          <li><a href="../index.html" style="color:#0052FF;text-decoration:none;">Home</a></li>
-          <li style="color:#94a3b8;">/</li>
-          <li><a href="../blog.html" style="color:#0052FF;text-decoration:none;">Blog</a></li>
-          <li style="color:#94a3b8;">/</li>
-          <li style="color:#0f172a;font-weight:500;">Predict Customer Retention</li>
-        </ol>
-      </nav>
-
-      <!-- Article Header -->
-      <header class="article-header">
-        <div class="article-meta">
-          <time datetime="2026-03-22" itemprop="datePublished">March 22, 2026</time>
-          <span class="reading-time"><i class="bi bi-clock"></i> 10 min read</span>
-          <span class="category">Customer Analytics</span>
-        </div>
-        <h1 class="article-title" itemprop="headline">Data-Driven Retention: The Proven Way to Predict Customer Retention Without Waiting for Churn</h1>
-        <p class="article-subtitle">Payment is a lagging indicator. By the time someone stops paying, they have been unhealthy for months. This three-pillar framework shows you what healthy looks like — before the cancellation email arrives.</p>
-        <div class="article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-          <img src="../assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi — Freelance Data Scientist" class="author-image" width="48" height="48">
-          <div class="author-info">
-            <span class="author-name" itemprop="name">Adediran Adeyemi</span>
-            <span class="author-title">Freelance Data Scientist &amp; Analytics Consultant</span>
-          </div>
-        </div>
-      </header>
-
-      <!-- Article Content -->
-      <div class="article-content" itemprop="articleBody">
-
-        <h2>The Question Most Companies Are Asking Too Late</h2>
-        <p>Most companies define customer health by asking one question: are they paying us? It feels like a sensible proxy. If money is coming in, the relationship must be intact.</p>
-        <p>But payment is a lagging indicator. It reflects a decision that has already been made — usually weeks or months earlier, during a quiet period of disengagement nobody noticed. By the time the cancellation email arrives, the customer has already mentally left. You are just receiving the paperwork.</p>
-        <p>Predicting customer retention without waiting for churn means asking a different question: what does healthy look like for this specific customer, in this specific product, right now? And the answer has three parts.</p>
-
-        <div class="key-callout">
-          <p><strong>The retention problem in one sentence:</strong> Companies that track payment are measuring the outcome. Companies that track customer health are measuring the cause. Only the second group can intervene in time.</p>
-        </div>
-
-        <h2>The Three-Pillar Framework for Predicting Customer Retention</h2>
-        <p>Customer health operates across three interconnected dimensions. Miss any one of them and your retention predictions become unreliable — you will either miss at-risk accounts entirely or waste CS resources on customers who were never going to churn.</p>
-
-        <h3>Pillar 1: Utilization Metrics</h3>
-        <p>Track feature adoption patterns, not just feature usage. A customer using 70% of available features signals different health than someone using 30%, but the critical insight lies in which features correlate with renewal rates.</p>
-        <p>Consider an email marketing platform. Users who only send newsletters might show consistent usage, but those who also use automation workflows, A/B testing, and segmentation tools renew at 89% versus 34% for basic users. The depth of utilization predicts longevity better than frequency alone.</p>
-        <p>The practical implication is important: high login frequency from a customer stuck in one low-value feature is not a healthy signal. It is a warning sign dressed up as engagement. Your utilization tracking needs to distinguish between activity and adoption of the specific features that actually drive renewal.</p>
-
-        <div class="pillar-highlight">
-          <div class="ph-icon"><i class="bi bi-bar-chart-steps"></i></div>
-          <div class="ph-content">
-            <h4>What to track for Utilization</h4>
-            <ul>
-              <li>Which features does this customer use, and do those features correlate with renewal in your cohort data?</li>
-              <li>What percentage of high-value features has the customer adopted?</li>
-              <li>Is feature breadth increasing, flat, or narrowing over time?</li>
-              <li>How does this customer's utilization profile compare to your highest-retention cohort?</li>
-            </ul>
-          </div>
-        </div>
-
-        <h3>Pillar 2: Success Metrics</h3>
-        <p>Map your product's impact on customer outcomes, not just product engagement. Are they achieving their stated goals? How do their key performance indicators trend over time?</p>
-        <p>For that same email platform, a healthy customer profile might include achieving 3%+ click-through rates, growing their subscriber list by 15% quarterly, and reporting measurable revenue attribution. An unhealthy customer sends regularly — but struggles with sub-1% engagement rates despite consistent effort.</p>
-        <p>The difference is not how much they use the product. It is whether the product is working for them. A customer who uses the product heavily but cannot point to results is a churn risk regardless of their activity level. Effort without outcome is frustration waiting to be named.</p>
-        <p>Stewart Butterfield observed that teams exchanging 2,000+ messages on Slack achieve 93% retention rates. The insight is not "get users to send more messages." It is "help teams reach their natural communication velocity faster" — because that velocity is where the product delivers its value. The difference shapes entirely different onboarding and success strategies.</p>
-
-        <div class="pillar-highlight">
-          <div class="ph-icon"><i class="bi bi-trophy"></i></div>
-          <div class="ph-content">
-            <h4>What to track for Success</h4>
-            <ul>
-              <li>What outcome did the customer buy this product to achieve?</li>
-              <li>What is the measurable proxy for that outcome in your product data?</li>
-              <li>Is the customer trending toward or away from that outcome over the last 30, 60, 90 days?</li>
-              <li>Can the customer articulate their results when asked?</li>
-            </ul>
-          </div>
-        </div>
-
-        <h3>Pillar 3: Unit Economics</h3>
-        <p>Calculate the value generated per dollar spent on your platform. Healthy customers should demonstrate clear ROI on their investment. If they are spending $500 monthly but cannot point to $2,500 or more in value creation, they are prime churn candidates regardless of usage patterns.</p>
-        <p>This is not just about revenue attribution. For project management tools, value might manifest as projects completed 25% faster or teams reporting 40% less time in status meetings. The specific metric matters less than the customer's ability to quantify it. A customer who cannot answer "what is this worth to us?" is one budget review away from cancelling.</p>
-
-        <div class="pillar-highlight">
-          <div class="ph-icon"><i class="bi bi-graph-up-arrow"></i></div>
-          <div class="ph-content">
-            <h4>What to track for Unit Economics</h4>
-            <ul>
-              <li>Can the customer articulate the ROI of their subscription?</li>
-              <li>What is the value-to-cost ratio relative to their stated goals?</li>
-              <li>Has the ROI conversation been documented in your CRM?</li>
-              <li>Is the perceived value increasing or declining over the contract period?</li>
-            </ul>
-          </div>
-        </div>
-
-        <h2>From Health Metrics to Predictive Action</h2>
-        <p>Start by identifying your product's core value moment — the specific outcome that makes customers successful. Map the shortest path from first login to achieving that outcome, then measure progress along that path rather than generic engagement metrics.</p>
-        <p>For a CRM system, the core value moment might be "closing deals 30% faster" rather than "logging activities daily." Health indicators become deal velocity improvements, pipeline accuracy, and sales team self-reported confidence — not session duration or page views.</p>
-        <p>Build your measurement framework around these value moments. Track leading indicators that predict whether customers will reach these outcomes, not just whether they are using features. A customer consistently updating deal stages and setting follow-up tasks signals health differently than someone who only views contact records.</p>
-
-        <div class="key-callout">
-          <p><strong>The framework in practice:</strong> A customer failing on all three pillars — low feature adoption depth, missing their success outcomes, unable to articulate ROI — is a high churn risk. You now have six to twelve weeks to intervene meaningfully, not a cancellation notice to respond to.</p>
-        </div>
-
-        <h2>What Meaningful Intervention Looks Like</h2>
-        <p>This framework transforms customer success from reactive to predictive. Instead of responding to cancellation requests, you identify at-risk accounts months earlier based on utilization patterns, success metric trends, and unit economics calculations.</p>
-        <p>More importantly, you can intervene specifically. Rather than sending generic "we miss you" campaigns, you address the actual gap:</p>
-        <ul>
-          <li><strong>Utilization issue:</strong> Feature training and adoption coaching targeted at the high-renewal features this customer has not yet reached</li>
-          <li><strong>Success issue:</strong> Outcome coaching and shared goal-setting to get them on track toward the value they bought the product to achieve</li>
-          <li><strong>Unit economics issue:</strong> ROI consulting and business review to help them quantify and communicate the value internally — so the next budget conversation works in your favour</li>
-        </ul>
-        <p>Each intervention is different because each failure mode is different. Generic retention campaigns fail because they apply the same solution to all three problems. Targeted intervention works because it addresses the specific gap that is actually driving the risk.</p>
-
-        <h2>The Retention Insight That Changes Everything</h2>
-        <p>Customer health is not about keeping people subscribed. It is about ensuring they achieve the outcomes that make subscriptions valuable. When you measure the right things — utilization depth, outcome progress, ROI clarity — retention becomes a natural consequence of delivered value rather than a constant struggle against churn.</p>
-        <p>The companies that win at retention are not the ones with the most aggressive win-back campaigns. They are the ones who made cancellation irrelevant by making the product indispensable before the thought of cancelling ever formed.</p>
-        <p>That starts with measuring health. Not payment. Health.</p>
-
-        <!-- FAQ Section -->
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="faq-section">
-          <div class="faq-item">
-            <h3>Why is payment a lagging indicator for customer retention?</h3>
-            <p>By the time a customer stops paying, they have typically been disengaging for weeks or months. Payment reflects a decision already made. Leading indicators — declining feature adoption, missed success milestones, poor ROI clarity — surface that risk while there is still time to act. Tracking payment alone means you are always reacting, never preventing.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What is a customer health score?</h3>
-            <p>A customer health score is a composite metric combining leading indicators of retention risk into a single signal — typically feature utilization depth, progress toward key success outcomes, and ROI clarity. It allows CS teams to prioritise at-risk accounts before those accounts know they are at risk, shifting the work from reactive firefighting to proactive intervention.</p>
-          </div>
-          <div class="faq-item">
-            <h3>What is the difference between feature usage and feature adoption in retention?</h3>
-            <p>Feature usage measures how often a customer interacts with a product. Feature adoption measures whether they are using the specific features that correlate with renewal in your cohort data. High usage of low-value features can mask adoption gaps in the features that actually drive longevity. Depth of adoption in the right features predicts retention better than frequency alone.</p>
-          </div>
-          <div class="faq-item">
-            <h3>How do you predict customer churn before it happens?</h3>
-            <p>Track three pillars: utilization (which features are customers adopting, and do those features correlate with renewal?), success metrics (are customers achieving the outcomes they bought the product to achieve?), and unit economics (can they clearly articulate the ROI of their spend?). Customers failing on all three pillars are high churn risks months before they cancel — and that window is your intervention opportunity.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Article CTA -->
-      <div class="article-cta">
-        <div class="cta-content">
-          <h3>Want to Build a Customer Health Framework for Your Business?</h3>
-          <p>I am Adediran Adeyemi — I help SaaS and subscription businesses move from reactive churn response to predictive retention using data. If you want to identify at-risk customers before they cancel, let's talk about what that looks like for your product.</p>
-          <a href="../index.html#contact" class="btn-cta">Let's Talk About Your Retention Strategy <i class="bi bi-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <!-- Share -->
-      <div class="article-share">
-        <h4>Share this article</h4>
-        <div class="share-buttons">
-          <a href="https://x.com/intent/tweet?text=How+to+Predict+Customer+Retention+Before+Churn+Happens&url=https://adediranadeyemi.com/blog/predict-customer-retention.html&via=AdediranAd60922" target="_blank" class="share-btn twitter" rel="noopener noreferrer" aria-label="Share on X (Twitter)">
-            <i class="bi bi-twitter-x"></i> X (Twitter)
-          </a>
-          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adediranadeyemi.com/blog/predict-customer-retention.html" target="_blank" class="share-btn linkedin" rel="noopener noreferrer" aria-label="Share on LinkedIn">
-            <i class="bi bi-linkedin"></i> LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <!-- Related Articles -->
-      <div class="related-articles">
-        <h3>Continue Reading</h3>
-        <div class="related-grid">
-          <a href="trending-products.html" class="related-card">
-            <div class="related-tag">Product Strategy</div>
-            <h4>Trending Products 2026: Why They Fail and How to Spot Real Demand</h4>
-            <p>A data-driven framework for separating real market demand from temporary hype — before you spend a dollar on inventory.</p>
-            <span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
-          </a>
-          <a href="pricing-strategy.html" class="related-card">
-            <div class="related-tag">Pricing Strategy</div>
-            <h4>How to Raise Prices 15–25% Without Losing Your Best Customers</h4>
-            <p>A data-backed pricing strategy that protects your highest-value relationships while improving margin.</p>
-            <span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
-          </a>
-          <a href="stock-out-recovery.html" class="related-card">
-            <div class="related-tag">E-Commerce Strategy</div>
-            <h4>3 Data-Backed Scripts to Recover Out-of-Stock Revenue</h4>
-            <p>Turn stock-outs into sales opportunities with proven recovery scripts that work across channels.</p>
-            <span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </article>
+<article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting">
+<div class="container">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="blog-breadcrumb">
+<ol style="list-style:none;margin:0;padding:0;display:flex;gap:6px;font-size:0.875rem;color:#64748b;">
+<li><a href="../index.html" style="color:#0052FF;text-decoration:none;">Home</a></li>
+<li style="color:#94a3b8;">/</li>
+<li><a href="../blog.html" style="color:#0052FF;text-decoration:none;">Blog</a></li>
+<li style="color:#94a3b8;">/</li>
+<li style="color:#0f172a;font-weight:500;">Predict Customer Retention</li>
+</ol>
+</nav>
+<!-- Article Header -->
+<header class="article-header">
+<div class="article-meta">
+<time datetime="2026-03-22" itemprop="datePublished">March 22, 2026</time>
+<span class="reading-time"><i class="bi bi-clock"></i> 10 min read</span>
+<span class="category">Customer Analytics</span>
+</div>
+<h1 class="article-title" itemprop="headline">Data-Driven Retention: The Proven Way to Predict Customer Retention Without Waiting for Churn</h1>
+<p class="article-subtitle">Payment is a lagging indicator. By the time someone stops paying, they have been unhealthy for months. This three-pillar framework shows you what healthy looks like — before the cancellation email arrives.</p>
+<div class="article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+<img src="../assets/img/photo_2025-08-11_17-35-17.jpg" alt="Adediran Adeyemi — Freelance Data Scientist" class="author-image" width="48" height="48">
+<div class="author-info">
+<span class="author-name" itemprop="name">Adediran Adeyemi</span>
+<span class="author-title">Freelance Data Scientist &amp; Analytics Consultant</span>
+</div>
+</div>
+</header>
+<!-- Article Content -->
+<div class="article-content" itemprop="articleBody">
+<h2>The Question Most Companies Are Asking Too Late</h2>
+<p>Most companies define customer health by asking one question: are they paying us? It feels like a sensible proxy. If money is coming in, the relationship must be intact.</p>
+<p>But payment is a lagging indicator. It reflects a decision that has already been made — usually weeks or months earlier, during a quiet period of disengagement nobody noticed. By the time the cancellation email arrives, the customer has already mentally left. You are just receiving the paperwork.</p>
+<p>Predicting customer retention without waiting for churn means asking a different question: what does healthy look like for this specific customer, in this specific product, right now? And the answer has three parts.</p>
+<div class="key-callout">
+<p><strong>The retention problem in one sentence:</strong> Companies that track payment are measuring the outcome. Companies that track customer health are measuring the cause. Only the second group can intervene in time.</p>
+</div>
+<h2>The Three-Pillar Framework for Predicting Customer Retention</h2>
+<p>Customer health operates across three interconnected dimensions. Miss any one of them and your retention predictions become unreliable — you will either miss at-risk accounts entirely or waste CS resources on customers who were never going to churn.</p>
+<h3>Pillar 1: Utilization Metrics</h3>
+<p>Track feature adoption patterns, not just feature usage. A customer using 70% of available features signals different health than someone using 30%, but the critical insight lies in which features correlate with renewal rates.</p>
+<p>Consider an email marketing platform. Users who only send newsletters might show consistent usage, but those who also use automation workflows, A/B testing, and segmentation tools renew at 89% versus 34% for basic users. The depth of utilization predicts longevity better than frequency alone.</p>
+<p>The practical implication is important: high login frequency from a customer stuck in one low-value feature is not a healthy signal. It is a warning sign dressed up as engagement. Your utilization tracking needs to distinguish between activity and adoption of the specific features that actually drive renewal.</p>
+<div class="pillar-highlight">
+<div class="ph-icon"><i class="bi bi-bar-chart-steps"></i></div>
+<div class="ph-content">
+<h4>What to track for Utilization</h4>
+<ul>
+<li>Which features does this customer use, and do those features correlate with renewal in your cohort data?</li>
+<li>What percentage of high-value features has the customer adopted?</li>
+<li>Is feature breadth increasing, flat, or narrowing over time?</li>
+<li>How does this customer's utilization profile compare to your highest-retention cohort?</li>
+</ul>
+</div>
+</div>
+<h3>Pillar 2: Success Metrics</h3>
+<p>Map your product's impact on customer outcomes, not just product engagement. Are they achieving their stated goals? How do their key performance indicators trend over time?</p>
+<p>For that same email platform, a healthy customer profile might include achieving 3%+ click-through rates, growing their subscriber list by 15% quarterly, and reporting measurable revenue attribution. An unhealthy customer sends regularly — but struggles with sub-1% engagement rates despite consistent effort.</p>
+<p>The difference is not how much they use the product. It is whether the product is working for them. A customer who uses the product heavily but cannot point to results is a churn risk regardless of their activity level. Effort without outcome is frustration waiting to be named.</p>
+<p>Stewart Butterfield observed that teams exchanging 2,000+ messages on Slack achieve 93% retention rates. The insight is not "get users to send more messages." It is "help teams reach their natural communication velocity faster" — because that velocity is where the product delivers its value. The difference shapes entirely different onboarding and success strategies.</p>
+<div class="pillar-highlight">
+<div class="ph-icon"><i class="bi bi-trophy"></i></div>
+<div class="ph-content">
+<h4>What to track for Success</h4>
+<ul>
+<li>What outcome did the customer buy this product to achieve?</li>
+<li>What is the measurable proxy for that outcome in your product data?</li>
+<li>Is the customer trending toward or away from that outcome over the last 30, 60, 90 days?</li>
+<li>Can the customer articulate their results when asked?</li>
+</ul>
+</div>
+</div>
+<h3>Pillar 3: Unit Economics</h3>
+<p>Calculate the value generated per dollar spent on your platform. Healthy customers should demonstrate clear ROI on their investment. If they are spending $500 monthly but cannot point to $2,500 or more in value creation, they are prime churn candidates regardless of usage patterns.</p>
+<p>This is not just about revenue attribution. For project management tools, value might manifest as projects completed 25% faster or teams reporting 40% less time in status meetings. The specific metric matters less than the customer's ability to quantify it. A customer who cannot answer "what is this worth to us?" is one budget review away from cancelling.</p>
+<div class="pillar-highlight">
+<div class="ph-icon"><i class="bi bi-graph-up-arrow"></i></div>
+<div class="ph-content">
+<h4>What to track for Unit Economics</h4>
+<ul>
+<li>Can the customer articulate the ROI of their subscription?</li>
+<li>What is the value-to-cost ratio relative to their stated goals?</li>
+<li>Has the ROI conversation been documented in your CRM?</li>
+<li>Is the perceived value increasing or declining over the contract period?</li>
+</ul>
+</div>
+</div>
+<h2>From Health Metrics to Predictive Action</h2>
+<p>Start by identifying your product's core value moment — the specific outcome that makes customers successful. Map the shortest path from first login to achieving that outcome, then measure progress along that path rather than generic engagement metrics.</p>
+<p>For a CRM system, the core value moment might be "closing deals 30% faster" rather than "logging activities daily." Health indicators become deal velocity improvements, pipeline accuracy, and sales team self-reported confidence — not session duration or page views.</p>
+<p>Build your measurement framework around these value moments. Track leading indicators that predict whether customers will reach these outcomes, not just whether they are using features. A customer consistently updating deal stages and setting follow-up tasks signals health differently than someone who only views contact records.</p>
+<div class="key-callout">
+<p><strong>The framework in practice:</strong> A customer failing on all three pillars — low feature adoption depth, missing their success outcomes, unable to articulate ROI — is a high churn risk. You now have six to twelve weeks to intervene meaningfully, not a cancellation notice to respond to.</p>
+</div>
+<h2>What Meaningful Intervention Looks Like</h2>
+<p>This framework transforms customer success from reactive to predictive. Instead of responding to cancellation requests, you identify at-risk accounts months earlier based on utilization patterns, success metric trends, and unit economics calculations.</p>
+<p>More importantly, you can intervene specifically. Rather than sending generic "we miss you" campaigns, you address the actual gap:</p>
+<ul>
+<li><strong>Utilization issue:</strong> Feature training and adoption coaching targeted at the high-renewal features this customer has not yet reached</li>
+<li><strong>Success issue:</strong> Outcome coaching and shared goal-setting to get them on track toward the value they bought the product to achieve</li>
+<li><strong>Unit economics issue:</strong> ROI consulting and business review to help them quantify and communicate the value internally — so the next budget conversation works in your favour</li>
+</ul>
+<p>Each intervention is different because each failure mode is different. Generic retention campaigns fail because they apply the same solution to all three problems. Targeted intervention works because it addresses the specific gap that is actually driving the risk.</p>
+<h2>The Retention Insight That Changes Everything</h2>
+<p>Customer health is not about keeping people subscribed. It is about ensuring they achieve the outcomes that make subscriptions valuable. When you measure the right things — utilization depth, outcome progress, ROI clarity — retention becomes a natural consequence of delivered value rather than a constant struggle against churn.</p>
+<p>The companies that win at retention are not the ones with the most aggressive win-back campaigns. They are the ones who made cancellation irrelevant by making the product indispensable before the thought of cancelling ever formed.</p>
+<p>That starts with measuring health. Not payment. Health.</p>
+<!-- FAQ Section -->
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<div class="faq-item">
+<h3>Why is payment a lagging indicator for customer retention?</h3>
+<p>By the time a customer stops paying, they have typically been disengaging for weeks or months. Payment reflects a decision already made. Leading indicators — declining feature adoption, missed success milestones, poor ROI clarity — surface that risk while there is still time to act. Tracking payment alone means you are always reacting, never preventing.</p>
+</div>
+<div class="faq-item">
+<h3>What is a customer health score?</h3>
+<p>A customer health score is a composite metric combining leading indicators of retention risk into a single signal — typically feature utilization depth, progress toward key success outcomes, and ROI clarity. It allows CS teams to prioritise at-risk accounts before those accounts know they are at risk, shifting the work from reactive firefighting to proactive intervention.</p>
+</div>
+<div class="faq-item">
+<h3>What is the difference between feature usage and feature adoption in retention?</h3>
+<p>Feature usage measures how often a customer interacts with a product. Feature adoption measures whether they are using the specific features that correlate with renewal in your cohort data. High usage of low-value features can mask adoption gaps in the features that actually drive longevity. Depth of adoption in the right features predicts retention better than frequency alone.</p>
+</div>
+<div class="faq-item">
+<h3>How do you predict customer churn before it happens?</h3>
+<p>Track three pillars: utilization (which features are customers adopting, and do those features correlate with renewal?), success metrics (are customers achieving the outcomes they bought the product to achieve?), and unit economics (can they clearly articulate the ROI of their spend?). Customers failing on all three pillars are high churn risks months before they cancel — and that window is your intervention opportunity.</p>
+</div>
+</div>
+</div>
+<!-- Article CTA -->
+<div class="article-cta">
+<div class="cta-content">
+<h3>Want to Build a Customer Health Framework for Your Business?</h3>
+<p>I am Adediran Adeyemi — I help SaaS and subscription businesses move from reactive churn response to predictive retention using data. If you want to identify at-risk customers before they cancel, let's talk about what that looks like for your product.</p>
+<a href="../index.html#contact" class="btn-cta">Let's Talk About Your Retention Strategy <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+<!-- Share -->
+<div class="article-share">
+<h4>Share this article</h4>
+<div class="share-buttons">
+<a href="https://x.com/intent/tweet?text=How+to+Predict+Customer+Retention+Before+Churn+Happens&url=https://adediranadeyemi.com/blog/predict-customer-retention.html&via=AdediranAd60922" target="_blank" class="share-btn twitter" rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+<i class="bi bi-twitter-x"></i> X (Twitter)
+</a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adediranadeyemi.com/blog/predict-customer-retention.html" target="_blank" class="share-btn linkedin" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+<i class="bi bi-linkedin"></i> LinkedIn
+</a>
+</div>
+</div>
+<!-- Related Articles -->
+<div class="related-articles">
+<h3>Continue Reading</h3>
+<div class="related-grid">
+<a href="trending-products.html" class="related-card">
+<div class="related-tag">Product Strategy</div>
+<h4>Trending Products 2026: Why They Fail and How to Spot Real Demand</h4>
+<p>A data-driven framework for separating real market demand from temporary hype — before you spend a dollar on inventory.</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="pricing-strategy.html" class="related-card">
+<div class="related-tag">Pricing Strategy</div>
+<h4>How to Raise Prices 15–25% Without Losing Your Best Customers</h4>
+<p>A data-backed pricing strategy that protects your highest-value relationships while improving margin.</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="stock-out-recovery.html" class="related-card">
+<div class="related-tag">E-Commerce Strategy</div>
+<h4>3 Data-Backed Scripts to Recover Out-of-Stock Revenue</h4>
+<p>Turn stock-outs into sales opportunities with proven recovery scripts that work across channels.</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+</div>
+</div>
+</div>
+</article>
 </main>
-
 <!-- ======= Footer ======= -->
 <footer id="footer">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 footer-contact">
-          <h3>Adeyemi<span>Data</span></h3>
-          <p>
-            Turning Data Into Revenue<br>
-            Lagos, Nigeria (Remote Globally)<br><br>
-            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
-            <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#b0d1d4d5c9d5ddd9f0d1d4d5d4d9c2d1ded1d4d5c9d5ddd99ed3dfdd"><span class="__cf_email__" data-cfemail="7e1f1a1b071b13173e1f1a1b1a170c1f101f1a1b071b1317501d1113">[email&#160;protected]</span></a>
-          </p>
-        </div>
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#hero">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#about">About</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#portfolio">Portfolio</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#contact">Let's Talk</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-6 footer-links">
-          <h4>What I Do</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Predict Churn</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Track What Works</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Understand Customers</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Automate Data</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Connect With Me</h4>
-          <p>Data tactics and project updates</p>
-          <div class="social-links mt-3">
-            <a href="https://x.com/AdediranAd60922" class="twitter" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.linkedin.com/in/adediran-adeyemi" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
-            <a href="https://www.instagram.com/Adeyemi_the_data_analyst" class="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://wa.me/+2348162735399" class="whatsapp" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
-            <a href="https://medium.com/@xmine4346" class="medium" aria-label="Medium Blog" rel="noopener noreferrer" target="_blank"><i class="bi bi-medium"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container py-4">
-    <div class="copyright">
-      &copy; 2026 <strong><span>Adediran Adeyemi</span></st
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<h3>Adeyemi<span>Data</span></h3>
+<p>
+Turning Data Into Revenue<br>
+Lagos, Nigeria (Remote Globally)<br><br>
+<strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+<strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#b0d1d4d5c9d5ddd9f0d1d4d5d4d9c2d1ded1d4d5c9d5ddd99ed3dfdd"><span class="__cf_email__" data-cfemail="7e1f1a1b071b13173e1f1a1b1a170c1f101f1a1b071b1317501d1113">[email&#160;protected]</span></a>
+</p>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>Quick Links</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#hero">Home</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#about">About</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Services</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#portfolio">Portfolio</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#contact">Let's Talk</a></li>
+</ul>
+</div>
+<div class="col-lg-2 col-md-6 footer-links">
+<h4>What I Do</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Predict Churn</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Track What Works</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Understand Customers</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Automate Data</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>Connect With Me</h4>
+<p>Data tactics and project updates</p>
+<div class="social-links mt-3">
+<a href="https://x.com/AdediranAd60922" class="twitter" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank"><i class="bi bi-twitter-x"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a href="https://www.instagram.com/Adeyemi_the_data_analyst" class="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+<a href="https://wa.me/+2348162735399" class="whatsapp" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a href="https://medium.com/@xmine4346" class="medium" aria-label="Medium Blog" rel="noopener noreferrer" target="_blank"><i class="bi bi-medium"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container py-4">
+<div class="copyright">
+&copy; 2026 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved | Turning Data Into Decisions
+</div>
+</div>
+</footer>
+<!-- Back to Top -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
+<!-- JavaScript -->
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
