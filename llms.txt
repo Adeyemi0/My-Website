@@ -1,0 +1,65 @@
+# Adediran Adeyemi — Freelance Data Scientist & AI/ML Engineer
+
+## Who I Am
+Adediran Adeyemi is a freelance data scientist and AI/ML engineer specializing in e-commerce and retail analytics. Based remotely and available worldwide, he helps e-commerce founders, retail operators, and SaaS teams turn raw data into revenue-generating decisions.
+
+He has 4+ years of experience building machine learning systems that ship in weeks, not months, and pay for themselves by uncovering revenue left on the table.
+
+## What I Do
+- Churn prediction: predict which customers will leave 30–90 days before they do
+- Cart abandonment analytics: identify why shoppers abandon and when to intervene
+- Customer lifetime value (CLV) modeling: identify your $10K customers vs your $100 ones
+- Inventory forecasting & demand prediction: prevent stockouts and overstock situations
+- Customer segmentation: RFM analysis, behavioral segmentation, cohort analysis
+- Attribution modeling: understand which marketing channels drive real revenue
+- NLP & review classification: process thousands of customer reviews automatically
+- Lead scoring: predict purchase likelihood with ML (95%+ accuracy demonstrated)
+- Power BI dashboard development: interactive dashboards your team actually uses
+- RAG systems: retrieval-augmented generation for document-heavy research tasks
+
+## Who I Help
+- E-commerce store owners and founders (Shopify, WooCommerce, custom platforms)
+- Retail businesses with sales pattern and inventory challenges
+- SaaS companies dealing with subscription churn
+- Real estate investors and agents needing valuation models
+- Any business with data they're not fully using
+
+## Key Results Delivered
+- Diagnosed a 90% revenue drop for a retail business; identified 85% customer retention failure as root cause
+- Identified $500K+ annual cart abandonment losses for e-commerce clients
+- Built inventory demand forecasting with 80% accuracy
+- Processed 29,000 customer reviews automatically with NLP classification
+- Built lead scoring model with 95%+ purchase prediction accuracy
+- Built RAG system across 50M+ tokens from 402 S&P MidCap company filings
+- Built NYC property price predictor with 80% accuracy
+- Created bidirectional Yoruba-English translation model for low-resource NLP
+
+## Technologies & Tools
+Python, Scikit-learn, LightGBM, HuggingFace Transformers, LangChain, RAG, FastAPI, Flask, Docker, Streamlit, Power BI, DAX, Power Query, SQL, Pandas, Google Analytics, Zilliz, OpenAI API, Web Scraping (Beautiful Soup), REST APIs
+
+## Contact
+- Website: https://adediranadeyemi.com
+- Email: adeyemi@adediranadeyemi.com
+- WhatsApp: +234 816 273 5399
+- Available: Remote worldwide, timezone-flexible
+
+## Pages
+- Home: https://adediranadeyemi.com
+- About: https://adediranadeyemi.com/about.html
+- Churn Prediction Service: https://adediranadeyemi.com/services/churn-prediction-model.html
+- E-Commerce Data Science: https://adediranadeyemi.com/services/ecommerce-data-science.html
+- Power BI Dashboards: https://adediranadeyemi.com/services/power-bi-dashboard-development.html
+- Customer Segmentation: https://adediranadeyemi.com/services/customer-segmentation-analysis.html
+- Blog: https://adediranadeyemi.com/blog
+
+## Projects (Live Demos Available)
+- Retail Revenue Analysis (Power BI): https://adediranadeyemi.com/projects/retail-analysis-global-electronics.html
+- Product Returns Analysis: https://adediranadeyemi.com/projects/ecommerce-product-returns.html
+- Customer Journey Analysis: https://adediranadeyemi.com/projects/customer-journey-analysis.html
+- Customer Reviews NLP Classifier: https://adediranadeyemi.com/projects/customer-reviews-classification.html
+- Lead Scoring Model: https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html
+- RAG Financial Research System: https://adediranadeyemi.com/projects/rag-financial-research-sp500.html
+- NYC Property Price Predictor: https://adediranadeyemi.com/projects/nyc-property-price-prediction.html
+- Nigeria Used Car Price Predictor: https://adediranadeyemi.com/projects/nigeria-used-car-price-prediction.html
+- Yoruba-English Translation Model: https://adediranadeyemi.com/projects/yoruba-english-translation-model.html
+- Restaurant Expansion Strategy Analysis: https://adediranadeyemi.com/projects/retail-location-strategy.html
