@@ -64,7 +64,6 @@ PAGE-SPECIFIC STYLES
 .project-breadcrumb li a:hover{color:#0052FF;}
 .project-breadcrumb li.active{color:#0F172A;font-weight:600;}
 .project-breadcrumb .sep{color:#CBD5E1;font-size:11px;}
-
 /* ── HERO ── */
 .project-hero{background:#F8FAFC;padding:60px 0 0;border-bottom:1px solid #E2E8F0;}
 .project-hero .hero-label{display:inline-flex;align-items:center;gap:8px;background:#E7F1FD;color:#0052FF;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px;}
@@ -79,7 +78,6 @@ PAGE-SPECIFIC STYLES
 .hero-stat:last-child{border-right:none;}
 .hero-stat .stat-num{font-size:2.25rem;font-weight:900;color:#0052FF;letter-spacing:-0.04em;line-height:1;display:block;}
 .hero-stat .stat-label{font-size:12px;color:#64748B;margin-top:6px;line-height:1.4;}
-
 /* ── LAYOUT ── */
 .project-body{padding:80px 0;}
 .toc-sidebar{position:sticky;top:90px;}
@@ -94,7 +92,6 @@ PAGE-SPECIFIC STYLES
 .toc-cta p{font-size:13px;color:#0F172A;line-height:1.5;margin-bottom:12px;font-weight:500;}
 .toc-cta a{display:inline-block;background:#0052FF;color:#fff;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;text-decoration:none;transition:background .2s;}
 .toc-cta a:hover{background:#0041cc;color:#fff;}
-
 /* ── ARTICLE SECTIONS ── */
 .doc-section{margin-bottom:60px;padding-bottom:60px;border-bottom:1px solid #E2E8F0;scroll-margin-top:90px;}
 .doc-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
@@ -102,14 +99,14 @@ PAGE-SPECIFIC STYLES
 .section-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#E7F1FD;border-radius:8px;color:#0052FF;font-size:16px;flex-shrink:0;}
 .doc-section h3{font-size:16px;font-weight:700;color:#0F172A;margin-top:24px;margin-bottom:10px;}
 .doc-section p{font-size:15px;color:#334155;line-height:1.8;margin-bottom:14px;}
+.doc-section a{color:#0052FF;text-decoration:none;font-weight:500;border-bottom:1px dashed rgba(0,82,255,0.4);transition:all 0.2s ease}
+.doc-section a:hover{color:#0041cc;border-bottom-style:solid;background:rgba(0,82,255,0.06)}
 .doc-section ul{padding-left:20px;margin-bottom:14px;}
 .doc-section li{font-size:15px;color:#334155;line-height:1.75;margin-bottom:6px;}
-
 /* Callout */
 .callout{background:#E7F1FD;border-left:4px solid #0052FF;border-radius:0 8px 8px 0;padding:18px 20px;margin:20px 0;}
 .callout p{margin:0;font-size:14px;color:#0F172A;line-height:1.65;}
 .callout strong{color:#0052FF;}
-
 /* KPI strip */
 .kpi-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:20px 0;}
 .kpi-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:18px 14px;text-align:center;transition:box-shadow .2s;}
@@ -118,7 +115,6 @@ PAGE-SPECIFIC STYLES
 .kpi-val.green{color:#047857;}
 .kpi-val.amber{color:#B45309;}
 .kpi-lbl{font-size:11.5px;color:#64748B;line-height:1.4;}
-
 /* Findings grid */
 .findings-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
 .finding-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:20px;transition:box-shadow .2s,transform .2s;}
@@ -131,20 +127,17 @@ PAGE-SPECIFIC STYLES
 .f-stat.green{color:#047857;}
 .f-stat.amber{color:#B45309;}
 .f-stat.red{color:#DC2626;}
-
 /* Dashboard embed */
 .dashboard-wrap{border:1px solid #E2E8F0;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);margin:20px 0;background:#0F172A;}
 .dashboard-wrap iframe{display:block;width:100%;height:560px;border:none;}
 .dashboard-caption{background:#fff;padding:12px 16px;font-size:13px;color:#64748B;border-top:1px solid #E2E8F0;display:flex;align-items:center;gap:8px;}
 .dashboard-caption i{color:#0052FF;}
-
 /* Steps */
 .steps{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
 .step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:20px;}
 .step-num{width:44px;height:44px;background:#0052FF;color:#fff;border-radius:8px;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .step-body h3{margin-top:8px;margin-bottom:6px;}
 .step-body p{margin-bottom:0;font-size:14px;color:#475569;}
-
 /* Tech stack */
 .tech-stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:20px;}
 .tech-item{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px 12px;text-align:center;transition:border-color .2s;}
@@ -154,7 +147,6 @@ PAGE-SPECIFIC STYLES
 .tech-item .tech-role{font-size:11px;color:#94A3B8;display:block;margin-top:2px;}
 .tags-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
 .tech-tag{background:#F1F5F9;color:#475569;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;}
-
 /* Capital ROI bar */
 .roi-bar{margin-bottom:16px;}
 .roi-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
@@ -167,7 +159,6 @@ PAGE-SPECIFIC STYLES
 .roi-fill.organic{background:#0052FF;width:100%;}
 .roi-fill.ma{background:#E2E8F0;width:1%;}
 .roi-fill.buyback{background:#CBD5E1;width:4%;}
-
 /* Related cards */
 .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
 .related-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:22px;text-decoration:none;transition:all .3s ease;display:block;}
@@ -176,7 +167,6 @@ PAGE-SPECIFIC STYLES
 .related-card h4{font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px;line-height:1.4;}
 .related-card p{font-size:13px;color:#64748B;line-height:1.55;margin:0;}
 .related-card .card-arrow{display:inline-flex;align-items:center;gap:4px;margin-top:12px;font-size:13px;font-weight:600;color:#0052FF;}
-
 /* CTA */
 .project-cta{background:#0052FF;padding:80px 0;text-align:center;color:#fff;}
 .project-cta .cta-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:16px;}
@@ -187,636 +177,602 @@ PAGE-SPECIFIC STYLES
 .btn-cta-white:hover{background:#f0f0f0;color:#0052FF;transform:translateY(-2px);text-decoration:none;}
 .btn-cta-ghost{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;padding:14px 32px;border-radius:4px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);text-decoration:none;transition:all .3s;}
 .btn-cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1);color:#fff;text-decoration:none;}
-
 @media(max-width:991px){
-  .toc-sidebar{display:none;}
-  .project-hero h1{font-size:2rem;}
-  .findings-grid,.related-grid{grid-template-columns:1fr;}
-  .hero-stats{flex-direction:column;}
-  .hero-stat{border-right:none;border-bottom:1px solid #E2E8F0;}
-  .hero-stat:last-child{border-bottom:none;}
-  .dashboard-wrap iframe{height:420px;}
+.toc-sidebar{display:none;}
+.project-hero h1{font-size:2rem;}
+.findings-grid,.related-grid{grid-template-columns:1fr;}
+.hero-stats{flex-direction:column;}
+.hero-stat{border-right:none;border-bottom:1px solid #E2E8F0;}
+.hero-stat:last-child{border-bottom:none;}
+.dashboard-wrap iframe{height:420px;}
 }
 @media(max-width:768px){
-  .project-hero{padding:40px 0 0;}
-  .project-hero h1{font-size:1.75rem;}
-  .project-body{padding:50px 0;}
-  .doc-section{margin-bottom:40px;padding-bottom:40px;}
-  .step{grid-template-columns:1fr;}
-  .kpi-strip{grid-template-columns:1fr 1fr;}
-  .dashboard-wrap iframe{height:340px;}
+.project-hero{padding:40px 0 0;}
+.project-hero h1{font-size:1.75rem;}
+.project-body{padding:50px 0;}
+.doc-section{margin-bottom:40px;padding-bottom:40px;}
+.step{grid-template-columns:1fr;}
+.kpi-strip{grid-template-columns:1fr 1fr;}
+.dashboard-wrap iframe{height:340px;}
 }
 </style>
 <!-- Schema -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "TechArticle",
-      "@id": "https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html#article",
-      "headline": "AECOM (ACM) Financial Dashboard – 8-Year Analysis in Power BI",
-      "description": "An interactive Power BI financial dashboard built on 8 years of real AECOM (NYSE: ACM) financial statements. Covers revenue CAGR, EBITDA growth, capital allocation ROI, solvency analysis, cost behaviour, and earnings quality.",
-      "url": "https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html",
-      "datePublished": "2026-03-22",
-      "dateModified": "2026-03-22",
-      "inLanguage": "en",
-      "author": {
-        "@type": "Person",
-        "name": "Adediran Adeyemi",
-        "url": "https://adediranadeyemi.com",
-        "jobTitle": "Freelance Data Scientist",
-        "email": "adeyemi@adediranadeyemi.com"
-      },
-      "publisher": {"@type": "Person","name": "Adediran Adeyemi","url": "https://adediranadeyemi.com"},
-      "image": {"@type": "ImageObject","url": "https://adediranadeyemi.com/assets/img/portfolio/aecom-dashboard-cover.jpg","width": 1200,"height": 630},
-      "keywords": ["Power BI financial dashboard","AECOM financial analysis","8 year financial analysis Power BI","DAX financial metrics","capital allocation ROI","EBITDA analysis","solvency dashboard","infrastructure financial analysis"],
-      "proficiencyLevel": "Expert",
-      "dependencies": "Power BI Desktop, DAX, Power Query"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html#breadcrumb",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://adediranadeyemi.com"},
-        {"@type":"ListItem","position":2,"name":"Portfolio","item":"https://adediranadeyemi.com/#portfolio"},
-        {"@type":"ListItem","position":3,"name":"AECOM Financial Dashboard","item":"https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html"}
-      ]
-    }
-  ]
+"@context": "https://schema.org",
+"@graph": [
+{
+"@type": "TechArticle",
+"@id": "https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html#article",
+"headline": "AECOM (ACM) Financial Dashboard – 8-Year Analysis in Power BI",
+"description": "An interactive Power BI financial dashboard built on 8 years of real AECOM (NYSE: ACM) financial statements. Covers revenue CAGR, EBITDA growth, capital allocation ROI, solvency analysis, cost behaviour, and earnings quality.",
+"url": "https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html",
+"datePublished": "2026-03-22",
+"dateModified": "2026-03-22",
+"inLanguage": "en",
+"author": {
+"@type": "Person",
+"name": "Adediran Adeyemi",
+"url": "https://adediranadeyemi.com",
+"jobTitle": "Freelance Data Scientist",
+"email": "adeyemi@adediranadeyemi.com"
+},
+"publisher": {"@type": "Person","name": "Adediran Adeyemi","url": "https://adediranadeyemi.com"},
+"image": {"@type": "ImageObject","url": "https://adediranadeyemi.com/assets/img/portfolio/aecom-dashboard-cover.jpg","width": 1200,"height": 630},
+"keywords": ["Power BI financial dashboard","AECOM financial analysis","8 year financial analysis Power BI","DAX financial metrics","capital allocation ROI","EBITDA analysis","solvency dashboard","infrastructure financial analysis"],
+"proficiencyLevel": "Expert",
+"dependencies": "Power BI Desktop, DAX, Power Query"
+},
+{
+"@type": "BreadcrumbList",
+"@id": "https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html#breadcrumb",
+"itemListElement": [
+{"@type":"ListItem","position":1,"name":"Home","item":"https://adediranadeyemi.com"},
+{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://adediranadeyemi.com/#portfolio"},
+{"@type":"ListItem","position":3,"name":"AECOM Financial Dashboard","item":"https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html"}
+]
+}
+]
 }
 </script>
 </head>
 <body>
 <div id="preloader"></div>
-
 <!-- TOP BAR -->
 <div id="topbar" class="d-flex align-items-center fixed-top">
-  <div class="container d-flex justify-content-between align-items-center">
-    <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope-fill"></i>
-      <i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
-      <i class="bi bi-phone-fill ms-3"></i>
-      <i><span>+234 816 273 5399</span></i>
-    </div>
-    <div class="social-links d-none d-md-flex align-items-center">
-      <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
-    </div>
-  </div>
+<div class="container d-flex justify-content-between align-items-center">
+<div class="contact-info d-flex align-items-center">
+<i class="bi bi-envelope-fill"></i>
+<i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+<i class="bi bi-phone-fill ms-3"></i>
+<i><span>+234 816 273 5399</span></i>
 </div>
-
+<div class="social-links d-none d-md-flex align-items-center">
+<a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+<a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+</div>
+</div>
+</div>
 <!-- HEADER -->
 <header id="header" class="fixed-top" style="top:40px;">
-  <div class="container d-flex align-items-center justify-content-between">
-    <div class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></div>
-    <nav class="navbar" aria-label="Site navigation">
-      <ul>
-        <li><a href="../index.html#hero">Home</a></li>
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#featured-services">Services</a></li>
-        <li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
-        <li><a href="../index.html#faq">Blog</a></li>
-        <li><a href="../index.html#contact">Let's Talk</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
-    </nav>
-  </div>
+<div class="container d-flex align-items-center justify-content-between">
+<div class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></div>
+<nav class="navbar" aria-label="Site navigation">
+<ul>
+<li><a href="../index.html#hero">Home</a></li>
+<li><a href="../index.html#about">About</a></li>
+<li><a href="../index.html#featured-services">Services</a></li>
+<li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
+<li><a href="../index.html#faq">Blog</a></li>
+<li><a href="../index.html#contact">Let's Talk</a></li>
+</ul>
+<i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+</nav>
+</div>
 </header>
-
 <!-- BREADCRUMB -->
 <nav class="project-breadcrumb" style="margin-top:126px;" aria-label="Breadcrumb">
-  <div class="container">
-    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-      <span class="sep">›</span>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a>
-        <meta itemprop="position" content="2">
-      </li>
-      <span class="sep">›</span>
-      <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name">AECOM Financial Dashboard</span>
-        <meta itemprop="position" content="3">
-      </li>
-    </ol>
-  </div>
+<div class="container">
+<ol itemscope itemtype="https://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a>
+<meta itemprop="position" content="1">
+</li>
+<span class="sep">›</span>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a>
+<meta itemprop="position" content="2">
+</li>
+<span class="sep">›</span>
+<li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<span itemprop="name">AECOM Financial Dashboard</span>
+<meta itemprop="position" content="3">
+</li>
+</ol>
+</div>
 </nav>
-
 <!-- HERO -->
 <section class="project-hero">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-7">
-        <div class="hero-label">
-          <i class="bi bi-bar-chart-fill"></i>
-          Financial Analysis · Power BI · DAX
-        </div>
-        <h1>AECOM <span>(NYSE: ACM)</span> — 8-Year Financial Performance Dashboard</h1>
-        <p class="hero-lead">
-          An end-to-end Power BI project built on real financial statement data from AECOM, an S&P MidCap 400 infrastructure company. Eight years of revenue, profitability, capital structure, cash flow, and capital allocation data — transformed into an interactive, analyst-grade financial dashboard.
-        </p>
-        <div class="hero-meta">
-          <div class="hero-meta-item">
-            <div class="meta-label">Tools</div>
-            <div class="meta-value">Power BI · DAX · Power Query</div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="meta-label">Company</div>
-            <div class="meta-value">AECOM (NYSE: ACM) · S&amp;P MidCap 400</div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="meta-label">Type</div>
-            <div class="meta-value">Financial Dashboard · 8-Year Analysis</div>
-          </div>
-        </div>
-        <div class="d-flex flex-wrap gap-3 pb-4">
-          <a href="#dashboard" class="btn-get-started-primary">
-            View Live Dashboard <i class="bi bi-play-circle"></i>
-          </a>
-          <a href="../index.html#contact" class="btn-get-started-secondary">
-            Work With Me <i class="bi bi-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-5 d-none d-lg-block">
-        <img
-          src="../assets/img/portfolio/aecom-dashboard-cover.jpg"
-          alt="AECOM 8-year financial analysis Power BI dashboard showing revenue, EBITDA, and capital allocation by Adediran Adeyemi"
-          class="img-fluid"
-          style="border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 20px 60px rgba(0,82,255,0.12);"
-          width="560" height="360"
-          loading="eager" fetchpriority="high"
-        >
-      </div>
-    </div>
-    <!-- Stats strip -->
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="stat-num">8</span>
-        <span class="stat-label">Years of real financial statement data (2018–2025)</span>
-      </div>
-      <div class="hero-stat">
-        <span class="stat-num">4.04%</span>
-        <span class="stat-label">8-year revenue CAGR</span>
-      </div>
-      <div class="hero-stat">
-        <span class="stat-num">320%</span>
-        <span class="stat-label">EBITDA growth from trough to peak</span>
-      </div>
-      <div class="hero-stat">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Dashboard pages — Executive, Capital, Profitability</span>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<div class="hero-label">
+<i class="bi bi-bar-chart-fill"></i>
+Financial Analysis · Power BI · DAX
+</div>
+<h1>AECOM <span>(NYSE: ACM)</span> — 8-Year Financial Performance Dashboard</h1>
+<p class="hero-lead">
+An end-to-end Power BI project built on real financial statement data from AECOM, an S&P MidCap 400 infrastructure company. Eight years of revenue, profitability, capital structure, cash flow, and capital allocation data — transformed into an interactive, analyst-grade financial dashboard. <em>See my <a href="../services/power-bi-dashboard-development.html">Power BI dashboard development services</a> for similar projects.</em>
+</p>
+<div class="hero-meta">
+<div class="hero-meta-item">
+<div class="meta-label">Tools</div>
+<div class="meta-value">Power BI · DAX · Power Query</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Company</div>
+<div class="meta-value">AECOM (NYSE: ACM) · S&amp;P MidCap 400</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Type</div>
+<div class="meta-value">Financial Dashboard · 8-Year Analysis</div>
+</div>
+</div>
+<div class="d-flex flex-wrap gap-3 pb-4">
+<a href="#dashboard" class="btn-get-started-primary">
+View Live Dashboard <i class="bi bi-play-circle"></i>
+</a>
+<a href="../index.html#contact" class="btn-get-started-secondary">
+Work With Me <i class="bi bi-arrow-right"></i>
+</a>
+</div>
+</div>
+<div class="col-lg-5 d-none d-lg-block">
+<img
+src="../assets/img/portfolio/aecom-dashboard-cover.jpg"
+alt="AECOM 8-year financial analysis Power BI dashboard showing revenue, EBITDA, and capital allocation by Adediran Adeyemi"
+class="img-fluid"
+style="border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 20px 60px rgba(0,82,255,0.12);"
+width="560" height="360"
+loading="eager" fetchpriority="high"
+>
+</div>
+</div>
+<!-- Stats strip -->
+<div class="hero-stats">
+<div class="hero-stat">
+<span class="stat-num">8</span>
+<span class="stat-label">Years of real financial statement data (2018–2025)</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">4.04%</span>
+<span class="stat-label">8-year revenue CAGR</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">320%</span>
+<span class="stat-label">EBITDA growth from trough to peak</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">3</span>
+<span class="stat-label">Dashboard pages — Executive, Capital, Profitability</span>
+</div>
+</div>
+</div>
 </section>
-
 <!-- MAIN CONTENT -->
 <section class="project-body">
-  <div class="container">
-    <div class="row">
-
-      <!-- TOC -->
-      <div class="col-lg-3 d-none d-lg-block">
-        <aside class="toc-sidebar" aria-label="Table of contents">
-          <div class="toc-card">
-            <p class="toc-heading">On This Page</p>
-            <ul class="toc-list">
-              <li><a href="#overview">Project Overview</a></li>
-              <li><a href="#company">About AECOM (ACM)</a></li>
-              <li><a href="#methodology">Methodology</a></li>
-              <li><a href="#dashboard">Live Dashboard</a></li>
-              <li><a href="#executive">Executive Overview</a></li>
-              <li><a href="#capital">Capital &amp; Balance Sheet</a></li>
-              <li><a href="#profitability">Profitability &amp; Costs</a></li>
-              <li><a href="#tools">Tools &amp; Stack</a></li>
-              <li><a href="#related">Related Projects</a></li>
-            </ul>
-            <div class="toc-cta">
-              <p>Need a financial dashboard built on your company's data?</p>
-              <a href="../index.html#contact">Let's Talk →</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-
-      <!-- Article -->
-      <div class="col-lg-9">
-        <article itemscope itemtype="https://schema.org/TechArticle">
-          <meta itemprop="author" content="Adediran Adeyemi">
-          <meta itemprop="datePublished" content="2026-03-22">
-          <meta itemprop="headline" content="AECOM (ACM) Financial Dashboard – 8-Year Analysis in Power BI">
-
-          <!-- OVERVIEW -->
-          <div class="doc-section" id="overview">
-            <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
-            <p>This project is a full-scope financial analysis and business intelligence dashboard built entirely in Power BI, using eight years of real financial statement data from AECOM (NYSE: ACM), a global infrastructure and engineering services company and constituent of the S&P MidCap 400 index.</p>
-            <p>The dashboard spans three interconnected pages — an Executive Overview, a Capital and Balance Sheet analysis, and a Profitability and Cost Analysis — and is designed to answer the questions a financial analyst, investor, or senior executive would actually ask when evaluating a company's long-term performance trajectory.</p>
-            <div class="callout">
-              <p><strong>What makes this project different:</strong> Most financial dashboards display data. This one is engineered to surface <strong>the story inside the data</strong> — including custom metrics like Capital Allocation ROI by deployment channel, a Financial Resilience Score, a Scaling Efficiency index, and a Dividend Capacity calculation that goes beyond standard reporting.</p>
-            </div>
-            <p>All data was sourced from AECOM's publicly filed financial statements (10-K filings, 2018 to 2025). The data model, DAX measures, and dashboard design were built entirely from scratch in Power BI Desktop.</p>
-          </div>
-
-          <!-- COMPANY -->
-          <div class="doc-section" id="company">
-            <h2><span class="section-icon"><i class="bi bi-building"></i></span> About AECOM (NYSE: ACM)</h2>
-            <p>AECOM is one of the world's leading infrastructure consulting firms, providing design, engineering, construction management, advisory, and program management services across transportation, water, environment, facilities, and energy markets. The company operates in over 150 countries with approximately 51,000 employees and reported $16.1 billion in revenue for fiscal year 2025.</p>
-            <p>AECOM is listed on the New York Stock Exchange under the ticker ACM and is a constituent of the S&P MidCap 400 index. Over the eight-year period covered by this analysis (2018 to 2025), the company underwent significant strategic transformation — exiting its construction services segment, sharpening its focus on higher-margin professional services, and accelerating a capital return programme that returned over $0.5 billion to shareholders in 2025 alone.</p>
-            <div class="callout">
-              <p><strong>Why AECOM?</strong> AECOM presents an analytically rich case study — a company that simultaneously navigated a revenue trough, executed a major strategic pivot, compressed its cost structure, and rebuilt profitability margins. Eight years of that journey produces a dataset that tests every dimension of financial analysis.</p>
-            </div>
-          </div>
-
-          <!-- METHODOLOGY -->
-          <div class="doc-section" id="methodology">
-            <h2><span class="section-icon"><i class="bi bi-diagram-3"></i></span> Methodology</h2>
-            <p>The project followed a structured analytical workflow from raw financial statement data to a published interactive report:</p>
-            <div class="steps">
-              <div class="step">
-                <div class="step-num">1</div>
-                <div class="step-body">
-                  <h3>Data Collection and Structuring</h3>
-                  <p>Income statement, balance sheet, and cash flow data was extracted from AECOM's annual 10-K filings for fiscal years 2018 through 2025. Data was structured into normalised tables — one per financial statement type — to support a clean star schema model in Power BI.</p>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">2</div>
-                <div class="step-body">
-                  <h3>Power Query Data Transformation</h3>
-                  <p>Power Query was used to clean, reshape, and append the annual data into a unified fact table. Date tables were built programmatically to enable time intelligence. Calculated columns were added for year-over-year comparisons, rolling averages, and period-over-period percentage changes.</p>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">3</div>
-                <div class="step-body">
-                  <h3>DAX Measure Development</h3>
-                  <p>Over 40 custom DAX measures were written to produce the metrics visible in the dashboard. These include standard financial KPIs (EBITDA margin, free cash flow, current ratio, debt-to-equity) and custom analytics measures (Capital Allocation ROI by channel, Financial Resilience Score, Scaling Efficiency index, Dividend Capacity, FCF Sustainability ratio, and a composite Solvency Buffer calculation).</p>
-                </div>
-              </div>
-              <div class="step">
-                <div class="step-num">4</div>
-                <div class="step-body">
-                  <h3>Dashboard Design and Storytelling</h3>
-                  <p>Each of the three report pages was designed with a specific analytical question in mind. The Executive Overview answers: how has the business performed over eight years and what is its current trajectory? The Capital and Balance Sheet page answers: is the company financially resilient and how is capital being deployed? The Profitability and Cost Analysis page answers: is the cost structure improving, and is earnings quality getting better or worse?</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- DASHBOARD EMBED -->
-          <div class="doc-section" id="dashboard">
-            <h2><span class="section-icon"><i class="bi bi-display"></i></span> Live Interactive Dashboard</h2>
-            <p>Explore the full Power BI report below. The dashboard contains three pages — use the navigation arrows at the bottom of the embedded report to move between the Executive Overview, Capital and Balance Sheet, and Profitability and Cost Analysis pages.</p>
-            <div class="dashboard-wrap">
-              <iframe
-                title="AECOM 8-Year Financial Performance Dashboard – Adediran Adeyemi"
-                src="https://app.powerbi.com/view?r=eyJrIjoiM2IxZTEyYWEtNDIyMi00NjYzLWI0NDktNjUzYWE5ZWJiNzU1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"
-                allowfullscreen
-                loading="lazy">
-              </iframe>
-              <div class="dashboard-caption">
-                <i class="bi bi-info-circle"></i>
-                Interactive Power BI report — three pages covering Executive Overview, Capital &amp; Balance Sheet, and Profitability &amp; Cost Analysis. Use the page navigation at the bottom of the report to explore all sections.
-              </div>
-            </div>
-          </div>
-
-          <!-- EXECUTIVE OVERVIEW -->
-          <div class="doc-section" id="executive">
-            <h2><span class="section-icon"><i class="bi bi-speedometer2"></i></span> Executive Overview: Key Findings</h2>
-            <p>The Executive Overview page surfaces the top-line performance story across the full eight-year period, anchored by four composite KPIs:</p>
-
-            <div class="kpi-strip">
-              <div class="kpi-card">
-                <div class="kpi-val">4.04%</div>
-                <div class="kpi-lbl">8-Year Revenue CAGR</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val green">39/100</div>
-                <div class="kpi-lbl">Health Score</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val">0.1x</div>
-                <div class="kpi-lbl">Cap Efficiency ROCE</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val green">HIGH</div>
-                <div class="kpi-lbl">Resilience Index</div>
-              </div>
-            </div>
-
-            <div class="findings-grid">
-              <div class="finding-card">
-                <div class="finding-icon"><i class="bi bi-graph-up-arrow"></i></div>
-                <div class="f-stat blue">$20.2B</div>
-                <h4>Revenue Historical Peak (2019)</h4>
-                <p>Revenue hit its eight-year high in 2019, representing a 53% increase above the historical low recorded in 2022 — the trough of AECOM's strategic restructuring period.</p>
-              </div>
-              <div class="finding-card">
-                <div class="finding-icon"><i class="bi bi-bar-chart-line"></i></div>
-                <div class="f-stat green">320%</div>
-                <h4>EBITDA Growth (Trough to Peak)</h4>
-                <p>EBITDA reached its eight-year high of $1.2B in 2025, growing 320% from its 2019 low — a direct result of the shift from construction-heavy revenue to higher-margin professional services.</p>
-              </div>
-              <div class="finding-card">
-                <div class="finding-icon"><i class="bi bi-arrow-up-circle"></i></div>
-                <div class="f-stat blue">+24.1%</div>
-                <h4>Operating Income Growth (YoY)</h4>
-                <p>Revenue grew just 0.2% year over year in 2025, yet operating income grew 24.1% — a signal of improving operational leverage and cost absorption as revenue scales.</p>
-              </div>
-              <div class="finding-card">
-                <div class="finding-icon"><i class="bi bi-cash-stack"></i></div>
-                <div class="f-stat green">$0.5B</div>
-                <h4>Shareholder Returns (2025)</h4>
-                <p>AECOM returned $0.5B to shareholders through share repurchases and dividends in fiscal 2025, with dividends increasing 16% year over year — funded entirely by free cash flow of $0.7B.</p>
-              </div>
-            </div>
-
-            <h3>Strategic Shifts Visible in the Data</h3>
-            <p>The most analytically interesting signal in the Executive Overview is the divergence between revenue and EBITDA trends. Revenue declined from its 2019 peak and has grown only modestly since 2022. EBITDA, however, has grown consistently and rapidly across the same period. This divergence is the financial signature of AECOM's strategic pivot away from lower-margin construction services and toward higher-margin professional services — a decision that compressed revenue in the short term but dramatically improved the quality and durability of earnings.</p>
-            <p>EBITDA margin reached 7.5% in 2025, expanding by 120 basis points year over year. This margin expansion, while still below the 10%+ target AECOM's management has guided toward, represents consistent progress over the full eight-year observation window.</p>
-
-            <h3>Capital Deployment in 2025</h3>
-            <p>AECOM deployed 29% of total capital ($213M) toward business acquisitions during the year, alongside $0.5B in shareholder returns. Free cash flow of $0.7B funded both activities — demonstrating that the capital return programme is being sustained by operating performance rather than by borrowing or asset sales.</p>
-          </div>
-
-          <!-- CAPITAL & BALANCE SHEET -->
-          <div class="doc-section" id="capital">
-            <h2><span class="section-icon"><i class="bi bi-bank"></i></span> Capital &amp; Balance Sheet: Solvency and Allocation</h2>
-            <p>The Capital and Balance Sheet page addresses the fundamental question every investor and creditor asks: is this company financially resilient, and is it deploying capital effectively?</p>
-
-            <div class="kpi-strip">
-              <div class="kpi-card">
-                <div class="kpi-val green">77</div>
-                <div class="kpi-lbl">Financial Resilience Score (2025)</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val">1.01</div>
-                <div class="kpi-lbl">Debt-to-Equity (2025)</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val">1.22</div>
-                <div class="kpi-lbl">Quick Ratio (2025)</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val green">22.1%</div>
-                <div class="kpi-lbl">Solvency Buffer (2025)</div>
-              </div>
-            </div>
-
-            <h3>Solvency Trajectory</h3>
-            <p>Current liabilities of $5.9B fell 7.0% year over year in 2025, reducing short-term pressure on the balance sheet. The debt maturity profile is conservative — 2% short-term and 98% long-term — which means the company faces minimal refinancing risk in the near term. Interest coverage of 5.6x comfortably services the existing debt load.</p>
-
-            <h3>FCF Sustainability</h3>
-            <p>With operating cash flow of $822M and maintenance capex of $176M, the FCF retention rate is 79% — meaning the business retains 79 cents of every operating dollar after maintaining its asset base. Dividend capacity of $646M sits well above actual dividend payments, providing a significant safety buffer for the capital return programme.</p>
-
-            <h3>Capital Allocation ROI by Channel</h3>
-            <p>The most provocative finding on the Capital and Balance Sheet page is the capital allocation ROI breakdown:</p>
-            <div class="roi-bar">
-              <div class="roi-label"><span class="roi-name">Organic Growth</span><span class="roi-val">751.1% ROI</span></div>
-              <div class="roi-track"><div class="roi-fill organic"></div></div>
-            </div>
-            <div class="roi-bar">
-              <div class="roi-label"><span class="roi-name">Share Buybacks</span><span class="roi-val muted">3.6% ROI</span></div>
-              <div class="roi-track"><div class="roi-fill buyback"></div></div>
-            </div>
-            <div class="roi-bar">
-              <div class="roi-label"><span class="roi-name">M&amp;A Integration</span><span class="roi-val muted">0.3% ROI</span></div>
-              <div class="roi-track"><div class="roi-fill ma"></div></div>
-            </div>
-            <p>Organic growth capital generates 751.1% ROI — dwarfing the returns from share buybacks (3.6%) and M&amp;A integration (0.3%). This finding has direct strategic implications: given the ROI differential, every dollar reallocated from acquisitions toward organic growth initiatives would generate dramatically higher returns on invested capital. This is the kind of actionable insight that justifies building a financial dashboard at this level of depth.</p>
-          </div>
-
-          <!-- PROFITABILITY -->
-          <div class="doc-section" id="profitability">
-            <h2><span class="section-icon"><i class="bi bi-graph-up"></i></span> Profitability &amp; Cost Analysis</h2>
-            <p>The Profitability and Cost Analysis page examines whether the improving EBITDA story is backed by genuine cost discipline or is masking structural inefficiencies in the cost base.</p>
-
-            <div class="kpi-strip">
-              <div class="kpi-card">
-                <div class="kpi-val">98%</div>
-                <div class="kpi-lbl">Variable Cost Ratio</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val green">+4,839%</div>
-                <div class="kpi-lbl">Scaling Efficiency Index</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val">11 Days</div>
-                <div class="kpi-lbl">Average DSO</div>
-              </div>
-              <div class="kpi-card">
-                <div class="kpi-val">7 Days</div>
-                <div class="kpi-lbl">Average DPO</div>
-              </div>
-            </div>
-
-            <h3>Cost Structure: 98% Variable</h3>
-            <p>AECOM's cost base is 98% variable — almost entirely composed of delivery costs, with corporate overhead at 1.0% and transformation OPEX at 0.8%. This cost structure means the business has very limited operating leverage in the traditional sense: costs scale proportionally with revenue. However, it also means the business is highly resilient in a revenue downturn — the cost base contracts with revenue, protecting cash flow.</p>
-
-            <h3>Scaling Efficiency and Earnings Quality</h3>
-            <p>The Scaling Efficiency index of +4,839% measures how much faster operating income has grown relative to the cost base over the full eight-year period. This extraordinary figure reflects the cumulative effect of multiple years of cost discipline — particularly in corporate overhead and transformation OPEX — combined with a shift toward higher-margin revenue. Revenue vs Operating Cost charts confirm that the gap between revenue and cost has widened meaningfully since 2022.</p>
-            <p>Earnings quality — measured by the relationship between net income and operating cash flow — shows healthy alignment, with operating cash flow consistently exceeding net income in recent years. This indicates that reported earnings are backed by actual cash generation rather than accounting accruals, which is a key quality signal for investors and analysts.</p>
-
-            <h3>Return on Invested Capital Trajectory</h3>
-            <p>ROIC has grown from 0.01 in 2018 to 0.55 in 2025 — a 50-fold improvement over the observation window. This is the single most compelling number in the entire dataset. A ROIC of 0.55 means that for every dollar of invested capital, AECOM is generating 55 cents in operating return — an exceptional figure for a professional services business of this scale. The trajectory confirms that the strategic pivot has not just improved margins but has fundamentally changed the capital efficiency of the entire business model.</p>
-          </div>
-
-          <!-- TOOLS -->
-          <div class="doc-section" id="tools">
-            <h2><span class="section-icon"><i class="bi bi-tools"></i></span> Tools &amp; Technologies</h2>
-            <p>This project was built using the Microsoft BI stack throughout, making it reproducible and maintainable for any organisation already using Microsoft 365.</p>
-            <div class="tech-stack">
-              <div class="tech-item">
-                <i class="bi bi-bar-chart-fill"></i>
-                <span class="tech-name">Power BI</span>
-                <span class="tech-role">Dashboard &amp; Report</span>
-              </div>
-              <div class="tech-item">
-                <i class="bi bi-braces"></i>
-                <span class="tech-name">DAX</span>
-                <span class="tech-role">40+ Measures</span>
-              </div>
-              <div class="tech-item">
-                <i class="bi bi-arrow-repeat"></i>
-                <span class="tech-name">Power Query</span>
-                <span class="tech-role">ETL &amp; Modelling</span>
-              </div>
-              <div class="tech-item">
-                <i class="bi bi-file-spreadsheet"></i>
-                <span class="tech-name">Excel</span>
-                <span class="tech-role">Source Data</span>
-              </div>
-              <div class="tech-item">
-                <i class="bi bi-diagram-2"></i>
-                <span class="tech-name">Data Model</span>
-                <span class="tech-role">Star Schema</span>
-              </div>
-              <div class="tech-item">
-                <i class="bi bi-cloud-upload"></i>
-                <span class="tech-name">Power BI Service</span>
-                <span class="tech-role">Published Report</span>
-              </div>
-            </div>
-            <div class="tags-row">
-              <span class="tech-tag">Power BI</span>
-              <span class="tech-tag">DAX</span>
-              <span class="tech-tag">Power Query</span>
-              <span class="tech-tag">Financial Analysis</span>
-              <span class="tech-tag">8-Year Analysis</span>
-              <span class="tech-tag">EBITDA Modelling</span>
-              <span class="tech-tag">Capital Allocation</span>
-              <span class="tech-tag">Solvency Analysis</span>
-              <span class="tech-tag">FCF Sustainability</span>
-              <span class="tech-tag">ROIC</span>
-              <span class="tech-tag">Earnings Quality</span>
-              <span class="tech-tag">Infrastructure Analytics</span>
-              <span class="tech-tag">S&amp;P MidCap 400</span>
-              <span class="tech-tag">NYSE: ACM</span>
-            </div>
-          </div>
-
-          <!-- RELATED -->
-          <div class="doc-section" id="related">
-            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
-            <p>If this project is relevant to your analytical or business challenge, these case studies may also interest you:</p>
-            <div class="related-grid">
-              <a href="retail-analysis-global-electronics.html" class="related-card">
-                <p class="card-label">Business Intelligence · Power BI</p>
-                <h4>Retail BI Dashboard — 90% Revenue Decline</h4>
-                <p>Diagnosing a 90% revenue collapse and identifying an 85% customer retention failure as the root cause using Power BI and cohort analysis.</p>
-                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
-              </a>
-              <a href="saas-trial-conversion-analysis.html" class="related-card">
-                <p class="card-label">Product Analytics · Python</p>
-                <h4>SaaS Trial Conversion Analysis</h4>
-                <p>Why only 1 in 5 trial companies convert — survival analysis, ML models, and SQL marts applied to 966 B2B SaaS organisations.</p>
-                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
-              </a>
-              <a href="ecommerce-product-returns.html" class="related-card">
-                <p class="card-label">E-Commerce Analytics · Python</p>
-                <h4>E-Commerce Product Returns Analysis</h4>
-                <p>Identifying that 28% of revenue was being eroded by returns and isolating which products and segments were responsible.</p>
-                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
-              </a>
-              <a href="customer-journey-analysis.html" class="related-card">
-                <p class="card-label">Funnel Analytics · Python</p>
-                <h4>Customer Journey Analysis</h4>
-                <p>Mapping 10,000 user sessions to identify the friction points where customers consistently abandon the funnel before converting.</p>
-                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-
-        </article>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="row">
+<!-- TOC -->
+<div class="col-lg-3 d-none d-lg-block">
+<aside class="toc-sidebar" aria-label="Table of contents">
+<div class="toc-card">
+<p class="toc-heading">On This Page</p>
+<ul class="toc-list">
+<li><a href="#overview">Project Overview</a></li>
+<li><a href="#company">About AECOM (ACM)</a></li>
+<li><a href="#methodology">Methodology</a></li>
+<li><a href="#dashboard">Live Dashboard</a></li>
+<li><a href="#executive">Executive Overview</a></li>
+<li><a href="#capital">Capital &amp; Balance Sheet</a></li>
+<li><a href="#profitability">Profitability &amp; Costs</a></li>
+<li><a href="#tools">Tools &amp; Stack</a></li>
+<li><a href="#related">Related Projects</a></li>
+</ul>
+<div class="toc-cta">
+<p>Need a financial dashboard built on your company's data?</p>
+<a href="../index.html#contact">Let's Talk →</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- Article -->
+<div class="col-lg-9">
+<article itemscope itemtype="https://schema.org/TechArticle">
+<meta itemprop="author" content="Adediran Adeyemi">
+<meta itemprop="datePublished" content="2026-03-22">
+<meta itemprop="headline" content="AECOM (ACM) Financial Dashboard – 8-Year Analysis in Power BI">
+<!-- OVERVIEW -->
+<div class="doc-section" id="overview">
+<h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
+<p>This project is a full-scope financial analysis and business intelligence dashboard built entirely in Power BI, using eight years of real financial statement data from AECOM (NYSE: ACM), a global infrastructure and engineering services company and constituent of the S&P MidCap 400 index.</p>
+<p>The dashboard spans three interconnected pages — an Executive Overview, a Capital and Balance Sheet analysis, and a Profitability and Cost Analysis — and is designed to answer the questions a financial analyst, investor, or senior executive would actually ask when evaluating a company's long-term performance trajectory.</p>
+<div class="callout">
+<p><strong>What makes this project different:</strong> Most financial dashboards display data. This one is engineered to surface <strong>the story inside the data</strong> — including custom metrics like Capital Allocation ROI by deployment channel, a Financial Resilience Score, a Scaling Efficiency index, and a Dividend Capacity calculation that goes beyond standard reporting. <em>See how I build these in my <a href="../services/power-bi-dashboard-development.html">Power BI dashboard services</a>.</em></p>
+</div>
+<p>All data was sourced from AECOM's publicly filed financial statements (10-K filings, 2018 to 2025). The data model, DAX measures, and dashboard design were built entirely from scratch in Power BI Desktop.</p>
+</div>
+<!-- COMPANY -->
+<div class="doc-section" id="company">
+<h2><span class="section-icon"><i class="bi bi-building"></i></span> About AECOM (NYSE: ACM)</h2>
+<p>AECOM is one of the world's leading infrastructure consulting firms, providing design, engineering, construction management, advisory, and program management services across transportation, water, environment, facilities, and energy markets. The company operates in over 150 countries with approximately 51,000 employees and reported $16.1 billion in revenue for fiscal year 2025.</p>
+<p>AECOM is listed on the New York Stock Exchange under the ticker ACM and is a constituent of the S&P MidCap 400 index. Over the eight-year period covered by this analysis (2018 to 2025), the company underwent significant strategic transformation — exiting its construction services segment, sharpening its focus on higher-margin professional services, and accelerating a capital return programme that returned over $0.5 billion to shareholders in 2025 alone.</p>
+<div class="callout">
+<p><strong>Why AECOM?</strong> AECOM presents an analytically rich case study — a company that simultaneously navigated a revenue trough, executed a major strategic pivot, compressed its cost structure, and rebuilt profitability margins. Eight years of that journey produces a dataset that tests every dimension of financial analysis. <em>See my <a href="../projects/saas-trial-conversion-analysis.html">SaaS trial conversion analysis</a> for a similar multi-year business analysis approach.</em></p>
+</div>
+</div>
+<!-- METHODOLOGY -->
+<div class="doc-section" id="methodology">
+<h2><span class="section-icon"><i class="bi bi-diagram-3"></i></span> Methodology</h2>
+<p>The project followed a structured analytical workflow from raw financial statement data to a published interactive report:</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<h3>Data Collection and Structuring</h3>
+<p>Income statement, balance sheet, and cash flow data was extracted from AECOM's annual 10-K filings for fiscal years 2018 through 2025. Data was structured into normalised tables — one per financial statement type — to support a clean star schema model in Power BI.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<h3>Power Query Data Transformation</h3>
+<p>Power Query was used to clean, reshape, and append the annual data into a unified fact table. Date tables were built programmatically to enable time intelligence. Calculated columns were added for year-over-year comparisons, rolling averages, and period-over-period percentage changes.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<h3>DAX Measure Development</h3>
+<p>Over 40 custom DAX measures were written to produce the metrics visible in the dashboard. These include standard financial KPIs (EBITDA margin, free cash flow, current ratio, debt-to-equity) and custom analytics measures (Capital Allocation ROI by channel, Financial Resilience Score, Scaling Efficiency index, Dividend Capacity, FCF Sustainability ratio, and a composite Solvency Buffer calculation). <em>Learn about my DAX expertise in my <a href="../services/power-bi-dashboard-development.html">Power BI services</a>.</em></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<h3>Dashboard Design and Storytelling</h3>
+<p>Each of the three report pages was designed with a specific analytical question in mind. The Executive Overview answers: how has the business performed over eight years and what is its current trajectory? The Capital and Balance Sheet page answers: is the company financially resilient and how is capital being deployed? The Profitability and Cost Analysis page answers: is the cost structure improving, and is earnings quality getting better or worse?</p>
+</div>
+</div>
+</div>
+</div>
+<!-- DASHBOARD EMBED -->
+<div class="doc-section" id="dashboard">
+<h2><span class="section-icon"><i class="bi bi-display"></i></span> Live Interactive Dashboard</h2>
+<p>Explore the full Power BI report below. The dashboard contains three pages — use the navigation arrows at the bottom of the embedded report to move between the Executive Overview, Capital and Balance Sheet, and Profitability and Cost Analysis pages.</p>
+<div class="dashboard-wrap">
+<iframe
+title="AECOM 8-Year Financial Performance Dashboard – Adediran Adeyemi"
+src="https://app.powerbi.com/view?r=eyJrIjoiM2IxZTEyYWEtNDIyMi00NjYzLWI0NDktNjUzYWE5ZWJiNzU1IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9"
+allowfullscreen
+loading="lazy">
+</iframe>
+<div class="dashboard-caption">
+<i class="bi bi-info-circle"></i>
+Interactive Power BI report — three pages covering Executive Overview, Capital &amp; Balance Sheet, and Profitability &amp; Cost Analysis. Use the page navigation at the bottom of the report to explore all sections.
+</div>
+</div>
+</div>
+<!-- EXECUTIVE OVERVIEW -->
+<div class="doc-section" id="executive">
+<h2><span class="section-icon"><i class="bi bi-speedometer2"></i></span> Executive Overview: Key Findings</h2>
+<p>The Executive Overview page surfaces the top-line performance story across the full eight-year period, anchored by four composite KPIs:</p>
+<div class="kpi-strip">
+<div class="kpi-card">
+<div class="kpi-val">4.04%</div>
+<div class="kpi-lbl">8-Year Revenue CAGR</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val green">39/100</div>
+<div class="kpi-lbl">Health Score</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val">0.1x</div>
+<div class="kpi-lbl">Cap Efficiency ROCE</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val green">HIGH</div>
+<div class="kpi-lbl">Resilience Index</div>
+</div>
+</div>
+<div class="findings-grid">
+<div class="finding-card">
+<div class="finding-icon"><i class="bi bi-graph-up-arrow"></i></div>
+<div class="f-stat blue">$20.2B</div>
+<h4>Revenue Historical Peak (2019)</h4>
+<p>Revenue hit its eight-year high in 2019, representing a 53% increase above the historical low recorded in 2022 — the trough of AECOM's strategic restructuring period.</p>
+</div>
+<div class="finding-card">
+<div class="finding-icon"><i class="bi bi-bar-chart-line"></i></div>
+<div class="f-stat green">320%</div>
+<h4>EBITDA Growth (Trough to Peak)</h4>
+<p>EBITDA reached its eight-year high of $1.2B in 2025, growing 320% from its 2019 low — a direct result of the shift from construction-heavy revenue to higher-margin professional services.</p>
+</div>
+<div class="finding-card">
+<div class="finding-icon"><i class="bi bi-arrow-up-circle"></i></div>
+<div class="f-stat blue">+24.1%</div>
+<h4>Operating Income Growth (YoY)</h4>
+<p>Revenue grew just 0.2% year over year in 2025, yet operating income grew 24.1% — a signal of improving operational leverage and cost absorption as revenue scales.</p>
+</div>
+<div class="finding-card">
+<div class="finding-icon"><i class="bi bi-cash-stack"></i></div>
+<div class="f-stat green">$0.5B</div>
+<h4>Shareholder Returns (2025)</h4>
+<p>AECOM returned $0.5B to shareholders through share repurchases and dividends in fiscal 2025, with dividends increasing 16% year over year — funded entirely by free cash flow of $0.7B.</p>
+</div>
+</div>
+<h3>Strategic Shifts Visible in the Data</h3>
+<p>The most analytically interesting signal in the Executive Overview is the divergence between revenue and EBITDA trends. Revenue declined from its 2019 peak and has grown only modestly since 2022. EBITDA, however, has grown consistently and rapidly across the same period. This divergence is the financial signature of AECOM's strategic pivot away from lower-margin construction services and toward higher-margin professional services — a decision that compressed revenue in the short term but dramatically improved the quality and durability of earnings.</p>
+<p>EBITDA margin reached 7.5% in 2025, expanding by 120 basis points year over year. This margin expansion, while still below the 10%+ target AECOM's management has guided toward, represents consistent progress over the full eight-year observation window.</p>
+<h3>Capital Deployment in 2025</h3>
+<p>AECOM deployed 29% of total capital ($213M) toward business acquisitions during the year, alongside $0.5B in shareholder returns. Free cash flow of $0.7B funded both activities — demonstrating that the capital return programme is being sustained by operating performance rather than by borrowing or asset sales. <em>See how I analyse capital allocation in my <a href="../services/ecommerce-data-science.html">e-commerce data science services</a>.</em></p>
+</div>
+<!-- CAPITAL & BALANCE SHEET -->
+<div class="doc-section" id="capital">
+<h2><span class="section-icon"><i class="bi bi-bank"></i></span> Capital &amp; Balance Sheet: Solvency and Allocation</h2>
+<p>The Capital and Balance Sheet page addresses the fundamental question every investor and creditor asks: is this company financially resilient, and is it deploying capital effectively?</p>
+<div class="kpi-strip">
+<div class="kpi-card">
+<div class="kpi-val green">77</div>
+<div class="kpi-lbl">Financial Resilience Score (2025)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val">1.01</div>
+<div class="kpi-lbl">Debt-to-Equity (2025)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val">1.22</div>
+<div class="kpi-lbl">Quick Ratio (2025)</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val green">22.1%</div>
+<div class="kpi-lbl">Solvency Buffer (2025)</div>
+</div>
+</div>
+<h3>Solvency Trajectory</h3>
+<p>Current liabilities of $5.9B fell 7.0% year over year in 2025, reducing short-term pressure on the balance sheet. The debt maturity profile is conservative — 2% short-term and 98% long-term — which means the company faces minimal refinancing risk in the near term. Interest coverage of 5.6x comfortably services the existing debt load.</p>
+<h3>FCF Sustainability</h3>
+<p>With operating cash flow of $822M and maintenance capex of $176M, the FCF retention rate is 79% — meaning the business retains 79 cents of every operating dollar after maintaining its asset base. Dividend capacity of $646M sits well above actual dividend payments, providing a significant safety buffer for the capital return programme.</p>
+<h3>Capital Allocation ROI by Channel</h3>
+<p>The most provocative finding on the Capital and Balance Sheet page is the capital allocation ROI breakdown:</p>
+<div class="roi-bar">
+<div class="roi-label"><span class="roi-name">Organic Growth</span><span class="roi-val">751.1% ROI</span></div>
+<div class="roi-track"><div class="roi-fill organic"></div></div>
+</div>
+<div class="roi-bar">
+<div class="roi-label"><span class="roi-name">Share Buybacks</span><span class="roi-val muted">3.6% ROI</span></div>
+<div class="roi-track"><div class="roi-fill buyback"></div></div>
+</div>
+<div class="roi-bar">
+<div class="roi-label"><span class="roi-name">M&amp;A Integration</span><span class="roi-val muted">0.3% ROI</span></div>
+<div class="roi-track"><div class="roi-fill ma"></div></div>
+</div>
+<p>Organic growth capital generates 751.1% ROI — dwarfing the returns from share buybacks (3.6%) and M&amp;A integration (0.3%). This finding has direct strategic implications: given the ROI differential, every dollar reallocated from acquisitions toward organic growth initiatives would generate dramatically higher returns on invested capital. This is the kind of actionable insight that justifies building a financial dashboard at this level of depth. <em>Learn how I build ROI models in my <a href="../services/power-bi-dashboard-development.html">Power BI services</a>.</em></p>
+</div>
+<!-- PROFITABILITY -->
+<div class="doc-section" id="profitability">
+<h2><span class="section-icon"><i class="bi bi-graph-up"></i></span> Profitability &amp; Cost Analysis</h2>
+<p>The Profitability and Cost Analysis page examines whether the improving EBITDA story is backed by genuine cost discipline or is masking structural inefficiencies in the cost base.</p>
+<div class="kpi-strip">
+<div class="kpi-card">
+<div class="kpi-val">98%</div>
+<div class="kpi-lbl">Variable Cost Ratio</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val green">+4,839%</div>
+<div class="kpi-lbl">Scaling Efficiency Index</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val">11 Days</div>
+<div class="kpi-lbl">Average DSO</div>
+</div>
+<div class="kpi-card">
+<div class="kpi-val">7 Days</div>
+<div class="kpi-lbl">Average DPO</div>
+</div>
+</div>
+<h3>Cost Structure: 98% Variable</h3>
+<p>AECOM's cost base is 98% variable — almost entirely composed of delivery costs, with corporate overhead at 1.0% and transformation OPEX at 0.8%. This cost structure means the business has very limited operating leverage in the traditional sense: costs scale proportionally with revenue. However, it also means the business is highly resilient in a revenue downturn — the cost base contracts with revenue, protecting cash flow.</p>
+<h3>Scaling Efficiency and Earnings Quality</h3>
+<p>The Scaling Efficiency index of +4,839% measures how much faster operating income has grown relative to the cost base over the full eight-year period. This extraordinary figure reflects the cumulative effect of multiple years of cost discipline — particularly in corporate overhead and transformation OPEX — combined with a shift toward higher-margin revenue. Revenue vs Operating Cost charts confirm that the gap between revenue and cost has widened meaningfully since 2022.</p>
+<p>Earnings quality — measured by the relationship between net income and operating cash flow — shows healthy alignment, with operating cash flow consistently exceeding net income in recent years. This indicates that reported earnings are backed by actual cash generation rather than accounting accruals, which is a key quality signal for investors and analysts.</p>
+<h3>Return on Invested Capital Trajectory</h3>
+<p>ROIC has grown from 0.01 in 2018 to 0.55 in 2025 — a 50-fold improvement over the observation window. This is the single most compelling number in the entire dataset. A ROIC of 0.55 means that for every dollar of invested capital, AECOM is generating 55 cents in operating return — an exceptional figure for a professional services business of this scale. The trajectory confirms that the strategic pivot has not just improved margins but has fundamentally changed the capital efficiency of the entire business model. <em>See my <a href="../blog/ecommerce-churn-rate-machine-learning.html">e-commerce churn analysis</a> for similar capital efficiency insights.</em></p>
+</div>
+<!-- TOOLS -->
+<div class="doc-section" id="tools">
+<h2><span class="section-icon"><i class="bi bi-tools"></i></span> Tools &amp; Technologies</h2>
+<p>This project was built using the Microsoft BI stack throughout, making it reproducible and maintainable for any organisation already using Microsoft 365.</p>
+<div class="tech-stack">
+<div class="tech-item">
+<i class="bi bi-bar-chart-fill"></i>
+<span class="tech-name">Power BI</span>
+<span class="tech-role">Dashboard &amp; Report</span>
+</div>
+<div class="tech-item">
+<i class="bi bi-braces"></i>
+<span class="tech-name">DAX</span>
+<span class="tech-role">40+ Measures</span>
+</div>
+<div class="tech-item">
+<i class="bi bi-arrow-repeat"></i>
+<span class="tech-name">Power Query</span>
+<span class="tech-role">ETL &amp; Modelling</span>
+</div>
+<div class="tech-item">
+<i class="bi bi-file-spreadsheet"></i>
+<span class="tech-name">Excel</span>
+<span class="tech-role">Source Data</span>
+</div>
+<div class="tech-item">
+<i class="bi bi-diagram-2"></i>
+<span class="tech-name">Data Model</span>
+<span class="tech-role">Star Schema</span>
+</div>
+<div class="tech-item">
+<i class="bi bi-cloud-upload"></i>
+<span class="tech-name">Power BI Service</span>
+<span class="tech-role">Published Report</span>
+</div>
+</div>
+<div class="tags-row">
+<span class="tech-tag">Power BI</span>
+<span class="tech-tag">DAX</span>
+<span class="tech-tag">Power Query</span>
+<span class="tech-tag">Financial Analysis</span>
+<span class="tech-tag">8-Year Analysis</span>
+<span class="tech-tag">EBITDA Modelling</span>
+<span class="tech-tag">Capital Allocation</span>
+<span class="tech-tag">Solvency Analysis</span>
+<span class="tech-tag">FCF Sustainability</span>
+<span class="tech-tag">ROIC</span>
+<span class="tech-tag">Earnings Quality</span>
+<span class="tech-tag">Infrastructure Analytics</span>
+<span class="tech-tag">S&amp;P MidCap 400</span>
+<span class="tech-tag">NYSE: ACM</span>
+</div>
+</div>
+<!-- RELATED -->
+<div class="doc-section" id="related">
+<h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+<p>If this project is relevant to your analytical or business challenge, these case studies may also interest you:</p>
+<div class="related-grid">
+<a href="retail-analysis-global-electronics.html" class="related-card">
+<p class="card-label">Business Intelligence · Power BI</p>
+<h4>Retail BI Dashboard — 90% Revenue Decline</h4>
+<p>Diagnosing a 90% revenue collapse and identifying an 85% customer retention failure as the root cause using Power BI and cohort analysis.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="saas-trial-conversion-analysis.html" class="related-card">
+<p class="card-label">Product Analytics · Python</p>
+<h4>SaaS Trial Conversion Analysis</h4>
+<p>Why only 1 in 5 trial companies convert — survival analysis, ML models, and SQL marts applied to 966 B2B SaaS organisations. <em>See my <a href="../projects/saas-trial-conversion-analysis.html">full case study</a>.</em></p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="ecommerce-product-returns.html" class="related-card">
+<p class="card-label">E-Commerce Analytics · Python</p>
+<h4>E-Commerce Product Returns Analysis</h4>
+<p>Identifying that 28% of revenue was being eroded by returns and isolating which products and segments were responsible.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="customer-journey-analysis.html" class="related-card">
+<p class="card-label">Funnel Analytics · Python</p>
+<h4>Customer Journey Analysis</h4>
+<p>Mapping 10,000 user sessions to identify the friction points where customers consistently abandon the funnel before converting.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
 </section>
-
 <!-- CTA -->
 <section class="project-cta">
-  <div class="container">
-    <p class="cta-eyebrow">Work with Adediran Adeyemi</p>
-    <h2>Need a financial dashboard built on your company's real data?</h2>
-    <p>I build analyst-grade Power BI dashboards that go beyond standard reporting — custom metrics, DAX measures, and storytelling that turns financial statements into strategic decisions.</p>
-    <div class="cta-buttons">
-      <a href="../index.html#contact" class="btn-cta-white">Tell Me About Your Project</a>
-      <a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
-    </div>
-  </div>
+<div class="container">
+<p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+<h2>Need a financial dashboard built on your company's real data?</h2>
+<p>I build analyst-grade Power BI dashboards that go beyond standard reporting — custom metrics, DAX measures, and storytelling that turns financial statements into strategic decisions. <em>Explore my <a href="../services/power-bi-dashboard-development.html" style="color:rgba(255,255,255,0.92);font-weight:600;text-decoration:underline;">Power BI dashboard development services</a> for full project details.</em></p>
+<div class="cta-buttons">
+<a href="../index.html#contact" class="btn-cta-white">Tell Me About Your Project</a>
+<a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
+</div>
+</div>
 </section>
-
 <!-- FOOTER -->
 <footer id="footer">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 footer-contact">
-          <h3>Adeyemi<span>Data</span></h3>
-          <p>
-            Remote Worldwide<br>
-            Available globally (timezone-flexible)<br><br>
-            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
-            <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
-          </p>
-        </div>
-        <div class="col-lg-2 col-md-6 footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>What I Do</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Financial Dashboards</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Churn Prediction</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">CLV Modeling</a></li>
-            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Product Analytics</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Connect</h4>
-          <div class="social-links mt-3">
-            <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="copyright">
-      &copy; 2026 <strong>Adediran Adeyemi</strong> &middot; Turning Data Into Decisions
-    </div>
-  </div>
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<h3>Adeyemi<span>Data</span></h3>
+<p>
+Remote Worldwide<br>
+Available globally (timezone-flexible)<br><br>
+<strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+<strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
+</p>
+</div>
+<div class="col-lg-2 col-md-6 footer-links">
+<h4>Quick Links</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>What I Do</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i><a href="../services/power-bi-dashboard-development.html">Financial Dashboards</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../services/churn-prediction-model.html">Churn Prediction</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../services/customer-segmentation-analysis.html">CLV Modeling</a></li>
+<li><i class="bi bi-chevron-right"></i><a href="../services/ecommerce-data-science.html">Product Analytics</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>Connect</h4>
+<div class="social-links mt-3">
+<a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+<a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="copyright">
+&copy; 2026 <strong>Adediran Adeyemi</strong> &middot; Turning Data Into Decisions
+</div>
+</div>
 </footer>
-
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the AECOM 8-year financial dashboard built with?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The dashboard is built entirely in Power BI Desktop using DAX for custom measures and Power Query for data transformation. The data source is AECOM's publicly filed 10-K annual reports for fiscal years 2018 through 2025. The report contains three pages: Executive Overview, Capital and Balance Sheet, and Profitability and Cost Analysis."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What financial metrics are covered in the dashboard?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The dashboard covers revenue CAGR, EBITDA trajectory, EBITDA margin, operating margin, free cash flow margin, cash conversion cycle, debt-to-equity ratio, quick ratio, current ratio, interest coverage, capital allocation ROI by channel (organic growth, M&A, share buybacks), FCF sustainability, dividend capacity, earnings quality (net income vs operating cash flow alignment), ROIC trajectory, DSO, DPO, scaling efficiency, and a composite Financial Resilience Score."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is AECOM's ticker symbol and index?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "AECOM trades on the New York Stock Exchange under the ticker symbol ACM. The company is a constituent of the S&P MidCap 400 index. AECOM is a global infrastructure and professional services firm with approximately $16 billion in annual revenue and operations in over 150 countries."
-      }
-    }
-  ]
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "What is the AECOM 8-year financial dashboard built with?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "The dashboard is built entirely in Power BI Desktop using DAX for custom measures and Power Query for data transformation. The data source is AECOM's publicly filed 10-K annual reports for fiscal years 2018 through 2025. The report contains three pages: Executive Overview, Capital and Balance Sheet, and Profitability and Cost Analysis."
+}
+},
+{
+"@type": "Question",
+"name": "What financial metrics are covered in the dashboard?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "The dashboard covers revenue CAGR, EBITDA trajectory, EBITDA margin, operating margin, free cash flow margin, cash conversion cycle, debt-to-equity ratio, quick ratio, current ratio, interest coverage, capital allocation ROI by channel (organic growth, M&A, share buybacks), FCF sustainability, dividend capacity, earnings quality (net income vs operating cash flow alignment), ROIC trajectory, DSO, DPO, scaling efficiency, and a composite Financial Resilience Score."
+}
+},
+{
+"@type": "Question",
+"name": "What is AECOM's ticker symbol and index?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "AECOM trades on the New York Stock Exchange under the ticker symbol ACM. The company is a constituent of the S&P MidCap 400 index. AECOM is a global infrastructure and professional services firm with approximately $16 billion in annual revenue and operations in over 150 countries."
+}
+}
+]
 }
 </script>
-
 <script>
 window.addEventListener('load',()=>{const pre=document.getElementById('preloader');if(pre){pre.style.transition='opacity 0.4s';pre.style.opacity='0';setTimeout(()=>pre.remove(),400);}});
 const toggle=document.querySelector('.mobile-nav-toggle');const navbar=document.querySelector('#header .navbar');
