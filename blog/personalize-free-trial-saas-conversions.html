@@ -275,6 +275,18 @@ line-height: 1.8;
 color: #334155;
 margin-bottom: 20px;
 }
+.article-content a {
+color: #0052FF;
+text-decoration: none;
+font-weight: 500;
+border-bottom: 1px dashed rgba(0,82,255,0.4);
+transition: all 0.2s ease;
+}
+.article-content a:hover {
+color: #0041cc;
+border-bottom-style: solid;
+background: rgba(0,82,255,0.06);
+}
 .article-content h2 {
 font-size: 2rem;
 font-weight: 800;
@@ -479,6 +491,49 @@ margin: 0 0 12px 0;
 line-height: 1.4;
 }
 .faq-item p { font-size: 1rem; color: #475569; margin: 0; line-height: 1.75; }
+.faq-item a {
+color: #0052FF;
+font-weight: 500;
+text-decoration: none;
+border-bottom: 1px dashed rgba(0,82,255,0.4);
+}
+.faq-item a:hover { border-bottom-style: solid; }
+/* ============================================
+RELATED RESOURCES BOX
+============================================ */
+.related-resources {
+background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
+border: 1px solid #E2E8F0;
+border-radius: 8px;
+padding: 24px;
+margin: 32px 0;
+}
+.related-resources h4 {
+font-size: 1.1rem;
+font-weight: 700;
+color: #0F172A;
+margin: 0 0 16px 0;
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.related-resources ul {
+margin: 0;
+padding-left: 20px;
+}
+.related-resources li {
+font-size: 0.95rem;
+color: #334155;
+margin-bottom: 8px;
+line-height: 1.6;
+}
+.related-resources li:last-child { margin-bottom: 0; }
+.related-resources a {
+color: #0052FF;
+font-weight: 500;
+text-decoration: none;
+}
+.related-resources a:hover { text-decoration: underline; }
 /* ============================================
 ARTICLE CTA
 ============================================ */
@@ -725,7 +780,7 @@ RESPONSIVE
 <p>Sound familiar?</p>
 <p>As a SaaS founder or growth marketer, you have likely felt this frustration. You have invested in driving quality traffic to your free trial, your product genuinely solves problems, yet conversion rates remain stubbornly low. The issue is not your product. It is that you are treating every trial user like they are the same person with identical needs, timelines, and pain points.</p>
 <div class="key-callout">
-<p><strong>The typical B2B SaaS free trial converts at 15 to 30%.</strong> Products that deliver time-to-first-value under 5 minutes see conversion rates above 25%. Segment-specific email nurturing triggered by signup behaviour increases activation by up to 35% versus generic campaigns. The gap between average and excellent is almost entirely explained by personalisation.</p>
+<p><strong>The typical B2B SaaS free trial converts at 15 to 30%.</strong> Products that deliver time-to-first-value under 5 minutes see conversion rates above 25%. Segment-specific email nurturing triggered by signup behaviour increases activation by up to 35% versus generic campaigns. The gap between average and excellent is almost entirely explained by personalisation. <em>See how I applied this in my <a href="../projects/saas-trial-conversion-analysis.html">SaaS trial conversion analysis project</a>.</em></p>
 </div>
 <h2>Stop Guessing. Start Investigating.</h2>
 <p>When trial users churn, your first instinct might be to tweak your pricing or add more features. Resist this urge. Instead, become a detective. The clues to higher conversions are hidden in your user behaviour data, and the investigation starts with five critical questions.</p>
@@ -747,7 +802,7 @@ RESPONSIVE
 <div class="q-number">Q3</div>
 <div class="q-content">
 <h4>What specific actions did they take?</h4>
-<p>Generic usage metrics do not tell the full story. Did they upload data, create projects, or integrate with other tools? A marketing manager who imported their email list but never sent a campaign has different needs than one who sent campaigns but could not access advanced analytics. These behavioural patterns reveal exactly where your onboarding succeeds and exactly where it breaks down — if you are looking at the right level of granularity.</p>
+<p>Generic usage metrics do not tell the full story. Did they upload data, create projects, or integrate with other tools? A marketing manager who imported their email list but never sent a campaign has different needs than one who sent campaigns but could not access advanced analytics. These behavioural patterns reveal exactly where your onboarding succeeds and exactly where it breaks down — if you are looking at the right level of granularity. <em>Learn how I track these signals in my <a href="../services/ecommerce-data-science.html">e-commerce data science services</a>.</em></p>
 </div>
 </div>
 <div class="question-block">
@@ -768,7 +823,7 @@ RESPONSIVE
 <p>Free trials are more than conversion tactics. Every user interaction provides data about what resonates, what confuses, and what truly drives decision-making in your market. The SaaS companies that treat trials as research — not just sales motion — compound learning over time in ways that cannot be copied.</p>
 <p>Consider how Slack approaches trial conversion. Rather than pushing generic "upgrade now" prompts on a fixed schedule, Slack watches how users engage with the product. When a team reaches its message limit or attempts to access older conversations beyond the scope of its plan, Slack intervenes with a timely and relevant message demonstrating exactly how upgrading addresses that specific issue. It is not selling features — it is addressing a real, in-the-moment need that the user just ran into. That is the difference between a conversion prompt and a conversion.</p>
 <div class="key-callout">
-<p><strong>Stop asking: "How can we get them to subscribe?"</strong><br>Start asking: "What immediate success can we help them achieve?" That shift changes everything about how you design the trial experience.</p>
+<p><strong>Stop asking: "How can we get them to subscribe?"</strong><br>Start asking: "What immediate success can we help them achieve?" That shift changes everything about how you design the trial experience. <em>For a framework on predicting retention before churn happens, see my guide on <a href="../blog/predict-customer-retention.html">data-driven customer retention</a>.</em></p>
 </div>
 <h2>Engineering the Aha Moment for Each User Segment</h2>
 <p>The aha moment is the specific outcome that makes a trial user realise your product is indispensable. It is not universal — it is product-specific, segment-specific, and often role-specific within the same product.</p>
@@ -818,6 +873,15 @@ RESPONSIVE
 <div class="ec-insight">Validates what they built. Removes the upgrade as an assumption. Opens a two-way conversation to surface the real objection rather than guessing at it.</div>
 </div>
 </div>
+<div class="related-resources">
+<h4><i class="bi bi-lightbulb"></i> Related Resources</h4>
+<ul>
+<li><strong>Case Study:</strong> <a href="../projects/saas-trial-conversion-analysis.html">SaaS Trial Conversion Analysis</a> — Full Python/SQL analysis of 966 B2B trial organisations</li>
+<li><strong>Service:</strong> <a href="../services/churn-prediction-model.html">Churn Prediction Model</a> — Build ML models that identify at-risk customers before they cancel</li>
+<li><strong>Framework:</strong> <a href="../blog/predict-customer-retention.html">Predict Customer Retention Without Waiting for Churn</a> — Three-pillar framework for proactive retention</li>
+<li><strong>Service:</strong> <a href="../services/power-bi-dashboard-development.html">Power BI Dashboard Development</a> — Visualise trial funnel metrics and user behaviour in real-time</li>
+</ul>
+</div>
 <h2>The Feedback Loop That Pays</h2>
 <p>Waiting until trial expiration to ask for feedback is like asking someone why they are leaving as they walk out the door. By then their decision is made, and their attention has moved elsewhere.</p>
 <p>Instead, implement a progressive feedback system. Ask about their goals during signup. Check in after their first meaningful action. Continuously gather insights about their experience throughout the trial — not just at the end. This is not just about improving your product. It is about showing users that you care about their success, not just their subscription fee.</p>
@@ -829,7 +893,7 @@ RESPONSIVE
 <div class="ai-num">1</div>
 <div class="ai-body">
 <h4>Track user behaviour during the trial, not just at the end</h4>
-<p>Set up event tracking for the five to ten actions that matter most in your product. Login frequency, feature adoption depth, team invitations sent, and data imported are more valuable than session count alone.</p>
+<p>Set up event tracking for the five to ten actions that matter most in your product. Login frequency, feature adoption depth, team invitations sent, and data imported are more valuable than session count alone. <em>Need help implementing this? See my <a href="../services/ecommerce-data-science.html">e-commerce data science services</a>.</em></p>
 </div>
 </div>
 <div class="action-item">
@@ -862,7 +926,7 @@ RESPONSIVE
 <div class="faq-section">
 <div class="faq-item">
 <h3>Why do SaaS free trials fail to convert?</h3>
-<p>Most SaaS free trials fail to convert because they treat every user identically — the same email sequence, the same onboarding flow, the same upgrade prompt — regardless of what actions the user actually took. A user who never logged in needs activation. A user who explored five features but did not convert needs a friction-removal conversation. A user who invited team members is high-intent and needs a direct outreach. Generic campaigns cannot address three different problems with one message.</p>
+<p>Most SaaS free trials fail to convert because they treat every user identically — the same email sequence, the same onboarding flow, the same upgrade prompt — regardless of what actions the user actually took. A user who never logged in needs activation. A user who explored five features but did not convert needs a friction-removal conversation. A user who invited team members is high-intent and needs a direct outreach. Generic campaigns cannot address three different problems with one message. <em>Learn how I diagnose this in my <a href="../services/churn-prediction-model.html">churn prediction services</a>.</em></p>
 </div>
 <div class="faq-item">
 <h3>What is the aha moment in SaaS onboarding?</h3>
@@ -878,7 +942,7 @@ RESPONSIVE
 </div>
 <div class="faq-item">
 <h3>How long should a SaaS free trial be?</h3>
-<p>Research shows 14 to 21 days is the optimal window for most B2B SaaS products. Trials of 7 days convert around 40% when paired with strong onboarding, while trials longer than 61 days drop to around 30% as urgency fades and users disengage. The length matters less than how quickly users reach their aha moment — products that deliver time-to-first-value under 5 minutes see trial-to-paid conversion above 25%.</p>
+<p>Research shows 14 to 21 days is the optimal window for most B2B SaaS products. Trials of 7 days convert around 40% when paired with strong onboarding, while trials longer than 61 days drop to around 30% as urgency fades and users disengage. The length matters less than how quickly users reach their aha moment — products that deliver time-to-first-value under 5 minutes see trial-to-paid conversion above 25%. <em>See the full analysis in my <a href="../projects/saas-trial-conversion-analysis.html">SaaS trial conversion project</a>.</em></p>
 </div>
 </div>
 </div>
