@@ -667,51 +667,242 @@ setTimeout(() => preloader.remove(), 300);
 <script src="assets/js/main.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-if (typeof AOS !== 'undefined') {
-AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 50 });
-}
-// Smooth scroll for anchor links
-document.querySelectorAll('a.scrollto').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const target = document.querySelector(this.getAttribute('href'));
-if (target) {
-target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+  if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 50 });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a.scrollto').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Mobile nav toggle
+  const mobileToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#navbar ul');
+  if (mobileToggle && navbar) {
+    mobileToggle.addEventListener('click', function() {
+      navbar.classList.toggle('mobile-nav-active');
+      mobileToggle.classList.toggle('bi-list');
+      mobileToggle.classList.toggle('bi-x');
+    });
+  }
+
+  // Close mobile nav when clicking a link
+  document.querySelectorAll('#navbar a').forEach(link => {
+    link.addEventListener('click', function() {
+      if (navbar.classList.contains('mobile-nav-active')) {
+        navbar.classList.remove('mobile-nav-active');
+        if (mobileToggle) {
+          mobileToggle.classList.add('bi-list');
+          mobileToggle.classList.remove('bi-x');
+        }
+      }
+    });
+  });
+
+  // Portfolio filter functionality
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-project');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Remove active class from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      const filter = this.getAttribute('data-filter');
+      
+      // Filter items
+      portfolioItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+          // Add animation class for smooth appearance
+          item.classList.add('aos-animate');
+        } else {
+          item.style.display = 'none';
+          item.classList.remove('aos-animate');
+        }
+      });
+    });
+  });
+
+  // Expand demo modal functionality
+  window.expandDemo = function(btn) {
+    const iframe = btn.closest('.project-embed').querySelector('iframe');
+    const src = iframe.src;
+    const title = iframe.title || 'Project Demo';
+    
+    // Create modal overlay
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    `;
+    
+    const modalContent = document.createElement('div');
+    modalContent.style.cssText = `
+      background: #fff;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 1200px;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    `;
+    
+    const modalHeader = document.createElement('div');
+    modalHeader.style.cssText = `
+      padding: 15px 20px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    `;
+    modalHeader.innerHTML = `<strong style="font-size: 1.1em;">${title}</strong>`;
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.style.cssText = `
+      background: none;
+      border: none;
+      font-size: 2em;
+      cursor: pointer;
+      color: #64748b;
+      line-height: 1;
+      padding: 0 10px;
+    `;
+    closeBtn.onclick = () => modal.remove();
+    modalHeader.appendChild(closeBtn);
+    
+    const modalBody = document.createElement('div');
+    modalBody.style.cssText = 'flex: 1; overflow: hidden;';
+    
+    const demoIframe = document.createElement('iframe');
+    demoIframe.src = src;
+    demoIframe.style.cssText = 'width: 100%; height: 100%; border: none;';
+    demoIframe.allowFullscreen = true;
+    modalBody.appendChild(demoIframe);
+    
+    modalContent.appendChild(modalHeader);
+    modalContent.appendChild(modalBody);
+    modal.appendChild(modalContent);
+    document.body.appendChild(modal);
+    
+    // Close on Escape key
+    const escHandler = (e) => {
+      if (e.key === 'Escape') {
+        modal.remove();
+        document.removeEventListener('keydown', escHandler);
+      }
+    };
+    document.addEventListener('keydown', escHandler);
+    
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.remove();
+        document.removeEventListener('keydown', escHandler);
+      }
+    });
+  };
+
+  // Form submission handling
+  const form = document.querySelector('.php-email-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const loading = form.querySelector('.loading');
+      const errorMessage = form.querySelector('.error-message');
+      const sentMessage = form.querySelector('.sent-message');
+      
+      // Reset messages
+      loading.style.display = 'block';
+      errorMessage.style.display = 'none';
+      sentMessage.style.display = 'none';
+      
+      // Submit via fetch
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          loading.style.display = 'none';
+          sentMessage.style.display = 'block';
+          form.reset();
+          // Hide success message after 5 seconds
+          setTimeout(() => sentMessage.style.display = 'none', 5000);
+        } else {
+          throw new Error('Submission failed');
+        }
+      })
+      .catch(error => {
+        loading.style.display = 'none';
+        errorMessage.textContent = 'Sorry, something went wrong. Please email me directly at adeyemi@adediranadeyemi.com';
+        errorMessage.style.display = 'block';
+        console.error('Form error:', error);
+      });
+    });
+  }
+
+  // Update filter counts
+  function updateFilterCounts() {
+    const counts = { all: 0, dashboards: 0, notebooks: 0, 'deployed-model': 0 };
+    portfolioItems.forEach(item => {
+      const cat = item.getAttribute('data-category');
+      if (counts[cat] !== undefined) counts[cat]++;
+      counts.all++;
+    });
+    filterBtns.forEach(btn => {
+      const filter = btn.getAttribute('data-filter');
+      const countSpan = btn.querySelector('.filter-count');
+      if (countSpan && counts[filter] !== undefined) {
+        countSpan.textContent = counts[filter];
+      }
+    });
+  }
+  updateFilterCounts();
+
+  // Lazy load iframes on viewport enter for performance
+  if ('IntersectionObserver' in window) {
+    const iframeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const iframe = entry.target;
+          if (iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+            iframe.removeAttribute('data-src');
+          }
+          iframeObserver.unobserve(iframe);
+        }
+      });
+    }, { rootMargin: '100px' });
+    
+    document.querySelectorAll('iframe[loading="lazy"]').forEach(iframe => {
+      if (iframe.src) {
+        iframe.dataset.src = iframe.src;
+        iframe.src = '';
+        iframeObserver.observe(iframe);
+      }
+    });
+  }
 });
-});
-// Mobile nav toggle
-const mobileToggle = document.querySelector('.mobile-nav-toggle');
-const navbar = document.querySelector('#navbar ul');
-if (mobileToggle && navbar) {
-mobileToggle.addEventListener('click', function() {
-navbar.classList.toggle('mobile-nav-active');
-mobileToggle.classList.toggle('bi-list');
-mobileToggle.classList.toggle('bi-x');
-});
-}
-// Close mobile nav when clicking a link
-document.querySelectorAll('#navbar a').forEach(link => {
-link.addEventListener('click', function() {
-if (navbar.classList.contains('mobile-nav-active')) {
-navbar.classList.remove('mobile-nav-active');
-if (mobileToggle) {
-mobileToggle.classList.add('bi-list');
-mobileToggle.classList.remove('bi-x');
-}
-}
-});
-});
-// Portfolio filter functionality
-const filterBtns = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-project');
-filterBtns.forEach(btn => {
-btn.addEventListener('click', function() {
-// Remove active class from all buttons
-filterBtns.forEach(b => b.classList.remove('active'));
-// Add active class to clicked button
-this.classList.add('active');
-const filter = this.getAttribute('data-filter');
-// Filter items
-portfolioItems.forEach(item => {
-if (filter === 'all' || 
+</script>
+</body>
+</html>
