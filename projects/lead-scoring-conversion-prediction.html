@@ -16,7 +16,7 @@ PRIMARY SEO META
 <meta name="description" content="ML lead scoring model with 99% accuracy predicting purchase likelihood from browsing behavior. SMOTE, Random Over-Sampling, and interaction analysis by Adediran Adeyemi.">
 <meta name="keywords" content="lead scoring model, conversion prediction ML, purchase likelihood, SMOTE class imbalance, browsing behavior analysis, e-commerce ML, Python scikit-learn, Adediran Adeyemi">
 <meta name="author" content="Adediran Adeyemi">
-<link rel="canonical" href="https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html">
+<link rel="canonical" href="https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction">
 <!-- =========================================
 OPEN GRAPH
 ========================================== -->
@@ -25,7 +25,7 @@ OPEN GRAPH
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Lead Scoring & Conversion Prediction | Adediran Adeyemi">
 <meta property="og:description" content="ML case study: 99% accurate lead scoring model predicting purchase likelihood from browsing behavior using SMOTE and Random Over-Sampling.">
-<meta property="og:url" content="https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction">
 <meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/lead-scoring.gif">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -62,6 +62,31 @@ FONTS
 PAGE-SPECIFIC STYLES
 ========================================== -->
 <style>
+@font-face { font-family: 'Inter'; src: url('../assets/fonts/inter-variable.woff2') format('woff2'); font-weight: 100 900; font-display: swap; font-style: normal; }
+* { box-sizing: border-box; }
+body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #0F172A; margin: 0; padding: 0; line-height: 1.6; -webkit-font-smoothing: antialiased; font-weight: 400; }
+a { color: #0052FF; text-decoration: none; }
+a:hover { color: #3b8af2; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; letter-spacing: -0.02em; color: #0f172a; }
+#preloader { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999; overflow: hidden; background: #F8FAFC; }
+#preloader:before { content: ""; position: fixed; top: calc(50% - 30px); left: calc(50% - 30px); border: 6px solid #0052FF; border-top-color: #e2eefd; border-radius: 50%; width: 60px; height: 60px; animation: animate-preloader 1s linear infinite; }
+@keyframes animate-preloader { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.container { width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+#topbar { background: #0052FF; height: 40px; font-size: 14px; color: #fff; padding: 0; }
+#header { background: #ffffff; height: 86px; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); }
+#header .logo { font-size: 30px; margin: 0; padding: 0; line-height: 1; font-weight: 800; }
+#header .logo a { color: #0f172a; font-weight: 800; }
+#header .logo span { color: #0052FF; }
+.navbar ul { display: flex; list-style: none; margin: 0; padding: 0; align-items: center; gap: 24px; }
+.navbar a { font-size: 14px; font-weight: 500; color: #334155; text-decoration: none; transition: color .2s; }
+.navbar a:hover, .navbar a.active { color: #0052FF; font-weight: 600; }
+.mobile-nav-toggle { display: none; font-size: 24px; cursor: pointer; color: #0f172a; }
+@media (max-width: 991px) {
+  .navbar ul { display: none; position: absolute; top: 86px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 20px; box-shadow: 0 4px 16px rgba(0,0,0,.1); z-index: 100; }
+  .navbar ul.navbar-mobile { display: flex; }
+  .mobile-nav-toggle { display: block; }
+}
 /* ── BREADCRUMB ── */
 .project-breadcrumb { background: #F8FAFC; border-bottom: 1px solid #E2E8F0; padding: 12px 0; font-size: 13px; }
 .project-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
@@ -240,7 +265,7 @@ TOP BAR
 <div class="container d-flex justify-content-between align-items-center">
 <div class="contact-info d-flex align-items-center">
 <i class="bi bi-envelope-fill"></i>
-<i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+<i><a href="/cdn-cgi/l/email-protection#8eefeaebf7ebe3e7ceefeaebeae7fcefe0efeaebf7ebe3e7a0ede1e3"><span class="__cf_email__" data-cfemail="b2d3d6d7cbd7dfdbf2d3d6d7d6dbc0d3dcd3d6d7cbd7dfdb9cd1dddf">[email&#160;protected]</span></a></i>
 <i class="bi bi-phone-fill ms-3"></i>
 <i><span>+234 816 273 5399</span></i>
 </div>
@@ -332,7 +357,6 @@ View on GitHub <i class="bi bi-github"></i>
 </div>
 </div>
 <div class="col-lg-5 d-none d-lg-block">
-<!-- *** FIXED: Changed .jpg to .gif *** -->
 <img
 src="../assets/img/portfolio/lead-scoring.gif"
 alt="Lead scoring machine learning model predicting purchase likelihood from browsing behavior"
@@ -774,7 +798,6 @@ weighted avg       0.99      0.99      0.99       189</pre>
 The lead scoring model is deployed as an interactive application. Input a set of browsing behaviors and get an instant purchase likelihood score:
 </p>
 <div class="demo-wrap">
-<!-- *** FIXED: Updated iframe src to Hugging Face Spaces URL *** -->
 <iframe
 title="Lead Scoring Model – Adediran Adeyemi"
 src="https://adeyemi001-Lead-Scoring-Model.hf.space"
@@ -890,7 +913,7 @@ FOOTER
 <p>
 Remote Worldwide<br>Available globally (timezone-flexible)<br><br>
 <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
-<strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
+<strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#3f5e5b5a465a52567f5e5b5a5b564d5e515e5b5a465a5256115c5052"><span class="__cf_email__" data-cfemail="9efffafbe7fbf3f7defffafbfaf7ecfff0fffafbe7fbf3f7b0fdf1f3">[email&#160;protected]</span></a>
 </p>
 </div>
 <div class="col-lg-2 col-md-6 footer-links">
@@ -930,16 +953,16 @@ Remote Worldwide<br>Available globally (timezone-flexible)<br><br>
 <!-- =========================================
 SCHEMA MARKUP
 ========================================== -->
-<script type="application/ld+json">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="application/ld+json">
 {
 "@context": "https://schema.org",
 "@graph": [
 {
 "@type": "TechArticle",
-"@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html#article",
+"@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction#article",
 "headline": "Lead Scoring & Conversion Prediction Model – 99% Accuracy from Browsing Behavior",
 "description": "Machine learning case study building a 99% accurate lead scoring model that predicts purchase likelihood from e-commerce browsing signals, using SMOTE and Random Over-Sampling to handle class imbalance.",
-"url": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html",
+"url": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction",
 "datePublished": "2024-11-01",
 "dateModified": "2026-01-01",
 "inLanguage": "en",
@@ -962,11 +985,11 @@ SCHEMA MARKUP
 },
 {
 "@type": "BreadcrumbList",
-"@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html#breadcrumb",
+"@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction#breadcrumb",
 "itemListElement": [
 { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
 { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://adediranadeyemi.com/#portfolio" },
-{ "@type": "ListItem", "position": 3, "name": "Lead Scoring & Conversion Prediction", "item": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html" }
+{ "@type": "ListItem", "position": 3, "name": "Lead Scoring & Conversion Prediction", "item": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction" }
 ]
 }
 ]
@@ -1001,17 +1024,34 @@ const obs = new IntersectionObserver(entries => {
 entries.forEach(e => {
 if (e.isIntersecting) {
 links.forEach(l => l.classList.remove('active'));
-const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
-if (a) a.classList.add('active');
+const target = sections[Array.from(sections).findIndex(s => s.id === e.target.id)];
+if (target) {
+const link = document.querySelector(`.toc-list a[href="#${target.id}"]`);
+if (link) link.classList.add('active');
+}
 }
 });
-}, { rootMargin: '-20% 0px -65% 0px' });
+}, { threshold: 0.3, rootMargin: '-90px 0px -60% 0px' });
 sections.forEach(s => obs.observe(s));
 })();
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+// Close mobile nav if open
+if (navbar && navbar.classList.contains('navbar-mobile')) {
+navbar.classList.remove('navbar-mobile');
+if (toggle) {
+toggle.classList.add('bi-list');
+toggle.classList.remove('bi-x');
+}
+}
+}
+});
+});
 </script>
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
-<i class="bi bi-arrow-up-short"></i>
-</a>
-<script src="../assets/js/main.js" defer></script>
 </body>
 </html>
