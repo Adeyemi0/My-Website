@@ -331,7 +331,7 @@ Machine Learning · Conversion Optimization
 </div>
 <h1>Predicting <span>Purchase Likelihood</span> from Browsing Behavior</h1>
 <p class="hero-lead">
-A machine learning case study that identifies which website interactions — reviews, images, specs, warranties — drive purchase decisions, and builds a 99% accurate lead scoring model to help sales teams focus on high-intent prospects.
+A machine learning case study that identifies which website interactions - reviews, images, specs, warranties - drive purchase decisions, and builds a 99% accurate lead scoring model to help sales teams focus on high-intent prospects.
 </p>
 <div class="hero-meta">
 <div class="hero-meta-item">
@@ -425,18 +425,18 @@ MAIN CONTENT
 <article itemscope itemtype="https://schema.org/TechArticle">
 <meta itemprop="author" content="Adediran Adeyemi">
 <meta itemprop="datePublished" content="2024-11-01">
-<meta itemprop="headline" content="Lead Scoring & Conversion Prediction Model – 99% Accuracy">
+<meta itemprop="headline" content="Lead Scoring & Conversion Prediction Model - 99% Accuracy">
 <!-- OVERVIEW -->
 <div class="doc-section" id="overview">
 <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
 <p>
-In an increasingly competitive digital marketplace, understanding what drives users to make purchases is critical for optimizing websites and increasing conversion rates. This project investigates the browsing behavior of users and how various on-page actions — viewing images, reading reviews, checking product specifications, comparing similar items — influence their purchasing decisions.
+In an increasingly competitive digital marketplace, understanding what drives users to make purchases is critical for optimizing websites and increasing conversion rates. This project investigates the browsing behavior of users and how various on-page actions - viewing images, reading reviews, checking product specifications, comparing similar items - influence their purchasing decisions.
 </p>
 <p>
 The primary output is a deployed lead scoring model that classifies sessions by purchase likelihood, allowing sales and marketing teams to focus intervention efforts on the highest-intent prospects rather than treating every visitor identically.
 </p>
 <div class="callout-green">
-<p><strong>Bottom line:</strong> Reviews are the single strongest driver of purchase behavior. Users who viewed reviews were significantly more likely to buy — even without images. Combining reviews with images produced the highest conversion rate of any interaction pair at <strong>58.33%</strong>.</p>
+<p><strong>Bottom line:</strong> Reviews are the single strongest driver of purchase behavior. Users who viewed reviews were significantly more likely to buy - even without images. Combining reviews with images produced the highest conversion rate of any interaction pair at <strong>58.33%</strong>.</p>
 </div>
 </div>
 <!-- DICTIONARY -->
@@ -458,7 +458,7 @@ The primary output is a deployed lead scoring model that classifies sessions by 
 <tr><td>VIEW_SIMILAR</td><td>Whether the user viewed similar items (1 = Yes, 0 = No)</td></tr>
 <tr><td>WARRANTY</td><td>Whether the user checked product warranty (1 = Yes, 0 = No)</td></tr>
 <tr><td>SPONSORED_LINKS</td><td>Whether the user clicked on sponsored links (1 = Yes, 0 = No)</td></tr>
-<tr><td>BUY</td><td>Whether the user made a purchase during the session (1 = Yes, 0 = No) — <strong>target variable</strong></td></tr>
+<tr><td>BUY</td><td>Whether the user made a purchase during the session (1 = Yes, 0 = No) - <strong>target variable</strong></td></tr>
 </tbody>
 </table>
 </div>
@@ -467,28 +467,28 @@ The primary output is a deployed lead scoring model that classifies sessions by 
 <div class="doc-section" id="executive-summary">
 <h2><span class="section-icon"><i class="bi bi-clipboard-data"></i></span> Executive Summary</h2>
 <p>
-Out of 500 user sessions, 185 resulted in a purchase (37%) and 315 did not (63%). This class imbalance was a key challenge addressed in the modeling phase. The analysis identifies which browsing behaviors are most predictive of purchase intent — and which combinations create the strongest synergy.
+Out of 500 user sessions, 185 resulted in a purchase (37%) and 315 did not (63%). This class imbalance was a key challenge addressed in the modeling phase. The analysis identifies which browsing behaviors are most predictive of purchase intent - and which combinations create the strongest synergy.
 </p>
 <div class="findings-grid">
 <div class="finding-card">
 <div class="finding-icon"><i class="bi bi-star-fill"></i></div>
 <h4>Reviews Drive Purchases</h4>
-<p>Users who viewed reviews were significantly more likely to buy — even without viewing images. Reviews alone produced a 53.57% purchase rate.</p>
+<p>Users who viewed reviews were significantly more likely to buy - even without viewing images. Reviews alone produced a 53.57% purchase rate.</p>
 </div>
 <div class="finding-card">
 <div class="finding-icon"><i class="bi bi-images"></i></div>
 <h4>Images + Reviews = Highest Conversion</h4>
-<p>The combination of images and reviews produced the highest purchase rate of any interaction pair: <strong>58.33%</strong> — the strongest signal in the dataset.</p>
+<p>The combination of images and reviews produced the highest purchase rate of any interaction pair: <strong>58.33%</strong> - the strongest signal in the dataset.</p>
 </div>
 <div class="finding-card">
 <div class="finding-icon"><i class="bi bi-file-earmark-text"></i></div>
 <h4>Specs Support, Not Lead</h4>
-<p>Product specifications alone achieve only 25% purchase rate. But paired with reviews, this jumps to 46.43% — specs amplify other signals rather than driving purchases on their own.</p>
+<p>Product specifications alone achieve only 25% purchase rate. But paired with reviews, this jumps to 46.43% - specs amplify other signals rather than driving purchases on their own.</p>
 </div>
 <div class="finding-card">
 <div class="finding-icon"><i class="bi bi-shield-check"></i></div>
 <h4>Warranty + Specs Passes 50%</h4>
-<p>Combining warranty information with product specifications crosses the 50% purchase likelihood threshold at 51.85% — the strongest non-reviews combination.</p>
+<p>Combining warranty information with product specifications crosses the 50% purchase likelihood threshold at 51.85% - the strongest non-reviews combination.</p>
 </div>
 </div>
 </div>
@@ -496,13 +496,13 @@ Out of 500 user sessions, 185 resulted in a purchase (37%) and 315 did not (63%)
 <div class="doc-section" id="eda">
 <h2><span class="section-icon"><i class="bi bi-search"></i></span> Exploratory Data Analysis</h2>
 <h3>Class Distribution</h3>
-<p>The target variable showed a meaningful class imbalance — a critical finding that shaped the modeling approach:</p>
+<p>The target variable showed a meaningful class imbalance - a critical finding that shaped the modeling approach:</p>
 <div class="code-block">
 <div class="code-label">BUY Variable Distribution</div>
 <pre>
 BUY
-0    315    (63.0%) — did not purchase
-1    185    (37.0%) — made a purchase
+0    315    (63.0%) - did not purchase
+1    185    (37.0%) - made a purchase
 Total: 500 sessions</pre>
 </div>
 <p>
@@ -510,17 +510,17 @@ With a 63/37 split, naive models trained on raw data would be biased toward pred
 </p>
 <h3>Analytical Techniques Applied</h3>
 <ul>
-<li><strong>Summary Statistics</strong> — mean, median, variance, and standard deviation for all binary interaction variables</li>
-<li><strong>Contingency Tables</strong> — crosstab analysis between each behavioral variable and the BUY outcome to measure individual impact</li>
-<li><strong>Correlation Heatmap</strong> — visualizing which features had the strongest linear relationship with purchase behavior</li>
-<li><strong>Interaction Heatmaps</strong> — pairwise analysis of feature combinations to identify synergistic effects on conversion</li>
+<li><strong>Summary Statistics</strong> - mean, median, variance, and standard deviation for all binary interaction variables</li>
+<li><strong>Contingency Tables</strong> - crosstab analysis between each behavioral variable and the BUY outcome to measure individual impact</li>
+<li><strong>Correlation Heatmap</strong> - visualizing which features had the strongest linear relationship with purchase behavior</li>
+<li><strong>Interaction Heatmaps</strong> - pairwise analysis of feature combinations to identify synergistic effects on conversion</li>
 </ul>
 </div>
 <!-- INTERACTIONS -->
 <div class="doc-section" id="interactions">
 <h2><span class="section-icon"><i class="bi bi-grid-3x3-gap"></i></span> Interaction Analysis</h2>
 <p>
-The most valuable EDA finding was how <em>combinations</em> of page elements affect purchase likelihood — not just individual elements. Each interaction pair was analyzed as a 2×2 contingency table.
+The most valuable EDA finding was how <em>combinations</em> of page elements affect purchase likelihood - not just individual elements. Each interaction pair was analyzed as a 2×2 contingency table.
 </p>
 <!-- IMAGES vs REVIEWS -->
 <div class="interaction-section-title">
@@ -669,27 +669,27 @@ Comparison beats paid clicks
 <div class="takeaway-list">
 <div class="takeaway-item">
 <div class="takeaway-num">1</div>
-<div class="takeaway-body"><p><strong>Reviews are the #1 conversion driver.</strong> Reviews alone achieve a 53.57% purchase rate — higher than images alone (22.22%) or specs alone (25%). No other single feature comes close.</p></div>
+<div class="takeaway-body"><p><strong>Reviews are the #1 conversion driver.</strong> Reviews alone achieve a 53.57% purchase rate - higher than images alone (22.22%) or specs alone (25%). No other single feature comes close.</p></div>
 </div>
 <div class="takeaway-item">
 <div class="takeaway-num">2</div>
-<div class="takeaway-body"><p><strong>Images alone have a weaker influence than expected.</strong> Images without reviews convert at only 22.22% — less than half the rate of reviews without images. Visuals support the decision but don't drive it.</p></div>
+<div class="takeaway-body"><p><strong>Images alone have a weaker influence than expected.</strong> Images without reviews convert at only 22.22% - less than half the rate of reviews without images. Visuals support the decision but don't drive it.</p></div>
 </div>
 <div class="takeaway-item">
 <div class="takeaway-num">3</div>
-<div class="takeaway-body"><p><strong>Specs need reviews to be effective.</strong> Specs without reviews convert at just 25%. Combined with reviews, this doubles to 46.43%. Specifications answer objections — but reviews create the initial intent.</p></div>
+<div class="takeaway-body"><p><strong>Specs need reviews to be effective.</strong> Specs without reviews convert at just 25%. Combined with reviews, this doubles to 46.43%. Specifications answer objections - but reviews create the initial intent.</p></div>
 </div>
 <div class="takeaway-item">
 <div class="takeaway-num">4</div>
-<div class="takeaway-body"><p><strong>FAQ alone does not significantly drive purchases.</strong> FAQ without images converts at only 21.74%. Users who view FAQs tend to have objections — those objections aren't resolved unless visuals are also present.</p></div>
+<div class="takeaway-body"><p><strong>FAQ alone does not significantly drive purchases.</strong> FAQ without images converts at only 21.74%. Users who view FAQs tend to have objections - those objections aren't resolved unless visuals are also present.</p></div>
 </div>
 <div class="takeaway-item">
 <div class="takeaway-num">5</div>
-<div class="takeaway-body"><p><strong>Warranty information enhances but doesn't replace other signals.</strong> Warranty + specs crosses the 50% threshold (51.85%) — making it the strongest purely informational combination outside of reviews.</p></div>
+<div class="takeaway-body"><p><strong>Warranty information enhances but doesn't replace other signals.</strong> Warranty + specs crosses the 50% threshold (51.85%) - making it the strongest purely informational combination outside of reviews.</p></div>
 </div>
 <div class="takeaway-item">
 <div class="takeaway-num">6</div>
-<div class="takeaway-body"><p><strong>Comparing similar items outperforms sponsored links.</strong> Users who compare items convert at 33.33% — higher than those who only click sponsored links (23.81%). Active research behavior signals stronger purchase intent than ad clicks.</p></div>
+<div class="takeaway-body"><p><strong>Comparing similar items outperforms sponsored links.</strong> Users who compare items convert at 33.33% - higher than those who only click sponsored links (23.81%). Active research behavior signals stronger purchase intent than ad clicks.</p></div>
 </div>
 </div>
 </div>
@@ -697,7 +697,7 @@ Comparison beats paid clicks
 <div class="doc-section" id="models">
 <h2><span class="section-icon"><i class="bi bi-cpu"></i></span> Machine Learning Models</h2>
 <p>
-Four resampling techniques were evaluated to address the 63/37 class imbalance before training a classification model. Each approach handles imbalance differently — the comparison reveals which produces the most reliable predictions:
+Four resampling techniques were evaluated to address the 63/37 class imbalance before training a classification model. Each approach handles imbalance differently - the comparison reveals which produces the most reliable predictions:
 </p>
 <div class="methods-grid">
 <div class="method-card">
@@ -715,13 +715,13 @@ Four resampling techniques were evaluated to address the 63/37 class imbalance b
 <div class="method-card winner">
 <span class="method-badge smote">SMOTE</span>
 <h4>SMOTE</h4>
-<p>Generates <em>synthetic</em> minority class samples by interpolating between existing buyer examples — more robust than simple duplication.</p>
+<p>Generates <em>synthetic</em> minority class samples by interpolating between existing buyer examples - more robust than simple duplication.</p>
 <div class="method-accuracy">99% <span>accuracy</span></div>
 </div>
 <div class="method-card">
 <span class="method-badge nearmiss">NearMiss</span>
 <h4>NearMiss</h4>
-<p>Selects majority class examples based on proximity to minority class examples — a more intelligent form of under-sampling.</p>
+<p>Selects majority class examples based on proximity to minority class examples - a more intelligent form of under-sampling.</p>
 <div class="method-accuracy">97% <span>accuracy</span></div>
 </div>
 </div>
@@ -756,7 +756,7 @@ All four models were evaluated on precision, recall, F1-score, and accuracy. Ran
 </div>
 <h3>Detailed Results: Best Models</h3>
 <div class="code-block">
-<div class="code-label">Random Over-Sampling — Classification Report</div>
+<div class="code-label">Random Over-Sampling - Classification Report</div>
 <pre>
 precision    recall  f1-score   support
 0       1.00      0.98      0.99       100
@@ -766,7 +766,7 @@ macro avg       0.99      0.99      0.99       189
 weighted avg       0.99      0.99      0.99       189</pre>
 </div>
 <div class="code-block">
-<div class="code-label">SMOTE — Classification Report</div>
+<div class="code-label">SMOTE - Classification Report</div>
 <pre>
 precision    recall  f1-score   support
 0       1.00      0.98      0.99       100
@@ -776,7 +776,7 @@ macro avg       0.99      0.99      0.99       189
 weighted avg       0.99      0.99      0.99       189</pre>
 </div>
 <div class="callout-green">
-<p><strong>Conclusion:</strong> Both Random Over-Sampling and SMOTE achieve 99% accuracy with 0.99 F1-scores across both classes — making either approach suitable for production deployment. SMOTE is preferred for production use as it generates synthetic samples rather than simply duplicating existing ones, making the model more generalizable to new session patterns.</p>
+<p><strong>Conclusion:</strong> Both Random Over-Sampling and SMOTE achieve 99% accuracy with 0.99 F1-scores across both classes - making either approach suitable for production deployment. SMOTE is preferred for production use as it generates synthetic samples rather than simply duplicating existing ones, making the model more generalizable to new session patterns.</p>
 </div>
 <div class="tags-row">
 <span class="tech-tag">Python</span>
@@ -799,13 +799,13 @@ The lead scoring model is deployed as an interactive application. Input a set of
 </p>
 <div class="demo-wrap">
 <iframe
-title="Lead Scoring Model – Adediran Adeyemi"
+title="Lead Scoring Model - Adediran Adeyemi"
 src="https://adeyemi001-Lead-Scoring-Model.hf.space"
 allowfullscreen loading="lazy">
 </iframe>
 <div class="demo-caption">
 <i class="bi bi-info-circle"></i>
-Interactive lead scoring demo — toggle browsing behaviors to see predicted purchase likelihood in real time.
+Interactive lead scoring demo - toggle browsing behaviors to see predicted purchase likelihood in real time.
 </div>
 </div>
 </div>
@@ -814,25 +814,25 @@ Interactive lead scoring demo — toggle browsing behaviors to see predicted pur
 <h2><span class="section-icon"><i class="bi bi-rocket-takeoff"></i></span> Recommendations</h2>
 <h3>Highlight Product Reviews and Images Together</h3>
 <ul>
-<li>Ensure reviews are prominently displayed <em>alongside</em> product images — not buried in a separate tab. The 58.33% conversion rate from this combination is the single most actionable finding in this study.</li>
-<li>Use verified purchase reviews rather than unverified ratings — the signal is stronger when users trust the source of the review.</li>
+<li>Ensure reviews are prominently displayed <em>alongside</em> product images - not buried in a separate tab. The 58.33% conversion rate from this combination is the single most actionable finding in this study.</li>
+<li>Use verified purchase reviews rather than unverified ratings - the signal is stronger when users trust the source of the review.</li>
 <li>Display the review count prominently: social proof scales with volume. More reviews shown = higher perceived credibility.</li>
 </ul>
 <h3>Engage Users with Content That Reduces Uncertainty</h3>
 <ul>
-<li>Pair product specifications with prominent warranty information — this combination crosses the 50% purchase threshold (51.85%) and removes two categories of buyer objection simultaneously.</li>
-<li>Consider adding customer testimonial videos or comparison charts — active engagement with product information is strongly predictive of purchase intent.</li>
-<li>Ensure FAQ content is paired with visuals — FAQ alone converts at only 21.74%, but with images this rises to 42.86%.</li>
+<li>Pair product specifications with prominent warranty information - this combination crosses the 50% purchase threshold (51.85%) and removes two categories of buyer objection simultaneously.</li>
+<li>Consider adding customer testimonial videos or comparison charts - active engagement with product information is strongly predictive of purchase intent.</li>
+<li>Ensure FAQ content is paired with visuals - FAQ alone converts at only 21.74%, but with images this rises to 42.86%.</li>
 </ul>
 <h3>Optimize for Comparison Behavior</h3>
 <ul>
-<li>Users who compare similar items convert at 33.33% — higher than sponsored link clickers (23.81%). Design the comparison UI to be smooth and fast, as this behavior signals strong purchase intent.</li>
-<li>Consider triggering a targeted offer or chat prompt when a user initiates a product comparison — this is a high-intent behavioral signal.</li>
+<li>Users who compare similar items convert at 33.33% - higher than sponsored link clickers (23.81%). Design the comparison UI to be smooth and fast, as this behavior signals strong purchase intent.</li>
+<li>Consider triggering a targeted offer or chat prompt when a user initiates a product comparison - this is a high-intent behavioral signal.</li>
 </ul>
 <h3>Deploy the Lead Scoring Model</h3>
 <ul>
 <li>Use the trained model to score live sessions in real time, enabling sales teams to prioritize outreach to high-intent visitors.</li>
-<li>Build a trigger system: sessions with predicted purchase probability above a threshold (e.g., 70%) receive a personalized intervention — live chat offer, limited-time discount, or follow-up email.</li>
+<li>Build a trigger system: sessions with predicted purchase probability above a threshold (e.g., 70%) receive a personalized intervention - live chat offer, limited-time discount, or follow-up email.</li>
 </ul>
 </div>
 <!-- LIMITATIONS -->
@@ -840,15 +840,15 @@ Interactive lead scoring demo — toggle browsing behaviors to see predicted pur
 <h2><span class="section-icon"><i class="bi bi-exclamation-triangle"></i></span> Limitations &amp; Further Research</h2>
 <h3>Data Limitations</h3>
 <ul>
-<li>The dataset captures only 500 sessions with a limited set of on-page interactions — broader behavioral signals (scroll depth, time-on-page, mouse movement) could significantly improve predictive power.</li>
+<li>The dataset captures only 500 sessions with a limited set of on-page interactions - broader behavioral signals (scroll depth, time-on-page, mouse movement) could significantly improve predictive power.</li>
 <li>No pricing, promotional, or competitor context is captured. Purchase behavior is heavily influenced by price sensitivity and competitive availability, which are absent from this model.</li>
-<li>No demographic or device information — mobile vs. desktop behavior, age, and location are known moderators of purchase intent that are unaccounted for.</li>
+<li>No demographic or device information - mobile vs. desktop behavior, age, and location are known moderators of purchase intent that are unaccounted for.</li>
 </ul>
 <h3>Further Research</h3>
 <ul>
-<li><strong>Temporal analysis</strong> — explore how conversion patterns change during sales events, holiday seasons, or promotional periods.</li>
-<li><strong>User segmentation</strong> — segment users by demographics or acquisition channel and build segment-specific models; a first-time visitor from paid ads may require different signals than a return visitor from organic search.</li>
-<li><strong>Sequential behavioral modeling</strong> — the order in which users engage with page elements (e.g., images first vs. reviews first) may contain predictive signal not captured in the current binary features.</li>
+<li><strong>Temporal analysis</strong> - explore how conversion patterns change during sales events, holiday seasons, or promotional periods.</li>
+<li><strong>User segmentation</strong> - segment users by demographics or acquisition channel and build segment-specific models; a first-time visitor from paid ads may require different signals than a return visitor from organic search.</li>
+<li><strong>Sequential behavioral modeling</strong> - the order in which users engage with page elements (e.g., images first vs. reviews first) may contain predictive signal not captured in the current binary features.</li>
 </ul>
 </div>
 <!-- RELATED -->
@@ -859,7 +859,7 @@ Interactive lead scoring demo — toggle browsing behaviors to see predicted pur
 <a href="ecommerce-product-returns.html" class="related-card">
 <p class="card-label">Returns Analysis · Python</p>
 <h4>E-Commerce Product Returns Analysis</h4>
-<p>Identifying how a 15% return rate was eroding 28% of revenue — with demographic and product-level breakdowns.</p>
+<p>Identifying how a 15% return rate was eroding 28% of revenue - with demographic and product-level breakdowns.</p>
 <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
 </a>
 <a href="customer-journey-analysis.html" class="related-card">
@@ -877,7 +877,7 @@ Interactive lead scoring demo — toggle browsing behaviors to see predicted pur
 <a href="customer-satisfaction-survey.html" class="related-card">
 <p class="card-label">Customer Analytics · Power BI</p>
 <h4>Customer Satisfaction Survey Analysis</h4>
-<p>Power BI dashboard revealing banking churn drivers: security, service, delays — with demographic segmentation.</p>
+<p>Power BI dashboard revealing banking churn drivers: security, service, delays - with demographic segmentation.</p>
 <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
 </a>
 </div>
@@ -953,14 +953,14 @@ Remote Worldwide<br>Available globally (timezone-flexible)<br><br>
 <!-- =========================================
 SCHEMA MARKUP
 ========================================== -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="application/ld+json">
+<script type="application/ld+json">
 {
 "@context": "https://schema.org",
 "@graph": [
 {
 "@type": "TechArticle",
 "@id": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction#article",
-"headline": "Lead Scoring & Conversion Prediction Model – 99% Accuracy from Browsing Behavior",
+"headline": "Lead Scoring & Conversion Prediction Model - 99% Accuracy from Browsing Behavior",
 "description": "Machine learning case study building a 99% accurate lead scoring model that predicts purchase likelihood from e-commerce browsing signals, using SMOTE and Random Over-Sampling to handle class imbalance.",
 "url": "https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction",
 "datePublished": "2024-11-01",
