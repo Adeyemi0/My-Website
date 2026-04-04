@@ -20,7 +20,7 @@
   <!-- Blog Listing Page -->
   <url>
     <loc>https://adediranadeyemi.com/blog.html</loc>
-    <lastmod>2026-01-08</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -143,6 +143,14 @@
   <url>
     <loc>https://adediranadeyemi.com/blog/how-long-to-hire-freelance-data-scientist.html</loc>
     <lastmod>2026-03-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- New Blog Post: Church Data Analytics -->
+  <url>
+    <loc>https://adediranadeyemi.com/blog/church-data-analytics.html</loc>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
