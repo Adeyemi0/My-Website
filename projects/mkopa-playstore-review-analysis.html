@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- =========================================
+ESSENTIAL META
+========================================== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#0052FF">
+<!-- =========================================
+PRIMARY SEO META
+========================================== -->
+<title>M-KOPA Google Play Store Review Analysis – 8,165 Reviews Decoded | Adediran Adeyemi</title>
+<meta name="description" content="A full-scope Python and Power BI case study analysing 8,165 M-KOPA Google Play Store reviews across 78 intents and 14 months. NLP intent classification, customer journey friction mapping, and PM-level insight framework reveal the post-payment experience as M-KOPA's biggest trust and retention risk.">
+<meta name="keywords" content="Google Play Store review analysis Python, fintech app review sentiment analysis, M-KOPA review analysis, mobile app customer feedback analysis, NLP intent classification fintech, customer journey analysis Africa fintech, app store review analytics, Power BI review dashboard, product analytics Africa, data science portfolio Nigeria, Adediran Adeyemi, thumbsUpCount analysis, churn risk fintech Africa">
+<meta name="author" content="Adediran Adeyemi">
+<link rel="canonical" href="https://adediranadeyemi.com/projects/mkopa-playstore-review-analysis.html">
+<!-- =========================================
+OPEN GRAPH
+========================================== -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Adediran Adeyemi | Freelance Data Scientist">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="M-KOPA Google Play Store Review Analysis – 8,165 Reviews Decoded | Adediran Adeyemi">
+<meta property="og:description" content="Python and Power BI case study: 8,165 M-KOPA reviews, 78 intents, 14 months. NLP intent classification, customer journey friction mapping, and composite risk scoring expose the post-payment experience as M-KOPA's biggest trust risk.">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/mkopa-playstore-review-analysis.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/kopa_page-0001.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="M-KOPA Google Play Store review analysis Power BI dashboard by Adediran Adeyemi">
+<meta property="article:published_time" content="2026-04-06T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-04-06T00:00:00+00:00">
+<meta property="article:author" content="https://adediranadeyemi.com">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="NLP">
+<meta property="article:tag" content="Power BI">
+<meta property="article:tag" content="Fintech Analytics">
+<meta property="article:tag" content="Customer Review Analysis">
+<meta property="article:tag" content="Africa Fintech">
+<!-- =========================================
+TWITTER CARD
+========================================== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="M-KOPA Google Play Store Review Analysis – 8,165 Reviews Decoded | Adediran Adeyemi">
+<meta name="twitter:description" content="Python & Power BI case study: NLP intent classification, customer journey mapping, and composite risk scoring on 8,165 M-KOPA app reviews across 78 intents reveal the post-payment trust gap.">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/portfolio/kopa_page-0001.jpg">
+<meta name="twitter:image:alt" content="M-KOPA app review analysis Power BI dashboard by Adediran Adeyemi">
+<!-- =========================================
+FONTS
+========================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<!-- =========================================
+PAGE-SPECIFIC STYLES
+========================================== -->
+<style>
+/* ── BREADCRUMB ── */
+.project-breadcrumb{background:#F8FAFC;border-bottom:1px solid #E2E8F0;padding:12px 0;font-size:13px;}
+.project-breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;align-items:center;flex-wrap:wrap;gap:6px;}
+.project-breadcrumb li{display:flex;align-items:center;gap:6px;color:#475569;}
+.project-breadcrumb li a{color:#475569;text-decoration:none;transition:color .2s;}
+.project-breadcrumb li a:hover{color:#0052FF;}
+.project-breadcrumb li.active{color:#0F172A;font-weight:600;}
+.project-breadcrumb .sep{color:#CBD5E1;font-size:11px;}
+
+/* ── HERO ── */
+.project-hero{background:#F8FAFC;padding:60px 0 0;border-bottom:1px solid #E2E8F0;}
+.project-hero .hero-label{display:inline-flex;align-items:center;gap:8px;background:#E7F1FD;color:#0052FF;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:20px;}
+.project-hero h1{font-size:2.75rem;font-weight:800;color:#0F172A;letter-spacing:-0.03em;line-height:1.15;margin-bottom:20px;}
+.project-hero h1 span{color:#0052FF;}
+.project-hero .hero-lead{font-size:17px;color:#475569;line-height:1.75;margin-bottom:32px;max-width:560px;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-bottom:32px;}
+.hero-meta-item .meta-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;margin-bottom:4px;}
+.hero-meta-item .meta-value{font-size:14px;font-weight:600;color:#0F172A;}
+.hero-stats{display:flex;border-top:1px solid #E2E8F0;margin-top:40px;}
+.hero-stat{flex:1;padding:28px 20px;text-align:center;border-right:1px solid #E2E8F0;}
+.hero-stat:last-child{border-right:none;}
+.hero-stat .stat-num{font-size:2.25rem;font-weight:900;color:#0052FF;letter-spacing:-0.04em;line-height:1;display:block;}
+.hero-stat .stat-label{font-size:12px;color:#64748B;margin-top:6px;line-height:1.4;}
+
+/* ── LAYOUT ── */
+.project-body{padding:80px 0;}
+.toc-sidebar{position:sticky;top:90px;}
+.toc-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,.04);}
+.toc-card .toc-heading{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#94A3B8;margin-bottom:16px;}
+.toc-list{list-style:none;padding:0 0 0 16px;margin:0;border-left:2px solid #E2E8F0;}
+.toc-list li{margin-bottom:10px;}
+.toc-list a{font-size:13px;font-weight:500;color:#64748B;text-decoration:none;transition:color .2s;line-height:1.4;display:block;}
+.toc-list a:hover,.toc-list a.active{color:#0052FF;}
+.toc-list a.active{font-weight:600;}
+.toc-cta{background:#E7F1FD;border-radius:8px;padding:18px;margin-top:20px;text-align:center;}
+.toc-cta p{font-size:13px;color:#0F172A;line-height:1.5;margin-bottom:12px;font-weight:500;}
+.toc-cta a{display:inline-block;background:#0052FF;color:#fff;font-size:13px;font-weight:700;padding:9px 20px;border-radius:6px;text-decoration:none;transition:background .2s;}
+.toc-cta a:hover{background:#0041cc;color:#fff;}
+
+/* ── ARTICLE SECTIONS ── */
+.doc-section{margin-bottom:60px;padding-bottom:60px;border-bottom:1px solid #E2E8F0;scroll-margin-top:90px;}
+.doc-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.doc-section h2{font-size:22px;font-weight:800;color:#0F172A;letter-spacing:-0.025em;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.section-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;background:#E7F1FD;border-radius:8px;color:#0052FF;font-size:16px;flex-shrink:0;}
+.doc-section h3{font-size:16px;font-weight:700;color:#0F172A;margin-top:28px;margin-bottom:10px;}
+.doc-section p{font-size:15px;color:#334155;line-height:1.8;margin-bottom:14px;}
+.doc-section ul{padding-left:20px;margin-bottom:14px;}
+.doc-section li{font-size:15px;color:#334155;line-height:1.75;margin-bottom:6px;}
+
+/* Callout */
+.callout{background:#E7F1FD;border-left:4px solid #0052FF;border-radius:0 8px 8px 0;padding:18px 20px;margin:20px 0;}
+.callout p{margin:0;font-size:14px;color:#0F172A;line-height:1.65;}
+.callout strong{color:#0052FF;}
+.callout-red{background:#FFF0F0;border-left:4px solid #C8102E;}
+.callout-red p{color:#1A0010;}
+.callout-red strong{color:#C8102E;}
+.callout-amber{background:#FFFBEB;border-left:4px solid #D97706;}
+.callout-amber p{color:#1C1500;}
+.callout-amber strong{color:#D97706;}
+.callout-green{background:#F0FDF4;border-left:4px solid #16A34A;}
+.callout-green p{color:#052E16;}
+.callout-green strong{color:#16A34A;}
+
+/* Steps */
+.steps{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
+.step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:20px;}
+.step-num{width:44px;height:44px;background:#0052FF;color:#fff;border-radius:8px;font-family:'Poppins',sans-serif;font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-body h3{margin-top:10px;margin-bottom:6px;}
+.step-body p{margin-bottom:0;}
+
+/* Findings grid */
+.findings-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.finding-card{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:20px;transition:box-shadow .2s,transform .2s;}
+.finding-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,82,255,.1);}
+.finding-icon{width:40px;height:40px;background:#E7F1FD;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#0052FF;font-size:18px;margin-bottom:12px;}
+.finding-icon-red{background:#FFF0F0;color:#C8102E;}
+.finding-icon-amber{background:#FFFBEB;color:#D97706;}
+.finding-icon-green{background:#F0FDF4;color:#16A34A;}
+.finding-card h4{font-size:14px;font-weight:700;color:#0F172A;margin-bottom:6px;}
+.finding-card p{font-size:13px;color:#64748B;line-height:1.6;margin:0;}
+.finding-card .finding-stat{font-size:22px;font-weight:900;color:#0052FF;letter-spacing:-0.03em;line-height:1;margin-bottom:8px;}
+.finding-card .finding-stat-red{color:#C8102E;}
+.finding-card .finding-stat-amber{color:#D97706;}
+.finding-card .finding-stat-green{color:#16A34A;}
+
+/* Risk cards */
+.risk-cards{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
+.risk-card{border-radius:10px;padding:22px 24px;border:1px solid;}
+.risk-card.p1{background:#FFF0F0;border-color:#FCA5A5;}
+.risk-card.p2{background:#FFFBEB;border-color:#FCD34D;}
+.risk-card.p3{background:#EFF6FF;border-color:#93C5FD;}
+.risk-card.p4{background:#F0FDF4;border-color:#86EFAC;}
+.risk-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:12px;}
+.risk-badge.p1{background:#C8102E;color:#fff;}
+.risk-badge.p2{background:#D97706;color:#fff;}
+.risk-badge.p3{background:#1D4ED8;color:#fff;}
+.risk-badge.p4{background:#16A34A;color:#fff;}
+.risk-card h4{font-size:15px;font-weight:800;color:#0F172A;margin-bottom:8px;}
+.risk-card .rc-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px;}
+.risk-card .rc-meta-item{font-size:12px;color:#64748B;}
+.risk-card .rc-meta-item strong{color:#0F172A;}
+.risk-card p{font-size:14px;color:#334155;line-height:1.7;margin-bottom:8px;}
+.risk-card p:last-child{margin-bottom:0;}
+.risk-card .action-label{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0052FF;margin-top:12px;margin-bottom:4px;}
+
+/* Chart figures */
+.chart-figure{margin:28px 0;}
+.chart-figure img{width:100%;border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 8px 32px rgba(0,0,0,.08);}
+.chart-figure figcaption{font-size:12px;color:#94A3B8;margin-top:10px;text-align:center;line-height:1.5;}
+
+/* Two-pane dashboard grid */
+.dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0;}
+
+/* Metric table */
+.metric-table{width:100%;border-collapse:collapse;margin:16px 0;}
+.metric-table th{background:#F8FAFC;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#64748B;padding:10px 14px;text-align:left;border-bottom:2px solid #E2E8F0;}
+.metric-table td{font-size:14px;color:#334155;padding:10px 14px;border-bottom:1px solid #E2E8F0;line-height:1.5;}
+.metric-table td:first-child{font-weight:600;color:#0F172A;}
+.metric-table tr:last-child td{border-bottom:none;}
+.metric-table .val{font-family:'Courier New',monospace;font-size:13px;color:#0052FF;font-weight:700;}
+.metric-table .val-red{font-family:'Courier New',monospace;font-size:13px;color:#C8102E;font-weight:700;}
+.metric-table .val-amber{font-family:'Courier New',monospace;font-size:13px;color:#D97706;font-weight:700;}
+.metric-table .val-green{font-family:'Courier New',monospace;font-size:13px;color:#16A34A;font-weight:700;}
+.metric-table .null-sig{color:#C8102E;font-weight:700;}
+
+/* Tech stack */
+.tech-stack{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-top:20px;}
+.tech-item{background:#fff;border:1px solid #E2E8F0;border-radius:10px;padding:16px 12px;text-align:center;transition:border-color .2s;}
+.tech-item:hover{border-color:#0052FF;}
+.tech-item i{font-size:24px;color:#0052FF;display:block;margin-bottom:8px;}
+.tech-item .tech-name{font-size:13px;font-weight:700;color:#0F172A;display:block;}
+.tech-item .tech-role{font-size:11px;color:#94A3B8;display:block;margin-top:2px;}
+.tags-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.tech-tag{background:#F1F5F9;color:#475569;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;}
+
+/* Intent taxonomy */
+.intent-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;}
+.intent-class{background:#fff;border:1px solid #E2E8F0;border-radius:8px;padding:16px;}
+.intent-class .ic-label{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px;}
+.intent-class .ic-label.blue{color:#1D4ED8;}
+.intent-class .ic-label.red{color:#C8102E;}
+.intent-class .ic-label.amber{color:#D97706;}
+.intent-class .ic-label.green{color:#16A34A;}
+.intent-class .ic-label.teal{color:#0D9488;}
+.intent-class ul{padding-left:14px;margin:0;}
+.intent-class li{font-size:12px;color:#475569;line-height:1.7;margin-bottom:2px;}
+
+/* Next steps */
+.next-steps{display:flex;flex-direction:column;gap:12px;margin-top:16px;}
+.next-step{display:flex;gap:14px;align-items:flex-start;padding:16px;background:#fff;border:1px solid #E2E8F0;border-radius:8px;}
+.ns-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.ns-icon.blue{background:#E7F1FD;color:#1D4ED8;}
+.ns-icon.amber{background:#FFFBEB;color:#D97706;}
+.ns-icon.red{background:#FFF0F0;color:#C8102E;}
+.ns-icon.green{background:#F0FDF4;color:#16A34A;}
+.next-step h4{font-size:14px;font-weight:700;color:#0F172A;margin-bottom:4px;}
+.next-step p{font-size:13px;color:#64748B;margin:0;line-height:1.6;}
+
+/* Related cards */
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+.related-card{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:22px;text-decoration:none;transition:all .3s ease;display:block;}
+.related-card:hover{border-color:#0052FF;transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,82,255,.12);text-decoration:none;}
+.related-card .card-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0052FF;margin-bottom:8px;}
+.related-card h4{font-size:15px;font-weight:700;color:#0F172A;margin-bottom:8px;line-height:1.4;}
+.related-card p{font-size:13px;color:#64748B;line-height:1.55;margin:0;}
+.related-card .card-arrow{display:inline-flex;align-items:center;gap:4px;margin-top:12px;font-size:13px;font-weight:600;color:#0052FF;}
+
+/* GitHub CTA */
+.github-strip{background:#0F172A;border-radius:10px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;margin:20px 0;flex-wrap:wrap;}
+.github-strip p{color:rgba(255,255,255,.75);font-size:14px;line-height:1.5;margin:0;}
+.github-strip p strong{color:#fff;}
+.btn-github{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0F172A;font-size:13px;font-weight:700;padding:10px 22px;border-radius:6px;text-decoration:none;transition:background .2s;white-space:nowrap;}
+.btn-github:hover{background:#E7F1FD;color:#0052FF;text-decoration:none;}
+
+/* CTA */
+.project-cta{background:#0052FF;padding:80px 0;text-align:center;color:#fff;}
+.project-cta .cta-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:16px;}
+.project-cta h2{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-0.03em;margin-bottom:14px;max-width:560px;margin-left:auto;margin-right:auto;}
+.project-cta p{font-size:16px;color:rgba(255,255,255,.7);max-width:460px;margin:0 auto 32px;line-height:1.6;}
+.cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-cta-white{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;padding:14px 32px;border-radius:4px;background:#fff;color:#0052FF;text-decoration:none;transition:all .3s;}
+.btn-cta-white:hover{background:#f0f0f0;color:#0052FF;transform:translateY(-2px);text-decoration:none;}
+.btn-cta-ghost{font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;padding:14px 32px;border-radius:4px;background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);text-decoration:none;transition:all .3s;}
+.btn-cta-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1);color:#fff;text-decoration:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:991px){
+  .toc-sidebar{display:none;}
+  .project-hero h1{font-size:2rem;}
+  .findings-grid,.related-grid,.intent-grid,.dashboard-grid{grid-template-columns:1fr;}
+  .hero-stats{flex-direction:column;}
+  .hero-stat{border-right:none;border-bottom:1px solid #E2E8F0;}
+  .hero-stat:last-child{border-bottom:none;}
+}
+@media(max-width:768px){
+  .project-hero{padding:40px 0 0;}
+  .project-hero h1{font-size:1.75rem;}
+  .project-body{padding:50px 0;}
+  .doc-section{margin-bottom:40px;padding-bottom:40px;}
+  .step{grid-template-columns:1fr;}
+  .github-strip{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+<div id="preloader"></div>
+
+<!-- =========================================
+TOP BAR
+========================================== -->
+<div id="topbar" class="d-flex align-items-center fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="contact-info d-flex align-items-center">
+      <i class="bi bi-envelope-fill"></i>
+      <i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+      <i class="bi bi-phone-fill ms-3"></i>
+      <i><span>+234 816 273 5399</span></i>
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+HEADER
+========================================== -->
+<header id="header" class="fixed-top" style="top:40px;">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></div>
+    <nav class="navbar" aria-label="Site navigation">
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#featured-services">Services</a></li>
+        <li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="../index.html#faq">Blog</a></li>
+        <li><a href="../index.html#contact">Let's Talk</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+    </nav>
+  </div>
+</header>
+
+<!-- =========================================
+BREADCRUMB
+========================================== -->
+<nav class="project-breadcrumb" style="margin-top:126px;" aria-label="Breadcrumb">
+  <div class="container">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <span class="sep">›</span>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="../index.html#portfolio"><span itemprop="name">Portfolio</span></a>
+        <meta itemprop="position" content="2">
+      </li>
+      <span class="sep">›</span>
+      <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">M-KOPA Google Play Store Review Analysis</span>
+        <meta itemprop="position" content="3">
+      </li>
+    </ol>
+  </div>
+</nav>
+
+<!-- =========================================
+HERO
+========================================== -->
+<section class="project-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="hero-label">
+          <i class="bi bi-chat-square-text"></i>
+          NLP · Python · Power BI · Africa Fintech
+        </div>
+        <h1>What <span>8,165 Reviews</span> Reveal About M-KOPA's Biggest Trust Risk</h1>
+        <p class="hero-lead">
+          A full-scope Python and Power BI case study analysing 8,165 M-KOPA Google Play Store reviews across 78 intents, 10 primary classes, and 14 months. NLP-driven intent classification, customer journey friction mapping, and composite risk scoring converge on one finding: M-KOPA's biggest retention threat is not poor service — it is what happens to customers after they pay.
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="meta-label">Tools</div>
+            <div class="meta-value">Python · pandas · Power BI · NLP</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Industry</div>
+            <div class="meta-value">Fintech · Device Financing · Africa</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Type</div>
+            <div class="meta-value">Customer Analytics · Product Analytics · NLP</div>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap gap-3 pb-4">
+          <a href="https://github.com/Adeyemi0" target="_blank" class="btn-get-started-primary">
+            View on GitHub <i class="bi bi-github"></i>
+          </a>
+          <a href="../index.html#contact" class="btn-get-started-secondary">
+            Work With Me <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block">
+        <img
+          src="../assets/img/portfolio/kopa_page-0001.jpg"
+          alt="M-KOPA Google Play Store review analysis Power BI dashboard — overview tab showing 8,165 reviews, 4.2 average rating, and intent classification breakdown"
+          class="img-fluid"
+          style="border-radius:12px;border:1px solid #E2E8F0;box-shadow:0 20px 60px rgba(0,82,255,0.12);"
+          width="560" height="360"
+          loading="eager" fetchpriority="high"
+        >
+      </div>
+    </div>
+    <!-- Stats strip -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num">8,165</span>
+        <span class="stat-label">Google Play Store reviews analysed</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">78</span>
+        <span class="stat-label">Unique customer intents classified</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">21,357</span>
+        <span class="stat-label">Thumbs on Appeal Loan Denial — the most community-endorsed pain point</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">50%</span>
+        <span class="stat-label">of Offboarding-stage reviews are 1–2★</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+MAIN CONTENT
+========================================== -->
+<section class="project-body">
+  <div class="container">
+    <div class="row">
+
+      <!-- TOC -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <aside class="toc-sidebar" aria-label="Table of contents">
+          <div class="toc-card">
+            <p class="toc-heading">On This Page</p>
+            <ul class="toc-list">
+              <li><a href="#overview">Project Overview</a></li>
+              <li><a href="#problem">The Business Problem</a></li>
+              <li><a href="#dataset">Dataset & Methodology</a></li>
+              <li><a href="#framework">Intent Classification Framework</a></li>
+              <li><a href="#dashboard">Power BI Dashboard</a></li>
+              <li><a href="#findings">Key Findings</a></li>
+              <li><a href="#journey">Customer Journey Friction</a></li>
+              <li><a href="#risk">Risk Ranking & Severity</a></li>
+              <li><a href="#support">Support Effectiveness</a></li>
+              <li><a href="#recommendations">Recommendations</a></li>
+              <li><a href="#next">What's Next</a></li>
+              <li><a href="#tools">Tools & Stack</a></li>
+              <li><a href="#related">Related Projects</a></li>
+            </ul>
+            <div class="toc-cta">
+              <p>Need customer review analytics for your app or product?</p>
+              <a href="../index.html#contact">Let's Talk →</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Article -->
+      <div class="col-lg-9">
+        <article itemscope itemtype="https://schema.org/TechArticle">
+          <meta itemprop="author" content="Adediran Adeyemi">
+          <meta itemprop="datePublished" content="2026-04-06">
+          <meta itemprop="headline" content="M-KOPA Google Play Store Review Analysis – 8,165 Reviews Decoded">
+
+          <!-- OVERVIEW -->
+          <div class="doc-section" id="overview">
+            <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
+            <p>M-KOPA is one of Africa's largest device financing platforms, providing pay-as-you-go smartphones and solar energy products to over 4 million customers across Kenya, Uganda, Nigeria, Ghana, and South Africa. With a <strong>4.2 average star rating across 8,165 reviews</strong> on the Google Play Store, the headline numbers look healthy. But headline numbers are where insight ends for most teams — and where this analysis begins.</p>
+            <p>This project analyses 8,165 M-KOPA Google Play Store reviews from January 2025 to February 2026, covering a dataset pre-enriched with NLP-based intent classification across 78 unique intents, 10 primary classes, and 7 customer journey stages. The analysis applies Python-based statistical analysis and an intent-weighted composite risk framework to answer a question that star ratings cannot: <strong>where in the customer journey is M-KOPA generating distrust, and which of those issues are policy problems versus product problems?</strong></p>
+            <div class="callout">
+              <p><strong>Central finding:</strong> M-KOPA's post-payment experience is systematically destroying the goodwill built during onboarding and usage. Customers who complete loan repayments — the most loyal, highest-lifetime-value segment — are encountering device locks, unresolved balances, and cash loan denials that 21,357 users have collectively thumbed up as serious grievances. This is a trust-extinction moment at precisely the point where a customer should be converting to a second loan or recommending the product to others.</p>
+            </div>
+            <p>The analysis also surfaces a silent majority problem: the "Unlock Device" intent has only 38 reviews but 6,556 thumbs — an average of 173 endorsements per review. The users who are experiencing device lock issues post-payment are so broadly validated by other users that the intent's review count dramatically understates its true prevalence.</p>
+
+            <div class="github-strip">
+              <p><strong>Full Python analysis code, enriched dataset, and Power BI dashboard available on GitHub.</strong><br>78 intents · 10 primary classes · 14-month trend analysis · composite risk scoring</p>
+              <a href="https://github.com/Adeyemi0" target="_blank" class="btn-github">
+                <i class="bi bi-github"></i> View Repository
+              </a>
+            </div>
+          </div>
+
+          <!-- PROBLEM -->
+          <div class="doc-section" id="problem">
+            <h2><span class="section-icon"><i class="bi bi-exclamation-circle"></i></span> The Business Problem</h2>
+            <p>For a fintech platform operating in a competitive, trust-sensitive market, a 4.2-star average hides more than it reveals. M-KOPA's model depends on loan repayment discipline and repeat loan uptake. A customer who repays their first device loan is not a completed transaction — they are the starting point for a cash loan relationship, a second device upgrade, and potentially years of recurring revenue. The question is whether the product experience at repayment completion is strong enough to convert a first-time borrower into a long-term financial services customer.</p>
+            <p>The raw review data held answers to strategic questions the product team could not answer from aggregate ratings:</p>
+            <ul>
+              <li>Which specific intents account for the most community-validated pain — where high thumbsUpCount signals that many more users share the same issue than are writing reviews about it?</li>
+              <li>At which stage of the customer journey does sentiment collapse, and is that collapse driven by product failures or policy decisions?</li>
+              <li>Do support replies actually improve customer sentiment, or are some intents so policy-driven that support engagement makes scores worse?</li>
+              <li>Are there version-specific spikes in bug reports that signal regression patterns in the engineering release cycle?</li>
+              <li>What is the single word — or single moment — that keeps appearing across every high-risk intent cluster?</li>
+            </ul>
+            <p>Answering these questions — and distinguishing between what customer service can fix and what requires a product or policy change — is the work this project sets out to do.</p>
+          </div>
+
+          <!-- DATASET -->
+          <div class="doc-section" id="dataset">
+            <h2><span class="section-icon"><i class="bi bi-database"></i></span> Dataset &amp; Methodology</h2>
+            <p>The dataset covers Google Play Store reviews submitted for the M-KOPA app between January 2025 and February 2026. Each review was pre-enriched with NLP-based intent classification fields before analysis.</p>
+
+            <table class="metric-table">
+              <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td>reviewId</td><td class="val">string</td><td>Unique identifier per review</td></tr>
+                <tr><td>content</td><td class="val">string</td><td>Raw review text</td></tr>
+                <tr><td>score</td><td class="val">integer</td><td>Star rating (1–5)</td></tr>
+                <tr><td>thumbsUpCount</td><td class="val">integer</td><td>Play Store helpfulness votes from other users</td></tr>
+                <tr><td>at</td><td class="val">datetime</td><td>Review submission timestamp</td></tr>
+                <tr><td>replyContent</td><td class="val">string / null</td><td>Developer response text (null if no reply)</td></tr>
+                <tr><td>repliedAt</td><td class="val">datetime / null</td><td>Timestamp of developer reply</td></tr>
+                <tr><td>appVersion</td><td class="val">string</td><td>App version at time of review</td></tr>
+                <tr><td>primary_class</td><td class="val">string</td><td>Top-level NLP classification (10 classes)</td></tr>
+                <tr><td>customer_stage</td><td class="val">string</td><td>Journey stage: Onboarding, Payment, Usage, Offboarding, Support, Default, Unknown</td></tr>
+                <tr><td>intent</td><td class="val">string</td><td>Granular NLP intent label (78 unique values)</td></tr>
+              </tbody>
+            </table>
+
+            <table class="metric-table">
+              <thead><tr><th>Dataset Metric</th><th>Value</th></tr></thead>
+              <tbody>
+                <tr><td>Total reviews</td><td class="val">8,165</td></tr>
+                <tr><td>Date range</td><td class="val">Jan 2025 – Feb 2026 (14 months)</td></tr>
+                <tr><td>Unique intents</td><td class="val">78</td></tr>
+                <tr><td>Primary classes</td><td class="val">10</td></tr>
+                <tr><td>Customer journey stages</td><td class="val">7</td></tr>
+                <tr><td>5★ reviews</td><td class="val">5,837 (71.5%)</td></tr>
+                <tr><td>1★ reviews</td><td class="val">1,212 (14.8%)</td></tr>
+                <tr><td>Reviews with developer reply</td><td class="val">~99% for high-volume intents</td></tr>
+              </tbody>
+            </table>
+
+            <h3>Analytical Methodology</h3>
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <h3>Intent-Level Risk Profiling</h3>
+                  <p>Each of the 78 intents was profiled across: total review count, percentage of 1–2★ reviews, total thumbsUpCount weighted to low-star reviews, average rating, and standard deviation of ratings (to identify polarised vs consistently negative intents). Only intents with 10+ reviews were included in comparative analysis to avoid small-sample distortion.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <h3>Composite Risk Scoring</h3>
+                  <p>A composite risk score was computed per intent to move beyond single-metric ranking: <code>Risk = (5 − avg_rating) × log(1 + total_thumbs) × (pct_low_star / 100)</code>. This formula penalises intents with both high distress (low rating) and broad community validation (high thumbs), while normalising for volume differences across intents. The result is a single sortable score that reflects the combination of severity, scale, and community endorsement.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <h3>Customer Journey Friction Mapping</h3>
+                  <p>Reviews were segmented by <code>customer_stage</code> to map where in the M-KOPA journey each intent concentrates. Low-star percentage per stage was computed to identify the highest-friction transition points. Stage-intent crosstabulation revealed which intents are structural (recurring across stages) vs stage-specific (concentrated at a single friction point).</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <h3>Support Effectiveness Analysis</h3>
+                  <p>For intents with sufficient replied and unreplied review samples, average star ratings were compared between reviews that received a developer response and those that did not. A positive lift score indicates that responding to that intent's reviews is associated with higher ratings; a negative lift indicates that responses either do not help or actively worsen sentiment — pointing to issues that require product action, not support scripts.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">5</div>
+                <div class="step-body">
+                  <h3>Keyword Extraction &amp; Root Cause Discovery</h3>
+                  <p>For each high-risk intent, the review corpus was tokenised, stop-words were removed, and word frequency counts were computed to identify the specific product moments or phrases recurring in negative reviews. This moves the analysis from "users are unhappy about device locks" to "users are unhappy because their phone was locked <em>after</em> completing payment" — a distinction with entirely different implications for the product team.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FRAMEWORK -->
+          <div class="doc-section" id="framework">
+            <h2><span class="section-icon"><i class="bi bi-diagram-3"></i></span> Intent Classification Framework</h2>
+            <p>The most important analytical asset in this dataset is its NLP-based intent classification, which translates raw review text into actionable product signals. The taxonomy was designed to capture the granular purpose behind each review — not just its sentiment — so that product, support, and policy teams can act on specific customer needs rather than broad sentiment categories.</p>
+            <p>The 10 primary classes and their dominant intents are structured as follows:</p>
+
+            <div class="intent-grid">
+              <div class="intent-class">
+                <div class="ic-label green">Positive Experience (5,425 reviews)</div>
+                <ul>
+                  <li>Praise Service (5,323)</li>
+                  <li>Praise Device (91)</li>
+                  <li>Praise Feature (7)</li>
+                </ul>
+              </div>
+              <div class="intent-class">
+                <div class="ic-label red">Account / Loan Issues (1,420 reviews)</div>
+                <ul>
+                  <li>Appeal Loan Denial (427)</li>
+                  <li>Request Loan (397)</li>
+                  <li>Question Eligibility (245)</li>
+                  <li>Complain Policy (97)</li>
+                  <li>Complain Delay (53+)</li>
+                </ul>
+              </div>
+              <div class="intent-class">
+                <div class="ic-label red">Device Locking / Access Issues (358)</div>
+                <ul>
+                  <li>Uninstall App (199)</li>
+                  <li>Complain Lock (46)</li>
+                  <li>Unlock Device (37)</li>
+                  <li>Dispute Lock (26)</li>
+                  <li>Complain Restriction (18)</li>
+                </ul>
+              </div>
+              <div class="intent-class">
+                <div class="ic-label blue">App Performance / Bugs (333)</div>
+                <ul>
+                  <li>Report Bug (161)</li>
+                  <li>Update App (67)</li>
+                  <li>Reset Password (52)</li>
+                  <li>Check Balance (20)</li>
+                  <li>Request Feature (18)</li>
+                </ul>
+              </div>
+              <div class="intent-class">
+                <div class="ic-label amber">Trust / Reputation Issues</div>
+                <ul>
+                  <li>Flag Fraud (50)</li>
+                  <li>Flag Unfair Practice (12)</li>
+                  <li>Report Fraud (3)</li>
+                  <li>Flag Privacy Issue (3)</li>
+                </ul>
+              </div>
+              <div class="intent-class">
+                <div class="ic-label teal">Payment &amp; Transactions</div>
+                <ul>
+                  <li>Dispute Charge (25)</li>
+                  <li>Dispute Balance (10)</li>
+                  <li>Complain Interest (29)</li>
+                  <li>Complain Price (17)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="callout callout-amber" style="margin-top:20px;">
+              <p><strong>Classification gap to note:</strong> The "Other / Noise" primary class contains 137 "Complain Service" reviews that would more accurately belong in "Customer Support." This misclassification suppresses the true volume of service complaints and understates the "Customer Support" class in any executive-level reporting. Any dashboard or KPI built on primary_class should apply a correction to this category before distribution to stakeholders.</p>
+            </div>
+          </div>
+
+          <!-- DASHBOARD -->
+          <div class="doc-section" id="dashboard">
+            <h2><span class="section-icon"><i class="bi bi-bar-chart-line"></i></span> Power BI Dashboard</h2>
+            <p>The Power BI dashboard translates the Python analysis into an operational monitoring tool structured across two tabs: an executive Overview tab and a Customer Journey deep-dive tab.</p>
+
+            <div class="dashboard-grid">
+              <figure class="chart-figure" style="margin:0;">
+                <img
+                  src="../assets/img/portfolio/kopa_page-0001.jpg"
+                  alt="M-KOPA Google Play Store review analysis Power BI dashboard — Overview tab showing total reviews, average rating, monthly volume trend, top 10 intent classification, and issues breakdown by primary class"
+                  loading="lazy"
+                >
+                <figcaption>Overview tab: 8,165 reviews · 4.2★ avg · Monthly volume trend peaking at 722 reviews (Apr '25) · Top 10 intents · Primary class issues breakdown.</figcaption>
+              </figure>
+              <figure class="chart-figure" style="margin:0;">
+                <img
+                  src="../assets/img/portfolio/kopa_page-0002.jpg"
+                  alt="M-KOPA Google Play Store review analysis Power BI dashboard — Customer Journey tab showing stage distribution, ratings breakdown by primary class, and customer voice review samples"
+                  loading="lazy"
+                >
+                <figcaption>Customer Journey tab: Stage distribution · Star-rating breakdown by primary class · Live customer voice with helpfulness ranking · 2,722 pages of reviews navigable.</figcaption>
+              </figure>
+            </div>
+
+            <h3>Dashboard Design Decisions</h3>
+            <p>The Overview tab was built for product and CX leadership: a single-screen view of headline metrics, monthly trend, and intent concentration. The Customer Journey tab was built for operational teams: the ratings-by-class stacked bar chart makes it immediately visible which primary classes are dominated by 1★ red, and the live "Customer Voice" panel enables direct review reading sorted by helpfulness — so the most community-endorsed complaints surface first, not the most recent.</p>
+            <p>The choice to sort by thumbsUpCount by default (rather than date) is a deliberate analytical decision: it prioritises the issues that the broadest community agrees on over the issues that happened to be written most recently. This is particularly important for a fintech product where a single frustrated review about a policy issue can attract hundreds of endorsements from users who share the same experience but have not written their own review.</p>
+          </div>
+
+          <!-- FINDINGS -->
+          <div class="doc-section" id="findings">
+            <h2><span class="section-icon"><i class="bi bi-lightbulb"></i></span> Key Findings</h2>
+            <p>Eight findings emerged from the full analysis. The most strategically important are summarised below, structured for direct product and business use.</p>
+
+            <div class="findings-grid">
+              <div class="finding-card">
+                <div class="finding-icon finding-icon-red"><i class="bi bi-shield-exclamation"></i></div>
+                <div class="finding-stat finding-stat-red">21,357</div>
+                <h4>The Most Community-Endorsed Issue Is a Policy Problem</h4>
+                <p>Appeal Loan Denial accumulated 21,357 thumbsUpCount across 427 reviews — by far the most community-validated pain point in the dataset. 95% of these reviews come from the Offboarding stage, and developer replies make scores <em>worse</em> by 0.54★, confirming this cannot be resolved with support scripting.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon finding-icon-red"><i class="bi bi-lock"></i></div>
+                <div class="finding-stat finding-stat-red">173×</div>
+                <h4>Unlock Device Is the Highest-Density Silent Majority Signal</h4>
+                <p>Only 38 users wrote an Unlock Device review — but those 38 reviews accumulated 6,556 thumbs. At 173 thumbs per review, this is the strongest signal in the dataset that far more users are experiencing post-payment device lock issues than are writing about them.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon finding-icon-red"><i class="bi bi-graph-down-arrow"></i></div>
+                <div class="finding-stat finding-stat-red">50%</div>
+                <h4>Half of All Offboarding-Stage Reviews Are 1–2★</h4>
+                <p>The Offboarding stage (1,457 reviews) has a 50% low-star rate — the highest of any identifiable stage. This is the stage where customers have completed their device loan and are either requesting cash loans, waiting for clearance, or trying to exit the product. It is where M-KOPA most consistently fails its most loyal customers.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon finding-icon-amber"><i class="bi bi-chat-left-text"></i></div>
+                <div class="finding-stat finding-stat-amber">"after"</div>
+                <h4>One Word Appears Across Every High-Risk Intent</h4>
+                <p>Keyword extraction across the top-10 highest-risk intents reveals "after" as the single most cross-cutting term. Users are being locked out, denied loans, and frustrated <em>after</em> paying. The post-payment experience — not the onboarding or usage experience — is where M-KOPA's retention problem lives.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon finding-icon-red"><i class="bi bi-person-x"></i></div>
+                <div class="finding-stat finding-stat-red">3,028</div>
+                <h4>The Highest Single-Review Thumbs Count Is a Fraud Accusation</h4>
+                <p>A single Flag Fraud review — describing the post-repayment cash loan experience as a scam — received 3,028 thumbsUpCount. This is the highest-endorsed individual review in the dataset and is sitting publicly on the Play Store for every prospective customer to see at the top of "Most Helpful" results.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon finding-icon-amber"><i class="bi bi-arrow-up-right"></i></div>
+                <div class="finding-stat finding-stat-amber">+1.69★</div>
+                <h4>Bug Reporting Is the Intent Where Replies Help Most</h4>
+                <p>Report Bug reviews that received a developer reply average 1.69★ higher than those that did not. This is the most positive support lift in the dataset — and suggests that M-KOPA's tech support responses on app bugs are genuinely effective at partially recovering user sentiment.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- JOURNEY -->
+          <div class="doc-section" id="journey">
+            <h2><span class="section-icon"><i class="bi bi-map"></i></span> Customer Journey Friction Map</h2>
+            <p>The customer journey analysis reveals that M-KOPA's rating problem is not evenly distributed. It is concentrated at two specific stages that represent opposite ends of the relationship: where customers are trying to get more value out of the product (Offboarding / cash loans), and where something has gone wrong and they need help (Support).</p>
+
+            <table class="metric-table">
+              <thead><tr><th>Customer Stage</th><th>Reviews</th><th>Avg Rating</th><th>% Low-Star (1–2★)</th><th>Dominant Friction Intents</th></tr></thead>
+              <tbody>
+                <tr><td>Support</td><td class="val">143</td><td class="val-red">2.62★</td><td class="val-red">57%</td><td>Reset Password, Complain Service</td></tr>
+                <tr><td>Offboarding</td><td class="val">1,457</td><td class="val-red">2.85★</td><td class="val-red">50%</td><td>Appeal Loan Denial (405), Uninstall App (213)</td></tr>
+                <tr><td>Default</td><td class="val">40</td><td class="val-amber">3.30★</td><td class="val-amber">38%</td><td>Complain Lock, Request Feature</td></tr>
+                <tr><td>Usage</td><td class="val">412</td><td class="val-amber">3.43★</td><td class="val-amber">36%</td><td>Report Bug (135), Praise Device (91)</td></tr>
+                <tr><td>Payment</td><td class="val">873</td><td class="val-green">3.89★</td><td class="val-green">25%</td><td>Praise Service (342), Request Loan (143)</td></tr>
+                <tr><td>Onboarding</td><td class="val">96</td><td class="val-green">3.90★</td><td class="val-green">24%</td><td>Praise Service (52), Report Bug (13)</td></tr>
+                <tr><td>Unknown</td><td class="val">5,144</td><td class="val-green">4.69★</td><td class="val-green">5%</td><td>Praise Service (4,838)</td></tr>
+              </tbody>
+            </table>
+
+            <div class="callout callout-red">
+              <p><strong>The Offboarding stage is a structural failure point, not expected friction.</strong> 1,457 reviews at 50% low-star represents nearly all of Appeal Loan Denial (405/427 reviews originate here) and almost all Uninstall App (213/216 reviews). This is not customers having problems during the product experience — it is customers who have successfully completed their loan repayment being denied the next product benefit they were expecting. That distinction matters enormously for how to fix it.</p>
+            </div>
+
+            <h3>The Transition That Breaks Everything</h3>
+            <p>The data points to a specific product transition that M-KOPA has not solved: the moment a customer moves from being an <strong>active device borrower</strong> to being an <strong>eligible cash loan applicant</strong>. During active repayment, customers are satisfied (Payment stage: 3.89★ avg, 25% low-star). After repayment, sentiment collapses (Offboarding: 2.85★ avg, 50% low-star). The product is not designed to celebrate the completion of a loan and smoothly transition the customer to the next financial product — it is leaving them in a state of confusion and perceived abandonment.</p>
+          </div>
+
+          <!-- RISK -->
+          <div class="doc-section" id="risk">
+            <h2><span class="section-icon"><i class="bi bi-exclamation-triangle"></i></span> Risk Ranking: Top 15 Intents by Composite Score</h2>
+            <p>The composite risk score combines rating severity, community validation, and low-star rate to produce a single sortable priority ranking. The top 15 intents by risk score are:</p>
+
+            <table class="metric-table">
+              <thead><tr><th>Rank</th><th>Intent</th><th>Avg ★</th><th>Total 👍</th><th>% Low-Star</th><th>Risk Score</th><th>Type</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Flag Unfair Practice</td><td class="val-red">1.08★</td><td class="val">1,687</td><td class="val-red">100%</td><td class="val">29.1</td><td><span style="font-size:11px;background:#FFF0F0;color:#C8102E;padding:2px 8px;border-radius:4px;font-weight:700;">Policy</span></td></tr>
+                <tr><td>2</td><td>Flag Fraud</td><td class="val-red">1.70★</td><td class="val">3,165</td><td class="val-red">83%</td><td class="val">22.1</td><td><span style="font-size:11px;background:#FFF0F0;color:#C8102E;padding:2px 8px;border-radius:4px;font-weight:700;">Policy</span></td></tr>
+                <tr><td>3</td><td>Complain Restriction</td><td class="val-red">1.33★</td><td class="val">409</td><td class="val-red">89%</td><td class="val">19.6</td><td><span style="font-size:11px;background:#FFF0F0;color:#C8102E;padding:2px 8px;border-radius:4px;font-weight:700;">Policy</span></td></tr>
+                <tr><td>4</td><td>Report Defect</td><td class="val-red">1.88★</td><td class="val">1,495</td><td class="val-red">75%</td><td class="val">17.2</td><td><span style="font-size:11px;background:#FFFBEB;color:#D97706;padding:2px 8px;border-radius:4px;font-weight:700;">Product</span></td></tr>
+                <tr><td>5</td><td>Dispute Lock</td><td class="val-red">1.63★</td><td class="val">228</td><td class="val-red">89%</td><td class="val">16.3</td><td><span style="font-size:11px;background:#FFF0F0;color:#C8102E;padding:2px 8px;border-radius:4px;font-weight:700;">Policy</span></td></tr>
+                <tr><td>6</td><td>Uninstall App</td><td class="val-red">2.06★</td><td class="val">2,093</td><td class="val-red">71%</td><td class="val">15.9</td><td><span style="font-size:11px;background:#FFFBEB;color:#D97706;padding:2px 8px;border-radius:4px;font-weight:700;">Product</span></td></tr>
+                <tr><td>7</td><td>Complain Lock</td><td class="val-red">2.08★</td><td class="val">1,537</td><td class="val-red">71%</td><td class="val">15.2</td><td><span style="font-size:11px;background:#FFF0F0;color:#C8102E;padding:2px 8px;border-radius:4px;font-weight:700;">Policy</span></td></tr>
+                <tr><td>8</td><td>Complain Policy</td><td class="val-red">2.24★</td><td class="val">921</td><td class="val-red">65%</td><td class="val">12.2</td><td><span style="font-size:11px;background:#FFF0F0;color:#C8102E;padding:2px 8px;border-radius:4px;font-weight:700;">Policy</span></td></tr>
+                <tr><td>9</td><td>Appeal Loan Denial</td><td class="val-red">2.79★</td><td class="val">21,357</td><td class="val-red">52%</td><td class="val">11.5</td><td><span style="font-size:11px;background:#FFF0F0;color:#C8102E;padding:2px 8px;border-radius:4px;font-weight:700;">Policy</span></td></tr>
+                <tr><td>10</td><td>Dispute Balance</td><td class="val-red">2.50★</td><td class="val">1,559</td><td class="val-red">59%</td><td class="val">10.9</td><td><span style="font-size:11px;background:#FFFBEB;color:#D97706;padding:2px 8px;border-radius:4px;font-weight:700;">Product</span></td></tr>
+                <tr><td>11</td><td>Unlock Device</td><td class="val-red">2.87★</td><td class="val">6,556</td><td class="val-red">53%</td><td class="val">9.9</td><td><span style="font-size:11px;background:#FFF0F0;color:#C8102E;padding:2px 8px;border-radius:4px;font-weight:700;">Policy</span></td></tr>
+                <tr><td>12</td><td>Report Bug</td><td class="val-red">2.68★</td><td class="val">1,041</td><td class="val-red">53%</td><td class="val">8.5</td><td><span style="font-size:11px;background:#E7F1FD;color:#1D4ED8;padding:2px 8px;border-radius:4px;font-weight:700;">UX/Tech</span></td></tr>
+              </tbody>
+            </table>
+
+            <div class="callout">
+              <p><strong>9 of the top 12 risk intents are policy or commercial model problems, not engineering problems.</strong> This is a critical product roadmap input: the majority of M-KOPA's most harmful user sentiment cannot be resolved by the engineering team shipping code. It requires commercial decisions about cash loan eligibility criteria, device lock policy after repayment, and how the post-repayment customer relationship is managed.</p>
+            </div>
+          </div>
+
+          <!-- SUPPORT -->
+          <div class="doc-section" id="support">
+            <h2><span class="section-icon"><i class="bi bi-headset"></i></span> Support Effectiveness Analysis</h2>
+            <p>A key question for any CX operation is whether customer-facing responses improve sentiment or simply add noise. The analysis compared average star ratings for reviews that received a developer reply versus those that did not, for each intent with sufficient samples in both groups.</p>
+
+            <table class="metric-table">
+              <thead><tr><th>Intent</th><th>Reply Rate</th><th>Avg ★ No Reply</th><th>Avg ★ With Reply</th><th>Lift</th><th>Implication</th></tr></thead>
+              <tbody>
+                <tr><td>Report Bug</td><td class="val">99.5%</td><td class="val-red">1.00★</td><td class="val-amber">2.69★</td><td class="val-green">+1.69★</td><td>Support is genuinely helping</td></tr>
+                <tr><td>Dispute Charge</td><td class="val">96.3%</td><td class="val-red">1.00★</td><td class="val-amber">2.19★</td><td class="val-green">+1.19★</td><td>Support is genuinely helping</td></tr>
+                <tr><td>Uninstall App</td><td class="val">99.5%</td><td class="val-red">1.00★</td><td class="val-amber">2.07★</td><td class="val-green">+1.07★</td><td>Support partially recovers</td></tr>
+                <tr><td>Unlock Device</td><td class="val">94.7%</td><td class="val-amber">2.00★</td><td class="val-amber">2.92★</td><td class="val-green">+0.92★</td><td>Support partially recovers</td></tr>
+                <tr><td>Complain Lock</td><td class="val">95.8%</td><td class="val-amber">2.50★</td><td class="val-amber">2.07★</td><td class="val-red">−0.43★</td><td>Replies make it worse — policy fix needed</td></tr>
+                <tr><td>Appeal Loan Denial</td><td class="val">99.3%</td><td class="val-amber">3.33★</td><td class="val-amber">2.79★</td><td class="val-red">−0.54★</td><td>Replies make it worse — policy fix needed</td></tr>
+                <tr><td>Request Loan</td><td class="val">99.5%</td><td class="val-green">4.50★</td><td class="val-amber">3.92★</td><td class="val-red">−0.58★</td><td>Replies are disappointing users who expected approval</td></tr>
+                <tr><td>Report Defect</td><td class="val">98.5%</td><td class="val-amber">3.00★</td><td class="val-red">1.86★</td><td class="val-red">−1.14★</td><td>Biggest negative lift — device defects need product action</td></tr>
+              </tbody>
+            </table>
+
+            <div class="callout callout-red">
+              <p><strong>Negative support lift is the clearest signal that a product or policy fix is overdue.</strong> When responding to a review makes the average score go down, it means customers are writing back angrier after reading the response — because the response cannot give them what they need (a loan approval, a working device, a cleared repayment record). Continuing to respond to these intents with the same scripted answers is not a neutral activity. It is actively making scores worse.</p>
+            </div>
+          </div>
+
+          <!-- RECOMMENDATIONS -->
+          <div class="doc-section" id="recommendations">
+            <h2><span class="section-icon"><i class="bi bi-rocket-takeoff"></i></span> Recommendations</h2>
+            <p>Five recommendations emerge from the analysis, separated by who owns the fix and ranked by expected business impact. These are not surface-level suggestions — each comes with specific implementation logic derived from the data.</p>
+
+            <div class="risk-cards">
+              <div class="risk-card p1">
+                <div class="risk-badge p1"><i class="bi bi-exclamation-circle-fill me-1"></i> Priority 1 — Product + Commercial</div>
+                <h4>Design the "Loan Completion Moment" as a Product Transition, Not a Silence</h4>
+                <div class="rc-meta">
+                  <div class="rc-meta-item"><strong>Target intents:</strong> Flag Fraud · Complain Lock · Flag Unfair Practice · Appeal Loan Denial</div>
+                  <div class="rc-meta-item"><strong>Combined thumbs:</strong> 27,562 on negative reviews</div>
+                  <div class="rc-meta-item"><strong>Stage:</strong> Offboarding</div>
+                </div>
+                <p>The data is unambiguous: customers who complete repayment experience M-KOPA as abandoning or penalising them precisely when they deserve a reward. The current product flow does nothing to celebrate repayment completion, nothing to automatically clear device locks within a defined SLA, and nothing to set clear expectations about cash loan eligibility before the customer arrives at a denial screen.</p>
+                <p>The fix requires three commercial decisions: (1) Set a published SLA for device unlock post-final-payment (24 hours is a reasonable starting point). (2) Make cash loan eligibility criteria transparent in the app before a customer ever reaches the application step — if they are not eligible, they should know why and what they need to do to become eligible, not encounter a silent denial. (3) Create a visible, in-app "loan completion celebration" flow that thanks the customer, confirms clearance, and surfaces the next product offering with clear qualification criteria.</p>
+                <div class="action-label">Measurable outcome to track:</div>
+                <p>Target a 20-point reduction in Offboarding-stage low-star percentage (from 50% to 30%) within two quarters of implementing the completion flow and SLA.</p>
+              </div>
+
+              <div class="risk-card p1">
+                <div class="risk-badge p1"><i class="bi bi-exclamation-circle-fill me-1"></i> Priority 1 — Engineering</div>
+                <h4>Automate Device Unlock Confirmation and Build a Self-Service Clearance Status Screen</h4>
+                <div class="rc-meta">
+                  <div class="rc-meta-item"><strong>Target intents:</strong> Unlock Device · Dispute Lock · Dispute Balance · Complain Lock</div>
+                  <div class="rc-meta-item"><strong>Combined thumbs:</strong> 9,780 on negative reviews</div>
+                  <div class="rc-meta-item"><strong>Avg thumbs/review:</strong> 173× for Unlock Device alone</div>
+                </div>
+                <p>The Unlock Device intent has 173 thumbs per review — meaning for every user who writes a review, approximately 173 others are confirming they have the same problem without writing about it. This is not a niche edge case; it is a widespread operational failure that is invisible in aggregate star ratings because it concentrates in a small number of highly-endorsed reviews.</p>
+                <p>The engineering fix is specific: build a real-time clearance status screen in the M-KOPA app that shows the customer their payment reconciliation state, expected unlock timing, and a one-tap "unlock confirmation request" button. Currently users call support or write a Play Store review to get status updates on their own device. Both of those friction paths are unnecessary. The status data already exists in M-KOPA's systems — the problem is that it is not surfaced to the customer.</p>
+                <div class="action-label">Measurable outcome to track:</div>
+                <p>Monitor Unlock Device and Dispute Lock thumbsUpCount on new reviews as the leading indicator of resolution. A declining thumbs rate on these intents (rather than declining review count) confirms the problem is being resolved in the real world, not just suppressed.</p>
+              </div>
+
+              <div class="risk-card p2">
+                <div class="risk-badge p2"><i class="bi bi-dash-circle-fill me-1"></i> Priority 2 — Support Operations</div>
+                <h4>Stop Scripting Support Responses for Policy-Driven Intents — Redirect to a Product Fix Escalation Path Instead</h4>
+                <div class="rc-meta">
+                  <div class="rc-meta-item"><strong>Target intents:</strong> Appeal Loan Denial · Complain Lock · Report Defect · Request Loan</div>
+                  <div class="rc-meta-item"><strong>Reply-driven score lift:</strong> −0.54★ to −1.14★</div>
+                </div>
+                <p>The support effectiveness analysis shows that responding to Appeal Loan Denial, Complain Lock, Report Defect, and Request Loan reviews makes average scores worse. This happens because the scripted response cannot provide what the customer actually needs — a loan approval decision, a cleared device, a working Nokia handset. The response creates a second disappointment on top of the original one.</p>
+                <p>The short-term operational fix: stop deploying generic "we're sorry, please contact support" responses to these intents and replace them with a response that (a) acknowledges the specific issue rather than using a template, and (b) includes a direct escalation path to the relevant team (device replacement team, loan review team, balance reconciliation team) rather than asking the user to navigate a general support channel. The longer-term fix is to reduce the volume of these intents through the product changes described in Priorities 1 and 2.</p>
+                <div class="action-label">Measurable outcome to track:</div>
+                <p>Track average star rating for replied reviews in these four intents monthly. The current negative lift should move toward neutral or positive within 60 days of response template revision.</p>
+              </div>
+
+              <div class="risk-card p2">
+                <div class="risk-badge p2"><i class="bi bi-dash-circle-fill me-1"></i> Priority 2 — Device/Hardware</div>
+                <h4>Investigate Nokia-Specific Defect Rate and Build a Visible Warranty Resolution Flow</h4>
+                <div class="rc-meta">
+                  <div class="rc-meta-item"><strong>Target intent:</strong> Report Defect (65 reviews · avg 1.88★ · 1,495 👍)</div>
+                  <div class="rc-meta-item"><strong>Key keyword:</strong> "Nokia" appears in top-10 terms for this intent</div>
+                </div>
+                <p>Report Defect reviews name Nokia explicitly in their top keywords — a signal that defect complaints are concentrated in a specific device model range, not randomly distributed across the product catalogue. The combination of 1.88★ average, 1,495 thumbs, and a −1.14★ reply-driven score drop (the worst in the entire dataset) makes this the most acute product quality problem in the review corpus.</p>
+                <p>The business action is not just an engineering task: it requires pulling defect-by-model data from the support CRM, isolating the Nokia models with the highest return or complaint rates, and making a commercial decision about whether to continue offering those specific models to new customers while the defect pattern is under investigation. In parallel, build an in-app warranty claim flow so users with defective devices have a visible self-service path that does not require them to write a Play Store review to get attention.</p>
+                <div class="action-label">Data needed to proceed:</div>
+                <p>CRM data by device model: fault type, replacement rate, support ticket volume. This data almost certainly exists in M-KOPA's operational systems but was not part of the review dataset.</p>
+              </div>
+
+              <div class="risk-card p3">
+                <div class="risk-badge p3"><i class="bi bi-info-circle-fill me-1"></i> Priority 3 — Engineering</div>
+                <h4>Implement App Version Regression Testing with a Review-Signal Feedback Loop</h4>
+                <div class="rc-meta">
+                  <div class="rc-meta-item"><strong>Target intent:</strong> Report Bug (205 reviews · version 2025.117.4 had 16 bug reports — the highest spike)</div>
+                  <div class="rc-meta-item"><strong>Reply lift:</strong> +1.69★ — the most support-responsive intent in the dataset</div>
+                </div>
+                <p>Bug report volumes spike in identifiable version ranges (2025.117.x through 2025.232.x had the highest per-version bug report counts). This is a regression testing gap: releases are shipping with issues that users are encountering in production before the engineering team has caught them internally.</p>
+                <p>The practical fix is a two-part loop: (1) Add a post-release monitoring trigger that flags any version where Report Bug intent volume in Play Store reviews exceeds a threshold within 7 days of a release (e.g., 5+ bug reports per version within the first week is a yellow flag; 10+ is a red flag requiring a hotfix review). (2) Since replies on bug reports achieve the highest score recovery in the dataset (+1.69★), prioritise developer acknowledgment within 24 hours for all one-star bug reports from new versions.</p>
+                <div class="action-label">Measurable outcome to track:</div>
+                <p>Average bug reports per version release as a rolling 3-month metric. Declining bug report density per release (not just absolute count) confirms the regression testing improvements are working.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEXT STEPS -->
+          <div class="doc-section" id="next">
+            <h2><span class="section-icon"><i class="bi bi-signpost-2"></i></span> What's Next: Data Gaps &amp; Analytical Extensions</h2>
+            <p>This analysis extracted the maximum insight available from the Play Store review dataset. But several of the most commercially important questions require additional data that was not available in this dataset. These gaps are not analytical limitations — they are the next prioritised data collection investments.</p>
+
+            <div class="next-steps">
+              <div class="next-step">
+                <div class="ns-icon red"><i class="bi bi-database-x"></i></div>
+                <div>
+                  <h4>Link Review Data to CRM Repayment Records</h4>
+                  <p>The analysis cannot confirm whether device lock post-payment is a technical reconciliation failure (the system not registering the final payment correctly) or a policy decision (intentional lock until manual clearance). Joining the review dataset to CRM repayment timestamps by customer would resolve this — and dramatically change the fix. If it is a reconciliation bug, engineering fixes it. If it is policy, commercial changes it. Right now both hypotheses are live, which means the wrong team might act first.</p>
+                </div>
+              </div>
+              <div class="next-step">
+                <div class="ns-icon amber"><i class="bi bi-person-check"></i></div>
+                <div>
+                  <h4>Build a Post-Repayment Cohort Analysis</h4>
+                  <p>The data shows sentiment collapse at the Offboarding stage but cannot currently quantify the revenue impact. A cohort analysis linking repayment completion dates to second-loan uptake rates would establish the financial cost of the post-repayment experience failure: for every 100 customers who complete Device Loan 1, how many take Cash Loan 1 within 30/60/90 days? How does that rate differ for customers who wrote a negative review at repayment vs those who wrote a positive one? That number is the business case for every product and policy change recommended in this analysis.</p>
+                </div>
+              </div>
+              <div class="next-step">
+                <div class="ns-icon blue"><i class="bi bi-phone"></i></div>
+                <div>
+                  <h4>Extend NLP to In-App Support Chat Transcripts</h4>
+                  <p>Play Store reviews represent the customers who bothered to write publicly. The in-app support chat transcripts likely contain 10–50× more conversations about the same issues — with more detail, specific account numbers, and clearer resolution paths. Applying the same intent classification framework to support chat transcripts would validate whether the issue volumes and rankings seen in reviews match the actual support ticket distribution. If the same intents dominate both data sources, the analysis conclusions are highly reliable. If the ranking differs significantly, the discrepancy itself is analytically useful.</p>
+                </div>
+              </div>
+              <div class="next-step">
+                <div class="ns-icon green"><i class="bi bi-translate"></i></div>
+                <div>
+                  <h4>Multilingual Sentiment Analysis for Swahili, Hausa, and Luganda</h4>
+                  <p>M-KOPA operates in Kenya, Uganda, Nigeria, Ghana, and South Africa — but the current intent classification was applied to an English-language corpus. A significant share of customers, particularly in rural Kenya and Uganda, may be leaving reviews in Swahili or Luganda that are being classified as "Unknown" (98 reviews, avg 4.23★) or falling out of the taxonomy entirely. A language detection and multilingual classification pipeline — using models like mBERT or a fine-tuned Swahili-English NLP model — would recover insights from potentially underrepresented user segments who may have a meaningfully different complaint distribution.</p>
+                </div>
+              </div>
+              <div class="next-step">
+                <div class="ns-icon amber"><i class="bi bi-graph-up-arrow"></i></div>
+                <div>
+                  <h4>Predictive Churn Flagging from Review Sentiment Signals</h4>
+                  <p>The current analysis is retrospective. The analytical extension with the highest commercial value is a predictive model: given the review data available up to a given date, which customers who have written negative Offboarding reviews are most likely to default on a future loan or not take a second loan? This would require joining review identifiers to user accounts — which may require M-KOPA to build a review-to-account matching capability — but would turn this analysis from a historical PM insight tool into a live retention intervention system. <a href="customer-journey-analysis.html" style="color:#0052FF;font-weight:600;">The customer journey analysis methodology in my portfolio</a> describes the funnel analytics approach applicable to building this pipeline.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TOOLS -->
+          <div class="doc-section" id="tools">
+            <h2><span class="section-icon"><i class="bi bi-tools"></i></span> Tools &amp; Technologies</h2>
+            <p>This project was built in Python for analysis and statistical computation, with a Power BI layer for operational dashboarding — a combination designed to serve both the analytical rigour required for a case study and the executive accessibility required for business adoption.</p>
+            <div class="tech-stack">
+              <div class="tech-item">
+                <i class="bi bi-filetype-py"></i>
+                <span class="tech-name">Python</span>
+                <span class="tech-role">Core analysis</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-table"></i>
+                <span class="tech-name">pandas</span>
+                <span class="tech-role">Data wrangling</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-bar-chart"></i>
+                <span class="tech-name">Power BI</span>
+                <span class="tech-role">Dashboard</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-chat-square-quote"></i>
+                <span class="tech-name">NLP / Text</span>
+                <span class="tech-role">Intent mining</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-calculator"></i>
+                <span class="tech-name">scipy / stats</span>
+                <span class="tech-role">Significance tests</span>
+              </div>
+              <div class="tech-item">
+                <i class="bi bi-graph-up"></i>
+                <span class="tech-name">matplotlib</span>
+                <span class="tech-role">Visualisation</span>
+              </div>
+            </div>
+            <div class="tags-row">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">pandas</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Intent Classification</span>
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">Customer Journey Mapping</span>
+              <span class="tech-tag">Composite Risk Scoring</span>
+              <span class="tech-tag">Keyword Extraction</span>
+              <span class="tech-tag">Sentiment Analysis</span>
+              <span class="tech-tag">thumbsUpCount Weighting</span>
+              <span class="tech-tag">Fintech Analytics</span>
+              <span class="tech-tag">Africa Market Analytics</span>
+              <span class="tech-tag">Google Play Store Mining</span>
+              <span class="tech-tag">Product Analytics</span>
+              <span class="tech-tag">CX Analytics</span>
+              <span class="tech-tag">App Store Review Analysis</span>
+            </div>
+          </div>
+
+          <!-- RELATED -->
+          <div class="doc-section" id="related">
+            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+            <p>If this analysis is relevant to your challenge in customer analytics, product feedback, or fintech data science, these projects from my portfolio cover adjacent methodologies:</p>
+            <div class="related-grid">
+              <a href="saas-trial-conversion-analysis.html" class="related-card">
+                <p class="card-label">Product Analytics · Python · SQL</p>
+                <h4>SaaS Trial Conversion Analysis</h4>
+                <p>966 B2B SaaS organisations, 102,895 events, 30-day trial window. Survival analysis and ML models reveal why product behaviour alone cannot predict who converts — with SQL data models built for production deployment.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="customer-journey-analysis.html" class="related-card">
+                <p class="card-label">Funnel Analytics · Python</p>
+                <h4>Customer Journey Analysis</h4>
+                <p>Mapping 10,000 user sessions to identify the friction points where customers consistently abandon the funnel before converting — directly applicable to post-repayment journey design.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="retail-analysis-global-electronics.html" class="related-card">
+                <p class="card-label">Business Intelligence · Power BI</p>
+                <h4>Retail BI Dashboard — 90% Revenue Decline</h4>
+                <p>Diagnosing a 90% revenue collapse and identifying an 85% customer retention failure as the root cause using Power BI cohort analysis — the same retention lens applied to M-KOPA's Offboarding stage.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="lead-scoring-conversion-prediction.html" class="related-card">
+                <p class="card-label">Conversion Prediction · ML</p>
+                <h4>Lead Scoring and Conversion Prediction</h4>
+                <p>A 99% accuracy ML model predicting purchase likelihood from behavioural signals — the methodological foundation for the predictive churn flagging extension described in this project's next-steps section.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+CTA
+========================================== -->
+<section class="project-cta">
+  <div class="container">
+    <p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+    <h2>Does your fintech or app have 1,000 reviews you have never properly read?</h2>
+    <p>I help product teams and fintech companies turn unstructured customer feedback into structured product decisions — from intent classification to churn signals to journey friction mapping. First call is free.</p>
+    <div class="cta-buttons">
+      <a href="../index.html#contact" class="btn-cta-white">Tell Me Your Data Problem</a>
+      <a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+FOOTER
+========================================== -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h3>Adeyemi<span>Data</span></h3>
+          <p>
+            Remote Worldwide<br>
+            Available globally (timezone-flexible)<br><br>
+            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+            <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../about.html">About</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>What I Do</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Churn Prediction</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Customer Analytics</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">NLP &amp; Text Analytics</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Power BI Dashboards</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Connect</h4>
+          <div class="social-links mt-3">
+            <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/adediran-adeyemi-17103b114/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright">
+      &copy; 2026 <strong>Adediran Adeyemi</strong> &middot; Turning Data Into Decisions
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================
+SCHEMA MARKUP
+========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://adediranadeyemi.com/projects/mkopa-playstore-review-analysis.html#article",
+      "headline": "M-KOPA Google Play Store Review Analysis – 8,165 Reviews Decoded",
+      "description": "A full-scope Python and Power BI case study analysing 8,165 M-KOPA Google Play Store reviews across 78 intents, 10 primary classes, and 14 months. NLP intent classification, customer journey friction mapping, and composite risk scoring reveal the post-payment experience as M-KOPA's biggest trust risk.",
+      "url": "https://adediranadeyemi.com/projects/mkopa-playstore-review-analysis.html",
+      "datePublished": "2026-04-06",
+      "dateModified": "2026-04-06",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name": "Adediran Adeyemi",
+        "url": "https://adediranadeyemi.com",
+        "jobTitle": "Freelance Data Scientist",
+        "email": "adeyemi@adediranadeyemi.com"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Adediran Adeyemi",
+        "url": "https://adediranadeyemi.com"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://adediranadeyemi.com/assets/img/portfolio/kopa_page-0001.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "keywords": [
+        "Google Play Store review analysis Python",
+        "fintech app review sentiment analysis",
+        "M-KOPA review analysis",
+        "mobile app customer feedback analysis",
+        "NLP intent classification fintech",
+        "customer journey analysis Africa fintech",
+        "app store review analytics",
+        "Power BI review dashboard",
+        "product analytics Africa",
+        "thumbsUpCount analysis",
+        "churn risk fintech Africa",
+        "composite risk scoring NLP",
+        "customer stage friction mapping"
+      ],
+      "proficiencyLevel": "Expert",
+      "dependencies": "Python, pandas, Power BI, NLP, matplotlib"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://adediranadeyemi.com/projects/mkopa-playstore-review-analysis.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://adediranadeyemi.com/#portfolio" },
+        { "@type": "ListItem", "position": 3, "name": "M-KOPA Google Play Store Review Analysis", "item": "https://adediranadeyemi.com/projects/mkopa-playstore-review-analysis.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- =========================================
+SCRIPTS
+========================================== -->
+<script>
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader');
+  if (pre) { pre.style.transition = 'opacity 0.4s'; pre.style.opacity = '0'; setTimeout(() => pre.remove(), 400); }
+});
+const toggle = document.querySelector('.mobile-nav-toggle');
+const navbar  = document.querySelector('#header .navbar');
+if (toggle && navbar) {
+  toggle.addEventListener('click', () => {
+    navbar.classList.toggle('navbar-mobile');
+    toggle.classList.toggle('bi-list');
+    toggle.classList.toggle('bi-x');
+  });
+}
+window.addEventListener('scroll', () => {
+  const btt = document.querySelector('.back-to-top');
+  if (btt) btt.classList.toggle('active', window.scrollY > 100);
+});
+(function () {
+  const links    = document.querySelectorAll('.toc-list a');
+  const sections = document.querySelectorAll('.doc-section[id]');
+  if (!links.length || !sections.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -65% 0px' });
+  sections.forEach(s => obs.observe(s));
+})();
+</script>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
