@@ -247,6 +247,14 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- New Project: M-Kopa Play Store Review Analysis -->
+  <url>
+    <loc>https://adediranadeyemi.com/projects/mkopa-playstore-review-analysis.html</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Services Pages -->
   <url>
     <loc>https://adediranadeyemi.com/services/power-bi-dashboard-development.html</loc>
