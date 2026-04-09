@@ -578,7 +578,7 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 <p>A client approached me with a straightforward brief: they wanted to analyse engagement on a competitor's public Facebook page — specifically the comments people were leaving on posts and the overall performance of those posts over time. The goal was sentiment analysis and competitive intelligence, not anything invasive. The data was all publicly available. The problem was volume: manually copying hundreds of comments and posts was not an option.</p>
 <p>My solution was two separate Python scrapers — one focused on extracting comments and threaded replies from a specific post, and one for scraping post-level data (text, likes, shares, comments count, content type) across an entire Facebook page. This article walks through both in detail.</p>
 <div class="key-callout">
-<p><strong>What you will learn:</strong> How to automate Facebook login with Selenium, dynamically load comments and expand reply threads, parse the DOM with BeautifulSoup, detect content types (video, image, text), and export clean structured data to CSV — with real, production-tested code. <em>Need a custom scraper built? See my <a href="../services/web-scraping.html" title="Web Scraping Services by Adediran Adeyemi">web scraping services</a>.</em></p>
+<p><strong>What you will learn:</strong> How to automate Facebook login with Selenium, dynamically load comments and expand reply threads, parse the DOM with BeautifulSoup, detect content types (video, image, text), and export clean structured data to CSV — with real, production-tested code. <em>Need a custom scraper built? <a href="../index.html#contact" title="Contact Adediran Adeyemi for custom scraping projects">Let's discuss your project</a>.</em></p>
 </div>
 
 <h2 id="tech-stack">Tech Stack and Why Each Tool Was Chosen</h2>
@@ -768,7 +768,7 @@ scraper.driver.<span class="fn">quit</span>()
 </div>
 
 <h2 id="scraper-2">Scraper 2: Facebook Page Posts</h2>
-<p>The second scraper targets a Facebook page profile and extracts post-level data across a configurable number of posts. Rather than diving deep into a single post, it sweeps across the feed to capture metadata: what was posted, how it performed, and what type of content it was.</p>
+<p>The second scraper targets a Facebook page profile and extracts post-level data across a configurable number of posts. Rather than diving deep into a single post, it sweeps across the feed to capture meta what was posted, how it performed, and what type of content it was.</p>
 <h3>The challenge: disappearing posts</h3>
 <p>Facebook's feed has a quirk that makes it more complex than a typical paginated site: as you scroll down and new posts load, older posts <em>disappear</em> from the DOM to manage memory. This means you cannot scroll to the bottom of the page and parse everything at once. You need to extract data incrementally — scroll a little, parse, scroll more, parse again, deduplicate.</p>
 <h3>Content type detection</h3>
@@ -925,7 +925,7 @@ scraper.<span class="fn">close</span>()
 <div class="use-case-card">
 <span class="uc-icon"><i class="bi bi-shield-check"></i></span>
 <div class="uc-title">Brand Monitoring</div>
-<div class="uc-desc">Track mentions, complaints, and crises across a public brand page in near real time. <em>See how I automate this with <a href="../services/web-scraping.html">custom scrapers</a>.</em></div>
+<div class="uc-desc">Track mentions, complaints, and crises across a public brand page in near real time. <em>See how I automate this with <a href="../index.html#contact">custom scrapers</a>.</em></div>
 </div>
 <div class="use-case-card">
 <span class="uc-icon"><i class="bi bi-cpu"></i></span>
@@ -938,7 +938,7 @@ scraper.<span class="fn">close</span>()
 <div class="faq-section">
 <div class="faq-item">
 <h3>Can you scrape Facebook with Python and Selenium?</h3>
-<p>Yes. Facebook is a JavaScript-heavy platform that requires a browser automation tool like Selenium to render dynamic content before parsing it with BeautifulSoup. Simple requests-based scrapers will not work because the DOM is not fully loaded without JavaScript execution. <em>Need help building a custom scraper? <a href="../services/web-scraping.html">Let's discuss your project</a>.</em></p>
+<p>Yes. Facebook is a JavaScript-heavy platform that requires a browser automation tool like Selenium to render dynamic content before parsing it with BeautifulSoup. Simple requests-based scrapers will not work because the DOM is not fully loaded without JavaScript execution. <em>Need help building a custom scraper? <a href="../index.html#contact">Let's discuss your project</a>.</em></p>
 </div>
 <div class="faq-item">
 <h3>Is it legal to scrape Facebook data?</h3>
@@ -965,7 +965,7 @@ scraper.<span class="fn">close</span>()
 <!-- CTA -->
 <div class="article-cta">
 <h3>Need a Web Scraping Project?</h3>
-<p>I build production-grade web scrapers for social media, e-commerce, and any platform where your data lives. If you need structured data extracted at scale — comments, posts, profiles, or anything publicly available — let's talk about your requirements. <em>Also explore my <a href="../services/web-scraping.html" style="color:rgba(255,255,255,0.92);font-weight:600;text-decoration:underline;">web scraping services</a> for full project details.</em></p>
+<p>I build production-grade web scrapers for social media, e-commerce, and any platform where your data lives. If you need structured data extracted at scale — comments, posts, profiles, or anything publicly available — let's talk about your requirements. <em>Also explore my <a href="../index.html#contact" style="color:rgba(255,255,255,0.92);font-weight:600;text-decoration:underline;">contact page</a> to discuss your project needs.</em></p>
 <a href="../index.html#contact" class="btn-cta">Discuss Your Scraping Project <i class="bi bi-arrow-right"></i></a>
 </div>
 <!-- Share -->
