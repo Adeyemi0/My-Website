@@ -7,23 +7,26 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="theme-color" content="#0052FF">
 <!-- =========================================
-PRIMARY SEO META
+PRIMARY SEO META - OPTIMIZED
 ========================================== -->
-<title>How I Scraped Facebook Comments & Posts for a Client Using Python and Selenium | Adediran Adeyemi</title>
-<meta name="description" content="A real client project: scraping Facebook comments, replies, and page posts using Python, Selenium, and BeautifulSoup. Full walkthrough of two production-grade scrapers with code. By Adediran Adeyemi.">
-<meta name="keywords" content="scrape Facebook comments Python, Facebook post scraper Selenium, BeautifulSoup Facebook scraping, extract Facebook data Python, Facebook web scraping freelancer, scrape Facebook page posts, Python Selenium BeautifulSoup tutorial, social media data extraction, Facebook comment scraper 2024, hire web scraper Python, Adediran Adeyemi">
+<title>Scrape Facebook Comments & Posts with Python Selenium | Tutorial + Code</title>
+<meta name="description" content="Step-by-step tutorial: Learn how to scrape Facebook comments, replies, and posts using Python, Selenium & BeautifulSoup. Production-ready code, anti-detection tips, and real client case study.">
+<meta name="keywords" content="scrape Facebook comments Python, Facebook post scraper Selenium, BeautifulSoup Facebook scraping, extract Facebook data Python, Facebook web scraping tutorial 2026, scrape Facebook page posts Python, Selenium Facebook automation, social media data extraction Python, hire web scraping freelancer, Facebook comment scraper code">
 <meta name="author" content="Adediran Adeyemi">
 <link rel="canonical" href="https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html">
 <!-- =========================================
-OPEN GRAPH
+OPEN GRAPH - OPTIMIZED
 ========================================== -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Adediran Adeyemi | Freelance Data Scientist">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="How I Scraped Facebook Comments & Posts for a Client Using Python and Selenium">
-<meta property="og:description" content="A real client project: two Python scrapers — one for comments and replies, one for page posts. Full technical walkthrough with production-grade code.">
+<meta property="og:title" content="Scrape Facebook Comments & Posts with Python Selenium | Tutorial + Code">
+<meta property="og:description" content="Complete Python tutorial: Build two production-grade Facebook scrapers with Selenium & BeautifulSoup. Extract comments, replies, post metadata — with anti-detection techniques.">
 <meta property="og:url" content="https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html">
-<meta property="og:site_name" content="AdeyemiData">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/images/blog/facebook-scraping-python-selenium-og.jpg">
+<meta property="og:image:alt" content="Python code scraping Facebook comments and posts with Selenium and BeautifulSoup">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="article:published_time" content="2026-03-25T00:00:00+00:00">
 <meta property="article:modified_time" content="2026-03-25T00:00:00+00:00">
 <meta property="article:author" content="https://adediranadeyemi.com">
@@ -32,112 +35,254 @@ OPEN GRAPH
 <meta property="article:tag" content="Selenium">
 <meta property="article:tag" content="Facebook">
 <meta property="article:tag" content="BeautifulSoup">
+<meta property="article:tag" content="Data Extraction">
 <!-- =========================================
-TWITTER CARD
+TWITTER CARD - OPTIMIZED
 ========================================== -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@AdediranAd60922">
 <meta name="twitter:creator" content="@AdediranAd60922">
-<meta name="twitter:title" content="How I Scraped Facebook Comments & Posts for a Client Using Python and Selenium">
-<meta name="twitter:description" content="Two production-grade Facebook scrapers — one for comments/replies, one for page posts. Real client project walkthrough with full Python code.">
+<meta name="twitter:title" content="Scrape Facebook Comments & Posts with Python Selenium | Tutorial + Code">
+<meta name="twitter:description" content="Production-ready Facebook scrapers in Python: Extract comments, replies, post metadata with Selenium + BeautifulSoup. Full code + anti-detection guide.">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/images/blog/facebook-scraping-python-selenium-twitter.jpg">
 <!-- =========================================
-SCHEMA MARKUP
-========================================== -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "BlogPosting",
-"headline": "How I Scraped Facebook Comments & Posts for a Client Using Python and Selenium",
-"description": "A real client project walkthrough: two Python scrapers built with Selenium and BeautifulSoup — one for comments and replies, one for page posts. Production-grade code with explanations.",
-"author": {
-"@type": "Person",
-"name": "Adediran Adeyemi",
-"url": "https://adediranadeyemi.com",
-"sameAs": [
-"https://www.linkedin.com/in/adediran-adeyemi",
-"https://github.com/Adeyemi0",
-"https://x.com/AdediranAd60922"
-]
-},
-"publisher": {
-"@type": "Person",
-"name": "Adediran Adeyemi",
-"url": "https://adediranadeyemi.com"
-},
-"datePublished": "2026-03-25",
-"dateModified": "2026-03-25",
-"mainEntityOfPage": {
-"@type": "WebPage",
-"@id": "https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html"
-},
-"keywords": ["Facebook scraping Python", "Selenium BeautifulSoup Facebook", "scrape Facebook comments", "scrape Facebook posts", "web scraping freelancer", "social media data extraction"],
-"articleSection": "Web Scraping",
-"timeRequired": "PT14M",
-"wordCount": "2800"
-}
-</script>
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "BreadcrumbList",
-"itemListElement": [
-{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
-{ "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adediranadeyemi.com/blog.html" },
-{ "@type": "ListItem", "position": 3, "name": "Facebook Scraping Python Selenium", "item": "https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html" }
-]
-}
-</script>
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "FAQPage",
-"mainEntity": [
-{
-"@type": "Question",
-"name": "Can you scrape Facebook with Python and Selenium?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "Yes. Facebook is a JavaScript-heavy platform that requires a browser automation tool like Selenium to render dynamic content before parsing it with BeautifulSoup. Simple requests-based scrapers will not work because the DOM is not fully loaded without JavaScript execution."
-}
-},
-{
-"@type": "Question",
-"name": "Is it legal to scrape Facebook data?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "Scraping publicly available data is generally considered legal in many jurisdictions. The 2022 Ninth Circuit ruling affirmed that scraping public data does not violate the Computer Fraud and Abuse Act. However, it may still violate Facebook's Terms of Service, which can result in account bans. Always consult a legal professional for your specific use case and only scrape publicly available data."
-}
-},
-{
-"@type": "Question",
-"name": "How do I scrape Facebook comments and replies?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "You need Selenium to log in, scroll through the post, click 'View more comments' and 'View replies' buttons, then use BeautifulSoup to parse the fully loaded HTML. The key challenge is correctly identifying comment articles versus reply articles using ARIA labels in the DOM."
-}
-},
-{
-"@type": "Question",
-"name": "What data can you extract from a Facebook post scraper?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "From Facebook page posts you can extract: post text, number of likes, comments count, shares count, time posted, content type (video, image, or text), and the direct post link. This data is useful for sentiment analysis, competitor monitoring, and social media audits."
-}
-}
-]
-}
-</script>
-<!-- =========================================
-PRECONNECT
+PRECONNECT & RESOURCE HINTS
 ========================================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="../assets/css/style.css">
 <!-- =========================================
-PAGE-SPECIFIC STYLES
+SCHEMA MARKUP - ENHANCED
+========================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Scrape Facebook Comments & Posts with Python Selenium | Tutorial + Code",
+  "alternativeHeadline": "How to Build Production-Grade Facebook Scrapers with Python, Selenium, and BeautifulSoup",
+  "description": "Complete tutorial: Build two Python scrapers to extract Facebook comments, replies, and post metadata using Selenium and BeautifulSoup. Includes anti-detection techniques, code samples, and real client case study.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://adediranadeyemi.com/assets/images/blog/facebook-scraping-python-selenium-og.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com",
+    "jobTitle": "Freelance Data Scientist & Web Scraping Specialist",
+    "sameAs": [
+      "https://www.linkedin.com/in/adediran-adeyemi",
+      "https://github.com/Adeyemi0",
+      "https://x.com/AdediranAd60922",
+      "https://medium.com/@xmine4346"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://adediranadeyemi.com/assets/images/logo.png",
+      "width": 200,
+      "height": 60
+    }
+  },
+  "datePublished": "2026-03-25",
+  "dateModified": "2026-03-25",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html"
+  },
+  "keywords": ["Facebook scraping Python", "Selenium BeautifulSoup Facebook", "scrape Facebook comments", "scrape Facebook posts", "web scraping freelancer", "social media data extraction", "Python automation tutorial"],
+  "articleSection": "Web Scraping",
+  "wordCount": "2850",
+  "timeRequired": "PT14M",
+  "proficiencyLevel": "Intermediate",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Data Scientists, Python Developers, Freelancers"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adediranadeyemi.com/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "Facebook Scraping Python Selenium Tutorial", "item": "https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you scrape Facebook with Python and Selenium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Facebook is a JavaScript-heavy platform that requires a browser automation tool like Selenium to render dynamic content before parsing it with BeautifulSoup. Simple requests-based scrapers will not work because the DOM is not fully loaded without JavaScript execution. This tutorial shows exactly how to combine Selenium for automation with BeautifulSoup for efficient HTML parsing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it legal to scrape Facebook data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Scraping publicly available data is generally considered legal in many jurisdictions. The 2022 Ninth Circuit ruling affirmed that scraping public data does not violate the Computer Fraud and Abuse Act. However, it may still violate Facebook's Terms of Service, which can result in account bans. Always consult a legal professional for your specific use case, only scrape publicly available data, and comply with GDPR/applicable privacy laws."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I scrape Facebook comments and replies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You need Selenium to log in, scroll through the post, click 'View more comments' and 'View replies' buttons dynamically, then use BeautifulSoup to parse the fully loaded HTML. The key challenge is correctly identifying comment articles versus reply articles using ARIA labels in the DOM, and building a stability loop to confirm all content has loaded before parsing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What data can you extract from a Facebook post scraper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From Facebook page posts you can extract: post text, number of likes/reactions, comments count, shares count, timestamp, content type (video, image, or text), and the direct post link. This data is useful for sentiment analysis, competitor monitoring, content strategy research, and social media audits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I avoid getting blocked when scraping Facebook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key anti-detection strategies include: disabling Selenium's automation flags, using randomized typing delays, adding generous sleep intervals between actions, using JavaScript-based element clicks instead of native clicks, keeping request volume below ~100/hour, and using residential proxies for high-volume scraping. This tutorial implements all these techniques in production-ready code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need Facebook API access to scrape data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This tutorial uses browser automation with Selenium to scrape publicly available Facebook data without API access. However, note that Facebook's Graph API has strict rate limits and approval requirements. Web scraping is an alternative for public data extraction, but always review Facebook's Terms of Service and consult legal counsel for commercial use."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Scrape Facebook Comments with Python and Selenium",
+  "description": "Step-by-step guide to building a production-grade Facebook comments scraper using Python, Selenium, and BeautifulSoup",
+  "totalTime": "PT45M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Python 3.8+"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Facebook account (for login)"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Microsoft Edge browser"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Selenium WebDriver"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "BeautifulSoup4"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "pandas"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Install required Python packages",
+      "text": "Install Selenium, BeautifulSoup4, pandas, and Edge WebDriver using pip: pip install selenium beautifulsoup4 pandas"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Configure Selenium with anti-detection flags",
+      "text": "Initialize Edge WebDriver with options to disable automation detection flags and exclude enable-automation switches."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Log in to Facebook securely",
+      "text": "Load credentials from environment variables (never hardcode), navigate to login page, enter credentials with randomized typing delays, and wait for feed to load."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Navigate to target post and switch comment filter",
+      "text": "Load the post URL, then click to switch comment sort from 'Most relevant' to 'All comments' to reveal chronological comments."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Scroll and load all comments dynamically",
+      "text": "Continuously scroll to bottom and click 'View more comments' buttons until comment count stabilizes across multiple checks."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Expand all reply threads",
+      "text": "Find and click every 'X Replies' button to expand threaded replies, tracking clicked buttons to avoid infinite loops."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Parse HTML with BeautifulSoup and export",
+      "text": "Take HTML snapshot, parse with BeautifulSoup, distinguish comments vs replies using ARIA labels, extract fields, and export to deduplicated CSV files."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Facebook Comments Scraper - Python Selenium",
+  "description": "Production-ready Python script to scrape Facebook comments and replies using Selenium and BeautifulSoup",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "Python"
+  },
+  "runtimePlatform": "Python 3.8+",
+  "author": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com"
+  },
+  "codeSampleType": "full",
+  "targetProduct": {
+    "@type": "SoftwareApplication",
+    "name": "Facebook",
+    "applicationCategory": "SocialMediaApplication"
+  }
+}
+</script>
+<!-- =========================================
+PAGE-SPECIFIC STYLES - OPTIMIZED
 ========================================== -->
 <style>
 /* ── BASE ── */
@@ -172,6 +317,19 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 .article-content ul, .article-content ol { margin: 18px 0; padding-left: 26px; }
 .article-content li { font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 9px; }
 .article-content strong { font-weight: 700; color: #0F172A; }
+/* ── TABLE OF CONTENTS ── */
+.toc { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+.toc-title { font-size: 14px; font-weight: 700; color: #0F172A; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px; }
+.toc-list { list-style: none; margin: 0; padding: 0; }
+.toc-list li { margin-bottom: 8px; }
+.toc-list a { font-size: 14px; color: #334155; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.toc-list a:hover { color: #0052FF; }
+.toc-list a::before { content: "→"; color: #0052FF; font-weight: 600; }
+/* ── KEY TAKEAWAYS BOX ── */
+.key-takeaways { background: linear-gradient(135deg, #E7F1FD 0%, #F0F9FF 100%); border-left: 4px solid #0052FF; border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 24px 0; }
+.key-takeaways-title { font-size: 15px; font-weight: 700; color: #0F172A; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px; }
+.key-takeaways ul { margin: 0; padding-left: 20px; }
+.key-takeaways li { font-size: 14px; color: #334155; line-height: 1.6; margin-bottom: 6px; }
 /* ── CALLOUTS ── */
 .key-callout { background: #E7F1FD; border-left: 4px solid #0052FF; border-radius: 0 8px 8px 0; padding: 18px 22px; margin: 24px 0; }
 .key-callout p { margin: 0; font-size: 1rem; color: #0F172A; line-height: 1.7; }
@@ -375,7 +533,7 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 <span class="reading-time"><i class="bi bi-clock"></i> 14 min read</span>
 <span class="category">Web Scraping</span>
 </div>
-<h1 class="article-title" itemprop="headline">How I Scraped Facebook Comments &amp; Posts for a Client Using Python and Selenium</h1>
+<h1 class="article-title" itemprop="headline">Scrape Facebook Comments &amp; Posts with Python Selenium | Tutorial + Code</h1>
 <p class="article-subtitle">A client needed to extract engagement data from a Facebook page — comments, replies, likes, and post metadata — at scale. Here is exactly how I built two production-grade scrapers to deliver it.</p>
 <div class="article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
 <div class="author-image" aria-label="Adediran Adeyemi">AA</div>
@@ -391,12 +549,39 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 </header>
 <!-- Article Content -->
 <div class="article-content" itemprop="articleBody">
+<!-- TL;DR / Featured Snippet Optimized Summary -->
+<div class="key-takeaways">
+<div class="key-takeaways-title"><i class="bi bi-lightning-charge"></i> Quick Summary</div>
+<ul>
+<li><strong>Primary keyword:</strong> scrape Facebook comments Python</li>
+<li><strong>Tech stack:</strong> Python 3.x, Selenium + Edge WebDriver, BeautifulSoup4, pandas</li>
+<li><strong>Two scrapers:</strong> (1) Comments & replies from single post, (2) Post metadata across page</li>
+<li><strong>Output:</strong> Clean CSV files with comment_id, author, text, reactions, post metadata</li>
+<li><strong>Anti-detection:</strong> Disabled automation flags, randomized delays, JS-based clicks, rate limiting</li>
+<li><strong>Legal note:</strong> Only scrape publicly available data; review Facebook ToS; consult legal counsel</li>
+</ul>
+</div>
+
+<!-- Table of Contents for UX + SEO -->
+<nav class="toc" aria-label="Table of Contents">
+<div class="toc-title"><i class="bi bi-list-ul"></i> On This Page</div>
+<ul class="toc-list">
+<li><a href="#tech-stack">Tech Stack &amp; Tool Selection</a></li>
+<li><a href="#scraper-1">Scraper 1: Facebook Comments &amp; Replies</a></li>
+<li><a href="#scraper-2">Scraper 2: Facebook Page Posts</a></li>
+<li><a href="#anti-detection">Anti-Detection Best Practices</a></li>
+<li><a href="#use-cases">Real-World Use Cases</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+</ul>
+</nav>
+
 <p>A client approached me with a straightforward brief: they wanted to analyse engagement on a competitor's public Facebook page — specifically the comments people were leaving on posts and the overall performance of those posts over time. The goal was sentiment analysis and competitive intelligence, not anything invasive. The data was all publicly available. The problem was volume: manually copying hundreds of comments and posts was not an option.</p>
 <p>My solution was two separate Python scrapers — one focused on extracting comments and threaded replies from a specific post, and one for scraping post-level data (text, likes, shares, comments count, content type) across an entire Facebook page. This article walks through both in detail.</p>
 <div class="key-callout">
-<p><strong>What you will learn:</strong> How to automate Facebook login with Selenium, dynamically load comments and expand reply threads, parse the DOM with BeautifulSoup, detect content types (video, image, text), and export clean structured data to CSV — with real, production-tested code. <em>Need a custom scraper built? See my <a href="../services/web-scraping.html">web scraping services</a>.</em></p>
+<p><strong>What you will learn:</strong> How to automate Facebook login with Selenium, dynamically load comments and expand reply threads, parse the DOM with BeautifulSoup, detect content types (video, image, text), and export clean structured data to CSV — with real, production-tested code. <em>Need a custom scraper built? See my <a href="../services/web-scraping.html" title="Web Scraping Services by Adediran Adeyemi">web scraping services</a>.</em></p>
 </div>
-<h2>Tech Stack and Why Each Tool Was Chosen</h2>
+
+<h2 id="tech-stack">Tech Stack and Why Each Tool Was Chosen</h2>
 <p>Facebook is a JavaScript-heavy, dynamically rendered platform. A standard <code>requests.get()</code> call will not return the full DOM. You need a browser automation tool to render JavaScript before parsing. Here is what the stack looks like:</p>
 <div class="tech-stack">
 <span class="tech-pill"><i class="bi bi-filetype-py"></i> Python 3.x</span>
@@ -412,7 +597,8 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 <li><strong>pandas:</strong> Structures extracted data into DataFrames and exports clean CSVs with proper UTF-8 encoding for international characters.</li>
 <li><strong>Environment variables:</strong> Credentials are never hardcoded. <code>FB_EMAIL</code> and <code>FB_PASSWORD</code> are loaded from system environment variables — a basic but essential security practice.</li>
 </ul>
-<h2>Scraper 1: Facebook Comments &amp; Replies</h2>
+
+<h2 id="scraper-1">Scraper 1: Facebook Comments &amp; Replies</h2>
 <p>The first scraper targets a specific Facebook post URL and extracts every comment plus all threaded replies, along with author names, profile links, comment text, and reaction counts.</p>
 <h3>The challenge: dynamic loading</h3>
 <p>Facebook does not load all comments at once. It loads a subset, then requires user interaction — clicking "View more comments" and individual "X Replies" buttons — to reveal the rest. A scraper that only reads the initial page state will miss the vast majority of engagement data.</p>
@@ -580,7 +766,8 @@ scraper.driver.<span class="fn">quit</span>()
 <div class="callout-green">
 <p><strong>Key design decision:</strong> Credentials are loaded via <code>os.getenv()</code> rather than hardcoded. Set <code>FB_EMAIL</code> and <code>FB_PASSWORD</code> as system environment variables before running. This prevents credentials from accidentally appearing in version control or logs.</p>
 </div>
-<h2>Scraper 2: Facebook Page Posts</h2>
+
+<h2 id="scraper-2">Scraper 2: Facebook Page Posts</h2>
 <p>The second scraper targets a Facebook page profile and extracts post-level data across a configurable number of posts. Rather than diving deep into a single post, it sweeps across the feed to capture metadata: what was posted, how it performed, and what type of content it was.</p>
 <h3>The challenge: disappearing posts</h3>
 <p>Facebook's feed has a quirk that makes it more complex than a typical paginated site: as you scroll down and new posts load, older posts <em>disappear</em> from the DOM to manage memory. This means you cannot scroll to the bottom of the page and parse everything at once. You need to extract data incrementally — scroll a little, parse, scroll more, parse again, deduplicate.</p>
@@ -691,15 +878,27 @@ df = scraper.<span class="fn">save_to_csv</span>(scraper.<span class="fn">scrape
 scraper.<span class="fn">close</span>()
 </pre>
 </div>
-<h2>What the Client Used This Data For</h2>
+
+<h2 id="anti-detection">Anti-Detection Best Practices</h2>
+<p>To avoid triggering Facebook's bot detection systems, implement these production-tested techniques:</p>
+<ul>
+<li><strong>Disable automation flags:</strong> Use <code>--disable-blink-features=AutomationControlled</code> and <code>excludeSwitches: ["enable-automation"]</code> in WebDriver options</li>
+<li><strong>Randomize human-like behavior:</strong> Add jitter to typing speed, scroll intervals, and click timing using <code>random.uniform()</code></li>
+<li><strong>Use JavaScript clicks:</strong> Prefer <code>driver.execute_script("arguments[0].click();", element)</code> over native Selenium clicks</li>
+<li><strong>Rate limiting:</strong> Keep requests below ~100/hour for a single account; use exponential backoff on errors</li>
+<li><strong>Session management:</strong> Rotate user agents, use residential proxies for high-volume scraping, and avoid logging in/out frequently</li>
+</ul>
+
+<h2 id="use-cases">What the Client Used This Data For</h2>
 <p>The two CSV outputs fed directly into a downstream analysis pipeline. The comments data was used for sentiment analysis — understanding how the audience felt about different post types and topics. The post-level data revealed which content formats (video vs image vs text) were generating the highest engagement, and at what times of day. Together, they gave the client a detailed picture of their competitor's content strategy that would have been impossible to build manually.</p>
 <div class="related-resources">
 <h4><i class="bi bi-lightbulb"></i> Related Resources</h4>
 <ul>
-<li><strong>Case Study:</strong> <a href="../projects/saas-trial-conversion-analysis.html">SaaS Trial Conversion Analysis</a> — Python/SQL analysis of B2B trial organisations</li>
-<li><strong>Service:</strong> <a href="../services/ecommerce-data-science.html">E-commerce Data Science</a> — Track user behaviour and build sentiment pipelines</li>
-<li><strong>Framework:</strong> <a href="../blog/predict-customer-retention.html">Predict Customer Retention</a> — Turn social data into retention insights</li>
-<li><strong>Service:</strong> <a href="../services/power-bi-dashboard-development.html">Power BI Dashboards</a> — Visualise scraped engagement metrics in real-time</li>
+<li><strong>Case Study:</strong> <a href="../projects/saas-trial-conversion-analysis.html" title="SaaS Trial Conversion Analysis Project">SaaS Trial Conversion Analysis</a> — Python/SQL analysis of B2B trial organisations</li>
+<li><strong>Service:</strong> <a href="../services/ecommerce-data-science.html" title="E-commerce Data Science Services">E-commerce Data Science</a> — Track user behaviour and build sentiment pipelines</li>
+<li><strong>Framework:</strong> <a href="../blog/predict-customer-retention.html" title="Predict Customer Retention Framework">Predict Customer Retention</a> — Turn social data into retention insights</li>
+<li><strong>Service:</strong> <a href="../services/power-bi-dashboard-development.html" title="Power BI Dashboard Development">Power BI Dashboards</a> — Visualise scraped engagement metrics in real-time</li>
+<li><strong>External:</strong> <a href="https://scrapfly.io/blog/posts/social-media-scraping" target="_blank" rel="noopener noreferrer" title="Social Media Scraping Guide 2026">Social Media Scraping in 2026</a> — Industry best practices [[1]]</li>
 </ul>
 </div>
 <div class="use-cases">
@@ -734,8 +933,8 @@ scraper.<span class="fn">close</span>()
 <div class="uc-desc">Collect labelled social media text for training classification and NLP models</div>
 </div>
 </div>
-<!-- ... anti-detection section unchanged ... -->
-<h2>Frequently Asked Questions</h2>
+
+<h2 id="faq">Frequently Asked Questions</h2>
 <div class="faq-section">
 <div class="faq-item">
 <h3>Can you scrape Facebook with Python and Selenium?</h3>
@@ -757,6 +956,10 @@ scraper.<span class="fn">close</span>()
 <h3>How do I avoid getting blocked when scraping Facebook?</h3>
 <p>Key strategies include: disabling Selenium's automation control flags, using randomised typing delays, adding generous sleep intervals between actions, using JavaScript-based element clicks, and keeping request volume below roughly 100 per hour. Residential proxies can further reduce detection risk for high-volume scraping.</p>
 </div>
+<div class="faq-item">
+<h3>Do I need Facebook API access to scrape data?</h3>
+<p>No. This tutorial uses browser automation with Selenium to scrape publicly available Facebook data without API access. However, note that Facebook's Graph API has strict rate limits and approval requirements. Web scraping is an alternative for public data extraction, but always review Facebook's Terms of Service and consult legal counsel for commercial use.</p>
+</div>
 </div>
 </div>
 <!-- CTA -->
@@ -769,11 +972,14 @@ scraper.<span class="fn">close</span>()
 <div class="article-share">
 <h4>Found this useful? Share it</h4>
 <div class="share-buttons">
-<a href="https://x.com/intent/tweet?text=How+to+Scrape+Facebook+Comments+%26+Posts+with+Python+%26+Selenium&url=https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html&via=AdediranAd60922" target="_blank" class="share-btn twitter" rel="noopener noreferrer">
+<a href="https://x.com/intent/tweet?text=How+to+Scrape+Facebook+Comments+%26+Posts+with+Python+%26+Selenium&url=https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html&via=AdediranAd60922" target="_blank" class="share-btn twitter" rel="noopener noreferrer" aria-label="Share on X (Twitter)">
 <i class="bi bi-twitter-x"></i> X (Twitter)
 </a>
-<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html" target="_blank" class="share-btn linkedin" rel="noopener noreferrer">
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html" target="_blank" class="share-btn linkedin" rel="noopener noreferrer" aria-label="Share on LinkedIn">
 <i class="bi bi-linkedin"></i> LinkedIn
+</a>
+<a href="https://wa.me/?text=Check+out+this+Facebook+scraping+tutorial:+https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html" target="_blank" class="share-btn" style="background:#25D366" rel="noopener noreferrer" aria-label="Share on WhatsApp">
+<i class="bi bi-whatsapp"></i> WhatsApp
 </a>
 </div>
 </div>
@@ -854,12 +1060,14 @@ Lagos, Nigeria (Remote Globally)<br><br>
 <div class="copyright">&copy; 2026 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved | Turning Data Into Decisions</div>
 </div>
 </footer>
-<!-- Scripts -->
+<!-- Scripts - Optimized Loading -->
 <script>
+// Preloader handling
 window.addEventListener('load', () => {
 const pre = document.getElementById('preloader');
 if (pre) { pre.style.opacity = '0'; pre.style.transition = 'opacity 0.3s'; setTimeout(() => pre.remove(), 300); }
 });
+// Mobile nav toggle
 const toggle = document.querySelector('.mobile-nav-toggle');
 const navbar = document.querySelector('#navbar ul');
 if (toggle && navbar) {
@@ -869,6 +1077,7 @@ toggle.classList.toggle('bi-list');
 toggle.classList.toggle('bi-x');
 });
 }
+// Close mobile nav on link click
 document.querySelectorAll('#navbar a').forEach(link => {
 link.addEventListener('click', () => {
 if (navbar && navbar.classList.contains('mobile-nav-active')) {
