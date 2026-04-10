@@ -155,6 +155,35 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- New Retail & Analytics Blog Posts -->
+  <url>
+    <loc>https://adediranadeyemi.com/blog/data-science-customer-experience.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/data-visualization-retail-analytics.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/key-metrics-retail-success.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/machine-learning-inventory-forecasting.html</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Project Pages -->
   <url>
     <loc>https://adediranadeyemi.com/projects/retail-analysis-global-electronics.html</loc>
