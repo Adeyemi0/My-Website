@@ -116,10 +116,11 @@
 "name": "How much inventory should I keep in stock?",
 "acceptedAnswer": {
 "@type": "Answer",
-"text": "Optimal inventory levels balance stockout risk against holding costs. Use the formula: Safety Stock = (Max Daily Usage × Max Lead Time) - (Average Daily Usage × Average Lead Time). ML models can optimize this dynamically based on demand variability, supplier reliability, and desired service levels."
+"text": "Optimal inventory levels balance stockout risk against holding costs. Use the formula: Safety Stock = (Max Daily Usage x Max Lead Time) - (Average Daily Usage x Average Lead Time). ML models can optimize this dynamically based on demand variability, supplier reliability, and desired service levels."
 }
 }
 ]
+}
 </script>
 <!-- Critical CSS -->
 <style>
@@ -640,9 +641,39 @@ font-size: 0.9rem;
 <noscript><link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
 </head>
 <body>
-<!-- Same header structure as previous articles -->
-<!-- Top Bar, Header, etc. - I'll skip for brevity but include in final file -->
-
+<!-- ======= Top Bar ======= -->
+<section id="topbar" class="d-flex align-items-center">
+<div class="container d-flex justify-content-center justify-content-md-between">
+<div class="contact-info d-flex align-items-center">
+<i class="bi bi-envelope d-flex align-items-center"><a href="mailto:adediranabdulmaleek@gmail.com">adediranabdulmaleek@gmail.com</a></i>
+<i class="bi bi-geo-alt d-flex align-items-center ms-4"><span>Lagos, Nigeria</span></i>
+</div>
+<div class="social-links d-none d-md-flex align-items-center">
+<a href="https://x.com/AdediranAd60922" class="twitter" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank"><i class="bi bi-twitter-x"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a href="https://www.instagram.com/Adeyemi_the_data_analyst" class="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+</div>
+</div>
+</section>
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+<div class="container d-flex align-items-center justify-content-between">
+<div class="logo"><a href="../index.html">ADEYEMI<span>DATA</span></a></div>
+<nav id="navbar" class="navbar" aria-label="Main navigation">
+<ul>
+<li><a class="nav-link" href="../index.html#hero">Home</a></li>
+<li><a class="nav-link" href="../index.html#about">About</a></li>
+<li><a class="nav-link" href="../index.html#featured-services">Services</a></li>
+<li><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
+<li><a class="nav-link active" href="../blog.html">Blog</a></li>
+<li><a class="nav-link" href="../index.html#contact">Let's Talk</a></li>
+</ul>
+<i class="bi bi-list mobile-nav-toggle"></i>
+</nav>
+</div>
+</header>
+<!-- ======= Blog Article ======= -->
 <main id="main" class="blog-main">
 <article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting">
 <div class="container">
@@ -656,7 +687,6 @@ font-size: 0.9rem;
 <li style="color:#0f172a;font-weight:500;">ML Inventory Forecasting</li>
 </ol>
 </nav>
-
 <!-- Article Header -->
 <header class="article-header">
 <div class="article-meta">
@@ -675,7 +705,6 @@ font-size: 0.9rem;
 </div>
 </div>
 </header>
-
 <!-- Article Content -->
 <div class="article-content" itemprop="articleBody">
 <p>You're either losing sales to stockouts or drowning in excess inventory.</p>
@@ -684,7 +713,6 @@ font-size: 0.9rem;
 <p>Most e-commerce businesses forecast inventory using spreadsheets and gut instinct. They look at last month's sales, add 10-20% for "growth," and place orders accordingly.</p>
 <p>This approach fails spectacularly.</p>
 <p class="key-insight">E-commerce businesses using machine learning for inventory forecasting reduce stockouts by 35-50%, decrease excess inventory by 20-35%, and improve forecast accuracy from 60-70% to 85-95%. The difference between guessing and predicting is measured in millions of dollars.</p>
-
 <h2>Why Traditional Inventory Forecasting Fails</h2>
 <p>Traditional forecasting methods — moving averages, exponential smoothing, simple trend analysis — assume the future will look like the past.</p>
 <p>But e-commerce demand doesn't work that way.</p>
@@ -700,10 +728,8 @@ font-size: 0.9rem;
 <li>Forecast at SKU-level granularity</li>
 <li>Account for external factors (weather, holidays, trends)</li>
 </ul>
-
 <h2>The Machine Learning Inventory Forecasting Framework</h2>
 <p>Building an effective ML forecasting system requires a structured approach:</p>
-
 <div class="process-section">
 <div class="process-step">
 <div class="step-number">1</div>
@@ -722,7 +748,6 @@ font-size: 0.9rem;
 <p class="action">Clean the data: handle missing values, remove outliers, normalize formats. This step takes 60-80% of project time but determines model success.</p>
 </div>
 </div>
-
 <div class="process-step">
 <div class="step-number">2</div>
 <div class="step-content">
@@ -739,7 +764,6 @@ font-size: 0.9rem;
 <p class="action">Good feature engineering can improve model accuracy by 15-25%. Domain knowledge is critical here.</p>
 </div>
 </div>
-
 <div class="process-step">
 <div class="step-number">3</div>
 <div class="step-content">
@@ -754,7 +778,6 @@ font-size: 0.9rem;
 <p class="action">Start simple. A well-tuned XGBoost model often outperforms complex neural networks while being easier to interpret and maintain.</p>
 </div>
 </div>
-
 <div class="process-step">
 <div class="step-number">4</div>
 <div class="step-content">
@@ -769,7 +792,6 @@ font-size: 0.9rem;
 <p class="action">A model with 90% accuracy that causes stockouts on your top 20 products is worse than a model with 80% accuracy that protects high-value SKUs.</p>
 </div>
 </div>
-
 <div class="process-step">
 <div class="step-number">5</div>
 <div class="step-content">
@@ -785,13 +807,10 @@ font-size: 0.9rem;
 </div>
 </div>
 </div>
-
 <h2>Choosing the Right ML Model for Inventory Forecasting</h2>
 <p>Not all models are created equal. Here's how to choose:</p>
-
 <div class="model-comparison">
 <h4>Model Comparison by Use Case</h4>
-
 <div class="model-item">
 <h5>XGBoost / LightGBM (Recommended for Most Cases)</h5>
 <p><strong>Best for:</strong> SKU-level forecasting with multiple features (promotions, seasonality, pricing)</p>
@@ -799,7 +818,6 @@ font-size: 0.9rem;
 <p><strong>Pros:</strong> Handles non-linear patterns, fast training, interpretable feature importance, works with moderate data (12+ months)</p>
 <div class="pros">✓ Best balance of accuracy and complexity</div>
 </div>
-
 <div class="model-item">
 <h5>Prophet (Facebook's Time Series Model)</h5>
 <p><strong>Best for:</strong> Products with strong seasonality and holiday effects</p>
@@ -807,7 +825,6 @@ font-size: 0.9rem;
 <p><strong>Pros:</strong> Easy to use, handles missing data well, built-in seasonality detection</p>
 <div class="pros">✓ Great for quick implementation and baseline forecasts</div>
 </div>
-
 <div class="model-item">
 <h5>LSTM Neural Networks</h5>
 <p><strong>Best for:</strong> Massive datasets (1000+ SKUs, 3+ years of data) with complex patterns</p>
@@ -815,7 +832,6 @@ font-size: 0.9rem;
 <p><strong>Pros:</strong> Captures long-term dependencies, handles complex sequences</p>
 <div class="pros">✓ Powerful but requires significant data and expertise</div>
 </div>
-
 <div class="model-item">
 <h5>Ensemble Models</h5>
 <p><strong>Best for:</strong> Mission-critical products where accuracy is paramount</p>
@@ -824,12 +840,9 @@ font-size: 0.9rem;
 <div class="pros">✓ Highest accuracy but more complex to maintain</div>
 </div>
 </div>
-
 <p><strong>Related:</strong> Learn about <a href="key-metrics-retail-success.html" style="color: #0052FF;">key metrics for measuring retail success</a> including inventory turnover and stockout rates.</p>
-
 <h2>Real-World Implementation: A Step-by-Step Example</h2>
 <p>Let's walk through building a forecasting model for an e-commerce fashion retailer:</p>
-
 <div class="stat-strip">
 <div class="stat-card">
 <div class="sv">Step 1</div>
@@ -852,7 +865,6 @@ font-size: 0.9rem;
 <div class="ss">89% accuracy, 42% reduction in stockouts</div>
 </div>
 </div>
-
 <h3>Key Features That Drove Accuracy</h3>
 <ul>
 <li><strong>Lag features:</strong> Sales from 7, 14, 28, and 365 days ago captured weekly and yearly seasonality</li>
@@ -861,16 +873,13 @@ font-size: 0.9rem;
 <li><strong>Competitor pricing:</strong> Relative price position impacted sales velocity</li>
 <li><strong>Social media mentions:</strong> Trending products showed 3-5x demand spikes</li>
 </ul>
-
 <h3>Business Impact</h3>
 <div class="data-callout">
 <p><strong>Before ML:</strong> 68% forecast accuracy, 18% stockout rate, $2.3M in excess inventory</p>
 <p><strong>After ML:</strong> 89% forecast accuracy, 10% stockout rate, $1.5M in excess inventory</p>
 <p class="source">Result: $800K reduction in inventory carrying costs + $1.2M in recovered sales from reduced stockouts = $2M annual impact</p>
 </div>
-
 <h2>Common Challenges and How to Solve Them</h2>
-
 <h3>Challenge 1: Insufficient Historical Data</h3>
 <p><strong>Problem:</strong> You have less than 12 months of data or many new products with no history.</p>
 <p><strong>Solution:</strong></p>
@@ -880,7 +889,6 @@ font-size: 0.9rem;
 <li>Start with simpler models (Prophet) and upgrade as data accumulates</li>
 <li>Use hierarchical forecasting: forecast at category level, then allocate to SKUs</li>
 </ul>
-
 <h3>Challenge 2: Demand Volatility</h3>
 <p><strong>Problem:</strong> Some products have erratic demand patterns that are hard to predict.</p>
 <p><strong>Solution:</strong></p>
@@ -890,7 +898,6 @@ font-size: 0.9rem;
 <li>For erratic items, focus on service level targets rather than point forecasts</li>
 <li>Increase safety stock for high-variability products</li>
 </ul>
-
 <h3>Challenge 3: New Product Launches</h3>
 <p><strong>Problem:</strong> No historical data for new products.</p>
 <p><strong>Solution:</strong></p>
@@ -900,7 +907,6 @@ font-size: 0.9rem;
 <li>Start with conservative forecasts and adjust based on early sales velocity</li>
 <li>Monitor daily in first 30 days and reforecast weekly</li>
 </ul>
-
 <h3>Challenge 4: Promotional Lift</h3>
 <p><strong>Problem:</strong> Promotions create demand spikes that regular models miss.</p>
 <p><strong>Solution:</strong></p>
@@ -910,33 +916,27 @@ font-size: 0.9rem;
 <li>Track cannibalization effects (promotion steals from future periods)</li>
 <li>Include competitor promotion data if available</li>
 </ul>
-
 <h2>Calculating Optimal Inventory Levels</h2>
 <p>Once you have accurate forecasts, calculate optimal inventory levels:</p>
-
 <div class="data-callout">
 <p><strong>Safety Stock Formula:</strong></p>
-<p>Safety Stock = Z-score × √(Lead Time × Demand Variance)</p>
+<p>Safety Stock = Z-score &times; &radic;(Lead Time &times; Demand Variance)</p>
 <p>Where Z-score corresponds to desired service level (1.65 for 95%, 2.33 for 99%)</p>
 </div>
-
 <div class="data-callout">
 <p><strong>Reorder Point:</strong></p>
-<p>ROP = (Average Daily Demand × Lead Time) + Safety Stock</p>
+<p>ROP = (Average Daily Demand &times; Lead Time) + Safety Stock</p>
 </div>
-
 <div class="data-callout">
 <p><strong>Optimal Order Quantity (EOQ):</strong></p>
-<p>EOQ = √((2 × Annual Demand × Order Cost) ÷ Holding Cost)</p>
+<p>EOQ = &radic;((2 &times; Annual Demand &times; Order Cost) &divide; Holding Cost)</p>
 </div>
-
 <p>ML models improve this by:</p>
 <ul>
 <li>Predicting demand variability dynamically instead of using historical averages</li>
 <li>Adjusting safety stock based on forecast confidence intervals</li>
 <li>Optimizing for profit rather than just minimizing stockouts</li>
 </ul>
-
 <h2>Tools and Technologies</h2>
 <p><strong>For model development:</strong></p>
 <ul>
@@ -944,23 +944,19 @@ font-size: 0.9rem;
 <li>R (forecast package, caret)</li>
 <li>Jupyter notebooks for experimentation</li>
 </ul>
-
 <p><strong>For deployment:</strong></p>
 <ul>
 <li>Cloud platforms: AWS SageMaker, Google Cloud AI, Azure ML</li>
 <li>Orchestration: Apache Airflow for scheduled retraining</li>
 <li>Databases: PostgreSQL, Snowflake for data storage</li>
 </ul>
-
 <p><strong>For monitoring:</strong></p>
 <ul>
 <li>MLflow for model tracking</li>
 <li>Great Expectations for data quality</li>
 <li>Custom dashboards in Power BI or Tableau</li>
 </ul>
-
 <p><strong>Related:</strong> See my <a href="../index.html#portfolio" style="color: #0052FF;">portfolio projects</a> for examples of inventory forecasting dashboards and implementations.</p>
-
 <h2>The Bottom Line</h2>
 <p>Inventory forecasting without machine learning is guessing. You might get lucky sometimes, but you'll never optimize working capital or maximize sales.</p>
 <p>Machine learning gives you the ability to:</p>
@@ -971,13 +967,11 @@ font-size: 0.9rem;
 <li>Forecast at SKU level with automatic updates</li>
 <li>Respond to changing conditions in real-time</li>
 </ul>
-
 <div class="final-insight">
 <p>The question isn't whether you can afford to implement ML forecasting. It's whether you can afford not to.</p>
 <p><strong>Your competitors are already using machine learning to optimize inventory. Every day you rely on spreadsheets and gut instinct, you're losing sales to stockouts and tying up cash in excess inventory. Start with one product category. Prove value. Then scale.</strong></p>
 </div>
 </div>
-
 <!-- Article CTA -->
 <div class="article-cta">
 <div class="cta-content">
@@ -986,14 +980,102 @@ font-size: 0.9rem;
 <a href="../index.html#contact" class="btn-cta">Let's Optimize Your Inventory <i class="bi bi-arrow-right"></i></a>
 </div>
 </div>
-
-<!-- Share and Related Articles sections similar to previous articles -->
-<!-- I'll include the full structure in the final file -->
-
+<!-- Share -->
+<div class="article-share">
+<h4>Share this article</h4>
+<div class="share-buttons">
+<a href="https://x.com/intent/tweet?text=Building%20Machine%20Learning%20Systems%20for%20Inventory%20Forecasting%20in%20E-Commerce&url=https://adediranadeyemi.com/blog/machine-learning-inventory-forecasting.html&via=AdediranAd60922" target="_blank" class="share-btn twitter" rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+<i class="bi bi-twitter-x"></i> X (Twitter)
+</a>
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adediranadeyemi.com/blog/machine-learning-inventory-forecasting.html" target="_blank" class="share-btn linkedin" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+<i class="bi bi-linkedin"></i> LinkedIn
+</a>
+</div>
+</div>
+<!-- Related Articles -->
+<div class="related-articles">
+<h3>Continue Reading</h3>
+<div class="related-grid">
+<a href="key-metrics-retail-success.html" class="related-card">
+<div class="related-tag">Retail Analytics</div>
+<h4>Key Metrics for Measuring Retail Business Success</h4>
+<p>Discover the essential KPIs every retail business should track to measure performance and drive growth.</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="data-visualization-retail-analytics.html" class="related-card">
+<div class="related-tag">Data Visualization</div>
+<h4>Most Effective Data Visualization Tools for Retail Analytics</h4>
+<p>Compare Power BI, Tableau, and other tools to build dashboards that drive faster, better retail decisions.</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+<a href="data-science-customer-experience.html" class="related-card">
+<div class="related-tag">Customer Analytics</div>
+<h4>How to Use Data Science to Optimize Customer Experience</h4>
+<p>Learn how to use data science to personalize experiences, predict behavior, and increase customer lifetime value.</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+</div>
+</div>
+</div>
 </article>
 </main>
-
-<!-- Footer (same as previous articles) -->
-
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="footer-top">
+<div class="container">
+<div class="row">
+<div class="col-lg-4 col-md-6 footer-contact">
+<h3>Adeyemi<span>Data</span></h3>
+<p>
+Turning Data Into Revenue<br>
+Lagos, Nigeria (Remote Globally)<br><br>
+<strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+<strong>Email:</strong> <a href="mailto:adediranabdulmaleek@gmail.com">adediranabdulmaleek@gmail.com</a>
+</p>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>Quick Links</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#hero">Home</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#about">About</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Services</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#portfolio">Portfolio</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#contact">Let's Talk</a></li>
+</ul>
+</div>
+<div class="col-lg-2 col-md-6 footer-links">
+<h4>What I Do</h4>
+<ul>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Predict Churn</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Track What Works</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Understand Customers</a></li>
+<li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Automate Data</a></li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-6 footer-links">
+<h4>Connect With Me</h4>
+<p>Data tactics and project updates</p>
+<div class="social-links mt-3">
+<a href="https://x.com/AdediranAd60922" class="twitter" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank"><i class="bi bi-twitter-x"></i></a>
+<a href="https://www.linkedin.com/in/adediran-adeyemi" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a href="https://www.instagram.com/Adeyemi_the_data_analyst" class="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+<a href="https://wa.me/+2348162735399" class="whatsapp" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a href="https://medium.com/@xmine4346" class="medium" aria-label="Medium Blog" rel="noopener noreferrer" target="_blank"><i class="bi bi-medium"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container py-4">
+<div class="copyright">
+&copy; 2026 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved | Turning Data Into Decisions
+</div>
+</div>
+</footer>
+<!-- Back to Top -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
+<!-- JavaScript -->
+<script src="../assets/js/main.js" defer></script>
 </body>
 </html>
