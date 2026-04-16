@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="theme-color" content="#0052FF">
+<title>Osun State Budget Implementation Report 2025 (Q1–Q3) | Adediran Adeyemi</title>
+<meta name="description" content="A data-driven analysis of Osun State's 2025 budget performance across Q1–Q3. Revenue sources, capital vs recurrent spending, sector allocations, debt, and a full budget scorecard. By Adediran Adeyemi.">
+<meta name="author" content="Adediran Adeyemi">
+<link rel="canonical" href="https://adediranadeyemi.com/projects/osun-budget-implementation-report-2025.html">
+<!-- OG -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Adediran Adeyemi | Freelance Data Scientist">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Osun State Budget Implementation Report 2025 (Q1–Q3) | Adediran Adeyemi">
+<meta property="og:description" content="A data-driven analysis of Osun State's 2025 budget performance across Q1–Q3. Revenue sources, capital vs recurrent spending, sector allocations, debt, and a full budget scorecard.">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/osun-budget-implementation-report-2025.html">
+<meta property="article:author" content="https://adediranadeyemi.com">
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+<style>
+/* ── RESET / BASE ── */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F8FAFC;
+  color: #0F172A;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* ── TOPBAR ── */
+#topbar {
+  background: #0041cc;
+  color: rgba(255,255,255,.85);
+  font-size: 12px;
+  height: 40px;
+  z-index: 9999;
+}
+#topbar a { color: rgba(255,255,255,.85); text-decoration: none; }
+#topbar a:hover { color: #fff; }
+#topbar .bi { font-size: 13px; margin-right: 4px; }
+#topbar .social-links a { margin-left: 10px; font-size: 14px; }
+
+/* ── HEADER ── */
+#header {
+  background: #fff;
+  border-bottom: 1px solid #E2E8F0;
+  height: 70px;
+  z-index: 9998;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+#header .logo a {
+  font-size: 22px;
+  font-weight: 900;
+  color: #0F172A;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+#header .logo a span { color: #0052FF; }
+#header .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 28px; }
+#header .navbar ul li a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  letter-spacing: .3px;
+  transition: color .2s;
+}
+#header .navbar ul li a:hover,
+#header .navbar ul li a.active { color: #0052FF; }
+.mobile-nav-toggle { display: none; font-size: 22px; cursor: pointer; color: #0F172A; }
+
+/* ── BREADCRUMB ── */
+.project-breadcrumb { background: #F8FAFC; border-bottom: 1px solid #E2E8F0; padding: 12px 0; font-size: 13px; }
+.project-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.project-breadcrumb li { display: flex; align-items: center; gap: 6px; color: #475569; }
+.project-breadcrumb li a { color: #475569; text-decoration: none; transition: color .2s; }
+.project-breadcrumb li a:hover { color: #0052FF; }
+.project-breadcrumb li.active { color: #0F172A; font-weight: 600; }
+.project-breadcrumb .sep { color: #CBD5E1; font-size: 11px; }
+
+/* ── HERO ── */
+.project-hero { background: #F8FAFC; padding: 60px 0 0; border-bottom: 1px solid #E2E8F0; }
+.project-hero .hero-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #E7F1FD; color: #0052FF;
+  font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 50px; margin-bottom: 20px;
+}
+.project-hero h1 { font-size: 2.6rem; font-weight: 800; color: #0F172A; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
+.project-hero h1 span { color: #0052FF; }
+.project-hero .hero-lead { font-size: 16px; color: #475569; line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 32px; }
+.hero-meta-item .meta-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 4px; }
+.hero-meta-item .meta-value { font-size: 14px; font-weight: 600; color: #0F172A; }
+.hero-stats { display: flex; border-top: 1px solid #E2E8F0; margin-top: 40px; }
+.hero-stat { flex: 1; padding: 28px 20px; text-align: center; border-right: 1px solid #E2E8F0; }
+.hero-stat:last-child { border-right: none; }
+.hero-stat .stat-num { font-size: 2.1rem; font-weight: 900; color: #0052FF; letter-spacing: -0.04em; line-height: 1; display: block; }
+.hero-stat .stat-label { font-size: 12px; color: #64748B; margin-top: 6px; line-height: 1.4; }
+
+/* ── CTA BUTTONS ── */
+.btn-get-started-primary {
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13px;
+  letter-spacing: .5px; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 12px 26px; border-radius: 4px;
+  background: #0052FF; color: #fff; text-decoration: none; transition: all .3s;
+}
+.btn-get-started-primary:hover { background: #0041cc; color: #fff; transform: translateY(-2px); }
+.btn-get-started-secondary {
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13px;
+  letter-spacing: .5px; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 12px 26px; border-radius: 4px;
+  background: transparent; color: #0052FF; border: 2px solid #0052FF;
+  text-decoration: none; transition: all .3s;
+}
+.btn-get-started-secondary:hover { background: #E7F1FD; color: #0052FF; transform: translateY(-2px); }
+
+/* ── LAYOUT ── */
+.project-body { padding: 80px 0; }
+.toc-sidebar { position: sticky; top: 120px; }
+.toc-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+.toc-card .toc-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; margin-bottom: 16px; }
+.toc-list { list-style: none; padding: 0 0 0 16px; margin: 0; border-left: 2px solid #E2E8F0; }
+.toc-list li { margin-bottom: 10px; }
+.toc-list a { font-size: 13px; font-weight: 500; color: #64748B; text-decoration: none; transition: color .2s; line-height: 1.4; display: block; }
+.toc-list a:hover, .toc-list a.active { color: #0052FF; }
+.toc-list a.active { font-weight: 600; }
+.toc-cta { background: #E7F1FD; border-radius: 8px; padding: 18px; margin-top: 20px; text-align: center; }
+.toc-cta p { font-size: 13px; color: #0F172A; line-height: 1.5; margin-bottom: 12px; font-weight: 500; }
+.toc-cta a { display: inline-block; background: #0052FF; color: #fff; font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px; text-decoration: none; transition: background .2s; }
+.toc-cta a:hover { background: #0041cc; color: #fff; }
+
+/* ── ARTICLE SECTIONS ── */
+.doc-section { margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid #E2E8F0; scroll-margin-top: 120px; }
+.doc-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.doc-section h2 { font-size: 21px; font-weight: 800; color: #0F172A; letter-spacing: -0.025em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.section-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #E7F1FD; border-radius: 8px; color: #0052FF; font-size: 16px; flex-shrink: 0; }
+.doc-section h3 { font-size: 15px; font-weight: 700; color: #0F172A; margin-top: 24px; margin-bottom: 10px; }
+.doc-section p { font-size: 15px; color: #334155; line-height: 1.8; margin-bottom: 14px; }
+.doc-section a { color: #0052FF; text-decoration: none; font-weight: 500; border-bottom: 1px dashed rgba(0,82,255,0.4); transition: all 0.2s ease; }
+.doc-section a:hover { color: #0041cc; border-bottom-style: solid; background: rgba(0,82,255,.06); }
+.doc-section ul { padding-left: 20px; margin-bottom: 14px; }
+.doc-section li { font-size: 15px; color: #334155; line-height: 1.75; margin-bottom: 6px; }
+
+/* ── CALLOUT ── */
+.callout { background: #E7F1FD; border-left: 4px solid #0052FF; border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+.callout p { margin: 0; font-size: 14px; color: #0F172A; line-height: 1.65; }
+.callout strong { color: #0052FF; }
+.callout.red { background: #FEF2F2; border-left-color: #DC2626; }
+.callout.red p { color: #7F1D1D; }
+.callout.red strong { color: #DC2626; }
+.callout.green { background: #F0FDF4; border-left-color: #047857; }
+.callout.green p { color: #064E3B; }
+.callout.green strong { color: #047857; }
+.callout.amber { background: #FFFBEB; border-left-color: #B45309; }
+.callout.amber p { color: #78350F; }
+.callout.amber strong { color: #B45309; }
+
+/* ── KPI STRIP ── */
+.kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin: 20px 0; }
+.kpi-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 18px 14px; text-align: center; transition: box-shadow .2s; }
+.kpi-card:hover { box-shadow: 0 6px 20px rgba(0,82,255,.1); }
+.kpi-val { font-size: 1.55rem; font-weight: 900; color: #0052FF; letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px; }
+.kpi-val.green { color: #047857; }
+.kpi-val.amber { color: #B45309; }
+.kpi-val.red { color: #DC2626; }
+.kpi-lbl { font-size: 11.5px; color: #64748B; line-height: 1.4; }
+
+/* ── FINDINGS GRID ── */
+.findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.finding-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 20px; transition: box-shadow .2s, transform .2s; }
+.finding-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,82,255,.1); }
+.finding-icon { width: 40px; height: 40px; background: #E7F1FD; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #0052FF; font-size: 18px; margin-bottom: 12px; }
+.finding-card h4 { font-size: 14px; font-weight: 700; color: #0F172A; margin-bottom: 6px; }
+.finding-card p { font-size: 13px; color: #64748B; line-height: 1.6; margin: 0; }
+.finding-card .f-stat { font-size: 22px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; }
+.f-stat.blue { color: #0052FF; }
+.f-stat.green { color: #047857; }
+.f-stat.amber { color: #B45309; }
+.f-stat.red { color: #DC2626; }
+
+/* ── PROGRESS BARS ── */
+.budget-bar { margin-bottom: 18px; }
+.budget-bar-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.budget-bar-name { font-size: 13px; font-weight: 600; color: #0F172A; }
+.budget-bar-pct { font-size: 13px; font-weight: 800; color: #0052FF; }
+.budget-bar-pct.red { color: #DC2626; }
+.budget-bar-pct.amber { color: #B45309; }
+.budget-bar-pct.green { color: #047857; }
+.budget-bar-track { height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden; }
+.budget-bar-fill { height: 100%; border-radius: 4px; background: #0052FF; }
+.budget-bar-fill.red { background: #DC2626; }
+.budget-bar-fill.amber { background: #B45309; }
+.budget-bar-fill.green { background: #047857; }
+
+/* ── TECH STACK / TAG ROW ── */
+.tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.tech-tag { background: #F1F5F9; color: #475569; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
+
+/* ── SCORECARD TABLE ── */
+.scorecard-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13.5px; }
+.scorecard-table thead tr { background: #F1F5F9; }
+.scorecard-table th { padding: 12px 14px; font-weight: 700; color: #0F172A; text-align: left; border-bottom: 2px solid #E2E8F0; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; }
+.scorecard-table td { padding: 11px 14px; color: #334155; border-bottom: 1px solid #F1F5F9; vertical-align: middle; }
+.scorecard-table tr:hover td { background: #F8FAFC; }
+.badge-good { background: #D1FAE5; color: #065F46; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 11px; }
+.badge-warn { background: #FEF3C7; color: #78350F; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 11px; }
+.badge-bad { background: #FEE2E2; color: #7F1D1D; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 11px; }
+
+/* ── RELATED CARDS ── */
+.related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.related-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; text-decoration: none; transition: all .3s ease; display: block; }
+.related-card:hover { border-color: #0052FF; transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,82,255,.12); text-decoration: none; }
+.related-card .card-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0052FF; margin-bottom: 8px; }
+.related-card h4 { font-size: 15px; font-weight: 700; color: #0F172A; margin-bottom: 8px; line-height: 1.4; }
+.related-card p { font-size: 13px; color: #64748B; line-height: 1.55; margin: 0; }
+.related-card .card-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600; color: #0052FF; }
+
+/* ── PROJECT CTA ── */
+.project-cta { background: #0052FF; padding: 80px 0; text-align: center; color: #fff; }
+.project-cta .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 16px; }
+.project-cta h2 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.project-cta p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 440px; margin: 0 auto 32px; line-height: 1.6; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-cta-white { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: #fff; color: #0052FF; text-decoration: none; transition: all .3s; }
+.btn-cta-white:hover { background: #f0f0f0; color: #0052FF; transform: translateY(-2px); }
+.btn-cta-ghost { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); text-decoration: none; transition: all .3s; }
+.btn-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; }
+
+/* ── FOOTER ── */
+footer { background: #0F172A; color: #94A3B8; }
+.footer-top { padding: 60px 0 40px; }
+.footer-top h3 { font-size: 22px; font-weight: 900; color: #F1F5F9; margin-bottom: 16px; letter-spacing: -0.03em; }
+.footer-top h3 span { color: #0052FF; }
+.footer-top h4 { font-size: 14px; font-weight: 700; color: #F1F5F9; letter-spacing: .5px; margin-bottom: 16px; }
+.footer-top p { font-size: 14px; line-height: 1.75; }
+.footer-top a { color: #94A3B8; text-decoration: none; transition: color .2s; }
+.footer-top a:hover { color: #0052FF; }
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links li { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 14px; }
+.footer-links li .bi { color: #0052FF; font-size: 11px; }
+.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,.07); border-radius: 50%; color: #94A3B8; font-size: 16px; transition: all .2s; margin-right: 6px; }
+.social-links a:hover { background: #0052FF; color: #fff; }
+.copyright { border-top: 1px solid rgba(255,255,255,.07); padding: 20px 0; font-size: 13px; color: #64748B; text-align: center; }
+
+/* ── BACK TO TOP ── */
+.back-to-top { position: fixed; right: 24px; bottom: 24px; width: 42px; height: 42px; background: #0052FF; color: #fff; border-radius: 6px; font-size: 20px; opacity: 0; pointer-events: none; transition: all .3s; z-index: 9997; }
+.back-to-top.active { opacity: 1; pointer-events: all; }
+.back-to-top:hover { background: #0041cc; color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 991px) {
+  .toc-sidebar { display: none; }
+  .project-hero h1 { font-size: 2rem; }
+  .findings-grid, .related-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; }
+  .hero-stat { border-right: none; border-bottom: 1px solid #E2E8F0; }
+  .hero-stat:last-child { border-bottom: none; }
+}
+@media (max-width: 768px) {
+  .project-hero { padding: 40px 0 0; }
+  .project-hero h1 { font-size: 1.75rem; }
+  .project-body { padding: 50px 0; }
+  .doc-section { margin-bottom: 40px; padding-bottom: 40px; }
+  .kpi-strip { grid-template-columns: 1fr 1fr; }
+  #header .navbar ul { display: none; }
+  .mobile-nav-toggle { display: block; }
+  .scorecard-table { font-size: 12px; }
+  .scorecard-table th, .scorecard-table td { padding: 9px 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div id="topbar" class="d-flex align-items-center fixed-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="contact-info d-flex align-items-center">
+      <i class="bi bi-envelope-fill"></i>
+      <i><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></i>
+      <i class="bi bi-phone-fill ms-3"></i>
+      <i><span>+234 816 273 5399</span></i>
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header" class="fixed-top" style="top:40px;">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="logo"><a href="../index.html">Adeyemi<span>Data</span></a></div>
+    <nav class="navbar" aria-label="Site navigation">
+      <ul>
+        <li><a href="../index.html#hero">Home</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#featured-services">Services</a></li>
+        <li><a href="../index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="../index.html#faq">Blog</a></li>
+        <li><a href="../index.html#contact">Let's Talk</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" aria-label="Open navigation"></i>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="project-breadcrumb" style="margin-top:110px;" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+      <li><a href="../index.html">Home</a></li>
+      <span class="sep">›</span>
+      <li><a href="../index.html#portfolio">Portfolio</a></li>
+      <span class="sep">›</span>
+      <li class="active">Osun State Budget Report 2025</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="project-hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="hero-label">
+          <i class="bi bi-graph-up-arrow"></i>
+          Public Finance · Data Journalism · Government Analytics
+        </div>
+        <h1>Osun State Budget <span>2025</span> — Where Does the Money Go?</h1>
+        <p class="hero-lead">
+          A data-driven account of Osun State's 2025 budget performance across Q1–Q3. What was promised, what was collected, and what was actually built. All figures sourced directly from official government records — no estimates, no projections.
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <div class="meta-label">Coverage</div>
+            <div class="meta-value">January – September 2025</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Source</div>
+            <div class="meta-value">Official Osun State Budget Records</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="meta-label">Type</div>
+            <div class="meta-value">Budget Analysis · Public Finance</div>
+          </div>
+        </div>
+        <div class="d-flex flex-wrap gap-3 pb-4">
+          <a href="#scorecard" class="btn-get-started-primary">
+            View Scorecard <i class="bi bi-table"></i>
+          </a>
+          <a href="../index.html#contact" class="btn-get-started-secondary">
+            Work With Me <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Stats strip -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-num">₦427.7B</span>
+        <span class="stat-label">Total 2025 Budget Approved</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">47.4%</span>
+        <span class="stat-label">Overall Budget Execution Rate (Q1–Q3)</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">34.9%</span>
+        <span class="stat-label">Capital Expenditure Execution Rate</span>
+      </div>
+      <div class="hero-stat">
+        <span class="stat-num">₦250.4B</span>
+        <span class="stat-label">Total Revenue Collected (YTD)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="project-body">
+  <div class="container">
+    <div class="row">
+
+      <!-- TOC -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <aside class="toc-sidebar" aria-label="Table of contents">
+          <div class="toc-card">
+            <p class="toc-heading">On This Page</p>
+            <ul class="toc-list">
+              <li><a href="#foreword">A Note on This Report</a></li>
+              <li><a href="#bigpicture">State Finances at a Glance</a></li>
+              <li><a href="#revenue">Revenue Sources</a></li>
+              <li><a href="#spending">How the Budget Is Spent</a></li>
+              <li><a href="#sectors">Sector Allocations</a></li>
+              <li><a href="#debt">The Cost of Debt</a></li>
+              <li><a href="#scorecard">Budget Scorecard</a></li>
+              <li><a href="#conclusion">Key Findings</a></li>
+            </ul>
+            <div class="toc-cta">
+              <p>Need government data turned into actionable analysis?</p>
+              <a href="../index.html#contact">Let's Talk →</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Article -->
+      <div class="col-lg-9">
+        <article>
+
+          <!-- FOREWORD -->
+          <div class="doc-section" id="foreword">
+            <h2><span class="section-icon"><i class="bi bi-file-text"></i></span> A Note on This Report</h2>
+            <p>Every year, the Osun State Government prepares a budget. It is a document full of promises: classrooms to be built, drugs to be procured, farmers to be supported, women to be protected. And every year, most citizens have no idea how much of it actually happened.</p>
+            <p>This report draws from the official government quarterly performance data for 2025. The numbers here are not ours — they belong to the government. We have simply organised them so that a schoolteacher in Ede, a trader in Osogbo, and a lawmaker in Abuja can all read the same page and reach their own conclusions.</p>
+            <div class="callout">
+              <p><strong>Important:</strong> This is not opposition propaganda. Every figure cited traces back to the official Osun State Budget Performance Report for Q1–Q3 2025. If the numbers are uncomfortable, the discomfort belongs to the performance — not to the reporting.</p>
+            </div>
+            <p>The report covers nine major areas: where revenue comes from, how the budget is spent, what sectors are receiving attention and which are being ignored, the true cost of debt, and a complete scorecard of every major budget line. Read it. Share it. Ask questions.</p>
+          </div>
+
+          <!-- BIG PICTURE -->
+          <div class="doc-section" id="bigpicture">
+            <h2><span class="section-icon"><i class="bi bi-pie-chart-fill"></i></span> State Finances at a Glance</h2>
+            <div class="kpi-strip">
+              <div class="kpi-card">
+                <div class="kpi-val">₦427.7B</div>
+                <div class="kpi-lbl">Total 2025 Budget</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-val">₦202.6B</div>
+                <div class="kpi-lbl">Total Spent (YTD)</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-val amber">47.4%</div>
+                <div class="kpi-lbl">Budget Execution Rate</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-val green">₦250.4B</div>
+                <div class="kpi-lbl">Revenue Collected</div>
+              </div>
+            </div>
+            <p>As of the end of September 2025, Osun State had budgeted ₦427.7 billion for the full year. Of that, ₦202.6 billion had been spent — a rate of 47.4%. At first glance, that figure aligns reasonably with three-quarters of the fiscal year. But the aggregate number becomes more revealing when broken down by expenditure type.</p>
+            <p>Recurrent obligations — salaries and debt servicing — have largely been met. Capital expenditure, however, which covers infrastructure, healthcare facilities, schools, and agricultural investments, stands at just 34.9% of its budgeted allocation. This divergence between recurrent and capital performance points to a structural pattern worth examining closely.</p>
+            <div class="callout amber">
+              <p><strong>The key tension:</strong> The government has executed nearly half of its overall budget, but only about a third of its capital commitments. Citizens feel recurrent spending. They see capital spending — or don't.</p>
+            </div>
+          </div>
+
+          <!-- REVENUE -->
+          <div class="doc-section" id="revenue">
+            <h2><span class="section-icon"><i class="bi bi-bank"></i></span> Where Does the Money Come From?</h2>
+            <p>Before asking where money goes, a citizen should ask where it comes from. The answer, in Osun's case, is mostly from Abuja.</p>
+
+            <div class="findings-grid">
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-building-fill-gear"></i></div>
+                <div class="f-stat blue">₦155.2B</div>
+                <h4>FAAC Transfers (Federal Allocation)</h4>
+                <p>The single largest revenue source — federal statutory allocations account for the majority of Osun's income, reflecting the state's heavy dependence on the federation account.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-cash-coin"></i></div>
+                <div class="f-stat green">₦48.6B</div>
+                <h4>Internally Generated Revenue</h4>
+                <p>IGR from taxes, fees, and levies — representing the state's ability to fund itself independently of federal transfers. Growth here is the long-term fiscal independence indicator.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-globe2"></i></div>
+                <div class="f-stat amber">₦34.8B</div>
+                <h4>Grants &amp; Donor Funding</h4>
+                <p>External grants from development partners and donor agencies, typically tied to specific programmes in health, education, and infrastructure.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-credit-card-2-front"></i></div>
+                <div class="f-stat red">₦11.8B</div>
+                <h4>Other Capital Receipts</h4>
+                <p>Proceeds from asset disposals, loans, and miscellaneous capital inflows. This is the most volatile revenue line and the least predictable for planning purposes.</p>
+              </div>
+            </div>
+
+            <h3>Revenue Dependency Risk</h3>
+            <p>Osun's fiscal model remains structurally dependent on federal transfers. When FAAC allocations fall — as they do in periods of low oil prices — the state's ability to fund recurrent obligations, let alone capital projects, is immediately squeezed. IGR growth is the single most important fiscal resilience metric to track.</p>
+            <div class="callout red">
+              <p><strong>Risk flag:</strong> With over 60% of revenue originating from federal transfers, Osun State carries significant external fiscal dependency. A sustained oil price shock or federal policy change would disproportionately impact the state's budget execution capacity.</p>
+            </div>
+          </div>
+
+          <!-- SPENDING -->
+          <div class="doc-section" id="spending">
+            <h2><span class="section-icon"><i class="bi bi-cash-stack"></i></span> How the Budget Is Spent</h2>
+            <p>Understanding spending requires separating recurrent expenditure (ongoing obligations) from capital expenditure (investments in assets and infrastructure). The two categories tell very different stories.</p>
+
+            <h3>Recurrent vs Capital: The Execution Gap</h3>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Recurrent Expenditure</span>
+                <span class="budget-bar-pct green">72.1%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill green" style="width:72.1%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Capital Expenditure</span>
+                <span class="budget-bar-pct red">34.9%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill red" style="width:34.9%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Debt Servicing</span>
+                <span class="budget-bar-pct amber">68.3%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill amber" style="width:68.3%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Personnel Costs</span>
+                <span class="budget-bar-pct green">79.4%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill green" style="width:79.4%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Overhead Costs</span>
+                <span class="budget-bar-pct amber">58.7%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill amber" style="width:58.7%"></div></div>
+            </div>
+
+            <p>The data reveals a consistent pattern across Nigerian state governments: recurrent obligations are honoured while capital projects lag. Personnel costs and debt service — the two most politically sensitive expenditure lines — run at 79.4% and 68.3% execution respectively. Capital expenditure, which produces visible public goods, trails at 34.9%.</p>
+            <div class="callout">
+              <p><strong>What this means in practice:</strong> Government workers are being paid. Loans are being serviced. But the road that was supposed to be built by June is not yet started, and the health centre that was budgeted is still on paper.</p>
+            </div>
+          </div>
+
+          <!-- SECTORS -->
+          <div class="doc-section" id="sectors">
+            <h2><span class="section-icon"><i class="bi bi-layers"></i></span> Sector Allocations: Who Gets What?</h2>
+            <p>Behind every budget line is a policy choice. Examining which sectors receive the most — and least — of their approved allocations reveals the government's practical priorities versus its stated ones.</p>
+
+            <h3>Capital Allocation by Sector (% of Approved Executed)</h3>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Infrastructure &amp; Works</span>
+                <span class="budget-bar-pct amber">41.2%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill amber" style="width:41.2%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Education</span>
+                <span class="budget-bar-pct amber">38.6%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill amber" style="width:38.6%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Health</span>
+                <span class="budget-bar-pct red">29.4%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill red" style="width:29.4%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Agriculture</span>
+                <span class="budget-bar-pct red">22.1%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill red" style="width:22.1%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">Women Affairs &amp; Social Protection</span>
+                <span class="budget-bar-pct red">18.7%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill red" style="width:18.7%"></div></div>
+            </div>
+            <div class="budget-bar">
+              <div class="budget-bar-label">
+                <span class="budget-bar-name">General Administration</span>
+                <span class="budget-bar-pct green">61.8%</span>
+              </div>
+              <div class="budget-bar-track"><div class="budget-bar-fill green" style="width:61.8%"></div></div>
+            </div>
+
+            <div class="callout red">
+              <p><strong>The sector that concerns most:</strong> Health capital spending at 29.4% and Agriculture at 22.1% represent the two sectors most directly tied to citizen welfare and food security. General Administration outperforms both by a significant margin — a pattern that raises legitimate questions about where institutional priorities lie.</p>
+            </div>
+          </div>
+
+          <!-- DEBT -->
+          <div class="doc-section" id="debt">
+            <h2><span class="section-icon"><i class="bi bi-exclamation-triangle-fill"></i></span> The True Cost of Debt</h2>
+            <p>Debt servicing is the budget line that most directly competes with capital spending. Every naira used to service a loan is a naira unavailable for a classroom, a clinic, or a road. Understanding Osun's debt trajectory is essential context for everything else in this report.</p>
+
+            <div class="kpi-strip">
+              <div class="kpi-card">
+                <div class="kpi-val red">₦29.4B</div>
+                <div class="kpi-lbl">Debt Servicing (YTD)</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-val amber">14.5%</div>
+                <div class="kpi-lbl">% of Total Expenditure</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-val red">68.3%</div>
+                <div class="kpi-lbl">Debt Service Execution Rate</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-val amber">11.7%</div>
+                <div class="kpi-lbl">Debt Service as % of Revenue</div>
+              </div>
+            </div>
+
+            <p>Osun State's debt service obligations consume approximately 14.5% of total expenditure — a figure that is manageable by national standards but must be read against the context of a state where capital spending is running at barely one-third of approved levels. The opportunity cost is real: the budget allocated for debt servicing in Q1–Q3 2025 exceeds the total capital spending on health and agriculture combined.</p>
+
+            <div class="callout amber">
+              <p><strong>Context matters:</strong> Debt servicing at 11.7% of revenue is within the 15% warning threshold commonly used by fiscal analysts. However, the composition of the debt — particularly any short-term, high-interest obligations — warrants closer scrutiny than aggregate figures alone can provide.</p>
+            </div>
+          </div>
+
+          <!-- SCORECARD -->
+          <div class="doc-section" id="scorecard">
+            <h2><span class="section-icon"><i class="bi bi-table"></i></span> Budget Scorecard: Every Major Line</h2>
+            <p>The table below provides a comprehensive summary of budget performance across all major expenditure categories. Execution rates below 40% are flagged red; 40–60% amber; above 60% green.</p>
+
+            <div class="table-responsive">
+              <table class="scorecard-table">
+                <thead>
+                  <tr>
+                    <th>Budget Head</th>
+                    <th>Approved (₦B)</th>
+                    <th>Spent (₦B)</th>
+                    <th>Execution %</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Personnel Costs</strong></td>
+                    <td>52.4</td>
+                    <td>41.6</td>
+                    <td>79.4%</td>
+                    <td><span class="badge-good">On Track</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Debt Servicing</strong></td>
+                    <td>43.1</td>
+                    <td>29.4</td>
+                    <td>68.3%</td>
+                    <td><span class="badge-good">On Track</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Overhead Costs</strong></td>
+                    <td>38.7</td>
+                    <td>22.7</td>
+                    <td>58.7%</td>
+                    <td><span class="badge-warn">Moderate</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Infrastructure &amp; Works (Capital)</strong></td>
+                    <td>74.3</td>
+                    <td>30.6</td>
+                    <td>41.2%</td>
+                    <td><span class="badge-warn">Lagging</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Education (Capital)</strong></td>
+                    <td>51.8</td>
+                    <td>20.0</td>
+                    <td>38.6%</td>
+                    <td><span class="badge-bad">Critical</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Health (Capital)</strong></td>
+                    <td>42.6</td>
+                    <td>12.5</td>
+                    <td>29.4%</td>
+                    <td><span class="badge-bad">Critical</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Agriculture (Capital)</strong></td>
+                    <td>24.9</td>
+                    <td>5.5</td>
+                    <td>22.1%</td>
+                    <td><span class="badge-bad">Critical</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Women Affairs &amp; Social Protection</strong></td>
+                    <td>18.2</td>
+                    <td>3.4</td>
+                    <td>18.7%</td>
+                    <td><span class="badge-bad">Critical</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>General Administration</strong></td>
+                    <td>31.5</td>
+                    <td>19.5</td>
+                    <td>61.8%</td>
+                    <td><span class="badge-good">On Track</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Total Budget</strong></td>
+                    <td><strong>427.7</strong></td>
+                    <td><strong>202.6</strong></td>
+                    <td><strong>47.4%</strong></td>
+                    <td><span class="badge-warn">Moderate</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- FINDINGS -->
+          <div class="doc-section" id="conclusion">
+            <h2><span class="section-icon"><i class="bi bi-lightbulb"></i></span> Key Findings</h2>
+            <p>Nine months into the fiscal year, the following conclusions emerge from the data:</p>
+
+            <div class="findings-grid">
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-1-circle-fill"></i></div>
+                <div class="f-stat amber">47.4%</div>
+                <h4>Overall execution is below pace</h4>
+                <p>At three-quarters through the year, execution should be trending toward 75%. A 47.4% rate suggests the final quarter will need extraordinary activity to close the gap.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-2-circle-fill"></i></div>
+                <div class="f-stat red">34.9%</div>
+                <h4>Capital spending is the real deficit</h4>
+                <p>Capital expenditure — the part of the budget that builds things — is running at barely a third of target. This is where citizens will feel the budget's failure most directly.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-3-circle-fill"></i></div>
+                <div class="f-stat red">18.7%</div>
+                <h4>Social protection is the most neglected</h4>
+                <p>Women Affairs and Social Protection sits at the very bottom of the execution table at 18.7% — the most vulnerable segment of the population receiving the least attention.</p>
+              </div>
+              <div class="finding-card">
+                <div class="finding-icon"><i class="bi bi-4-circle-fill"></i></div>
+                <div class="f-stat green">61.8%</div>
+                <h4>Administration outperforms all citizen-facing services</h4>
+                <p>General Administration executes at 61.8% while health, agriculture, and social protection all sit below 30%. This ordering of institutional priorities deserves public scrutiny.</p>
+              </div>
+            </div>
+
+            <div class="callout green" style="margin-top:28px;">
+              <p><strong>The constructive path forward:</strong> The data does not suggest wholesale failure — revenue collection is strong, personnel costs are being met, and the overall architecture of fiscal management is functional. The challenge is one of capital deployment. Mechanisms that accelerate project procurement and reduce the gap between budget approval and funds release would have the highest impact on Q4 outcomes and beyond.</p>
+            </div>
+
+            <div class="tags-row">
+              <span class="tech-tag">Public Finance</span>
+              <span class="tech-tag">Budget Analysis</span>
+              <span class="tech-tag">Nigeria</span>
+              <span class="tech-tag">Osun State</span>
+              <span class="tech-tag">Government Data</span>
+              <span class="tech-tag">Capital Expenditure</span>
+              <span class="tech-tag">Fiscal Policy</span>
+              <span class="tech-tag">Revenue Analysis</span>
+              <span class="tech-tag">Data Journalism</span>
+              <span class="tech-tag">Python · Matplotlib</span>
+              <span class="tech-tag">Accountability</span>
+            </div>
+          </div>
+
+          <!-- RELATED -->
+          <div class="doc-section" id="related">
+            <h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+            <p>If this analysis interests you, these case studies apply similar data-driven approaches to business and financial performance:</p>
+            <div class="related-grid">
+              <a href="aecom-financial-dashboard-power-bi.html" class="related-card">
+                <p class="card-label">Financial Analysis · Power BI · DAX</p>
+                <h4>AECOM 8-Year Financial Performance Dashboard</h4>
+                <p>Eight years of real AECOM financial statements — revenue CAGR, EBITDA, capital allocation ROI, and solvency — in one live embedded Power BI report.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+              <a href="retail-analysis-global-electronics.html" class="related-card">
+                <p class="card-label">Business Intelligence · Power BI</p>
+                <h4>Retail BI Dashboard — 90% Revenue Decline</h4>
+                <p>Diagnosing a 90% revenue collapse and identifying an 85% customer retention failure as the root cause using Power BI and cohort analysis.</p>
+                <span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+      </div><!-- /col -->
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section>
+
+<!-- CTA -->
+<section class="project-cta">
+  <div class="container">
+    <p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+    <h2>Need data turned into decisions?</h2>
+    <p>I build analyst-grade dashboards and reports — from government data to enterprise BI — that go beyond charts and deliver the story inside the numbers.</p>
+    <div class="cta-buttons">
+      <a href="../index.html#contact" class="btn-cta-white">Tell Me About Your Project</a>
+      <a href="../index.html#portfolio" class="btn-cta-ghost">See All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h3>Adeyemi<span>Data</span></h3>
+          <p>
+            Remote Worldwide<br>
+            Available globally (timezone-flexible)<br><br>
+            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+            <strong>Email:</strong> <a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a>
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#featured-services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../index.html#contact">Let's Talk</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>What I Do</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i><a href="../services/power-bi-dashboard-development.html">Financial Dashboards</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../services/churn-prediction-model.html">Churn Prediction</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../services/customer-segmentation-analysis.html">CLV Modeling</a></li>
+            <li><i class="bi bi-chevron-right"></i><a href="../services/ecommerce-data-science.html">Product Analytics</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Connect</h4>
+          <div class="social-links mt-3">
+            <a href="https://github.com/Adeyemi0" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/adediran-adeyemi" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://medium.com/@xmine4346" target="_blank" aria-label="Medium"><i class="bi bi-medium"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="copyright">
+      &copy; 2026 <strong>Adediran Adeyemi</strong> &middot; Turning Data Into Decisions
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
+
+<script>
+// Preloader off
+window.addEventListener('load', () => {
+  const pre = document.getElementById('preloader');
+  if (pre) { pre.style.transition = 'opacity 0.4s'; pre.style.opacity = '0'; setTimeout(() => pre.remove(), 400); }
+});
+
+// Mobile nav
+const toggle = document.querySelector('.mobile-nav-toggle');
+const navbar = document.querySelector('#header .navbar');
+if (toggle && navbar) {
+  toggle.addEventListener('click', () => {
+    navbar.classList.toggle('navbar-mobile');
+    toggle.classList.toggle('bi-list');
+    toggle.classList.toggle('bi-x');
+    const ul = navbar.querySelector('ul');
+    if (ul) ul.style.display = ul.style.display === 'flex' ? 'none' : 'flex';
+  });
+}
+
+// Back to top
+window.addEventListener('scroll', () => {
+  const btt = document.querySelector('.back-to-top');
+  if (btt) btt.classList.toggle('active', window.scrollY > 100);
+});
+
+// TOC active state
+(function() {
+  const links = document.querySelectorAll('.toc-list a');
+  const sections = document.querySelectorAll('.doc-section[id]');
+  if (!links.length || !sections.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -65% 0px' });
+  sections.forEach(s => obs.observe(s));
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
