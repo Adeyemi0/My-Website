@@ -184,6 +184,147 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- NEW: Additional Blog Posts Added -->
+  <url>
+    <loc>https://adediranadeyemi.com/blog/tinubu-reforms-nigeria-economy-data.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/customer-lifetime-value-modeling-guide.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/data-driven-ecommerce-analytics.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/ecommerce-conversion-optimization-checkout-funnel.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/ecommerce-conversion-optimization-tactics.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/ecommerce-cro-cost-roi.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/ecommerce-customer-retention-strategy.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/femi-lazarus-husband-question.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/good-ecommerce-conversion-rate-benchmarks.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/how-to-keep-customers-coming-back-ecommerce.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/nigeria-gdp-growing-poverty-rising.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/nigeria-japa-brain-drain-economy.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/nigeria-oil-economy-sectoral-analysis.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/nigeria-president-economic-scorecard.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/nigeria-road-kidnapping-data.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/nigeria-unemployment-numbers-explained.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/nigeria-war-economy-analysis-2026.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/normal-customer-churn-rate-ecommerce-benchmarks.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/use-data-predict-prevent-customer-churn.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/blog/why-customers-stop-shopping-online-store.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Project Pages -->
   <url>
     <loc>https://adediranadeyemi.com/projects/retail-analysis-global-electronics.html</loc>
