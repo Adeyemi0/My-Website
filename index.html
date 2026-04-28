@@ -479,6 +479,285 @@ h1 { font-size: 3.5rem; line-height: 1.1; }
   border-radius: 0 0 4px 0;
 }
 .skip-link:focus { top: 0; }
+
+/* Portfolio Section Styles */
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: #0052FF;
+  border-color: #0052FF;
+  color: #fff;
+}
+.filter-count {
+  background: #E7F1FD;
+  color: #0052FF;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.filter-btn.active .filter-count {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+.portfolio-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.portfolio-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border: 1px solid #E2E8F0;
+}
+.portfolio-project:nth-child(even) {
+  direction: rtl;
+}
+.portfolio-project:nth-child(even) .project-content {
+  direction: ltr;
+}
+.project-embed {
+  position: relative;
+  padding-bottom: 65%;
+  height: 0;
+  overflow: hidden;
+  background: #F8FAFC;
+}
+.project-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.project-image {
+  position: relative;
+  padding-bottom: 65%;
+  height: 0;
+  overflow: hidden;
+  background: #F8FAFC;
+}
+.project-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.portfolio-project:hover .project-image img {
+  transform: scale(1.03);
+}
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,82,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.portfolio-project:hover .project-overlay {
+  opacity: 1;
+}
+.project-badge {
+  background: #fff;
+  color: #0052FF;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.project-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.project-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0052FF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.project-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+.project-description {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 20px;
+  flex: 1;
+}
+.project-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 8px;
+}
+.highlight-item i {
+  color: #059669;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.tech-tag {
+  background: #F1F5F9;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.project-link-primary, .project-link-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.project-link-primary {
+  background: #0052FF;
+  color: #fff;
+}
+.project-link-primary:hover {
+  background: #0041cc;
+  color: #fff;
+}
+.project-link-secondary {
+  background: #F1F5F9;
+  color: #0052FF;
+}
+.project-link-secondary:hover {
+  background: #E2E8F0;
+  color: #0041cc;
+}
+.embed-overlay {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+.expand-demo {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #E2E8F0;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0F172A;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+.expand-demo:hover {
+  background: #fff;
+  border-color: #0052FF;
+  color: #0052FF;
+}
+
+/* Responsive Portfolio */
+@media (max-width: 992px) {
+  .portfolio-project {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-project:nth-child(even) {
+    direction: ltr;
+  }
+  .project-embed, .project-image {
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  }
+}
+@media (max-width: 768px) {
+  .project-content {
+    padding: 25px 20px;
+  }
+  .project-content h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsive adjustments for other sections */
+@media (max-width: 992px) {
+  h1 { font-size: 2.8rem; }
+  .hero-profile-image { min-height: 280px; }
+  .profile-img { width: 280px; height: 280px; }
+}
+@media (max-width: 768px) {
+  h1 { font-size: 2.3rem; }
+  .hero-profile-image { min-height: 240px; }
+  .profile-img { width: 240px; height: 240px; }
+  .trust-badges { flex-direction: column; align-items: center; }
+  .results-strip { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: 1fr; }
+  .pricing-preview { padding: 20px; }
+}
+@media (max-width: 576px) {
+  h1 { font-size: 2rem; }
+  .results-strip { grid-template-columns: 1fr; }
+  .d-flex { flex-direction: column; gap: 10px !important; }
+  .btn-get-started-primary, .btn-get-started-secondary { width: 100%; justify-content: center; }
+}
 </style>
 
 <!-- Defer Non-Critical CSS -->
@@ -748,7 +1027,7 @@ h1 { font-size: 3.5rem; line-height: 1.1; }
 </div>
 </section>
 
-<!-- ======= Portfolio Section ======= -->
+<!-- ======= Portfolio Section - COMPLETE WITH ALL 11 PROJECTS ======= -->
 <section id="portfolio" class="portfolio">
 <div class="container" data-aos="fade-up">
 <div class="section-title">
@@ -763,9 +1042,10 @@ h1 { font-size: 3.5rem; line-height: 1.1; }
 <button class="filter-btn" data-filter="notebooks"><i class="bi bi-journal-code"></i><span>Notebooks</span><span class="filter-count">0</span></button>
 <button class="filter-btn" data-filter="deployed-model"><i class="bi bi-lightning-charge"></i><span>Deployed Model</span><span class="filter-count">0</span></button>
 </div>
-<!-- Portfolio Items (unchanged structure, just ensuring alt text is keyword-rich) -->
+<!-- Portfolio Items -->
 <div class="portfolio-showcase">
-<!-- Project 01: Retail Analysis -->
+
+<!-- Project 01: Retail Analysis - core retail BI -->
 <div class="portfolio-project" data-aos="fade-up" data-category="dashboards">
 <div class="project-embed powerbi-embed">
 <iframe src="https://app.powerbi.com/view?r=eyJrIjoiNzY0YzRiOTEtZmU0Yy00YWRjLWJhYjYtNTE1YjNjYTVjYmVkIiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9" frameborder="0" allowFullScreen="true" loading="lazy" title="Retail Sales Analysis Dashboard - Freelance Data Scientist Project"></iframe>
@@ -787,9 +1067,236 @@ h1 { font-size: 3.5rem; line-height: 1.1; }
 </div>
 </div>
 </div>
-<!-- Additional projects unchanged for brevity - ensure all iframe titles and alt text include "freelance data scientist" or relevant keywords -->
-<!-- Project 02-11 would follow same pattern with optimized alt text and titles -->
+
+<!-- Project 02: Product Returns Analysis - core e-commerce -->
+<div class="portfolio-project" data-aos="fade-up" data-category="notebooks">
+<div class="project-image">
+<img src="assets/img/portfolio/returns.jpg" loading="lazy" alt="Product Returns Analysis - E-commerce Data Science Project">
+<div class="project-overlay"><span class="project-badge">Case Study</span></div>
 </div>
+<div class="project-content">
+<div class="project-number">02</div>
+<h3>Product Returns Analysis</h3>
+<p class="project-description">Deep-dive analysis into product return patterns revealing that 27% of revenue was being eroded by returns. Identified specific products, customer segments, and purchasing behaviors driving returns, enabling targeted product improvements and smarter inventory management.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>27% revenue loss identified from returns</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Segmented high-risk products and customers</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Provided product improvement roadmap</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">Statistical Analysis</span></div>
+<div class="project-links">
+<a href="projects/ecommerce-product-returns.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 03: Customer Journey Analysis - e-commerce funnel -->
+<div class="portfolio-project" data-aos="fade-up" data-category="notebooks">
+<div class="project-image">
+<img src="assets/img/portfolio/cj.jpg" loading="lazy" alt="Customer Journey Analysis - E-commerce Funnel Optimization">
+<div class="project-overlay"><span class="project-badge">Case Study</span></div>
+</div>
+<div class="project-content">
+<div class="project-number">03</div>
+<h3>Customer Journey Analysis</h3>
+<p class="project-description">Mapped user paths through 10,000 sessions to identify conversion killers and engagement drivers. The path analysis revealed specific friction points where users consistently abandoned the funnel, directly informing UX improvements that increased conversion rates.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>10,000 sessions analyzed for patterns</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Identified critical drop-off points</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Shaped product roadmap decisions</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Google Analytics</span><span class="tech-tag">SQL</span><span class="tech-tag">Path Analysis</span></div>
+<div class="project-links">
+<a href="projects/customer-journey-analysis.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 04: Customer Reviews Classification - e-commerce feedback -->
+<div class="portfolio-project" data-aos="fade-up" data-category="deployed-model">
+<div class="project-embed">
+<iframe src="https://adeyemi001-multi-labelled-review-categorization-model.hf.space" frameborder="0" loading="lazy" title="NLP Review Classification Model - Freelance Data Scientist"></iframe>
+<div class="embed-overlay"><button class="expand-demo" onclick="expandDemo(this)"><i class="bi bi-arrows-fullscreen"></i> View Fullscreen</button></div>
+</div>
+<div class="project-content">
+<div class="project-number">04</div>
+<h3>Customer Reviews Classification (ML)</h3>
+<p class="project-description">Instead of manually reading thousands of customer reviews, I built an NLP model that automatically categorizes complaints and praise. The product team now gets instant visibility into what's frustrating users, enabling rapid response to emerging issues.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>29,000 reviews processed automatically</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Real-time sentiment and topic extraction</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Actionable insights dashboard</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">Transformers</span><span class="tech-tag">NLP</span><span class="tech-tag">HuggingFace</span><span class="tech-tag">Power BI</span></div>
+<div class="project-links">
+<a href="https://adeyemi001-multi-labelled-review-categorization-model.hf.space" target="_blank" class="project-link-primary" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Open in New Tab</a>
+<a href="projects/customer-reviews-classification.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 05: Customer Satisfaction Survey - retail customer analytics -->
+<div class="portfolio-project" data-aos="fade-up" data-category="dashboards">
+<div class="project-embed powerbi-embed">
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9" frameborder="0" allowFullScreen="true" loading="lazy" title="Customer Survey Analysis Dashboard - Retail Analytics"></iframe>
+<div class="embed-overlay"><button class="expand-demo" onclick="expandDemo(this)"><i class="bi bi-arrows-fullscreen"></i> View Fullscreen</button></div>
+</div>
+<div class="project-content">
+<div class="project-number">05</div>
+<h3>Survey Analysis</h3>
+<p class="project-description">Analyzed banking customer surveys to uncover what truly drives satisfaction and loyalty. Built an interactive dashboard that lets leadership explore satisfaction patterns by customer segment and service type, revealing opportunities to improve retention.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Revealed key satisfaction drivers</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Segmented insights by customer type</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Interactive exploration dashboard</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">Power BI</span><span class="tech-tag">DAX</span><span class="tech-tag">Sentiment Analysis</span></div>
+<div class="project-links">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMDhiMDhmNTEtODk3NS00NWY5LWJhNzgtYmNiMTdiYzg5YmQ3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9" target="_blank" class="project-link-primary" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Open in New Tab</a>
+<a href="projects/customer-satisfaction-survey.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 06: Lead Scoring - sales/conversion -->
+<div class="portfolio-project" data-aos="fade-up" data-category="deployed-model">
+<div class="project-embed">
+<iframe title="Lead Scoring Model - Adediran Adeyemi" src="https://adeyemi001-Lead-Scoring-Model.hf.space" allowfullscreen loading="lazy"></iframe>
+<div class="embed-overlay"><button class="expand-demo" onclick="expandDemo(this)"><i class="bi bi-arrows-fullscreen"></i> View Fullscreen</button></div>
+</div>
+<div class="project-content">
+<div class="project-number">06</div>
+<h3>Lead Scoring Algorithm</h3>
+<p class="project-description">Built a machine learning model that scores leads by purchase likelihood with 95%+ accuracy. Sales teams can now focus exclusively on high-intent prospects instead of chasing everyone, dramatically improving close rates and sales efficiency.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>95%+ accuracy in purchase prediction</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Automated lead prioritization</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Replaced gut-feel with data-driven scoring</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">Scikit-learn</span><span class="tech-tag">Streamlit</span><span class="tech-tag">Classification ML</span></div>
+<div class="project-links">
+<a href="https://adeyemi001-Lead-Scoring-Model.hf.space" target="_blank" class="project-link-primary" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Open in New Tab</a>
+<a href="projects/lead-scoring-conversion-prediction.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 07: Restaurant Research Analysis - retail location strategy -->
+<div class="portfolio-project" data-aos="fade-up" data-category="notebooks">
+<div class="project-embed">
+<iframe title="Chicken Republic Lagos Expansion Map - Adediran Adeyemi" src="https://adeyemi0.github.io/Chicken-Republic-Restaurant-Expansion-in-Lagos/" allowfullscreen loading="lazy"></iframe>
+<div class="embed-overlay"><button class="expand-demo" onclick="expandDemo(this)"><i class="bi bi-arrows-fullscreen"></i> View Fullscreen</button></div>
+</div>
+<div class="project-content">
+<div class="project-number">07</div>
+<h3>Restaurant Research Analysis</h3>
+<p class="project-description">Reverse-engineered how a major restaurant chain selects new markets by analyzing 50+ locations. The geospatial analysis revealed hidden patterns in their expansion strategy - demographic density, competitor proximity, and infrastructure factors - that others could learn from or compete against.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>50+ locations analyzed for patterns</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Revealed demographic and geographic factors</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Competitive intelligence framework</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">Geospatial Analysis</span><span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span></div>
+<div class="project-links">
+<a href="https://adeyemi0.github.io/Chicken-Republic-Restaurant-Expansion-in-Lagos/" target="_blank" class="project-link-primary" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Open in New Tab</a>
+<a href="projects/retail-location-strategy.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 08: NYC Property Price Prediction -->
+<div class="portfolio-project" data-aos="fade-up" data-category="deployed-model">
+<div class="project-embed">
+<iframe src="https://adeyemi001-nyc-house-price-predictor.hf.space" frameborder="0" loading="lazy" title="NYC Real Estate Price Prediction Model - Machine Learning"></iframe>
+<div class="embed-overlay"><button class="expand-demo" onclick="expandDemo(this)"><i class="bi bi-arrows-fullscreen"></i> View Fullscreen</button></div>
+</div>
+<div class="project-content">
+<div class="project-number">08</div>
+<h3>Property Prices Prediction Model</h3>
+<p class="project-description">Built a machine learning model that predicts NYC property values with 80% accuracy, giving investors and real estate agents instant valuation estimates. The system eliminates weeks of waiting for professional appraisals while maintaining high reliability.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>80% prediction accuracy on NYC properties</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Instant valuations vs. weeks-long appraisals</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Real-time market data integration</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">LightGBM</span><span class="tech-tag">Flask</span><span class="tech-tag">Docker</span><span class="tech-tag">Beautiful Soup</span></div>
+<div class="project-links">
+<a href="https://adeyemi001-nyc-house-price-predictor.hf.space" target="_blank" class="project-link-primary" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Open in New Tab</a>
+<a href="projects/nyc-property-price-prediction.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 09: Nigeria Used Car Price Prediction -->
+<div class="portfolio-project" data-aos="fade-up" data-category="deployed-model">
+<div class="project-embed">
+<iframe src="https://adeyemi001-cars.hf.space" frameborder="0" loading="lazy" title="Used Car Price Prediction Nigeria - Machine Learning Model"></iframe>
+<div class="embed-overlay"><button class="expand-demo" onclick="expandDemo(this)"><i class="bi bi-arrows-fullscreen"></i> View Fullscreen</button></div>
+</div>
+<div class="project-content">
+<div class="project-number">09</div>
+<h3>Predict Used Car Prices (Nigeria Market)</h3>
+<p class="project-description">Built a price prediction model specifically for the Nigerian used car market. Dealers and buyers now get instant, data-backed estimates instead of negotiating in the dark. The model is trained on actual Nigerian market data for accurate local pricing.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Nigeria-specific market training data</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Instant price estimates for any vehicle</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Eliminates negotiation uncertainty</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">LightGBM</span><span class="tech-tag">Flask</span><span class="tech-tag">Web Scraping</span><span class="tech-tag">ML Regression</span></div>
+<div class="project-links">
+<a href="https://adeyemi001-cars.hf.space" target="_blank" class="project-link-primary" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Open in New Tab</a>
+<a href="projects/nigeria-used-car-price-prediction.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 10: RAG Financial Research -->
+<div class="portfolio-project" data-aos="fade-up" data-category="deployed-model">
+<div class="project-embed">
+<iframe src="https://adeyemi001-finsight-rag-application.hf.space" frameborder="0" loading="lazy" title="RAG-Based Financial Research System - LangChain Vector Database"></iframe>
+<div class="embed-overlay"><button class="expand-demo" onclick="expandDemo(this)"><i class="bi bi-arrows-fullscreen"></i> View Fullscreen</button></div>
+</div>
+<div class="project-content">
+<div class="project-number">10</div>
+<h3>RAG-Based Financial Research Across 402 S&amp;P MidCap Companies</h3>
+<p class="project-description">Built a retrieval-augmented generation (RAG) system over 50M+ tokens of company filings and 8 years of financial statements. This system enables instant, explainable Q&amp;A across hundreds of public companies, dramatically reducing research time from hours to seconds.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>50M+ tokens processed across 402 companies</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Instant answers with source attribution</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>8 years of historical financial data</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">RAG</span><span class="tech-tag">LangChain</span><span class="tech-tag">Zilliz</span><span class="tech-tag">Docker</span><span class="tech-tag">OpenAI</span><span class="tech-tag">FastAPI</span></div>
+<div class="project-links">
+<a href="https://adeyemi001-finsight-rag-application.hf.space" target="_blank" class="project-link-primary" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Open in New Tab</a>
+<a href="projects/rag-financial-research-sp500.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+<!-- Project 11: Yoruba-English Translation -->
+<div class="portfolio-project" data-aos="fade-up" data-category="deployed-model">
+<div class="project-embed">
+<iframe src="https://adeyemi001-yoruba-english-translation-model.hf.space" frameborder="0" loading="lazy" title="Yoruba English Translation Model - Low-Resource Language NLP"></iframe>
+<div class="embed-overlay"><button class="expand-demo" onclick="expandDemo(this)"><i class="bi bi-arrows-fullscreen"></i> View Fullscreen</button></div>
+</div>
+<div class="project-content">
+<div class="project-number">11</div>
+<h3>Bidirectional Yoruba-English Translation Model</h3>
+<p class="project-description">Created a bidirectional Yoruba-English translator specifically designed for low-resource languages where mainstream tools like Google Translate fall short. The model handles cultural context and idiomatic expressions that literal translations miss.</p>
+<div class="project-highlights">
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Bidirectional translation (Yoruba - English)</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Context-aware translations</span></div>
+<div class="highlight-item"><i class="bi bi-check-circle-fill"></i><span>Optimized for low-resource languages</span></div>
+</div>
+<div class="project-tech"><span class="tech-tag">Transformers</span><span class="tech-tag">NLP</span><span class="tech-tag">Flask</span><span class="tech-tag">REST API</span><span class="tech-tag">Docker</span><span class="tech-tag">HuggingFace</span></div>
+<div class="project-links">
+<a href="https://adeyemi001-yoruba-english-translation-model.hf.space" target="_blank" class="project-link-primary" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Open in New Tab</a>
+<a href="projects/yoruba-english-translation-model.html" class="project-link-secondary"><i class="bi bi-file-text"></i> Full Case Study</a>
+</div>
+</div>
+</div>
+
+</div><!-- /.portfolio-showcase -->
 <div style="margin-top: 60px; text-align: center;">
 <p style="font-size: 18px; margin-bottom: 20px; font-weight: 500;">See a project similar to what you need? Let's talk about building your version.</p>
 <a href="#contact" class="btn-get-started-primary scrollto"><span>Tell Me What You're Trying to Solve <i class="bi bi-arrow-right"></i></span></a>
@@ -801,8 +1308,8 @@ h1 { font-size: 3.5rem; line-height: 1.1; }
 <section id="blog" class="faq section-bg">
 <div class="container" data-aos="fade-up">
 <div class="section-title">
-<h2>E-Commerce Data Science Blog & Insights</h2>
-<h3>E-Commerce & Retail <span>Data Science Insights</span></h3>
+<h2>E-Commerce Data Science Blog &amp; Insights</h2>
+<h3>E-Commerce &amp; Retail <span>Data Science Insights</span></h3>
 <p>Real tactics for predicting churn, understanding customers, and making data-driven decisions in e-commerce and retail</p>
 </div>
 <div class="row justify-content-center">
@@ -994,12 +1501,18 @@ document.addEventListener('DOMContentLoaded', function() {
   
   filterBtns.forEach(btn => {
     btn.addEventListener('click', function() {
+      // Remove active class from all buttons
       filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
       this.classList.add('active');
+      
       const filter = this.getAttribute('data-filter');
+      
+      // Filter items
       portfolioItems.forEach(item => {
         if (filter === 'all' || item.getAttribute('data-category') === filter) {
           item.style.display = 'block';
+          // Add animation class for smooth appearance
           item.classList.add('aos-animate');
         } else {
           item.style.display = 'none';
@@ -1014,6 +1527,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const iframe = btn.closest('.project-embed').querySelector('iframe');
     const src = iframe.src;
     const title = iframe.title || 'Project Demo';
+    
+    // Create modal overlay
     const modal = document.createElement('div');
     modal.style.cssText = `
       position: fixed;
@@ -1025,6 +1540,7 @@ document.addEventListener('DOMContentLoaded', function() {
       justify-content: center;
       padding: 20px;
     `;
+    
     const modalContent = document.createElement('div');
     modalContent.style.cssText = `
       background: #fff;
@@ -1036,6 +1552,7 @@ document.addEventListener('DOMContentLoaded', function() {
       flex-direction: column;
       position: relative;
     `;
+    
     const modalHeader = document.createElement('div');
     modalHeader.style.cssText = `
       padding: 15px 20px;
@@ -1045,6 +1562,7 @@ document.addEventListener('DOMContentLoaded', function() {
       align-items: center;
     `;
     modalHeader.innerHTML = `<strong style="font-size: 1.1em;">${title}</strong>`;
+    
     const closeBtn = document.createElement('button');
     closeBtn.innerHTML = '&times;';
     closeBtn.style.cssText = `
@@ -1058,17 +1576,22 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     closeBtn.onclick = () => modal.remove();
     modalHeader.appendChild(closeBtn);
+    
     const modalBody = document.createElement('div');
     modalBody.style.cssText = 'flex: 1; overflow: hidden;';
+    
     const demoIframe = document.createElement('iframe');
     demoIframe.src = src;
     demoIframe.style.cssText = 'width: 100%; height: 100%; border: none;';
     demoIframe.allowFullscreen = true;
     modalBody.appendChild(demoIframe);
+    
     modalContent.appendChild(modalHeader);
     modalContent.appendChild(modalBody);
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
+    
+    // Close on Escape key
     const escHandler = (e) => {
       if (e.key === 'Escape') {
         modal.remove();
@@ -1076,6 +1599,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
     document.addEventListener('keydown', escHandler);
+    
+    // Close on backdrop click
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.remove();
@@ -1089,12 +1614,17 @@ document.addEventListener('DOMContentLoaded', function() {
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      
       const loading = form.querySelector('.loading');
       const errorMessage = form.querySelector('.error-message');
       const sentMessage = form.querySelector('.sent-message');
+      
+      // Reset messages
       loading.style.display = 'block';
       errorMessage.style.display = 'none';
       sentMessage.style.display = 'none';
+      
+      // Submit via fetch
       fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
@@ -1105,6 +1635,7 @@ document.addEventListener('DOMContentLoaded', function() {
           loading.style.display = 'none';
           sentMessage.style.display = 'block';
           form.reset();
+          // Hide success message after 5 seconds
           setTimeout(() => sentMessage.style.display = 'none', 5000);
         } else {
           throw new Error('Submission failed');
@@ -1151,6 +1682,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     }, { rootMargin: '100px' });
+    
     document.querySelectorAll('iframe[loading="lazy"]').forEach(iframe => {
       if (iframe.src) {
         iframe.dataset.src = iframe.src;
@@ -1162,4 +1694,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 </body>
-  </html>
+</html>
