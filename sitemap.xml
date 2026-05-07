@@ -454,6 +454,50 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- NEW: High-Value Commercial Service Pages Added -->
+  <url>
+    <loc>https://adediranadeyemi.com/services/cart-abandonment-analytics.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/services/churn-prediction-consultant.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/services/customer-lifetime-value-modeling.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/services/retail-analytics-expert-nigeria.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://adediranadeyemi.com/services/predictive-analytics-shopify.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Local SEO Landing Page -->
+  <url>
+    <loc>https://adediranadeyemi.com/hire-data-scientist-lagos.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Shop Page -->
   <url>
     <loc>https://adediranadeyemi.com/shop/business-financial-statements-template.html</loc>
