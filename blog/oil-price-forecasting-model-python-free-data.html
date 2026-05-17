@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal | Adediran Adeyemi</title>
+<meta name="description" content="You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step approach using free data sources and Python.">
+<meta name="keywords" content="oil price forecasting, oil forecasting model, crude oil prediction Python, XGBoost oil price, EIA API Python, Brent crude forecast">
+<meta name="author" content="Adediran Adeyemi">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html">
+<meta property="og:title" content="How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal">
+<meta property="og:description" content="You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step approach using free data sources and Python.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/profile-img.jpg">
+<meta property="og:image:alt" content="Python code on screen showing XGBoost model for Brent crude oil price prediction">
+<meta property="og:site_name" content="AdeyemiData">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-05-05">
+<meta property="article:modified_time" content="2026-05-05">
+<meta property="article:author" content="Adediran Adeyemi">
+<meta property="article:section" content="Data Analytics">
+<meta property="article:tag" content="oil price forecasting">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="energy analytics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AdediranAd60922">
+<meta name="twitter:creator" content="@AdediranAd60922">
+<meta name="twitter:title" content="How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal">
+<meta name="twitter:description" content="A practical, step-by-step approach using free data sources and Python. No enterprise subscriptions needed.">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/profile-img.jpg">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="../assets/img/favicon.png" rel="icon">
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal",
+  "description": "You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step approach using free data sources and Python.",
+  "image": "https://adediranadeyemi.com/assets/img/profile-img.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/adediran-adeyemi",
+      "https://github.com/Adeyemi0",
+      "https://x.com/AdediranAd60922"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com",
+    "logo": { "@type": "ImageObject", "url": "https://adediranadeyemi.com/assets/img/favicon.png" }
+  },
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html" },
+  "keywords": ["oil price forecasting", "crude oil prediction", "XGBoost", "EIA API", "Python oil model"],
+  "articleSection": "Data Analytics",
+  "timeRequired": "PT12M",
+  "wordCount": "2400"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://adediranadeyemi.com" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://adediranadeyemi.com/blog.html" },
+    { "@type": "ListItem", "position": 3, "name": "Oil Price Forecasting Model", "item": "https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Build an Oil Price Forecasting Model Using Free Data and Python",
+  "description": "A step-by-step guide to building a working crude oil price forecasting model using publicly available data and open-source tools",
+  "step": [
+    { "@type": "HowToStep", "name": "Pull and clean the data", "text": "Use the EIA API Python wrapper to download weekly inventory changes, refinery utilization, and production data. Merge with weekly WTI or Brent price data. Add the U.S. Dollar Index from FRED." },
+    { "@type": "HowToStep", "name": "Feature engineering", "text": "Derive features: week-over-week change in U.S. crude inventories, four-week rolling average of refinery utilization, ratio of U.S. crude production to imports, Dollar index level and 4-week change, and lagged oil price at 1-, 4-, and 12-week intervals." },
+    { "@type": "HowToStep", "name": "Train a gradient boosting model", "text": "Train XGBoost or LightGBM on 80% of your data, validate on the remaining 20%, and report RMSE and directional accuracy." },
+    { "@type": "HowToStep", "name": "Interpret the model with SHAP", "text": "Use SHAP values to understand which features are driving predictions each week." },
+    { "@type": "HowToStep", "name": "Build a reporting wrapper", "text": "A Jupyter notebook that runs weekly, pulls fresh EIA data, and outputs a two-page summary — price trend signal, dominant drivers, and 4-week directional probability." }
+  ],
+  "supply": [
+    { "@type": "HowToSupply", "name": "Python 3.x" },
+    { "@type": "HowToSupply", "name": "EIA API key (free)" },
+    { "@type": "HowToSupply", "name": "XGBoost or LightGBM library" },
+    { "@type": "HowToSupply", "name": "SHAP library" },
+    { "@type": "HowToSupply", "name": "FRED API access (free)" }
+  ]
+}
+</script>
+<style>
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #0F172A; margin: 0; padding: 0; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.blog-main { background: #F8FAFC; padding: 60px 0; min-height: 100vh; }
+.blog-breadcrumb { padding: 20px 0; font-size: 14px; color: #64748B; margin-bottom: 30px; }
+.blog-breadcrumb a { color: #0052FF; text-decoration: none; }
+.blog-breadcrumb a:hover { color: #0041cc; }
+.blog-article { max-width: 800px; margin: 0 auto; }
+.article-header { background: #ffffff; padding: 50px; border-radius: 8px; margin-bottom: 40px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.article-meta { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 25px; font-size: 14px; color: #64748B; font-weight: 500; }
+.article-meta time, .article-meta .reading-time { display: flex; align-items: center; gap: 5px; }
+.article-meta .category { background: #E7F1FD; color: #0052FF; padding: 4px 14px; border-radius: 4px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; }
+.article-meta .last-updated { font-size: 12px; color: #94A3B8; font-style: italic; }
+.article-title { font-size: 3rem; font-weight: 900; line-height: 1.15; color: #0F172A; margin: 0 0 15px; letter-spacing: -.03em; }
+.article-subtitle { font-size: 1.5rem; font-weight: 600; color: #0052FF; margin: 0 0 30px; line-height: 1.4; }
+.article-author { display: flex; align-items: center; gap: 15px; padding-top: 25px; border-top: 1px solid #E2E8F0; }
+.author-image { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+.author-info { display: flex; flex-direction: column; }
+.author-name { font-size: 16px; font-weight: 700; color: #0F172A; }
+.author-title { font-size: 14px; color: #64748B; }
+.article-content { background: #ffffff; padding: 60px 50px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.05); margin-bottom: 40px; }
+.article-content .lead { font-size: 1.3rem; font-weight: 500; line-height: 1.7; color: #1E293B; margin-bottom: 30px; }
+.article-content p { font-size: 1.1rem; line-height: 1.8; color: #334155; margin-bottom: 20px; }
+.article-content h2 { font-size: 2.2rem; font-weight: 800; color: #0F172A; margin: 50px 0 25px; line-height: 1.3; letter-spacing: -.02em; padding-bottom: 12px; border-bottom: 1px solid #E2E8F0; }
+.article-content h3 { font-size: 1.6rem; font-weight: 700; color: #1E293B; margin: 35px 0 20px; line-height: 1.4; }
+.article-content ul, .article-content ol { margin: 25px 0; padding-left: 30px; }
+.article-content li { font-size: 1.1rem; line-height: 1.8; color: #334155; margin-bottom: 12px; }
+.article-content strong { font-weight: 700; color: #0F172A; }
+.article-content em { font-style: italic; color: #475569; }
+.article-content blockquote { border-left: 3px solid #0052FF; padding: 20px 30px; margin: 30px 0; background: #F8FAFC; font-style: italic; color: #475569; font-size: 1.15rem; line-height: 1.7; }
+.article-content a { color: #0052FF; text-decoration: none; font-weight: 600; border-bottom: 1px solid #bfdbfe; transition: border-color .2s, color .2s; }
+.article-content a:hover { color: #0041cc; border-bottom-color: #0041cc; }
+/* Data sources grid */
+.data-sources { margin: 35px 0; }
+.data-source-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-left: 3px solid #0052FF; border-radius: 0 4px 4px 0; padding: 24px 28px; margin-bottom: 16px; }
+.data-source-card h4 { margin: 0 0 8px; font-size: 1rem; font-weight: 700; color: #0F172A; }
+.data-source-card .tag { display: inline-block; background: #DCFCE7; color: #166534; padding: 2px 10px; border-radius: 3px; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 10px; }
+.data-source-card p { margin: 0; font-size: .98rem; color: #334155; line-height: 1.7; }
+/* Steps */
+.build-steps { margin: 35px 0; counter-reset: step-counter; }
+.build-step { display: flex; gap: 24px; margin-bottom: 28px; padding: 28px; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 4px; }
+.step-number { width: 44px; height: 44px; background: #0052FF; color: #fff; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 800; flex-shrink: 0; }
+.step-content { flex: 1; }
+.step-content h3 { margin: 0 0 8px; font-size: 1.15rem; font-weight: 700; color: #0F172A; }
+.step-content p { margin: 0 0 8px; font-size: .98rem; color: #334155; line-height: 1.7; }
+.step-content p:last-child { margin-bottom: 0; }
+/* Feature pills */
+.feature-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.pill { background: #E7F1FD; color: #0052FF; padding: 6px 14px; border-radius: 20px; font-size: .85rem; font-weight: 600; }
+/* Warning / limitation box */
+.warning-box { background: #FFFBEB; border: 1px solid #FCD34D; border-left: 4px solid #F59E0B; border-radius: 4px; padding: 24px 28px; margin: 30px 0; }
+.warning-box h4 { margin: 0 0 10px; color: #92400E; font-weight: 700; font-size: 1.05rem; }
+.warning-box ul { margin: 0; padding-left: 20px; }
+.warning-box li { font-size: 1rem; color: #78350F; margin-bottom: 8px; line-height: 1.6; }
+/* Extensions */
+.extension-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin: 30px 0; }
+.extension-card { background: #F8FAFC; border: 1px solid #E2E8F0; border-top: 3px solid #0052FF; border-radius: 4px; padding: 22px; }
+.extension-card h4 { margin: 0 0 8px; font-size: .88rem; font-weight: 700; color: #0F172A; text-transform: uppercase; letter-spacing: .4px; }
+.extension-card p { margin: 0; font-size: .92rem; color: #64748B; line-height: 1.6; }
+/* Insight box */
+.insight-box { background: #F8FAFC; border-left: 3px solid #0052FF; padding: 20px 25px; margin: 28px 0; border-radius: 0 4px 4px 0; }
+.insight-box p { margin: 0; font-size: 1rem; color: #1E293B; font-weight: 500; }
+/* Internal links */
+.internal-links-box { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 4px; padding: 22px 25px; margin: 40px 0; }
+.internal-links-box h4 { margin: 0 0 12px; font-size: .8rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: .5px; }
+.internal-links-box a { display: block; color: #0052FF; font-weight: 600; margin-bottom: 6px; font-size: .95rem; border-bottom: none; text-decoration: underline; text-underline-offset: 3px; }
+/* Final insight */
+.final-insight { background: #0F172A; color: #fff; padding: 40px; border-radius: 8px; margin: 40px 0; }
+.final-insight p { color: #CBD5E1; font-size: 1.1rem; margin-bottom: 15px; }
+.final-insight p:last-child { margin-bottom: 0; }
+.final-insight strong { color: #fff; }
+.final-insight .cta-inline { color: #60A5FA; font-weight: 700; font-size: 1.15rem; }
+/* CTA */
+.article-cta { background: linear-gradient(135deg, #0052FF 0%, #0041cc 100%); padding: 50px; border-radius: 8px; margin-bottom: 40px; text-align: center; }
+.cta-content h3 { color: #fff; font-size: 1.8rem; font-weight: 800; margin: 0 0 15px; }
+.cta-content p { color: rgba(255,255,255,.85); font-size: 1.1rem; margin: 0 0 30px; }
+.btn-cta { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: #0052FF; padding: 15px 35px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 1rem; border-bottom: none; }
+.btn-cta:hover { background: #F8FAFC; color: #0041cc; }
+/* Share */
+.article-share { text-align: center; padding: 40px; background: #F8FAFC; border-radius: 4px; margin-bottom: 40px; }
+.article-share h4 { margin: 0 0 25px; font-size: 1.3rem; color: #0F172A; }
+.share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 4px; font-size: .95rem; font-weight: 600; text-decoration: none; color: #fff; border-bottom: none; }
+.share-btn.twitter { background: #1DA1F2; }
+.share-btn.linkedin { background: #0A66C2; }
+.share-btn:hover { opacity: .9; color: #fff; }
+/* Related */
+.related-articles { padding: 50px; background: #fff; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+.related-articles h3 { text-align: center; font-size: 2rem; font-weight: 800; color: #0F172A; margin: 0 0 40px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+.related-card { background: #F8FAFC; padding: 25px; border-radius: 4px; text-decoration: none; border: 1px solid #E2E8F0; display: flex; flex-direction: column; }
+.related-card:hover { background: #fff; border-color: #0052FF; }
+.related-tag { display: inline-block; background: #E7F1FD; color: #0052FF; padding: 6px 14px; border-radius: 4px; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 15px; width: fit-content; }
+.related-card h4 { font-size: 1.1rem; font-weight: 700; color: #0F172A; margin: 0 0 10px; line-height: 1.4; }
+.related-card p { font-size: .93rem; color: #64748B; line-height: 1.6; margin: 0 0 15px; flex: 1; }
+.read-more { display: flex; align-items: center; gap: 6px; color: #0052FF; font-weight: 600; font-size: .9rem; }
+@media (max-width: 768px) {
+  .blog-main { padding: 40px 0; }
+  .article-header, .article-content { padding: 30px 22px; }
+  .article-title { font-size: 2rem; }
+  .article-subtitle { font-size: 1.1rem; }
+  .article-content h2 { font-size: 1.7rem; }
+  .build-step { flex-direction: column; gap: 14px; }
+  .article-cta { padding: 35px 22px; }
+  .related-articles { padding: 30px 22px; }
+  .final-insight { padding: 28px 22px; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<section id="topbar" class="d-flex align-items-center">
+  <div class="container d-flex justify-content-center justify-content-md-between">
+    <div class="contact-info d-flex align-items-center">
+      <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@adediranadeyemi.com">contact@adediranadeyemi.com</a></i>
+      <i class="bi bi-geo-alt d-flex align-items-center ms-4"><span>Lagos, Nigeria</span></i>
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://x.com/AdediranAd60922" class="twitter" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.linkedin.com/in/adediran-adeyemi" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.instagram.com/Adeyemi_the_data_analyst" class="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+    </div>
+  </div>
+</section>
+<header id="header" class="d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="logo"><a href="../index.html">ADEYEMI<span>DATA</span></a></div>
+    <nav id="navbar" class="navbar" aria-label="Main navigation">
+      <ul>
+        <li><a class="nav-link" href="../index.html#hero">Home</a></li>
+        <li><a class="nav-link" href="../index.html#about">About</a></li>
+        <li><a class="nav-link" href="../index.html#featured-services">Services</a></li>
+        <li><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
+        <li><a class="nav-link active" href="../blog.html">Blog</a></li>
+        <li><a class="nav-link" href="../index.html#contact">Let's Talk</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="blog-main">
+  <article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="container">
+      <nav aria-label="Breadcrumb" class="blog-breadcrumb">
+        <ol style="list-style:none;margin:0;padding:0;display:flex;gap:6px;font-size:.875rem;color:#64748b;flex-wrap:wrap;">
+          <li><a href="../index.html" style="color:#0052FF;text-decoration:none;">Home</a></li>
+          <li style="color:#94a3b8;">/</li>
+          <li><a href="../blog.html" style="color:#0052FF;text-decoration:none;">Blog</a></li>
+          <li style="color:#94a3b8;">/</li>
+          <li style="color:#0f172a;font-weight:500;">Oil Price Forecasting Model</li>
+        </ol>
+      </nav>
+
+      <header class="article-header">
+        <div class="article-meta">
+          <time datetime="2026-05-05" itemprop="datePublished">May 5, 2026</time>
+          <span class="reading-time"><i class="bi bi-clock"></i> 12 min read</span>
+          <span class="category">Energy Analytics</span>
+          <span class="last-updated">Supporting Article</span>
+        </div>
+        <h1 class="article-title" itemprop="headline">How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal</h1>
+        <p class="article-subtitle">You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy.</p>
+        <div class="article-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <img src="../assets/img/profile-img.jpg" alt="Adediran Adeyemi - Energy Data Scientist" class="author-image" width="48" height="48">
+          <div class="author-info">
+            <span class="author-name" itemprop="name">Adediran Adeyemi</span>
+            <span class="author-title">Freelance Data Scientist and Analytics Consultant</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-content" itemprop="articleBody">
+
+        <p class="lead">Most articles on oil price forecasting are either academic papers comparing XGBoost to LSTM on a Kaggle dataset, or vendor marketing pieces explaining why you need a $50,000-per-year subscription. This is neither. It is a practical breakdown of how to build a working oil price forecasting model using publicly available data and tools that cost nothing.</p>
+
+        <p>The output will not predict crude prices with perfect accuracy — nothing does — but it will give you a systematic, repeatable view on price direction that is significantly better than guessing or reading analyst summaries from three days ago.</p>
+
+        <p>Related reading: <a href="oil-analytics-independent-operators.html">Oil Analytics for Independent Operators: A Practical Guide</a> — the pillar article this post builds on.</p>
+
+        <h2>The Data Sources You Actually Need</h2>
+
+        <p>The most important inputs for a near-term oil price model are already publicly available, updated regularly, and free. Here is what to use and why each one matters.</p>
+
+        <div class="data-sources">
+
+          <div class="data-source-card">
+            <h4>EIA Weekly Petroleum Status Report</h4>
+            <span class="tag">Free — Weekly</span>
+            <p>Published every Wednesday at 10:30 AM Eastern Time. Contains U.S. crude oil and petroleum product inventory levels, refinery utilization, import and export volumes, and production figures. Accessible via the EIA API at no cost. This is the single most market-moving data release in the oil market on a weekly basis. Building a model that does not incorporate EIA inventory data is building a model that ignores the most relevant weekly signal.</p>
+          </div>
+
+          <div class="data-source-card">
+            <h4>EIA Monthly Data</h4>
+            <span class="tag">Free — Monthly</span>
+            <p>Longer series on production by field, consumption by sector, and international comparisons. The API gives you access to hundreds of series going back decades. For a time-series forecasting model, you want at least five years of weekly data minimum — ideally ten.</p>
+          </div>
+
+          <div class="data-source-card">
+            <h4>CME Group Free Delayed Data</h4>
+            <span class="tag">Free — 10-min delay</span>
+            <p>WTI front-month and near-term futures prices with a 10-minute delay. Not ideal for trading but perfectly adequate for a forecasting model updated daily or weekly.</p>
+          </div>
+
+          <div class="data-source-card">
+            <h4>FRED — Federal Reserve Economic Data</h4>
+            <span class="tag">Free — Continuous</span>
+            <p>The U.S. Dollar Index, interest rate data, and various macro indicators are all available here. Oil prices are denominated in dollars and have a documented inverse relationship with dollar strength. Leaving this variable out of your model is leaving out an important input.</p>
+          </div>
+
+          <div class="data-source-card">
+            <h4>CrudeBERT Sentiment Scores</h4>
+            <span class="tag">Free — GitHub</span>
+            <p>A natural language model trained specifically on crude oil market news. Sentiment data has been shown in several academic studies to improve short-term oil price forecasting accuracy. The dataset is available on GitHub and is worth testing as an additional feature layer.</p>
+          </div>
+
+        </div>
+
+        <h2>Building the Model: A Practical Step-by-Step Approach</h2>
+
+        <p>Start with the simplest thing that could work, then add complexity only if it improves performance on a held-out test set. Here are the five steps.</p>
+
+        <div class="build-steps">
+
+          <div class="build-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Pull and Clean the Data</h3>
+              <p>Use the EIA API Python wrapper to download weekly inventory changes, refinery utilization, and production data. Merge with weekly WTI or Brent price data from CME or Yahoo Finance. Add the U.S. Dollar Index from FRED.</p>
+              <p>The result is a weekly time-series dataframe with roughly 500 rows for ten years of data — well within the range that gradient boosting models handle comfortably.</p>
+            </div>
+          </div>
+
+          <div class="build-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Feature Engineering</h3>
+              <p>The raw data is less useful than derived features. The variables that tend to carry the most predictive signal for short-term oil price movements:</p>
+              <div class="feature-pills">
+                <span class="pill">Week-over-week crude inventory change</span>
+                <span class="pill">4-week rolling refinery utilization</span>
+                <span class="pill">Production-to-imports ratio</span>
+                <span class="pill">Dollar index level + 4-week change</span>
+                <span class="pill">Lagged oil price (1w, 4w, 12w)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="build-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Train a Gradient Boosting Model</h3>
+              <p>XGBoost or LightGBM outperform LSTM on most tabular oil price datasets when the data volume is modest — under a few thousand rows. Train on 80% of your data, validate on the remaining 20%, and report RMSE and directional accuracy.</p>
+              <p><strong>Directional accuracy above 55% is genuinely useful.</strong> It means you are right more than you are wrong on which direction price will move — a significant edge for hedging decisions.</p>
+            </div>
+          </div>
+
+          <div class="build-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Interpret the Model with SHAP</h3>
+              <p>Use SHAP values to understand which features are driving predictions in any given week. This is more valuable than the point forecast itself. Knowing that inventory drawdowns are currently the dominant signal — versus knowing that the dollar index is dominating — changes how you think about risk and what other information you should be watching.</p>
+            </div>
+          </div>
+
+          <div class="build-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>Build a Reporting Wrapper</h3>
+              <p>A Jupyter notebook that runs weekly, pulls fresh EIA data, and outputs a two-page summary — price trend signal, dominant drivers, 4-week directional probability — is something an analyst or executive can actually use. The point is not a dashboard nobody checks. It is a consistent, weekly signal that feeds real decisions.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <h2>What This Model Cannot Do</h2>
+
+        <p>Overconfidence in a model is more dangerous than having no model at all. These are real limitations to communicate clearly to anyone using the output.</p>
+
+        <div class="warning-box">
+          <h4>Honest Limitations</h4>
+          <ul>
+            <li><strong>Geopolitical shocks are invisible to the model.</strong> OPEC+ production decisions, sanctions announcements, pipeline disruptions, wars — these produce price moves that no EIA inventory series will predict in advance. Your model will be wrong during these events. That is expected.</li>
+            <li><strong>Near-term only.</strong> For a one-to-four week horizon, statistically trained models have some edge. For six-to-twelve month horizons, fundamental analysis of supply-demand balances and OPEC policy will be more relevant than any time-series model.</li>
+            <li><strong>Not a trading system.</strong> Use it for business decision support — hedging timing, drilling deferrals, forward sale decisions — not for speculative trading without additional risk controls.</li>
+          </ul>
+        </div>
+
+        <div class="insight-box">
+          <p>Use this model for what it is good at: giving you a repeatable, data-grounded view on near-term price direction that updates automatically each week. That alone is more than most independent operators currently have.</p>
+        </div>
+
+        <h2>Where to Go Next: Natural Extensions</h2>
+
+        <p>Once you have a baseline model running, these are the natural next steps in order of likely impact.</p>
+
+        <div class="extension-cards">
+          <div class="extension-card">
+            <h4>Satellite Inventory Data</h4>
+            <p>Several providers aggregate satellite imagery of crude storage tanks globally. This gives you a view on non-U.S. stocks that EIA data does not cover.</p>
+          </div>
+          <div class="extension-card">
+            <h4>Freight &amp; Tanker Data</h4>
+            <p>Crude tanker movements from providers like Vortexa or Kpler signal supply shifts before they appear in official statistics. Trial access is available.</p>
+          </div>
+          <div class="extension-card">
+            <h4>Hedging Decision Framework</h4>
+            <p>Connect price direction signals to your hedge ratio decisions. This closes the loop between analytics and commercial operations — the point of the whole exercise.</p>
+          </div>
+        </div>
+
+        <h2>The Tool Gap This Points To</h2>
+
+        <p>Walking through this process makes one thing clear: all the underlying analytics are achievable with open tools and public data. What does not exist is a product that assembles this into a clean, weekly-updating interface priced for independent operators — not a $50,000 annual subscription, not a DIY Python project, but something in between.</p>
+
+        <p>Domain names like <a href="https://sedo.com/search/details/?domain=oilquant.com&origin=domaindetails" target="_blank" rel="noopener noreferrer">oilquant.com</a> signal exactly the kind of product this market is waiting for — a focused, oil-specific quantitative analytics platform built for this buyer. The market gap is real. The first credible product to fill it will own it.</p>
+
+        <div class="internal-links-box">
+          <h4>Continue Reading</h4>
+          <a href="oil-analytics-independent-operators.html">Oil Analytics for Independent Operators: A Practical Guide →</a>
+          <a href="what-is-energy-intelligence-small-ep-firms.html">What Is Energy Intelligence and Why Small E&P Firms Are Finally Paying Attention →</a>
+        </div>
+
+        <div class="final-insight">
+          <p>The barrier to building a working oil price forecasting model is not data. The EIA publishes the most market-relevant weekly signal for free every Wednesday morning.</p>
+          <p>The barrier is the <strong>analytical workflow</strong> — pulling it consistently, engineering the right features, interpreting the output, and connecting it to actual business decisions.</p>
+          <p class="cta-inline">That workflow is buildable in a few weeks. The cost of not building it compounds every quarter you hedge blind.</p>
+        </div>
+
+      </div>
+
+      <div class="article-cta">
+        <div class="cta-content">
+          <h3>Need This Model Built for Your Operation?</h3>
+          <p>I am Adediran Adeyemi. I build production ML systems and analytical workflows for energy firms and independent operators — using open data and Python, not $500K enterprise licenses. If you want a working price forecasting model connected to your hedging decisions, let's talk.</p>
+          <a href="../index.html#contact" class="btn-cta">Start the Conversation <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="article-share">
+        <h4>Share this article</h4>
+        <div class="share-buttons">
+          <a href="https://x.com/intent/tweet?text=How+to+Build+an+Oil+Price+Forecasting+Model+Without+a+Bloomberg+Terminal&url=https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html&via=AdediranAd60922" target="_blank" class="share-btn twitter" rel="noopener noreferrer">
+            <i class="bi bi-twitter-x"></i> X (Twitter)
+          </a>
+          <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html" target="_blank" class="share-btn linkedin" rel="noopener noreferrer">
+            <i class="bi bi-linkedin"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="related-articles">
+        <h3>Continue Reading</h3>
+        <div class="related-grid">
+          <a href="oil-analytics-independent-operators.html" class="related-card">
+            <div class="related-tag">Pillar</div>
+            <h4>Oil Analytics for Independent Operators: A Practical Guide</h4>
+            <p>The full framework — production analytics, price analytics, tools, and where to start.</p>
+            <span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+          </a>
+          <a href="what-is-energy-intelligence-small-ep-firms.html" class="related-card">
+            <div class="related-tag">Supporting</div>
+            <h4>What Is Energy Intelligence and Why Small E&P Firms Are Finally Paying Attention</h4>
+            <p>How to build a structured market intelligence function without enterprise budgets.</p>
+            <span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+          </a>
+          <a href="commodity-analytics-budget-alternatives-enterprise.html" class="related-card">
+            <div class="related-tag">Supporting</div>
+            <h4>Commodity Analytics on a Tight Budget</h4>
+            <p>What independent operators can use instead of $500K-per-year enterprise platforms.</p>
+            <span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</main>
+
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h3>Adeyemi<span>Data</span></h3>
+          <p>Turning Data Into Revenue<br>Lagos, Nigeria (Remote Globally)<br><br>
+            <strong>Phone:</strong> <a href="https://wa.me/+2348162735399">+234 816 273 5399</a><br>
+            <strong>Email:</strong> <a href="mailto:contact@adediranadeyemi.com">contact@adediranadeyemi.com</a>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Services</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#portfolio">Portfolio</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#contact">Let's Talk</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>What I Do</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Predict Churn</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Track What Works</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Understand Customers</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="../index.html#featured-services">Automate Data</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Connect With Me</h4>
+          <p>Data tactics and project updates</p>
+          <div class="social-links mt-3">
+            <a href="https://x.com/AdediranAd60922" class="twitter" aria-label="X (Twitter)" rel="noopener noreferrer" target="_blank"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.linkedin.com/in/adediran-adeyemi" class="linkedin" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/Adeyemi0" class="github" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://www.instagram.com/Adeyemi_the_data_analyst" class="instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://wa.me/+2348162735399" class="whatsapp" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container py-4">
+    <div class="copyright">&copy; 2026 <strong><span>Adediran Adeyemi</span></strong>. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const toggle = document.querySelector('.mobile-nav-toggle');
+  if (toggle) toggle.addEventListener('click', function() {
+    document.querySelector('#navbar').classList.toggle('navbar-mobile');
+    this.classList.toggle('bi-list');
+    this.classList.toggle('bi-x');
+  });
+</script>
+</body>
+</html>
