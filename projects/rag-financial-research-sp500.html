@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Research Across 402 Companies in Seconds | Data</title>
+<meta name="description" content="Production RAG application answering financial questions across 402 S&P MidCap companies, 50M+ tokens. LangChain, GPT-4o, Zilliz. 40-70% cost reduction via...">
+<link rel="canonical" href="https://adediranadeyemi.com/projects/rag-financial-research-sp500.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Adediran Adeyemi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Financial Research Across 402 Companies in Seconds | Data">
+<meta property="og:description" content="Production RAG application answering financial questions across 402 S&P MidCap companies, 50M+ tokens. LangChain, GPT-4o, Zilliz. 40-70% cost reduction via...">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/rag-financial-research-sp500.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/rag.webp">
+<meta property="og:site_name" content="Adediran Adeyemi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Financial Research Across 402 Companies in Seconds | Data">
+<meta name="twitter:description" content="Production RAG application answering financial questions across 402 S&P MidCap companies, 50M+ tokens. LangChain, GPT-4o, Zilliz. 40-70% cost reduction via...">
+<link href="../assets/img/favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+<link href="../assets/img/favicon-16.png" rel="icon" type="image/png" sizes="16x16">
+<link href="../assets/img/favicon.ico" rel="shortcut icon">
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="../site.webmanifest" rel="manifest">
+<meta name="theme-color" content="#0F1B17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Financial Research Across 402 Companies in Seconds",
+  "description": "Production RAG application answering financial questions across 402 S&P MidCap companies, 50M+ tokens. LangChain, GPT-4o, Zilliz. 40-70% cost reduction via...",
+  "creator": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com/about.html"
+  },
+  "url": "https://adediranadeyemi.com/projects/rag-financial-research-sp500.html",
+  "keywords": "RAG · LLM · Vector Database · FastAPI"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://adediranadeyemi.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://adediranadeyemi.com/projects.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Financial Research Across 402 Companies in Seconds",
+      "item": "https://adediranadeyemi.com/projects/rag-financial-research-sp500.html"
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-810CYGL9VL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-810CYGL9VL');</script>
+<style>
+/* ── BREADCRUMB ── */
+.project-breadcrumb { background: var(--surface); border-bottom: 1px solid var(--line); padding: 12px 0; font-size: 13px; }
+.project-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.project-breadcrumb li { display: flex; align-items: center; gap: 6px; color: var(--body); }
+.project-breadcrumb li a { color: var(--body); text-decoration: none; transition: color .2s; }
+.project-breadcrumb li a:hover { color: var(--accent); }
+.project-breadcrumb li.active { color: var(--ink); font-weight: 600; }
+.project-breadcrumb .sep { color: var(--line); font-size: 11px; }
+/* ── HERO ── */
+.project-hero { background: var(--surface); padding: 60px 0 0; border-bottom: 1px solid var(--line); }
+.project-hero .hero-label { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-tint); color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+.project-hero h1 { font-size: 2.75rem; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
+.project-hero h1 span { color: var(--accent); }
+.project-hero .hero-lead { font-size: 17px; color: var(--body); line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 32px; }
+.hero-meta-item .meta-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-2); margin-bottom: 4px; }
+.hero-meta-item .meta-value { font-size: 14px; font-weight: 600; color: var(--ink); }
+.hero-stats { display: flex; border-top: 1px solid var(--line); margin-top: 40px; }
+.hero-stat { flex: 1; padding: 28px 20px; text-align: center; border-right: 1px solid var(--line); }
+.hero-stat:last-child { border-right: none; }
+.hero-stat .stat-num { font-size: 2.25rem; font-weight: 900; color: var(--accent); letter-spacing: -0.04em; line-height: 1; display: block; }
+.hero-stat .stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+/* ── LAYOUT ── */
+.project-body { padding: 80px 0; }
+.toc-sidebar { position: sticky; top: 90px; }
+.toc-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+.toc-card .toc-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-2); margin-bottom: 16px; }
+.toc-list { list-style: none; padding: 0 0 0 16px; margin: 0; border-left: 2px solid var(--line); }
+.toc-list li { margin-bottom: 10px; }
+.toc-list a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; line-height: 1.4; display: block; }
+.toc-list a:hover, .toc-list a.active { color: var(--accent); }
+.toc-list a.active { font-weight: 600; }
+.toc-cta { background: var(--accent-tint); border-radius: 8px; padding: 18px; margin-top: 20px; text-align: center; }
+.toc-cta p { font-size: 13px; color: var(--ink); line-height: 1.5; margin-bottom: 12px; font-weight: 500; }
+.toc-cta a { display: inline-block; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px; text-decoration: none; transition: background .2s; }
+.toc-cta a:hover { background: var(--accent-dark); color: #fff; }
+/* ── ARTICLE SECTIONS ── */
+.doc-section { margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
+.doc-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.doc-section h2 { font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -0.025em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.section-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--accent-tint); border-radius: 8px; color: var(--accent); font-size: 16px; flex-shrink: 0; }
+.doc-section h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-top: 28px; margin-bottom: 10px; }
+.doc-section p { font-size: 15px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 14px; }
+.doc-section ul, .doc-section ol { padding-left: 20px; margin-bottom: 14px; }
+.doc-section li { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 6px; }
+/* Callouts */
+.callout { background: var(--accent-tint); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+.callout p { margin: 0; font-size: 14px; color: var(--ink); line-height: 1.65; }
+.callout strong { color: var(--accent); }
+.callout-green { background: var(--success-tint); border-left: 4px solid var(--success); border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+.callout-green p { margin: 0; font-size: 14px; color: var(--ink); line-height: 1.65; }
+.callout-green strong { color: var(--success); }
+/* Features grid */
+.features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.feature-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 20px; transition: box-shadow .2s, transform .2s; }
+.feature-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(var(--accent-rgb),.1); }
+.feat-icon { width: 40px; height: 40px; background: var(--accent-tint); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 18px; margin-bottom: 12px; }
+.feature-card h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.feature-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0; }
+/* Architecture flow */
+.arch-flow { display: flex; flex-direction: column; gap: 0; margin-top: 20px; }
+.arch-row { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; margin-bottom: 8px; }
+.arch-connector { display: flex; flex-direction: column; align-items: center; }
+.arch-node { width: 40px; height: 40px; background: var(--accent); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+.arch-line { width: 2px; height: 20px; background: var(--line); margin: 0 auto; }
+.arch-body { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin-top: 4px; }
+.arch-body h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.arch-body p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.55; }
+/* Tech stack */
+.tech-stack { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; margin-top: 20px; }
+.tech-item { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px 12px; text-align: center; transition: border-color .2s; }
+.tech-item:hover { border-color: var(--accent); }
+.tech-item i { font-size: 24px; color: var(--accent); display: block; margin-bottom: 8px; }
+.tech-item .tech-name { font-size: 13px; font-weight: 700; color: var(--ink); display: block; }
+.tech-item .tech-role { font-size: 11px; color: var(--muted-2); display: block; margin-top: 2px; }
+/* Cache grid */
+.cache-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.cache-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+.cache-card h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+.cache-stat { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
+.cache-stat:last-child { border-bottom: none; }
+.cache-stat .cs-label { color: var(--muted); }
+.cache-stat .cs-val { font-weight: 700; color: var(--accent); font-family: 'Courier New', monospace; }
+.cache-stat .cs-val.green { color: var(--success); }
+/* Conversation box */
+.convo-box { background: var(--ink); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+.convo-turn { margin-bottom: 16px; }
+.convo-turn:last-child { margin-bottom: 0; }
+.convo-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.convo-label.user { color: var(--accent); }
+.convo-label.ai { color: #4ADE80; }
+.convo-text { font-size: 13px; line-height: 1.65; font-family: 'Courier New', monospace; }
+.convo-text.user { color: var(--line); }
+.convo-text.ai { color: var(--success-tint); }
+.convo-text .cite { color: var(--accent); }
+/* Code block */
+.code-block { background: var(--ink); border-radius: 10px; padding: 20px 24px; margin: 16px 0; overflow-x: auto; }
+.code-block .code-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.code-block pre { margin: 0; color: var(--line); font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.7; white-space: pre; }
+/* Demo embed */
+.demo-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.06); margin: 20px 0; background: var(--ink); }
+.demo-wrap iframe { display: block; width: 100%; height: 560px; border: none; }
+.demo-caption { background: #fff; padding: 12px 16px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); display: flex; align-items: center; gap: 8px; }
+.demo-caption i { color: var(--accent); }
+/* Ratio grid */
+.ratio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; margin-top: 16px; }
+.ratio-pill { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; transition: border-color .2s; }
+.ratio-pill:hover { border-color: var(--accent); color: var(--accent); }
+.ratio-pill i { color: var(--accent); font-size: 14px; flex-shrink: 0; }
+.tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+/* Related cards */
+.related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.related-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; text-decoration: none; transition: all .3s ease; display: block; }
+.related-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(var(--accent-rgb),.12); text-decoration: none; }
+.related-card .card-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.related-card h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.4; }
+.related-card p { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
+.related-card .card-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--accent); }
+/* CTA */
+.project-cta { background: var(--accent); padding: 80px 0; text-align: center; color: #fff; }
+.project-cta .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 16px; }
+.project-cta h2 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.project-cta p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 420px; margin: 0 auto 32px; line-height: 1.6; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-cta-white { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: #fff; color: var(--accent); text-decoration: none; transition: all .3s; }
+.btn-cta-white:hover { background: var(--line-soft); color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.btn-cta-ghost { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); text-decoration: none; transition: all .3s; }
+.btn-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; text-decoration: none; }
+/* ── RESPONSIVE ── */
+@media (max-width: 991px) {
+.toc-sidebar { display: none; }
+.project-hero h1 { font-size: 2rem; }
+.features-grid, .cache-grid, .related-grid { grid-template-columns: 1fr; }
+.hero-stats { flex-direction: column; }
+.hero-stat { border-right: none; border-bottom: 1px solid var(--line); }
+.hero-stat:last-child { border-bottom: none; }
+}
+@media (max-width: 768px) {
+.project-hero { padding: 40px 0 0; }
+.project-hero h1 { font-size: 1.75rem; }
+.project-body { padding: 50px 0; }
+.doc-section { margin-bottom: 40px; padding-bottom: 40px; }
+.demo-wrap iframe { height: 420px; }
+.ratio-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="header">
+  <div class="container navbar-wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+      <span>Adediran Adeyemi<span class="brand-sub">Data Scientist &amp; AI/ML Engineer</span></span>
+    </a>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a class="" href="../index.html">Home</a></li><li><a class="" href="../about.html">About</a></li><li><a class="" href="../services.html">Services</a></li><li><a class="active" href="../projects.html">Projects</a></li><li><a class="" href="../blog.html">Blog</a></li>
+      </ul>
+      <div class="header-cta-mobile">
+        <a class="btn btn-accent btn-block" href="../contact.html">Let's Work Together</a>
+      </div>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="../contact.html">Let's Work Together <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <button class="mobile-nav-toggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+<main id="main">
+  <nav class="project-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li class="sep">/</li>
+        <li class="active">Financial Research Across 402 Companies in Seconds</li>
+      </ol>
+    </div>
+  </nav>
+  <section class="project-hero">
+    <div class="container">
+      
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<div class="hero-label">
+<i class="bi bi-cpu-fill"></i>
+RAG · LLM · Vector Database · FastAPI
+</div>
+<h1>Financial Research Across <span>402 Companies</span> in Seconds</h1>
+<p class="hero-lead">
+FinSight is a production-grade RAG application that answers financial questions across 50M+ tokens of S&amp;P MidCap 400 filings, with source citations, conversation memory, and a multi-layer caching system that reduces API costs by 40-70%.
+</p>
+<div class="hero-meta">
+<div class="hero-meta-item">
+<div class="meta-label">Stack</div>
+<div class="meta-value">LangChain · GPT-4o · Zilliz · FastAPI · Docker</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Data</div>
+<div class="meta-value">402 S&amp;P MidCap 400 companies · 8 years of filings</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Type</div>
+<div class="meta-value">RAG · Production ML · Financial AI</div>
+</div>
+</div>
+<div class="d-flex flex-wrap gap-3 pb-4">
+<a class="btn-get-started-primary" href="https://huggingface.co/spaces/adeyemi001/FinSight-RAG-Application" target="_blank">
+Try Live Demo <i class="bi bi-play-circle"></i>
+</a>
+<a class="btn-get-started-secondary" href="https://github.com/Adeyemi0/FinSight-RAG-Application-" target="_blank">
+View on GitHub <i class="bi bi-github"></i>
+</a>
+</div>
+</div>
+<div class="col-lg-5 d-none d-lg-block">
+<img alt="FinSight RAG financial research application by Adediran Adeyemi" class="img-fluid" decoding="async" fetchpriority="high" height="360" loading="lazy" src="https://adediranadeyemi.com/assets/img/portfolio/rag.webp" style="border-radius:12px; border:1px solid var(--line); box-shadow:0 20px 60px rgba(var(--accent-rgb),0.12);" width="560"/>
+</div>
+</div>
+<!-- Stats strip -->
+<div class="hero-stats">
+<div class="hero-stat">
+<span class="stat-num">50M+</span>
+<span class="stat-label">Tokens across company filings &amp; statements</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">402</span>
+<span class="stat-label">S&amp;P MidCap 400 companies indexed</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">40-70%</span>
+<span class="stat-label">API cost reduction from caching</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">19</span>
+<span class="stat-label">Financial ratios auto-calculated</span>
+</div>
+</div>
+</div>
+
+    </div>
+  </section>
+  <section class="project-body">
+    <div class="container">
+      
+<div class="container">
+<div class="row">
+<!-- TOC -->
+<div class="col-lg-3 d-none d-lg-block">
+<aside aria-label="Table of contents" class="toc-sidebar">
+<div class="toc-card">
+<p class="toc-heading">On This Page</p>
+<ul class="toc-list">
+<li><a href="#overview">Project Overview</a></li>
+<li><a href="#architecture">RAG Architecture</a></li>
+<li><a href="#features">Core Features</a></li>
+<li><a href="#pipeline">Pipeline Deep Dive</a></li>
+<li><a href="#conversation">Conversation Memory</a></li>
+<li><a href="#caching">Caching System</a></li>
+<li><a href="#ratios">Financial Ratios</a></li>
+<li><a href="#demo">Live Demo</a></li>
+<li><a href="#tech">Tech Stack</a></li>
+<li><a href="#api">API Reference</a></li>
+<li><a href="#related">Related Projects</a></li>
+</ul>
+<div class="toc-cta">
+<p>Need a custom RAG system built on your data?</p>
+<a href="../contact.html">Let's Talk →</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- Article -->
+<div class="col-lg-9">
+<article itemscope="" itemtype="https://schema.org/TechArticle">
+<meta content="Adediran Adeyemi" itemprop="author"/>
+<meta content="2025-06-01" itemprop="datePublished"/>
+<meta content="FinSight RAG, AI Financial Research Across 402 S&amp;P MidCap Companies" itemprop="headline"/>
+<!-- OVERVIEW -->
+<div class="doc-section" id="overview">
+<h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview</h2>
+<p>
+Financial research is bottlenecked by document volume. Analysts manually reading through hundreds of 10-K filings, income statements, balance sheets, and cash flow reports to answer questions that should take seconds, not hours. FinSight solves this.
+</p>
+<p>
+FinSight is a production-grade RAG application that indexes 50M+ tokens across 402 S&amp;P MidCap 400 companies' financial statements and filings. Ask any financial question in plain English and receive a sourced, cited answer in seconds, with full conversation memory so follow-up questions work naturally.
+</p>
+<div class="callout-green">
+<p><strong>Key achievement:</strong> Reduces financial research time from <strong>hours to seconds</strong> with full source attribution. The multi-layer caching system reduces OpenAI API costs by 40-70% in production use, making the system economically viable at scale.</p>
+</div>
+</div>
+<!-- ARCHITECTURE -->
+<div class="doc-section" id="architecture">
+<h2><span class="section-icon"><i class="bi bi-diagram-3"></i></span> RAG Pipeline Architecture</h2>
+<p>Every query flows through seven stages, from cache lookup to final GPT-4o generation. Each stage maximizes answer quality while minimizing API cost and latency:</p>
+<div class="arch-flow">
+<div class="arch-row">
+<div class="arch-connector"><div class="arch-node"><i class="bi bi-search"></i></div><div class="arch-line"></div></div>
+<div class="arch-body"><h4>1. Cache Lookup</h4><p>Check query result cache first, matching queries return instantly (&lt;50ms). Smart invalidation skips cache for follow-up questions needing fresh context.</p></div>
+</div>
+<div class="arch-row">
+<div class="arch-connector"><div class="arch-node"><i class="bi bi-arrow-repeat"></i></div><div class="arch-line"></div></div>
+<div class="arch-body"><h4>2. Query Expansion</h4><p>GPT-4o generates 3-4 alternative phrasings to capture different financial terminology. Improves recall by 30-40% for domain-specific questions.</p></div>
+</div>
+<div class="arch-row">
+<div class="arch-connector"><div class="arch-node"><i class="bi bi-hdd-stack"></i></div><div class="arch-line"></div></div>
+<div class="arch-body"><h4>3. Zilliz Vector Search</h4><p>3072-dimensional embeddings search the Zilliz cloud vector database. Retrieves top 30 documents with hybrid semantic + metadata filtering by ticker and doc type.</p></div>
+</div>
+<div class="arch-row">
+<div class="arch-connector"><div class="arch-node"><i class="bi bi-funnel"></i></div><div class="arch-line"></div></div>
+<div class="arch-body"><h4>4. MMR Reranking</h4><p>Maximal Marginal Relevance reranks 30 docs to 10, balancing relevance with diversity, preventing redundant information in the context window.</p></div>
+</div>
+<div class="arch-row">
+<div class="arch-connector"><div class="arch-node"><i class="bi bi-scissors"></i></div><div class="arch-line"></div></div>
+<div class="arch-body"><h4>5. Contextual Compression</h4><p>LLM extracts only the relevant sentences from each chunk, reducing context by 40-60% while preserving critical financial figures.</p></div>
+</div>
+<div class="arch-row">
+<div class="arch-connector"><div class="arch-node"><i class="bi bi-clock-history"></i></div><div class="arch-line"></div></div>
+<div class="arch-body"><h4>6. Conversation History</h4><p>Last 3 exchanges (max 4000 tokens) prepended for follow-up question support and pronoun resolution across turns.</p></div>
+</div>
+<div class="arch-row">
+<div class="arch-connector"><div class="arch-node"><i class="bi bi-stars"></i></div></div>
+<div class="arch-body"><h4>7. GPT-4o Generation + Cache</h4><p>GPT-4o generates the final answer with [Source N] citations, ratio calculations, and trend analysis. Response cached for future identical queries.</p></div>
+</div>
+</div>
+</div>
+<!-- FEATURES -->
+<div class="doc-section" id="features">
+<h2><span class="section-icon"><i class="bi bi-grid"></i></span> Core Features</h2>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feat-icon"><i class="bi bi-chat-dots"></i></div>
+<h4>Conversational AI</h4>
+<p>Multi-turn conversations with context memory. Follow-ups like "What about 2025?" work naturally after any previous question.</p>
+</div>
+<div class="feature-card">
+<div class="feat-icon"><i class="bi bi-journals"></i></div>
+<h4>Source Citations</h4>
+<p>Every answer includes [Source N] references with filename, document type, and similarity score. Full auditability, no black box.</p>
+</div>
+<div class="feature-card">
+<div class="feat-icon"><i class="bi bi-lightning-charge"></i></div>
+<h4>Smart Caching</h4>
+<p>Two-layer caching reduces API costs 40-70%. Repeated queries return in &lt;50ms vs 2-4 seconds for novel queries.</p>
+</div>
+<div class="feature-card">
+<div class="feat-icon"><i class="bi bi-calculator"></i></div>
+<h4>Financial Ratios</h4>
+<p>Auto-calculates 19 financial ratios with formulas, extracted figures, and step-by-step workings on demand.</p>
+</div>
+<div class="feature-card">
+<div class="feat-icon"><i class="bi bi-filter-circle"></i></div>
+<h4>Hybrid Search</h4>
+<p>Combines semantic similarity with metadata filtering by ticker, document type (income statement, balance sheet), and date.</p>
+</div>
+<div class="feature-card">
+<div class="feat-icon"><i class="bi bi-file-pdf"></i></div>
+<h4>PDF Export</h4>
+<p>Download any analysis as a formatted PDF report. Query history tracking lets users reference and reuse previous searches.</p>
+</div>
+</div>
+</div>
+<!-- PIPELINE -->
+<div class="doc-section" id="pipeline">
+<h2><span class="section-icon"><i class="bi bi-cpu"></i></span> Pipeline Deep Dive</h2>
+<h3>Query Expansion</h3>
+<p>The system generates alternative phrasings to capture different ways financial questions can be expressed:</p>
+<div class="code-block">
+<div class="code-label">Query Expansion Example</div>
+<pre>Input:   "What was revenue in 2024?"
+Expanded to:
+→ "What was total revenue in fiscal year 2024?"
+→ "Show me contract revenue for FY 2024"
+→ "What were the sales figures for 2024?"
+→ "Revenue reported in annual report 2024"
+Improvement: 30-40% better recall on domain queries</pre>
+</div>
+<h3>MMR Reranking</h3>
+<p>After retrieving 30 candidate documents, Maximal Marginal Relevance selects the best 10 by balancing relevance with diversity, preventing the context window from being filled with near-identical chunks. A 3× retrieval-to-selection ratio ensures the best content surfaces even when the top results cluster around the same source.</p>
+<h3>Contextual Compression</h3>
+<p>Rather than passing full document chunks to GPT-4o, a lightweight LLM pass extracts only directly relevant sentences, reducing context by 40-60%. More documents fit in the window, and generation quality improves because the model processes signal rather than noise.</p>
+<div class="callout">
+<p><strong>Engineering trade-off:</strong> Each pipeline stage adds latency but improves answer quality. The caching system compensates, frequent queries bypass most of the pipeline entirely, keeping average response times competitive while maintaining full quality for novel queries.</p>
+</div>
+</div>
+<!-- CONVERSATION -->
+<div class="doc-section" id="conversation">
+<h2><span class="section-icon"><i class="bi bi-clock-history"></i></span> Conversation Memory</h2>
+<p>Unlike single-turn Q&amp;A systems, FinSight maintains conversation context for natural financial analysis workflows:</p>
+<div class="convo-box">
+<div class="convo-turn"><div class="convo-label user">User</div><div class="convo-text user">What was ACM's revenue in 2024?</div></div>
+<div class="convo-turn"><div class="convo-label ai">FinSight</div><div class="convo-text ai">ACM's contract revenue in FY 2024 was $16.11B <span class="cite">[Source 1]</span></div></div>
+<div class="convo-turn"><div class="convo-label user">User</div><div class="convo-text user">What about 2025? <span style="color:var(--muted-2);font-size:11px;">← references previous query automatically</span></div></div>
+<div class="convo-turn"><div class="convo-label ai">FinSight</div><div class="convo-text ai">Revenue in FY 2025 was $16.14B, an increase of $30M (0.19%) compared to $16.11B in FY 2024 <span class="cite">[Source 1]</span></div></div>
+<div class="convo-turn"><div class="convo-label user">User</div><div class="convo-text user">Is that growth rate good for this sector?</div></div>
+<div class="convo-turn"><div class="convo-label ai">FinSight</div><div class="convo-text ai">A 0.19% YoY growth is relatively flat. Industry peers in engineering services averaged 3-5% in the same period, suggesting ACM underperformed on top-line growth in FY 2025 <span class="cite">[Source 1, 2]</span></div></div>
+</div>
+<ul>
+<li><strong>Session architecture:</strong> Unique ID per browser tab, persists through page refresh via sessionStorage</li>
+<li><strong>Context window:</strong> Last 3 exchanges (6 messages), max 4000 tokens with automatic pruning</li>
+<li><strong>Smart cache bypass:</strong> Follow-up indicators ("what about", "compare", "that") automatically skip query cache for fresh context-aware responses</li>
+</ul>
+</div>
+<!-- CACHING -->
+<div class="doc-section" id="caching">
+<h2><span class="section-icon"><i class="bi bi-lightning-charge"></i></span> Multi-Layer Caching</h2>
+<p>Two independent cache layers eliminate redundant API calls, the primary cost driver in production RAG systems:</p>
+<div class="cache-grid">
+<div class="cache-card">
+<h4><i class="bi bi-vector-pen" style="color:var(--accent);margin-right:6px;"></i> Embedding Cache</h4>
+<div class="cache-stat"><span class="cs-label">TTL</span><span class="cs-val">24 hours</span></div>
+<div class="cache-stat"><span class="cs-label">Capacity</span><span class="cs-val">1,000 entries (LRU)</span></div>
+<div class="cache-stat"><span class="cs-label">Latency saving</span><span class="cs-val green">~200ms per hit</span></div>
+<div class="cache-stat"><span class="cs-label">Cost saving</span><span class="cs-val green">50-80% of embed costs</span></div>
+</div>
+<div class="cache-card">
+<h4><i class="bi bi-hdd-stack" style="color:var(--accent);margin-right:6px;"></i> Query Result Cache</h4>
+<div class="cache-stat"><span class="cs-label">TTL</span><span class="cs-val">1 hour</span></div>
+<div class="cache-stat"><span class="cs-label">Capacity</span><span class="cs-val">100 entries (LRU)</span></div>
+<div class="cache-stat"><span class="cs-label">Latency saving</span><span class="cs-val green">&lt;50ms response</span></div>
+<div class="cache-stat"><span class="cs-label">Cost saving</span><span class="cs-val green">~$0.01-0.02 per hit</span></div>
+</div>
+</div>
+<div class="callout-green">
+<p><strong>Production impact:</strong> Combined caching reduces total OpenAI API costs by 40-70% in sustained use. For a system running expensive GPT-4o and text-embedding-3-large calls at scale, this is the difference between a viable and non-viable production cost structure.</p>
+</div>
+</div>
+<!-- RATIOS -->
+<div class="doc-section" id="ratios">
+<h2><span class="section-icon"><i class="bi bi-calculator"></i></span> 19 Financial Ratios, Auto-Calculated</h2>
+<p>The system prompt encodes formulas for 19 ratios. Ask any ratio question and receive the formula, extracted figures, calculation, and cited result:</p>
+<div class="ratio-grid">
+<div class="ratio-pill"><i class="bi bi-droplet"></i> Current Ratio</div>
+<div class="ratio-pill"><i class="bi bi-droplet-half"></i> Quick Ratio</div>
+<div class="ratio-pill"><i class="bi bi-wallet2"></i> Working Capital</div>
+<div class="ratio-pill"><i class="bi bi-bar-chart"></i> Debt-to-Equity</div>
+<div class="ratio-pill"><i class="bi bi-pie-chart"></i> Debt-to-Assets</div>
+<div class="ratio-pill"><i class="bi bi-percent"></i> Gross Margin</div>
+<div class="ratio-pill"><i class="bi bi-percent"></i> Operating Margin</div>
+<div class="ratio-pill"><i class="bi bi-percent"></i> Net Margin</div>
+<div class="ratio-pill"><i class="bi bi-arrow-repeat"></i> ROA</div>
+<div class="ratio-pill"><i class="bi bi-arrow-repeat"></i> ROE</div>
+<div class="ratio-pill"><i class="bi bi-graph-up"></i> Asset Turnover</div>
+<div class="ratio-pill"><i class="bi bi-box-seam"></i> Inventory Turnover</div>
+<div class="ratio-pill"><i class="bi bi-cash-stack"></i> OCF Margin</div>
+<div class="ratio-pill"><i class="bi bi-currency-dollar"></i> Free Cash Flow</div>
+<div class="ratio-pill"><i class="bi bi-bank"></i> Equity Ratio</div>
+</div>
+<div class="code-block" style="margin-top:20px;">
+<div class="code-label">Example, Current Ratio Response</div>
+<pre>Q: "Calculate ACM's current ratio for FY 2025"
+A: ACM's current ratio in FY 2025 was 1.13 [Source 1].
+Formula: Current Assets ÷ Current Liabilities
+FY 2025:  $6.73B ÷ $5.93B = 1.13
+[Source 1] ACM_balance_sheet.md
+Balance Sheet | Similarity: 94.2%</pre>
+</div>
+</div>
+<!-- DEMO -->
+<div class="doc-section" id="demo">
+<h2><span class="section-icon"><i class="bi bi-play-circle"></i></span> Live Demo</h2>
+<p>FinSight is deployed on Hugging Face Spaces. Ask any financial question about S&amp;P MidCap 400 companies:</p>
+<div class="demo-wrap">
+<iframe allowfullscreen="" loading="lazy" src="https://adeyemi001-finsight-rag-application.hf.space" title="FinSight RAG Financial Research Application">
+</iframe>
+<div class="demo-caption">
+<i class="bi bi-info-circle"></i>
+Live FinSight RAG, ask financial questions about any of the 402 S&amp;P MidCap 400 companies with full source attribution.
+</div>
+</div>
+</div>
+<!-- TECH -->
+<div class="doc-section" id="tech">
+<h2><span class="section-icon"><i class="bi bi-tools"></i></span> Tech Stack</h2>
+<div class="tech-stack">
+<div class="tech-item"><i class="bi bi-link-45deg"></i><span class="tech-name">LangChain</span><span class="tech-role">RAG Orchestration</span></div>
+<div class="tech-item"><i class="bi bi-stars"></i><span class="tech-name">GPT-4o</span><span class="tech-role">Generation</span></div>
+<div class="tech-item"><i class="bi bi-hdd-stack"></i><span class="tech-name">Zilliz</span><span class="tech-role">Vector DB</span></div>
+<div class="tech-item"><i class="bi bi-lightning"></i><span class="tech-name">FastAPI</span><span class="tech-role">Backend API</span></div>
+<div class="tech-item"><i class="bi bi-box"></i><span class="tech-name">Docker</span><span class="tech-role">Containerization</span></div>
+<div class="tech-item"><i class="bi bi-globe"></i><span class="tech-name">HuggingFace</span><span class="tech-role">Deployment</span></div>
+</div>
+<div class="tags-row">
+<span class="tech-tag">Python 3.11</span>
+<span class="tech-tag">LangChain</span>
+<span class="tech-tag">GPT-4o</span>
+<span class="tech-tag">RAG</span>
+<span class="tech-tag">Zilliz / Milvus</span>
+<span class="tech-tag">FastAPI</span>
+<span class="tech-tag">Docker</span>
+<span class="tech-tag">OpenAI Embeddings</span>
+<span class="tech-tag">MMR Reranking</span>
+<span class="tech-tag">Vector Search</span>
+<span class="tech-tag">Pydantic</span>
+<span class="tech-tag">HuggingFace Spaces</span>
+</div>
+</div>
+<!-- API -->
+<div class="doc-section" id="api">
+<h2><span class="section-icon"><i class="bi bi-code-slash"></i></span> API Reference</h2>
+<p>The FastAPI backend exposes a clean REST interface for integration into any Python application or data pipeline:</p>
+<div class="code-block">
+<div class="code-label">POST /query, Main Endpoint</div>
+<pre>import requests
+response = requests.post(
+"https://your-finsight-instance/query",
+json={
+"query":      "What was ACM's revenue in 2024?",
+"ticker":     "ACM",
+"doc_types":  ["income_statement"],
+"top_k":      10,
+"session_id": "my_session_123"
+}
+)
+result = response.json()
+# result["answer"]           → Sourced answer text
+# result["sources"]          → List with doc metadata
+# result["from_cache"]       → True if cache hit
+# result["processing_time"]  → Seconds to generate</pre>
+</div>
+<p>Additional endpoints: <code>GET /health</code>, <code>GET /stats</code>, <code>GET /cache/stats</code>, <code>DELETE /cache/clear</code>, <code>DELETE /session/{id}</code>. Full Swagger UI at <code>/docs</code>.</p>
+</div>
+<!-- RELATED -->
+<div class="doc-section" id="related">
+<h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects</h2>
+<p>If this case study is relevant to your business challenge, these projects may also interest you:</p>
+<div class="related-grid">
+<a class="related-card" href="customer-reviews-classification.html">
+<p class="card-label">NLP · RoBERTa · HuggingFace</p>
+<h4>Customer Reviews NLP Classification</h4>
+<p>Multi-label RoBERTa classifier analyzing 29,000+ fintech reviews with 93.7% F1-micro accuracy.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="related-card" href="yoruba-english-translation-model.html">
+<p class="card-label">NLP · Transformers · Low-Resource</p>
+<h4>Yoruba-English Translation Model</h4>
+<p>Bidirectional transformer model for a low-resource African language pair with cultural context awareness.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="related-card" href="lead-scoring-conversion-prediction.html">
+<p class="card-label">ML · SMOTE · Streamlit</p>
+<h4>Lead Scoring &amp; Conversion Prediction</h4>
+<p>99% accuracy model predicting purchase likelihood from browsing signals, deployed on Streamlit.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a content="related-card" href="retail-analysis-global-electronics.html">
+<p class="card-label">BI · Power BI · DAX</p>
+<h4>Retail Business Intelligence Dashboard</h4>
+<p>Diagnosing a 90% revenue decline through customer retention analysis and Power BI storytelling.</p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+
+    </div>
+  </section>
+  <section class="project-cta">
+    <div class="container">
+      
+<div class="container">
+<p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+<h2>Need a RAG system built on your own documents?</h2>
+<p>I build production RAG applications that turn large document collections into instant, cited, conversational intelligence. First call is free.</p>
+<div class="cta-buttons">
+<a class="btn-cta-white" href="../contact.html">Tell Me Your Data Problem</a>
+<a class="btn-cta-ghost" href="../projects.html">See All Projects</a>
+</div>
+</div>
+
+    </div>
+  </section>
+  <section class="section-sm bg-surface">
+    <div class="container">
+      <div class="section-head"><h2>More Projects</h2></div>
+      <div class="related-grid"><a class="proj-card" href="../projects/retail-analysis-global-electronics.html">
+          <div class="thumb"><img src="../assets/img/portfolio/electronics-retail-dashboard.webp" alt="Diagnosing a 90% Revenue Decline with Retail Performance Metrics" loading="lazy" width="400" height="250"></div>
+          <div class="body">
+            <span class="tag">Project</span>
+            <h3>Diagnosing a 90% Revenue Decline with Retail Performance Metrics</h3>
+            <span class="go">View project <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../projects/retail-location-strategy.html">
+          <div class="thumb"><img src="../assets/img/portfolio/chi.webp" alt="Chicken Republic's Lagos Expansion Is Not Random, Here's the Strategy" loading="lazy" width="400" height="250"></div>
+          <div class="body">
+            <span class="tag">Project</span>
+            <h3>Chicken Republic's Lagos Expansion Is Not Random, Here's the Strategy</h3>
+            <span class="go">View project <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../projects/saas-trial-conversion-analysis.html">
+          <div class="thumb"><img src="../assets/img/portfolio/charts/01_worker_adoption_headline.webp" alt="Why Do Only 1 in 5 Trial Companies Convert?" loading="lazy" width="400" height="250"></div>
+          <div class="body">
+            <span class="tag">Project</span>
+            <h3>Why Do Only 1 in 5 Trial Companies Convert?</h3>
+            <span class="go">View project <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a></div>
+    </div>
+  </section>
+</main>
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+          <span style="color:#fff">Adediran Adeyemi</span>
+        </a>
+        <p>Freelance data scientist helping e-commerce and retail businesses turn data into revenue-generating decisions. Remote worldwide, based in Lagos, Nigeria.</p>
+        <div class="footer-social"><a aria-label="X (Twitter)" href="https://x.com/AdediranAd60922" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.1-9.3L.8 2h7.3l5 6.6L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/adediran-adeyemi" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/Adeyemi0" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/Adeyemi_the_data_analyst" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+<a aria-label="WhatsApp" href="https://wa.me/+2348162735399" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a aria-label="Pinterest" href="https://pin.it/1by014rCw" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.33-.09-.79-.16-2.01.03-2.88.18-.79 1.17-5.02 1.17-5.02s-.3-.6-.3-1.48c0-1.39.8-2.42 1.81-2.42.85 0 1.26.64 1.26 1.41 0 .86-.55 2.14-.83 3.33-.24.99.5 1.81 1.48 1.81 1.78 0 3.15-1.88 3.15-4.58 0-2.39-1.72-4.07-4.18-4.07-2.85 0-4.52 2.14-4.52 4.34 0 .86.33 1.78.75 2.28a.3.3 0 0 1 .07.29c-.08.32-.25 1-.28 1.14-.04.19-.15.23-.34.14-1.26-.59-2.05-2.42-2.05-3.9 0-3.18 2.31-6.1 6.66-6.1 3.5 0 6.22 2.49 6.22 5.83 0 3.48-2.19 6.28-5.24 6.28-1.02 0-1.98-.53-2.31-1.16l-.63 2.4c-.23.87-.84 1.97-1.26 2.63.95.29 1.95.45 3 .45 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/churn-prediction-model.html">Churn Prediction</a></li>
+          <li><a href="../services/ecommerce-data-science.html">E-Commerce Data Science</a></li>
+          <li><a href="../services/customer-segmentation-analysis.html">Customer Segmentation</a></li>
+          <li><a href="../services/power-bi-dashboard-development.html">Power BI Dashboards</a></li>
+          <li><a href="../services.html">View All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../projects.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></li>
+          <li><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></li>
+          <li><span>Lagos, Nigeria</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Adediran Adeyemi. All rights reserved.</span>
+      <span>Built with intent, not templates.</span>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<div class="nav-scrim"></div>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script src="../assets/js/main.js" defer></script>
+<script>if(window.AOS){AOS.init({duration:600,once:true,offset:60});}</script>
+</body>
+</html>

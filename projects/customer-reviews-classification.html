@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hire Freelance NLP Engineer: Multi-Label Review Classifier</title>
+<meta name="description" content="Hire freelance NLP engineer Adediran Adeyemi for customer feedback analysis, text classification & sentiment modeling. RoBERTa, Hugging Face, Power BI....">
+<link rel="canonical" href="https://adediranadeyemi.com/projects/customer-reviews-classification.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Adediran Adeyemi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hire Freelance NLP Engineer: Multi-Label Review Classifier">
+<meta property="og:description" content="Hire freelance NLP engineer Adediran Adeyemi for customer feedback analysis, text classification & sentiment modeling. RoBERTa, Hugging Face, Power BI....">
+<meta property="og:url" content="https://adediranadeyemi.com/projects/customer-reviews-classification.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/portfolio/crs.webp">
+<meta property="og:site_name" content="Adediran Adeyemi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hire Freelance NLP Engineer: Multi-Label Review Classifier">
+<meta name="twitter:description" content="Hire freelance NLP engineer Adediran Adeyemi for customer feedback analysis, text classification & sentiment modeling. RoBERTa, Hugging Face, Power BI....">
+<link href="../assets/img/favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+<link href="../assets/img/favicon-16.png" rel="icon" type="image/png" sizes="16x16">
+<link href="../assets/img/favicon.ico" rel="shortcut icon">
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="../site.webmanifest" rel="manifest">
+<meta name="theme-color" content="#0F1B17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Hire Freelance NLP Engineer: Multi-Label Review Classifier (93.7% F1)",
+  "description": "Hire freelance NLP engineer Adediran Adeyemi for customer feedback analysis, text classification & sentiment modeling. RoBERTa, Hugging Face, Power BI....",
+  "creator": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com/about.html"
+  },
+  "url": "https://adediranadeyemi.com/projects/customer-reviews-classification.html",
+  "keywords": "✅ Available for Hire NLP Consulting · Text Classification · Remote Worldwide"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://adediranadeyemi.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://adediranadeyemi.com/projects.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hire Freelance NLP Engineer: Multi-Label Review Classifier (93.7% F1)",
+      "item": "https://adediranadeyemi.com/projects/customer-reviews-classification.html"
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-810CYGL9VL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-810CYGL9VL');</script>
+<style>
+/* ── BREADCRUMB ── */
+.project-breadcrumb { background: var(--surface); border-bottom: 1px solid var(--line); padding: 12px 0; font-size: 13px; }
+.project-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.project-breadcrumb li { display: flex; align-items: center; gap: 6px; color: var(--body); }
+.project-breadcrumb li a { color: var(--body); text-decoration: none; transition: color .2s; }
+.project-breadcrumb li a:hover { color: var(--accent); }
+.project-breadcrumb li.active { color: var(--ink); font-weight: 600; }
+.project-breadcrumb .sep { color: var(--line); font-size: 11px; }
+/* ── HERO ── */
+.project-hero { background: var(--surface); padding: 60px 0 0; border-bottom: 1px solid var(--line); }
+.project-hero .hero-label { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-tint); color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; }
+.project-hero h1 { font-size: 2.75rem; font-weight: 800; color: var(--ink); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 20px; }
+.project-hero h1 span { color: var(--accent); }
+.project-hero .hero-lead { font-size: 17px; color: var(--body); line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 28px; margin-bottom: 32px; }
+.hero-meta-item .meta-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-2); margin-bottom: 4px; }
+.hero-meta-item .meta-value { font-size: 14px; font-weight: 600; color: var(--ink); }
+.hero-stats { display: flex; border-top: 1px solid var(--line); margin-top: 40px; }
+.hero-stat { flex: 1; padding: 28px 20px; text-align: center; border-right: 1px solid var(--line); }
+.hero-stat:last-child { border-right: none; }
+.hero-stat .stat-num { font-size: 2.25rem; font-weight: 900; color: var(--accent); letter-spacing: -0.04em; line-height: 1; display: block; }
+.hero-stat .stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+/* ── LAYOUT ── */
+.project-body { padding: 80px 0; }
+.toc-sidebar { position: sticky; top: 90px; }
+.toc-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+.toc-card .toc-heading { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted-2); margin-bottom: 16px; }
+.toc-list { list-style: none; padding: 0 0 0 16px; margin: 0; border-left: 2px solid var(--line); }
+.toc-list li { margin-bottom: 10px; }
+.toc-list a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; line-height: 1.4; display: block; }
+.toc-list a:hover, .toc-list a.active { color: var(--accent); }
+.toc-list a.active { font-weight: 600; }
+.toc-cta { background: var(--accent-tint); border-radius: 8px; padding: 18px; margin-top: 20px; text-align: center; }
+.toc-cta p { font-size: 13px; color: var(--ink); line-height: 1.5; margin-bottom: 12px; font-weight: 500; }
+.toc-cta a { display: inline-block; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 6px; text-decoration: none; transition: background .2s; }
+.toc-cta a:hover { background: var(--accent-dark); color: #fff; }
+/* ── ARTICLE ── */
+.doc-section { margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--line); scroll-margin-top: 90px; }
+.doc-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.doc-section h2 { font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -0.025em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.section-icon { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: var(--accent-tint); border-radius: 8px; color: var(--accent); font-size: 16px; flex-shrink: 0; }
+.doc-section h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-top: 28px; margin-bottom: 10px; letter-spacing: -0.01em; }
+.doc-section p { font-size: 15px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 14px; }
+.doc-section ul, .doc-section ol { padding-left: 20px; margin-bottom: 14px; }
+.doc-section li { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 6px; }
+/* Callouts */
+.callout { background: var(--accent-tint); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+.callout p { margin: 0; font-size: 14px; color: var(--ink); line-height: 1.65; }
+.callout strong { color: var(--accent); }
+.callout-green { background: var(--success-tint); border-left: 4px solid var(--success); border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+.callout-green p { margin: 0; font-size: 14px; color: var(--ink); line-height: 1.65; }
+.callout-green strong { color: var(--success); }
+.callout-warn { background: var(--warning-tint); border-left: 4px solid var(--warning); border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 20px 0; }
+.callout-warn p { margin: 0; font-size: 14px; color: var(--ink); line-height: 1.65; }
+.callout-warn strong { color: var(--warning-dark); }
+/* Quick links banner */
+.links-banner { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.link-pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; transition: all .2s; border: 1px solid transparent; }
+.link-pill.primary { background: var(--accent); color: #fff; }
+.link-pill.primary:hover { background: var(--accent-dark); color: #fff; transform: translateY(-1px); }
+.link-pill.secondary { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.link-pill.secondary:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+/* Key achievements */
+.achievements-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+.achievement-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: flex; gap: 14px; align-items: flex-start; transition: box-shadow .2s; }
+.achievement-card:hover { box-shadow: 0 4px 16px rgba(var(--accent-rgb),.08); }
+.achievement-icon { width: 36px; height: 36px; background: var(--accent-tint); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 16px; flex-shrink: 0; }
+.achievement-card h4 { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.achievement-card p { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.5; }
+/* Category pills grid */
+.categories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 16px; }
+.category-pill { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--ink-soft); display: flex; align-items: center; gap: 8px; transition: border-color .2s; }
+.category-pill:hover { border-color: var(--accent); color: var(--accent); }
+.category-pill i { color: var(--accent); font-size: 14px; flex-shrink: 0; }
+.category-pill .cat-num { font-size: 11px; font-weight: 700; color: var(--muted-2); margin-left: auto; }
+/* Performance metrics table */
+.perf-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.perf-table thead { background: var(--accent); color: #fff; }
+.perf-table thead th { padding: 12px 16px; font-weight: 700; font-size: 12px; letter-spacing: .5px; text-transform: uppercase; text-align: left; }
+.perf-table thead th:not(:first-child) { text-align: right; }
+.perf-table tbody tr { border-bottom: 1px solid var(--line); transition: background .15s; }
+.perf-table tbody tr:last-child { border-bottom: none; }
+.perf-table tbody tr:hover { background: var(--surface); }
+.perf-table tbody tr.best { background: var(--success-tint) !important; }
+.perf-table tbody td { padding: 11px 16px; color: var(--ink-soft); }
+.perf-table tbody td:not(:first-child) { text-align: right; font-family: 'Courier New', monospace; font-weight: 600; }
+.perf-table .top-score { color: var(--success); font-weight: 800; }
+/* Training progress */
+.training-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+.epoch-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 16px; text-align: center; transition: border-color .2s; }
+.epoch-card.best { border-color: var(--success); background: var(--success-tint); }
+.epoch-card .epoch-label { font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--muted-2); margin-bottom: 8px; }
+.epoch-card .epoch-f1 { font-size: 1.5rem; font-weight: 900; color: var(--accent); letter-spacing: -0.03em; line-height: 1; }
+.epoch-card.best .epoch-f1 { color: var(--success); }
+.epoch-card .epoch-loss { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.epoch-card .best-badge { display: inline-block; background: var(--success-tint); color: var(--success-dark); font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 50px; margin-top: 6px; }
+/* Issue priority tiers */
+.tier-section { margin-top: 20px; }
+.tier-label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; padding: 4px 14px; border-radius: 50px; margin-bottom: 12px; }
+.tier-label.t1 { background: #FEE2E2; color: #991B1B; }
+.tier-label.t2 { background: var(--warning-tint); color: var(--warning-dark); }
+.tier-label.t3 { background: var(--line-soft); color: var(--body); }
+.issue-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.issue-row { display: grid; grid-template-columns: 1fr 80px 180px; align-items: center; gap: 14px; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+.issue-row.critical { border-left: 3px solid var(--danger); }
+.issue-row.warning { border-left: 3px solid var(--warning); }
+.issue-row.mild { border-left: 3px solid var(--line); }
+.issue-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+.issue-name span { font-size: 12px; color: var(--muted); font-weight: 400; display: block; margin-top: 2px; }
+.issue-count { font-size: 15px; font-weight: 800; color: var(--danger); font-family: 'Courier New', monospace; text-align: right; }
+.issue-row.warning .issue-count { color: var(--warning); }
+.issue-row.mild .issue-count { color: var(--muted-2); }
+.sentiment-bar-wrap { height: 8px; background: var(--line-soft); border-radius: 4px; overflow: hidden; }
+.sentiment-bar { height: 100%; border-radius: 4px; background: var(--danger); }
+/* Strengths bars */
+.strength-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+.strength-row { display: grid; grid-template-columns: 180px 1fr 80px; align-items: center; gap: 14px; }
+.strength-label { font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+.strength-bar-wrap { background: var(--line-soft); border-radius: 4px; height: 12px; overflow: hidden; }
+.strength-bar { height: 100%; border-radius: 4px; background: var(--success); }
+.strength-val { font-size: 13px; font-weight: 700; color: var(--success); text-align: right; font-family: 'Courier New', monospace; }
+/* Code block */
+.code-block { background: var(--ink); border-radius: 10px; padding: 20px 24px; margin: 16px 0; overflow-x: auto; }
+.code-block .code-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.code-block pre { margin: 0; color: var(--line); font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.7; white-space: pre; }
+/* Embed */
+.demo-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.06); margin: 20px 0; background: var(--ink); }
+.demo-wrap iframe { display: block; width: 100%; height: 520px; border: none; }
+.demo-caption { background: #fff; padding: 12px 16px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); display: flex; align-items: center; gap: 8px; }
+.demo-caption i { color: var(--accent); }
+/* Rec steps */
+.rec-list { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+.rec-item { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 18px; }
+.rec-num { width: 40px; height: 40px; background: var(--accent); color: #fff; border-radius: 8px; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.rec-body h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.rec-body p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0; }
+/* Tags + related */
+.tags-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.related-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; text-decoration: none; transition: all .3s ease; display: block; }
+.related-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(var(--accent-rgb),.12); text-decoration: none; }
+.related-card .card-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.related-card h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.4; }
+.related-card p { font-size: 13px; color: var(--muted); line-height: 1.55; margin: 0; }
+.related-card .card-arrow { display: inline-flex; align-items: center; gap: 4px; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--accent); }
+/* CTA */
+.project-cta { background: var(--accent); padding: 80px 0; text-align: center; color: #fff; }
+.project-cta .cta-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 16px; }
+.project-cta h2 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.project-cta p { font-size: 16px; color: rgba(255,255,255,.7); max-width: 420px; margin: 0 auto 32px; line-height: 1.6; }
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-cta-white { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: #fff; color: var(--accent); text-decoration: none; transition: all .3s; }
+.btn-cta-white:hover { background: var(--line-soft); color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.btn-cta-ghost { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .5px; text-transform: uppercase; display: inline-block; padding: 14px 32px; border-radius: 4px; background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); text-decoration: none; transition: all .3s; }
+.btn-cta-ghost:hover { border-color: #fff; background: rgba(255,255,255,.1); color: #fff; text-decoration: none; }
+/* Preloader */
+#preloader { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity .3s, visibility .3s; }
+#preloader:after { content: ""; width: 40px; height: 40px; border: 3px solid var(--accent); border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+#preloader.loaded { opacity: 0; visibility: hidden; pointer-events: none; }
+/* Mobile nav */
+.mobile-nav-active { display: block !important; }
+.navbar ul { display: flex; list-style: none; margin: 0; padding: 0; }
+.navbar ul li { margin-left: 20px; }
+.navbar ul li a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px; transition: color .2s; }
+.navbar ul li a:hover, .navbar ul li a.active { color: var(--accent); }
+.mobile-nav-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--ink); }
+
+/* ── COMMERCIAL INTENT STYLES ── */
+.commercial-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin:8px 0;}
+.pricing-highlight{background:linear-gradient(135deg,var(--accent-tint),var(--accent-tint));border:2px solid var(--accent);border-radius:12px;padding:24px;margin:24px 0;}
+.pricing-highlight h4{color:var(--ink);margin-bottom:12px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:16px;}
+.pricing-item{text-align:center;padding:16px;background:#fff;border-radius:8px;border:1px solid var(--line);}
+.pricing-item .price{font-size:1.5rem;font-weight:800;color:var(--accent);display:block;margin:8px 0;}
+.pricing-item .label{font-size:12px;color:var(--muted);}
+.cta-sticky{position:fixed;bottom:20px;right:20px;z-index:1000;background:var(--accent);color:#fff;padding:12px 20px;border-radius:50px;font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 20px rgba(var(--accent-rgb),0.3);transition:transform .2s;display:flex;align-items:center;gap:8px;}
+.cta-sticky:hover{transform:translateY(-2px);color:#fff;text-decoration:none;}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 991px) {
+.toc-sidebar { display: none; }
+.project-hero h1 { font-size: 2rem; }
+.achievements-grid, .related-grid, .training-grid { grid-template-columns: 1fr 1fr; }
+.hero-stats { flex-direction: column; }
+.hero-stat { border-right: none; border-bottom: 1px solid var(--line); }
+.hero-stat:last-child { border-bottom: none; }
+.issue-row { grid-template-columns: 1fr 60px; }
+.sentiment-bar-wrap { display: none; }
+.strength-row { grid-template-columns: 140px 1fr 60px; }
+.navbar ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,.1); z-index: 1000; }
+.navbar ul li { margin: 10px 0; }
+.mobile-nav-toggle { display: block; }
+}
+@media (max-width: 768px) {
+.project-hero { padding: 40px 0 0; }
+.project-hero h1 { font-size: 1.75rem; }
+.project-body { padding: 50px 0; }
+.doc-section { margin-bottom: 40px; padding-bottom: 40px; }
+.achievements-grid, .training-grid { grid-template-columns: 1fr; }
+.categories-grid { grid-template-columns: 1fr 1fr; }
+.demo-wrap iframe { height: 400px; }
+.rec-item { grid-template-columns: 1fr; }
+.strength-row { grid-template-columns: 120px 1fr 50px; }
+.cta-sticky{bottom:10px;right:10px;padding:10px 16px;font-size:13px;}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="header">
+  <div class="container navbar-wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+      <span>Adediran Adeyemi<span class="brand-sub">Data Scientist &amp; AI/ML Engineer</span></span>
+    </a>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a class="" href="../index.html">Home</a></li><li><a class="" href="../about.html">About</a></li><li><a class="" href="../services.html">Services</a></li><li><a class="active" href="../projects.html">Projects</a></li><li><a class="" href="../blog.html">Blog</a></li>
+      </ul>
+      <div class="header-cta-mobile">
+        <a class="btn btn-accent btn-block" href="../contact.html">Let's Work Together</a>
+      </div>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="../contact.html">Let's Work Together <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <button class="mobile-nav-toggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+<main id="main">
+  <nav class="project-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li class="sep">/</li>
+        <li class="active">Hire Freelance NLP Engineer: Multi-Label Review Classifier…</li>
+      </ol>
+    </div>
+  </nav>
+  <section class="project-hero">
+    <div class="container">
+      
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-7">
+<div class="hero-label">
+<i class="bi bi-chat-square-text-fill"></i>
+<span class="commercial-badge">✅ Available for Hire</span> NLP Consulting · Text Classification · Remote Worldwide
+</div>
+<h1>Hire Freelance NLP Engineer: <span>Multi-Label Review Classifier</span> (93.7% F1)</h1>
+<p class="hero-lead">
+Drowning in customer reviews? This case study demonstrates my approach to automated text classification and sentiment analysis. RoBERTa-based multi-label classifier analyzing 29K+ fintech reviews with 93.7% F1 accuracy. <strong><a href="../contact.html">Hire me as your freelance NLP engineer</a></strong> for fixed-price projects, remote worldwide.
+</p>
+<div class="hero-meta">
+<div class="hero-meta-item">
+<div class="meta-label">Hire For</div>
+<div class="meta-value">Text Classification · Sentiment Analysis · Customer Feedback NLP</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Project Type</div>
+<div class="meta-value">Fixed-Price · Remote · Production-Ready Python Code</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Availability</div>
+<div class="meta-value">Free Discovery Call · 2-4 Week Delivery</div>
+</div>
+<div class="hero-meta-item">
+<div class="meta-label">Pricing</div>
+<div class="meta-value">Custom Quote After Scoping</div>
+</div>
+</div>
+<div class="d-flex flex-wrap gap-3 pb-4">
+<a class="btn-get-started-primary" href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model" target="_blank">Try Live Demo <i class="bi bi-play-circle"></i></a>
+<a class="btn-get-started-secondary" href="../contact.html">Hire Me for Your Project <i class="bi bi-calendar-check"></i></a>
+</div>
+</div>
+<div class="col-lg-5 d-none d-lg-block">
+<img alt="Hire freelance NLP engineer Adediran Adeyemi for multi-label text classification and customer feedback analysis services" class="img-fluid" decoding="async" fetchpriority="high" height="360" loading="lazy" src="../assets/img/portfolio/returns.webp" style="border-radius:12px; border:1px solid var(--line); box-shadow:0 20px 60px rgba(var(--accent-rgb),0.12);" width="560"/>
+</div>
+</div>
+<!-- Stats strip — COMMERCIAL FOCUS -->
+<div class="hero-stats">
+<div class="hero-stat">
+<span class="stat-num">4+ Years</span>
+<span class="stat-label">Experience as freelance NLP engineer for hire</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">Fixed-Price</span>
+<span class="stat-label">NLP classification projects with clear scope &amp; deliverables</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">Remote</span>
+<span class="stat-label">Machine learning consulting services worldwide, all time zones</span>
+</div>
+<div class="hero-stat">
+<span class="stat-num">Free Call</span>
+<span class="stat-label">30-minute discovery call to scope your NLP project</span>
+</div>
+</div>
+</div>
+
+    </div>
+  </section>
+  <section class="project-body">
+    <div class="container">
+      
+<div class="container">
+<div class="row">
+<!-- TOC — COMMERCIAL LINKS -->
+<div class="col-lg-3 d-none d-lg-block">
+<aside aria-label="Table of contents" class="toc-sidebar">
+<div class="toc-card">
+<p class="toc-heading">On This Page</p>
+<ul class="toc-list">
+<li><a href="#overview">Project Overview</a></li>
+<li><a href="#categories">16 Review Categories</a></li>
+<li><a href="#model">Model Architecture</a></li>
+<li><a href="#performance">Model Performance</a></li>
+<li><a href="#training">Training Details</a></li>
+<li><a href="#demo">Live Demo</a></li>
+<li><a href="#dashboard">Power BI Dashboard</a></li>
+<li><a href="#usage">API Usage</a></li>
+<li><a href="#critical-issues">Critical Issues Found</a></li>
+<li><a href="#strengths">Competitive Strengths</a></li>
+<li><a href="#recommendations">Recommendations</a></li>
+<li><a href="#future">Future Work</a></li>
+<li><a class="active" href="#pricing">💰 Project Pricing &amp; Process</a></li>
+<li><a href="#hire">🔥 Hire Me for Your NLP Project</a></li>
+<li><a href="#related">Related Projects</a></li>
+</ul>
+<div class="toc-cta">
+<p><strong>Ready to hire an NLP engineer?</strong></p>
+<a href="../contact.html">Book Free Discovery Call →</a>
+<p style="font-size:11px;color:var(--muted);margin-top:8px;">No obligation • Fixed-price proposals • Remote worldwide</p>
+</div>
+</div>
+</aside>
+</div>
+<!-- Article -->
+<div class="col-lg-9">
+<article itemscope="" itemtype="https://schema.org/TechArticle">
+<meta content="Adediran Adeyemi" itemprop="author"/>
+<meta content="2025-09-01" itemprop="datePublished"/>
+<meta content="Hire Freelance NLP Engineer: Multi-Label Review Classifier Case Study (93.7% F1)" itemprop="headline"/>
+<!-- LINKS BANNER — COMMERCIAL -->
+<div style="margin-bottom: 40px;">
+<div class="links-banner">
+<a class="link-pill primary" href="https://huggingface.co/spaces/adeyemi001/Multi-Labelled-Review-Categorization-Model" target="_blank"><i class="bi bi-play-circle-fill"></i> Live Demo on Hugging Face</a>
+<a class="link-pill secondary" href="https://huggingface.co/adeyemi001/Multi-Labelled-Review-Categorization-Model" target="_blank"><i class="bi bi-cpu-fill"></i> Model Repository</a>
+<a class="link-pill secondary" href="../contact.html"><i class="bi bi-calendar-check"></i> Hire Me for Your Project</a>
+</div>
+</div>
+<!-- OVERVIEW — COMMERCIAL INTEGRATION -->
+<div class="doc-section" id="overview">
+<h2><span class="section-icon"><i class="bi bi-file-text"></i></span> Project Overview: Hire Me for Similar NLP Work</h2>
+<p>
+This project demonstrates the caliber of work you receive when you <strong>hire me as a freelance NLP engineer</strong>. Customer reviews are one of the richest sources of unstructured business intelligence available to any product team, but at scale, reading them manually is impossible. This case study builds an end-to-end ML pipeline that automatically classifies Moniepoint banking app reviews from the Google Play Store into 16 actionable issue categories simultaneously.
+</p>
+<p>
+<strong>When you hire me for your text classification project, you get:</strong>
+</p>
+<ul>
+<li>✅ Production-ready Python NLP code with Transformers, RoBERTa, and Hugging Face deployment</li>
+<li>✅ Custom multi-label classification models that capture nuanced feedback (not just sentiment)</li>
+<li>✅ Clear documentation and API integration so your team can maintain and extend the solution</li>
+<li>✅ Measurable outcomes defined upfront: classification accuracy, issue detection rate, actionable insights</li>
+<li>✅ Fixed-price proposals with defined deliverables and timelines, no hourly surprises</li>
+</ul>
+<div class="callout">
+<p><strong>Commercial Intent Focus:</strong> This isn't just a portfolio piece, it's proof of the ROI-focused approach I bring to every client engagement. <em>Need this level of insight for your business? <a href="../contact.html">Hire me as your freelance NLP engineer</a> to build your custom customer feedback analysis system.</em></p>
+</div>
+<p>
+The key technical insight driving this project is <strong>multi-label classification</strong>, a single review can belong to multiple categories at once. A review saying "The app is slow and charges are too high" belongs to both "App crashes or Slow" and "Transaction Charges". Traditional sentiment analysis misses this nuance entirely. This model captures it with 93.7% F1-micro accuracy, a methodology I replicate for every client who hires me for NLP consulting services.
+</p>
+</div>
+<!-- CATEGORIES -->
+<div class="doc-section" id="categories">
+<h2><span class="section-icon"><i class="bi bi-tags"></i></span> 16 Review Categories</h2>
+<p>
+The model classifies every review into one or more of 16 categories that cover the full spectrum of fintech app user feedback. A single review can trigger multiple categories simultaneously, this multi-label approach is what makes the system substantially more useful than standard sentiment analysis. <strong>When you hire me for customer feedback analysis services, I help you define the categories that matter most to your business.</strong>
+</p>
+<div class="categories-grid">
+<div class="category-pill"><i class="bi bi-person-plus"></i> Account Registration <span class="cat-num">01</span></div>
+<div class="category-pill"><i class="bi bi-download"></i> App Installation Issues <span class="cat-num">02</span></div>
+<div class="category-pill"><i class="bi bi-exclamation-circle"></i> App Crashes or Slow <span class="cat-num">03</span></div>
+<div class="category-pill"><i class="bi bi-x-circle"></i> App Not Opening <span class="cat-num">04</span></div>
+<div class="category-pill"><i class="bi bi-question-circle"></i> Customer Inquiry <span class="cat-num">05</span></div>
+<div class="category-pill"><i class="bi bi-headset"></i> Customer Support <span class="cat-num">06</span></div>
+<div class="category-pill"><i class="bi bi-x-octagon"></i> Failed Transaction <span class="cat-num">07</span></div>
+<div class="category-pill"><i class="bi bi-lightbulb"></i> Feature Requests <span class="cat-num">08</span></div>
+<div class="category-pill"><i class="bi bi-chat-square-text"></i> General Feedback <span class="cat-num">09</span></div>
+<div class="category-pill"><i class="bi bi-key"></i> Login &amp; Account Access <span class="cat-num">10</span></div>
+<div class="category-pill"><i class="bi bi-wifi-off"></i> Network Failure <span class="cat-num">11</span></div>
+<div class="category-pill"><i class="bi bi-three-dots"></i> Other <span class="cat-num">12</span></div>
+<div class="category-pill"><i class="bi bi-shield-lock"></i> Password Issues <span class="cat-num">13</span></div>
+<div class="category-pill"><i class="bi bi-currency-dollar"></i> Transaction Charges <span class="cat-num">14</span></div>
+<div class="category-pill"><i class="bi bi-phone"></i> UI / UX <span class="cat-num">15</span></div>
+<div class="category-pill"><i class="bi bi-hash"></i> USSD Issues <span class="cat-num">16</span></div>
+</div>
+<div class="callout">
+<p><strong>Multi-label example:</strong> A review reading "The app is slow and charges are too high" is simultaneously classified as <strong>App Crashes or Slow</strong> + <strong>Transaction Charges</strong>. Standard single-label classification would force a choice and lose half the signal. This model captures both, and this is the type of nuanced analysis I deliver when clients hire me for text classification services.</p>
+</div>
+</div>
+<!-- MODEL ARCHITECTURE -->
+<div class="doc-section" id="model">
+<h2><span class="section-icon"><i class="bi bi-cpu"></i></span> Model Architecture: The Tech Stack I Use for Client Projects</h2>
+<p>
+When you <strong>hire me for NLP consulting services</strong>, your project is built using production-grade tools throughout. The model is built on <strong>RoBERTa-base</strong>, a robustly optimized BERT pretraining approach from Facebook AI Research. RoBERTa was chosen over standard BERT for its superior handling of diverse language patterns, stronger performance on classification tasks, and better generalization from limited training labels in specialized domains like fintech.
+</p>
+<h3>Architecture Specifications</h3>
+<ul>
+<li><strong>Base Model:</strong> roberta-base (125M parameters)</li>
+<li><strong>Task:</strong> Multi-label sequence classification</li>
+<li><strong>Max Sequence Length:</strong> 256 tokens</li>
+<li><strong>Output Layer:</strong> Sigmoid activation (not softmax), enabling simultaneous multi-label predictions</li>
+<li><strong>Loss Function:</strong> Binary Cross Entropy with Logits Loss</li>
+<li><strong>Architecture:</strong> 12 transformer layers, 12 attention heads, 768 hidden dimensions</li>
+</ul>
+<h3>Data Pipeline</h3>
+<ul>
+<li><strong>Source:</strong> Google Play Store reviews for Moniepoint Personal Banking App</li>
+<li><strong>Volume:</strong> 29,000+ reviews spanning multiple years through September 2025</li>
+<li><strong>Preprocessing:</strong> Text cleaning, language filtering (English), duplicate removal, label standardization via DeepSeek</li>
+<li><strong>Temporal split:</strong> Training on pre-September 2025 data, test set on September 2025+ reviews, prevents data leakage</li>
+</ul>
+<p><em>When you hire me, I adapt this pipeline to your data sources: App Store reviews, Zendesk tickets, survey responses, or social media mentions.</em></p>
+</div>
+<!-- PERFORMANCE -->
+<div class="doc-section" id="performance">
+<h2><span class="section-icon"><i class="bi bi-bar-chart-steps"></i></span> Model Performance: What You Get When You Hire Me</h2>
+<p>The model achieved exceptional results on the held-out temporal test set, data the model had never seen during training. This is the caliber of accuracy you can expect when you <strong>hire me for machine learning consulting services</strong>:</p>
+<table class="perf-table">
+<thead>
+<tr><th>Metric</th><th>Score</th><th>Interpretation</th></tr>
+</thead>
+<tbody>
+<tr class="best">
+<td><strong>F1 Micro</strong></td>
+<td class="top-score">93.73%</td>
+<td style="font-size:12px; color:var(--muted);">Overall classification accuracy across all labels</td>
+</tr>
+<tr>
+<td>F1 Macro</td>
+<td>62.74%</td>
+<td style="font-size:12px; color:var(--muted);">Unweighted average, reflects rare category challenge</td>
+</tr>
+<tr>
+<td>Precision Micro</td>
+<td>95.36%</td>
+<td style="font-size:12px; color:var(--muted);">When model predicts a label, it's correct 95% of the time</td>
+</tr>
+<tr>
+<td>Recall Micro</td>
+<td>92.15%</td>
+<td style="font-size:12px; color:var(--muted);">Model catches 92% of all true label occurrences</td>
+</tr>
+<tr class="best">
+<td><strong>ROC AUC Micro</strong></td>
+<td class="top-score">99.69%</td>
+<td style="font-size:12px; color:var(--muted);">Near-perfect category discrimination ability</td>
+</tr>
+</tbody>
+</table>
+<div class="callout-green">
+<p><strong>Industry context:</strong> The 93.7% F1-micro score exceeds typical industry benchmarks for multi-label NLP classification tasks (85-90%). The 99.69% ROC AUC indicates the model has near-perfect ability to distinguish between categories, a strong signal of generalizability to unseen reviews. <em>This is the level of technical excellence I deliver when clients hire me for NLP engineering projects.</em></p>
+</div>
+</div>
+<!-- TRAINING -->
+<div class="doc-section" id="training">
+<h2><span class="section-icon"><i class="bi bi-graph-up"></i></span> Training Details</h2>
+<p>Training ran for 6 epochs with early stopping (patience=2). The best model was selected at Epoch 2 based on F1-micro score, a classic example of early stopping preventing overfitting while preserving generalization:</p>
+<div class="training-grid">
+<div class="epoch-card">
+<div class="epoch-label">Epoch 1</div>
+<div class="epoch-f1">91.3%</div>
+<div class="epoch-loss">Val loss: 0.0300</div>
+</div>
+<div class="epoch-card best">
+<div class="epoch-label">Epoch 2</div>
+<div class="epoch-f1">93.7%</div>
+<div class="epoch-loss">Val loss: 0.0259</div>
+<span class="best-badge">✓ Best Model</span>
+</div>
+<div class="epoch-card">
+<div class="epoch-label">Epoch 3</div>
+<div class="epoch-f1">93.7%</div>
+<div class="epoch-loss">Val loss: 0.0262</div>
+</div>
+<div class="epoch-card">
+<div class="epoch-label">Epoch 4</div>
+<div class="epoch-f1">93.4%</div>
+<div class="epoch-loss">Val loss: 0.0293 ↑</div>
+</div>
+</div>
+<h3>Training Configuration</h3>
+<ul>
+<li><strong>Optimizer:</strong> AdamW with learning rate 2e-5</li>
+<li><strong>Batch sizes:</strong> 8 (training), 16 (evaluation)</li>
+<li><strong>Warmup steps:</strong> 500</li>
+<li><strong>Weight decay:</strong> 0.01 for regularization</li>
+<li><strong>Hardware:</strong> CUDA-enabled GPU</li>
+<li><strong>Early stopping patience:</strong> 2 epochs, triggered after Epoch 4 showed rising validation loss</li>
+</ul>
+<p><em>When you hire me for RoBERTa fine-tuning services, I optimize these hyperparameters specifically for your dataset and business objectives.</em></p>
+</div>
+<!-- LIVE DEMO -->
+<div class="doc-section" id="demo">
+<h2><span class="section-icon"><i class="bi bi-play-circle"></i></span> Live Demo</h2>
+<p>
+The model is deployed as an interactive Hugging Face Space. Paste any app review text and receive instant multi-label category predictions with confidence scores, this is the type of production deployment I deliver when clients <strong>hire me for Hugging Face deployment consulting</strong>:
+</p>
+<div class="demo-wrap">
+<iframe allowfullscreen="" loading="lazy" src="https://adeyemi001-multi-labelled-review-categorization-model.hf.space" title="Multi-Label Review Classification Demo, Adediran Adeyemi">
+</iframe>
+<div class="demo-caption">
+<i class="bi bi-info-circle"></i>
+Interactive classification demo, paste any customer review to get real-time multi-label category predictions.
+</div>
+</div>
+</div>
+<!-- POWER BI DASHBOARD -->
+<div class="doc-section" id="dashboard">
+<h2><span class="section-icon"><i class="bi bi-bar-chart-fill"></i></span> Power BI Analytics Dashboard</h2>
+<p>
+The Power BI dashboard provides visual business intelligence on top of the model's classification output, translating 29,000 categorized reviews into executive-ready insights. <strong>This is the end-to-end solution you get when you hire me for NLP + BI integration projects:</strong>
+</p>
+<ul>
+<li>Review volume trends over time with sentiment trajectory</li>
+<li>Category breakdown and frequency, which issues are growing vs. declining</li>
+<li>Customer service response metrics (81.83% response rate, 29.3hr average)</li>
+<li>Sentiment score correlation with star ratings</li>
+<li>Interactive filters for deep-dive by date range, category, and sentiment</li>
+</ul>
+<div class="demo-wrap">
+<iframe allowfullscreen="" loading="lazy" src="https://app.powerbi.com/view?r=eyJrIjoiYjk1YWM3YmYtYWU5ZS00YjIxLWIwMmQtMWI0YjI2ZjQ2MWM3IiwidCI6IjQyOWYxMWVhLWM3NmQtNDczMS05M2M5LWM0MDZiNGYzMmE1YSJ9" title="Moniepoint Reviews Power BI Dashboard, Adediran Adeyemi">
+</iframe>
+<div class="demo-caption">
+<i class="bi bi-info-circle"></i>
+Interactive Power BI dashboard, use filters to explore review categories, sentiment trends, and KPIs across the full dataset.
+</div>
+</div>
+</div>
+<!-- API USAGE -->
+<div class="doc-section" id="usage">
+<h2><span class="section-icon"><i class="bi bi-code-slash"></i></span> API Usage: Production-Ready Code You Receive</h2>
+<p>When you <strong>hire me for Python NLP development</strong>, you receive production-ready code that can be integrated into any Python application for batch review processing:</p>
+<div class="code-block">
+<div class="code-label">Quick Start, Predict Review Categories</div>
+<pre>
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import torch, numpy as np, joblib, json
+from huggingface_hub import hf_hub_download
+REPO_ID = "adeyemi001/Multi-Labelled-Review-Categorization-Model"
+DEVICE  = "cuda" if torch.cuda.is_available() else "cpu"
+# Load model, tokenizer, and label binarizer
+tokenizer = AutoTokenizer.from_pretrained(REPO_ID)
+model     = AutoModelForSequenceClassification.from_pretrained(REPO_ID).to(DEVICE)
+mlb       = joblib.load(hf_hub_download(REPO_ID, "model/mlb.joblib"))
+def predict(texts, threshold=0.5):
+if isinstance(texts, str): texts = [texts]
+enc = tokenizer(texts, truncation=True, padding=True,
+max_length=256, return_tensors="pt").to(DEVICE)
+with torch.no_grad():
+logits = model(**enc).logits.cpu().numpy()
+probs   = 1 / (1 + np.exp(-logits))
+bins    = (probs &gt;= threshold).astype(int)
+return [mlb.inverse_transform([b])[0] for b in bins], probs
+# Example
+reviews = [
+"App crashes every time I try to transfer money.",
+"Please add dark mode, and why are charges so high?",
+"Fast transfers and excellent customer service!"
+]
+preds, probs = predict(reviews)
+for r, p in zip(reviews, preds):
+print(f"Review: {r}
+Categories: {p}
+")</pre>
+</div>
+<div class="callout">
+<p><strong>Threshold tuning:</strong> The default threshold of 0.5 balances precision and recall. Use 0.3 for higher recall (catch more issues at cost of some false positives) or 0.7 for high-precision deployment where false positives are costly. <em>When you hire me, I help you optimize this threshold based on your business risk tolerance.</em></p>
+</div>
+</div>
+<!-- CRITICAL ISSUES -->
+<div class="doc-section" id="critical-issues">
+<h2><span class="section-icon"><i class="bi bi-exclamation-triangle"></i></span> Critical Issues Identified: Actionable Intelligence You Get</h2>
+<p>
+The model surfaced <strong>417 total critical issue mentions</strong> across Moniepoint's reviews, ranked by frequency and sentiment impact to prioritize engineering and product attention. This is the type of actionable business intelligence I deliver when clients <strong>hire me for customer feedback analysis consulting</strong>:
+</p>
+<div class="tier-section">
+<div class="tier-label t1"><i class="bi bi-lightning-fill"></i> Tier 1, Critical System Failures</div>
+<div class="issue-list">
+<div class="issue-row critical">
+<div class="issue-name">App Not Opening <span>Complete user access failure, highest churn risk</span></div>
+<div class="issue-count">217</div>
+<div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:90%"></div></div></div>
+</div>
+<div class="issue-row critical">
+<div class="issue-name">Login Issues <span>Authentication barriers, user abandonment risk</span></div>
+<div class="issue-count">101</div>
+<div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:75%"></div></div></div>
+</div>
+<div class="issue-row critical">
+<div class="issue-name">Failed Transactions <span>Core functionality failure, trust erosion</span></div>
+<div class="issue-count">99</div>
+<div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:95%"></div></div></div>
+</div>
+</div>
+<div class="tier-label t2"><i class="bi bi-dash-circle"></i> Tier 2, Financial Concerns</div>
+<div class="issue-list">
+<div class="issue-row warning">
+<div class="issue-name">Transaction Charges <span>Pricing competitiveness, competitive disadvantage</span></div>
+<div class="issue-count">117</div>
+<div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:60%"></div></div></div>
+</div>
+<div class="issue-row warning">
+<div class="issue-name">High Charges <span>Value perception, price sensitivity signals</span></div>
+<div class="issue-count">106</div>
+<div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:50%"></div></div></div>
+</div>
+</div>
+<div class="tier-label t3"><i class="bi bi-info-circle"></i> Tier 3, Performance Issues</div>
+<div class="issue-list">
+<div class="issue-row mild">
+<div class="issue-name">Slow App Performance</div>
+<div class="issue-count">96</div>
+<div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:40%; background:var(--muted-2);"></div></div></div>
+</div>
+<div class="issue-row mild">
+<div class="issue-name">Account Access Issues</div>
+<div class="issue-count">76</div>
+<div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:32%; background:var(--muted-2);"></div></div></div>
+</div>
+<div class="issue-row mild">
+<div class="issue-name">Account Restrictions</div>
+<div class="issue-count">74</div>
+<div><div class="sentiment-bar-wrap"><div class="sentiment-bar" style="width:30%; background:var(--muted-2);"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- STRENGTHS -->
+<div class="doc-section" id="strengths">
+<h2><span class="section-icon"><i class="bi bi-trophy"></i></span> Competitive Strengths Identified</h2>
+<p>
+Beyond issues, the model surfaces what customers <em>love</em>, the competitive advantages that should be amplified in marketing and product strategy. <strong>Speed</strong> is Moniepoint's dominant positive signal with 857 combined mentions. This is the type of strategic insight I deliver when you <strong>hire me for competitive intelligence analysis</strong>:
+</p>
+<div class="strength-list">
+<div class="strength-row">
+<span class="strength-label">Fast Transactions</span>
+<div class="strength-bar-wrap"><div class="strength-bar" style="width:100%"></div></div>
+<span class="strength-val">297</span>
+</div>
+<div class="strength-row">
+<span class="strength-label">Fast Transfers</span>
+<div class="strength-bar-wrap"><div class="strength-bar" style="width:95%"></div></div>
+<span class="strength-val">282</span>
+</div>
+<div class="strength-row">
+<span class="strength-label">Speed (general)</span>
+<div class="strength-bar-wrap"><div class="strength-bar" style="width:94%"></div></div>
+<span class="strength-val">278</span>
+</div>
+<div class="strength-row">
+<span class="strength-label">Ease of Use</span>
+<div class="strength-bar-wrap"><div class="strength-bar" style="width:63%"></div></div>
+<span class="strength-val">187</span>
+</div>
+<div class="strength-row">
+<span class="strength-label">Reliability</span>
+<div class="strength-bar-wrap"><div class="strength-bar" style="width:62%"></div></div>
+<span class="strength-val">183</span>
+</div>
+</div>
+<div class="callout-green">
+<p><strong>Strategic positioning:</strong> 857 speed-related positive mentions represent a durable competitive moat. "Fast" should be Moniepoint's core brand pillar in marketing, it's not a claimed differentiator, it's a <em>customer-validated</em> one. The data also confirms an 81.83% review response rate, well above the ~60% industry average. <em>When you hire me for sentiment analysis services, I help you identify and amplify your own competitive strengths.</em></p>
+</div>
+</div>
+<!-- RECOMMENDATIONS -->
+<div class="doc-section" id="recommendations">
+<h2><span class="section-icon"><i class="bi bi-arrow-up-circle-fill"></i></span> Strategic Recommendations: What You Get When You Hire Me</h2>
+<div class="rec-list">
+<div class="rec-item">
+<div class="rec-num">1</div>
+<div class="rec-body">
+<h4>Deploy Real-Time Review Monitoring</h4>
+<p>Implement continuous ingestion from Play Store and App Store with automated alerting when critical categories (App Not Opening, Failed Transactions, Login Issues) exceed baseline thresholds. The 217 "App Not Opening" mentions represent an immediate churn risk that real-time monitoring would catch within hours, not weeks.</p>
+</div>
+</div>
+<div class="rec-item">
+<div class="rec-num">2</div>
+<div class="rec-body">
+<h4>Prioritize Engineering on Tier 1 Issues</h4>
+<p>The 417 combined critical issue mentions should drive sprint planning directly. App Not Opening (217), Login (101), and Failed Transactions (99) represent complete access failures, users experiencing these are highly likely to uninstall. Set SLA targets for each category and instrument post-deployment monitoring against these baselines.</p>
+</div>
+</div>
+<div class="rec-item">
+<div class="rec-num">3</div>
+<div class="rec-body">
+<h4>Address Fee Perception with Transparency</h4>
+<p>223 fee-related complaints signal a perception problem that may not require a pricing change, it may require better value communication. Test in-app fee calculators, comparison tools, and clearer transaction breakdowns. Measure impact on subsequent review sentiment in the fee-related categories.</p>
+</div>
+</div>
+<div class="rec-item">
+<div class="rec-num">4</div>
+<div class="rec-body">
+<h4>Leverage Speed as the Core Marketing Message</h4>
+<p>857 customer-validated speed mentions make "fast" Moniepoint's most credible differentiator. Build marketing campaigns directly from positive review language, these are authentic customer voices that resonate with prospects experiencing slow competitors.</p>
+</div>
+</div>
+<div class="rec-item">
+<div class="rec-num">5</div>
+<div class="rec-body">
+<h4>Extend to Competitive Intelligence</h4>
+<p>Deploy the same model on OPay, PalmPay, and Kuda reviews to create a continuous competitive intelligence system. Monthly reports comparing issue prevalence and strength mentions would show exactly where Moniepoint is outperforming and where it has market gaps to exploit.</p>
+</div>
+</div>
+</div>
+<div class="tags-row">
+<span class="tech-tag">Hire NLP Engineer</span>
+<span class="tech-tag">Text Classification Services</span>
+<span class="tech-tag">RoBERTa</span>
+<span class="tech-tag">Transformers</span>
+<span class="tech-tag">Multi-Label Classification</span>
+<span class="tech-tag">HuggingFace</span>
+<span class="tech-tag">Customer Feedback Analysis</span>
+<span class="tech-tag">Power BI</span>
+<span class="tech-tag">Sentiment Analysis</span>
+<span class="tech-tag">Fintech Analytics</span>
+<span class="tech-tag">Python</span>
+<span class="tech-tag">PyTorch</span>
+</div>
+</div>
+<!-- FUTURE WORK -->
+<div class="doc-section" id="future">
+<h2><span class="section-icon"><i class="bi bi-binoculars"></i></span> Future Work: Roadmap I Build With Clients</h2>
+<h3>Model Improvements</h3>
+<ul>
+<li><strong>Multilingual support:</strong> Extend to Pidgin English and major Nigerian languages, a meaningful portion of app store reviews use non-standard English that the current model may misclassify</li>
+<li><strong>Continuous learning pipeline:</strong> Implement active learning where customer success agents validate predictions, continuously improving accuracy on new issue patterns</li>
+<li><strong>App version correlation:</strong> Link review categories to specific app release versions to create a "quality gate" metric for release management</li>
+</ul>
+<h3>Business Applications</h3>
+<ul>
+<li><strong>Churn risk scoring:</strong> Combine review categories with behavioral data to build a customer-level churn probability score triggered by specific negative review patterns</li>
+<li><strong>Automated ticket routing:</strong> Integrate with customer support to auto-route incoming support tickets to the correct team based on classified issue type</li>
+<li><strong>Predictive analytics:</strong> Time-series forecasting of issue volume spikes based on historical patterns and release cycles, enabling proactive engineering response</li>
+</ul>
+<p><em>When you hire me for NLP consulting services, we prioritize these roadmap items based on your specific business goals and data availability.</em></p>
+</div>
+<!-- NEW PRICING SECTION FOR COMMERCIAL INTENT -->
+<div class="doc-section" id="pricing">
+<h2><span class="section-icon"><i class="bi bi-cash-coin"></i></span> 💰 NLP Project Pricing &amp; How to Get Started</h2>
+<p>When you're ready to <strong>hire a freelance NLP engineer</strong> for text classification or sentiment analysis, transparency matters. Here's what to expect:</p>
+<div class="pricing-highlight">
+<h4>🎯 Typical Project Scope &amp; Investment</h4>
+<div class="pricing-grid">
+<div class="pricing-item">
+<span class="label">Basic Text Classification</span>
+<span class="price">$1,800-$3,500</span>
+<span class="label">1-2 categories, 5K-10K reviews, single-label model</span>
+</div>
+<div class="pricing-item">
+<span class="label">Standard Multi-Label NLP</span>
+<span class="price">$3,500-$7,000</span>
+<span class="label">5-15 categories, 10K-50K reviews, RoBERTa fine-tuning</span>
+</div>
+<div class="pricing-item">
+<span class="label">Enterprise NLP + BI</span>
+<span class="price">$7,000-$15,000+</span>
+<span class="label">Custom categories, 50K+ reviews, Hugging Face deployment + Power BI dashboard</span>
+</div>
+</div>
+<p style="font-size:13px;color:var(--muted);margin-top:16px;"><strong>Note:</strong> All projects begin with a free discovery call. You'll receive a fixed-price proposal with defined deliverables before any work begins. No hourly surprises.</p>
+</div>
+<h3>My Process: Simple, Transparent, Results-Focused</h3>
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body">
+<h3>Free Discovery Call (30 min)</h3>
+<p>We discuss your feedback analysis goals, data sources (App Store, Zendesk, surveys), and success metrics. No pitch, no obligation. I'll tell you if NLP classification is the right solution for your needs.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body">
+<h3>Scoped Fixed-Price Proposal</h3>
+<p>Clear deliverables, timeline, and pricing. ROI targets defined upfront (e.g., "reduce manual review time by 80%"). You approve before any work begins.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body">
+<h3>Build &amp; Weekly Demos</h3>
+<p>Transparent communication, iterative model development, and progress demos. You stay in control and can request adjustments to categories or thresholds.</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body">
+<h3>Deploy, Train &amp; Support</h3>
+<p>Production-ready Python code with documentation, team training, and 30 days of post-delivery support. Optional Hugging Face or AWS deployment included.</p>
+</div>
+</div>
+</div>
+<div class="callout" style="margin-top:24px;">
+<p><strong>Why clients hire me over agencies or junior freelancers:</strong></p>
+<p>• <strong>4+ years</strong> building production-ready NLP systems (not just tutorials)<br/>
+• <strong>Domain expertise</strong>, I understand multi-label classification, RoBERTa fine-tuning, Hugging Face deployment, not just Python syntax<br/>
+• <strong>Fixed-price transparency</strong>, no hourly creep, no scope surprises<br/>
+• <strong>Remote-first</strong>, seamless collaboration across time zones with clear communication<br/>
+• <strong>Measurable outcomes</strong>, we define success metrics upfront: classification accuracy, issue detection rate, manual review time reduction</p>
+</div>
+<div style="margin-top: 30px; text-align: center;">
+<a class="btn-get-started-primary" href="../contact.html">Book Your Free Discovery Call <i class="bi bi-calendar-check"></i></a>
+<p style="font-size: 0.9rem; color: var(--muted); margin-top: 12px;">Remote worldwide • Available globally (timezone-flexible) • Fixed-price proposals</p>
+</div>
+</div>
+<!-- HIRE SECTION — COMMERCIAL FOCUS -->
+<div class="doc-section" id="hire">
+<h2><span class="section-icon"><i class="bi bi-briefcase"></i></span> 🔥 Hire Me for Your NLP or Text Classification Project</h2>
+<p>If this multi-label review classifier case study demonstrates the level of insight and technical execution you need for your business, I'm available to build similar solutions for your organisation.</p>
+<div class="callout">
+<p><strong>What you get when you hire me as a freelance NLP engineer:</strong></p>
+<p>• <strong>Production-ready Python NLP code</strong> built on your real customer feedback data<br/>
+• <strong>Custom multi-label classification models</strong> for categories that matter to your business (not just generic sentiment)<br/>
+• <strong>Clear documentation and API integration</strong> so your team can maintain and extend the solution<br/>
+• <strong>Measurable outcomes</strong> defined upfront: classification accuracy targets, issue detection rates, manual review time reduction<br/>
+• <strong>Transparent pricing</strong>: fixed-price projects or hourly consulting, scoped in the free discovery call</p>
+</div>
+<h3>Industries I Serve as an NLP Consultant</h3>
+<p>I've built text classification and sentiment analysis solutions for clients who hired me across:</p>
+<ul>
+<li><strong>Fintech &amp; Banking:</strong> App review analysis, transaction complaint classification, fraud detection from support tickets</li>
+<li><strong>E-Commerce &amp; Retail:</strong> Product review sentiment, return reason classification, customer inquiry routing</li>
+<li><strong>SaaS &amp; Subscription:</strong> Churn prediction from support interactions, feature request prioritization, NPS comment analysis</li>
+<li><strong>Healthcare &amp; Telemedicine:</strong> Patient feedback categorization, symptom extraction from reviews, compliance monitoring</li>
+</ul>
+<h3>Ready to Hire an NLP Engineer for Text Classification? Next Steps:</h3>
+<ol>
+<li><strong>Book your free 30-minute discovery call</strong> via my contact page</li>
+<li><strong>Share your feedback data sources</strong> and classification goals (I'll sign an NDA if needed)</li>
+<li><strong>Receive a fixed-price proposal</strong> with timeline and deliverables within 48 hours</li>
+<li><strong>Approve and begin development</strong> with weekly demos and transparent communication</li>
+</ol>
+<div style="margin-top: 30px; text-align: center;">
+<a class="btn-get-started-primary" href="../contact.html">Hire Me: Book Free Discovery Call <i class="bi bi-arrow-right-circle"></i></a>
+<p style="font-size: 0.9rem; color: var(--muted); margin-top: 12px;">No obligation • Fixed-price proposals • Remote worldwide • 2-4 week typical delivery</p>
+</div>
+</div>
+<!-- RELATED -->
+<div class="doc-section" id="related">
+<h2><span class="section-icon"><i class="bi bi-grid"></i></span> Related Projects: More Reasons to Hire Me</h2>
+<p>If this case study is relevant to your business challenge, these projects demonstrate additional expertise you get when you <strong>hire me as a freelance NLP engineer</strong>:</p>
+<div class="related-grid">
+<a class="related-card" href="customer-satisfaction-survey.html">
+<p class="card-label">Survey Analytics · Power BI · Hire Me</p>
+<h4>Customer Satisfaction Survey Analysis</h4>
+<p>Uncovering satisfaction drivers by segment using banking survey data and interactive Power BI dashboards. <strong>Hire me for similar survey NLP projects.</strong></p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="related-card" href="lead-scoring-conversion-prediction.html">
+<p class="card-label">Conversion ML · Python · Hire Me</p>
+<h4>Lead Scoring &amp; Conversion Prediction</h4>
+<p>99% accuracy ML model predicting purchase likelihood from browsing behavior, reviews are the dominant signal. <strong>Available for conversion prediction projects.</strong></p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="related-card" href="ecommerce-product-returns.html">
+<p class="card-label">Returns Analysis · Python · Hire Me</p>
+<h4>E-Commerce Product Returns Analysis</h4>
+<p>Logistic regression and SHAP analysis identifying the demographic and product drivers of a 28% revenue loss. <strong>Hire me for e-commerce NLP projects.</strong></p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="related-card" href="retail-analysis-global-electronics.html">
+<p class="card-label">Retail BI · Power BI · Hire Me</p>
+<h4>Retail Business Intelligence Dashboard</h4>
+<p>Diagnosing a 90% revenue decline by identifying an 85% customer retention failure as root cause. <strong>Available for retail analytics projects.</strong></p>
+<span class="card-arrow">Read case study <i class="bi bi-arrow-right"></i></span>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+
+    </div>
+  </section>
+  <section class="project-cta">
+    <div class="container">
+      
+<div class="container">
+<p class="cta-eyebrow">Work with Adediran Adeyemi</p>
+<h2>Thousands of customer reviews, and no idea what they're saying?</h2>
+<p><strong>Hire freelance NLP engineer Adediran Adeyemi</strong> for customer feedback analysis, text classification &amp; sentiment modeling. RoBERTa, Hugging Face, fixed-price projects, remote worldwide. <em>Explore my <a href="../services.html" style="color:rgba(255,255,255,0.92);font-weight:600;text-decoration:underline;">NLP consulting services</a> for full project details.</em></p>
+<div class="cta-buttons">
+<a class="btn-cta-white" href="../contact.html">Hire Me: Book Free Discovery Call</a>
+<a class="btn-cta-ghost" href="../projects.html">See All Portfolio Projects</a>
+</div>
+</div>
+
+    </div>
+  </section>
+  <section class="section-sm bg-surface">
+    <div class="container">
+      <div class="section-head"><h2>More Projects</h2></div>
+      <div class="related-grid"><a class="proj-card" href="../projects/customer-satisfaction-survey.html">
+          <div class="thumb"><img src="../assets/img/portfolio/survey.webp" alt="Hire Freelance Power BI Consultant: Customer Survey & Churn Analysis Case Study" loading="lazy" width="400" height="250"></div>
+          <div class="body">
+            <span class="tag">Project</span>
+            <h3>Hire Freelance Power BI Consultant: Customer Survey & Churn Analysis Case Study</h3>
+            <span class="go">View project <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../projects/ecommerce-product-returns.html">
+          <div class="thumb"><img src="../assets/img/portfolio/returns.webp" alt="Hire Freelance E-Commerce Data Scientist: Product Returns Analysis & Revenue Recovery" loading="lazy" width="400" height="250"></div>
+          <div class="body">
+            <span class="tag">Project</span>
+            <h3>Hire Freelance E-Commerce Data Scientist: Product Returns Analysis & Revenue Recovery</h3>
+            <span class="go">View project <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../projects/lead-scoring-conversion-prediction.html">
+          <div class="thumb"><img src="../assets/img/portfolio/lead-scoring.webp" alt="Predicting Purchase Likelihood from Browsing Behavior" loading="lazy" width="400" height="250"></div>
+          <div class="body">
+            <span class="tag">Project</span>
+            <h3>Predicting Purchase Likelihood from Browsing Behavior</h3>
+            <span class="go">View project <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a></div>
+    </div>
+  </section>
+</main>
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+          <span style="color:#fff">Adediran Adeyemi</span>
+        </a>
+        <p>Freelance data scientist helping e-commerce and retail businesses turn data into revenue-generating decisions. Remote worldwide, based in Lagos, Nigeria.</p>
+        <div class="footer-social"><a aria-label="X (Twitter)" href="https://x.com/AdediranAd60922" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.1-9.3L.8 2h7.3l5 6.6L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/adediran-adeyemi" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/Adeyemi0" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/Adeyemi_the_data_analyst" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+<a aria-label="WhatsApp" href="https://wa.me/+2348162735399" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a aria-label="Pinterest" href="https://pin.it/1by014rCw" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.33-.09-.79-.16-2.01.03-2.88.18-.79 1.17-5.02 1.17-5.02s-.3-.6-.3-1.48c0-1.39.8-2.42 1.81-2.42.85 0 1.26.64 1.26 1.41 0 .86-.55 2.14-.83 3.33-.24.99.5 1.81 1.48 1.81 1.78 0 3.15-1.88 3.15-4.58 0-2.39-1.72-4.07-4.18-4.07-2.85 0-4.52 2.14-4.52 4.34 0 .86.33 1.78.75 2.28a.3.3 0 0 1 .07.29c-.08.32-.25 1-.28 1.14-.04.19-.15.23-.34.14-1.26-.59-2.05-2.42-2.05-3.9 0-3.18 2.31-6.1 6.66-6.1 3.5 0 6.22 2.49 6.22 5.83 0 3.48-2.19 6.28-5.24 6.28-1.02 0-1.98-.53-2.31-1.16l-.63 2.4c-.23.87-.84 1.97-1.26 2.63.95.29 1.95.45 3 .45 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/churn-prediction-model.html">Churn Prediction</a></li>
+          <li><a href="../services/ecommerce-data-science.html">E-Commerce Data Science</a></li>
+          <li><a href="../services/customer-segmentation-analysis.html">Customer Segmentation</a></li>
+          <li><a href="../services/power-bi-dashboard-development.html">Power BI Dashboards</a></li>
+          <li><a href="../services.html">View All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../projects.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></li>
+          <li><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></li>
+          <li><span>Lagos, Nigeria</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Adediran Adeyemi. All rights reserved.</span>
+      <span>Built with intent, not templates.</span>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<div class="nav-scrim"></div>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script src="../assets/js/main.js" defer></script>
+<script>if(window.AOS){AOS.init({duration:600,once:true,offset:60});}</script>
+</body>
+</html>
