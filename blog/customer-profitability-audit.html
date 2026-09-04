@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Profitability Audit: Framework | Adediran Adeyemi</title>
+<meta name="description" content="Master the customer profitability audit with this consulting-grade framework. Learn step-by-step methodology, CLV formulas, cost-to-serve analysis, and...">
+<link rel="canonical" href="https://adediranadeyemi.com/blog/customer-profitability-audit.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Adediran Adeyemi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Customer Profitability Audit: Framework | Adediran Adeyemi">
+<meta property="og:description" content="Master the customer profitability audit with this consulting-grade framework. Learn step-by-step methodology, CLV formulas, cost-to-serve analysis, and...">
+<meta property="og:url" content="https://adediranadeyemi.com/blog/customer-profitability-audit.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp">
+<meta property="og:site_name" content="Adediran Adeyemi">
+<meta property="article:published_time" content="2026-05-17">
+<meta property="article:author" content="Adediran Adeyemi">
+<meta property="article:section" content="Customer Analytics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Customer Profitability Audit: Framework | Adediran Adeyemi">
+<meta name="twitter:description" content="Master the customer profitability audit with this consulting-grade framework. Learn step-by-step methodology, CLV formulas, cost-to-serve analysis, and...">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp">
+<link href="../assets/img/favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+<link href="../assets/img/favicon-16.png" rel="icon" type="image/png" sizes="16x16">
+<link href="../assets/img/favicon.ico" rel="shortcut icon">
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="../site.webmanifest" rel="manifest">
+<meta name="theme-color" content="#0F1B17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Customer Profitability Audit: Framework, Formulas, and Implementation Guide",
+  "description": "Master the customer profitability audit with this consulting-grade framework. Learn step-by-step methodology, CLV formulas, cost-to-serve analysis, and...",
+  "image": "https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp",
+  "datePublished": "2026-05-17",
+  "dateModified": "2026-05-17",
+  "author": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://adediranadeyemi.com/assets/img/icon-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://adediranadeyemi.com/blog/customer-profitability-audit.html"
+  },
+  "articleSection": "Customer Analytics"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://adediranadeyemi.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://adediranadeyemi.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Customer Profitability Audit: Framework, Formulas, and Implementation Guide",
+      "item": "https://adediranadeyemi.com/blog/customer-profitability-audit.html"
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-810CYGL9VL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-810CYGL9VL');</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="header">
+  <div class="container navbar-wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+      <span>Adediran Adeyemi<span class="brand-sub">Data Scientist &amp; AI/ML Engineer</span></span>
+    </a>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a class="" href="../index.html">Home</a></li><li><a class="" href="../about.html">About</a></li><li><a class="" href="../services.html">Services</a></li><li><a class="" href="../projects.html">Projects</a></li><li><a class="active" href="../blog.html">Blog</a></li>
+      </ul>
+      <div class="header-cta-mobile">
+        <a class="btn btn-accent btn-block" href="../contact.html">Let's Work Together</a>
+      </div>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="../contact.html">Let's Work Together <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <button class="mobile-nav-toggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+<main id="main">
+  <nav class="project-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li class="sep">/</li>
+        <li class="active">Customer Profitability Audit: Framework, Formulas, and…</li>
+      </ol>
+    </div>
+  </nav>
+
+  <header class="project-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="hero-label">Customer Analytics</span>
+      <h1>Customer Profitability Audit: Framework, Formulas, and Implementation Guide</h1>
+      <p class="hero-lead">Stop guessing which customers drive your profits. This consulting-grade customer profitability audit framework reveals how to measure true customer value, segment by profitability, and allocate resources to scale sustainably.</p>
+      <div class="article-meta">
+        <time datetime="2026-05-17"><i class="bi bi-calendar3"></i> May 17, 2026</time>
+        <span><i class="bi bi-clock"></i> 18 min read</span>
+      </div>
+      <div class="article-author">
+        <img class="author-image" src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="Adediran Adeyemi" width="44" height="44" loading="lazy">
+        <div>
+          <span class="author-name">Adediran Adeyemi</span>
+          <span class="author-title">Data Scientist &amp; AI/ML Engineer</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-layout">
+        <article class="article-content">
+          
+<!-- Key Takeaways for Featured Snippet Optimization -->
+<div class="key-takeaways">
+<h3><i class="bi bi-lightbulb"></i> Key Takeaways</h3>
+<ul>
+<li><strong>Customer profitability audit</strong> systematically identifies which customers drive profit by comparing revenue generated against acquisition, service, and retention costs</li>
+<li><strong>Top 10 percent of customers</strong> typically generate 40 to 60 percent of total revenue while representing minimal concentration risk when managed strategically</li>
+<li><strong>Contribution margin formula</strong>: Revenue minus variable costs reveals decision-relevant profitability per customer or segment</li>
+<li><strong>Cost-to-serve analysis</strong> uncovers hidden expenses like support time, custom reporting, and accelerated fulfillment that traditional accounting overlooks</li>
+<li><strong>RFM segmentation</strong> (Recency, Frequency, Monetary) provides a proven framework for identifying high-value customers without complex machine learning</li>
+</ul>
+</div>
+<p>Most businesses track revenue. Few track true customer profitability.</p>
+<p>This gap creates a dangerous illusion: growing top-line revenue while quietly eroding margins. The solution is a systematic customer profitability audit that reveals which relationships actually drive sustainable growth.</p>
+<p>A customer profitability analysis shifts focus from product line profitability to individual customer profitability. Instead of asking which products sell best, you ask which customers generate the most profit after accounting for all costs to acquire, serve, and retain them.</p>
+<p class="key-insight">Customer profitability analysis is a retrospective method that analyzes past customer events to calculate profitability per customer or segment. This historical view provides the foundation for predictive strategies that allocate resources to high-value relationships.</p>
+<h2>What Is a Customer Profitability Audit and Why It Matters</h2>
+<p>A customer profitability audit is a systematic analysis that identifies which customers drive the most revenue and profit for your business. It evaluates revenue generated per customer against acquisition costs, service costs, and retention expenses to calculate true profitability.</p>
+<p>This audit matters because not all revenue is equal. A customer who generates $10,000 in revenue but requires $8,000 in support, custom development, and account management contributes far less than a customer who generates $6,000 with minimal service requirements.</p>
+<p>Businesses that conduct regular profitability audits gain three strategic advantages:</p>
+<ul>
+<li><strong>Resource optimization</strong>: Allocate sales, support, and marketing efforts to customers with the highest return on investment</li>
+<li><strong>Risk mitigation</strong>: Identify revenue concentration risk when too few customers represent too much of your income</li>
+<li><strong>Pricing strategy</strong>: Adjust pricing, packaging, or service levels to improve profitability of marginal segments</li>
+</ul>
+<p>Customer profitability analysis enables cost-based customer segmentation, allowing you to group customers by the value they generate. While it remains important to serve all customers appropriately, identifying unprofitable relationships enables strategic decisions about resource allocation.</p>
+<h2>Customer Profitability Audit Framework: Core Concepts and Definitions</h2>
+<p>Before implementing an audit, understand the foundational concepts that drive accurate analysis.</p>
+<h3>Customer Profitability vs Customer Lifetime Value</h3>
+<p>These related metrics serve different purposes:</p>
+<ul>
+<li><strong>Customer profitability</strong> measures actual profit generated over a specific period after accounting for all costs. It is retrospective and factual.</li>
+<li><strong>Customer lifetime value (CLV)</strong> predicts the total revenue a customer will generate over their entire relationship. It is forward-looking and predictive.</li>
+</ul>
+<p>Use profitability analysis to understand current performance. Use CLV modeling to forecast future value and guide acquisition strategy.</p>
+<h3>Contribution Margin: The Decision-Relevant Metric</h3>
+<p>Contribution margin measures what remains after the costs directly caused by a product, customer, or activity. This makes it the most relevant metric for profitability decisions.</p>
+<div class="formula-box">
+<strong>Contribution Margin per Customer = Revenue from Customer minus Variable Costs to Serve Customer</strong>
+</div>
+<p>Variable costs include fulfillment, payment processing, support tickets, and account management time. Fixed costs like office rent or executive salaries are excluded because they do not change with individual customer relationships.</p>
+<h3>Cost-to-Serve Analysis: Uncovering Hidden Expenses</h3>
+<p>Cost to serve is an analytical framework companies use to understand how much it costs to fulfill demand for one product or service for a customer. This granular costing reveals expenses traditional accounting may overlook:</p>
+<ul>
+<li>Order processing and customization requests</li>
+<li>Expedited shipping or special delivery requirements</li>
+<li>Customer support interactions and escalation handling</li>
+<li>Account management time and strategic planning sessions</li>
+<li>Return processing and warranty claims</li>
+</ul>
+<p>Twenty percent of customers or products often generate 80 percent of profits, while 30 percent actually lose money when full cost-to-serve is calculated. Identifying these relationships is the core objective of a profitability audit.</p>
+<h2>Step-by-Step Customer Profitability Audit Methodology</h2>
+<p>Follow this five-phase methodology to conduct a comprehensive customer profitability audit.</p>
+<h3>Phase 1: Define Active Customers and Data Scope</h3>
+<p>Start by clarifying what constitutes an active customer for your analysis:</p>
+<ul>
+<li>Purchased within the last 12 months</li>
+<li>Has an active subscription or contract</li>
+<li>Engaged with your product or service in the last 90 days</li>
+</ul>
+<p>Filter your database to show only active customers. This is your real customer base for analysis. Including dormant accounts or one-time buyers dilutes insights and misallocates strategic focus.</p>
+<p class="key-insight">Only active customers drive current revenue. The rest are data points, not revenue drivers. Start your audit by filtering your database to show only customers who purchased in the last 12 months.</p>
+<h3>Phase 2: Collect Revenue and Cost Data by Customer</h3>
+<p>Aggregate data from multiple systems to build a complete profitability picture:</p>
+<table class="profitability-table">
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Source System</th>
+<th>Key Metrics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revenue</td>
+<td>CRM, Billing Platform</td>
+<td>12-month revenue per customer, product mix, discount history</td>
+</tr>
+<tr>
+<td>Acquisition Cost</td>
+<td>Marketing Platforms</td>
+<td>CAC by channel, campaign attribution, sales commission</td>
+</tr>
+<tr>
+<td>Service Cost</td>
+<td>Support Ticketing, Fulfillment</td>
+<td>Tickets per customer, resolution time, shipping costs, returns</td>
+</tr>
+<tr>
+<td>Retention Cost</td>
+<td>Account Management, Success</td>
+<td>Check-in frequency, custom reporting, strategic planning time</td>
+</tr>
+</tbody>
+</table>
+<p>Effective customer profitability analysis depends heavily on accurate and well-organized data. Gathering comprehensive customer-related information and structuring it clearly is essential to uncover meaningful insights.</p>
+<h3>Phase 3: Calculate Contribution Margin and Profitability</h3>
+<p>Apply the core profitability formula to each customer:</p>
+<div class="formula-box">
+<strong>Customer Profitability = Revenue minus (Acquisition Cost plus Service Cost plus Retention Cost)</strong>
+</div>
+<p>Example calculation:</p>
+<ul>
+<li>Revenue from Customer (12 months): $15,000</li>
+<li>Acquisition Cost: $2,000</li>
+<li>Service Cost (support, fulfillment): $4,500</li>
+<li>Retention Cost (account management): $1,500</li>
+<li><strong>Customer Profitability: $15,000 minus $8,000 = $7,000</strong></li>
+</ul>
+<p>Rank customers by net profit contribution. This reveals your true value drivers, which may differ significantly from revenue rankings.</p>
+<h3>Phase 4: Segment Customers by Profitability Tiers</h3>
+<p>Group customers into three strategic segments based on profitability analysis:</p>
+<div class="segment-cards">
+<div class="segment-card champions">
+<div class="segment-header">
+<h3>Champions (Top 10 Percent)</h3>
+<span class="segment-badge">Protect and Expand</span>
+</div>
+<div class="segment-body">
+<h4>Characteristics</h4>
+<p>High revenue, low service intensity, strong retention, referral activity</p>
+<h4>Strategic Priority</h4>
+<p>Assign dedicated account managers. Offer exclusive products or early access. Monitor health metrics weekly. These customers deserve premium treatment because losing one has outsized revenue impact.</p>
+<h4>Key Metric</h4>
+<p>Champion retention rate. A 5 percent drop can wipe out a quarter's growth.</p>
+</div>
+</div>
+<div class="segment-card core">
+<div class="segment-header">
+<h3>Core (Next 20 Percent)</h3>
+<span class="segment-badge">Activate and Graduate</span>
+</div>
+<div class="segment-body">
+<h4>Characteristics</h4>
+<p>Solid revenue, moderate service needs, consistent but not exceptional engagement</p>
+<h4>Strategic Priority</h4>
+<p>Identify behaviors that separate champions from core customers. Create programs to drive those behaviors: product training, success check-ins, targeted upsell offers.</p>
+<h4>Key Metric</h4>
+<p>Core-to-champion conversion rate. This measures effectiveness of activation programs.</p>
+</div>
+</div>
+<div class="segment-card tail">
+<div class="segment-header">
+<h3>Tail (Remaining 70 Percent)</h3>
+<span class="segment-badge">Automate or Exit</span>
+</div>
+<div class="segment-body">
+<h4>Characteristics</h4>
+<p>Low revenue, high service intensity, inconsistent engagement, price sensitivity</p>
+<h4>Strategic Priority</h4>
+<p>Two paths: (1) Automate experience through self-service onboarding, chatbots, and knowledge bases. (2) Create clear upgrade paths. If neither works, consider gracefully exiting unprofitable relationships.</p>
+<h4>Key Metric</h4>
+<p>Tail customer profitability. Are automation efforts reducing service costs?</p>
+</div>
+</div>
+</div>
+<h3>Phase 5: Develop Segment-Specific Strategies</h3>
+<p>Translate audit insights into actionable strategies for each segment:</p>
+<ul>
+<li><strong>Champions</strong>: Protect with white-glove service, exclusive offers, and proactive relationship management</li>
+<li><strong>Core</strong>: Activate through targeted programs that drive behaviors associated with champion status</li>
+<li><strong>Tail</strong>: Automate service delivery or restructure pricing to improve profitability</li>
+</ul>
+<p>Step five is all about negotiation, where you go to customers and say, we have done the analysis and cannot continue this way. Educate customers about the true cost of custom requests and establish clear boundaries for service levels.</p>
+<h2>Essential Formulas for Customer Profitability Analysis</h2>
+<p>Master these formulas to conduct accurate profitability audits.</p>
+<h3>Basic Customer Profitability Formula</h3>
+<div class="formula-box">
+<strong>Customer Profitability = Total Revenue from Customer minus Total Costs to Serve Customer</strong>
+</div>
+<p>Total costs include acquisition, service, and retention expenses. This formula provides a straightforward view of net contribution per customer.</p>
+<h3>Customer Lifetime Value Formula</h3>
+<div class="formula-box">
+<strong>CLV = Average Purchase Value times Purchase Frequency times Customer Lifespan</strong>
+</div>
+<p>For subscription businesses, a simplified version is: CLV = Average Revenue Per User times Gross Margin divided by Churn Rate. CLV helps forecast long-term value beyond current profitability.</p>
+<h3>Contribution Margin Formula</h3>
+<div class="formula-box">
+<strong>Contribution Margin = Revenue minus Variable Costs</strong>
+</div>
+<p>Contribution margin represents the amount of money a business has left over after covering variable costs. This metric is decision-relevant because it isolates costs directly tied to serving a specific customer.</p>
+<h3>Revenue Concentration Risk Metric</h3>
+<div class="formula-box">
+<strong>Concentration Risk = Revenue from Top N Customers divided by Total Revenue</strong>
+</div>
+<p>If your top 10 customers represent more than 40 percent of revenue, losing one major customer could trigger a revenue crisis. Healthy businesses diversify so no single customer represents more than 10 to 15 percent of total revenue.</p>
+<h2>Practical Implementation: Tools, Dashboards, and Workflows</h2>
+<p>Turn audit insights into ongoing profitability management with these implementation strategies.</p>
+<h3>Monthly Customer Health Dashboard</h3>
+<p>Track these four metrics monthly to catch problems early:</p>
+<div class="data-callout">
+<p><strong>1. Active customer count</strong> (purchased in last 90 days)<br/>
+<strong>2. Revenue concentration</strong> (percent of revenue from top 20 customers)<br/>
+<strong>3. New customer second purchase rate</strong> (within 90 days)<br/>
+<strong>4. CAC versus LTV ratio</strong> (customer acquisition cost versus lifetime value)</p>
+<p class="source">When these metrics trend positive, your business is healthy. When they decline, you have early warning of revenue problems weeks or months before they impact quarterly results.</p>
+</div>
+<h3>RFM Analysis for Behavioral Segmentation</h3>
+<p>RFM analysis segments customers by Recency (how recently they purchased), Frequency (how often they purchase), and Monetary value (how much they spend). Customers scoring high on all three dimensions are your champions.</p>
+<p>RFM is a proven framework for identifying high-value segments without complex machine learning. Implement RFM scoring in your CRM or analytics platform to automatically flag high-value customers for priority treatment.</p>
+<h3>Automation and Tooling Recommendations</h3>
+<p>Leverage modern analytics tools to scale your profitability audit:</p>
+<ul>
+<li><strong>CRM Integration</strong>: Sync profitability scores to customer records for sales and support teams</li>
+<li><strong>BI Dashboards</strong>: Build automated reports that update profitability metrics weekly</li>
+<li><strong>Alert Systems</strong>: Configure notifications when champion customers show engagement decline</li>
+<li><strong>Attribution Modeling</strong>: Use multi-touch attribution to accurately assign acquisition costs</li>
+</ul>
+<p>TrueProfit and similar platforms can automate eCommerce accounting by precisely obtaining data from all sources, giving you a clear picture of customer profitability.</p>
+<h2>Common Mistakes in Customer Profitability Analysis</h2>
+<p>Avoid these pitfalls that undermine audit accuracy and strategic value.</p>
+<p><strong>1. Using revenue instead of profit:</strong> A high-revenue customer who requires heavy support may be unprofitable. Always factor in service costs.</p>
+<p><strong>2. Ignoring acquisition cost:</strong> A customer who cost $500 to acquire but generates $600 in revenue has a poor ROI. Include CAC in profitability calculations.</p>
+<p><strong>3. Static segmentation:</strong> Customer value changes over time. Re-run your audit quarterly to catch shifts early.</p>
+<p><strong>4. One-size-fits-all treatment:</strong> Champions need white-glove service; tail customers need automation. Match service level to customer value.</p>
+<p><strong>5. Not acting on insights:</strong> An audit without action is just a report. Define specific interventions for each segment before you start analyzing.</p>
+<h2>Customer Profitability Audit: Frequently Asked Questions</h2>
+<div class="faq-section">
+<div class="faq-item">
+<h3>What is a customer profitability audit?</h3>
+<p>A customer profitability audit is a systematic analysis that identifies which customers drive the most revenue and profit for your business. It answers critical questions about customer value, retention, concentration risk, and product alignment to help you allocate resources strategically and scale profitably.</p>
+</div>
+<div class="faq-item">
+<h3>How do you calculate customer profitability?</h3>
+<p>Customer profitability equals revenue from customer over a period minus acquisition cost plus service cost plus retention cost. Factor in direct costs like fulfillment and indirect costs like account management time. Many businesses discover 20 to 30 percent of customers cost more to serve than they generate in revenue.</p>
+</div>
+<div class="faq-item">
+<h3>What is the difference between CLV and customer profitability?</h3>
+<p>Customer lifetime value predicts total revenue a customer will generate over their entire relationship. Customer profitability measures actual profit generated over a specific period after accounting for all costs. CLV is forward-looking and predictive, while profitability is retrospective and factual.</p>
+</div>
+<div class="faq-item">
+<h3>What is cost to serve analysis?</h3>
+<p>Cost to serve analysis calculates the total expense of delivering products or services to a specific customer, including order processing, shipping, customer support, returns handling, and account management. This granular costing reveals hidden expenses that traditional accounting may overlook.</p>
+</div>
+<div class="faq-item">
+<h3>How often should you run a customer profitability audit?</h3>
+<p>Run a full audit quarterly to inform strategic decisions. Track four key metrics monthly: active customer count, revenue concentration percentage, new customer second purchase rate, and CAC versus LTV ratio. Monthly tracking provides early warning of revenue problems before they impact quarterly results.</p>
+</div>
+</div>
+<h2>The Bottom Line: From Audit Insights to Profitable Growth</h2>
+<p>The businesses that answer profitability questions honestly and act on the insights will outperform those that operate on assumptions.</p>
+<p>Start with Phase 1 today. Count your real customers, not your database records. Calculate true profitability, not just revenue. Segment by value, not just activity. Then allocate resources strategically to protect champions, activate core customers, and restructure tail relationships.</p>
+<div class="final-insight">
+<p>The companies that master customer analytics do not just survive market downturns. They acquire the customers that competitors cannot afford to keep.</p>
+<p><strong>Your customer base holds the blueprint for profitable growth. The customer profitability audit reveals that blueprint. The question is not whether you can afford to run this analysis. It is whether you can afford not to.</strong></p>
+</div>
+
+          <div class="callout" style="margin-top:40px;">
+            <p><strong>Need Help Running Your Customer Profitability Audit?</strong><br>I am Adediran Adeyemi. I help businesses identify their most valuable customers, reduce concentration risk, and build profitable growth engines using data. If you are ready to move from assumptions to insights, let us talk about what that looks like for your business.</p>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+            <a class="btn btn-primary" href="../contact.html">Let us Audit Your Customer Base <i class="bi bi-arrow-right"></i></a>
+            <button class="btn btn-outline btn-sm" data-copy-link aria-label="Copy link"><i class="bi bi-link-45deg"></i> Copy link</button>
+          </div>
+        </article>
+        <aside>
+      <div class="side-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="Adediran Adeyemi" style="width:52px;height:52px;border-radius:50%;object-fit:cover;" width="52" height="52">
+          <div>
+            <strong style="display:block;font-size:14.5px;color:var(--ink);">Adediran Adeyemi</strong>
+            <span style="font-size:12.5px;color:var(--muted);">Data Scientist &amp; AI/ML Engineer</span>
+          </div>
+        </div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:16px;">I help e-commerce and retail businesses turn data into insights that drive growth, optimize operations, and create exceptional customer experiences.</p>
+        <a class="btn btn-outline btn-sm btn-block" href="../services.html">View My Services</a>
+      </div>
+      <div class="side-card">
+        <h4>Categories</h4>
+        <ul class="cat-list"><li><a href="../blog.html?cat=data-analytics">Data Analytics <span>6</span></a></li>
+<li><a href="../blog.html?cat=ecommerce-growth">E-Commerce Growth <span>13</span></a></li>
+<li><a href="../blog.html?cat=customer-analytics">Customer Analytics <span>9</span></a></li>
+<li><a href="../blog.html?cat=nigeria-economy">Nigeria Economy <span>8</span></a></li>
+<li><a href="../blog.html?cat=energy-markets">Energy & Markets <span>7</span></a></li>
+<li><a href="../blog.html?cat=freelance-career">Freelance & Career <span>4</span></a></li></ul>
+      </div>
+      <div class="side-card">
+        <h4>Popular Posts</h4>
+        <a class="pop-post" href="../blog/nigeria-japa-brain-drain-economy.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Nigeria Brain Drain Statistics 2025-2026: Japa Syndrome Data Analysis</strong><span>May 17, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/oil-price-risk-management-small-producers.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Oil Price Risk Management for Small Producers: A Practical Hedging Fra</strong><span>May 17, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/energy-data-brand-domain-strategy-oil-analytics.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>The Domain Strategy Behind Serious Energy Data Brands (And Why Most Ge</strong><span>May 15, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/commodity-analytics-budget-alternatives-enterprise.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Commodity Analytics on a Tight Budget: Tools That Do Not Cost $500K a </strong><span>May 12, 2026</span></span>
+        </a>
+      </div>
+      <div class="side-card newsletter-card">
+        <h4>Get Data Tactics In Your Inbox</h4>
+        <p>Practical e-commerce and retail analytics tips, no fluff. Unsubscribe anytime.</p>
+        <form action="https://formsubmit.co/adeyemi@adediranadeyemi.com" method="POST">
+          <input type="email" name="email" placeholder="your@email.com" required>
+          <button class="btn btn-accent btn-block btn-sm" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm bg-surface">
+      <div class="container">
+        <div class="section-head"><h2>Continue Reading</h2></div>
+        <div class="related-grid"><a class="proj-card" href="../blog/customer-lifetime-value-modeling-guide.html">
+          <div class="body">
+            <span class="tag">Customer Analytics</span>
+            <h3>Customer Lifetime Value Modeling Guide: CLV Formulas, Predictive Models and SaaS LTV:CAC Explained</h3>
+            <p>The complete customer lifetime value modeling guide. Learn every CLV formula, cohort analysis, BG/NBD probabil</p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../blog/data-science-customer-experience.html">
+          <div class="body">
+            <span class="tag">Customer Analytics</span>
+            <h3>How to Use Data Science to Optimize Customer Experience in E-Commerce</h3>
+            <p>Learn how to use data science to optimize customer experience in e-commerce. Practical frameworks for personal</p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../blog/ecommerce-churn-rate-machine-learning.html">
+          <div class="body">
+            <span class="tag">Customer Analytics</span>
+            <h3>E-Commerce Churn Rate: How Machine Learning Predicts & Reduces Customer Churn</h3>
+            <p>Your e-commerce churn rate is rising. Learn how machine learning predicts customer churn 30-90 days early, red</p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a></div>
+      </div>
+    </section>
+</main>
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+          <span style="color:#fff">Adediran Adeyemi</span>
+        </a>
+        <p>Freelance data scientist helping e-commerce and retail businesses turn data into revenue-generating decisions. Remote worldwide, based in Lagos, Nigeria.</p>
+        <div class="footer-social"><a aria-label="X (Twitter)" href="https://x.com/AdediranAd60922" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.1-9.3L.8 2h7.3l5 6.6L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/adediran-adeyemi" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/Adeyemi0" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/Adeyemi_the_data_analyst" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+<a aria-label="WhatsApp" href="https://wa.me/+2348162735399" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a aria-label="Pinterest" href="https://pin.it/1by014rCw" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.33-.09-.79-.16-2.01.03-2.88.18-.79 1.17-5.02 1.17-5.02s-.3-.6-.3-1.48c0-1.39.8-2.42 1.81-2.42.85 0 1.26.64 1.26 1.41 0 .86-.55 2.14-.83 3.33-.24.99.5 1.81 1.48 1.81 1.78 0 3.15-1.88 3.15-4.58 0-2.39-1.72-4.07-4.18-4.07-2.85 0-4.52 2.14-4.52 4.34 0 .86.33 1.78.75 2.28a.3.3 0 0 1 .07.29c-.08.32-.25 1-.28 1.14-.04.19-.15.23-.34.14-1.26-.59-2.05-2.42-2.05-3.9 0-3.18 2.31-6.1 6.66-6.1 3.5 0 6.22 2.49 6.22 5.83 0 3.48-2.19 6.28-5.24 6.28-1.02 0-1.98-.53-2.31-1.16l-.63 2.4c-.23.87-.84 1.97-1.26 2.63.95.29 1.95.45 3 .45 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/churn-prediction-model.html">Churn Prediction</a></li>
+          <li><a href="../services/ecommerce-data-science.html">E-Commerce Data Science</a></li>
+          <li><a href="../services/customer-segmentation-analysis.html">Customer Segmentation</a></li>
+          <li><a href="../services/power-bi-dashboard-development.html">Power BI Dashboards</a></li>
+          <li><a href="../services.html">View All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../projects.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></li>
+          <li><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></li>
+          <li><span>Lagos, Nigeria</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Adediran Adeyemi. All rights reserved.</span>
+      <span>Built with intent, not templates.</span>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<div class="nav-scrim"></div>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script src="../assets/js/main.js" defer></script>
+<script>if(window.AOS){AOS.init({duration:600,once:true,offset:60});}</script>
+</body>
+</html>

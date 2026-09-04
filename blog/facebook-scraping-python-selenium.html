@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>data-ad-preview='message' Facebook | Adediran Adeyemi</title>
+<meta name="description" content="Learn how to use data-ad-preview='message' Facebook attribute to extract post text with Python, Selenium and BeautifulSoup. Complete code examples, DOM...">
+<link rel="canonical" href="https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Adediran Adeyemi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="data-ad-preview='message' Facebook | Adediran Adeyemi">
+<meta property="og:description" content="Learn how to use data-ad-preview='message' Facebook attribute to extract post text with Python, Selenium and BeautifulSoup. Complete code examples, DOM...">
+<meta property="og:url" content="https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp">
+<meta property="og:site_name" content="Adediran Adeyemi">
+<meta property="article:published_time" content="2026-03-25">
+<meta property="article:author" content="Adediran Adeyemi">
+<meta property="article:section" content="Data Analytics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="data-ad-preview='message' Facebook | Adediran Adeyemi">
+<meta name="twitter:description" content="Learn how to use data-ad-preview='message' Facebook attribute to extract post text with Python, Selenium and BeautifulSoup. Complete code examples, DOM...">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp">
+<link href="../assets/img/favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+<link href="../assets/img/favicon-16.png" rel="icon" type="image/png" sizes="16x16">
+<link href="../assets/img/favicon.ico" rel="shortcut icon">
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="../site.webmanifest" rel="manifest">
+<meta name="theme-color" content="#0F1B17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "data-ad-preview='message' Facebook Selector: Python Scraping Guide",
+  "description": "Learn how to use data-ad-preview='message' Facebook attribute to extract post text with Python, Selenium and BeautifulSoup. Complete code examples, DOM...",
+  "image": "https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp",
+  "datePublished": "2026-03-25",
+  "dateModified": "2026-03-25",
+  "author": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://adediranadeyemi.com/assets/img/icon-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html"
+  },
+  "articleSection": "Data Analytics"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://adediranadeyemi.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://adediranadeyemi.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "data-ad-preview='message' Facebook Selector: Python Scraping Guide",
+      "item": "https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html"
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-810CYGL9VL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-810CYGL9VL');</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="header">
+  <div class="container navbar-wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+      <span>Adediran Adeyemi<span class="brand-sub">Data Scientist &amp; AI/ML Engineer</span></span>
+    </a>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a class="" href="../index.html">Home</a></li><li><a class="" href="../about.html">About</a></li><li><a class="" href="../services.html">Services</a></li><li><a class="" href="../projects.html">Projects</a></li><li><a class="active" href="../blog.html">Blog</a></li>
+      </ul>
+      <div class="header-cta-mobile">
+        <a class="btn btn-accent btn-block" href="../contact.html">Let's Work Together</a>
+      </div>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="../contact.html">Let's Work Together <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <button class="mobile-nav-toggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+<main id="main">
+  <nav class="project-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li class="sep">/</li>
+        <li class="active">data-ad-preview='message' Facebook Selector: Python…</li>
+      </ol>
+    </div>
+  </nav>
+
+  <header class="project-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="hero-label">Data Analytics</span>
+      <h1>data-ad-preview='message' Facebook Selector: Python Scraping Guide</h1>
+      <p class="hero-lead">Extract Facebook post text reliably using the data-ad-preview='message' DOM attribute. Complete Python tutorial with Selenium, BeautifulSoup, and production-ready code.</p>
+      <div class="article-meta">
+        <time datetime="2026-03-25"><i class="bi bi-calendar3"></i> March 25, 2026</time>
+        <span><i class="bi bi-clock"></i> 16 min read</span>
+      </div>
+      <div class="article-author">
+        <img class="author-image" src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="Adediran Adeyemi" width="44" height="44" loading="lazy">
+        <div>
+          <span class="author-name">Adediran Adeyemi</span>
+          <span class="author-title">Data Scientist &amp; AI/ML Engineer</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-layout">
+        <article class="article-content">
+          
+<!-- TL;DR / Featured Snippet Optimized Summary -->
+<div class="key-takeaways">
+<div class="key-takeaways-title"><i class="bi bi-lightning-charge"></i> Quick Summary</div>
+<ul>
+<li><strong>Primary query:</strong> data-ad-preview='message' facebook</li>
+<li><strong>What it is:</strong> Facebook DOM attribute marking post text divs</li>
+<li><strong>Best selector:</strong> soup.find_all('div', {'data-ad-preview': 'message'})</li>
+<li><strong>Tech stack:</strong> Python 3.x, Selenium + Edge WebDriver, BeautifulSoup4, pandas</li>
+<li><strong>Key tip:</strong> Use Selenium to render JS first, then parse with BeautifulSoup</li>
+<li><strong>Stability note:</strong> Attribute has been stable in 2026 but may change; implement fallbacks</li>
+</ul>
+</div>
+<!-- Table of Contents for UX + SEO -->
+<nav aria-label="Table of Contents" class="toc">
+<div class="toc-title"><i class="bi bi-list-ul"></i> On This Page</div>
+<ul class="toc-list">
+<li><a href="#what-is-data-ad-preview">What Is data-ad-preview='message'?</a></li>
+<li><a href="#how-to-use-selector">How to Use the Selector in Python</a></li>
+<li><a href="#complete-code-example">Complete Code Example</a></li>
+<li><a href="#troubleshooting">Troubleshooting Common Issues</a></li>
+<li><a href="#anti-detection">Anti-Detection Best Practices</a></li>
+<li><a href="#faq">Frequently Asked Questions</a></li>
+</ul>
+</nav>
+<p>If you searched for <code>data-ad-preview='message' facebook</code>, you are likely trying to extract post text from Facebook using Python and BeautifulSoup. This guide shows exactly how to use this DOM attribute reliably, with production-tested code and troubleshooting tips.</p>
+<div class="key-callout">
+<p><strong>Short answer:</strong> The attribute <code>data-ad-preview='message'</code> appears on Facebook <code>&lt;div&gt;</code> elements that contain post body text. To extract it, use BeautifulSoup: <code>soup.find_all('div', {'data-ad-preview': 'message'})</code>. Always render the page with Selenium first because Facebook loads content dynamically via JavaScript.</p>
+</div>
+<h2 id="what-is-data-ad-preview">What Is data-ad-preview='message' in Facebook HTML?</h2>
+<p><code>data-ad-preview='message'</code> is an internal Facebook HTML attribute used to mark div elements containing the main text of a post. While not part of Facebook's public API, it has proven relatively stable for scraping post content as of 2026.</p>
+<p>Here is what the DOM structure typically looks like:</p>
+<div class="code-block">
+<div class="code-header">
+<span class="code-lang"><i class="bi bi-code-slash"></i> HTML Snippet</span>
+<span class="code-filename">Facebook Post DOM</span>
+</div>
+<pre>
+&lt;div role="article" data-ft="{...}"&gt;
+  &lt;div data-ad-preview=<span class="str">"message"</span>&gt;
+    This is the actual post text content...
+  &lt;/div&gt;
+  &lt;div data-ad-preview=<span class="str">"media"</span>&gt;
+    &lt;!-- image or video content --&gt;
+  &lt;/div&gt;
+  &lt;div data-ad-preview=<span class="str">"engagement"</span>&gt;
+    &lt;!-- likes, comments, shares --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<p>Key observations:</p>
+<ul>
+<li><strong>Post text</strong> lives in <code>div[data-ad-preview="message"]</code></li>
+<li><strong>Media content</strong> uses <code>data-ad-preview="media"</code></li>
+<li><strong>Engagement data</strong> uses <code>data-ad-preview="engagement"</code></li>
+<li>These attributes are part of Facebook's ad preview system but serve as reliable scraping hooks</li>
+</ul>
+<div class="callout-warn">
+<p><strong>Important:</strong> Facebook updates its DOM frequently. Class names and attribute values can change without notice. For production scrapers, implement multiple fallback selectors and monitor for structural changes.</p>
+</div>
+<h2 id="how-to-use-selector">How to Use the Selector in Python</h2>
+<p>Here is the minimal working example to extract post text using <code>data-ad-preview='message'</code>:</p>
+<div class="code-block">
+<div class="code-header">
+<span class="code-lang"><i class="bi bi-file-earmark-code"></i> Python</span>
+<span class="code-filename">extract_post_text.py</span>
+</div>
+<pre>
+<span class="kw">from</span> bs4 <span class="kw">import</span> BeautifulSoup
+
+<span class="cm"># After loading page_source from Selenium</span>
+soup = BeautifulSoup(driver.page_source, <span class="str">"html.parser"</span>)
+
+<span class="cm"># Target the data-ad-preview='message' attribute</span>
+post_divs = soup.find_all(<span class="str">"div"</span>, {<span class="str">"data-ad-preview"</span>: <span class="str">"message"</span>})
+
+<span class="cm"># Extract and clean text</span>
+post_text = <span class="str">" "</span>.join([
+    div.get_text(strip=<span class="kw">True</span>)
+    <span class="kw">for</span> div <span class="kw">in</span> post_divs
+])
+
+print(post_text)
+</pre>
+</div>
+<p>Why this works:</p>
+<ul>
+<li><code>find_all('div', {'data-ad-preview': 'message'})</code> precisely targets post text containers</li>
+<li><code>get_text(strip=True)</code> removes extra whitespace and newlines</li>
+<li>Joining multiple matches handles posts with segmented text blocks</li>
+</ul>
+<h3>Selector variations for robustness</h3>
+<p>Because Facebook's DOM can vary by post type, implement fallback selectors:</p>
+<div class="code-block">
+<div class="code-header">
+<span class="code-lang"><i class="bi bi-file-earmark-code"></i> Python</span>
+<span class="code-filename">robust_selector.py</span>
+</div>
+<pre>
+<span class="kw">def</span> <span class="fn">extract_post_text_robust</span>(soup):
+<span class="cm">"""Try multiple selectors to maximize extraction success"""</span>
+selectors = [
+    (<span class="str">"div"</span>, {<span class="str">"data-ad-preview"</span>: <span class="str">"message"</span>}),  <span class="cm"># Primary</span>
+    (<span class="str">"div"</span>, {<span class="str">"class"</span>: <span class="str">"x1n2onr6 x1ja2u2z"</span>}),  <span class="cm"># Fallback class</span>
+    (<span class="str">"div"</span>, {<span class="str">"role"</span>: <span class="str">"article"</span>}),              <span class="cm"># Broad fallback</span>
+]
+
+<span class="kw">for</span> tag, attrs <span class="kw">in</span> selectors:
+matches = soup.find_all(tag, attrs)
+<span class="kw">if</span> matches:
+text = <span class="str">" "</span>.join([m.get_text(strip=<span class="kw">True</span>) <span class="kw">for</span> m <span class="kw">in</span> matches])
+<span class="kw">if</span> text.strip():
+<span class="kw">return</span> text
+<span class="kw">return</span> <span class="kw">None</span>
+</pre>
+</div>
+<h2 id="complete-code-example">Complete Code Example: Selenium + BeautifulSoup</h2>
+<p>Here is a production-ready script that combines Selenium for rendering and BeautifulSoup for parsing:</p>
+<div class="code-block">
+<div class="code-header">
+<span class="code-lang"><i class="bi bi-file-earmark-code"></i> Python</span>
+<span class="code-filename">fb_post_scraper.py</span>
+</div>
+<pre>
+<span class="cm"># ── IMPORTS ──────────────────────────────────────────────────</span>
+<span class="kw">import</span> time, os, pandas <span class="kw">as</span> pd
+<span class="kw">from</span> bs4 <span class="kw">import</span> BeautifulSoup
+<span class="kw">from</span> selenium <span class="kw">import</span> webdriver
+<span class="kw">from</span> selenium.webdriver.common.by <span class="kw">import</span> By
+<span class="kw">from</span> selenium.webdriver.support.ui <span class="kw">import</span> WebDriverWait
+<span class="kw">from</span> selenium.webdriver.support <span class="kw">import</span> expected_conditions <span class="kw">as</span> EC
+
+<span class="kw">class</span> <span class="fn">FacebookPostScraper</span>:
+<span class="kw">def</span> <span class="fn">__init__</span>(self, email, password):
+self.email = email
+self.password = password
+self.driver = <span class="kw">None</span>
+
+<span class="kw">def</span> <span class="fn">initialize_driver</span>(self):
+options = webdriver.EdgeOptions()
+options.add_argument(<span class="str">"--disable-blink-features=AutomationControlled"</span>)
+options.add_experimental_option(<span class="str">"excludeSwitches"</span>, [<span class="str">"enable-automation"</span>])
+self.driver = webdriver.Edge(options=options)
+self.driver.maximize_window()
+
+<span class="kw">def</span> <span class="fn">login</span>(self):
+self.driver.get(<span class="str">"https://www.facebook.com/login"</span>)
+time.sleep(<span class="num">3</span>)
+self.driver.find_element(By.NAME, <span class="str">"email"</span>).send_keys(self.email)
+self.driver.find_element(By.NAME, <span class="str">"pass"</span>).send_keys(self.password)
+self.driver.find_element(By.NAME, <span class="str">"login"</span>).click()
+time.sleep(<span class="num">15</span>)  <span class="cm"># Wait for feed + potential 2FA</span>
+
+<span class="kw">def</span> <span class="fn">extract_post_text</span>(self, post_url):
+self.driver.get(post_url)
+<span class="cm"># Wait for post content to load</span>
+WebDriverWait(self.driver, <span class="num">20</span>).until(
+EC.presence_of_element_located((By.XPATH, <span class="str">"//div[@data-ad-preview='message']"</span>))
+)
+<span class="cm"># Parse with BeautifulSoup</span>
+soup = BeautifulSoup(self.driver.page_source, <span class="str">"html.parser"</span>)
+post_divs = soup.find_all(<span class="str">"div"</span>, {<span class="str">"data-ad-preview"</span>: <span class="str">"message"</span>})
+text = <span class="str">" "</span>.join([div.get_text(strip=<span class="kw">True</span>) <span class="kw">for</span> div <span class="kw">in</span> post_divs])
+<span class="kw">return</span> text.strip() <span class="kw">if</span> text.strip() <span class="kw">else</span> <span class="kw">None</span>
+
+<span class="kw">def</span> <span class="fn">close</span>(self):
+<span class="kw">if</span> self.driver:
+self.driver.quit()
+
+<span class="cm"># ── USAGE ────────────────────────────────────────────────────</span>
+<span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:
+EMAIL = os.getenv(<span class="str">"FB_EMAIL"</span>)
+PASSWORD = os.getenv(<span class="str">"FB_PASSWORD"</span>)
+scraper = FacebookPostScraper(EMAIL, PASSWORD)
+<span class="kw">try</span>:
+scraper.initialize_driver()
+scraper.login()
+text = scraper.extract_post_text(<span class="str">"https://www.facebook.com/your-target-post"</span>)
+print(<span class="str">"Extracted text:"</span>, text)
+<span class="kw">finally</span>:
+scraper.close()
+</pre>
+</div>
+<div class="callout-green">
+<p><strong>Security note:</strong> Never hardcode credentials. Use <code>os.getenv()</code> to load <code>FB_EMAIL</code> and <code>FB_PASSWORD</code> from environment variables. Set them in your terminal before running: <code>export FB_EMAIL="your@email.com"</code></p>
+</div>
+<h2 id="troubleshooting">Troubleshooting Common Issues</h2>
+<p>If your <code>data-ad-preview='message'</code> selector returns empty results, check these common causes:</p>
+<div class="fields-table">
+<thead>
+<tr><th>Issue</th><th>Cause</th><th>Solution</th></tr>
+</thead>
+<tbody>
+<tr><td>Empty results</td><td>Page not fully rendered</td><td>Add WebDriverWait for element presence before parsing</td></tr>
+<tr><td>Empty results</td><td>Logged out or blocked</td><td>Verify login state; add error handling for login redirects</td></tr>
+<tr><td>Partial text</td><td>Post uses different structure</td><td>Implement fallback selectors (see robust example above)</td></tr>
+<tr><td>Encoding errors</td><td>Non-ASCII characters</td><td>Export CSV with <code>encoding='utf-8-sig'</code></td></tr>
+<tr><td>Slow execution</td><td>Excessive sleeps</td><td>Use explicit waits instead of fixed time.sleep() calls</td></tr>
+<tr><td>Bot detection</td><td>Automation flags detected</td><td>Disable <code>enable-automation</code> and use randomized delays</td></tr>
+</tbody>
+<h3>Verify the selector in browser DevTools</h3>
+<p>Before coding, confirm the attribute exists on your target page:</p>
+<ol>
+<li>Open the Facebook post in Chrome or Edge</li>
+<li>Right-click the post text and select "Inspect"</li>
+<li>In DevTools, check if the parent div has <code>data-ad-preview="message"</code></li>
+<li>Test the selector in Console: <code>$$('div[data-ad-preview="message"]')</code></li>
+</ol>
+<h2 id="anti-detection">Anti-Detection Best Practices</h2>
+<p>To avoid triggering Facebook's bot detection when using this selector:</p>
+<ul>
+<li><strong>Disable automation flags:</strong> Use <code>--disable-blink-features=AutomationControlled</code> and <code>excludeSwitches: ["enable-automation"]</code></li>
+<li><strong>Randomize behavior:</strong> Add jitter to typing speed and scroll intervals with <code>random.uniform()</code></li>
+<li><strong>Use JavaScript clicks:</strong> Prefer <code>driver.execute_script("arguments[0].click();", el)</code> over native Selenium clicks</li>
+<li><strong>Rate limit:</strong> Keep requests below ~100/hour per account; implement exponential backoff</li>
+<li><strong>Rotate sessions:</strong> For high-volume scraping, use residential proxies and rotate user agents</li>
+</ul>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-section">
+<div class="faq-item">
+<h3>What is data-ad-preview='message' in Facebook HTML?</h3>
+<p><code>data-ad-preview='message'</code> is a Facebook DOM attribute used to mark div elements containing post text content. It is part of Facebook's internal ad preview system but serves as a reliable selector for scraping post messages. When parsing Facebook HTML with BeautifulSoup, targeting <code>div[data-ad-preview='message']</code> reliably extracts the visible post text across most public posts.</p>
+</div>
+<div class="faq-item">
+<h3>How do I scrape Facebook post text using data-ad-preview message?</h3>
+<p>Use BeautifulSoup to find all div elements with the attribute data-ad-preview set to 'message'. Example: <code>soup.find_all('div', {'data-ad-preview': 'message'})</code>. Then extract text with <code>.get_text(strip=True)</code>. Combine with Selenium to render JavaScript content first, since Facebook loads posts dynamically.</p>
+</div>
+<div class="faq-item">
+<h3>Is data-ad-preview='message' stable for Facebook scraping?</h3>
+<p>Facebook updates its DOM structure frequently, and <code>data-ad-preview='message'</code> has remained relatively stable as of 2026. However, it is an internal attribute not meant for public use, so it could change without notice. For production scrapers, implement fallback selectors and monitor for DOM changes. Consider using multiple extraction methods for redundancy.</p>
+</div>
+<div class="faq-item">
+<h3>Can I scrape Facebook comments using data-ad-preview?</h3>
+<p>No. The <code>data-ad-preview='message'</code> attribute specifically marks post body text, not comments. For comments, you need to target different selectors like <code>div[role='article']</code> with aria-label attributes containing 'reply' or 'comment'. This tutorial covers both post text and comment extraction using appropriate selectors for each.</p>
+</div>
+<div class="faq-item">
+<h3>Why does my BeautifulSoup selector for data-ad-preview return empty results?</h3>
+<p>Common causes: (1) Facebook content is JavaScript-rendered, so you need Selenium to load the DOM first before passing to BeautifulSoup, (2) You may be logged out or blocked, (3) The post may use a different structure (e.g., shared posts, videos). Always verify the live DOM in browser DevTools and add error handling for missing elements.</p>
+</div>
+<div class="faq-item">
+<h3>What other Facebook DOM attributes help with scraping?</h3>
+<p>Useful Facebook DOM attributes include: <code>data-ad-preview='message'</code> for post text, <code>role='article'</code> for comment containers, <code>aria-label</code> for distinguishing comments vs replies, <code>data-ft</code> for engagement metadata, and href attributes containing <code>'/posts/'</code> or <code>'/videos/'</code> for post links. Combine multiple selectors for robust extraction.</p>
+</div>
+</div>
+<div class="related-resources">
+<h4><i class="bi bi-lightbulb"></i> Related Resources</h4>
+<ul>
+<li><strong>Selector Reference:</strong> <a href="#how-to-use-selector">How to Use the Selector in Python</a>, Copy-paste code examples</li>
+<li><strong>Full Tutorial:</strong> <a href="facebook-scraping-python-selenium.html">Scrape Facebook Comments &amp; Posts with Python Selenium</a>, Complete guide with comments extraction</li>
+<li><strong>Anti-Detection:</strong> <a href="#anti-detection">Anti-Detection Best Practices</a>, Avoid blocks and rate limits</li>
+<li><strong>Service:</strong> <a href="../index.html#contact">Custom Web Scraping Projects</a>, Need a production scraper built?</li>
+<li><strong>External:</strong> <a href="https://scrapfly.io/blog/posts/social-media-scraping" rel="noopener noreferrer" target="_blank">Social Media Scraping in 2026</a>, Industry best practices</li>
+</ul>
+</div>
+</div>
+<!-- CTA -->
+<div class="article-cta">
+<h3>Need a Custom Facebook Scraper?</h3>
+<p>I build production-grade web scrapers for social media, e-commerce, and any platform where your data lives. If you need structured data extracted at scale using selectors like <code>data-ad-preview='message'</code> or custom DOM parsing, let's talk about your requirements.</p>
+<a class="btn-cta" href="../index.html#contact">Discuss Your Scraping Project <i class="bi bi-arrow-right"></i></a>
+</div>
+<!-- Share -->
+<div class="article-share">
+<h4>Found this useful? Share it</h4>
+<div class="share-buttons">
+<a aria-label="Share on X (Twitter)" class="share-btn twitter" href="https://x.com/intent/tweet?text=How+to+use+data-ad-preview%3D%27message%27+Facebook+selector+for+scraping&amp;url=https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html&amp;via=AdediranAd60922" rel="noopener noreferrer" target="_blank">
+<i class="bi bi-twitter"></i> X (Twitter)
+</a>
+<a aria-label="Share on LinkedIn" class="share-btn linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html" rel="noopener noreferrer" target="_blank">
+<i class="bi bi-linkedin"></i> LinkedIn
+</a>
+<a aria-label="Share on WhatsApp" class="share-btn" href="https://wa.me/?text=Check+out+this+Facebook+scraping+tutorial:+https://adediranadeyemi.com/blog/facebook-scraping-python-selenium.html" rel="noopener noreferrer" style="background:#25D366" target="_blank">
+<i class="bi bi-whatsapp"></i> WhatsApp
+</a>
+</div>
+</div>
+<!-- Related Articles -->
+<div class="related-articles">
+<h3>Continue Reading</h3>
+<div class="related-grid">
+<a class="related-card" href="customer-profitability-audit.html">
+<div class="related-tag">Customer Analytics</div>
+<h4>The Customer Audit Every Business Needs to Scale Profitably</h4>
+<p>Nine questions that reveal your real active customer base, concentration risk, and which accounts cost more than they generate.</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="related-card" href="predict-customer-retention.html">
+<div class="related-tag">Customer Analytics</div>
+<h4>Data-Driven Retention: Predict Churn Without Waiting for It</h4>
+<p>Payment is a lagging indicator. A three-pillar framework for spotting retention risk months before anyone cancels.</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+<a class="related-card" href="tesla-financial-analysis-tariff-crisis.html">
+<div class="related-tag">Financial Analysis</div>
+<h4>Tesla's $16B Cash Reserve vs Tariff Crisis: A Financial Stress Test</h4>
+<p>Three crisis scenarios stress-tested against Tesla's actual 2024 balance sheet. How far does $36.56B actually go?</p>
+<span class="read-more">Read Article <i class="bi bi-arrow-right"></i></span>
+</a>
+</div>
+</div>
+
+          <div class="callout" style="margin-top:40px;">
+            <p><strong>Need a Custom Facebook Scraper?</strong><br>I build production-grade web scrapers for social media, e-commerce, and any platform where your data lives. If you need structured data extracted at scale using selectors likedata-ad-preview='message'or custom DOM parsing, let's talk about your requirements.</p>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+            <a class="btn btn-primary" href="../contact.html">Discuss Your Scraping Project <i class="bi bi-arrow-right"></i></a>
+            <button class="btn btn-outline btn-sm" data-copy-link aria-label="Copy link"><i class="bi bi-link-45deg"></i> Copy link</button>
+          </div>
+        </article>
+        <aside>
+      <div class="side-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="Adediran Adeyemi" style="width:52px;height:52px;border-radius:50%;object-fit:cover;" width="52" height="52">
+          <div>
+            <strong style="display:block;font-size:14.5px;color:var(--ink);">Adediran Adeyemi</strong>
+            <span style="font-size:12.5px;color:var(--muted);">Data Scientist &amp; AI/ML Engineer</span>
+          </div>
+        </div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:16px;">I help e-commerce and retail businesses turn data into insights that drive growth, optimize operations, and create exceptional customer experiences.</p>
+        <a class="btn btn-outline btn-sm btn-block" href="../services.html">View My Services</a>
+      </div>
+      <div class="side-card">
+        <h4>Categories</h4>
+        <ul class="cat-list"><li><a href="../blog.html?cat=data-analytics">Data Analytics <span>6</span></a></li>
+<li><a href="../blog.html?cat=ecommerce-growth">E-Commerce Growth <span>13</span></a></li>
+<li><a href="../blog.html?cat=customer-analytics">Customer Analytics <span>9</span></a></li>
+<li><a href="../blog.html?cat=nigeria-economy">Nigeria Economy <span>8</span></a></li>
+<li><a href="../blog.html?cat=energy-markets">Energy & Markets <span>7</span></a></li>
+<li><a href="../blog.html?cat=freelance-career">Freelance & Career <span>4</span></a></li></ul>
+      </div>
+      <div class="side-card">
+        <h4>Popular Posts</h4>
+        <a class="pop-post" href="../blog/customer-profitability-audit.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Customer Profitability Audit: Framework, Formulas, and Implementation </strong><span>May 17, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/nigeria-japa-brain-drain-economy.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Nigeria Brain Drain Statistics 2025-2026: Japa Syndrome Data Analysis</strong><span>May 17, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/oil-price-risk-management-small-producers.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Oil Price Risk Management for Small Producers: A Practical Hedging Fra</strong><span>May 17, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/energy-data-brand-domain-strategy-oil-analytics.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>The Domain Strategy Behind Serious Energy Data Brands (And Why Most Ge</strong><span>May 15, 2026</span></span>
+        </a>
+      </div>
+      <div class="side-card newsletter-card">
+        <h4>Get Data Tactics In Your Inbox</h4>
+        <p>Practical e-commerce and retail analytics tips, no fluff. Unsubscribe anytime.</p>
+        <form action="https://formsubmit.co/adeyemi@adediranadeyemi.com" method="POST">
+          <input type="email" name="email" placeholder="your@email.com" required>
+          <button class="btn btn-accent btn-block btn-sm" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm bg-surface">
+      <div class="container">
+        <div class="section-head"><h2>Continue Reading</h2></div>
+        <div class="related-grid"><a class="proj-card" href="../blog/church-data-analytics.html">
+          <div class="body">
+            <span class="tag">Data Analytics</span>
+            <h3>Church Analytics: The Complete Guide to Data-Driven Ministry Growth in 2026</h3>
+            <p>The complete church analytics guide for 2026. Learn how to track attendance, giving, retention, volunteer part</p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../blog/data-visualization-retail-analytics.html">
+          <div class="body">
+            <span class="tag">Data Analytics</span>
+            <h3>Data Visualisation & Retail Analytics: Best Tools for Multi-Location Stores [2026]</h3>
+            <p>Compare Power BI, Tableau, Looker Studio for retail data visualisation. Build real-time dashboards for sales b</p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../blog/femi-lazarus-husband-question.html">
+          <div class="body">
+            <span class="tag">Data Analytics</span>
+            <h3>Who Makes Worse Husbands?The Data Behind a Viral Question</h3>
+            <p>344 comments. 1,091 reactions. One question from Apostle Femi Lazarus: do men from dysfunctional homes make wo</p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a></div>
+      </div>
+    </section>
+</main>
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+          <span style="color:#fff">Adediran Adeyemi</span>
+        </a>
+        <p>Freelance data scientist helping e-commerce and retail businesses turn data into revenue-generating decisions. Remote worldwide, based in Lagos, Nigeria.</p>
+        <div class="footer-social"><a aria-label="X (Twitter)" href="https://x.com/AdediranAd60922" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.1-9.3L.8 2h7.3l5 6.6L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/adediran-adeyemi" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/Adeyemi0" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/Adeyemi_the_data_analyst" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+<a aria-label="WhatsApp" href="https://wa.me/+2348162735399" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a aria-label="Pinterest" href="https://pin.it/1by014rCw" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.33-.09-.79-.16-2.01.03-2.88.18-.79 1.17-5.02 1.17-5.02s-.3-.6-.3-1.48c0-1.39.8-2.42 1.81-2.42.85 0 1.26.64 1.26 1.41 0 .86-.55 2.14-.83 3.33-.24.99.5 1.81 1.48 1.81 1.78 0 3.15-1.88 3.15-4.58 0-2.39-1.72-4.07-4.18-4.07-2.85 0-4.52 2.14-4.52 4.34 0 .86.33 1.78.75 2.28a.3.3 0 0 1 .07.29c-.08.32-.25 1-.28 1.14-.04.19-.15.23-.34.14-1.26-.59-2.05-2.42-2.05-3.9 0-3.18 2.31-6.1 6.66-6.1 3.5 0 6.22 2.49 6.22 5.83 0 3.48-2.19 6.28-5.24 6.28-1.02 0-1.98-.53-2.31-1.16l-.63 2.4c-.23.87-.84 1.97-1.26 2.63.95.29 1.95.45 3 .45 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/churn-prediction-model.html">Churn Prediction</a></li>
+          <li><a href="../services/ecommerce-data-science.html">E-Commerce Data Science</a></li>
+          <li><a href="../services/customer-segmentation-analysis.html">Customer Segmentation</a></li>
+          <li><a href="../services/power-bi-dashboard-development.html">Power BI Dashboards</a></li>
+          <li><a href="../services.html">View All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../projects.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></li>
+          <li><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></li>
+          <li><span>Lagos, Nigeria</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Adediran Adeyemi. All rights reserved.</span>
+      <span>Built with intent, not templates.</span>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<div class="nav-scrim"></div>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script src="../assets/js/main.js" defer></script>
+<script>if(window.AOS){AOS.init({duration:600,once:true,offset:60});}</script>
+</body>
+</html>

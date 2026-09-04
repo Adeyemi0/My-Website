@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build an Oil Price Forecasting | Adediran Adeyemi</title>
+<meta name="description" content="You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step approach using free data...">
+<link rel="canonical" href="https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Adediran Adeyemi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Build an Oil Price Forecasting | Adediran Adeyemi">
+<meta property="og:description" content="You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step approach using free data...">
+<meta property="og:url" content="https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp">
+<meta property="og:site_name" content="Adediran Adeyemi">
+<meta property="article:published_time" content="2026-05-05">
+<meta property="article:author" content="Adediran Adeyemi">
+<meta property="article:section" content="Energy & Markets">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Build an Oil Price Forecasting | Adediran Adeyemi">
+<meta name="twitter:description" content="You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step approach using free data...">
+<meta name="twitter:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp">
+<link href="../assets/img/favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+<link href="../assets/img/favicon-16.png" rel="icon" type="image/png" sizes="16x16">
+<link href="../assets/img/favicon.ico" rel="shortcut icon">
+<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="../site.webmanifest" rel="manifest">
+<meta name="theme-color" content="#0F1B17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="../assets/css/main.css" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal",
+  "description": "You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step approach using free data...",
+  "image": "https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp",
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "author": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "url": "https://adediranadeyemi.com/about.html"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Adediran Adeyemi",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://adediranadeyemi.com/assets/img/icon-512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html"
+  },
+  "articleSection": "Energy & Markets"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://adediranadeyemi.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://adediranadeyemi.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal",
+      "item": "https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html"
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-810CYGL9VL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-810CYGL9VL');</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="header">
+  <div class="container navbar-wrap">
+    <a class="brand" href="../index.html">
+      <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+      <span>Adediran Adeyemi<span class="brand-sub">Data Scientist &amp; AI/ML Engineer</span></span>
+    </a>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a class="" href="../index.html">Home</a></li><li><a class="" href="../about.html">About</a></li><li><a class="" href="../services.html">Services</a></li><li><a class="" href="../projects.html">Projects</a></li><li><a class="active" href="../blog.html">Blog</a></li>
+      </ul>
+      <div class="header-cta-mobile">
+        <a class="btn btn-accent btn-block" href="../contact.html">Let's Work Together</a>
+      </div>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="../contact.html">Let's Work Together <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <button class="mobile-nav-toggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+<main id="main">
+  <nav class="project-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li class="sep">/</li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li class="sep">/</li>
+        <li class="active">How to Build an Oil Price Forecasting Model Without a…</li>
+      </ol>
+    </div>
+  </nav>
+
+  <header class="project-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="hero-label">Energy & Markets</span>
+      <h1>How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal</h1>
+      <p class="hero-lead">You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy.</p>
+      <div class="article-meta">
+        <time datetime="2026-05-05"><i class="bi bi-calendar3"></i> May 5, 2026</time>
+        <span><i class="bi bi-clock"></i> 12 min read</span>
+      </div>
+      <div class="article-author">
+        <img class="author-image" src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="Adediran Adeyemi" width="44" height="44" loading="lazy">
+        <div>
+          <span class="author-name">Adediran Adeyemi</span>
+          <span class="author-title">Data Scientist &amp; AI/ML Engineer</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-layout">
+        <article class="article-content">
+          
+<p class="lead">Most articles on oil price forecasting are either academic papers comparing XGBoost to LSTM on a Kaggle dataset, or vendor marketing pieces explaining why you need a $50,000-per-year subscription. This is neither. It is a practical breakdown of how to build a working oil price forecasting model using publicly available data and tools that cost nothing.</p>
+<p>The output will not predict crude prices with perfect accuracy, nothing does, but it will give you a systematic, repeatable view on price direction that is significantly better than guessing or reading analyst summaries from three days ago.</p>
+<p>Related reading: <a href="oil-analytics-independent-operators.html">Oil Analytics for Independent Operators: A Practical Guide</a>, the pillar article this post builds on.</p>
+<h2>The Data Sources You Actually Need</h2>
+<p>The most important inputs for a near-term oil price model are already publicly available, updated regularly, and free. Here is what to use and why each one matters.</p>
+<div class="data-sources">
+<div class="data-source-card">
+<h4>EIA Weekly Petroleum Status Report</h4>
+<span class="tag">Free, Weekly</span>
+<p>Published every Wednesday at 10:30 AM Eastern Time. Contains U.S. crude oil and petroleum product inventory levels, refinery utilization, import and export volumes, and production figures. Accessible via the EIA API at no cost. This is the single most market-moving data release in the oil market on a weekly basis. Building a model that does not incorporate EIA inventory data is building a model that ignores the most relevant weekly signal.</p>
+</div>
+<div class="data-source-card">
+<h4>EIA Monthly Data</h4>
+<span class="tag">Free, Monthly</span>
+<p>Longer series on production by field, consumption by sector, and international comparisons. The API gives you access to hundreds of series going back decades. For a time-series forecasting model, you want at least five years of weekly data minimum, ideally ten.</p>
+</div>
+<div class="data-source-card">
+<h4>CME Group Free Delayed Data</h4>
+<span class="tag">Free, 10-min delay</span>
+<p>WTI front-month and near-term futures prices with a 10-minute delay. Not ideal for trading but perfectly adequate for a forecasting model updated daily or weekly.</p>
+</div>
+<div class="data-source-card">
+<h4>FRED, Federal Reserve Economic Data</h4>
+<span class="tag">Free, Continuous</span>
+<p>The U.S. Dollar Index, interest rate data, and various macro indicators are all available here. Oil prices are denominated in dollars and have a documented inverse relationship with dollar strength. Leaving this variable out of your model is leaving out an important input.</p>
+</div>
+<div class="data-source-card">
+<h4>CrudeBERT Sentiment Scores</h4>
+<span class="tag">Free, GitHub</span>
+<p>A natural language model trained specifically on crude oil market news. Sentiment data has been shown in several academic studies to improve short-term oil price forecasting accuracy. The dataset is available on GitHub and is worth testing as an additional feature layer.</p>
+</div>
+</div>
+<h2>Building the Model: A Practical Step-by-Step Approach</h2>
+<p>Start with the simplest thing that could work, then add complexity only if it improves performance on a held-out test set. Here are the five steps.</p>
+<div class="build-steps">
+<div class="build-step">
+<div class="step-number">1</div>
+<div class="step-content">
+<h3>Pull and Clean the Data</h3>
+<p>Use the EIA API Python wrapper to download weekly inventory changes, refinery utilization, and production data. Merge with weekly WTI or Brent price data from CME or Yahoo Finance. Add the U.S. Dollar Index from FRED.</p>
+<p>The result is a weekly time-series dataframe with roughly 500 rows for ten years of data, well within the range that gradient boosting models handle comfortably.</p>
+</div>
+</div>
+<div class="build-step">
+<div class="step-number">2</div>
+<div class="step-content">
+<h3>Feature Engineering</h3>
+<p>The raw data is less useful than derived features. The variables that tend to carry the most predictive signal for short-term oil price movements:</p>
+<div class="feature-pills">
+<span class="pill">Week-over-week crude inventory change</span>
+<span class="pill">4-week rolling refinery utilization</span>
+<span class="pill">Production-to-imports ratio</span>
+<span class="pill">Dollar index level + 4-week change</span>
+<span class="pill">Lagged oil price (1w, 4w, 12w)</span>
+</div>
+</div>
+</div>
+<div class="build-step">
+<div class="step-number">3</div>
+<div class="step-content">
+<h3>Train a Gradient Boosting Model</h3>
+<p>XGBoost or LightGBM outperform LSTM on most tabular oil price datasets when the data volume is modest, under a few thousand rows. Train on 80% of your data, validate on the remaining 20%, and report RMSE and directional accuracy.</p>
+<p><strong>Directional accuracy above 55% is genuinely useful.</strong> It means you are right more than you are wrong on which direction price will move, a significant edge for hedging decisions.</p>
+</div>
+</div>
+<div class="build-step">
+<div class="step-number">4</div>
+<div class="step-content">
+<h3>Interpret the Model with SHAP</h3>
+<p>Use SHAP values to understand which features are driving predictions in any given week. This is more valuable than the point forecast itself. Knowing that inventory drawdowns are currently the dominant signal, versus knowing that the dollar index is dominating, changes how you think about risk and what other information you should be watching.</p>
+</div>
+</div>
+<div class="build-step">
+<div class="step-number">5</div>
+<div class="step-content">
+<h3>Build a Reporting Wrapper</h3>
+<p>A Jupyter notebook that runs weekly, pulls fresh EIA data, and outputs a two-page summary, price trend signal, dominant drivers, 4-week directional probability, is something an analyst or executive can actually use. The point is not a dashboard nobody checks. It is a consistent, weekly signal that feeds real decisions.</p>
+</div>
+</div>
+</div>
+<h2>What This Model Cannot Do</h2>
+<p>Overconfidence in a model is more dangerous than having no model at all. These are real limitations to communicate clearly to anyone using the output.</p>
+<div class="warning-box">
+<h4>Honest Limitations</h4>
+<ul>
+<li><strong>Geopolitical shocks are invisible to the model.</strong> OPEC+ production decisions, sanctions announcements, pipeline disruptions, wars, these produce price moves that no EIA inventory series will predict in advance. Your model will be wrong during these events. That is expected.</li>
+<li><strong>Near-term only.</strong> For a one-to-four week horizon, statistically trained models have some edge. For six-to-twelve month horizons, fundamental analysis of supply-demand balances and OPEC policy will be more relevant than any time-series model.</li>
+<li><strong>Not a trading system.</strong> Use it for business decision support, hedging timing, drilling deferrals, forward sale decisions, not for speculative trading without additional risk controls.</li>
+</ul>
+</div>
+<div class="insight-box">
+<p>Use this model for what it is good at: giving you a repeatable, data-grounded view on near-term price direction that updates automatically each week. That alone is more than most independent operators currently have.</p>
+</div>
+<h2>Where to Go Next: Natural Extensions</h2>
+<p>Once you have a baseline model running, these are the natural next steps in order of likely impact.</p>
+<div class="extension-cards">
+<div class="extension-card">
+<h4>Satellite Inventory Data</h4>
+<p>Several providers aggregate satellite imagery of crude storage tanks globally. This gives you a view on non-U.S. stocks that EIA data does not cover.</p>
+</div>
+<div class="extension-card">
+<h4>Freight &amp; Tanker Data</h4>
+<p>Crude tanker movements from providers like Vortexa or Kpler signal supply shifts before they appear in official statistics. Trial access is available.</p>
+</div>
+<div class="extension-card">
+<h4>Hedging Decision Framework</h4>
+<p>Connect price direction signals to your hedge ratio decisions. This closes the loop between analytics and commercial operations, the point of the whole exercise.</p>
+</div>
+</div>
+<h2>The Tool Gap This Points To</h2>
+<p>Walking through this process makes one thing clear: all the underlying analytics are achievable with open tools and public data. What does not exist is a product that assembles this into a clean, weekly-updating interface priced for independent operators, not a $50,000 annual subscription, not a DIY Python project, but something in between.</p>
+<p>Domain names like <a href="https://sedo.com/search/details/?domain=oilquant.com&amp;origin=domaindetails" rel="noopener noreferrer" target="_blank">oilquant.com</a> signal exactly the kind of product this market is waiting for, a focused, oil-specific quantitative analytics platform built for this buyer. The market gap is real. The first credible product to fill it will own it.</p>
+<div class="internal-links-box">
+<h4>Continue Reading</h4>
+<a href="oil-analytics-independent-operators.html">Oil Analytics for Independent Operators: A Practical Guide →</a>
+<a href="what-is-energy-intelligence-small-ep-firms.html">What Is Energy Intelligence and Why Small E&amp;P Firms Are Finally Paying Attention →</a>
+</div>
+<div class="final-insight">
+<p>The barrier to building a working oil price forecasting model is not data. The EIA publishes the most market-relevant weekly signal for free every Wednesday morning.</p>
+<p>The barrier is the <strong>analytical workflow</strong>, pulling it consistently, engineering the right features, interpreting the output, and connecting it to actual business decisions.</p>
+<p class="cta-inline">That workflow is buildable in a few weeks. The cost of not building it compounds every quarter you hedge blind.</p>
+</div>
+
+          <div class="callout" style="margin-top:40px;">
+            <p><strong>Need This Model Built for Your Operation?</strong><br>I am Adediran Adeyemi. I build production ML systems and analytical workflows for energy firms and independent operators, using open data and Python, not $500K enterprise licenses. If you want a working price forecasting model connected to your hedging decisions, let's talk.</p>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;">
+            <a class="btn btn-primary" href="../contact.html">Start the Conversation <i class="bi bi-arrow-right"></i></a>
+            <button class="btn btn-outline btn-sm" data-copy-link aria-label="Copy link"><i class="bi bi-link-45deg"></i> Copy link</button>
+          </div>
+        </article>
+        <aside>
+      <div class="side-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="Adediran Adeyemi" style="width:52px;height:52px;border-radius:50%;object-fit:cover;" width="52" height="52">
+          <div>
+            <strong style="display:block;font-size:14.5px;color:var(--ink);">Adediran Adeyemi</strong>
+            <span style="font-size:12.5px;color:var(--muted);">Data Scientist &amp; AI/ML Engineer</span>
+          </div>
+        </div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:16px;">I help e-commerce and retail businesses turn data into insights that drive growth, optimize operations, and create exceptional customer experiences.</p>
+        <a class="btn btn-outline btn-sm btn-block" href="../services.html">View My Services</a>
+      </div>
+      <div class="side-card">
+        <h4>Categories</h4>
+        <ul class="cat-list"><li><a href="../blog.html?cat=data-analytics">Data Analytics <span>6</span></a></li>
+<li><a href="../blog.html?cat=ecommerce-growth">E-Commerce Growth <span>13</span></a></li>
+<li><a href="../blog.html?cat=customer-analytics">Customer Analytics <span>9</span></a></li>
+<li><a href="../blog.html?cat=nigeria-economy">Nigeria Economy <span>8</span></a></li>
+<li><a href="../blog.html?cat=energy-markets">Energy & Markets <span>7</span></a></li>
+<li><a href="../blog.html?cat=freelance-career">Freelance & Career <span>4</span></a></li></ul>
+      </div>
+      <div class="side-card">
+        <h4>Popular Posts</h4>
+        <a class="pop-post" href="../blog/customer-profitability-audit.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Customer Profitability Audit: Framework, Formulas, and Implementation </strong><span>May 17, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/nigeria-japa-brain-drain-economy.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Nigeria Brain Drain Statistics 2025-2026: Japa Syndrome Data Analysis</strong><span>May 17, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/oil-price-risk-management-small-producers.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>Oil Price Risk Management for Small Producers: A Practical Hedging Fra</strong><span>May 17, 2026</span></span>
+        </a>
+<a class="pop-post" href="../blog/energy-data-brand-domain-strategy-oil-analytics.html">
+          <img src="../assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+          <span><strong>The Domain Strategy Behind Serious Energy Data Brands (And Why Most Ge</strong><span>May 15, 2026</span></span>
+        </a>
+      </div>
+      <div class="side-card newsletter-card">
+        <h4>Get Data Tactics In Your Inbox</h4>
+        <p>Practical e-commerce and retail analytics tips, no fluff. Unsubscribe anytime.</p>
+        <form action="https://formsubmit.co/adeyemi@adediranadeyemi.com" method="POST">
+          <input type="email" name="email" placeholder="your@email.com" required>
+          <button class="btn btn-accent btn-block btn-sm" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm bg-surface">
+      <div class="container">
+        <div class="section-head"><h2>Continue Reading</h2></div>
+        <div class="related-grid"><a class="proj-card" href="../blog/commodity-analytics-budget-alternatives-enterprise.html">
+          <div class="body">
+            <span class="tag">Energy & Markets</span>
+            <h3>Commodity Analytics on a Tight Budget: Tools That Do Not Cost $500K a Year</h3>
+            <p>Enterprise commodity analytics tools start at $500,000 a year. Here is what independent operators and smaller </p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../blog/energy-data-brand-domain-strategy-oil-analytics.html">
+          <div class="body">
+            <span class="tag">Energy & Markets</span>
+            <h3>The Domain Strategy Behind Serious Energy Data Brands (And Why Most Get It Wrong)</h3>
+            <p>Most energy analytics companies pick names that could belong to any industry and wonder why they cannot rank. </p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a>
+<a class="proj-card" href="../blog/oil-analytics-independent-operators.html">
+          <div class="body">
+            <span class="tag">Energy & Markets</span>
+            <h3>Oil Analytics for Independent Operators: A Practical Guide to Data-Driven Decision Making</h3>
+            <p>Most oil analytics guides are written for Shell and ExxonMobil. This one is not. A practical breakdown of data</p>
+            <span class="go">Read article <i class="bi bi-arrow-right"></i></span>
+          </div>
+        </a></div>
+      </div>
+    </section>
+</main>
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="../index.html">
+          <img src="../assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+          <span style="color:#fff">Adediran Adeyemi</span>
+        </a>
+        <p>Freelance data scientist helping e-commerce and retail businesses turn data into revenue-generating decisions. Remote worldwide, based in Lagos, Nigeria.</p>
+        <div class="footer-social"><a aria-label="X (Twitter)" href="https://x.com/AdediranAd60922" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.1-9.3L.8 2h7.3l5 6.6L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/adediran-adeyemi" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/Adeyemi0" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/Adeyemi_the_data_analyst" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+<a aria-label="WhatsApp" href="https://wa.me/+2348162735399" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a aria-label="Pinterest" href="https://pin.it/1by014rCw" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.33-.09-.79-.16-2.01.03-2.88.18-.79 1.17-5.02 1.17-5.02s-.3-.6-.3-1.48c0-1.39.8-2.42 1.81-2.42.85 0 1.26.64 1.26 1.41 0 .86-.55 2.14-.83 3.33-.24.99.5 1.81 1.48 1.81 1.78 0 3.15-1.88 3.15-4.58 0-2.39-1.72-4.07-4.18-4.07-2.85 0-4.52 2.14-4.52 4.34 0 .86.33 1.78.75 2.28a.3.3 0 0 1 .07.29c-.08.32-.25 1-.28 1.14-.04.19-.15.23-.34.14-1.26-.59-2.05-2.42-2.05-3.9 0-3.18 2.31-6.1 6.66-6.1 3.5 0 6.22 2.49 6.22 5.83 0 3.48-2.19 6.28-5.24 6.28-1.02 0-1.98-.53-2.31-1.16l-.63 2.4c-.23.87-.84 1.97-1.26 2.63.95.29 1.95.45 3 .45 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../projects.html">Projects</a></li>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services/churn-prediction-model.html">Churn Prediction</a></li>
+          <li><a href="../services/ecommerce-data-science.html">E-Commerce Data Science</a></li>
+          <li><a href="../services/customer-segmentation-analysis.html">Customer Segmentation</a></li>
+          <li><a href="../services/power-bi-dashboard-development.html">Power BI Dashboards</a></li>
+          <li><a href="../services.html">View All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="../blog.html">Blog</a></li>
+          <li><a href="../projects.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></li>
+          <li><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></li>
+          <li><span>Lagos, Nigeria</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Adediran Adeyemi. All rights reserved.</span>
+      <span>Built with intent, not templates.</span>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<div class="nav-scrim"></div>
+<script src="../assets/vendor/aos/aos.js"></script>
+<script src="../assets/js/main.js" defer></script>
+<script>if(window.AOS){AOS.init({duration:600,once:true,offset:60});}</script>
+</body>
+</html>
