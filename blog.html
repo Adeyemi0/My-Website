@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Commerce & Retail Data Analytics Blog | Adediran Adeyemi</title>
+<meta name="description" content="Practical data analytics tactics for e-commerce, retail, and SaaS: churn prediction, conversion optimization, and Nigerian market analysis. No fluff.">
+<link rel="canonical" href="https://adediranadeyemi.com/blog.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Adediran Adeyemi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="E-Commerce & Retail Data Analytics Blog | Adediran Adeyemi">
+<meta property="og:description" content="Practical data analytics tactics for e-commerce, retail, and SaaS: churn prediction, conversion optimization, and Nigerian market analysis. No fluff.">
+<meta property="og:url" content="https://adediranadeyemi.com/blog.html">
+<meta property="og:image" content="https://adediranadeyemi.com/assets/img/photo_2025-08-11_17-35-17.webp">
+<meta property="og:site_name" content="Adediran Adeyemi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="E-Commerce & Retail Data Analytics Blog | Adediran Adeyemi">
+<meta name="twitter:description" content="Practical data analytics tactics for e-commerce, retail, and SaaS: churn prediction, conversion optimization, and Nigerian market analysis. No fluff.">
+<link href="assets/img/favicon-32.png" rel="icon" type="image/png" sizes="32x32">
+<link href="assets/img/favicon-16.png" rel="icon" type="image/png" sizes="16x16">
+<link href="assets/img/favicon.ico" rel="shortcut icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="site.webmanifest" rel="manifest">
+<meta name="theme-color" content="#0F1B17">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/css/main.css" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Adediran Adeyemi Blog",
+  "url": "https://adediranadeyemi.com/blog.html",
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Customer Profitability Audit: Framework, Formulas, and Implementation Guide",
+      "url": "https://adediranadeyemi.com/blog/customer-profitability-audit.html",
+      "datePublished": "2026-05-17"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Nigeria Brain Drain Statistics 2025-2026: Japa Syndrome Data Analysis",
+      "url": "https://adediranadeyemi.com/blog/nigeria-japa-brain-drain-economy.html",
+      "datePublished": "2026-05-17"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Oil Price Risk Management for Small Producers: A Practical Hedging Framework",
+      "url": "https://adediranadeyemi.com/blog/oil-price-risk-management-small-producers.html",
+      "datePublished": "2026-05-17"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "The Domain Strategy Behind Serious Energy Data Brands (And Why Most Get It Wrong)",
+      "url": "https://adediranadeyemi.com/blog/energy-data-brand-domain-strategy-oil-analytics.html",
+      "datePublished": "2026-05-15"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Commodity Analytics on a Tight Budget: Tools That Do Not Cost $500K a Year",
+      "url": "https://adediranadeyemi.com/blog/commodity-analytics-budget-alternatives-enterprise.html",
+      "datePublished": "2026-05-12"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "What Is Energy Intelligence and Why Small E&P Firms Are Finally Paying Attention",
+      "url": "https://adediranadeyemi.com/blog/what-is-energy-intelligence-small-ep-firms.html",
+      "datePublished": "2026-05-08"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal",
+      "url": "https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html",
+      "datePublished": "2026-05-05"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Oil Analytics for Independent Operators: A Practical Guide to Data-Driven Decision Making",
+      "url": "https://adediranadeyemi.com/blog/oil-analytics-independent-operators.html",
+      "datePublished": "2026-05-01"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Nigeria's GDP Is Growing, So Why Are We Getting Poorer?",
+      "url": "https://adediranadeyemi.com/blog/nigeria-gdp-growing-poverty-rising.html",
+      "datePublished": "2026-04-23"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Oil No Longer Runs Nigeria's Economy, What Does? Sectoral Data 2006-2026",
+      "url": "https://adediranadeyemi.com/blog/nigeria-oil-economy-sectoral-analysis.html",
+      "datePublished": "2026-04-23"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Which Nigerian President Had the Best Economy? Obasanjo, Jonathan, Buhari, Tinubu, Data 1999-2026",
+      "url": "https://adediranadeyemi.com/blog/nigeria-president-economic-scorecard.html",
+      "datePublished": "2026-04-23"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Nigeria Unemployment Rate: Understanding the Change from 33% to 4%",
+      "url": "https://adediranadeyemi.com/blog/nigeria-unemployment-numbers-explained.html",
+      "datePublished": "2026-04-23"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "What Did Tinubu's Reforms Actually Do to Your Money? Nigeria Economy Data 2023-2026",
+      "url": "https://adediranadeyemi.com/blog/tinubu-reforms-nigeria-economy-data.html",
+      "datePublished": "2026-04-23"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Nigeria's Most Dangerous Roads: Kidnapping Data Analysis 2019-2026",
+      "url": "https://adediranadeyemi.com/blog/nigeria-road-kidnapping-data.html",
+      "datePublished": "2026-04-19"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "How the US-Israel-Iran War Is Hitting Nigeria's Economy: What the Data Says, What History Shows, and What to Do Now",
+      "url": "https://adediranadeyemi.com/blog/nigeria-war-economy-analysis-2026.html",
+      "datePublished": "2026-04-17"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Data-Driven E-Commerce: How to Use Analytics and Psychology to Boost Conversions",
+      "url": "https://adediranadeyemi.com/blog/data-driven-ecommerce-analytics.html",
+      "datePublished": "2026-04-16"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "E-Commerce Conversion Optimization Tactics: International Strategies & Key Checkout Metrics",
+      "url": "https://adediranadeyemi.com/blog/ecommerce-conversion-optimization-tactics.html",
+      "datePublished": "2026-04-16"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "How Much Does E-Commerce Conversion Optimization Cost?",
+      "url": "https://adediranadeyemi.com/blog/ecommerce-cro-cost-roi.html",
+      "datePublished": "2026-04-16"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Ecommerce Conversion Rate: Benchmarks, Calculator and Optimization Guide 2026",
+      "url": "https://adediranadeyemi.com/blog/good-ecommerce-conversion-rate-benchmarks.html",
+      "datePublished": "2026-04-16"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Keep Customers Coming Back to Your Ecommerce Store",
+      "url": "https://adediranadeyemi.com/blog/how-to-keep-customers-coming-back-ecommerce.html",
+      "datePublished": "2026-04-16"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://adediranadeyemi.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://adediranadeyemi.com/blog.html"
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-810CYGL9VL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-810CYGL9VL');</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="header">
+  <div class="container navbar-wrap">
+    <a class="brand" href="index.html">
+      <img src="assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+      <span>Adediran Adeyemi<span class="brand-sub">Data Scientist &amp; AI/ML Engineer</span></span>
+    </a>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a class="" href="index.html">Home</a></li><li><a class="" href="about.html">About</a></li><li><a class="" href="services.html">Services</a></li><li><a class="" href="projects.html">Projects</a></li><li><a class="active" href="blog.html">Blog</a></li>
+      </ul>
+      <div class="header-cta-mobile">
+        <a class="btn btn-accent btn-block" href="contact.html">Let's Work Together</a>
+      </div>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="contact.html">Let's Work Together <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <button class="mobile-nav-toggle" aria-label="Toggle menu"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+<main id="main">
+  <nav class="project-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol><li><a href="index.html">Home</a></li><li class="sep">/</li><li class="active">Blog</li></ol>
+    </div>
+  </nav>
+
+  <header class="project-hero" style="padding-bottom:36px;">
+    <div class="container">
+      <span class="hero-label">Insights</span>
+      <h1>E-Commerce &amp; Retail <span>Data Analytics Blog</span></h1>
+      <p class="hero-lead">Real tactics for predicting churn, understanding customers, and making data-driven decisions, plus data-backed takes on Nigeria's economy. 47 articles and counting.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-layout">
+        <div>
+          <div class="filter-bar" data-filter-target=".filterable">
+            <button class="filter-chip active" data-filter="all">All Posts</button><button class="filter-chip" data-filter="data-analytics">Data Analytics (6)</button>
+<button class="filter-chip" data-filter="ecommerce-growth">E-Commerce Growth (13)</button>
+<button class="filter-chip" data-filter="customer-analytics">Customer Analytics (9)</button>
+<button class="filter-chip" data-filter="nigeria-economy">Nigeria Economy (8)</button>
+<button class="filter-chip" data-filter="energy-markets">Energy & Markets (7)</button>
+<button class="filter-chip" data-filter="freelance-career">Freelance & Career (4)</button>
+          </div>
+          <div id="post-list">
+            <article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/customer-profitability-audit.html" style="color:inherit;">Customer Profitability Audit: Framework, Formulas, and Implementation Guide</a></h3>
+        <p>Master the customer profitability audit with this consulting-grade framework. Learn step-by-step methodology, CLV formulas, cost-t</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> May 17, 2026</span>
+          <span><i class="bi bi-clock"></i> 18 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="nigeria-economy">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Nigeria Economy</span>
+        <h3><a href="blog/nigeria-japa-brain-drain-economy.html" style="color:inherit;">Nigeria Brain Drain Statistics 2025-2026: Japa Syndrome Data Analysis</a></h3>
+        <p>Comprehensive data analysis of Nigeria brain drain and Japa syndrome 2025-2026. Statistics on Nigerian doctors leaving, youth migr</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> May 17, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="energy-markets">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Energy & Markets</span>
+        <h3><a href="blog/oil-price-risk-management-small-producers.html" style="color:inherit;">Oil Price Risk Management for Small Producers: A Practical Hedging Framework</a></h3>
+        <p>Small oil producers face the same price volatility as majors but with a fraction of the risk management infrastructure. A practica</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> May 17, 2026</span>
+          <span><i class="bi bi-clock"></i> 13 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="energy-markets">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Energy & Markets</span>
+        <h3><a href="blog/energy-data-brand-domain-strategy-oil-analytics.html" style="color:inherit;">The Domain Strategy Behind Serious Energy Data Brands (And Why Most Get It Wrong)</a></h3>
+        <p>Most energy analytics companies pick names that could belong to any industry and wonder why they cannot rank. Here is how serious </p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> May 15, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="energy-markets">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Energy & Markets</span>
+        <h3><a href="blog/commodity-analytics-budget-alternatives-enterprise.html" style="color:inherit;">Commodity Analytics on a Tight Budget: Tools That Do Not Cost $500K a Year</a></h3>
+        <p>Enterprise commodity analytics tools start at $500,000 a year. Here is what independent operators and smaller trading firms can us</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> May 12, 2026</span>
+          <span><i class="bi bi-clock"></i> 13 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="energy-markets">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Energy & Markets</span>
+        <h3><a href="blog/what-is-energy-intelligence-small-ep-firms.html" style="color:inherit;">What Is Energy Intelligence and Why Small E&P Firms Are Finally Paying Attention</a></h3>
+        <p>Energy intelligence is what serious energy companies use to make decisions faster than their competitors. Here is what it actually</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> May 8, 2026</span>
+          <span><i class="bi bi-clock"></i> 11 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="energy-markets">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Energy & Markets</span>
+        <h3><a href="blog/oil-price-forecasting-model-python-free-data.html" style="color:inherit;">How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal</a></h3>
+        <p>You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step app</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> May 5, 2026</span>
+          <span><i class="bi bi-clock"></i> 12 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="energy-markets">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Energy & Markets</span>
+        <h3><a href="blog/oil-analytics-independent-operators.html" style="color:inherit;">Oil Analytics for Independent Operators: A Practical Guide to Data-Driven Decision Making</a></h3>
+        <p>Most oil analytics guides are written for Shell and ExxonMobil. This one is not. A practical breakdown of data tools, forecasting </p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> May 1, 2026</span>
+          <span><i class="bi bi-clock"></i> 14 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="nigeria-economy">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Nigeria Economy</span>
+        <h3><a href="blog/nigeria-gdp-growing-poverty-rising.html" style="color:inherit;">Nigeria's GDP Is Growing, So Why Are We Getting Poorer?</a></h3>
+        <p>Nigeria's GDP grew 3.87% in 2025, yet 63% of Nigerians live in poverty. A plain-language data analysis of why economic growth is n</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="nigeria-economy">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Nigeria Economy</span>
+        <h3><a href="blog/nigeria-oil-economy-sectoral-analysis.html" style="color:inherit;">Oil No Longer Runs Nigeria's Economy, What Does? Sectoral Data 2006-2026</a></h3>
+        <p>Oil contributes just 2.87% of Nigeria's real GDP in 2025. Services dominate at 55.92%. A data analysis of how Nigeria's economic s</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="nigeria-economy">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Nigeria Economy</span>
+        <h3><a href="blog/nigeria-president-economic-scorecard.html" style="color:inherit;">Which Nigerian President Had the Best Economy? Obasanjo, Jonathan, Buhari, Tinubu, Data 1999-2026</a></h3>
+        <p>A data-driven presidential economic scorecard comparing Obasanjo, Yar'Adua, Jonathan, Buhari, and Tinubu across GDP growth, inflat</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="nigeria-economy">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Nigeria Economy</span>
+        <h3><a href="blog/nigeria-unemployment-numbers-explained.html" style="color:inherit;">Nigeria Unemployment Rate: Understanding the Change from 33% to 4%</a></h3>
+        <p>Nigeria unemployment rate dropped from 33.3% to 4.3% after NBS changed methodology. Learn what the new figures mean for underemplo</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="nigeria-economy">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Nigeria Economy</span>
+        <h3><a href="blog/tinubu-reforms-nigeria-economy-data.html" style="color:inherit;">What Did Tinubu's Reforms Actually Do to Your Money? Nigeria Economy Data 2023-2026</a></h3>
+        <p>A data-driven breakdown of how Tinubu's fuel subsidy removal and naira devaluation changed Nigeria's economy from 2023 to 2026, pe</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="nigeria-economy">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Nigeria Economy</span>
+        <h3><a href="blog/nigeria-road-kidnapping-data.html" style="color:inherit;">Nigeria's Most Dangerous Roads: Kidnapping Data Analysis 2019-2026</a></h3>
+        <p>Data-driven analysis of kidnapping incidents on Nigeria's most dangerous highways from 2019-2026. Interactive map, year-by-year tr</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 19, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="nigeria-economy">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Nigeria Economy</span>
+        <h3><a href="blog/nigeria-war-economy-analysis-2026.html" style="color:inherit;">How the US-Israel-Iran War Is Hitting Nigeria's Economy: What the Data Says, What History Shows, and What to Do Now</a></h3>
+        <p>Nigeria's economy is in shock. Brent crude jumped 53% in 6 weeks. Inflation reversed 11 months of progress. What did past shocks t</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 17, 2026</span>
+          <span><i class="bi bi-clock"></i> 22 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/data-driven-ecommerce-analytics.html" style="color:inherit;">Data-Driven E-Commerce: How to Use Analytics and Psychology to Boost Conversions</a></h3>
+        <p>Stop guessing. Start converting. Learn how to combine Google Analytics 4, behavioral psychology, and predictive modeling to increa</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 16, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/ecommerce-conversion-optimization-tactics.html" style="color:inherit;">E-Commerce Conversion Optimization Tactics: International Strategies & Key Checkout Metrics</a></h3>
+        <p>Master e-commerce conversion optimization tactics with international strategies and key metrics for checkout optimization. 15 data</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 16, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/ecommerce-cro-cost-roi.html" style="color:inherit;">How Much Does E-Commerce Conversion Optimization Cost?</a></h3>
+        <p>Wondering if CRO is worth the investment? Get transparent pricing for ecommerce conversion optimization (freelancer vs agency), RO</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 16, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/good-ecommerce-conversion-rate-benchmarks.html" style="color:inherit;">Ecommerce Conversion Rate: Benchmarks, Calculator and Optimization Guide 2026</a></h3>
+        <p>What is a good ecommerce conversion rate in 2026? Get industry benchmarks by sector, device and platform. Learn GA4 tracking, redu</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 16, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/how-to-keep-customers-coming-back-ecommerce.html" style="color:inherit;">How to Keep Customers Coming Back to Your Ecommerce Store</a></h3>
+        <p>Stop losing customers after their first purchase. Learn 7 proven, data-backed strategies to increase repeat purchases, boost loyal</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 16, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/normal-customer-churn-rate-ecommerce-benchmarks.html" style="color:inherit;">What's a Normal Customer Churn Rate for Online Retailers?</a></h3>
+        <p>Wondering if your churn rate is 'normal'? Get ecommerce churn benchmarks by industry (fashion, electronics, subscription), learn h</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 16, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/use-data-predict-prevent-customer-churn.html" style="color:inherit;">How to Use Data to Predict and Prevent Customer Churn: A Complete Analytics Playbook</a></h3>
+        <p>Learn how to use data to predict and prevent customer churn end-to-end. Covers churn definition, formula, feature engineering, ML </p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 16, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/why-customers-stop-shopping-online-store.html" style="color:inherit;">Why Do Customers Stop Shopping at My Online Store?</a></h3>
+        <p>Customers leaving your store? Learn the 7 data-backed reasons why shoppers stop buying, and how to diagnose each using Google Anal</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 16, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/customer-lifetime-value-modeling-guide.html" style="color:inherit;">Customer Lifetime Value Modeling Guide: CLV Formulas, Predictive Models and SaaS LTV:CAC Explained</a></h3>
+        <p>The complete customer lifetime value modeling guide. Learn every CLV formula, cohort analysis, BG/NBD probabilistic models, machin</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 25 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/data-science-customer-experience.html" style="color:inherit;">How to Use Data Science to Optimize Customer Experience in E-Commerce</a></h3>
+        <p>Learn how to use data science to optimize customer experience in e-commerce. Practical frameworks for personalization, journey map</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 16 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="data-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Data Analytics</span>
+        <h3><a href="blog/data-visualization-retail-analytics.html" style="color:inherit;">Data Visualisation & Retail Analytics: Best Tools for Multi-Location Stores [2026]</a></h3>
+        <p>Compare Power BI, Tableau, Looker Studio for retail data visualisation. Build real-time dashboards for sales by location, inventor</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 15 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/ecommerce-churn-rate-machine-learning.html" style="color:inherit;">E-Commerce Churn Rate: How Machine Learning Predicts & Reduces Customer Churn</a></h3>
+        <p>Your e-commerce churn rate is rising. Learn how machine learning predicts customer churn 30-90 days early, reduces churn by 22%, a</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 15 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/ecommerce-conversion-optimization-checkout-funnel.html" style="color:inherit;">Checkout Funnel Optimization: Best Tools & Analytics to Improve E-Commerce Conversion Rates [2026 Guide]</a></h3>
+        <p>How to optimize e-commerce conversion funnel using data. Discover best tools for checkout funnel optimization, analytics dashboard</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 17 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/ecommerce-customer-retention-strategy.html" style="color:inherit;">Ecommerce Customer Retention Strategy: The 6-Step Lifecycle Marketing Playbook (2026)</a></h3>
+        <p>The complete ecommerce customer retention strategy guide for 2026. Learn the 6-step retention system covering segmentation, post-p</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 18 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="data-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Data Analytics</span>
+        <h3><a href="blog/key-metrics-retail-success.html" style="color:inherit;">Most Important Metrics for Retail Business: 2026 KPI Guide</a></h3>
+        <p>Discover the most important metrics for retail business success. Track GMROI, inventory turnover, conversion rate and other retail</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 12 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="data-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Data Analytics</span>
+        <h3><a href="blog/machine-learning-inventory-forecasting.html" style="color:inherit;">Machine Learning Inventory Forecasting & Optimization for E-Commerce</a></h3>
+        <p>Master machine learning inventory forecasting & inventory optimization using machine learning. Reduce stockouts 40% with AI-powere</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 18 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="customer-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Customer Analytics</span>
+        <h3><a href="blog/predict-customer-retention.html" style="color:inherit;">Customer Retention Prediction: Data-Driven Framework to Reduce Churn by 22%</a></h3>
+        <p>Predict customer retention before churn happens. Learn the 3-pillar data-driven framework that reduces churn by 22%, identifies at</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 10, 2026</span>
+          <span><i class="bi bi-clock"></i> 14 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="data-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Data Analytics</span>
+        <h3><a href="blog/church-data-analytics.html" style="color:inherit;">Church Analytics: The Complete Guide to Data-Driven Ministry Growth in 2026</a></h3>
+        <p>The complete church analytics guide for 2026. Learn how to track attendance, giving, retention, volunteer participation, and small</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> April 4, 2026</span>
+          <span><i class="bi bi-clock"></i> 18 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="data-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Data Analytics</span>
+        <h3><a href="blog/facebook-scraping-python-selenium.html" style="color:inherit;">data-ad-preview='message' Facebook Selector: Python Scraping Guide</a></h3>
+        <p>Learn how to use data-ad-preview='message' Facebook attribute to extract post text with Python, Selenium and BeautifulSoup. Comple</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> March 25, 2026</span>
+          <span><i class="bi bi-clock"></i> 16 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="freelance-career">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Freelance & Career</span>
+        <h3><a href="blog/freelance-data-scientist-retail-cost.html" style="color:inherit;">Freelance Data Scientist for Retail: When You Need One and What It Costs</a></h3>
+        <p>A plain-language guide to when retail businesses should hire a freelance data scientist, what projects cost, and how to scope the </p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> March 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="freelance-career">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Freelance & Career</span>
+        <h3><a href="blog/hire-freelance-data-scientist.html" style="color:inherit;">Hire Freelance Data Scientist for E-Commerce | Guide + Checklist 2026</a></h3>
+        <p>Step-by-step guide to hiring a freelance data scientist for your e-commerce store. Learn what to look for, red flags to avoid, pri</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> March 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 11 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="freelance-career">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Freelance & Career</span>
+        <h3><a href="blog/how-long-to-hire-freelance-data-scientist.html" style="color:inherit;">How Long Does It Take to Hire a Freelance Data Scientist? (And How to Speed It Up)</a></h3>
+        <p>The realistic timeline for finding, evaluating, and onboarding a freelance data scientist, and four things you can do today to mak</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> March 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 9 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="freelance-career">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Freelance & Career</span>
+        <h3><a href="blog/what-does-freelance-data-scientist-do.html" style="color:inherit;">What Does a Freelance Data Scientist Actually Do for an Online Store?</a></h3>
+        <p>Beyond the job title, what a freelance data scientist actually builds, delivers, and changes for e-commerce and retail businesses.</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> March 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/when-to-hire-freelance-data-scientist.html" style="color:inherit;">5 Signs Your E-Commerce Business Needs a Freelance Data Scientist</a></h3>
+        <p>How to know when gut feel is costing your online store more than a specialist would, and which of the 5 warning signs means you ne</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> March 23, 2026</span>
+          <span><i class="bi bi-clock"></i> 9 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/personalize-free-trial-saas-conversions.html" style="color:inherit;">How to Personalize Your Free Trial Experience (And Skyrocket Conversions)</a></h3>
+        <p>Stop treating every trial user the same. This data-driven guide shows how to segment trial users by behaviour, engineer your aha m</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> March 22, 2026</span>
+          <span><i class="bi bi-clock"></i> 11 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="energy-markets">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Energy & Markets</span>
+        <h3><a href="blog/tesla-financial-analysis-tariff-crisis.html" style="color:inherit;">How Far Will Tesla's $16B Go in the Face of a Major Crisis?</a></h3>
+        <p>A full financial stress test of Tesla's $36.56B cash position against escalating tariffs and supply chain disruption. Three crisis</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> March 22, 2026</span>
+          <span><i class="bi bi-clock"></i> 16 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/cart-abandonment.html" style="color:inherit;">Cart Abandonment Rate: Causes, Recovery Strategies and Checkout Optimization Guide</a></h3>
+        <p>Cart abandonment rate averages 70.19% globally and 85.65% on mobile. Learn the behavioral segmentation framework, checkout fixes, </p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> January 8, 2025</span>
+          <span><i class="bi bi-clock"></i> 20 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/organic-traffic.html" style="color:inherit;">How to Drive Organic Traffic to Your Website Without Paid Ads</a></h3>
+        <p>Learn how to increase website traffic organically, without paid ads. Build sustainable e-commerce traffic using demand-driven cont</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> January 8, 2025</span>
+          <span><i class="bi bi-clock"></i> 12 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/stock-out-recovery.html" style="color:inherit;">How to Recover from Stock Out: 3 Data-Backed Scripts for Retail & Shopify Stores</a></h3>
+        <p>Learn inventory management best practices and how to recover from stock-out situations. Turn stock-outs into sales with 3 proven r</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> January 8, 2025</span>
+          <span><i class="bi bi-clock"></i> 16 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/trending-products.html" style="color:inherit;">Trending Products 2026: New Product Trends, Why They Fail & How to Spot Real Demand</a></h3>
+        <p>Discover new product trends and trending dropshipping products 2026. Learn the product trend definition, product trending reasons,</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> January 8, 2025</span>
+          <span><i class="bi bi-clock"></i> 14 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="data-analytics">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">Data Analytics</span>
+        <h3><a href="blog/femi-lazarus-husband-question.html" style="color:inherit;">Who Makes Worse Husbands?The Data Behind a Viral Question</a></h3>
+        <p>344 comments. 1,091 reactions. One question from Apostle Femi Lazarus: do men from dysfunctional homes make worse husbands? A data</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> January 1, 2025</span>
+          <span><i class="bi bi-clock"></i> 10 min read</span>
+        </div>
+      </div>
+    </article>
+<article class="post-card filterable" data-category="ecommerce-growth">
+      <div class="thumb"><img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" loading="lazy" width="200" height="150"></div>
+      <div>
+        <span class="tag">E-Commerce Growth</span>
+        <h3><a href="blog/pricing-strategy.html" style="color:inherit;">How to Raise Prices 15-25% Without Losing Your Best Customers</a></h3>
+        <p>Learn proven pricing strategy frameworks including customer value-based pricing, competitive pricing, and cost-plus pricing. Disco</p>
+        <div class="post-meta">
+          <span><i class="bi bi-calendar3"></i> January 1, 2025</span>
+          <span><i class="bi bi-clock"></i> 18 min read</span>
+        </div>
+      </div>
+    </article>
+          </div>
+        </div>
+        <aside>
+          <div class="side-card">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+              <img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="Adediran Adeyemi" style="width:52px;height:52px;border-radius:50%;object-fit:cover;" width="52" height="52">
+              <div>
+                <strong style="display:block;font-size:14.5px;color:var(--ink);">Adediran Adeyemi</strong>
+                <span style="font-size:12.5px;color:var(--muted);">Data Scientist &amp; AI/ML Engineer</span>
+              </div>
+            </div>
+            <p style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:16px;">I write about what I learn building ML systems and dashboards for e-commerce and retail businesses.</p>
+            <a class="btn btn-outline btn-sm btn-block" href="services.html">View My Services</a>
+          </div>
+          <div class="side-card">
+            <h4>Categories</h4>
+            <ul class="cat-list"><li><a href="#" data-jump-filter="data-analytics">Data Analytics <span>6</span></a></li>
+<li><a href="#" data-jump-filter="ecommerce-growth">E-Commerce Growth <span>13</span></a></li>
+<li><a href="#" data-jump-filter="customer-analytics">Customer Analytics <span>9</span></a></li>
+<li><a href="#" data-jump-filter="nigeria-economy">Nigeria Economy <span>8</span></a></li>
+<li><a href="#" data-jump-filter="energy-markets">Energy & Markets <span>7</span></a></li>
+<li><a href="#" data-jump-filter="freelance-career">Freelance & Career <span>4</span></a></li></ul>
+          </div>
+          <div class="side-card">
+            <h4>Popular Posts</h4>
+            <a class="pop-post" href="blog/customer-profitability-audit.html">
+      <img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+      <span><strong>Customer Profitability Audit: Framework, Formulas, and Implementa</strong><span>May 17, 2026</span></span>
+    </a>
+<a class="pop-post" href="blog/nigeria-japa-brain-drain-economy.html">
+      <img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+      <span><strong>Nigeria Brain Drain Statistics 2025-2026: Japa Syndrome Data Anal</strong><span>May 17, 2026</span></span>
+    </a>
+<a class="pop-post" href="blog/oil-price-risk-management-small-producers.html">
+      <img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+      <span><strong>Oil Price Risk Management for Small Producers: A Practical Hedgin</strong><span>May 17, 2026</span></span>
+    </a>
+<a class="pop-post" href="blog/energy-data-brand-domain-strategy-oil-analytics.html">
+      <img src="assets/img/photo_2025-08-11_17-35-17.webp" alt="" width="56" height="56" loading="lazy">
+      <span><strong>The Domain Strategy Behind Serious Energy Data Brands (And Why Mo</strong><span>May 15, 2026</span></span>
+    </a>
+          </div>
+          <div class="side-card newsletter-card">
+            <h4>Get Data Tactics In Your Inbox</h4>
+            <p>Practical e-commerce and retail analytics tips, no fluff. Unsubscribe anytime.</p>
+            <form action="https://formsubmit.co/adeyemi@adediranadeyemi.com" method="POST">
+              <input type="email" name="email" placeholder="your@email.com" required>
+              <button class="btn btn-accent btn-block btn-sm" type="submit">Subscribe</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img src="assets/img/mark.svg" alt="Adediran Adeyemi logomark" width="34" height="34">
+          <span style="color:#fff">Adediran Adeyemi</span>
+        </a>
+        <p>Freelance data scientist helping e-commerce and retail businesses turn data into revenue-generating decisions. Remote worldwide, based in Lagos, Nigeria.</p>
+        <div class="footer-social"><a aria-label="X (Twitter)" href="https://x.com/AdediranAd60922" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.5-7.2L4.4 22H1.3l8.1-9.3L.8 2h7.3l5 6.6L18.9 2Zm-1.2 18h1.9L7.4 4h-2l12.3 16Z"/></svg></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/adediran-adeyemi" rel="noopener noreferrer" target="_blank"><i class="bi bi-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/Adeyemi0" rel="noopener noreferrer" target="_blank"><i class="bi bi-github"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/Adeyemi_the_data_analyst" rel="noopener noreferrer" target="_blank"><i class="bi bi-instagram"></i></a>
+<a aria-label="WhatsApp" href="https://wa.me/+2348162735399" rel="noopener noreferrer" target="_blank"><i class="bi bi-whatsapp"></i></a>
+<a aria-label="Pinterest" href="https://pin.it/1by014rCw" rel="noopener noreferrer" target="_blank"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.63 7.86 6.35 9.33-.09-.79-.16-2.01.03-2.88.18-.79 1.17-5.02 1.17-5.02s-.3-.6-.3-1.48c0-1.39.8-2.42 1.81-2.42.85 0 1.26.64 1.26 1.41 0 .86-.55 2.14-.83 3.33-.24.99.5 1.81 1.48 1.81 1.78 0 3.15-1.88 3.15-4.58 0-2.39-1.72-4.07-4.18-4.07-2.85 0-4.52 2.14-4.52 4.34 0 .86.33 1.78.75 2.28a.3.3 0 0 1 .07.29c-.08.32-.25 1-.28 1.14-.04.19-.15.23-.34.14-1.26-.59-2.05-2.42-2.05-3.9 0-3.18 2.31-6.1 6.66-6.1 3.5 0 6.22 2.49 6.22 5.83 0 3.48-2.19 6.28-5.24 6.28-1.02 0-1.98-.53-2.31-1.16l-.63 2.4c-.23.87-.84 1.97-1.26 2.63.95.29 1.95.45 3 .45 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg></a></div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/churn-prediction-model.html">Churn Prediction</a></li>
+          <li><a href="services/ecommerce-data-science.html">E-Commerce Data Science</a></li>
+          <li><a href="services/customer-segmentation-analysis.html">Customer Segmentation</a></li>
+          <li><a href="services/power-bi-dashboard-development.html">Power BI Dashboards</a></li>
+          <li><a href="services.html">View All Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="projects.html">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:adeyemi@adediranadeyemi.com">adeyemi@adediranadeyemi.com</a></li>
+          <li><a href="https://wa.me/+2348162735399">+234 816 273 5399</a></li>
+          <li><span>Lagos, Nigeria</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Adediran Adeyemi. All rights reserved.</span>
+      <span>Built with intent, not templates.</span>
+    </div>
+  </div>
+</footer>
+<button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<div class="nav-scrim"></div>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/js/main.js" defer></script>
+<script>if(window.AOS){AOS.init({duration:600,once:true,offset:60});}</script>
+</body>
+</html>

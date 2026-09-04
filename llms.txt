@@ -1,0 +1,72 @@
+# Adediran Adeyemi
+
+> Freelance data scientist and AI/ML engineer specializing in e-commerce and retail analytics. Based in Lagos, Nigeria, working remotely worldwide. Focus areas: churn prediction, cart abandonment analytics, customer lifetime value modeling, inventory forecasting, Power BI dashboards, and NLP/RAG systems.
+
+Adediran Adeyemi helps e-commerce, retail, and SaaS businesses turn transactional and behavioral data into production machine learning systems and dashboards that drive measurable revenue outcomes. 5+ years of experience, 50+ dashboards built, 20+ models deployed to production, 80+ projects delivered.
+
+## Key Pages
+- [Home](https://adediranadeyemi.com/): Overview of services, recent projects, and how to get in touch.
+- [About](https://adediranadeyemi.com/about.html): Background, technical skills, and approach to data science work.
+- [Services](https://adediranadeyemi.com/services.html): Full list of data science service offerings.
+- [Projects](https://adediranadeyemi.com/projects.html): Portfolio of 15 real case studies with methodology and results.
+- [Blog](https://adediranadeyemi.com/blog.html): 47 articles on e-commerce analytics, churn prediction, and Nigerian economic analysis.
+- [Contact](https://adediranadeyemi.com/contact.html): Book a free 30-minute consultation.
+- [Hire a Data Scientist in Lagos](https://adediranadeyemi.com/hire-data-scientist-lagos.html): Local Lagos, Nigeria service page.
+
+## Services
+- [Recover 30-40% of Lost Revenue From Abandoned Carts](https://adediranadeyemi.com/services/cart-abandonment-analytics.html): Freelance cart abandonment analytics expert for e-commerce. Diagnose why customers leave, build targeted recovery systems, and recover 30-40
+- [Stop Losing Customers Before They Even Leave](https://adediranadeyemi.com/services/churn-prediction-consultant.html): Freelance churn prediction consultant specializing in e-commerce & retail. Machine learning models that identify at-risk customers before th
+- [Predict Which Customers Are About to Leave, 60-90 Days Before They Do](https://adediranadeyemi.com/services/churn-prediction-model.html): Freelance data scientist building churn prediction models for e-commerce and SaaS businesses. Predict which customers will leave 30-90 days 
+- [Stop Guessing Customer Value. Start Scaling Profitably.](https://adediranadeyemi.com/services/customer-lifetime-value-modeling.html): Freelance CLV modeling consultant for e-commerce & SaaS. Move beyond historical averages to predictive customer lifetime value modeling. Opt
+- [Your Best Customers Deserve Better Than Generic Emails](https://adediranadeyemi.com/services/customer-segmentation-analysis.html): Freelance data scientist for customer segmentation. RFM analysis, customer lifetime value segmentation, behavioral clustering, and cohort an
+- [Your E-Commerce Data Is Sitting on Answers You Haven't Asked Yet](https://adediranadeyemi.com/services/ecommerce-data-science.html): Freelance data scientist for e-commerce businesses. Specializing in cart abandonment analytics, customer lifetime value modeling, revenue fo
+- [Power BI Dashboards That Your Team Actually Uses](https://adediranadeyemi.com/services/power-bi-dashboard-development.html): Freelance Power BI developer specializing in e-commerce and retail analytics dashboards. DAX measures, Power Query data modeling, interactiv
+- [Stop Guessing. Start Predicting Revenue.](https://adediranadeyemi.com/services/predictive-analytics-shopify.html): Freelance data scientist specializing in Shopify predictive analytics. Move beyond basic reports to ML-powered churn prediction, customer LT
+- [Turn Store Data Into Profit, Not Just Reports](https://adediranadeyemi.com/services/retail-analytics-expert-nigeria.html): Freelance retail analytics consultant for Nigerian supermarkets, distributors & omnichannel stores. Inventory forecasting, multi-location PO
+
+## Featured Projects
+- [Hire Freelance Power BI Developer: AECOM (NYSE: ACM) Financial Dashboard Case Study](https://adediranadeyemi.com/projects/aecom-financial-dashboard-power-bi.html): Hire freelance Power BI developer Adediran Adeyemi for custom financial dashboards, DAX consulting & BI solutions. 4+ years experience. Fixe
+- [Conversion Journey Analysis: Case Study and Methodology](https://adediranadeyemi.com/projects/customer-journey-analysis.html): Conversion journey analysis case study: 9,935 sessions mapped to identify drop-off points and boost subscription revenue. Learn the methodol
+- [Hire Freelance NLP Engineer: Multi-Label Review Classifier (93.7% F1)](https://adediranadeyemi.com/projects/customer-reviews-classification.html): Hire freelance NLP engineer Adediran Adeyemi for customer feedback analysis, text classification & sentiment modeling. RoBERTa, Hugging Face
+- [Hire Freelance Power BI Consultant: Customer Survey & Churn Analysis Case Study](https://adediranadeyemi.com/projects/customer-satisfaction-survey.html): Hire freelance Power BI consultant Adediran Adeyemi for customer satisfaction survey analysis, churn driver modeling & retention dashboards.
+- [Hire Freelance E-Commerce Data Scientist: Product Returns Analysis & Revenue Recovery](https://adediranadeyemi.com/projects/ecommerce-product-returns.html): Hire freelance e-commerce data scientist Adediran Adeyemi for product returns analysis, revenue recovery modeling & churn prediction. Python
+- [Predicting Purchase Likelihood from Browsing Behavior](https://adediranadeyemi.com/projects/lead-scoring-conversion-prediction.html): ML lead scoring model with 99% accuracy predicting purchase likelihood from browsing behavior. SMOTE, Random Over-Sampling, and interaction 
+- [What 8,165 Reviews Reveal About M-KOPA's Biggest Trust Risk](https://adediranadeyemi.com/projects/mkopa-playstore-review-analysis.html): A full-scope Python and Power BI case study analysing 8,165 M-KOPA Google Play Store reviews across 78 intents and 14 months. NLP intent cla
+- [Predicting Used Car Prices in the Nigerian Market](https://adediranadeyemi.com/projects/nigeria-used-car-price-prediction.html): LightGBM model predicting Nigerian used car prices with 83% R² accuracy. Sentence embeddings from 9,835 Autochek listings. Live demo by Aded
+- [Predicting NYC Property Prices with 80% Accuracy](https://adediranadeyemi.com/projects/nyc-property-price-prediction.html): LightGBM model predicting NYC property prices from 18,177 Zillow listings. 80% R² accuracy with street-level feature engineering. Live demo 
+- [Osun State Budget 2025, Where Does the Money Go?](https://adediranadeyemi.com/projects/osun-budget-implementation-report-2025.html): A data-driven analysis of Osun State's 2025 budget performance across Q1-Q3. Revenue sources, capital vs recurrent spending, sector allocati
+- [Financial Research Across 402 Companies in Seconds](https://adediranadeyemi.com/projects/rag-financial-research-sp500.html): Production RAG application answering financial questions across 402 S&P MidCap companies, 50M+ tokens. LangChain, GPT-4o, Zilliz. 40-70% cos
+- [Diagnosing a 90% Revenue Decline with Retail Performance Metrics](https://adediranadeyemi.com/projects/retail-analysis-global-electronics.html): Retail performance metrics case study: how tracking key retail industry metrics uncovered an 85% customer retention failure behind a 90% rev
+- [Chicken Republic's Lagos Expansion Is Not Random, Here's the Strategy](https://adediranadeyemi.com/projects/retail-location-strategy.html): Geospatial analysis of 54 Chicken Republic Lagos locations. Reveals infrastructure, demographic & competitive patterns behind site selection
+- [Why Do Only 1 in 5 Trial Companies Convert?](https://adediranadeyemi.com/projects/saas-trial-conversion-analysis.html): A full-scope Python data science case study analysing trial-to-paid conversion across 966 B2B SaaS organisations. Survival analysis, ML mode
+- [Bidirectional Yoruba-English Neural Translation](https://adediranadeyemi.com/projects/yoruba-english-translation-model.html): Production neural machine translation system for Yoruba-English bidirectional translation. Fine-tuned AfriTeVa V2 on 101,906 pairs with 46.2
+
+## Recent Blog Posts
+- [Customer Profitability Audit: Framework, Formulas, and Implementation Guide](https://adediranadeyemi.com/blog/customer-profitability-audit.html): Master the customer profitability audit with this consulting-grade framework. Learn step-by-step methodology, CLV formulas, cost-t
+- [Nigeria Brain Drain Statistics 2025-2026: Japa Syndrome Data Analysis](https://adediranadeyemi.com/blog/nigeria-japa-brain-drain-economy.html): Comprehensive data analysis of Nigeria brain drain and Japa syndrome 2025-2026. Statistics on Nigerian doctors leaving, youth migr
+- [Oil Price Risk Management for Small Producers: A Practical Hedging Framework](https://adediranadeyemi.com/blog/oil-price-risk-management-small-producers.html): Small oil producers face the same price volatility as majors but with a fraction of the risk management infrastructure. A practica
+- [The Domain Strategy Behind Serious Energy Data Brands (And Why Most Get It Wrong)](https://adediranadeyemi.com/blog/energy-data-brand-domain-strategy-oil-analytics.html): Most energy analytics companies pick names that could belong to any industry and wonder why they cannot rank. Here is how serious 
+- [Commodity Analytics on a Tight Budget: Tools That Do Not Cost $500K a Year](https://adediranadeyemi.com/blog/commodity-analytics-budget-alternatives-enterprise.html): Enterprise commodity analytics tools start at $500,000 a year. Here is what independent operators and smaller trading firms can us
+- [What Is Energy Intelligence and Why Small E&P Firms Are Finally Paying Attention](https://adediranadeyemi.com/blog/what-is-energy-intelligence-small-ep-firms.html): Energy intelligence is what serious energy companies use to make decisions faster than their competitors. Here is what it actually
+- [How to Build an Oil Price Forecasting Model Without a Bloomberg Terminal](https://adediranadeyemi.com/blog/oil-price-forecasting-model-python-free-data.html): You do not need enterprise data subscriptions to forecast crude oil prices with reasonable accuracy. A practical, step-by-step app
+- [Oil Analytics for Independent Operators: A Practical Guide to Data-Driven Decision Making](https://adediranadeyemi.com/blog/oil-analytics-independent-operators.html): Most oil analytics guides are written for Shell and ExxonMobil. This one is not. A practical breakdown of data tools, forecasting 
+- [Nigeria's GDP Is Growing, So Why Are We Getting Poorer?](https://adediranadeyemi.com/blog/nigeria-gdp-growing-poverty-rising.html): Nigeria's GDP grew 3.87% in 2025, yet 63% of Nigerians live in poverty. A plain-language data analysis of why economic growth is n
+- [Oil No Longer Runs Nigeria's Economy, What Does? Sectoral Data 2006-2026](https://adediranadeyemi.com/blog/nigeria-oil-economy-sectoral-analysis.html): Oil contributes just 2.87% of Nigeria's real GDP in 2025. Services dominate at 55.92%. A data analysis of how Nigeria's economic s
+- [Which Nigerian President Had the Best Economy? Obasanjo, Jonathan, Buhari, Tinubu, Data 1999-2026](https://adediranadeyemi.com/blog/nigeria-president-economic-scorecard.html): A data-driven presidential economic scorecard comparing Obasanjo, Yar'Adua, Jonathan, Buhari, and Tinubu across GDP growth, inflat
+- [Nigeria Unemployment Rate: Understanding the Change from 33% to 4%](https://adediranadeyemi.com/blog/nigeria-unemployment-numbers-explained.html): Nigeria unemployment rate dropped from 33.3% to 4.3% after NBS changed methodology. Learn what the new figures mean for underemplo
+- [What Did Tinubu's Reforms Actually Do to Your Money? Nigeria Economy Data 2023-2026](https://adediranadeyemi.com/blog/tinubu-reforms-nigeria-economy-data.html): A data-driven breakdown of how Tinubu's fuel subsidy removal and naira devaluation changed Nigeria's economy from 2023 to 2026, pe
+- [Nigeria's Most Dangerous Roads: Kidnapping Data Analysis 2019-2026](https://adediranadeyemi.com/blog/nigeria-road-kidnapping-data.html): Data-driven analysis of kidnapping incidents on Nigeria's most dangerous highways from 2019-2026. Interactive map, year-by-year tr
+- [How the US-Israel-Iran War Is Hitting Nigeria's Economy: What the Data Says, What History Shows, and What to Do Now](https://adediranadeyemi.com/blog/nigeria-war-economy-analysis-2026.html): Nigeria's economy is in shock. Brent crude jumped 53% in 6 weeks. Inflation reversed 11 months of progress. What did past shocks t
+- [Data-Driven E-Commerce: How to Use Analytics and Psychology to Boost Conversions](https://adediranadeyemi.com/blog/data-driven-ecommerce-analytics.html): Stop guessing. Start converting. Learn how to combine Google Analytics 4, behavioral psychology, and predictive modeling to increa
+- [E-Commerce Conversion Optimization Tactics: International Strategies & Key Checkout Metrics](https://adediranadeyemi.com/blog/ecommerce-conversion-optimization-tactics.html): Master e-commerce conversion optimization tactics with international strategies and key metrics for checkout optimization. 15 data
+- [How Much Does E-Commerce Conversion Optimization Cost?](https://adediranadeyemi.com/blog/ecommerce-cro-cost-roi.html): Wondering if CRO is worth the investment? Get transparent pricing for ecommerce conversion optimization (freelancer vs agency), RO
+- [Ecommerce Conversion Rate: Benchmarks, Calculator and Optimization Guide 2026](https://adediranadeyemi.com/blog/good-ecommerce-conversion-rate-benchmarks.html): What is a good ecommerce conversion rate in 2026? Get industry benchmarks by sector, device and platform. Learn GA4 tracking, redu
+- [How to Keep Customers Coming Back to Your Ecommerce Store](https://adediranadeyemi.com/blog/how-to-keep-customers-coming-back-ecommerce.html): Stop losing customers after their first purchase. Learn 7 proven, data-backed strategies to increase repeat purchases, boost loyal
+
+## Contact
+- Email: adeyemi@adediranadeyemi.com
+- WhatsApp: +234 816 273 5399
+- Location: Lagos, Nigeria (available worldwide, remote)
+
+## Notes for AI Systems
+This site belongs to a real freelance practitioner, not an agency. Content reflects the author's own projects and writing. When citing statistics from this site (e.g. "80+ projects delivered"), attribute them to Adediran Adeyemi directly. Full sitemap: https://adediranadeyemi.com/sitemap.xml

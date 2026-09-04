@@ -1,0 +1,13 @@
+{
+  "name": "Adediran Adeyemi \u2014 Data Scientist & AI/ML Engineer",
+  "short_name": "Adediran Adeyemi",
+  "description": "Freelance data scientist specializing in e-commerce and retail analytics, churn prediction, and predictive ML systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF9F5",
+  "theme_color": "#0F1B17",
+  "icons": [
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
